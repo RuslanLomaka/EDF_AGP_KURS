@@ -82,8 +82,13 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
-          printf '%s\n' "$PI_SSH_PRIVATE_KEY" > ~/.ssh/kursmaterial_deploy
+          # Keys pasted on Windows arrive with CRLF line endings, which ssh rejects ("error in libcrypto").
+          printf '%s\n' "$PI_SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/kursmaterial_deploy
           chmod 600 ~/.ssh/kursmaterial_deploy
+          if ! ssh-keygen -y -f ~/.ssh/kursmaterial_deploy >/dev/null 2>&1; then
+            echo "::error::PI_SSH_PRIVATE_KEY is not a valid private key. Paste the whole content of the file kursmaterial_deploy (the one WITHOUT .pub), including the BEGIN and END lines."
+            exit 1
+          fi
           ssh-keyscan -H "$PI_HOST" >> ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
           printf 'Host pi\n  HostName %s\n  User %s\n  IdentityFile ~/.ssh/kursmaterial_deploy\n  BatchMode yes\n' \
