@@ -1,0 +1,146 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kursmaterial-deploy
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pandoc and PyYAML
+        run: sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends pandoc python3-yaml
+
+      - name: Build
+        run: python3 site/build.py
+
+      - name: Package release
+        run: |
+          mkdir -p release
+          cp -r site/dist release/html
+          cp deploy/compose.yaml deploy/nginx.conf release/
+          tar -C release -czf release.tar.gz .
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release
+          path: release.tar.gz
+          retention-days: 7
+
+  deploy:
+    name: Deploy to Raspberry Pi
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    env:
+      PI_HOST: ${{ secrets.PI_HOST }}
+      PI_USER: ${{ secrets.PI_USER }}
+    steps:
+      - name: Check deploy secrets
+        id: secrets
+        env:
+          HAS_ALL: ${{ secrets.PI_HOST != '' && secrets.PI_USER != '' && secrets.PI_SSH_PRIVATE_KEY != '' && secrets.TS_OAUTH_CLIENT_ID != '' && secrets.TS_OAUTH_SECRET != '' }}
+        run: |
+          if [ "$HAS_ALL" = "true" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::Deploy skipped: not all repository secrets are set (PI_HOST, PI_USER, PI_SSH_PRIVATE_KEY, TS_OAUTH_CLIENT_ID, TS_OAUTH_SECRET)."
+          fi
+
+      - uses: actions/download-artifact@v4
+        if: steps.secrets.outputs.ready == 'true'
+        with:
+          name: release
+
+      - name: Connect GitHub runner to Tailscale
+        if: steps.secrets.outputs.ready == 'true'
+        uses: tailscale/github-action@v4
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+          ping: ${{ secrets.PI_HOST }}
+
+      - name: Configure SSH
+        if: steps.secrets.outputs.ready == 'true'
+        env:
+          PI_SSH_PRIVATE_KEY: ${{ secrets.PI_SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$PI_SSH_PRIVATE_KEY" > ~/.ssh/kursmaterial_deploy
+          chmod 600 ~/.ssh/kursmaterial_deploy
+          ssh-keyscan -H "$PI_HOST" >> ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+          printf 'Host pi\n  HostName %s\n  User %s\n  IdentityFile ~/.ssh/kursmaterial_deploy\n  BatchMode yes\n' \
+            "$PI_HOST" "$PI_USER" > ~/.ssh/config
+          chmod 600 ~/.ssh/config
+
+      # Before anything is changed on the Pi: port 8081 must be free or already ours.
+      - name: Check port 8081 on the Pi
+        if: steps.secrets.outputs.ready == 'true'
+        run: |
+          ssh pi 'bash -s' <<'REMOTE'
+          set -euo pipefail
+          listening="$(ss -Hltn 'sport = :8081')"
+          if [ -n "$listening" ]; then
+            names="$(docker ps --format '{{.Names}}')"
+            if grep -qx kursmaterial-web <<<"$names"; then
+              echo "Port 8081 is used by our own container (kursmaterial-web): OK."
+            else
+              echo "::error::Port 8081 on the Pi is used by another program. Nothing was changed."
+              exit 1
+            fi
+          else
+            echo "Port 8081 is free."
+          fi
+          REMOTE
+
+      - name: Upload release to the Pi
+        if: steps.secrets.outputs.ready == 'true'
+        run: |
+          ssh pi \
+            'set -e; D="$HOME/projects/kursmaterial"; mkdir -p "$D"; rm -rf "$D/incoming"; mkdir "$D/incoming"; tar -xzf - -C "$D/incoming"' \
+            < release.tar.gz
+
+      - name: Start new version and check it answers
+        if: steps.secrets.outputs.ready == 'true'
+        run: |
+          ssh pi 'bash -s' <<'REMOTE'
+          set -euo pipefail
+          D="$HOME/projects/kursmaterial"
+          cd "$D"
+          rm -rf html.previous
+          if [ -d html ]; then mv html html.previous; fi
+          mv incoming/html html
+          mv incoming/compose.yaml incoming/nginx.conf .
+          rmdir incoming
+          docker compose up -d --force-recreate --remove-orphans
+          check() {
+            if command -v curl >/dev/null; then curl -fsS -o /dev/null "$1"; else wget -q -O /dev/null "$1"; fi
+          }
+          for i in $(seq 1 20); do
+            if check http://127.0.0.1:8081/ && check http://127.0.0.1:8081/unterlagen/; then
+              echo "Site is up on 127.0.0.1:8081."
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "::error::The site does not answer on 127.0.0.1:8081."
+          docker compose logs --tail=50
+          exit 1
+          REMOTE

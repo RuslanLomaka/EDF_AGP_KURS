@@ -1,0 +1,16 @@
+# Kursmaterial web server on the Raspberry Pi.
+# Reachable only from the Pi itself (127.0.0.1:8081); the Cloudflare Tunnel makes it public.
+# Its own compose project, so it never touches the OnlineJavaSandbox stack.
+name: kursmaterial
+
+services:
+  web:
+    image: nginx:1.27-alpine
+    container_name: kursmaterial-web
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8081:80"
+    volumes:
+      - ./html:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    mem_limit: 64m

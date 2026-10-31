@@ -59,17 +59,24 @@ The owner sends photos of a handout (often several per day; several pages can be
    - "Fragen zum Text": the handout's questions as `<details><summary>question</summary>answer</details>`.
 5. Run the build, check the result at phone width, commit, push.
 
-## Hosting (planned, not set up yet)
+## Hosting and CI/CD
 
 Target: the owner's Raspberry Pi, which already hosts java.ruslanlomaka.org (repo RuslanLomaka/OnlineJavaSandbox)
-behind a Cloudflare Tunnel.
-- **Plan:** a tiny web-server container on `127.0.0.1:8081`; a GitHub Actions deploy over Tailscale + SSH like the
-  OnlineJavaSandbox workflow (secrets `TS_OAUTH_CLIENT_ID`, `TS_OAUTH_SECRET`, `PI_HOST`, `PI_USER`,
-  `PI_SSH_PRIVATE_KEY`, with a new SSH key for this repo).
-- The deploy copies `site/dist` to the Pi (the Pi needs no GitHub access). **The first deploy must check that port
-  8081 is free and abort without changes if not.**
-- The owner adds the Cloudflare public hostname only after the first successful deploy. Never touch the
-  OnlineJavaSandbox stack on the Pi.
+behind a Cloudflare Tunnel. This site will be **edv.ruslanlomaka.org**.
+
+- `.github/workflows/deploy.yml`:
+  - **build** runs on every push and pull request: pandoc + PyYAML → `site/build.py` → release tarball.
+  - **deploy** runs on pushes to `main` and manual runs only. It connects over Tailscale (tag `tag:ci`) + SSH,
+    checks that port 8081 is free or already used by our container, uploads to `~/projects/kursmaterial` on the
+    Pi, runs `docker compose up -d --force-recreate`, and checks that 127.0.0.1:8081 answers.
+  - Without all five secrets (`TS_OAUTH_CLIENT_ID`, `TS_OAUTH_SECRET`, `PI_HOST`, `PI_USER`, `PI_SSH_PRIVATE_KEY`)
+    the deploy is skipped with a warning instead of failing.
+- `deploy/compose.yaml` (compose project `kursmaterial`, container `kursmaterial-web`, nginx on `127.0.0.1:8081`,
+  64 MB limit) and `deploy/nginx.conf`. Never touch the OnlineJavaSandbox stack on the Pi.
+- The previous version stays in `~/projects/kursmaterial/html.previous` on the Pi.
+- Cloudflare: a public hostname (published application route) on the existing tunnel, `edv.ruslanlomaka.org` →
+  `http://localhost:8081`. The owner adds it only after the first successful deploy.
+- The repo is public, so Actions logs are public. Never print secrets or host details in the logs.
 
 ## Open points
 
