@@ -63,7 +63,7 @@ The owner sends photos of a handout (often several per day; several pages can be
 ## Hosting and CI/CD
 
 Target: the owner's Raspberry Pi, which already hosts java.ruslanlomaka.org (repo RuslanLomaka/OnlineJavaSandbox)
-behind a Cloudflare Tunnel. This site will be **edv.ruslanlomaka.org**.
+behind a Cloudflare Tunnel. This site is live at **https://edv.ruslanlomaka.org**.
 
 - `.github/workflows/deploy.yml`:
   - **build** runs on every push and pull request: pandoc + PyYAML → `site/build.py` → release tarball.
@@ -75,8 +75,7 @@ behind a Cloudflare Tunnel. This site will be **edv.ruslanlomaka.org**.
 - `deploy/compose.yaml` (compose project `kursmaterial`, container `kursmaterial-web`, nginx on `127.0.0.1:8090`,
   64 MB limit) and `deploy/nginx.conf`. Never touch the OnlineJavaSandbox stack on the Pi.
 - The previous version stays in `~/projects/kursmaterial/html.previous` on the Pi.
-- Cloudflare: a public hostname (published application route) on the existing tunnel, `edv.ruslanlomaka.org` →
-  `http://localhost:8090`. The owner adds it only after the first successful deploy.
+- Cloudflare tunnel `pi-4gb-tunnel` has the route `edv.ruslanlomaka.org` → `http://localhost:8090`.
 - The repo is public, so Actions logs are public. Never print secrets or host details in the logs.
 
 ## Open points
