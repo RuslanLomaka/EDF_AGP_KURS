@@ -1,0 +1,3 @@
+# Allowed article topics, in the order the topic filter shows them.
+# Every article's `thema` must be one of these. Keep the list short; add a topic only when no existing one fits.
+- Arbeit & Geld

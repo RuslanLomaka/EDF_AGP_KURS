@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-"""Builds the static site into site/dist/.
+"""Builds the static site into site/dist/ (served at the domain root).
 
-    python3 site/build.py                 # normal build (pages link assets/style.css)
-    python3 site/build.py --inline-css    # every page self-contained (for previews)
+    python3 site/build.py
 
-Articles: site/content/unterlagen/*.md (YAML front matter + pandoc Markdown).
+Content:
+  site/content/artikel/*.md     articles (one per course handout)
+  site/content/edv-kurs/*.md    interactive EDV lessons
+  site/content/edv-kurs/bilder/ images used by lessons (served at /edv-kurs/bilder/)
+  site/themen.yaml              allowed article topics, in display order
 Needs: pandoc, PyYAML.
 """
 import html
@@ -13,225 +16,321 @@ import math
 import re
 import shutil
 import subprocess
-import sys
+import zipfile
+from datetime import date
 from pathlib import Path
+from urllib.parse import quote
 
 import yaml
 
-ROOT = Path(__file__).resolve().parent
-CONTENT = ROOT / "content" / "unterlagen"
-TEMPLATES = ROOT / "templates"
-ASSETS = ROOT / "assets"
-DIST = ROOT / "dist"
+SITE = Path(__file__).resolve().parent
+REPO = SITE.parent
+CONTENT = SITE / "content"
+DIST = SITE / "dist"
+BRAND = "Kursmaterial"
+NAV = [("start", "/", "Start"), ("kurs", "/edv-kurs/", "EDV-Kurs"), ("artikel", "/artikel/", "Artikel")]
+WOCHENTAGE = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"]
+MONATE = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober",
+          "November", "Dezember"]
+TYP = {".xlsx": "Excel", ".docx": "Word", ".pdf": "PDF", ".zip": "ZIP"}
 
-NAV = [
-    ("start", "index.html", "Start"),
-    ("lektion", "bewerbung-auf-knopfdruck/index.html", "Bewerbung auf Knopfdruck"),
-    ("unterlagen", "unterlagen/index.html", "Unterlagen"),
-]
+esc = html.escape
 
 
-def front_matter(path):
-    text = path.read_text(encoding="utf-8")
-    m = re.match(r"^---\n(.*?)\n---\n", text, re.S)
+# ---------------------------------------------------------------- helpers
+
+def read_meta(path):
+    m = re.match(r"^---\n(.*?)\n---\n", path.read_text(encoding="utf-8"), re.S)
     if not m:
         raise SystemExit(f"{path}: missing YAML front matter")
-    meta = yaml.safe_load(m.group(1)) or {}
-    for key in ("title", "slug", "thema", "kurz", "quelle"):
-        if not meta.get(key):
+    return yaml.safe_load(m.group(1)) or {}
+
+
+def require(path, meta, *keys):
+    for key in keys:
+        if meta.get(key) in (None, ""):
             raise SystemExit(f"{path}: front matter needs '{key}'")
     if meta["slug"] != path.stem:
         raise SystemExit(f"{path}: slug '{meta['slug']}' must equal the file name")
-    return meta
 
 
-def german_date(iso):
+def pandoc(path, to):
+    return subprocess.run(["pandoc", str(path), "--from", "markdown", "--to", to, "--wrap=none"],
+                          capture_output=True, text=True, check=True).stdout
+
+
+def toc(body_html):
+    found = re.findall(r'<h2 id="([^"]+)">(.*?)</h2>', body_html)
+    items = "".join(f'<li><a href="#{i}">{re.sub(r"<[^>]+>", "", t)}</a></li>' for i, t in found)
+    if not items:
+        return ""
+    return f'<nav class="toc" aria-label="Inhalt"><details><summary>Inhalt</summary><ul>{items}</ul></details></nav>'
+
+
+def datum_lang(iso):
     if not iso:
         return ""
-    y, mth, d = str(iso).split("-")
-    return f"{d}.{mth}.{y}"
+    d = date.fromisoformat(iso)
+    return f"{WOCHENTAGE[d.weekday()]}, {d.day}. {MONATE[d.month - 1]} {d.year}"
 
 
-def pandoc(*args, stdin=None):
-    return subprocess.run(["pandoc", *args], input=stdin, capture_output=True, text=True, check=True).stdout
+def datum_kurz(iso):
+    return date.fromisoformat(iso).strftime("%d.%m.%Y") if iso else ""
 
 
-def page(title, active, body, depth, description=""):
-    """Wrapper for the hand-built pages (start, lesson, list)."""
-    up = "../" * depth
+def groesse(n):
+    return f"{max(1, round(n / 1024))} KB" if n < 1024 * 1024 else f"{n / 1024 / 1024:.1f} MB".replace(".", ",")
+
+
+def anzahl(n, eins, mehr):
+    return f"1 {eins}" if n == 1 else f"{n} {mehr}"
+
+
+def lesson_meta(lesson):
+    parts = ["Lektion " + str(lesson["nummer"]), lesson.get("dauer", ""), lesson.get("niveau", "")]
+    return " · ".join(esc(x) for x in parts if x)
+
+
+def thema_link(thema):
+    return f"/artikel/?thema={quote(thema)}"
+
+
+def blaettern(label, prev, nxt, prev_small, next_small):
+    if not (prev or nxt):
+        return ""
+    left = f'<a class="zurueck" href="{prev["url"]}"><small>{prev_small}</small>{esc(prev["title"])}</a>' if prev else "<span></span>"
+    right = f'<a class="weiter" href="{nxt["url"]}"><small>{next_small}</small>{esc(nxt["title"])}</a>' if nxt else "<span></span>"
+    return f'<nav class="blaettern" aria-label="{label}">{left}{right}</nav>'
+
+
+def write(rel, text):
+    out = DIST / rel
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(text, encoding="utf-8")
+
+
+def layout(title, active, main, description="", scripts=""):
     current = ' aria-current="page"'
-    links = "\n".join(
-        f'    <a href="{up}{href}"{current if key == active else ""}>{label}</a>'
-        for key, href, label in NAV)
+    links = "".join(f'<a href="{href}"{current if key == active else ""}>{label}</a>' for key, href, label in NAV)
+    full_title = BRAND if title == BRAND else f"{title} – {BRAND}"
     return f"""<!doctype html>
 <html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{html.escape(title)}</title>
-<meta name="description" content="{html.escape(description)}">
-<link rel="stylesheet" href="{up}assets/style.css">
+<title>{esc(full_title)}</title>
+<meta name="description" content="{esc(description)}">
+<link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="{up}index.html">Kursmaterial</a>
-  <nav>
-{links}
-  </nav>
+  <a class="brand" href="/">{BRAND}</a>
+  <nav aria-label="Hauptmenü">{links}</nav>
 </header>
 <main>
-{body}
+{main}
 </main>
+<footer class="site-footer"><a href="/">{BRAND}</a> · <a href="/edv-kurs/">EDV-Kurs</a> · <a href="/artikel/">Artikel</a></footer>
+{scripts}
 </body>
 </html>
 """
 
 
-def build_articles():
-    entries = []
-    out_dir = DIST / "unterlagen"
-    out_dir.mkdir(parents=True, exist_ok=True)
-    for md in sorted(CONTENT.glob("*.md")):
-        meta = front_matter(md)
-        text = pandoc(str(md), "--from", "markdown", "--to", "plain", "--wrap=none")
-        words = len(text.split())
-        minutes = max(1, math.ceil(words / 180))
-        pandoc(str(md), "--from", "markdown", "--to", "html5", "--standalone",
-               "--template", str(TEMPLATES / "artikel.html"), "--toc", "--toc-depth=2",
-               "-M", f"lesezeit={minutes}", "-M", f"datum_anzeige={german_date(meta.get('datum'))}",
-               "-o", str(out_dir / f"{meta['slug']}.html"))
-        entries.append({
-            "slug": meta["slug"],
-            "titel": meta["title"],
-            "datum": str(meta.get("datum") or ""),
-            "datumAnzeige": german_date(meta.get("datum")),
-            "thema": meta["thema"],
-            "stichwoerter": meta.get("stichwoerter") or [],
-            "kurz": meta["kurz"],
-            # drop the ASCII table borders pandoc draws in plain text (----, ====, |)
-            "text": " ".join(re.sub(r"[-=+|]{3,}|\|", " ", text).split()),
-        })
-    entries.sort(key=lambda e: (e["datum"], e["titel"]), reverse=True)
-    return entries
+# ---------------------------------------------------------------- articles
+
+def load_articles():
+    themen = yaml.safe_load((SITE / "themen.yaml").read_text(encoding="utf-8"))
+    articles = []
+    for path in sorted((CONTENT / "artikel").glob("*.md")):
+        meta = read_meta(path)
+        require(path, meta, "title", "slug", "thema", "kurz", "quelle")
+        if meta["thema"] not in themen:
+            raise SystemExit(f"{path}: thema '{meta['thema']}' is not in site/themen.yaml (add it there first)")
+        datum = str(meta.get("datum") or "")
+        if datum:
+            date.fromisoformat(datum)  # raises on a malformed date
+        text = " ".join(re.sub(r"[-=+|]{3,}|\|", " ", pandoc(path, "plain")).split())  # drop ASCII table borders
+        articles.append({**meta, "datum": datum, "body": pandoc(path, "html5"), "text": text,
+                         "url": f"/artikel/{meta['slug']}/", "minuten": max(1, math.ceil(len(text.split()) / 180))})
+    slugs = [a["slug"] for a in articles]
+    if len(slugs) != len(set(slugs)):
+        raise SystemExit("duplicate article slugs")
+    articles.sort(key=lambda a: (a["datum"] == "", a["datum"], a["title"]))  # course order, undated last
+    return articles, themen
 
 
-LIST_SCRIPT = r"""
-const daten = JSON.parse(document.getElementById('daten').textContent);
-const feld = document.getElementById('suche');
-const liste = document.getElementById('liste');
-const zahl = document.getElementById('anzahl');
-const themen = document.getElementById('themen');
-// Same transform for text and query: lower case, umlauts and their ae/oe/ue spellings
-// folded together, so "abzuge", "abzüge" and "abzuege" all find "Abzüge".
-const norm = s => s.toLowerCase()
-  .replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/ü/g, 'u').replace(/ß/g, 'ss')
-  .replace(/ae/g, 'a').replace(/oe/g, 'o').replace(/ue/g, 'u')
-  .normalize('NFD').replace(/[̀-ͯ]/g, '');
-const esc = s => s.replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
-const markiere = (s, begriffe) => s.split(/(\s+)/).map(w =>
-  begriffe.length && begriffe.some(b => norm(w).includes(b)) ? '<mark>' + esc(w) + '</mark>' : esc(w)).join('');
-function ausschnitt(text, begriffe) {
-  const w = text.split(/\s+/);
-  const i = w.findIndex(x => begriffe.some(b => norm(x).includes(b)));
-  if (i < 0) return '';
-  const von = Math.max(0, i - 10), bis = Math.min(w.length, i + 14);
-  return (von > 0 ? '… ' : '') + markiere(w.slice(von, bis).join(' '), begriffe) + (bis < w.length ? ' …' : '');
-}
-let thema = '';
-function zeige() {
-  const begriffe = norm(feld.value).split(/\s+/).filter(Boolean);
-  const treffer = [];
-  for (const d of daten) {
-    if (thema && d.thema !== thema) continue;
-    const t = norm(d.titel), k = norm(d.kurz), s = norm(d.stichwoerter.join(' ')), x = norm(d.text);
-    let punkte = 0, alle = true;
-    for (const b of begriffe) {
-      const p = (t.includes(b) ? 5 : 0) + (s.includes(b) ? 3 : 0) + (k.includes(b) ? 2 : 0) + (x.includes(b) ? 1 : 0);
-      if (!p) { alle = false; break; }
-      punkte += p;
-    }
-    if (alle) treffer.push([punkte, d]);
-  }
-  if (begriffe.length) treffer.sort((a, b) => b[0] - a[0]);
-  zahl.textContent = treffer.length === 1 ? '1 Artikel' : treffer.length + ' Artikel';
-  liste.innerHTML = treffer.length ? treffer.map(([, d]) => {
-    const imText = begriffe.length && !begriffe.every(b => norm(d.titel + ' ' + d.kurz).includes(b));
-    return '<article class="card"><h2><a href="' + d.slug + '.html">' + markiere(d.titel, begriffe) + '</a></h2>'
-      + '<p class="meta">' + esc(d.thema) + (d.datumAnzeige ? ' · ' + d.datumAnzeige : '') + '</p>'
-      + '<p>' + markiere(d.kurz, begriffe) + '</p>'
-      + (imText ? '<p class="snippet">' + ausschnitt(d.text, begriffe) + '</p>' : '')
-      + '</article>';
-  }).join('') : '<p class="empty">Nichts gefunden. Versuchen Sie ein anderes Wort.</p>';
-}
-const alleThemen = [...new Set(daten.map(d => d.thema))].sort();
-themen.innerHTML = ['', ...alleThemen].map(t =>
-  '<li><button type="button" data-thema="' + esc(t) + '" aria-pressed="' + (t === '' ) + '">' + (t ? esc(t) : 'Alle Themen') + '</button></li>').join('');
-themen.addEventListener('click', e => {
-  const b = e.target.closest('button'); if (!b) return;
-  thema = b.dataset.thema;
-  themen.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
-  zeige();
-});
-feld.addEventListener('input', zeige);
-const q = new URLSearchParams(location.search).get('q');
-if (q) feld.value = q;
-zeige();
-"""
+def build_article_pages(articles):
+    for i, a in enumerate(articles):
+        related = [b for b in articles if b["thema"] == a["thema"] and b is not a][:5]
+        mehr = ""
+        if related:
+            items = "".join(f'<li><a href="{b["url"]}">{esc(b["title"])}</a></li>' for b in related)
+            mehr = (f'<section class="mehr"><h2>Mehr zum Thema „{esc(a["thema"])}“</h2><ul class="liste">{items}</ul>'
+                    f'<p><a href="{thema_link(a["thema"])}">Alle Artikel zum Thema</a></p></section>')
+        chips = "".join(f'<li><a href="/artikel/?q={quote(k)}">{esc(k)}</a></li>' for k in a.get("stichwoerter") or [])
+        meta_line = " · ".join(x for x in [esc(a["thema"]), datum_kurz(a["datum"]), f"ca. {a['minuten']} Min. Lesezeit"] if x)
+        nav = blaettern("Weitere Artikel", articles[i - 1] if i else None, articles[i + 1] if i + 1 < len(articles) else None,
+                        "Vorheriger Artikel", "Nächster Artikel")
+        main = f"""<p class="crumbs"><a href="/artikel/">Artikel</a> › <a href="{thema_link(a['thema'])}">{esc(a['thema'])}</a></p>
+<h1>{esc(a['title'])}</h1>
+<p class="meta">{meta_line}</p>
+{toc(a['body'])}
+<article class="inhalt">
+{a['body']}
+</article>
+<h2>Stichwörter</h2>
+<ul class="chips">{chips}</ul>
+{mehr}
+{nav}
+<p class="quelle">Grundlage: {esc(a['quelle'])}. Der Inhalt ist in eigenen Worten erklärt. Kästen mit „Ergänzung“ enthalten zusätzliche Informationen (Stand 2026, ohne Gewähr).</p>"""
+        write(f"artikel/{a['slug']}/index.html", layout(a["title"], "artikel", main, a["kurz"]))
 
 
-def build_list(entries):
-    data = json.dumps(entries, ensure_ascii=False).replace("</", "<\\/")
-    body = f"""  <h1>Unterlagen</h1>
-  <p class="meta">Alle Arbeitsblätter aus dem Kurs – in eigenen Worten erklärt.</p>
-  <input id="suche" class="search" type="search" placeholder="Suchen: Titel, Stichwort oder Text …" aria-label="Unterlagen durchsuchen" autocomplete="off">
-  <ul id="themen" class="chips" aria-label="Thema"></ul>
-  <p id="anzahl" class="count"></p>
-  <div id="liste"></div>
-  <noscript><ul>{"".join(f'<li><a href="{e["slug"]}.html">{html.escape(e["titel"])}</a></li>' for e in entries)}</ul></noscript>
-  <script id="daten" type="application/json">{data}</script>
-  <script>{LIST_SCRIPT}</script>"""
-    (DIST / "unterlagen" / "index.html").write_text(
-        page("Unterlagen – Kursmaterial", "unterlagen", body, 1, "Alle Arbeitsblätter aus dem Kurs, mit Suche."),
-        encoding="utf-8")
+def build_article_index(articles, themen):
+    data = [{"title": a["title"], "url": a["url"], "datum": a["datum"], "datumLang": datum_lang(a["datum"]),
+             "thema": a["thema"], "kurz": a["kurz"], "stichwoerter": a.get("stichwoerter") or [], "text": a["text"]}
+            for a in reversed(articles)]  # newest first
+    used = [t for t in themen if any(a["thema"] == t for a in articles)]
+    payload = json.dumps({"artikel": data, "themen": used}, ensure_ascii=False).replace("</", "<\\/")
+    fallback = "".join(f'<li><a href="{a["url"]}">{esc(a["title"])}</a></li>' for a in reversed(articles))
+    main = f"""<h1>Artikel</h1>
+<p class="lead">Arbeitsblätter aus dem Kurs – in eigenen Worten erklärt. {anzahl(len(articles), "Artikel", "Artikel")}.</p>
+<input id="suche" class="search" type="search" placeholder="Suchen: Titel, Stichwort oder Text …" aria-label="Artikel durchsuchen" autocomplete="off">
+<ul id="themen" class="chips" aria-label="Themen"></ul>
+<p id="anzahl" class="count" aria-live="polite"></p>
+<div id="liste"><ul class="liste">{fallback}</ul></div>
+<script id="daten" type="application/json">{payload}</script>"""
+    write("artikel/index.html", layout("Artikel", "artikel", main, "Alle Arbeitsblätter aus dem Kurs, mit Suche.",
+                                       '<script src="/assets/suche.js"></script>'))
 
 
-def build_static_pages(entries):
-    count = "1 Artikel" if len(entries) == 1 else f"{len(entries)} Artikel"
-    start = f"""  <h1>Kursmaterial</h1>
-  <p class="meta">Unterlagen und Übungen aus unserem Kurs – einfach erklärt.</p>
-  <article class="card"><h2><a href="bewerbung-auf-knopfdruck/index.html">Bewerbung auf Knopfdruck</a></h2>
-    <p>Serienbrief mit Excel und Word: Aus einer Liste werden mit einem Klick fertige Bewerbungsanschreiben.</p></article>
-  <article class="card"><h2><a href="unterlagen/index.html">Unterlagen</a></h2>
-    <p>Alle Arbeitsblätter aus dem Kurs als kurze Artikel – mit Suche. ({count})</p></article>"""
-    (DIST / "index.html").write_text(page("Kursmaterial", "start", start, 0), encoding="utf-8")
+# ---------------------------------------------------------------- lessons
 
-    lesson = """  <h1>Bewerbung auf Knopfdruck</h1>
-  <p class="meta">Serienbrief mit Excel und Word</p>
-  <p>Diese Seite wird gerade aufgebaut. Bald finden Sie hier die Anleitung und alle Dateien zum Herunterladen.</p>"""
-    (DIST / "bewerbung-auf-knopfdruck").mkdir(parents=True, exist_ok=True)
-    (DIST / "bewerbung-auf-knopfdruck" / "index.html").write_text(
-        page("Bewerbung auf Knopfdruck – Kursmaterial", "lektion", lesson, 1), encoding="utf-8")
+def load_lessons():
+    lessons = []
+    for path in sorted((CONTENT / "edv-kurs").glob("*.md")):
+        meta = read_meta(path)
+        require(path, meta, "title", "slug", "nummer", "kurz")
+        files = [x["datei"] for x in (meta.get("dateien") or []) + (meta.get("lehrkraft") or [])]
+        files += (meta.get("paket") or {}).get("dateien", [])
+        for f in files:
+            if not (REPO / f).is_file():
+                raise SystemExit(f"{path}: file not found: {f}")
+        lessons.append({**meta, "body": pandoc(path, "html5"), "url": f"/edv-kurs/{meta['slug']}/"})
+    lessons.sort(key=lambda l: l["nummer"])
+    return lessons
 
 
-def inline_css():
-    css = (ASSETS / "style.css").read_text(encoding="utf-8")
-    for f in DIST.rglob("*.html"):
-        s = f.read_text(encoding="utf-8")
-        s = re.sub(r'<link rel="stylesheet" href="[^"]*style\.css">', lambda _: f"<style>\n{css}</style>", s)
-        f.write_text(s, encoding="utf-8")
+def file_list(lesson, items):
+    rows = []
+    for item in items:
+        src = REPO / item["datei"]
+        dest = DIST / "edv-kurs" / lesson["slug"] / "dateien" / src.name
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(src, dest)
+        rows.append(f'<li><a href="dateien/{esc(src.name)}" download>{esc(item["titel"])}</a> '
+                    f'<span class="typ">{TYP.get(src.suffix, src.suffix)} · {groesse(src.stat().st_size)}</span>'
+                    f'<br><span class="hinweis">{esc(item.get("text", ""))}</span></li>')
+    return f'<ul class="dateiliste">{"".join(rows)}</ul>'
+
+
+def zip_button(lesson):
+    p = lesson.get("paket")
+    if not p:
+        return ""
+    zpath = DIST / "edv-kurs" / lesson["slug"] / "dateien" / p["name"]
+    zpath.parent.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as z:
+        for f in p["dateien"]:
+            z.write(REPO / f, Path(f).name)
+    return (f'<a class="btn" href="dateien/{esc(p["name"])}" download>{esc(p["titel"])} '
+            f'<span>ZIP · {groesse(zpath.stat().st_size)}</span></a>')
+
+
+def build_lessons(lessons):
+    for i, l in enumerate(lessons):
+        ziele = "".join(f"<li>{esc(z)}</li>" for z in l.get("ziele") or [])
+        ziele = f'<section class="ziele"><h2>Das lernen Sie</h2><ul>{ziele}</ul></section>' if ziele else ""
+        lehrkraft = ""
+        if l.get("lehrkraft"):
+            lehrkraft = f'<section class="lehrkraft"><h2>Für Lehrkräfte</h2>{file_list(l, l["lehrkraft"])}</section>'
+        nav = blaettern("Weitere Lektionen", lessons[i - 1] if i else None, lessons[i + 1] if i + 1 < len(lessons) else None,
+                        "Vorherige Lektion", "Nächste Lektion")
+        main = f"""<p class="crumbs"><a href="/edv-kurs/">EDV-Kurs</a> › Lektion {l['nummer']}</p>
+<h1>{esc(l['title'])}</h1>
+<p class="untertitel">{esc(l.get('untertitel', ''))}</p>
+<p class="meta">{lesson_meta(l)}</p>
+<p class="lead">{esc(l['kurz'])}</p>
+{ziele}
+<section class="downloads"><h2>Dateien</h2>
+{zip_button(l)}
+{file_list(l, l.get('dateien') or [])}
+</section>
+<div class="fortschritt" data-lektion="{esc(l['slug'])}" hidden>
+  <div class="balken"><span></span></div>
+  <p><span class="zahl"></span> <button type="button" class="reset">Zurücksetzen</button></p>
+</div>
+{toc(l['body'])}
+<article class="inhalt lektion">
+{l['body']}
+</article>
+{lehrkraft}
+{nav}"""
+        write(f"edv-kurs/{l['slug']}/index.html",
+              layout(l["title"], "kurs", main, l["kurz"], '<script src="/assets/lektion.js"></script>'))
+    bilder = CONTENT / "edv-kurs" / "bilder"
+    if bilder.is_dir():
+        shutil.copytree(bilder, DIST / "edv-kurs" / "bilder")
+
+
+def build_lesson_index(lessons):
+    cards = "".join(
+        f'<article class="card"><p class="meta">{lesson_meta(l)}</p>'
+        f'<h2><a href="{l["url"]}">{esc(l["title"])}</a></h2>'
+        f'<p><strong>{esc(l.get("untertitel", ""))}</strong></p><p>{esc(l["kurz"])}</p></article>'
+        for l in lessons)
+    main = f"""<h1>EDV-Kurs</h1>
+<p class="lead">Lektionen zum Mitmachen am Computer – Schritt für Schritt, mit Übungsdateien.</p>
+{cards}"""
+    write("edv-kurs/index.html", layout("EDV-Kurs", "kurs", main, "Lektionen zum Mitmachen am Computer."))
+
+
+# ---------------------------------------------------------------- start + 404
+
+def build_start(articles, lessons):
+    items = "".join(f'<li><a href="{a["url"]}">{esc(a["title"])}</a> <span class="badge">{esc(a["thema"])}</span></li>'
+                    for a in list(reversed(articles))[:5])
+    main = f"""<h1>{BRAND}</h1>
+<p class="lead">Unterlagen, Übungen und Anleitungen aus unserem Kurs – einfach erklärt.</p>
+<form class="startsuche" action="/artikel/" method="get" role="search">
+  <input class="search" type="search" name="q" placeholder="Artikel durchsuchen …" aria-label="Artikel durchsuchen">
+</form>
+<div class="bereiche">
+  <a class="bereich" href="/edv-kurs/"><strong>EDV-Kurs</strong><span>Lektionen zum Mitmachen am Computer</span><small>{anzahl(len(lessons), "Lektion", "Lektionen")}</small></a>
+  <a class="bereich" href="/artikel/"><strong>Artikel</strong><span>Arbeitsblätter aus dem Kurs, einfach erklärt</span><small>{anzahl(len(articles), "Artikel", "Artikel")}</small></a>
+</div>
+<h2>Neueste Artikel</h2>
+<ul class="liste">{items}</ul>
+<p><a href="/artikel/">Alle Artikel</a></p>"""
+    write("index.html", layout(BRAND, "start", main, "Unterlagen und Übungen aus unserem Kurs."))
+    write("404.html", layout("Seite nicht gefunden", "", """<h1>Seite nicht gefunden</h1>
+<p class="lead">Diese Seite gibt es nicht.</p>
+<p><a href="/">Startseite</a> · <a href="/edv-kurs/">EDV-Kurs</a> · <a href="/artikel/">Artikel</a></p>"""))
 
 
 def main():
     if DIST.exists():
         shutil.rmtree(DIST)
-    (DIST / "assets").mkdir(parents=True)
-    shutil.copy(ASSETS / "style.css", DIST / "assets" / "style.css")
-    entries = build_articles()
-    build_list(entries)
-    build_static_pages(entries)
-    if "--inline-css" in sys.argv:
-        inline_css()
-    print(f"built {len(entries)} article(s) into {DIST}")
+    shutil.copytree(SITE / "assets", DIST / "assets")
+    articles, themen = load_articles()
+    lessons = load_lessons()
+    build_article_pages(articles)
+    build_article_index(articles, themen)
+    build_lessons(lessons)
+    build_lesson_index(lessons)
+    build_start(articles, lessons)
+    print(f"built {len(articles)} article(s) and {len(lessons)} lesson(s) into {DIST}")
 
 
 if __name__ == "__main__":

@@ -139,7 +139,7 @@ jobs:
             if command -v curl >/dev/null; then curl -fsS -o /dev/null "$1"; else wget -q -O /dev/null "$1"; fi
           }
           for i in $(seq 1 20); do
-            if check http://127.0.0.1:8090/ && check http://127.0.0.1:8090/unterlagen/; then
+            if check http://127.0.0.1:8090/ && check http://127.0.0.1:8090/artikel/ && check http://127.0.0.1:8090/edv-kurs/; then
               echo "Site is up on 127.0.0.1:8090."
               exit 0
             fi

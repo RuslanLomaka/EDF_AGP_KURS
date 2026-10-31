@@ -15,36 +15,40 @@ Guidance for Claude (and other agents) working in this repository.
 
 ```
 site/
-  content/unterlagen/*.md   one article per course handout (YAML front matter + pandoc Markdown)
-  templates/artikel.html    pandoc template for articles
-  assets/style.css          the only stylesheet (light + dark mode)
-  build.py                  builds everything into site/dist/ (git-ignored)
-materials/serienbrief/      lesson kit "Bewerbung auf Knopfdruck" (Excel list + Word mail merge), see LIES_MICH.txt
-  generator/                scripts that rebuild every file of the kit
-docs/handoff-serienbrief.md full background of the mail-merge lesson: design decisions, gotchas, history
+  content/artikel/*.md        one article per course handout (YAML front matter + pandoc Markdown)
+  content/edv-kurs/*.md       interactive EDV lessons; content/edv-kurs/bilder/ holds their images
+  themen.yaml                 allowed article topics, in display order
+  assets/                     style.css (light + dark mode), suche.js (article list), lektion.js (lesson steps)
+  build.py                    builds everything into site/dist/ (git-ignored)
+materials/serienbrief/        files of lesson 1 (Excel list, Word mail-merge letters, handout, day plan)
+  generator/                  scripts that rebuild every file of that kit
+docs/handoff-serienbrief.md   background of lesson 1: design decisions and Office gotchas
 ```
 
-Site sections (top navigation): **Start · Bewerbung auf Knopfdruck · Unterlagen**.
+Site sections (top navigation, fixed at three items): **Start · EDV-Kurs · Artikel**.
+- `/edv-kurs/`: numbered lessons; `/edv-kurs/<slug>/` with downloads, checkable steps and progress (kept in the
+  visitor's browser), help and a self-test.
+- `/artikel/`: all articles with search (title, keywords, full text, umlaut-insensitive), topic filter and grouping
+  by class day; `/artikel/<slug>/` with table of contents, keywords, "Mehr zum Thema" and previous/next links.
 
 ## Build and check
 
 ```bash
 python3 site/build.py                # needs pandoc and PyYAML
-python3 site/build.py --inline-css   # self-contained pages, e.g. to send a single HTML file as a preview
+cd site/dist && python3 -m http.server 8000   # links are absolute (/artikel/...), so preview over HTTP
 ```
 
-Before committing, open the pages at phone width (390 px):
-- no horizontal scrolling;
-- the search on `unterlagen/index.html` finds words from the title, the keywords and the full text;
-- the search ignores umlauts: "abzuge", "abzüge" and "abzuege" all match "Abzüge".
+The build stops with a clear message on missing front matter, an unknown topic, a bad date, a duplicate slug or a
+missing download file. Before committing, check at phone width (390 px): no horizontal scrolling, search and topic
+filter work, lesson checkboxes work.
 
 ## Adding an article from photos (the main recurring task)
 
 The owner sends photos of a handout (often several per day; several pages can be ONE text with its exercises).
 1. Work out which pages belong together. If unsure, ask.
-2. Create `site/content/unterlagen/<slug>.md`. The slug is lowercase with hyphens and must equal the file name.
+2. Create `site/content/artikel/<slug>.md`. The slug is lowercase with hyphens and must equal the file name.
    Front matter fields:
-   - `title`, `slug`, `thema` (reuse existing topics, e.g. "Arbeit & Geld");
+   - `title`, `slug`, `thema` (must be listed in `site/themen.yaml`; reuse a topic, add one only if none fits);
    - `datum` (ISO `YYYY-MM-DD`, the class day; leave `""` and ask if unknown);
    - `stichwoerter` (list, used by the search);
    - `kurz` (1–2 sentences);
@@ -58,7 +62,15 @@ The owner sends photos of a handout (often several per day; several pages can be
      2026, ohne Gewähr" in the footer). Extend only within reason, not a Wikipedia article;
    - a "Wörter" glossary as a definition list (article + plural, simple explanation, example sentence);
    - "Fragen zum Text": the handout's questions as `<details><summary>question</summary>answer</details>`.
-5. Run the build, check the result at phone width, commit, push.
+5. Run the build, check the result at phone width, commit, push. Lists, search, topic filter, "Mehr zum Thema"
+   and previous/next links update automatically.
+
+## Adding a lesson
+
+Create `site/content/edv-kurs/<slug>.md` like `bewerbung-auf-knopfdruck.md`: front matter `title`, `slug`, `nummer`,
+`kurz`, optional `untertitel`, `dauer`, `niveau`, `ziele`, `dateien` / `lehrkraft` (download lists, paths from the repo
+root), `paket` (ZIP of several files). Steps go in `::: schritte` blocks (numbered list); boxes: `::: kurz`,
+`::: info`, `::: achtung`. Lesson files live under `materials/<lesson>/`.
 
 ## Hosting and CI/CD
 
@@ -69,7 +81,7 @@ behind a Cloudflare Tunnel. This site is live at **https://edv.ruslanlomaka.org*
   - **build** runs on every push and pull request: pandoc + PyYAML → `site/build.py` → release tarball.
   - **deploy** runs on pushes to `main` and manual runs only. It connects over Tailscale (tag `tag:ci`) + SSH,
     checks that port 8090 is free or already used by our container, uploads to `~/projects/kursmaterial` on the
-    Pi, runs `docker compose up -d --force-recreate`, and checks that 127.0.0.1:8090 answers.
+    Pi, runs `docker compose up -d --force-recreate`, and checks that `/`, `/artikel/` and `/edv-kurs/` answer on 127.0.0.1:8090.
   - Without all five secrets (`TS_OAUTH_CLIENT_ID`, `TS_OAUTH_SECRET`, `PI_HOST`, `PI_USER`, `PI_SSH_PRIVATE_KEY`)
     the deploy is skipped with a warning instead of failing.
 - `deploy/compose.yaml` (compose project `kursmaterial`, container `kursmaterial-web`, nginx on `127.0.0.1:8090`,
@@ -80,8 +92,5 @@ behind a Cloudflare Tunnel. This site is live at **https://edv.ruslanlomaka.org*
 
 ## Open points
 
-- The "Bewerbung auf Knopfdruck" page is still a placeholder. It should explain the lesson and offer the kit files
-  for download.
-- Ask the course teacher / supervisor before publishing materials made for the course; the kit's day plan names
-  "Job plus".
+- Ask the course teacher / supervisor before publishing materials made for the course; the day plan names "Job plus".
 - Class date of the article "Brutto und Netto" is unknown.
