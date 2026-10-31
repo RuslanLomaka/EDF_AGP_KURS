@@ -95,23 +95,23 @@ jobs:
             "$PI_HOST" "$PI_USER" > ~/.ssh/config
           chmod 600 ~/.ssh/config
 
-      # Before anything is changed on the Pi: port 8081 must be free or already ours.
-      - name: Check port 8081 on the Pi
+      # Before anything is changed on the Pi: port 8090 must be free or already ours.
+      - name: Check port 8090 on the Pi
         if: steps.secrets.outputs.ready == 'true'
         run: |
           ssh pi 'bash -s' <<'REMOTE'
           set -euo pipefail
-          listening="$(ss -Hltn 'sport = :8081')"
+          listening="$(ss -Hltn 'sport = :8090')"
           if [ -n "$listening" ]; then
             names="$(docker ps --format '{{.Names}}')"
             if grep -qx kursmaterial-web <<<"$names"; then
-              echo "Port 8081 is used by our own container (kursmaterial-web): OK."
+              echo "Port 8090 is used by our own container (kursmaterial-web): OK."
             else
-              echo "::error::Port 8081 on the Pi is used by another program. Nothing was changed."
+              echo "::error::Port 8090 on the Pi is used by another program. Nothing was changed."
               exit 1
             fi
           else
-            echo "Port 8081 is free."
+            echo "Port 8090 is free."
           fi
           REMOTE
 
@@ -139,13 +139,13 @@ jobs:
             if command -v curl >/dev/null; then curl -fsS -o /dev/null "$1"; else wget -q -O /dev/null "$1"; fi
           }
           for i in $(seq 1 20); do
-            if check http://127.0.0.1:8081/ && check http://127.0.0.1:8081/unterlagen/; then
-              echo "Site is up on 127.0.0.1:8081."
+            if check http://127.0.0.1:8090/ && check http://127.0.0.1:8090/unterlagen/; then
+              echo "Site is up on 127.0.0.1:8090."
               exit 0
             fi
             sleep 1
           done
-          echo "::error::The site does not answer on 127.0.0.1:8081."
+          echo "::error::The site does not answer on 127.0.0.1:8090."
           docker compose logs --tail=50
           exit 1
           REMOTE

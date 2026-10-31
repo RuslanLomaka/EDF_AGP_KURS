@@ -67,15 +67,17 @@ behind a Cloudflare Tunnel. This site will be **edv.ruslanlomaka.org**.
 - `.github/workflows/deploy.yml`:
   - **build** runs on every push and pull request: pandoc + PyYAML → `site/build.py` → release tarball.
   - **deploy** runs on pushes to `main` and manual runs only. It connects over Tailscale (tag `tag:ci`) + SSH,
-    checks that port 8081 is free or already used by our container, uploads to `~/projects/kursmaterial` on the
-    Pi, runs `docker compose up -d --force-recreate`, and checks that 127.0.0.1:8081 answers.
+    checks that port 8090 is free or already used by our container, uploads to `~/projects/kursmaterial` on the
+    Pi, runs `docker compose up -d --force-recreate`, and checks that 127.0.0.1:8090 answers.
   - Without all five secrets (`TS_OAUTH_CLIENT_ID`, `TS_OAUTH_SECRET`, `PI_HOST`, `PI_USER`, `PI_SSH_PRIVATE_KEY`)
     the deploy is skipped with a warning instead of failing.
-- `deploy/compose.yaml` (compose project `kursmaterial`, container `kursmaterial-web`, nginx on `127.0.0.1:8081`,
+- `deploy/compose.yaml` (compose project `kursmaterial`, container `kursmaterial-web`, nginx on `127.0.0.1:8090`,
   64 MB limit) and `deploy/nginx.conf`. Never touch the OnlineJavaSandbox stack on the Pi.
 - The previous version stays in `~/projects/kursmaterial/html.previous` on the Pi.
+- Ports already used on the Pi (do not reuse): 8080 (java), 5678 (n8n), 5000 (leads), 5433, 5672, 15672, and
+  **8081** (another local program). 8090 was checked free with `sudo ss -tlnp 'sport = :8090'`.
 - Cloudflare: a public hostname (published application route) on the existing tunnel, `edv.ruslanlomaka.org` →
-  `http://localhost:8081`. The owner adds it only after the first successful deploy.
+  `http://localhost:8090`. The owner adds it only after the first successful deploy.
 - The repo is public, so Actions logs are public. Never print secrets or host details in the logs.
 
 ## Open points
