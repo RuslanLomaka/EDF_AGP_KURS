@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$title$ – Kursmaterial</title>
+<meta name="description" content="$kurz$">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../index.html">Kursmaterial</a>
+  <nav>
+    <a href="../index.html">Start</a>
+    <a href="../bewerbung-auf-knopfdruck/index.html">Bewerbung auf Knopfdruck</a>
+    <a href="index.html" aria-current="page">Unterlagen</a>
+  </nav>
+</header>
+<main class="artikel">
+  <p class="crumbs"><a href="index.html">Unterlagen</a> › $thema$</p>
+  <h1>$title$</h1>
+  <p class="meta">$thema$$if(datum_anzeige)$ · $datum_anzeige$$endif$ · ca. $lesezeit$ Min. Lesezeit</p>
+$if(toc)$
+  <nav class="toc" aria-label="Inhalt"><details><summary>Inhalt</summary>
+$table-of-contents$
+  </details></nav>
+$endif$
+$body$
+  <h2>Stichwörter</h2>
+  <ul class="chips">
+$for(stichwoerter)$
+    <li><a href="index.html?q=$stichwoerter$">$stichwoerter$</a></li>
+$endfor$
+  </ul>
+  <footer class="quelle">Grundlage: $quelle$. Der Inhalt ist in eigenen Worten erklärt. Kästen mit „Ergänzung“ enthalten zusätzliche Informationen (Stand 2026, ohne Gewähr).</footer>
+</main>
+</body>
+</html>

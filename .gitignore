@@ -1,0 +1,7 @@
+# build output
+site/dist/
+__pycache__/
+*.pyc
+# files the kit generator writes next to its scripts
+materials/serienbrief/generator/*.png
+materials/serienbrief/generator/*.docx
