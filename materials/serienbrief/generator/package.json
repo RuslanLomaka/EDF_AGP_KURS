@@ -1,0 +1,8 @@
+{
+  "name": "serienbrief-kit-generator",
+  "private": true,
+  "description": "Builds the Word files of the Serienbrief lesson kit (see build_kit.sh)",
+  "dependencies": {
+    "docx": "9.7.1"
+  }
+}

@@ -5,3 +5,5 @@ __pycache__/
 # files the kit generator writes next to its scripts
 materials/serienbrief/generator/*.png
 materials/serienbrief/generator/*.docx
+# generator dependencies
+node_modules/
