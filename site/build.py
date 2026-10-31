@@ -157,8 +157,20 @@ def anzahl(n, eins, mehr):
     return f"1 {eins}" if n == 1 else f"{n} {mehr}"
 
 
+def thema_slug(thema):
+    s = thema.lower()
+    for a, b in (("ä", "ae"), ("ö", "oe"), ("ü", "ue"), ("ß", "ss"), ("&", " und ")):
+        s = s.replace(a, b)
+    return "-".join(re.findall(r"[a-z0-9]+", s))
+
+
 def thema_link(thema):
-    return f"/artikel/?thema={quote(thema)}"
+    return f"/artikel/thema/{thema_slug(thema)}/"
+
+
+def tag_kurz(iso):
+    d = date.fromisoformat(iso)
+    return f"{WOCHENTAGE[d.weekday()][:2]} {d.strftime('%d.%m.')}"
 
 
 def asset(name):
@@ -175,7 +187,7 @@ def toc(body_html):
     return f'<nav class="toc" aria-label="Inhalt"><details><summary>Inhalt</summary><ul>{items}</ul></details></nav>'
 
 
-def blaettern(label, prev, nxt, prev_small, next_small):
+def blaettern(label, prev, nxt, prev_small="", next_small=""):
     if not (prev or nxt):
         return ""
     left = f'<a class="zurueck" href="{prev["url"]}"><small>{prev_small}</small>{esc(prev["title"])}</a>' if prev else "<span></span>"
@@ -277,8 +289,11 @@ def build_article_pages(articles):
         nav = ""
         if a in dated:
             i = dated.index(a)
-            nav = blaettern("Weitere Artikel", dated[i - 1] if i else None, dated[i + 1] if i + 1 < len(dated) else None,
-                            "Vorheriger Artikel", "Nächster Artikel")
+            prev = dated[i - 1] if i else None
+            nxt = dated[i + 1] if i + 1 < len(dated) else None
+            nav = blaettern("Weitere Artikel", prev, nxt,
+                            f"Vorheriger Artikel · {tag_kurz(prev['datum'])}" if prev else "",
+                            f"Nächster Artikel · {tag_kurz(nxt['datum'])}" if nxt else "")
         chips = "".join(f'<li><a href="/artikel/?q={quote(k)}">{esc(k)}</a></li>' for k in a["stichwoerter"])
         stand = a["datum"][:4] if a["datum"] else str(date.today().year)
         meta_line = " · ".join(x for x in [esc(a["thema"]), datum_kurz(a["datum"]), f"ca. {a['minuten']} Min. Lesezeit"] if x)
@@ -305,24 +320,62 @@ def newest_first(articles):
     return dated + sorted((a for a in articles if not a["datum"]), key=lambda a: a["title"])
 
 
+def grouped_list(ordered, open_days, show_topic=True):
+    """Articles grouped by class day, each day foldable; the first `open_days` dated days start open."""
+    groups = []
+    for a in ordered:
+        if not groups or groups[-1][0] != a["datum"]:
+            groups.append((a["datum"], []))
+        groups[-1][1].append(a)
+    parts = []
+    for i, (datum, items) in enumerate(groups):
+        offen = " open" if open_days is None or (datum and i < open_days) else ""
+        rows = "".join(f'<li><a href="{a["url"]}">{esc(a["title"])}</a>'
+                       + (f' <span class="badge">{esc(a["thema"])}</span>' if show_topic else "") + "</li>" for a in items)
+        parts.append(f'<details class="tag"{offen}><summary>{esc(datum_lang(datum) or "Ohne Datum")} '
+                     f'<span class="zahl">({len(items)})</span></summary><ul class="liste">{rows}</ul></details>')
+    return "".join(parts)
+
+
+def topic_chips(articles, themen):
+    used = [t for t in themen if any(a["thema"] == t for a in articles)]
+    return used, "".join(f'<li><a href="{thema_link(t)}">{esc(t)} ({sum(a["thema"] == t for a in articles)})</a></li>'
+                         for t in used)
+
+
 def build_article_index(articles, themen):
     ordered = newest_first(articles)
+    # full texts live in their own file, loaded only when someone searches
+    volltext = json.dumps({a["url"]: a["text"] for a in ordered}, ensure_ascii=False)
+    write("artikel/suchindex.json", volltext)
+    volltext_url = f"/artikel/suchindex.json?v={hashlib.sha256(volltext.encode()).hexdigest()[:8]}"
     data = [{"title": a["title"], "url": a["url"], "datum": a["datum"], "datumLang": datum_lang(a["datum"]),
-             "thema": a["thema"], "kurz": a["kurz"], "stichwoerter": a["stichwoerter"], "text": a["text"]}
-            for a in ordered]
-    used = [t for t in themen if any(a["thema"] == t for a in articles)]
+             "thema": a["thema"], "kurz": a["kurz"], "stichwoerter": a["stichwoerter"]} for a in ordered]
+    used, chips = topic_chips(articles, themen)
     # every "<" escaped: no text can end the <script> element or switch the parser into script-escape mode
-    payload = json.dumps({"artikel": data, "themen": used}, ensure_ascii=False).replace("<", "\\u003c")
-    fallback = "".join(f'<li><a href="{a["url"]}">{esc(a["title"])}</a></li>' for a in ordered)
+    payload = json.dumps({"artikel": data, "themen": used, "volltext": volltext_url},
+                         ensure_ascii=False).replace("<", "\\u003c")
     main = f"""<h1>Artikel</h1>
-<p class="lead">Arbeitsblätter aus dem Kurs – in eigenen Worten erklärt. {anzahl(len(articles), "Artikel", "Artikel")}.</p>
+<p class="lead">Arbeitsblätter aus dem Kurs – einfach erklärt. {anzahl(len(articles), "Artikel", "Artikel")}.</p>
 <input id="suche" class="search" type="search" placeholder="Suchen: Titel, Stichwort oder Text …" aria-label="Artikel durchsuchen" autocomplete="off">
-<ul id="themen" class="chips" aria-label="Themen"></ul>
+<ul id="themen" class="chips themen" aria-label="Themen">{chips}</ul>
 <p id="anzahl" class="count" aria-live="polite"></p>
-<div id="liste"><ul class="liste">{fallback}</ul></div>
+<div id="liste">{grouped_list(ordered, open_days=2)}</div>
 <script id="daten" type="application/json">{payload}</script>"""
     write("artikel/index.html", layout("Artikel", "artikel", main, "Alle Arbeitsblätter aus dem Kurs, mit Suche.",
                                        ["suche.js"]))
+
+
+def build_topic_pages(articles, themen):
+    """One page per topic; works without JavaScript and is where article breadcrumbs point."""
+    for t in topic_chips(articles, themen)[0]:
+        items = [a for a in newest_first(articles) if a["thema"] == t]
+        main = f"""<p class="crumbs"><a href="/artikel/">Artikel</a> › Thema</p>
+<h1>{esc(t)}</h1>
+<p class="lead">{anzahl(len(items), "Artikel", "Artikel")} zu diesem Thema.</p>
+{grouped_list(items, open_days=None, show_topic=False)}
+<p><a href="/artikel/">Alle Artikel und Suche</a></p>"""
+        write(f"artikel/thema/{thema_slug(t)}/index.html", layout(t, "artikel", main, f"Alle Artikel zum Thema {t}."))
 
 
 # ---------------------------------------------------------------- lessons
@@ -405,6 +458,7 @@ def file_list(lesson, items):
         dl = "" if src.suffix.lower() == ".pdf" else " download"  # PDFs open in the browser
         rows.append(f'<li><a href="dateien/{src.name}"{dl}>{esc(item["titel"])}</a> '
                     f'<span class="typ">{esc(typ)} · {groesse(src.stat().st_size)}</span>'
+                    f'<br><span class="dateiname">{src.name}</span>'
                     f'<br><span class="hinweis">{esc(item["text"])}</span></li>')
     return f'<ul class="dateiliste">{"".join(rows)}</ul>'
 
@@ -430,7 +484,11 @@ def build_lessons(lessons):
         ziele = "".join(f"<li>{esc(z)}</li>" for z in l["ziele"])
         ziele = f'<section class="ziele"><h2>Das lernen Sie</h2><ul>{ziele}</ul></section>' if ziele else ""
         downloads = ""
-        if l["paket"] or l["dateien"]:
+        if l["paket"] and l["dateien"]:
+            downloads = (f'<section class="downloads"><h2>Dateien</h2>{zip_button(l)}'
+                         f'<details class="einzeln"><summary>Einzelne Dateien ({len(l["dateien"])})</summary>'
+                         f'{file_list(l, l["dateien"])}</details></section>')
+        elif l["paket"] or l["dateien"]:
             downloads = f'<section class="downloads"><h2>Dateien</h2>{zip_button(l)}{file_list(l, l["dateien"])}</section>'
         lehrkraft = ""
         if l["lehrkraft"]:
@@ -446,12 +504,13 @@ def build_lessons(lessons):
 {downloads}
 <div class="fortschritt" data-lektion="{l['slug']}" hidden>
   <div class="balken"><span></span></div>
-  <p><span class="zahl"></span> <button type="button" class="reset">Zurücksetzen</button></p>
+  <p class="zahl"></p>
 </div>
 {toc(l['body'])}
 <article class="inhalt lektion">
 {l['body']}
 </article>
+<p class="zuruecksetzen" hidden><button type="button" class="reset">Alle Haken entfernen</button></p>
 {lehrkraft}
 {nav}"""
         write(f"edv-kurs/{l['slug']}/index.html", layout(l["title"], "kurs", main, l["kurz"], ["lektion.js"]))
@@ -474,24 +533,36 @@ def build_lesson_index(lessons):
 
 # ---------------------------------------------------------------- start + 404
 
+SUCHFORMULAR = """<form class="startsuche" action="/artikel/" method="get" role="search">
+  <input class="search" type="search" name="q" placeholder="Artikel durchsuchen …" aria-label="Artikel durchsuchen">
+</form>"""
+
+
 def build_start(articles, lessons):
+    # the whole latest class day (up to ~10 handouts), not just a fixed number of articles
+    letzter = max((a["datum"] for a in articles if a["datum"]), default="")
+    if letzter:
+        neu = [a for a in newest_first(articles) if a["datum"] == letzter]
+        ueberschrift = f"Letzter Kurstag: {datum_lang(letzter)}"
+    else:
+        neu = newest_first(articles)[:5]
+        ueberschrift = "Neueste Artikel"
     items = "".join(f'<li><a href="{a["url"]}">{esc(a["title"])}</a> <span class="badge">{esc(a["thema"])}</span></li>'
-                    for a in newest_first(articles)[:5])
+                    for a in neu)
     main = f"""<h1>{BRAND}</h1>
 <p class="lead">Unterlagen, Übungen und Anleitungen aus unserem Kurs – einfach erklärt.</p>
-<form class="startsuche" action="/artikel/" method="get" role="search">
-  <input class="search" type="search" name="q" placeholder="Artikel durchsuchen …" aria-label="Artikel durchsuchen">
-</form>
+{SUCHFORMULAR}
 <div class="bereiche">
   <a class="bereich" href="/edv-kurs/"><strong>EDV-Kurs</strong><span>Lektionen zum Mitmachen am Computer</span><small>{anzahl(len(lessons), "Lektion", "Lektionen")}</small></a>
   <a class="bereich" href="/artikel/"><strong>Artikel</strong><span>Arbeitsblätter aus dem Kurs, einfach erklärt</span><small>{anzahl(len(articles), "Artikel", "Artikel")}</small></a>
 </div>
-<h2>Neueste Artikel</h2>
+<h2>{esc(ueberschrift)}</h2>
 <ul class="liste">{items}</ul>
 <p><a href="/artikel/">Alle Artikel</a></p>"""
     write("index.html", layout(BRAND, "start", main, "Unterlagen und Übungen aus unserem Kurs."))
-    write("404.html", layout("Seite nicht gefunden", "", """<h1>Seite nicht gefunden</h1>
-<p class="lead">Diese Seite gibt es nicht.</p>
+    write("404.html", layout("Seite nicht gefunden", "", f"""<h1>Seite nicht gefunden</h1>
+<p class="lead">Diese Seite gibt es nicht. Vielleicht finden Sie sie mit der Suche:</p>
+{SUCHFORMULAR}
 <p><a href="/">Startseite</a> · <a href="/edv-kurs/">EDV-Kurs</a> · <a href="/artikel/">Artikel</a></p>"""))
 
 
@@ -555,6 +626,7 @@ def main():
     lessons = load_lessons()
     build_article_pages(articles)
     build_article_index(articles, themen)
+    build_topic_pages(articles, themen)
     build_lessons(lessons)
     build_lesson_index(lessons)
     build_start(articles, lessons)

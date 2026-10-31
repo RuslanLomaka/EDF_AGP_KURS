@@ -50,12 +50,12 @@ lehrkraft:
 **Die Idee**
 
 - Was in **jedem Brief gleich** ist – Ihr Name, Ihre Adresse, der Gruß – schreiben Sie **einmal in Word**.
-- Was sich **ändert** – Firma, Adresse, Ansprechperson, Stelle – steht **in Excel**, eine Zeile pro Firma.
+- Was sich **ändert** – Firma, Adresse, Ansprechpartner, Stelle – steht **in Excel**, eine Zeile pro Firma.
 - Word holt die Daten aus Excel und macht daraus **fertige Briefe**. Das heißt **Serienbrief**.
 :::
 
 <div class="prinzip">
-<div><strong>Excel</strong>Firma, Ansprechperson, Adresse, Stelle<em>ändert sich</em></div>
+<div><strong>Excel</strong>Firma, Ansprechpartner, Adresse, Stelle<em>ändert sich</em></div>
 <div class="zeichen">+</div>
 <div><strong>Word</strong>Ihr Name, Ihre Adresse, Text, Gruß<em>bleibt gleich</em></div>
 <div class="zeichen">=</div>
@@ -66,18 +66,32 @@ lehrkraft:
 
 So sieht ein fertiger Brief aus. Kopf, Anschrift, Betreff und Anrede kommen automatisch – den Text in der Mitte schreiben Sie selbst.
 
+::: info
+**Das brauchen Sie**
+
+- einen **Windows-PC mit Microsoft Word und Excel** – ein Handy oder LibreOffice reicht dafür nicht
+- die **Übungsdateien** (oben: „Alle Übungsdateien herunterladen“)
+- 2 bis 5 **Stellenanzeigen** – oder Sie üben mit den Beispiel-Firmen
+- einen **USB-Stick** für Ihre Dateien
+:::
+
 ## Vorbereitung {#vorbereitung}
 
 ::: schritte
-1. Laden Sie oben die **Übungsdateien** herunter (ZIP).
-2. Rechtsklick auf die ZIP-Datei → **Alle extrahieren** → z. B. in den Ordner **Dokumente\\Bewerbung**.
-3. Die drei Dateien müssen im **gleichen Ordner** bleiben. Verschieben oder umbenennen Sie sie später nicht.
+1. Klicken Sie oben auf **Alle Übungsdateien herunterladen**. Die ZIP-Datei landet im Ordner **Downloads**.
+2. Öffnen Sie den **Explorer** (gelbes Ordner-Symbol unten in der Taskleiste) und dann links den Ordner **Downloads**.
+3. Rechtsklick auf **Serienbrief-Uebungsdateien** → **Alle extrahieren …** → **Extrahieren**. Ein neuer Ordner mit drei Dateien öffnet sich.
+4. Arbeiten Sie nur in diesem Ordner. Verschieben Sie die Dateien nicht. Benennen Sie sie nicht um.
+:::
+
+::: achtung
+**Ihre Daten:** Gleich tippen Sie Ihre eigenen Daten ein. Am Ende speichern Sie alles auf **Ihrem USB-Stick** oder schicken es **per E-Mail an sich selbst** – und löschen es dann vom Schulungs-PC.
 :::
 
 ## Teil 1 – Excel: die Adressliste {#excel}
 
 ::: schritte
-1. Öffnen Sie **Bewerbungsliste.xlsx** mit einem Doppelklick.
+1. Öffnen Sie die Datei **Bewerbungsliste** (grünes Excel-Symbol) mit einem Doppelklick.
 2. Steht oben ein gelber Balken **Geschützte Ansicht**? Klicken Sie auf **Bearbeitung aktivieren**.
 3. Schauen Sie die Liste an: Jede **Zeile** ist eine Firma. Jede **Spalte** ist eine Information.
 4. Überschreiben Sie die Beispiel-Firmen mit **Ihren** Stellenanzeigen. Füllen Sie nur die Spalten mit **blauer** Überschrift aus.
@@ -114,7 +128,7 @@ In den grauen Spalten stehen **Formeln**. Klicken Sie in eine graue Zelle – ob
 ## Teil 2 – Word: Ihr Brief {#word}
 
 ::: schritte
-1. Öffnen Sie **Anschreiben_Uebung.docx** (wenn nötig: **Bearbeitung aktivieren**).
+1. Öffnen Sie die Datei **Anschreiben_Uebung** (blaues Word-Symbol). Wenn nötig: **Bearbeitung aktivieren**.
 2. Machen Sie einen **Doppelklick oben** auf den Briefkopf (**Kopfzeile**). Ersetzen Sie **[Ihr Vorname Nachname]** und **[Ihre …]** durch Ihre Daten.
 3. Unten auf der Seite (**Fußzeile**): Telefon und E-Mail eintragen. Mit einem Doppelklick in den Brief kommen Sie zurück.
 4. Ersetzen Sie **[Ihr Wohnort]** vor dem Datum und **[Ihr Vorname Nachname]** unter dem Gruß.
@@ -133,7 +147,7 @@ In den grauen Spalten stehen **Formeln**. Klicken Sie in eine graue Zelle – ob
 ::: schritte
 1. Oben im Menüband: Registerkarte **Sendungen** → **Seriendruck starten** → **Briefe**.
 2. **Sendungen** → **Empfänger auswählen** → **Vorhandene Liste verwenden …**
-3. Wählen Sie **Bewerbungsliste.xlsx** → **Öffnen**.
+3. Wählen Sie die Datei **Bewerbungsliste** → **Öffnen**.
 4. Fenster **Tabelle auswählen**: **Bewerbungen$** anklicken. Der Haken bei **Erste Datenzeile enthält Spaltenüberschriften** muss gesetzt sein → **OK**.
 5. Jetzt passiert scheinbar nichts – **das ist richtig!** Word hat sich die Liste gemerkt. Der Test: Die Knöpfe **Seriendruckfeld einfügen** und **Vorschau Ergebnisse** sind nicht mehr grau.
 6. Markieren Sie im Brief **[Firma]** (mit den Klammern). Klicken Sie auf den **unteren Teil** des Knopfs **Seriendruckfeld einfügen** (kleiner Pfeil) → **Firma**. Jetzt steht dort **«Firma»**.
@@ -263,8 +277,9 @@ Firma in Excel eintragen, speichern, schließen. In Word mit **Vorschau Ergebnis
 
 </details>
 
-## Ihre Daten {#datenschutz}
+## Zum Schluss {#zum-schluss}
 
-::: achtung
-Speichern Sie Ihre Dateien auf **Ihrem USB-Stick** oder schicken Sie sie **per E-Mail an sich selbst**. Löschen Sie am Ende Ihre persönlichen Dateien vom Schulungs-PC.
+::: schritte
+1. Speichern Sie Ihre Dateien auf **Ihrem USB-Stick** oder schicken Sie sie **per E-Mail an sich selbst**.
+2. Löschen Sie Ihre Dateien vom Schulungs-PC – auch aus dem **Papierkorb**.
 :::
