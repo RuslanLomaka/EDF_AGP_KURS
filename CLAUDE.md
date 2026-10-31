@@ -9,6 +9,7 @@ Guidance for Claude (and other agents) working in this repository.
 - The owner writes to Claude in English or Ukrainian. **All site content is German, in simple language (about B1),
   formal "Sie".**
 - **This repository is PUBLIC.** Never commit secrets, real personal data, scans or photos of handouts.
+- Docs (this file, README, docs/) describe the current state only. Solved problems live in git history, not here.
 
 ## Layout
 
@@ -74,8 +75,6 @@ behind a Cloudflare Tunnel. This site will be **edv.ruslanlomaka.org**.
 - `deploy/compose.yaml` (compose project `kursmaterial`, container `kursmaterial-web`, nginx on `127.0.0.1:8090`,
   64 MB limit) and `deploy/nginx.conf`. Never touch the OnlineJavaSandbox stack on the Pi.
 - The previous version stays in `~/projects/kursmaterial/html.previous` on the Pi.
-- Ports already used on the Pi (do not reuse): 8080 (java), 5678 (n8n), 5000 (leads), 5433, 5672, 15672, and
-  **8081** (another local program). 8090 was checked free with `sudo ss -tlnp 'sport = :8090'`.
 - Cloudflare: a public hostname (published application route) on the existing tunnel, `edv.ruslanlomaka.org` →
   `http://localhost:8090`. The owner adds it only after the first successful deploy.
 - The repo is public, so Actions logs are public. Never print secrets or host details in the logs.
