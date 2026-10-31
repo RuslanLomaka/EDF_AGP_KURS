@@ -2,7 +2,6 @@ name: Build and deploy
 
 on:
   push:
-    branches: [main]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -10,19 +9,18 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: kursmaterial-deploy
-  cancel-in-progress: false
-
 jobs:
   build:
     name: Build site
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Install pandoc and PyYAML
-        run: sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends pandoc python3-yaml
+        run: |
+          sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends pandoc python3-yaml
+          pandoc --version | head -1
 
       - name: Build
         run: python3 site/build.py
@@ -34,7 +32,7 @@ jobs:
           cp deploy/compose.yaml deploy/nginx.conf release/
           tar -C release -czf release.tar.gz .
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: release
           path: release.tar.gz
@@ -44,31 +42,31 @@ jobs:
     name: Deploy to Raspberry Pi
     needs: build
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    # Only deploys queue here; builds of other branches and pull requests never cancel a waiting deploy.
+    concurrency:
+      group: kursmaterial-deploy
+      cancel-in-progress: false
     env:
       PI_HOST: ${{ secrets.PI_HOST }}
       PI_USER: ${{ secrets.PI_USER }}
     steps:
       - name: Check deploy secrets
-        id: secrets
         env:
           HAS_ALL: ${{ secrets.PI_HOST != '' && secrets.PI_USER != '' && secrets.PI_SSH_PRIVATE_KEY != '' && secrets.TS_OAUTH_CLIENT_ID != '' && secrets.TS_OAUTH_SECRET != '' }}
         run: |
-          if [ "$HAS_ALL" = "true" ]; then
-            echo "ready=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "ready=false" >> "$GITHUB_OUTPUT"
-            echo "::warning::Deploy skipped: not all repository secrets are set (PI_HOST, PI_USER, PI_SSH_PRIVATE_KEY, TS_OAUTH_CLIENT_ID, TS_OAUTH_SECRET)."
+          if [ "$HAS_ALL" != "true" ]; then
+            echo "::error::Not all repository secrets are set (PI_HOST, PI_USER, PI_SSH_PRIVATE_KEY, TS_OAUTH_CLIENT_ID, TS_OAUTH_SECRET)."
+            exit 1
           fi
 
-      - uses: actions/download-artifact@v4
-        if: steps.secrets.outputs.ready == 'true'
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: release
 
       - name: Connect GitHub runner to Tailscale
-        if: steps.secrets.outputs.ready == 'true'
-        uses: tailscale/github-action@v4
+        uses: tailscale/github-action@064b10558093f38325e838ddea35486bdc6b1d5c # v4.4.0
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
@@ -76,7 +74,6 @@ jobs:
           ping: ${{ secrets.PI_HOST }}
 
       - name: Configure SSH
-        if: steps.secrets.outputs.ready == 'true'
         env:
           PI_SSH_PRIVATE_KEY: ${{ secrets.PI_SSH_PRIVATE_KEY }}
         run: |
@@ -89,15 +86,19 @@ jobs:
             echo "::error::PI_SSH_PRIVATE_KEY is not a valid private key. Paste the whole content of the file kursmaterial_deploy (the one WITHOUT .pub), including the BEGIN and END lines."
             exit 1
           fi
-          ssh-keyscan -H "$PI_HOST" >> ~/.ssh/known_hosts
+          # stderr would print the Pi's SSH version into the public log
+          ssh-keyscan -H "$PI_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          if [ ! -s ~/.ssh/known_hosts ]; then
+            echo "::error::Could not read the Pi's SSH host key."
+            exit 1
+          fi
           chmod 600 ~/.ssh/known_hosts
-          printf 'Host pi\n  HostName %s\n  User %s\n  IdentityFile ~/.ssh/kursmaterial_deploy\n  BatchMode yes\n' \
+          printf 'Host pi\n  HostName %s\n  User %s\n  IdentityFile ~/.ssh/kursmaterial_deploy\n  BatchMode yes\n  ConnectTimeout 20\n  ServerAliveInterval 15\n  ServerAliveCountMax 4\n' \
             "$PI_HOST" "$PI_USER" > ~/.ssh/config
           chmod 600 ~/.ssh/config
 
       # Before anything is changed on the Pi: port 8090 must be free or already ours.
       - name: Check port 8090 on the Pi
-        if: steps.secrets.outputs.ready == 'true'
         run: |
           ssh pi 'bash -s' <<'REMOTE'
           set -euo pipefail
@@ -116,36 +117,54 @@ jobs:
           REMOTE
 
       - name: Upload release to the Pi
-        if: steps.secrets.outputs.ready == 'true'
         run: |
           ssh pi \
             'set -e; D="$HOME/projects/kursmaterial"; mkdir -p "$D"; rm -rf "$D/incoming"; mkdir "$D/incoming"; tar -xzf - -C "$D/incoming"' \
             < release.tar.gz
 
-      - name: Start new version and check it answers
-        if: steps.secrets.outputs.ready == 'true'
+      # If the new version does not answer, the previous one is restored and the job fails.
+      - name: Start new version, roll back if it does not answer
         run: |
           ssh pi 'bash -s' <<'REMOTE'
           set -euo pipefail
           D="$HOME/projects/kursmaterial"
           cd "$D"
-          rm -rf html.previous
-          if [ -d html ]; then mv html html.previous; fi
-          mv incoming/html html
-          mv incoming/compose.yaml incoming/nginx.conf .
-          rmdir incoming
-          docker compose up -d --force-recreate --remove-orphans
           check() {
             if command -v curl >/dev/null; then curl -fsS -o /dev/null "$1"; else wget -q -O /dev/null "$1"; fi
           }
-          for i in $(seq 1 20); do
-            if check http://127.0.0.1:8090/ && check http://127.0.0.1:8090/artikel/ && check http://127.0.0.1:8090/edv-kurs/; then
-              echo "Site is up on 127.0.0.1:8090."
-              exit 0
+          healthy() {
+            for i in $(seq 1 20); do
+              if check http://127.0.0.1:8090/ && check http://127.0.0.1:8090/artikel/ && check http://127.0.0.1:8090/edv-kurs/; then
+                return 0
+              fi
+              sleep 1
+            done
+            return 1
+          }
+          rm -rf html.previous compose.yaml.previous nginx.conf.previous
+          if [ -d html ]; then mv html html.previous; fi
+          if [ -f compose.yaml ]; then cp compose.yaml compose.yaml.previous; fi
+          if [ -f nginx.conf ]; then cp nginx.conf nginx.conf.previous; fi
+          mv incoming/html html
+          mv incoming/compose.yaml incoming/nginx.conf .
+          rmdir incoming
+          if docker compose up -d --force-recreate --remove-orphans --pull always && healthy; then
+            echo "Site is up on 127.0.0.1:8090."
+            exit 0
+          fi
+          echo "::error::The new version does not answer on 127.0.0.1:8090. Rolling back."
+          # startup errors only: access log lines would put visitors' IP addresses into the public log
+          docker compose logs --no-log-prefix 2>&1 | grep -E '\[(emerg|alert|crit)\]' | tail -20 || true
+          if [ -d html.previous ]; then
+            rm -rf html
+            mv html.previous html
+            if [ -f compose.yaml.previous ]; then mv compose.yaml.previous compose.yaml; fi
+            if [ -f nginx.conf.previous ]; then mv nginx.conf.previous nginx.conf; fi
+            if docker compose up -d --force-recreate --remove-orphans && healthy; then
+              echo "::error::Previous version restored. The new version was NOT deployed."
+            else
+              echo "::error::The previous version could not be restored either."
             fi
-            sleep 1
-          done
-          echo "::error::The site does not answer on 127.0.0.1:8090."
-          docker compose logs --tail=50
+          fi
           exit 1
           REMOTE
