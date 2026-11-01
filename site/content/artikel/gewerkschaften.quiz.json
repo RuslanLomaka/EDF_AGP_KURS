@@ -1,0 +1,268 @@
+{
+  "title": "Gewerkschaften",
+  "questions": [
+    {
+      "question": "Was ist eine Gewerkschaft?",
+      "answers": [
+        {
+          "text": "Eine Organisation von Arbeitnehmern",
+          "correct": true
+        },
+        {
+          "text": "Ein Amt des Staates",
+          "correct": false
+        },
+        {
+          "text": "Ein Zusammenschluss von Firmen",
+          "correct": false
+        }
+      ],
+      "explanation": "Ein Zusammenschluss von Firmen heißt Arbeitgeberverband.",
+      "sources": [
+        {
+          "title": "DGB: Mitglied werden",
+          "url": "https://www.dgb.de/mitmachen/mitglied-werden/"
+        }
+      ]
+    },
+    {
+      "question": "Warum schließen sich Arbeitnehmer in Gewerkschaften zusammen?",
+      "answers": [
+        {
+          "text": "Gemeinsam haben sie mehr Einfluss als allein",
+          "correct": true
+        },
+        {
+          "text": "Weil das Gesetz es vorschreibt",
+          "correct": false
+        },
+        {
+          "text": "Damit sie weniger Steuern zahlen",
+          "correct": false
+        }
+      ],
+      "explanation": "Eine einzelne Person hat beim Verhandeln wenig Einfluss, viele zusammen sind stärker.",
+      "sources": [
+        {
+          "title": "DGB: Mitglied werden",
+          "url": "https://www.dgb.de/mitmachen/mitglied-werden/"
+        }
+      ]
+    },
+    {
+      "question": "Was ist ein Tarifvertrag?",
+      "answers": [
+        {
+          "text": "Ein Vertrag zwischen Gewerkschaft und Arbeitgebern über Lohn, Arbeitszeit und Urlaub",
+          "correct": true
+        },
+        {
+          "text": "Der Mietvertrag für die Firma",
+          "correct": false
+        },
+        {
+          "text": "Ein Vertrag zwischen zwei Kollegen",
+          "correct": false
+        }
+      ],
+      "explanation": "Er ist verbindlich für alle, für die er gilt.",
+      "sources": [
+        {
+          "title": "DGB: Tarifvertrag",
+          "url": "https://www.dgb.de/service/ratgeber/tarifvertrag/"
+        }
+      ]
+    },
+    {
+      "question": "Für wen gilt ein Tarifvertrag nach dem Gesetz?",
+      "answers": [
+        {
+          "text": "Für die Mitglieder der Gewerkschaft bei tarifgebundenen Arbeitgebern",
+          "correct": true
+        },
+        {
+          "text": "Für alle Menschen in Deutschland",
+          "correct": false
+        },
+        {
+          "text": "Nur für den Chef",
+          "correct": false
+        }
+      ],
+      "explanation": "Viele Arbeitgeber wenden ihn aber freiwillig für alle Beschäftigten an. Das steht dann im Arbeitsvertrag.",
+      "sources": [
+        {
+          "title": "§ 3 Tarifvertragsgesetz",
+          "url": "https://www.gesetze-im-internet.de/tvg/__3.html"
+        },
+        {
+          "title": "DGB: Tarifvertrag",
+          "url": "https://www.dgb.de/service/ratgeber/tarifvertrag/"
+        }
+      ]
+    },
+    {
+      "question": "Was passiert bei einem Streik?",
+      "answers": [
+        {
+          "text": "Die Beschäftigten legen für eine Zeit die Arbeit nieder",
+          "correct": true
+        },
+        {
+          "text": "Die Firma wird für immer geschlossen",
+          "correct": false
+        },
+        {
+          "text": "Alle Beschäftigten bekommen mehr Lohn",
+          "correct": false
+        }
+      ],
+      "explanation": "Ein Streik ist nur unter rechtlichen Voraussetzungen erlaubt, z. B. muss eine Gewerkschaft dazu aufrufen.",
+      "sources": [
+        {
+          "title": "DGB: Streikrecht",
+          "url": "https://www.dgb.de/service/ratgeber/streikrecht/"
+        }
+      ]
+    },
+    {
+      "question": "Wer zahlt Geld an Gewerkschaftsmitglieder, die streiken?",
+      "answers": [
+        {
+          "text": "Die Gewerkschaft zahlt Streikgeld",
+          "correct": true
+        },
+        {
+          "text": "Der Arbeitgeber zahlt den Lohn weiter",
+          "correct": false
+        },
+        {
+          "text": "Die Agentur für Arbeit",
+          "correct": false
+        }
+      ],
+      "explanation": "Während des Streiks zahlt der Arbeitgeber keinen Lohn.",
+      "sources": [
+        {
+          "title": "DGB: Streikrecht",
+          "url": "https://www.dgb.de/service/ratgeber/streikrecht/"
+        }
+      ]
+    },
+    {
+      "question": "Wer darf in Deutschland nicht streiken?",
+      "answers": [
+        {
+          "text": "Beamtinnen und Beamte",
+          "correct": true
+        },
+        {
+          "text": "Teilzeitkräfte",
+          "correct": false
+        },
+        {
+          "text": "Frauen über 50",
+          "correct": false
+        }
+      ],
+      "explanation": "Für Beamte gibt es ein Streikverbot.",
+      "sources": [
+        {
+          "title": "DGB: Streikrecht",
+          "url": "https://www.dgb.de/service/ratgeber/streikrecht/"
+        }
+      ]
+    },
+    {
+      "question": "Wie hoch ist der Mitgliedsbeitrag meistens?",
+      "answers": [
+        {
+          "text": "Etwa 1 Prozent vom monatlichen Bruttolohn",
+          "correct": true
+        },
+        {
+          "text": "10 Prozent vom Nettolohn",
+          "correct": false
+        },
+        {
+          "text": "Immer 100 Euro im Monat",
+          "correct": false
+        }
+      ],
+      "explanation": "Wer weniger verdient, zahlt weniger. Den genauen Betrag legt jede Gewerkschaft fest.",
+      "sources": [
+        {
+          "title": "DGB: Mitglied werden",
+          "url": "https://www.dgb.de/mitmachen/mitglied-werden/"
+        }
+      ]
+    },
+    {
+      "question": "Wo steht das Recht, eine Gewerkschaft zu gründen oder beizutreten?",
+      "answers": [
+        {
+          "text": "Im Grundgesetz, Artikel 9",
+          "correct": true
+        },
+        {
+          "text": "Im Arbeitsvertrag",
+          "correct": false
+        },
+        {
+          "text": "Im Mietrecht",
+          "correct": false
+        }
+      ],
+      "explanation": "Dieses Recht heißt Koalitionsfreiheit und gilt für alle Berufe.",
+      "sources": [
+        {
+          "title": "Grundgesetz, Artikel 9",
+          "url": "https://www.gesetze-im-internet.de/gg/art_9.html"
+        }
+      ]
+    },
+    {
+      "question": "Was ist der Unterschied zwischen Gewerkschaft und Betriebsrat?",
+      "answers": [
+        {
+          "text": "Den Betriebsrat wählen die Beschäftigten einer Firma, die Gewerkschaft ist eine Organisation außerhalb",
+          "correct": true
+        },
+        {
+          "text": "Es gibt keinen Unterschied",
+          "correct": false
+        },
+        {
+          "text": "Der Betriebsrat ist eine Abteilung der Gewerkschaft",
+          "correct": false
+        }
+      ],
+      "explanation": "Einen Betriebsrat kann man in Firmen mit mindestens 5 Beschäftigten wählen.",
+      "sources": [
+        {
+          "title": "§ 1 Betriebsverfassungsgesetz",
+          "url": "https://www.gesetze-im-internet.de/betrvg/__1.html"
+        }
+      ]
+    },
+    {
+      "question": "Warum entstanden im 19. Jahrhundert die ersten Gewerkschaften?",
+      "answers": [
+        {
+          "text": "Wegen langer Arbeitstage, wenig Lohn und Kinderarbeit in den Fabriken",
+          "correct": true
+        },
+        {
+          "text": "Weil die Fabriken zu wenig Arbeit hatten",
+          "correct": false
+        },
+        {
+          "text": "Weil der Staat es befohlen hat",
+          "correct": false
+        }
+      ],
+      "explanation": "Die Arbeiter schlossen sich zusammen, um bessere Bedingungen durchzusetzen.",
+      "sources": []
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "title": "Kündigung – einfach erklärt",
+  "questions": [
+    {
+      "question": "Was ist typisch für eine ordentliche Kündigung?",
+      "answers": [
+        {
+          "text": "Es gilt eine Kündigungsfrist",
+          "correct": true
+        },
+        {
+          "text": "Sie gilt immer sofort",
+          "correct": false
+        },
+        {
+          "text": "Sie braucht die Zustimmung des Arbeitsgerichts",
+          "correct": false
+        }
+      ],
+      "explanation": "Man arbeitet bis zum Ende der Frist weiter und bekommt in dieser Zeit Lohn.",
+      "sources": [
+        {
+          "title": "§ 622 BGB – Kündigungsfristen",
+          "url": "https://www.gesetze-im-internet.de/bgb/__622.html"
+        }
+      ]
+    },
+    {
+      "question": "Was braucht man für eine fristlose Kündigung?",
+      "answers": [
+        {
+          "text": "Einen wichtigen Grund",
+          "correct": true
+        },
+        {
+          "text": "Nur eine kurze E-Mail",
+          "correct": false
+        },
+        {
+          "text": "Die Zustimmung aller Kollegen",
+          "correct": false
+        }
+      ],
+      "explanation": "Es muss so schlimm sein, dass man nicht bis zum Ende der normalen Frist weiterarbeiten kann, z. B. Diebstahl.",
+      "sources": [
+        {
+          "title": "§ 626 BGB – Fristlose Kündigung",
+          "url": "https://www.gesetze-im-internet.de/bgb/__626.html"
+        }
+      ]
+    },
+    {
+      "question": "Eine Firma hat zu wenig Aufträge und streicht Stellen. Wie heißt diese Kündigung?",
+      "answers": [
+        {
+          "text": "Betriebsbedingte Kündigung",
+          "correct": true
+        },
+        {
+          "text": "Verhaltensbedingte Kündigung",
+          "correct": false
+        },
+        {
+          "text": "Personenbedingte Kündigung",
+          "correct": false
+        }
+      ],
+      "explanation": "Die Firma braucht die Stelle nicht mehr – der Grund liegt im Betrieb.",
+      "sources": [
+        {
+          "title": "Kündigungsschutzgesetz",
+          "url": "https://www.gesetze-im-internet.de/kschg/"
+        }
+      ]
+    },
+    {
+      "question": "Was kommt bei einer verhaltensbedingten Kündigung meistens vorher?",
+      "answers": [
+        {
+          "text": "Eine Abmahnung",
+          "correct": true
+        },
+        {
+          "text": "Eine Gehaltserhöhung",
+          "correct": false
+        },
+        {
+          "text": "Ein Brief vom Arbeitsamt",
+          "correct": false
+        }
+      ],
+      "explanation": "Die Abmahnung ist eine Warnung: Wenn das noch einmal passiert, droht die Kündigung.",
+      "sources": [
+        {
+          "title": "Kündigungsschutzgesetz",
+          "url": "https://www.gesetze-im-internet.de/kschg/"
+        }
+      ]
+    },
+    {
+      "question": "Wie muss eine Kündigung aussehen, damit sie gültig ist?",
+      "answers": [
+        {
+          "text": "Auf Papier und mit der Hand unterschrieben",
+          "correct": true
+        },
+        {
+          "text": "Eine E-Mail reicht",
+          "correct": false
+        },
+        {
+          "text": "Ein Anruf reicht",
+          "correct": false
+        }
+      ],
+      "explanation": "Kündigungen per E-Mail, SMS, WhatsApp oder mündlich sind ungültig.",
+      "sources": [
+        {
+          "title": "§ 623 BGB – Schriftform",
+          "url": "https://www.gesetze-im-internet.de/bgb/__623.html"
+        }
+      ]
+    },
+    {
+      "question": "Was bedeutet Betriebszugehörigkeit?",
+      "answers": [
+        {
+          "text": "Wie lange man schon bei derselben Firma arbeitet",
+          "correct": true
+        },
+        {
+          "text": "Wie viele Mitarbeiter eine Firma hat",
+          "correct": false
+        },
+        {
+          "text": "Ob man im Betriebsrat ist",
+          "correct": false
+        }
+      ],
+      "explanation": "Je länger die Betriebszugehörigkeit, desto länger die Frist, wenn der Arbeitgeber kündigt.",
+      "sources": [
+        {
+          "title": "§ 622 BGB – Kündigungsfristen",
+          "url": "https://www.gesetze-im-internet.de/bgb/__622.html"
+        }
+      ]
+    },
+    {
+      "question": "Sie arbeiten seit 6 Jahren in der Firma. Wie lang ist die Frist, wenn der Arbeitgeber kündigt?",
+      "answers": [
+        {
+          "text": "2 Monate zum Monatsende",
+          "correct": true
+        },
+        {
+          "text": "4 Wochen zum 15. oder Monatsende",
+          "correct": false
+        },
+        {
+          "text": "6 Monate zum Monatsende",
+          "correct": false
+        }
+      ],
+      "explanation": "Ab 5 Jahren gilt 2 Monate, ab 8 Jahren 3 Monate zum Monatsende.",
+      "sources": [
+        {
+          "title": "§ 622 BGB – Kündigungsfristen",
+          "url": "https://www.gesetze-im-internet.de/bgb/__622.html"
+        }
+      ]
+    },
+    {
+      "question": "Wie lang ist die Kündigungsfrist in der Probezeit?",
+      "answers": [
+        {
+          "text": "2 Wochen",
+          "correct": true
+        },
+        {
+          "text": "3 Monate",
+          "correct": false
+        },
+        {
+          "text": "1 Tag",
+          "correct": false
+        }
+      ],
+      "explanation": "Die Probezeit dauert höchstens 6 Monate. Beide Seiten können dann mit 2 Wochen Frist kündigen.",
+      "sources": [
+        {
+          "title": "§ 622 BGB – Kündigungsfristen",
+          "url": "https://www.gesetze-im-internet.de/bgb/__622.html"
+        }
+      ]
+    },
+    {
+      "question": "Wer muss vor der Kündigung eines schwerbehinderten Menschen meistens zustimmen?",
+      "answers": [
+        {
+          "text": "Das Integrationsamt",
+          "correct": true
+        },
+        {
+          "text": "Die Krankenkasse",
+          "correct": false
+        },
+        {
+          "text": "Das Finanzamt",
+          "correct": false
+        }
+      ],
+      "explanation": "Schwerbehinderte Menschen haben besonderen Kündigungsschutz.",
+      "sources": [
+        {
+          "title": "§ 168 SGB IX",
+          "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__168.html"
+        }
+      ]
+    },
+    {
+      "question": "Innerhalb welcher Zeit müssen Sie gegen eine Kündigung klagen?",
+      "answers": [
+        {
+          "text": "Innerhalb von 3 Wochen",
+          "correct": true
+        },
+        {
+          "text": "Innerhalb von 1 Jahr",
+          "correct": false
+        },
+        {
+          "text": "Es gibt keine Frist",
+          "correct": false
+        }
+      ],
+      "explanation": "Nach 3 Wochen gilt die Kündigung meistens als gültig.",
+      "sources": [
+        {
+          "title": "Kündigungsschutzgesetz",
+          "url": "https://www.gesetze-im-internet.de/kschg/"
+        }
+      ]
+    },
+    {
+      "question": "Ihr Job endet in einem Monat. Bis wann müssen Sie sich bei der Agentur für Arbeit melden?",
+      "answers": [
+        {
+          "text": "Innerhalb von 3 Tagen, nachdem Sie davon erfahren haben",
+          "correct": true
+        },
+        {
+          "text": "Erst am ersten Tag ohne Arbeit",
+          "correct": false
+        },
+        {
+          "text": "Innerhalb von 3 Monaten nach dem letzten Arbeitstag",
+          "correct": false
+        }
+      ],
+      "explanation": "Wer sich zu spät meldet, bekommt eine Woche lang kein Arbeitslosengeld.",
+      "sources": [
+        {
+          "title": "§ 38 SGB III – Arbeitsuchend melden",
+          "url": "https://www.gesetze-im-internet.de/sgb_3/__38.html"
+        },
+        {
+          "title": "§ 159 SGB III – Sperrzeit",
+          "url": "https://www.gesetze-im-internet.de/sgb_3/__159.html"
+        }
+      ]
+    }
+  ]
+}

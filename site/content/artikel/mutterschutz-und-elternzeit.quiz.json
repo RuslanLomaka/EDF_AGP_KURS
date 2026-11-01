@@ -1,0 +1,277 @@
+{
+  "title": "Mutterschutz und Elternzeit",
+  "questions": [
+    {
+      "question": "Wie lange dauert der Mutterschutz normalerweise?",
+      "answers": [
+        {
+          "text": "6 Wochen vor dem Geburtstermin bis 8 Wochen nach der Geburt",
+          "correct": true
+        },
+        {
+          "text": "4 Wochen vor bis 4 Wochen nach der Geburt",
+          "correct": false
+        },
+        {
+          "text": "Nur 8 Wochen nach der Geburt",
+          "correct": false
+        }
+      ],
+      "explanation": "Vor der Geburt gilt die Schutzfrist 6 Wochen, nach der Geburt 8 Wochen.",
+      "sources": [
+        {
+          "title": "Mutterschutzgesetz (MuSchG)",
+          "url": "https://www.gesetze-im-internet.de/muschg_2018/"
+        }
+      ]
+    },
+    {
+      "question": "Darf eine Frau in den 8 Wochen nach der Geburt arbeiten, wenn sie es möchte?",
+      "answers": [
+        {
+          "text": "Nein, nach der Geburt gilt ein Beschäftigungsverbot",
+          "correct": true
+        },
+        {
+          "text": "Ja, wenn sie es schriftlich erklärt",
+          "correct": false
+        },
+        {
+          "text": "Ja, aber nur halbtags",
+          "correct": false
+        }
+      ],
+      "explanation": "Nur vor der Geburt darf sie auf eigenen Wunsch arbeiten. Nach der Geburt darf der Arbeitgeber sie nicht beschäftigen.",
+      "sources": [
+        {
+          "title": "Mutterschutzgesetz (MuSchG)",
+          "url": "https://www.gesetze-im-internet.de/muschg_2018/"
+        }
+      ]
+    },
+    {
+      "question": "Wie viel Geld bekommt eine Angestellte im Mutterschutz?",
+      "answers": [
+        {
+          "text": "Ihr volles Netto: Mutterschaftsgeld plus Zuschuss vom Arbeitgeber",
+          "correct": true
+        },
+        {
+          "text": "Kein Geld, die Zeit ist unbezahlt",
+          "correct": false
+        },
+        {
+          "text": "Die Hälfte ihres Bruttogehalts",
+          "correct": false
+        }
+      ],
+      "explanation": "Die Krankenkasse zahlt bis zu 13 Euro pro Tag, der Arbeitgeber zahlt den Rest bis zum Netto.",
+      "sources": [
+        {
+          "title": "Mutterschutzgesetz (MuSchG)",
+          "url": "https://www.gesetze-im-internet.de/muschg_2018/"
+        }
+      ]
+    },
+    {
+      "question": "Von wann bis wann ist eine Frau besonders vor einer Kündigung geschützt?",
+      "answers": [
+        {
+          "text": "Ab Beginn der Schwangerschaft bis mindestens 4 Monate nach der Geburt",
+          "correct": true
+        },
+        {
+          "text": "Erst ab dem Mutterschutz bis zur Geburt",
+          "correct": false
+        },
+        {
+          "text": "Nur während der Elternzeit",
+          "correct": false
+        }
+      ],
+      "explanation": "Eine Kündigung ist in dieser Zeit nur in seltenen Ausnahmen mit Zustimmung einer Behörde möglich.",
+      "sources": [
+        {
+          "title": "Mutterschutzgesetz (MuSchG)",
+          "url": "https://www.gesetze-im-internet.de/muschg_2018/"
+        }
+      ]
+    },
+    {
+      "question": "Wer hat das Recht auf Elternzeit?",
+      "answers": [
+        {
+          "text": "Mütter und Väter",
+          "correct": true
+        },
+        {
+          "text": "Nur Mütter",
+          "correct": false
+        },
+        {
+          "text": "Nur Eltern mit mehr als einem Kind",
+          "correct": false
+        }
+      ],
+      "explanation": "Jeder Elternteil kann Elternzeit nehmen, allein oder gleichzeitig mit dem anderen.",
+      "sources": [
+        {
+          "title": "Bundeselterngeld- und Elternzeitgesetz (BEEG)",
+          "url": "https://www.gesetze-im-internet.de/beeg/"
+        },
+        {
+          "title": "Elternzeit (Familienportal)",
+          "url": "https://familienportal.de/familienportal/familienleistungen/elternzeit"
+        }
+      ]
+    },
+    {
+      "question": "Wie lange kann jeder Elternteil höchstens Elternzeit nehmen?",
+      "answers": [
+        {
+          "text": "Bis zu 3 Jahre pro Kind",
+          "correct": true
+        },
+        {
+          "text": "Bis zu 1 Jahr pro Kind",
+          "correct": false
+        },
+        {
+          "text": "Bis zu 6 Monate pro Kind",
+          "correct": false
+        }
+      ],
+      "explanation": "Die Elternzeit ist möglich, bis das Kind 8 Jahre alt ist.",
+      "sources": [
+        {
+          "title": "Bundeselterngeld- und Elternzeitgesetz (BEEG)",
+          "url": "https://www.gesetze-im-internet.de/beeg/"
+        }
+      ]
+    },
+    {
+      "question": "Wie lange vorher müssen Sie die Elternzeit beim Arbeitgeber anmelden?",
+      "answers": [
+        {
+          "text": "Spätestens 7 Wochen vor dem Beginn",
+          "correct": true
+        },
+        {
+          "text": "Spätestens 1 Woche vorher",
+          "correct": false
+        },
+        {
+          "text": "Spätestens 6 Monate vorher",
+          "correct": false
+        }
+      ],
+      "explanation": "Für Elternzeit zwischen dem 3. und 8. Geburtstag des Kindes gilt eine Frist von 13 Wochen.",
+      "sources": [
+        {
+          "title": "Bundeselterngeld- und Elternzeitgesetz (BEEG)",
+          "url": "https://www.gesetze-im-internet.de/beeg/"
+        }
+      ]
+    },
+    {
+      "question": "Wer zahlt das Elterngeld?",
+      "answers": [
+        {
+          "text": "Der Staat",
+          "correct": true
+        },
+        {
+          "text": "Der Arbeitgeber",
+          "correct": false
+        },
+        {
+          "text": "Die Gewerkschaft",
+          "correct": false
+        }
+      ],
+      "explanation": "Elterngeld ist eine staatliche Leistung. Man beantragt es bei der Elterngeldstelle.",
+      "sources": [
+        {
+          "title": "Elterngeld (Familienportal)",
+          "url": "https://familienportal.de/familienportal/familienleistungen/elterngeld"
+        }
+      ]
+    },
+    {
+      "question": "Wie hoch ist das Elterngeld meistens?",
+      "answers": [
+        {
+          "text": "65 bis 67 Prozent vom Netto, das nach der Geburt wegfällt",
+          "correct": true
+        },
+        {
+          "text": "100 Prozent vom Bruttogehalt",
+          "correct": false
+        },
+        {
+          "text": "Immer genau 300 Euro",
+          "correct": false
+        }
+      ],
+      "explanation": "Es ist mindestens 300 Euro und höchstens 1.800 Euro im Monat.",
+      "sources": [
+        {
+          "title": "Bundeselterngeld- und Elternzeitgesetz (BEEG)",
+          "url": "https://www.gesetze-im-internet.de/beeg/"
+        },
+        {
+          "title": "Elterngeld (Familienportal)",
+          "url": "https://familienportal.de/familienportal/familienleistungen/elterngeld"
+        }
+      ]
+    },
+    {
+      "question": "Für wen ist ElterngeldPlus besonders gedacht?",
+      "answers": [
+        {
+          "text": "Für Eltern, die in der Elternzeit Teilzeit arbeiten",
+          "correct": true
+        },
+        {
+          "text": "Für Eltern mit sehr hohem Einkommen",
+          "correct": false
+        },
+        {
+          "text": "Für Großeltern",
+          "correct": false
+        }
+      ],
+      "explanation": "ElterngeldPlus ist pro Monat weniger, dafür bekommt man es länger.",
+      "sources": [
+        {
+          "title": "Elterngeld (Familienportal)",
+          "url": "https://familienportal.de/familienportal/familienleistungen/elterngeld"
+        }
+      ]
+    },
+    {
+      "question": "Welchen Arbeitsplatz bekommen Sie nach der Elternzeit?",
+      "answers": [
+        {
+          "text": "Den früheren oder einen gleichwertigen, nicht schlechter bezahlten",
+          "correct": true
+        },
+        {
+          "text": "Irgendeinen freien Platz, auch mit weniger Lohn",
+          "correct": false
+        },
+        {
+          "text": "Keinen, der Vertrag endet mit der Elternzeit",
+          "correct": false
+        }
+      ],
+      "explanation": "Der Arbeitsvertrag ruht nur. Danach muss die Stelle zu Ihrer Qualifikation passen und gleich bezahlt sein.",
+      "sources": [
+        {
+          "title": "Elternzeit (Familienportal)",
+          "url": "https://familienportal.de/familienportal/familienleistungen/elternzeit"
+        }
+      ]
+    }
+  ]
+}
