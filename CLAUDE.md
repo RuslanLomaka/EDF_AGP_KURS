@@ -21,9 +21,12 @@ site/
   content/artikel/bilder/     article images (served at /artikel/bilder/)
   content/edv-kurs/*.md       interactive lessons; content/edv-kurs/bilder/ holds their images
   themen.yaml                 allowed article topics, in display order
-  assets/                     style.css, suche.js (article list + search), lektion.js (lesson steps)
+  content/artikel/*.quiz.json  one quiz per article (Quiz Forger JSON format)
+  assets/                     style.css, suche.js (article list + search), lektion.js (lesson steps),
+                              quiz.js (article quizzes), hinweis.js (privacy notice once per visit)
   build.py                    builds everything into site/dist/ (git-ignored) and checks it
 materials/serienbrief/        files of lesson 1; README.md explains them; generator/build_kit.sh rebuilds them
+entwuerfe/                    own-words notes on handouts not yet turned into articles (not published)
 deploy/                       compose.yaml + nginx.conf for the web server on the Pi
 .github/workflows/deploy.yml  build on every push, deploy from main
 ```
@@ -36,7 +39,9 @@ Top navigation, fixed at three items: **Start · EDV-Kurs · Artikel**.
   browser), help, self-test, files for teachers.
 - `/artikel/`: search (title, keywords, summary, full text; umlaut-insensitive; full texts load from
   `suchindex.json` on the first search), topic filter, class days as foldable groups (latest two open).
-- `/artikel/<slug>/`: table of contents, keywords, "Mehr zum Thema" (nearest dates), previous/next in class order.
+- `/artikel/<slug>/`: table of contents, quiz, keywords, "Mehr zum Thema" (nearest dates), previous/next in class
+  order.
+- `/hinweis/`: privacy and purpose notice; the same points open as a dialog once per visit on every page.
 - `/artikel/thema/<topic>/`: all articles of one topic, works without JavaScript.
 
 **URLs are permanent.** Never rename or delete a published slug or topic: links get printed and shared.
@@ -68,8 +73,8 @@ The owner sends photos of a handout (often several per day; several pages can be
 2. Create `site/content/artikel/<slug>.md`. The slug equals the file name. Front matter:
    - `title`, `slug`;
    - `thema`: must be listed in `site/themen.yaml`; reuse a topic, add one only if none fits;
-   - `datum`: the class day as `"YYYY-MM-DD"`; leave `""` and ask if unknown;
-   - `reihenfolge`: optional whole number, the handout's position within its class day;
+   - `datum`: the day the owner **sent** the photos, as `"YYYY-MM-DD"` (not the day you process them);
+   - `reihenfolge`: whole number, the handout's position among those sent that day;
    - `stichwoerter`: a list, used by the search;
    - `kurz`: 1–2 sentences;
    - `quelle`.
@@ -82,9 +87,23 @@ The owner sends photos of a handout (often several per day; several pages can be
      article;
    - a "Wörter" glossary as a definition list (article + plural, simple explanation, example sentence);
    - "Fragen zum Text": the handout's questions as `<details><summary>question</summary>answer</details>`.
-5. Images only if they help: own diagrams or screenshots, never photos of the handout. Put them in
+   - "Quellen" at the end: links to official or reliable sources (gesetze-im-internet.de, federal ministries,
+     Bundesagentur für Arbeit, familienportal.de, Verbraucherzentrale, DGB). Check every URL answers 200 before
+     publishing. Facts from these sources may extend the article (in `::: ergaenzung` boxes).
+5. Write the quiz `site/content/artikel/<slug>.quiz.json` in Quiz Forger's format (importable at
+   quiz.ruslanlomaka.org): `{"title", "questions": [{"question", "answers": [{"text", "correct"}], "explanation",
+   "sources": [{"title", "url"}]}]}`. About 10 questions, 3 answers, exactly one correct, wrong answers plausible,
+   a short explanation for each. The build refuses articles without a valid quiz; the page shuffles questions and
+   answers on every load.
+6. Images only if they help: own diagrams or screenshots, never photos of the handout. Put them in
    `site/content/artikel/bilder/`, link them as `/artikel/bilder/<file>`, and always write alt text.
-6. Build, check, commit, push. Lists, search, topic pages, "Mehr zum Thema" and previous/next update by themselves.
+7. Build, check, commit, push. Lists, search, topic pages, "Mehr zum Thema" and previous/next update by themselves.
+
+**Batches of photos.** The owner sends groups of photos and says when to start. Then:
+- first save one own-words note per handout in `entwuerfe/NN-<slug>.md` and push it (photos in the chat may
+  not be available later);
+- work slowly to save the owner's usage limits: about 3 articles per 5 hours, one push per batch;
+- delete each note when its article is published.
 
 ## Adding a lesson
 
@@ -119,8 +138,17 @@ The owner's Raspberry Pi serves the site behind a Cloudflare Tunnel (route `edv.
   - read-only file system, no capabilities, limits on CPU, memory and processes.
 - Actions logs are public: never print secrets, IP addresses or web server access logs.
 
+## Privacy promises (keep them true)
+
+The notice (dialog + `/hinweis/`, text in `HINWEIS_PUNKTE` in `build.py`) promises:
+- no accounts, forms, cookies, tracking, analytics, e-mails or external scripts;
+- inputs stay in the browser: lesson ticks in `localStorage`, the "notice seen" flag in `sessionStorage`;
+- no access logs on the server (`access_log off` in `deploy/nginx.conf`);
+- only public information, no legal advice, no personal or confidential data about real people or companies.
+
+Any change that would break one of these promises must also change the notice text, and needs the owner's OK.
+
 ## Open points
 
 - The owner still decides whether the programme and employer may be named in public files: the day plan PDF and
   the repository name mention them.
-- The class date of the article "Brutto und Netto" is unknown.
