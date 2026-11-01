@@ -17,13 +17,39 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Install pandoc and PyYAML
+      - name: Install pandoc, ffmpeg and Piper
         run: |
-          sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends pandoc python3-yaml
+          sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends pandoc ffmpeg python3-venv
           pandoc --version | head -1
+          python3 -m venv .venv
+          .venv/bin/pip install -q piper-tts==1.8.0 pyyaml==6.0.3
+
+      # Voice model and already rendered words are reused between builds; only new words are rendered.
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            .piper
+            site/.audio-cache
+          key: piper-thorsten-${{ hashFiles('site/content/artikel/*.md') }}
+          restore-keys: piper-thorsten-
+
+      # German voice "Thorsten" (open source, dataset CC0), pinned to a commit and checked by hash
+      - name: Download German voice
+        run: |
+          mkdir -p .piper && cd .piper
+          base=https://huggingface.co/rhasspy/piper-voices/resolve/b4e358ffcb232591bf73a540e70f7de528e4174a/de/de_DE/thorsten/medium
+          for f in de_DE-thorsten-medium.onnx de_DE-thorsten-medium.onnx.json; do
+            [ -f "$f" ] || curl -fsSL --retry 3 -o "$f" "$base/$f"
+          done
+          sha256sum -c <<'SUMS'
+          7e64762d8e5118bb578f2eea6207e1a35a8e0c30595010b666f983fc87bb7819  de_DE-thorsten-medium.onnx
+          974adee790533adb273a1ac88f49027d2a1b8f0f2cf4905954a4791e79264e85  de_DE-thorsten-medium.onnx.json
+          SUMS
 
       - name: Build
-        run: python3 site/build.py
+        env:
+          PIPER_MODEL: .piper/de_DE-thorsten-medium.onnx
+        run: .venv/bin/python site/build.py
 
       - name: Package release
         run: |

@@ -18,6 +18,12 @@ content is German at about level B1 and works on phones.
   - the questions from the handout with answers to reveal;
   - a list of official sources;
   - a quiz.
+- **Read aloud:**
+  - every word in an article's glossary has a speaker button that says it in German;
+  - the audio is pre-rendered during the build with the open-source TTS engine [Piper](https://github.com/OHF-Voice/piper1-gpl)
+    and the German voice *Thorsten* (dataset CC0), then served from the site's own server;
+  - if no recording exists, the button uses a German voice installed on the visitor's device. Online voices
+    are never used.
 - **Quizzes:**
   - about 10 multiple-choice questions per article, with answers labelled A, B, C;
   - questions and answers are shuffled on every load, so nobody sees the same order twice;
@@ -75,7 +81,8 @@ deploy/                     docker compose + nginx config for the server
 Needs Python 3, pandoc and PyYAML.
 
 ```bash
-python3 site/build.py                          # writes site/dist/
+python3 site/build.py                          # writes site/dist/ (no audio: buttons use the browser's voice)
+PIPER_MODEL=path/to/de_DE-thorsten-medium.onnx .venv/bin/python site/build.py   # with audio (pip install piper-tts)
 cd site/dist && python3 -m http.server 8000    # open http://localhost:8000
 ```
 
@@ -123,5 +130,5 @@ Rules checked by the build: 5–30 questions, 3–4 answers each, exactly one co
 
 ## Tech
 
-Python + pandoc (generator), plain HTML/CSS/JavaScript without frameworks, nginx, Docker Compose, GitHub Actions,
-Tailscale, Cloudflare Tunnel.
+Python + pandoc (generator), Piper TTS + ffmpeg (glossary audio, build time only), plain HTML/CSS/JavaScript without
+frameworks, nginx, Docker Compose, GitHub Actions, Tailscale, Cloudflare Tunnel.

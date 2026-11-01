@@ -63,6 +63,15 @@ The build stops with `ERROR in <file>: <reason>` on content mistakes:
 Afterwards it checks every internal link and `#anchor` in the built site. Before pushing, also look at changed
 pages at phone width (390 px).
 
+**Glossary audio:**
+- **How it is rendered:** CI renders every glossary term (`<dt>`) to `/audio/<hash>.mp3` with Piper. It uses the
+  pinned German voice "Thorsten" and needs `PIPER_MODEL` and ffmpeg. Rendered files are cached in
+  `site/.audio-cache/`.
+- **Local builds without `PIPER_MODEL`** are fine: the buttons then use a German voice on the visitor's device
+  (only `localService` voices, so no text leaves the browser).
+- **What is read:** the term without the parts in brackets. Write glossary terms so that reading them aloud makes
+  sense.
+
 The live server sends a Content-Security-Policy: no inline scripts and nothing from other domains. JavaScript
 belongs in `site/assets/`; images are stored in the repository.
 

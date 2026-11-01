@@ -7,3 +7,5 @@ materials/serienbrief/generator/*.png
 materials/serienbrief/generator/*.docx
 # generator dependencies
 node_modules/
+# rendered glossary audio (Piper), rebuilt on demand
+site/.audio-cache/

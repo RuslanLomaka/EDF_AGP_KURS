@@ -14,10 +14,12 @@ import hashlib
 import html
 import json
 import math
+import os
 import posixpath
 import re
 import shutil
 import subprocess
+import wave
 import zipfile
 from datetime import date
 from html.parser import HTMLParser
@@ -124,6 +126,73 @@ def check_body(path, body):
         for c in classes.split():
             if c not in BOXES:
                 fail(path, f"unknown box '{c}'; allowed: {', '.join(sorted(BOXES))}")
+
+
+# ---------------------------------------------------------------- read-aloud buttons for glossary words
+
+# With PIPER_MODEL pointing to a Piper voice (open source, runs offline), every glossary word is pre-rendered as an
+# MP3 and served from our own server. Without it (e.g. a quick local build) the buttons use the browser's own voice.
+AUDIO_CACHE = SITE / ".audio-cache"
+SPRECHTEMPO = 1.15  # Piper length_scale: a little slower than normal speech, for learners
+LAUTSPRECHER = ('<svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" '
+                'd="M3 9v6h4l5 4V5L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 '
+                '0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>')
+
+
+class Vorleser:
+    def __init__(self):
+        self.voice, self.files = None, {}
+        model = os.environ.get("PIPER_MODEL")
+        if not model:
+            return
+        if not shutil.which("ffmpeg"):
+            raise SystemExit("ERROR: PIPER_MODEL is set but ffmpeg is missing (needed to make MP3 files)")
+        from piper import PiperVoice, SynthesisConfig  # pip install piper-tts
+        self.voice = PiperVoice.load(model)
+        self.config = SynthesisConfig(length_scale=SPRECHTEMPO)
+        self.model_name = Path(model).name
+
+    def audio(self, text):
+        """URL of the MP3 for this text, rendered once and kept in site/.audio-cache/; None without a voice."""
+        if not self.voice:
+            return None
+        key = hashlib.sha256(f"{self.model_name}|{SPRECHTEMPO}|{text}".encode()).hexdigest()[:16]
+        mp3 = AUDIO_CACHE / f"{key}.mp3"
+        if not mp3.is_file():
+            AUDIO_CACHE.mkdir(parents=True, exist_ok=True)
+            wav = mp3.with_suffix(".wav")
+            with wave.open(str(wav), "wb") as wf:
+                self.voice.synthesize_wav(text, wf, syn_config=self.config)
+            subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(wav), "-ac", "1", "-codec:a", "libmp3lame",
+                            "-b:a", "48k", str(mp3)], check=True)
+            wav.unlink()
+        self.files[key] = mp3
+        return f"/audio/{key}.mp3"
+
+    def copy_to_dist(self):
+        for key, mp3 in self.files.items():
+            (DIST / "audio").mkdir(exist_ok=True)
+            shutil.copy(mp3, DIST / "audio" / f"{key}.mp3")
+
+
+def sprechtext(term_html):
+    """What is read aloud for a glossary term: the words without grammar notes in brackets."""
+    text = html.unescape(re.sub(r"<[^>]+>", "", term_html))
+    text = re.sub(r"\([^)]*\)", "", text).replace("/", ",")
+    return " ".join(text.split()).strip(" ,")
+
+
+def add_vorlesen(body, vorleser):
+    def button(m):
+        text = sprechtext(m.group(1))
+        if not text:
+            return m.group(0)
+        url = vorleser.audio(text)
+        audio = f' data-audio="{url}"' if url else ""
+        # hidden until vorlesen.js knows it can play something (an MP3 or a German voice in the browser)
+        return (f'<dt>{m.group(1)} <button type="button" class="vorlesen" data-text="{esc(text)}"{audio} '
+                f'aria-label="{esc(text)} vorlesen" title="Vorlesen" hidden>{LAUTSPRECHER}</button></dt>')
+    return re.sub(r"<dt>(.*?)</dt>", button, body, flags=re.S)
 
 
 def repo_file(path, rel):
@@ -264,6 +333,7 @@ def build_hinweis():
 <ul>
 <li>Die Seiten werden über Cloudflare ausgeliefert. Dabei werden technisch nötige Verbindungsdaten, zum Beispiel die IP-Adresse, verarbeitet. Nur wenn Cloudflare eine Sicherheitsprüfung zeigt, kann Cloudflare dafür ein technisch nötiges Cookie setzen.</li>
 <li>Unser Webserver speichert keine Zugriffsprotokolle.</li>
+<li>Vorlesen: Die Wörter wurden vorab aufgenommen und kommen von unserem Server. Fehlt eine Aufnahme, liest eine Stimme vor, die auf Ihrem Gerät installiert ist. Es werden keine Texte an andere Dienste geschickt.</li>
 <li>Links zu anderen Websites, zum Beispiel zu Gesetzestexten, führen zu Angeboten mit eigenen Datenschutzregeln.</li>
 </ul>
 <h2>Inhalte</h2>
@@ -284,7 +354,7 @@ def load_themen():
     return themen
 
 
-def load_articles(themen):
+def load_articles(themen, vorleser):
     articles = []
     for path in sorted((CONTENT / "artikel").glob("*.md")):
         meta, body = read_source(path)
@@ -304,6 +374,7 @@ def load_articles(themen):
             fail(path, "'reihenfolge' must be a whole number (position of the handout within its class day)")
         a["body"] = pandoc(path, body, "html5")
         check_body(path, a["body"])
+        a["body"] = add_vorlesen(a["body"], vorleser)
         plain = pandoc(path, body, "plain")
         a["text"] = " ".join(re.sub(r"[-=+|]{3,}|\|", " ", plain).split())  # drop ASCII table borders
         a["url"] = f"/artikel/{a['slug']}/"
@@ -394,7 +465,7 @@ def build_article_pages(articles):
 {mehr}
 {nav}
 <p class="quelle">Grundlage: {esc(a['quelle'])}. Der Inhalt ist in eigenen Worten erklärt. Kästen mit „Ergänzung“ enthalten zusätzliche Informationen (Stand {stand}, ohne Gewähr). Keine Rechtsberatung.</p>"""
-        write(f"artikel/{a['slug']}/index.html", layout(a["title"], "artikel", main, a["kurz"], ["quiz.js"]))
+        write(f"artikel/{a['slug']}/index.html", layout(a["title"], "artikel", main, a["kurz"], ["quiz.js", "vorlesen.js"]))
     bilder = CONTENT / "artikel" / "bilder"
     if bilder.is_dir():
         shutil.copytree(bilder, DIST / "artikel" / "bilder")
@@ -711,7 +782,8 @@ def main():
     for f in (SITE / "assets").iterdir():
         ASSET_VERSION[f.name] = hashlib.sha256(f.read_bytes()).hexdigest()[:8]
     themen = load_themen()
-    articles = load_articles(themen)
+    vorleser = Vorleser()
+    articles = load_articles(themen, vorleser)
     lessons = load_lessons()
     build_article_pages(articles)
     build_article_index(articles, themen)
@@ -720,8 +792,10 @@ def main():
     build_lesson_index(lessons)
     build_start(articles, lessons)
     build_hinweis()
+    vorleser.copy_to_dist()
     check_links()
-    print(f"built {len(articles)} article(s) and {len(lessons)} lesson(s) into {DIST}; all links checked")
+    audio = f"{len(vorleser.files)} audio file(s)" if vorleser.voice else "no audio (PIPER_MODEL not set: browser voice only)"
+    print(f"built {len(articles)} article(s), {len(lessons)} lesson(s), {audio} into {DIST}; all links checked")
 
 
 if __name__ == "__main__":
