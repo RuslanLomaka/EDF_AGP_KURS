@@ -345,7 +345,9 @@ def load_betreiber():
 
 def build_rechtliches(b):
     anschrift = f"{esc(b['name'])}<br>{esc(b['strasse'])}<br>{esc(b['ort'])}"
-    kontakt = f'E-Mail: <a href="mailto:{esc(b["email"])}">{esc(b["email"])}</a>'
+    # email_off: Cloudflare must not swap the address for "[email protected]" plus its own decoding script;
+    # the Impressum has to show it plainly, and the site promises no third-party scripts.
+    kontakt = f'E-Mail: <!--email_off--><a href="mailto:{esc(b["email"])}">{esc(b["email"])}</a><!--/email_off-->'
     if b["telefon"]:
         kontakt += f"<br>Telefon: {esc(b['telefon'])}"
     websites = ""
