@@ -292,7 +292,7 @@ def layout(title, active, main, description="", scripts=()):
 <main>
 {main}
 </main>
-<footer class="site-footer"><a href="/">{BRAND}</a> · <a href="/edv-kurs/">EDV-Kurs</a> · <a href="/artikel/">Artikel</a> · <a href="/hinweis/">Hinweise &amp; Datenschutz</a></footer>
+<footer class="site-footer"><a href="/">{BRAND}</a> · <a href="/edv-kurs/">EDV-Kurs</a> · <a href="/artikel/">Artikel</a> · <a href="/hinweis/">Hinweise</a>{RECHT_LINKS if BETREIBER else ""}</footer>
 {HINWEIS_DIALOG}
 {script_tags}
 </body>
@@ -319,6 +319,81 @@ HINWEIS_DIALOG = f"""<dialog id="hinweis-dialog" class="hinweis-dialog" aria-lab
 </dialog>"""
 
 
+# Legal pages. They need the owner's real name, address and e-mail (Impressum duty) from site/betreiber.yaml;
+# until that file exists they are not built and the footer does not link to them.
+BETREIBER = None
+RECHT_LINKS = ' · <a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a>'
+
+
+def load_betreiber():
+    path = SITE / "betreiber.yaml"
+    if not path.is_file():
+        return None
+    try:
+        meta = yaml.safe_load(path.read_text(encoding="utf-8"))
+    except yaml.YAMLError as e:
+        fail(path, f"not valid YAML: {e}")
+    if not isinstance(meta, dict):
+        fail(path, "must be 'key: value' lines")
+    b = {key: text(path, meta, key) for key in ("name", "strasse", "ort", "email")}
+    b["telefon"] = text(path, meta, "telefon", required=False)
+    if not re.fullmatch(r"[^@\s]+@[^@\s]+\.[a-z]{2,}", b["email"], re.I):
+        fail(path, f"email '{b['email']}' is not an e-mail address")
+    return b
+
+
+def build_rechtliches(b):
+    anschrift = f"{esc(b['name'])}<br>{esc(b['strasse'])}<br>{esc(b['ort'])}"
+    kontakt = f'E-Mail: <a href="mailto:{esc(b["email"])}">{esc(b["email"])}</a>'
+    if b["telefon"]:
+        kontakt += f"<br>Telefon: {esc(b['telefon'])}"
+    impressum = f"""<h1>Impressum</h1>
+<h2>Angaben gemäß § 5 DDG und § 18 Abs. 1 MStV</h2>
+<p>{anschrift}</p>
+<h2>Kontakt</h2>
+<p>{kontakt}</p>
+<h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+<p>{esc(b['name'])}, Anschrift wie oben</p>
+<h2>Hinweise zu den Inhalten</h2>
+<p>Die Texte erklären allgemeine, öffentlich zugängliche Informationen in einfacher Sprache. Sie sind keine Rechtsberatung. Trotz sorgfältiger Prüfung übernehmen wir keine Gewähr für Richtigkeit, Vollständigkeit und Aktualität.</p>
+<h2>Links zu anderen Websites</h2>
+<p>Für die Inhalte verlinkter Seiten sind allein deren Betreiber verantwortlich. Wenn uns Rechtsverstöße auf verlinkten Seiten bekannt werden, entfernen wir die Links umgehend.</p>
+<h2>Urheberrecht</h2>
+<p>Die Texte auf dieser Website sind eigene Erklärungen. Die Aussprache der Wörter wurde mit der freien Software Piper und der Stimme „Thorsten“ (Datensatz unter CC0) erzeugt.</p>"""
+    write("impressum/index.html", layout("Impressum", "", impressum, "Impressum dieser Website."))
+
+    datenschutz = f"""<h1>Datenschutzerklärung</h1>
+<p class="meta">Stand: November 2026</p>
+<h2>1. Verantwortlicher</h2>
+<p>{anschrift}<br>{kontakt}</p>
+<h2>2. Das Wichtigste in Kürze</h2>
+<p>Diese Website ist ein reines Leseangebot. Es gibt keine Konten, keine Formulare, keine Cookies von uns, kein Tracking und keine Analyse-Werkzeuge. Wir selbst erheben und speichern keine personenbezogenen Daten.</p>
+<h2>3. Auslieferung der Website über Cloudflare</h2>
+<p>Die Seiten werden über das Netzwerk von Cloudflare ausgeliefert (Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA). Dabei werden technisch notwendige Verbindungsdaten verarbeitet, insbesondere Ihre IP-Adresse, Datum und Uhrzeit des Abrufs, die aufgerufene Adresse sowie Angaben zu Browser und Betriebssystem. Das ist nötig, um die Seiten auszuliefern und die Website vor Angriffen zu schützen.</p>
+<p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse ist eine sichere und zuverlässige Bereitstellung der Website. Cloudflare kann Daten auch in den USA verarbeiten. Cloudflare ist nach dem EU-US Data Privacy Framework zertifiziert; dafür gilt der Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO). Nur wenn Cloudflare eine Sicherheitsprüfung anzeigt, kann Cloudflare dafür ein technisch notwendiges Cookie setzen.</p>
+<p>Mehr dazu: <a href="https://www.cloudflare.com/de-de/privacypolicy/">Datenschutzerklärung von Cloudflare</a></p>
+<h2>4. Unser Webserver</h2>
+<p>Die Website liegt auf einem eigenen Server des Betreibers. Dieser Server speichert keine Zugriffsprotokolle und damit auch keine IP-Adressen.</p>
+<h2>5. Speicherung in Ihrem Browser</h2>
+<p>Zwei kleine Angaben werden nur in Ihrem Browser gespeichert und nie an uns übertragen:</p>
+<ul>
+<li><strong>Fortschritt in Lektionen</strong> (welche Schritte Sie abgehakt haben) im „Local Storage“ Ihres Browsers. Sie können ihn auf der Lektionsseite mit „Alle Haken entfernen“ oder in den Einstellungen Ihres Browsers löschen.</li>
+<li><strong>Ob Sie den Hinweis beim Besuch gelesen haben</strong>, im „Session Storage“. Diese Angabe wird gelöscht, wenn Sie den Tab schließen.</li>
+</ul>
+<p>Diese Speicherung ist für die Funktionen, die Sie selbst nutzen, unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG). Suche und Quiz speichern nichts.</p>
+<h2>6. Vorlesen</h2>
+<p>Die Aussprache der Wörter wurde vorab aufgenommen und wird von unserem Server geladen. Fehlt eine Aufnahme, liest eine Stimme vor, die auf Ihrem Gerät installiert ist. Dabei werden keine Daten an andere Anbieter übertragen.</p>
+<h2>7. Keine Inhalte anderer Anbieter</h2>
+<p>Wir binden keine Schriftarten, Skripte, Videos, Karten oder Social-Media-Funktionen anderer Anbieter ein und verschicken keine Newsletter.</p>
+<h2>8. Links zu anderen Websites</h2>
+<p>Die Website enthält Links, zum Beispiel zu Gesetzestexten. Erst wenn Sie einen Link anklicken, verlassen Sie diese Website; dort gelten die Datenschutzregeln des jeweiligen Anbieters.</p>
+<h2>9. Kontakt per E-Mail</h2>
+<p>Wenn Sie uns eine E-Mail schreiben, verwenden wir Ihre Angaben nur, um Ihre Anfrage zu beantworten (Art. 6 Abs. 1 lit. f DSGVO), und löschen sie, wenn sie dafür nicht mehr gebraucht werden.</p>
+<h2>10. Ihre Rechte</h2>
+<p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16 DSGVO), Löschung (Art. 17 DSGVO), Einschränkung der Verarbeitung (Art. 18 DSGVO), Datenübertragbarkeit (Art. 20 DSGVO) und Widerspruch gegen die Verarbeitung (Art. 21 DSGVO). Wenden Sie sich dafür an die oben genannte Adresse. Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren (Art. 77 DSGVO), zum Beispiel bei der Behörde Ihres Wohnorts.</p>"""
+    write("datenschutz/index.html", layout("Datenschutzerklärung", "", datenschutz, "Datenschutzerklärung dieser Website."))
+
+
 def build_hinweis():
     punkte = "".join(f"<li>{esc(t)}</li>" for t in HINWEIS_PUNKTE)
     main = f"""<h1>Hinweise &amp; Datenschutz</h1>
@@ -337,7 +412,8 @@ def build_hinweis():
 <li>Links zu anderen Websites, zum Beispiel zu Gesetzestexten, führen zu Angeboten mit eigenen Datenschutzregeln.</li>
 </ul>
 <h2>Inhalte</h2>
-<p>Alle Angaben ohne Gewähr. Die Texte erklären allgemeine Regeln und ersetzen keine Beratung im Einzelfall.</p>"""
+<p>Alle Angaben ohne Gewähr. Die Texte erklären allgemeine Regeln und ersetzen keine Beratung im Einzelfall.</p>
+{'<p>Ausführlich: <a href="/datenschutz/">Datenschutzerklärung</a> · <a href="/impressum/">Impressum</a></p>' if BETREIBER else ''}"""
     write("hinweis/index.html", layout("Hinweise & Datenschutz", "", main, "Hinweise zu dieser Website und zum Datenschutz."))
 
 
@@ -781,6 +857,8 @@ def main():
     shutil.copytree(SITE / "assets", DIST / "assets")
     for f in (SITE / "assets").iterdir():
         ASSET_VERSION[f.name] = hashlib.sha256(f.read_bytes()).hexdigest()[:8]
+    global BETREIBER
+    BETREIBER = load_betreiber()
     themen = load_themen()
     vorleser = Vorleser()
     articles = load_articles(themen, vorleser)
@@ -792,6 +870,8 @@ def main():
     build_lesson_index(lessons)
     build_start(articles, lessons)
     build_hinweis()
+    if BETREIBER:
+        build_rechtliches(BETREIBER)
     vorleser.copy_to_dist()
     check_links()
     audio = f"{len(vorleser.files)} audio file(s)" if vorleser.voice else "no audio (PIPER_MODEL not set: browser voice only)"

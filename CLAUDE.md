@@ -157,6 +157,12 @@ The notice (dialog + `/hinweis/`, text in `HINWEIS_PUNKTE` in `build.py`) promis
 
 Any change that would break one of these promises must also change the notice text, and needs the owner's OK.
 
+Legal pages: `/impressum/` and `/datenschutz/` are built from `site/betreiber.yaml`, which holds the owner's name,
+address and e-mail (`name`, `strasse`, `ort`, `email`, optional `telefon`). Without that file they are not built.
+This file is the only allowed personal data in the repository, and only the owner provides its values. The
+Datenschutzerklärung describes the real setup (`build_rechtliches` in `build.py`). Update it together with any
+change to hosting, browser storage, external services or logging.
+
 ## Open points
 
 - The owner still decides whether the programme and employer may be named in public files: the day plan PDF and
