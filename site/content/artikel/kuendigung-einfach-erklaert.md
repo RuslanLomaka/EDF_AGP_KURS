@@ -72,6 +72,7 @@ Diese Kündigung gilt **sofort** oder nach sehr kurzer Zeit. Dafür braucht man 
 ::: ergaenzung
 - In Firmen mit **mehr als 10 Beschäftigten** gilt das **Kündigungsschutzgesetz** – wenn Sie dort **länger als 6 Monate** arbeiten. Dann darf der Arbeitgeber nur aus einem dieser drei Gründe kündigen.
 - In kleinen Firmen und in den ersten 6 Monaten braucht der Arbeitgeber für eine ordentliche Kündigung meistens keinen solchen Grund. Die Fristen gelten aber immer.
+- Mehr dazu lesen Sie in den Artikeln [Kündigung im Briefkasten: So schützt Sie das Kündigungsschutzgesetz](/artikel/kuendigungsschutz/) und [Abmahnung im Job](/artikel/abmahnung/).
 :::
 
 ## Besonderer Kündigungsschutz {#besonderer-schutz}

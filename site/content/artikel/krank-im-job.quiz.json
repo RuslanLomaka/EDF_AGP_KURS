@@ -1,0 +1,245 @@
+{
+  "title": "Krank im Job",
+  "questions": [
+    {
+      "question": "Wann müssen Sie sich beim Arbeitgeber krankmelden?",
+      "answers": [
+        {
+          "text": "Sofort, normalerweise vor Arbeitsbeginn am ersten Krankheitstag",
+          "correct": true
+        },
+        {
+          "text": "Erst wenn Sie beim Arzt waren",
+          "correct": false
+        },
+        {
+          "text": "Spätestens nach drei Tagen",
+          "correct": false
+        }
+      ],
+      "explanation": "Das Gesetz sagt „unverzüglich“: ohne unnötiges Warten.",
+      "sources": [
+        {
+          "title": "Entgeltfortzahlungsgesetz",
+          "url": "https://www.gesetze-im-internet.de/entgfg/"
+        }
+      ]
+    },
+    {
+      "question": "Ab wann brauchen Sie normalerweise eine Krankschreibung vom Arzt?",
+      "answers": [
+        {
+          "text": "Wenn die Krankheit länger als 3 Kalendertage dauert",
+          "correct": true
+        },
+        {
+          "text": "Erst nach 2 Wochen",
+          "correct": false
+        },
+        {
+          "text": "Nie, eine Nachricht reicht immer",
+          "correct": false
+        }
+      ],
+      "explanation": "Sie muss spätestens am folgenden Arbeitstag vorliegen.",
+      "sources": [
+        {
+          "title": "Entgeltfortzahlungsgesetz",
+          "url": "https://www.gesetze-im-internet.de/entgfg/"
+        }
+      ]
+    },
+    {
+      "question": "Darf der Arbeitgeber schon am ersten Krankheitstag ein Attest verlangen?",
+      "answers": [
+        {
+          "text": "Ja, ohne besonderen Grund",
+          "correct": true
+        },
+        {
+          "text": "Nein, das ist verboten",
+          "correct": false
+        },
+        {
+          "text": "Nur in der Probezeit",
+          "correct": false
+        }
+      ],
+      "explanation": "Das Gesetz erlaubt dem Arbeitgeber, die Bescheinigung früher zu verlangen.",
+      "sources": [
+        {
+          "title": "Entgeltfortzahlungsgesetz",
+          "url": "https://www.gesetze-im-internet.de/entgfg/"
+        }
+      ]
+    },
+    {
+      "question": "Was passiert bei der eAU?",
+      "answers": [
+        {
+          "text": "Die Praxis schickt die Krankschreibung an die Krankenkasse, der Arbeitgeber ruft sie ab",
+          "correct": true
+        },
+        {
+          "text": "Der Arbeitgeber ruft selbst beim Arzt an",
+          "correct": false
+        },
+        {
+          "text": "Man muss sich nicht mehr krankmelden",
+          "correct": false
+        }
+      ],
+      "explanation": "Krankmelden müssen Sie sich trotzdem selbst und sofort.",
+      "sources": [
+        {
+          "title": "Entgeltfortzahlungsgesetz",
+          "url": "https://www.gesetze-im-internet.de/entgfg/"
+        }
+      ]
+    },
+    {
+      "question": "Wie lange zahlt der Arbeitgeber bei Krankheit den Lohn weiter?",
+      "answers": [
+        {
+          "text": "Bis zu 6 Wochen",
+          "correct": true
+        },
+        {
+          "text": "Bis zu 6 Monate",
+          "correct": false
+        },
+        {
+          "text": "Bis zu 3 Tage",
+          "correct": false
+        }
+      ],
+      "explanation": "Danach zahlt die Krankenkasse Krankengeld.",
+      "sources": [
+        {
+          "title": "Entgeltfortzahlungsgesetz",
+          "url": "https://www.gesetze-im-internet.de/entgfg/"
+        }
+      ]
+    },
+    {
+      "question": "Welche Voraussetzung gilt für die Lohnfortzahlung?",
+      "answers": [
+        {
+          "text": "Sie arbeiten seit mindestens 4 Wochen ohne Unterbrechung in der Firma",
+          "correct": true
+        },
+        {
+          "text": "Sie arbeiten seit mindestens 1 Jahr dort",
+          "correct": false
+        },
+        {
+          "text": "Sie sind in einer Gewerkschaft",
+          "correct": false
+        }
+      ],
+      "explanation": "In den ersten 4 Wochen zahlt meistens die Krankenkasse Krankengeld.",
+      "sources": [
+        {
+          "title": "Entgeltfortzahlungsgesetz",
+          "url": "https://www.gesetze-im-internet.de/entgfg/"
+        }
+      ]
+    },
+    {
+      "question": "Wie hoch ist das Krankengeld der Krankenkasse?",
+      "answers": [
+        {
+          "text": "70 Prozent vom Bruttolohn, höchstens 90 Prozent vom Netto",
+          "correct": true
+        },
+        {
+          "text": "100 Prozent vom Bruttolohn",
+          "correct": false
+        },
+        {
+          "text": "Immer 500 Euro im Monat",
+          "correct": false
+        }
+      ],
+      "explanation": "Das Krankengeld ist weniger als der normale Lohn.",
+      "sources": [
+        {
+          "title": "Krankengeld (Bundesgesundheitsministerium)",
+          "url": "https://www.bundesgesundheitsministerium.de/krankengeld"
+        }
+      ]
+    },
+    {
+      "question": "Sie werden im Urlaub krank und haben ein Attest. Was gilt?",
+      "answers": [
+        {
+          "text": "Die Krankheitstage zählen nicht als Urlaub",
+          "correct": true
+        },
+        {
+          "text": "Der Urlaub ist trotzdem verbraucht",
+          "correct": false
+        },
+        {
+          "text": "Sie müssen sofort zurück zur Arbeit",
+          "correct": false
+        }
+      ],
+      "explanation": "Die Tage bekommen Sie zurück – mit Attest ab dem ersten Tag.",
+      "sources": [
+        {
+          "title": "§ 9 Bundesurlaubsgesetz",
+          "url": "https://www.gesetze-im-internet.de/burlg/__9.html"
+        }
+      ]
+    },
+    {
+      "question": "Was ist bei Krankschreibung meistens erlaubt?",
+      "answers": [
+        {
+          "text": "Ein Spaziergang, wenn der Arzt nichts dagegen hat",
+          "correct": true
+        },
+        {
+          "text": "Mit Grippe auf eine Party gehen",
+          "correct": false
+        },
+        {
+          "text": "Nebenbei in einem anderen Job arbeiten",
+          "correct": false
+        }
+      ],
+      "explanation": "Sie dürfen nichts tun, was Ihre Heilung verzögert.",
+      "sources": [
+        {
+          "title": "DGB-Ratgeber Krankheit",
+          "url": "https://www.dgb.de/service/ratgeber/krankheit/"
+        }
+      ]
+    },
+    {
+      "question": "Ihr Kind (8 Jahre) ist krank. Was können Sie bekommen?",
+      "answers": [
+        {
+          "text": "Kinderkrankengeld von der Krankenkasse",
+          "correct": true
+        },
+        {
+          "text": "Elterngeld vom Staat",
+          "correct": false
+        },
+        {
+          "text": "Nichts, Sie müssen Urlaub nehmen",
+          "correct": false
+        }
+      ],
+      "explanation": "Im Jahr 2026 gibt es bis zu 15 Arbeitstage pro Kind und Elternteil, für Alleinerziehende bis zu 30.",
+      "sources": [
+        {
+          "title": "§ 45 SGB V",
+          "url": "https://www.gesetze-im-internet.de/sgb_5/__45.html"
+        }
+      ]
+    }
+  ]
+}

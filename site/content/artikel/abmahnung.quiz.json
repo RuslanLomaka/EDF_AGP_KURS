@@ -1,0 +1,245 @@
+{
+  "title": "Abmahnung im Job",
+  "questions": [
+    {
+      "question": "Was ist eine Abmahnung?",
+      "answers": [
+        {
+          "text": "Eine Warnung vor der Kündigung wegen Fehlverhalten",
+          "correct": true
+        },
+        {
+          "text": "Eine Kündigung ohne Frist",
+          "correct": false
+        },
+        {
+          "text": "Ein Lob vom Chef",
+          "correct": false
+        }
+      ],
+      "explanation": "Man vergleicht sie mit der gelben Karte im Fußball.",
+      "sources": [
+        {
+          "title": "§ 314 BGB",
+          "url": "https://www.gesetze-im-internet.de/bgb/__314.html"
+        }
+      ]
+    },
+    {
+      "question": "Welche drei Funktionen hat eine Abmahnung?",
+      "answers": [
+        {
+          "text": "Hinweis-, Rüge- und Warnfunktion",
+          "correct": true
+        },
+        {
+          "text": "Lohn-, Urlaubs- und Pausenfunktion",
+          "correct": false
+        },
+        {
+          "text": "Lob-, Dank- und Bonusfunktion",
+          "correct": false
+        }
+      ],
+      "explanation": "Fehlt eine davon, kann die Abmahnung unwirksam sein.",
+      "sources": [
+        {
+          "title": "§ 314 BGB",
+          "url": "https://www.gesetze-im-internet.de/bgb/__314.html"
+        }
+      ]
+    },
+    {
+      "question": "Welche Funktion ist die wichtigste?",
+      "answers": [
+        {
+          "text": "Die Warnfunktion",
+          "correct": true
+        },
+        {
+          "text": "Die Hinweisfunktion",
+          "correct": false
+        },
+        {
+          "text": "Die Rügefunktion",
+          "correct": false
+        }
+      ],
+      "explanation": "Sie sagt klar: Bei einer Wiederholung droht die Kündigung.",
+      "sources": [
+        {
+          "title": "§ 314 BGB",
+          "url": "https://www.gesetze-im-internet.de/bgb/__314.html"
+        }
+      ]
+    },
+    {
+      "question": "Welcher Satz reicht für eine Abmahnung NICHT aus?",
+      "answers": [
+        {
+          "text": "„Sie sind oft unpünktlich.“",
+          "correct": true
+        },
+        {
+          "text": "„Am 3. März kamen Sie um 9:40 statt 8:00 Uhr zur Arbeit.“",
+          "correct": false
+        },
+        {
+          "text": "„Am 5. Mai haben Sie in Halle 2 ohne Schutzhelm gearbeitet.“",
+          "correct": false
+        }
+      ],
+      "explanation": "Die Abmahnung muss Datum, Uhrzeit, Ort und Art des Fehlers nennen.",
+      "sources": [
+        {
+          "title": "§ 314 BGB",
+          "url": "https://www.gesetze-im-internet.de/bgb/__314.html"
+        }
+      ]
+    },
+    {
+      "question": "Wofür gibt es KEINE Abmahnung?",
+      "answers": [
+        {
+          "text": "Für eine Krankheit, zum Beispiel eine Grippe",
+          "correct": true
+        },
+        {
+          "text": "Für unentschuldigtes Fehlen",
+          "correct": false
+        },
+        {
+          "text": "Für wiederholte Unpünktlichkeit",
+          "correct": false
+        }
+      ],
+      "explanation": "Krankheit kann man nicht steuern.",
+      "sources": [
+        {
+          "title": "§ 1 KSchG",
+          "url": "https://www.gesetze-im-internet.de/kschg/__1.html"
+        }
+      ]
+    },
+    {
+      "question": "Was bedeutet „einschlägig“?",
+      "answers": [
+        {
+          "text": "Das neue Fehlverhalten ist ähnlich wie das abgemahnte",
+          "correct": true
+        },
+        {
+          "text": "Die Abmahnung ist mit der Hand geschrieben",
+          "correct": false
+        },
+        {
+          "text": "Der Fehler war sehr schwer",
+          "correct": false
+        }
+      ],
+      "explanation": "Nach einer Abmahnung wegen Unpünktlichkeit zählt erneute Unpünktlichkeit.",
+      "sources": [
+        {
+          "title": "§ 1 KSchG",
+          "url": "https://www.gesetze-im-internet.de/kschg/__1.html"
+        }
+      ]
+    },
+    {
+      "question": "Wie können Sie sich ohne Klage gegen eine Abmahnung wehren?",
+      "answers": [
+        {
+          "text": "Mit einer Gegendarstellung für die Personalakte",
+          "correct": true
+        },
+        {
+          "text": "Mit einer Beschwerde bei der Polizei",
+          "correct": false
+        },
+        {
+          "text": "Gar nicht",
+          "correct": false
+        }
+      ],
+      "explanation": "Der Arbeitgeber muss Ihre Erklärung zur Personalakte nehmen.",
+      "sources": [
+        {
+          "title": "§ 83 BetrVG",
+          "url": "https://www.gesetze-im-internet.de/betrvg/__83.html"
+        }
+      ]
+    },
+    {
+      "question": "Dürfen Sie Ihre Personalakte ansehen?",
+      "answers": [
+        {
+          "text": "Ja, das ist Ihr Recht",
+          "correct": true
+        },
+        {
+          "text": "Nein, nur der Chef darf das",
+          "correct": false
+        },
+        {
+          "text": "Nur mit einem Anwalt",
+          "correct": false
+        }
+      ],
+      "explanation": "Ein Mitglied des Betriebsrats darf Sie dabei begleiten.",
+      "sources": [
+        {
+          "title": "§ 83 BetrVG",
+          "url": "https://www.gesetze-im-internet.de/betrvg/__83.html"
+        }
+      ]
+    },
+    {
+      "question": "Gibt es eine feste Frist im Gesetz, nach der eine Abmahnung gelöscht wird?",
+      "answers": [
+        {
+          "text": "Nein, aber nach längerer Zeit ohne Vorfälle kann sie ihre Wirkung verlieren",
+          "correct": true
+        },
+        {
+          "text": "Ja, genau nach 6 Monaten",
+          "correct": false
+        },
+        {
+          "text": "Ja, sie bleibt für immer gültig",
+          "correct": false
+        }
+      ],
+      "explanation": "Oft spricht man von etwa 2 bis 3 Jahren – eine feste Regel ist das aber nicht.",
+      "sources": [
+        {
+          "title": "§ 1 KSchG",
+          "url": "https://www.gesetze-im-internet.de/kschg/__1.html"
+        }
+      ]
+    },
+    {
+      "question": "Muss vor jeder Kündigung wegen Fehlverhalten eine Abmahnung kommen?",
+      "answers": [
+        {
+          "text": "Meistens ja – bei sehr schweren Fällen wie Diebstahl aber nicht",
+          "correct": true
+        },
+        {
+          "text": "Ja, immer drei Abmahnungen",
+          "correct": false
+        },
+        {
+          "text": "Nein, nie",
+          "correct": false
+        }
+      ],
+      "explanation": "Bei sehr schweren Verstößen ist sogar eine fristlose Kündigung möglich.",
+      "sources": [
+        {
+          "title": "§ 314 BGB",
+          "url": "https://www.gesetze-im-internet.de/bgb/__314.html"
+        }
+      ]
+    }
+  ]
+}

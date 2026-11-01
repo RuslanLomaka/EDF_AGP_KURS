@@ -1,0 +1,273 @@
+{
+  "title": "Kündigungsschutz",
+  "questions": [
+    {
+      "question": "Wann gilt das Kündigungsschutzgesetz?",
+      "answers": [
+        {
+          "text": "Nach mehr als 6 Monaten in einer Firma mit mehr als 10 Beschäftigten",
+          "correct": true
+        },
+        {
+          "text": "Ab dem ersten Arbeitstag in jeder Firma",
+          "correct": false
+        },
+        {
+          "text": "Nur im öffentlichen Dienst",
+          "correct": false
+        }
+      ],
+      "explanation": "Beide Bedingungen müssen erfüllt sein: Wartezeit und Betriebsgröße.",
+      "sources": [
+        {
+          "title": "Kündigungsschutzgesetz",
+          "url": "https://www.gesetze-im-internet.de/kschg/"
+        }
+      ]
+    },
+    {
+      "question": "Sie arbeiten in einer Firma mit 5 Beschäftigten. Gilt das Kündigungsschutzgesetz?",
+      "answers": [
+        {
+          "text": "Nein, es gilt erst bei mehr als 10 Beschäftigten",
+          "correct": true
+        },
+        {
+          "text": "Ja, immer",
+          "correct": false
+        },
+        {
+          "text": "Ja, aber nur für Frauen",
+          "correct": false
+        }
+      ],
+      "explanation": "In Kleinbetrieben kann der Arbeitgeber leichter kündigen. Fristen und Form gelten trotzdem.",
+      "sources": [
+        {
+          "title": "Kündigungsschutzgesetz",
+          "url": "https://www.gesetze-im-internet.de/kschg/"
+        }
+      ]
+    },
+    {
+      "question": "Welche der folgenden Gründe gehören zu den drei Säulen?",
+      "answers": [
+        {
+          "text": "verhaltensbedingt, personenbedingt, betriebsbedingt",
+          "correct": true
+        },
+        {
+          "text": "altersbedingt, wetterbedingt, zeitbedingt",
+          "correct": false
+        },
+        {
+          "text": "persönlich, privat, politisch",
+          "correct": false
+        }
+      ],
+      "explanation": "Nur mit einem dieser Gründe ist eine ordentliche Kündigung sozial gerechtfertigt.",
+      "sources": [
+        {
+          "title": "§ 1 KSchG",
+          "url": "https://www.gesetze-im-internet.de/kschg/__1.html"
+        }
+      ]
+    },
+    {
+      "question": "Eine Firma hat zu wenig Aufträge. Was muss sie vor einer betriebsbedingten Kündigung machen?",
+      "answers": [
+        {
+          "text": "Eine Sozialauswahl",
+          "correct": true
+        },
+        {
+          "text": "Eine Abmahnung",
+          "correct": false
+        },
+        {
+          "text": "Eine Gehaltserhöhung",
+          "correct": false
+        }
+      ],
+      "explanation": "Sie prüft, wen die Kündigung am wenigsten hart trifft.",
+      "sources": [
+        {
+          "title": "§ 1 KSchG",
+          "url": "https://www.gesetze-im-internet.de/kschg/__1.html"
+        }
+      ]
+    },
+    {
+      "question": "Was zählt bei der Sozialauswahl?",
+      "answers": [
+        {
+          "text": "Lebensalter, Betriebszugehörigkeit, Unterhaltspflichten und Schwerbehinderung",
+          "correct": true
+        },
+        {
+          "text": "Aussehen und Hobbys",
+          "correct": false
+        },
+        {
+          "text": "Nur die Leistung im letzten Monat",
+          "correct": false
+        }
+      ],
+      "explanation": "Auf Wunsch muss der Arbeitgeber seine Auswahl begründen.",
+      "sources": [
+        {
+          "title": "§ 1 KSchG",
+          "url": "https://www.gesetze-im-internet.de/kschg/__1.html"
+        }
+      ]
+    },
+    {
+      "question": "Bei welcher Kündigung ist meistens vorher eine Abmahnung nötig?",
+      "answers": [
+        {
+          "text": "Bei der verhaltensbedingten Kündigung",
+          "correct": true
+        },
+        {
+          "text": "Bei der betriebsbedingten Kündigung",
+          "correct": false
+        },
+        {
+          "text": "Bei jeder Kündigung in der Probezeit",
+          "correct": false
+        }
+      ],
+      "explanation": "Der Arbeitnehmer soll erst die Chance bekommen, sein Verhalten zu ändern.",
+      "sources": [
+        {
+          "title": "§ 1 KSchG",
+          "url": "https://www.gesetze-im-internet.de/kschg/__1.html"
+        }
+      ]
+    },
+    {
+      "question": "Ist eine Kündigung per WhatsApp gültig?",
+      "answers": [
+        {
+          "text": "Nein, sie muss auf Papier und eigenhändig unterschrieben sein",
+          "correct": true
+        },
+        {
+          "text": "Ja, wenn ein Foto dabei ist",
+          "correct": false
+        },
+        {
+          "text": "Ja, wenn der Chef sie abschickt",
+          "correct": false
+        }
+      ],
+      "explanation": "Das verlangt § 623 BGB. E-Mail, Fax und Messenger reichen nicht.",
+      "sources": [
+        {
+          "title": "§ 623 BGB",
+          "url": "https://www.gesetze-im-internet.de/bgb/__623.html"
+        }
+      ]
+    },
+    {
+      "question": "Wie lange haben Sie Zeit für eine Kündigungsschutzklage?",
+      "answers": [
+        {
+          "text": "3 Wochen nach Zugang der Kündigung",
+          "correct": true
+        },
+        {
+          "text": "3 Monate",
+          "correct": false
+        },
+        {
+          "text": "1 Jahr",
+          "correct": false
+        }
+      ],
+      "explanation": "Verpassen Sie die Frist, gilt die Kündigung als wirksam – auch wenn sie fehlerhaft war.",
+      "sources": [
+        {
+          "title": "Kündigungsschutzgesetz",
+          "url": "https://www.gesetze-im-internet.de/kschg/"
+        },
+        {
+          "title": "Kündigungsschutz (BMAS)",
+          "url": "https://www.bmas.de/DE/Arbeit/Arbeitsrecht/Arbeitnehmerrechte/Kuendigungsschutz/kuendigungsschutz.html"
+        }
+      ]
+    },
+    {
+      "question": "Was gilt bei einer außerordentlichen (fristlosen) Kündigung?",
+      "answers": [
+        {
+          "text": "Sie gilt sofort, braucht aber einen wichtigen Grund",
+          "correct": true
+        },
+        {
+          "text": "Sie hat immer 4 Wochen Frist",
+          "correct": false
+        },
+        {
+          "text": "Sie braucht keinen Grund",
+          "correct": false
+        }
+      ],
+      "explanation": "Der Grund muss eine weitere Zusammenarbeit unzumutbar machen.",
+      "sources": [
+        {
+          "title": "§ 626 BGB",
+          "url": "https://www.gesetze-im-internet.de/bgb/__626.html"
+        }
+      ]
+    },
+    {
+      "question": "Wer zahlt in der ersten Instanz beim Arbeitsgericht den Anwalt?",
+      "answers": [
+        {
+          "text": "Jede Seite ihren eigenen – auch wer gewinnt",
+          "correct": true
+        },
+        {
+          "text": "Immer der Arbeitgeber",
+          "correct": false
+        },
+        {
+          "text": "Immer der Staat",
+          "correct": false
+        }
+      ],
+      "explanation": "Das regelt § 12a Arbeitsgerichtsgesetz.",
+      "sources": [
+        {
+          "title": "§ 12a ArbGG",
+          "url": "https://www.gesetze-im-internet.de/arbgg/__12a.html"
+        }
+      ]
+    },
+    {
+      "question": "Haben Sie nach einer Kündigung immer Anspruch auf eine Abfindung?",
+      "answers": [
+        {
+          "text": "Nein, einen allgemeinen Anspruch gibt es nicht",
+          "correct": true
+        },
+        {
+          "text": "Ja, immer ein Monatsgehalt pro Jahr",
+          "correct": false
+        },
+        {
+          "text": "Ja, aber nur nach 20 Jahren",
+          "correct": false
+        }
+      ],
+      "explanation": "Oft einigen sich beide Seiten aber vor Gericht auf eine Abfindung (Vergleich).",
+      "sources": [
+        {
+          "title": "Kündigungsschutzgesetz",
+          "url": "https://www.gesetze-im-internet.de/kschg/"
+        }
+      ]
+    }
+  ]
+}
