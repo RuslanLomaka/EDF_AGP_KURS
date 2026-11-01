@@ -337,6 +337,7 @@ def load_betreiber():
         fail(path, "must be 'key: value' lines")
     b = {key: text(path, meta, key) for key in ("name", "strasse", "ort", "email")}
     b["telefon"] = text(path, meta, "telefon", required=False)
+    b["websites"] = text_list(path, meta, "websites")
     if not re.fullmatch(r"[^@\s]+@[^@\s]+\.[a-z]{2,}", b["email"], re.I):
         fail(path, f"email '{b['email']}' is not an e-mail address")
     return b
@@ -347,9 +348,14 @@ def build_rechtliches(b):
     kontakt = f'E-Mail: <a href="mailto:{esc(b["email"])}">{esc(b["email"])}</a>'
     if b["telefon"]:
         kontakt += f"<br>Telefon: {esc(b['telefon'])}"
+    websites = ""
+    if b["websites"]:
+        websites = ("<p>Dieses Impressum gilt für folgende Websites:</p><ul>"
+                    + "".join(f"<li>{esc(w)}</li>" for w in b["websites"]) + "</ul>")
     impressum = f"""<h1>Impressum</h1>
 <h2>Angaben gemäß § 5 DDG und § 18 Abs. 1 MStV</h2>
 <p>{anschrift}</p>
+{websites}
 <h2>Kontakt</h2>
 <p>{kontakt}</p>
 <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
@@ -363,7 +369,7 @@ def build_rechtliches(b):
     write("impressum/index.html", layout("Impressum", "", impressum, "Impressum dieser Website."))
 
     datenschutz = f"""<h1>Datenschutzerklärung</h1>
-<p class="meta">Stand: November 2026</p>
+<p class="meta">für edv.ruslanlomaka.org · Stand: November 2026</p>
 <h2>1. Verantwortlicher</h2>
 <p>{anschrift}<br>{kontakt}</p>
 <h2>2. Das Wichtigste in Kürze</h2>
