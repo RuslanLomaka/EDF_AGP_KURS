@@ -1,7 +1,8 @@
 ---
 title: "Arbeitszeit und Pausen: Was das Gesetz vorschreibt"
 slug: arbeitszeit-und-pausen
-datum: ""
+datum: "2026-11-01"
+reihenfolge: 2
 thema: "Arbeitsrecht"
 stichwoerter:
   - Arbeitszeit
@@ -284,3 +285,9 @@ Einen **Ersatzruhetag** – einen anderen freien Tag innerhalb von 2 Wochen.
 **Richtig.** Bei normalen Einkommen sind solche pauschalen Regeln meistens unwirksam.
 
 </details>
+
+## Quellen {#quellen}
+
+- [Arbeitszeitgesetz (ArbZG)](https://www.gesetze-im-internet.de/arbzg/) (Bundesministerium der Justiz)
+- [Jugendarbeitsschutzgesetz (JArbSchG)](https://www.gesetze-im-internet.de/jarbschg/) (Bundesministerium der Justiz)
+- [Arbeitszeitschutz](https://www.bmas.de/DE/Arbeit/Arbeitsrecht/Arbeitnehmerrechte/Arbeitszeitschutz/arbeitszeitschutz.html) (Bundesministerium für Arbeit und Soziales)

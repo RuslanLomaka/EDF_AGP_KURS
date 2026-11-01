@@ -46,16 +46,20 @@
 
   function tage(treffer, alleOffen) {
     let html = '', tag = null, n = 0, offen = 0;
-    const schliessen = () => { if (tag !== null) html += '</ul></details>'; };
+    const schliessen = () => { if (tag !== null) html += tag ? '</ul></details>' : '</ul>'; };
     for (const a of treffer) {
       if (a.datum !== tag) {
         schliessen();
         tag = a.datum;
         n = treffer.filter(b => b.datum === tag).length;
-        const auf = alleOffen || (tag && offen < 2);
-        if (auf && tag) offen++;
-        html += '<details class="tag"' + (auf ? ' open' : '') + '><summary>' + esc(a.datumLang || 'Ohne Datum')
-          + ' <span class="zahl">(' + n + ')</span></summary><ul class="liste">';
+        const auf = alleOffen || offen < 2;
+        if (!tag) {
+          html += '<ul class="liste">'; // undated articles: no date label at all
+        } else {
+          if (auf) offen++;
+          html += '<details class="tag"' + (auf ? ' open' : '') + '><summary>' + esc(a.datumLang)
+            + ' <span class="zahl">(' + n + ')</span></summary><ul class="liste">';
+        }
       }
       html += '<li><a href="' + a.url + '">' + esc(a.title) + '</a>' + (thema ? '' : badge(a)) + '</li>';
     }

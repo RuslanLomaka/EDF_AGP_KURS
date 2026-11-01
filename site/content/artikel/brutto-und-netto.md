@@ -1,7 +1,8 @@
 ---
 title: "Brutto und Netto – warum vom Gehalt nicht alles auf dem Konto ankommt"
 slug: brutto-und-netto
-datum: ""
+datum: "2026-11-01"
+reihenfolge: 1
 thema: "Arbeit & Geld"
 stichwoerter:
   - Bruttogehalt
@@ -329,3 +330,11 @@ Meistens ungefähr **je zur Hälfte**. Ausnahmen: siehe [Wer zahlt die Beiträge
 Es gibt **6** Steuerklassen. **Klasse I** ist für Alleinstehende: ledig, geschieden oder getrennt lebend. Siehe [Steuerklassen](#steuerklassen).
 
 </details>
+
+## Quellen {#quellen}
+
+- [§ 38b Einkommensteuergesetz – Steuerklassen](https://www.gesetze-im-internet.de/estg/__38b.html) (Bundesministerium der Justiz)
+- [Lohn- und Einkommensteuerrechner](https://www.bmf-steuerrechner.de/) (Bundesministerium der Finanzen)
+- [§ 28d SGB IV – Gesamtsozialversicherungsbeitrag](https://www.gesetze-im-internet.de/sgb_4/__28d.html) (Bundesministerium der Justiz)
+- [Deutsche Rentenversicherung](https://www.deutsche-rentenversicherung.de/)
+- [Arbeitslosengeld](https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld) (Bundesagentur für Arbeit)

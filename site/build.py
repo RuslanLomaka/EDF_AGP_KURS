@@ -179,8 +179,8 @@ def asset(name):
 
 # ---------------------------------------------------------------- page frame
 
-def toc(body_html):
-    found = re.findall(r'<h2 id="([^"]+)">(.*?)</h2>', body_html)
+def toc(body_html, extra=()):
+    found = re.findall(r'<h2 id="([^"]+)">(.*?)</h2>', body_html) + list(extra)
     items = "".join(f'<li><a href="#{i}">{re.sub(r"<[^>]+>", "", t)}</a></li>' for i, t in found)
     if not items:
         return ""
@@ -205,7 +205,7 @@ def layout(title, active, main, description="", scripts=()):
     current = ' aria-current="page"'
     links = "".join(f'<a href="{href}"{current if key == active else ""}>{label}</a>' for key, href, label in NAV)
     full_title = BRAND if title == BRAND else f"{title} – {BRAND}"
-    script_tags = "".join(f'<script src="{asset(s)}"></script>' for s in scripts)
+    script_tags = "".join(f'<script src="{asset(s)}"></script>' for s in ("hinweis.js", *scripts))
     return f"""<!doctype html>
 <html lang="de">
 <head>
@@ -223,11 +223,52 @@ def layout(title, active, main, description="", scripts=()):
 <main>
 {main}
 </main>
-<footer class="site-footer"><a href="/">{BRAND}</a> · <a href="/edv-kurs/">EDV-Kurs</a> · <a href="/artikel/">Artikel</a></footer>
+<footer class="site-footer"><a href="/">{BRAND}</a> · <a href="/edv-kurs/">EDV-Kurs</a> · <a href="/artikel/">Artikel</a> · <a href="/hinweis/">Hinweise &amp; Datenschutz</a></footer>
+{HINWEIS_DIALOG}
 {script_tags}
 </body>
 </html>
 """
+
+
+# The same promises appear in the dialog (every visit) and on /hinweis/. They must stay true:
+# no accounts, forms, cookies, analytics or external scripts; nginx keeps no access logs.
+HINWEIS_PUNKTE = [
+    "Diese Website ist nur zum Lesen und Lernen da.",
+    "Sie brauchen kein Konto. Wir sammeln und speichern keine persönlichen Daten, setzen keine Cookies, "
+    "nutzen kein Tracking und schicken keine E-Mails oder Werbung.",
+    "Was Sie hier tun – Suche, Quiz, Haken in Lektionen –, bleibt in Ihrem Browser und wird nicht an uns gesendet.",
+    "Die Inhalte erklären öffentlich zugängliche Informationen, zum Beispiel Gesetze, in einfacher Sprache. "
+    "Sie ersetzen keine Rechtsberatung.",
+    "Die Website enthält keine persönlichen oder vertraulichen Daten über Menschen, Firmen oder andere "
+    "Organisationen. Namen in Beispielen sind erfunden.",
+]
+HINWEIS_DIALOG = f"""<dialog id="hinweis-dialog" class="hinweis-dialog" aria-labelledby="hinweis-titel">
+<h2 id="hinweis-titel">Hinweis zu dieser Website</h2>
+<ul>{"".join(f"<li>{esc(t)}</li>" for t in HINWEIS_PUNKTE)}</ul>
+<div class="aktionen"><a href="/hinweis/">Mehr dazu</a><button type="button">Verstanden</button></div>
+</dialog>"""
+
+
+def build_hinweis():
+    punkte = "".join(f"<li>{esc(t)}</li>" for t in HINWEIS_PUNKTE)
+    main = f"""<h1>Hinweise &amp; Datenschutz</h1>
+<ul>{punkte}</ul>
+<h2>Was in Ihrem Browser bleibt</h2>
+<ul>
+<li><strong>Haken in Lektionen:</strong> Ihr Fortschritt wird nur auf Ihrem Gerät gespeichert (im Speicher Ihres Browsers). Sie können ihn mit „Alle Haken entfernen“ oder über die Einstellungen Ihres Browsers löschen.</li>
+<li><strong>Dieser Hinweis:</strong> Bis Sie den Tab schließen, merkt sich Ihr Browser, dass Sie ihn gelesen haben. Danach erscheint er wieder.</li>
+<li><strong>Suche und Quiz:</strong> Es wird nichts gespeichert.</li>
+</ul>
+<h2>Technik</h2>
+<ul>
+<li>Die Seiten werden über Cloudflare ausgeliefert. Dabei werden technisch nötige Verbindungsdaten, zum Beispiel die IP-Adresse, verarbeitet. Nur wenn Cloudflare eine Sicherheitsprüfung zeigt, kann Cloudflare dafür ein technisch nötiges Cookie setzen.</li>
+<li>Unser Webserver speichert keine Zugriffsprotokolle.</li>
+<li>Links zu anderen Websites, zum Beispiel zu Gesetzestexten, führen zu Angeboten mit eigenen Datenschutzregeln.</li>
+</ul>
+<h2>Inhalte</h2>
+<p>Alle Angaben ohne Gewähr. Die Texte erklären allgemeine Regeln und ersetzen keine Beratung im Einzelfall.</p>"""
+    write("hinweis/index.html", layout("Hinweise & Datenschutz", "", main, "Hinweise zu dieser Website und zum Datenschutz."))
 
 
 # ---------------------------------------------------------------- articles
@@ -267,8 +308,52 @@ def load_articles(themen):
         a["text"] = " ".join(re.sub(r"[-=+|]{3,}|\|", " ", plain).split())  # drop ASCII table borders
         a["url"] = f"/artikel/{a['slug']}/"
         a["minuten"] = max(1, math.ceil(len(a["text"].split()) / 180))
+        a["quiz"] = load_quiz(path.with_name(f"{a['slug']}.quiz.json"))
         articles.append(a)
     return articles
+
+
+def load_quiz(path):
+    """Every article has a quiz in Quiz Forger's JSON format (quiz.ruslanlomaka.org), one correct answer per question."""
+    if not path.is_file():
+        fail(path, "missing: every article needs a quiz file <slug>.quiz.json (see CLAUDE.md)")
+    try:
+        quiz = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as e:
+        fail(path, f"not valid JSON: {e}")
+    if not isinstance(quiz, dict) or not isinstance(quiz.get("title"), str) or not isinstance(quiz.get("questions"), list):
+        fail(path, "needs 'title' (text) and 'questions' (list)")
+    if not 5 <= len(quiz["questions"]) <= 30:
+        fail(path, "needs between 5 and 30 questions")
+    for n, q in enumerate(quiz["questions"], start=1):
+        if not isinstance(q, dict) or not isinstance(q.get("question"), str) or not q["question"].strip():
+            fail(path, f"question {n}: 'question' must be text")
+        answers = q.get("answers")
+        if not isinstance(answers, list) or not 3 <= len(answers) <= 4:
+            fail(path, f"question {n}: needs 3 or 4 'answers'")
+        for a in answers:
+            if not isinstance(a, dict) or not isinstance(a.get("text"), str) or not a["text"].strip() \
+                    or not isinstance(a.get("correct"), bool):
+                fail(path, f"question {n}: every answer needs 'text' and 'correct': true/false")
+        if sum(a["correct"] for a in answers) != 1:
+            fail(path, f"question {n}: exactly one answer must be correct")
+        if not isinstance(q.get("explanation", ""), str):
+            fail(path, f"question {n}: 'explanation' must be text")
+        for s in q.get("sources") or []:
+            if not isinstance(s, dict) or not re.fullmatch(r"https?://[^\s<>\"']+", str(s.get("url", ""))):
+                fail(path, f"question {n}: every source needs an http(s) 'url'")
+    return quiz
+
+
+def quiz_section(quiz):
+    data = json.dumps(quiz, ensure_ascii=False).replace("<", "\\u003c")
+    return f"""<section class="quiz" aria-labelledby="quiz">
+<h2 id="quiz">Quiz</h2>
+<p class="hinweis">{len(quiz['questions'])} Fragen mit je einer richtigen Antwort. Fragen und Antworten werden jedes Mal neu gemischt. Ihre Antworten werden nirgends gespeichert.</p>
+<div class="quiz-box" data-quiz></div>
+<noscript><p class="hinweis">Für das Quiz muss JavaScript eingeschaltet sein.</p></noscript>
+<script id="quiz-daten" type="application/json">{data}</script>
+</section>"""
 
 
 def tag(a):
@@ -300,15 +385,16 @@ def build_article_pages(articles):
         main = f"""<p class="crumbs"><a href="/artikel/">Artikel</a> › <a href="{thema_link(a['thema'])}">{esc(a['thema'])}</a></p>
 <h1>{esc(a['title'])}</h1>
 <p class="meta">{meta_line}</p>
-{toc(a['body'])}
+{toc(a['body'], [("quiz", "Quiz")])}
 <article class="inhalt">
 {a['body']}
 </article>
+{quiz_section(a['quiz'])}
 {f'<h2>Stichwörter</h2><ul class="chips">{chips}</ul>' if chips else ''}
 {mehr}
 {nav}
-<p class="quelle">Grundlage: {esc(a['quelle'])}. Der Inhalt ist in eigenen Worten erklärt. Kästen mit „Ergänzung“ enthalten zusätzliche Informationen (Stand {stand}, ohne Gewähr).</p>"""
-        write(f"artikel/{a['slug']}/index.html", layout(a["title"], "artikel", main, a["kurz"]))
+<p class="quelle">Grundlage: {esc(a['quelle'])}. Der Inhalt ist in eigenen Worten erklärt. Kästen mit „Ergänzung“ enthalten zusätzliche Informationen (Stand {stand}, ohne Gewähr). Keine Rechtsberatung.</p>"""
+        write(f"artikel/{a['slug']}/index.html", layout(a["title"], "artikel", main, a["kurz"], ["quiz.js"]))
     bilder = CONTENT / "artikel" / "bilder"
     if bilder.is_dir():
         shutil.copytree(bilder, DIST / "artikel" / "bilder")
@@ -329,10 +415,13 @@ def grouped_list(ordered, open_days, show_topic=True):
         groups[-1][1].append(a)
     parts = []
     for i, (datum, items) in enumerate(groups):
-        offen = " open" if open_days is None or (datum and i < open_days) else ""
         rows = "".join(f'<li><a href="{a["url"]}">{esc(a["title"])}</a>'
                        + (f' <span class="badge">{esc(a["thema"])}</span>' if show_topic else "") + "</li>" for a in items)
-        parts.append(f'<details class="tag"{offen}><summary>{esc(datum_lang(datum) or "Ohne Datum")} '
+        if not datum:  # undated articles: a plain list, no date label at all
+            parts.append(f'<ul class="liste">{rows}</ul>')
+            continue
+        offen = " open" if open_days is None or i < open_days else ""
+        parts.append(f'<details class="tag"{offen}><summary>{esc(datum_lang(datum))} '
                      f'<span class="zahl">({len(items)})</span></summary><ul class="liste">{rows}</ul></details>')
     return "".join(parts)
 
@@ -630,6 +719,7 @@ def main():
     build_lessons(lessons)
     build_lesson_index(lessons)
     build_start(articles, lessons)
+    build_hinweis()
     check_links()
     print(f"built {len(articles)} article(s) and {len(lessons)} lesson(s) into {DIST}; all links checked")
 

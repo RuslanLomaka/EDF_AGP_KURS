@@ -1,0 +1,209 @@
+{
+  "title": "Brutto und Netto",
+  "questions": [
+    {
+      "question": "Was ist das Bruttogehalt?",
+      "answers": [
+        {
+          "text": "Das Gehalt vor allen Abzügen",
+          "correct": true
+        },
+        {
+          "text": "Das Geld, das auf dem Konto ankommt",
+          "correct": false
+        },
+        {
+          "text": "Das Gehalt nach Steuern, aber vor der Sozialversicherung",
+          "correct": false
+        }
+      ],
+      "explanation": "Brutto steht im Arbeitsvertrag. Davon gehen noch Steuern und Sozialversicherung ab."
+    },
+    {
+      "question": "Was ist das Nettogehalt?",
+      "answers": [
+        {
+          "text": "Der Betrag, der nach allen Abzügen auf das Konto kommt",
+          "correct": true
+        },
+        {
+          "text": "Das Gehalt aus dem Arbeitsvertrag",
+          "correct": false
+        },
+        {
+          "text": "Der Anteil, den der Arbeitgeber zur Sozialversicherung zahlt",
+          "correct": false
+        }
+      ],
+      "explanation": "Netto = Brutto minus Steuern minus Sozialversicherung."
+    },
+    {
+      "question": "Welche zwei Arten von Abzügen gibt es?",
+      "answers": [
+        {
+          "text": "Steuern und Beiträge zur Sozialversicherung",
+          "correct": true
+        },
+        {
+          "text": "Miete und Lebensmittel",
+          "correct": false
+        },
+        {
+          "text": "Urlaubsgeld und Weihnachtsgeld",
+          "correct": false
+        }
+      ],
+      "explanation": "Vom Brutto werden Steuern (vor allem Lohnsteuer) und Sozialversicherungsbeiträge abgezogen."
+    },
+    {
+      "question": "Welche Versicherung gehört NICHT zu den vier wichtigsten Sozialversicherungen im Text?",
+      "answers": [
+        {
+          "text": "Die Haftpflichtversicherung",
+          "correct": true
+        },
+        {
+          "text": "Die Pflegeversicherung",
+          "correct": false
+        },
+        {
+          "text": "Die Arbeitslosenversicherung",
+          "correct": false
+        }
+      ],
+      "explanation": "Die vier sind: Kranken-, Renten-, Pflege- und Arbeitslosenversicherung. Eine Haftpflichtversicherung ist privat."
+    },
+    {
+      "question": "Wer zahlt Beiträge zur Sozialversicherung?",
+      "answers": [
+        {
+          "text": "Arbeitnehmer und Arbeitgeber, meist ungefähr je zur Hälfte",
+          "correct": true
+        },
+        {
+          "text": "Nur der Arbeitnehmer",
+          "correct": false
+        },
+        {
+          "text": "Nur der Staat",
+          "correct": false
+        }
+      ],
+      "explanation": "Ihr Teil wird vom Brutto abgezogen, der Teil des Arbeitgebers kommt zusätzlich dazu."
+    },
+    {
+      "question": "Was bestimmt die Steuerklasse?",
+      "answers": [
+        {
+          "text": "Wie viel Lohnsteuer jeden Monat abgezogen wird",
+          "correct": true
+        },
+        {
+          "text": "Wie viele Urlaubstage man hat",
+          "correct": false
+        },
+        {
+          "text": "Wie hoch der Beitrag zur Krankenversicherung ist",
+          "correct": false
+        }
+      ],
+      "explanation": "Es gibt 6 Steuerklassen. Sie hängen vor allem vom Familienstand ab.",
+      "sources": [
+        {
+          "title": "§ 38b EStG – Steuerklassen",
+          "url": "https://www.gesetze-im-internet.de/estg/__38b.html"
+        }
+      ]
+    },
+    {
+      "question": "Welche Steuerklasse haben Alleinstehende ohne Kinder normalerweise?",
+      "answers": [
+        {
+          "text": "Steuerklasse I",
+          "correct": true
+        },
+        {
+          "text": "Steuerklasse III",
+          "correct": false
+        },
+        {
+          "text": "Steuerklasse VI",
+          "correct": false
+        }
+      ],
+      "explanation": "Klasse I: ledig, geschieden oder getrennt lebend. Klasse III ist für Verheiratete, Klasse VI für einen zweiten Job.",
+      "sources": [
+        {
+          "title": "§ 38b EStG – Steuerklassen",
+          "url": "https://www.gesetze-im-internet.de/estg/__38b.html"
+        }
+      ]
+    },
+    {
+      "question": "Wofür ist Steuerklasse VI?",
+      "answers": [
+        {
+          "text": "Für einen zweiten Job",
+          "correct": true
+        },
+        {
+          "text": "Für Verheiratete mit gleichem Einkommen",
+          "correct": false
+        },
+        {
+          "text": "Für Alleinerziehende",
+          "correct": false
+        }
+      ],
+      "explanation": "Verheiratete mit ähnlichem Einkommen haben IV, Alleinerziehende II.",
+      "sources": [
+        {
+          "title": "§ 38b EStG – Steuerklassen",
+          "url": "https://www.gesetze-im-internet.de/estg/__38b.html"
+        }
+      ]
+    },
+    {
+      "question": "Womit können Sie vor einer Bewerbung ungefähr ausrechnen, wie viel Netto Sie bekommen?",
+      "answers": [
+        {
+          "text": "Mit einem Brutto-Netto-Rechner",
+          "correct": true
+        },
+        {
+          "text": "Mit der Krankenkassenkarte",
+          "correct": false
+        },
+        {
+          "text": "Mit dem Zeugnis vom letzten Job",
+          "correct": false
+        }
+      ],
+      "explanation": "Man gibt Brutto, Steuerklasse, Bundesland, Kirche, Kinder und Krankenversicherung ein.",
+      "sources": [
+        {
+          "title": "Lohnsteuerrechner des Bundesfinanzministeriums",
+          "url": "https://www.bmf-steuerrechner.de/"
+        }
+      ]
+    },
+    {
+      "question": "Warum vergleicht man Jobangebote besser mit dem Netto?",
+      "answers": [
+        {
+          "text": "Weil man vom Netto die Miete und den Alltag bezahlt",
+          "correct": true
+        },
+        {
+          "text": "Weil im Arbeitsvertrag immer das Netto steht",
+          "correct": false
+        },
+        {
+          "text": "Weil das Netto immer gleich hoch ist wie das Brutto",
+          "correct": false
+        }
+      ],
+      "explanation": "Im Vertrag und in Anzeigen steht meist das Brutto. Leben müssen Sie aber vom Netto."
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "title": "Arbeitszeit und Pausen",
+  "questions": [
+    {
+      "question": "Was ist das Hauptziel des Arbeitszeitgesetzes?",
+      "answers": [
+        {
+          "text": "Der Schutz der Gesundheit der Arbeitnehmer",
+          "correct": true
+        },
+        {
+          "text": "Mehr Gewinn für die Firmen",
+          "correct": false
+        },
+        {
+          "text": "Weniger Urlaub für alle",
+          "correct": false
+        }
+      ],
+      "explanation": "Das Gesetz setzt Grenzen, damit niemand durch zu viel Arbeit krank wird.",
+      "sources": [
+        {
+          "title": "Arbeitszeitgesetz (ArbZG)",
+          "url": "https://www.gesetze-im-internet.de/arbzg/"
+        }
+      ]
+    },
+    {
+      "question": "Wie viele Stunden darf man regulär pro Werktag arbeiten?",
+      "answers": [
+        {
+          "text": "8 Stunden",
+          "correct": true
+        },
+        {
+          "text": "10 Stunden",
+          "correct": false
+        },
+        {
+          "text": "6 Stunden",
+          "correct": false
+        }
+      ],
+      "explanation": "10 Stunden sind nur mit Ausgleich erlaubt.",
+      "sources": [
+        {
+          "title": "Arbeitszeitgesetz (ArbZG)",
+          "url": "https://www.gesetze-im-internet.de/arbzg/"
+        }
+      ]
+    },
+    {
+      "question": "Welche Tage sind Werktage?",
+      "answers": [
+        {
+          "text": "Montag bis Samstag",
+          "correct": true
+        },
+        {
+          "text": "Montag bis Freitag",
+          "correct": false
+        },
+        {
+          "text": "Montag bis Sonntag",
+          "correct": false
+        }
+      ],
+      "explanation": "Darum sind höchstens 6 × 8 = 48 Stunden pro Woche erlaubt."
+    },
+    {
+      "question": "Wann darf man 10 Stunden am Tag arbeiten?",
+      "answers": [
+        {
+          "text": "Wenn man in 6 Monaten im Durchschnitt wieder auf 8 Stunden pro Werktag kommt",
+          "correct": true
+        },
+        {
+          "text": "Immer, wenn der Chef es möchte",
+          "correct": false
+        },
+        {
+          "text": "Nur am Samstag",
+          "correct": false
+        }
+      ],
+      "explanation": "Diese 6 Monate (oder 24 Wochen) heißen Ausgleichszeitraum.",
+      "sources": [
+        {
+          "title": "Arbeitszeitgesetz (ArbZG)",
+          "url": "https://www.gesetze-im-internet.de/arbzg/"
+        }
+      ]
+    },
+    {
+      "question": "Wie lange muss die Ruhezeit nach Feierabend mindestens sein?",
+      "answers": [
+        {
+          "text": "11 Stunden ohne Unterbrechung",
+          "correct": true
+        },
+        {
+          "text": "8 Stunden",
+          "correct": false
+        },
+        {
+          "text": "6 Stunden",
+          "correct": false
+        }
+      ],
+      "explanation": "Beispiel: Feierabend um 22 Uhr, Arbeitsbeginn frühestens um 9 Uhr."
+    },
+    {
+      "question": "Sie arbeiten 7 Stunden. Wie lang muss Ihre Pause mindestens sein?",
+      "answers": [
+        {
+          "text": "30 Minuten",
+          "correct": true
+        },
+        {
+          "text": "15 Minuten",
+          "correct": false
+        },
+        {
+          "text": "45 Minuten",
+          "correct": false
+        }
+      ],
+      "explanation": "Bei mehr als 6 Stunden Arbeit: 30 Minuten. Bei mehr als 9 Stunden: 45 Minuten."
+    },
+    {
+      "question": "Sie arbeiten 9,5 Stunden. Wie lang muss Ihre Pause mindestens sein?",
+      "answers": [
+        {
+          "text": "45 Minuten",
+          "correct": true
+        },
+        {
+          "text": "30 Minuten",
+          "correct": false
+        },
+        {
+          "text": "60 Minuten",
+          "correct": false
+        }
+      ],
+      "explanation": "Ab mehr als 9 Stunden Arbeit sind es mindestens 45 Minuten."
+    },
+    {
+      "question": "Darf man die Pause an das Ende legen, um früher nach Hause zu gehen?",
+      "answers": [
+        {
+          "text": "Nein, die Pause ist zum Erholen während der Arbeit",
+          "correct": true
+        },
+        {
+          "text": "Ja, immer",
+          "correct": false
+        },
+        {
+          "text": "Ja, wenn die Kollegen einverstanden sind",
+          "correct": false
+        }
+      ],
+      "explanation": "Eine Pause am Anfang oder am Ende der Arbeitszeit erfüllt ihren Zweck nicht."
+    },
+    {
+      "question": "Wie werden Überstunden normalerweise ausgeglichen?",
+      "answers": [
+        {
+          "text": "Mit Geld oder mit freier Zeit",
+          "correct": true
+        },
+        {
+          "text": "Gar nicht",
+          "correct": false
+        },
+        {
+          "text": "Nur mit zusätzlichen Urlaubstagen im nächsten Jahr",
+          "correct": false
+        }
+      ],
+      "explanation": "Ausgleich mit Freizeit heißt Freizeitausgleich."
+    },
+    {
+      "question": "Was muss der Arbeitgeber geben, wenn Sie am Sonntag arbeiten?",
+      "answers": [
+        {
+          "text": "Einen Ersatzruhetag innerhalb von 2 Wochen",
+          "correct": true
+        },
+        {
+          "text": "Nichts",
+          "correct": false
+        },
+        {
+          "text": "Einen zusätzlichen Urlaubstag im Jahr",
+          "correct": false
+        }
+      ],
+      "explanation": "Sonntagsarbeit ist grundsätzlich verboten. Wo sie erlaubt ist, gibt es einen Ersatzruhetag.",
+      "sources": [
+        {
+          "title": "Arbeitszeitgesetz (ArbZG)",
+          "url": "https://www.gesetze-im-internet.de/arbzg/"
+        }
+      ]
+    }
+  ]
+}
