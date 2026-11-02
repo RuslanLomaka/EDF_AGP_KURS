@@ -34,7 +34,6 @@ CONTENT = SITE / "content"
 DIST = SITE / "dist"
 BRAND = "Kursmaterial"
 NAV = [("start", "/", "Start"), ("kurs", "/edv-kurs/", "EDV-Kurs"), ("artikel", "/artikel/", "Artikel")]
-WOCHENTAGE = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"]
 MONATE = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober",
           "November", "Dezember"]
 TYP = {".xlsx": "Excel", ".docx": "Word", ".pdf": "PDF", ".zip": "ZIP"}
@@ -211,7 +210,7 @@ def datum_lang(iso):
     if not iso:
         return ""
     d = date.fromisoformat(iso)
-    return f"{WOCHENTAGE[d.weekday()]}, {d.day}. {MONATE[d.month - 1]} {d.year}"
+    return f"{d.day}. {MONATE[d.month - 1]} {d.year}"
 
 
 def datum_kurz(iso):
@@ -235,11 +234,6 @@ def thema_slug(thema):
 
 def thema_link(thema):
     return f"/artikel/thema/{thema_slug(thema)}/"
-
-
-def tag_kurz(iso):
-    d = date.fromisoformat(iso)
-    return f"{WOCHENTAGE[d.weekday()][:2]} {d.strftime('%d.%m.')}"
 
 
 def asset(name):
@@ -456,16 +450,54 @@ def load_articles(themen, vorleser):
             fail(path, f"thema '{a['thema']}' is not in site/themen.yaml (add it there first)")
         if not isinstance(a["reihenfolge"], int) or isinstance(a["reihenfolge"], bool):
             fail(path, "'reihenfolge' must be a whole number (position of the handout within its class day)")
+        a["pfad"] = path
+        a["serie"], a["teil"], a["serie_teile"] = text(path, meta, "serie", required=False), meta.get("teil"), []
+        if a["serie"] or a["teil"] is not None:
+            if not a["serie"]:
+                fail(path, "'teil' needs 'serie' (the name of the series)")
+            if not isinstance(a["teil"], int) or isinstance(a["teil"], bool) or a["teil"] < 1:
+                fail(path, "'teil' must be a whole number from 1 (the part of the series)")
+        else:
+            a["teil"] = 0
         a["body"] = pandoc(path, body, "html5")
         check_body(path, a["body"])
         a["body"] = add_vorlesen(a["body"], vorleser)
         plain = pandoc(path, body, "plain")
         a["text"] = " ".join(re.sub(r"[-=+|]{3,}|\|", " ", plain).split())  # drop ASCII table borders
         a["url"] = f"/artikel/{a['slug']}/"
-        a["minuten"] = max(1, math.ceil(len(a["text"].split()) / 180))
+        a["minuten"] = max(1, math.ceil(len(a["text"].split()) / 100))
         a["quiz"] = load_quiz(path.with_name(f"{a['slug']}.quiz.json"))
         articles.append(a)
+    link_series(articles)
     return articles
+
+
+def link_series(articles):
+    """Parts of a series are numbered 1, 2, 3 … without gaps and share one topic."""
+    serien = {}
+    for a in articles:
+        if a["serie"]:
+            serien.setdefault(a["serie"], []).append(a)
+    for name, teile in serien.items():
+        teile.sort(key=lambda a: a["teil"])
+        nummern = [a["teil"] for a in teile]
+        if nummern != list(range(1, len(teile) + 1)):
+            fail(teile[0]["pfad"], f"series '{name}': 'teil' must run 1 to {len(teile)} without gaps or doubles, found {nummern}")
+        if len({a["thema"] for a in teile}) > 1:
+            fail(teile[0]["pfad"], f"series '{name}': all parts need the same 'thema'")
+        for a in teile:
+            a["serie_teile"] = teile
+
+
+def anker(a):
+    """A series stays together in lists: its parts sit where its first part of that day would sit."""
+    if not a["serie"]:
+        return a["reihenfolge"]
+    return min(b["reihenfolge"] for b in a["serie_teile"] if b["datum"] == a["datum"])
+
+
+def teil_badge(a):
+    return f' <span class="badge">Teil {a["teil"]} von {len(a["serie_teile"])}</span>' if a["serie"] else ""
 
 
 def load_quiz(path):
@@ -517,7 +549,7 @@ def tag(a):
 
 def build_article_pages(articles):
     # previous/next follow the course: dated articles in class order; undated ones stand alone
-    dated = sorted((a for a in articles if a["datum"]), key=lambda a: (a["datum"], a["reihenfolge"], a["title"]))
+    dated = sorted((a for a in articles if a["datum"]), key=lambda a: (a["datum"], anker(a), a["teil"], a["reihenfolge"], a["title"]))
     for a in articles:
         others = [b for b in articles if b["thema"] == a["thema"] and b is not a]
         others.sort(key=lambda b: (abs(tag(b) - tag(a)) if a["datum"] and b["datum"] else 10 ** 6, b["title"]))
@@ -526,25 +558,47 @@ def build_article_pages(articles):
             items = "".join(f'<li><a href="{b["url"]}">{esc(b["title"])}</a></li>' for b in others[:5])
             mehr = (f'<section class="mehr"><h2>Mehr zum Thema „{esc(a["thema"])}“</h2><ul class="liste">{items}</ul>'
                     f'<p><a href="{thema_link(a["thema"])}">Alle Artikel zum Thema</a></p></section>')
-        nav = ""
-        if a in dated:
+        nav, serie, weiter = "", "", ""
+        if a["serie"]:
+            teile, n = a["serie_teile"], a["teil"]
+            punkte = "".join(f'<li aria-current="page"><strong>{esc(b["title"])}</strong></li>' if b is a
+                             else f'<li><a href="{b["url"]}">{esc(b["title"])}</a></li>' for b in teile)
+            # folded: on a phone the list of parts would push "Kurz gesagt" off the first screen
+            serie = (f'<nav class="serie" aria-label="Serie"><details><summary><strong>Serie „{esc(a["serie"])}“</strong> · '
+                     f'Teil {n} von {len(teile)}</summary><ol>{punkte}</ol></details></nav>')
+            if n < len(teile):
+                weiter = (f'<p class="serie-weiter"><a class="btn" href="{teile[n]["url"]}">Weiter mit Teil {n + 1}: '
+                          f'{esc(teile[n]["title"])}</a></p>')
+            else:
+                weiter = (f'<p class="serie-weiter">Das war der letzte Teil der Serie „{esc(a["serie"])}“. '
+                          f'<a href="{teile[0]["url"]}">Zurück zu Teil 1</a></p>')
+            nav = blaettern("Serie", teile[n - 2] if n > 1 else None, teile[n] if n < len(teile) else None,
+                            "Vorheriger Teil", "Nächster Teil")
+        elif a in dated:
             i = dated.index(a)
             prev = dated[i - 1] if i else None
             nxt = dated[i + 1] if i + 1 < len(dated) else None
-            nav = blaettern("Weitere Artikel", prev, nxt,
-                            f"Vorheriger Artikel · {tag_kurz(prev['datum'])}" if prev else "",
-                            f"Nächster Artikel · {tag_kurz(nxt['datum'])}" if nxt else "")
+            nav = blaettern("Weitere Artikel", prev, nxt, "Vorheriger Artikel" if prev else "", "Nächster Artikel" if nxt else "")
+        # sources come after the quiz: the quiz is the part with feedback, the list of laws is for looking things up
+        inhalt, quellen = a["body"], ""
+        m = re.search(r'<h2 id="quellen">', inhalt)
+        if m:
+            inhalt, quellen = inhalt[:m.start()], f'<section class="quellen inhalt">{inhalt[m.start():]}</section>'
+        extra = [("quiz", "Quiz")] + ([("quellen", "Quellen")] if quellen else [])
         chips = "".join(f'<li><a href="/artikel/?q={quote(k)}">{esc(k)}</a></li>' for k in a["stichwoerter"])
         stand = a["datum"][:4] if a["datum"] else str(date.today().year)
         meta_line = " · ".join(x for x in [esc(a["thema"]), datum_kurz(a["datum"]), f"ca. {a['minuten']} Min. Lesezeit"] if x)
         main = f"""<p class="crumbs"><a href="/artikel/">Artikel</a> › <a href="{thema_link(a['thema'])}">{esc(a['thema'])}</a></p>
 <h1>{esc(a['title'])}</h1>
 <p class="meta">{meta_line}</p>
-{toc(a['body'], [("quiz", "Quiz")])}
+{serie}
+{toc(inhalt, extra)}
 <article class="inhalt">
-{a['body']}
+{inhalt}
 </article>
 {quiz_section(a['quiz'])}
+{quellen}
+{weiter}
 {f'<h2>Stichwörter</h2><ul class="chips">{chips}</ul>' if chips else ''}
 {mehr}
 {nav}
@@ -557,7 +611,7 @@ def build_article_pages(articles):
 
 def newest_first(articles):
     """Latest class day first, handouts of one day in their order; undated articles at the very end."""
-    dated = sorted((a for a in articles if a["datum"]), key=lambda a: (-tag(a), a["reihenfolge"], a["title"]))
+    dated = sorted((a for a in articles if a["datum"]), key=lambda a: (-tag(a), anker(a), a["teil"], a["reihenfolge"], a["title"]))
     return dated + sorted((a for a in articles if not a["datum"]), key=lambda a: a["title"])
 
 
@@ -570,7 +624,7 @@ def grouped_list(ordered, open_days, show_topic=True):
         groups[-1][1].append(a)
     parts = []
     for i, (datum, items) in enumerate(groups):
-        rows = "".join(f'<li><a href="{a["url"]}">{esc(a["title"])}</a>'
+        rows = "".join(f'<li><a href="{a["url"]}">{esc(a["title"])}</a>' + teil_badge(a)
                        + (f' <span class="badge">{esc(a["thema"])}</span>' if show_topic else "") + "</li>" for a in items)
         if not datum:  # undated articles: a plain list, no date label at all
             parts.append(f'<ul class="liste">{rows}</ul>')
@@ -594,7 +648,8 @@ def build_article_index(articles, themen):
     write("artikel/suchindex.json", volltext)
     volltext_url = f"/artikel/suchindex.json?v={hashlib.sha256(volltext.encode()).hexdigest()[:8]}"
     data = [{"title": a["title"], "url": a["url"], "datum": a["datum"], "datumLang": datum_lang(a["datum"]),
-             "thema": a["thema"], "kurz": a["kurz"], "stichwoerter": a["stichwoerter"]} for a in ordered]
+             "thema": a["thema"], "kurz": a["kurz"], "stichwoerter": a["stichwoerter"],
+             "serie": a["serie"], "teil": a["teil"], "teile": len(a["serie_teile"])} for a in ordered]
     used, chips = topic_chips(articles, themen)
     # every "<" escaped: no text can end the <script> element or switch the parser into script-escape mode
     payload = json.dumps({"artikel": data, "themen": used, "volltext": volltext_url},
@@ -614,10 +669,21 @@ def build_topic_pages(articles, themen):
     """One page per topic; works without JavaScript and is where article breadcrumbs point."""
     for t in topic_chips(articles, themen)[0]:
         items = [a for a in newest_first(articles) if a["thema"] == t]
+        # series first, each in reading order, so part 1 is always found first
+        serien = []
+        for a in items:
+            if a["serie"] and a["serie_teile"] not in serien:
+                serien.append(a["serie_teile"])
+        bloecke = "".join(f'<section class="serie-block"><h2>Serie „{esc(teile[0]["serie"])}“</h2><ol class="liste">'
+                          + "".join(f'<li><a href="{b["url"]}">{esc(b["title"])}</a><br><span class="hinweis">{esc(b["kurz"])}</span></li>'
+                                    for b in teile) + "</ol></section>" for teile in serien)
+        rest = [a for a in items if not a["serie"]]
+        weitere = (("<h2>Weitere Artikel</h2>" if serien else "") + grouped_list(rest, open_days=None, show_topic=False)) if rest else ""
         main = f"""<p class="crumbs"><a href="/artikel/">Artikel</a> › Thema</p>
 <h1>{esc(t)}</h1>
 <p class="lead">{anzahl(len(items), "Artikel", "Artikel")} zu diesem Thema.</p>
-{grouped_list(items, open_days=None, show_topic=False)}
+{bloecke}
+{weitere}
 <p><a href="/artikel/">Alle Artikel und Suche</a></p>"""
         write(f"artikel/thema/{thema_slug(t)}/index.html", layout(t, "artikel", main, f"Alle Artikel zum Thema {t}."))
 
@@ -787,11 +853,11 @@ def build_start(articles, lessons):
     letzter = max((a["datum"] for a in articles if a["datum"]), default="")
     if letzter:
         neu = [a for a in newest_first(articles) if a["datum"] == letzter]
-        ueberschrift = f"Letzter Kurstag: {datum_lang(letzter)}"
+        ueberschrift = f"Neu hinzugefügt: {datum_lang(letzter)}"
     else:
         neu = newest_first(articles)[:5]
         ueberschrift = "Neueste Artikel"
-    items = "".join(f'<li><a href="{a["url"]}">{esc(a["title"])}</a> <span class="badge">{esc(a["thema"])}</span></li>'
+    items = "".join(f'<li><a href="{a["url"]}">{esc(a["title"])}</a>{teil_badge(a)} <span class="badge">{esc(a["thema"])}</span></li>'
                     for a in neu)
     main = f"""<h1>{BRAND}</h1>
 <p class="lead">Unterlagen, Übungen und Anleitungen aus unserem Kurs – einfach erklärt.</p>

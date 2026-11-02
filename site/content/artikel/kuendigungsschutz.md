@@ -4,6 +4,8 @@ slug: kuendigungsschutz
 datum: "2026-11-01"
 reihenfolge: 7
 thema: "Arbeitsrecht"
+serie: "Rund um die Kündigung"
+teil: 2
 stichwoerter:
   - Kündigung
   - Kündigungsschutz

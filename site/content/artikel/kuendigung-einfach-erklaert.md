@@ -4,6 +4,8 @@ slug: kuendigung-einfach-erklaert
 datum: "2026-11-01"
 reihenfolge: 4
 thema: "Arbeitsrecht"
+serie: "Rund um die Kündigung"
+teil: 1
 stichwoerter:
   - Kündigung
   - ordentliche Kündigung

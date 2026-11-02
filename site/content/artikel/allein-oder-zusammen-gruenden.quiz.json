@@ -1,0 +1,245 @@
+{
+  "title": "Allein oder zusammen gründen",
+  "questions": [
+    {
+      "question": "Sie beginnen allein ein Gewerbe. Welche Rechtsform haben Sie?",
+      "answers": [
+        {
+          "text": "Ein Einzelunternehmen",
+          "correct": true
+        },
+        {
+          "text": "Eine GmbH",
+          "correct": false
+        },
+        {
+          "text": "Eine AG",
+          "correct": false
+        }
+      ],
+      "explanation": "Das Einzelunternehmen entsteht automatisch, ohne Notar und ohne Startkapital.",
+      "sources": [
+        {
+          "title": "Rechtsformen (Existenzgründungsportal)",
+          "url": "https://www.existenzgruendungsportal.de/gruenden-kurz-und-knapp/rechtsformen.html"
+        }
+      ]
+    },
+    {
+      "question": "Womit haftet ein Einzelunternehmer?",
+      "answers": [
+        {
+          "text": "Mit seinem ganzen Privatvermögen",
+          "correct": true
+        },
+        {
+          "text": "Nur mit 1.000 Euro",
+          "correct": false
+        },
+        {
+          "text": "Gar nicht",
+          "correct": false
+        }
+      ],
+      "explanation": "Auch Erspartes oder das Auto können für Schulden der Firma genommen werden.",
+      "sources": [
+        {
+          "title": "Rechtsformen (Existenzgründungsportal)",
+          "url": "https://www.existenzgruendungsportal.de/gruenden-kurz-und-knapp/rechtsformen.html"
+        }
+      ]
+    },
+    {
+      "question": "Was braucht man mindestens für eine GbR?",
+      "answers": [
+        {
+          "text": "Zwei Gesellschafter",
+          "correct": true
+        },
+        {
+          "text": "25.000 Euro Startkapital",
+          "correct": false
+        },
+        {
+          "text": "Einen Notar",
+          "correct": false
+        }
+      ],
+      "explanation": "Ein Vertrag reicht sogar mündlich – ein schriftlicher Vertrag ist aber besser.",
+      "sources": [
+        {
+          "title": "Rechtsformen (Existenzgründungsportal)",
+          "url": "https://www.existenzgruendungsportal.de/gruenden-kurz-und-knapp/rechtsformen.html"
+        }
+      ]
+    },
+    {
+      "question": "Die GbR hat Schulden. Wer haftet?",
+      "answers": [
+        {
+          "text": "Jeder Gesellschafter persönlich für die ganzen Schulden",
+          "correct": true
+        },
+        {
+          "text": "Nur der jüngste Gesellschafter",
+          "correct": false
+        },
+        {
+          "text": "Niemand, nur die GbR",
+          "correct": false
+        }
+      ],
+      "explanation": "Ein Gläubiger kann sich das ganze Geld von einer Person holen.",
+      "sources": [
+        {
+          "title": "§ 721 BGB",
+          "url": "https://www.gesetze-im-internet.de/bgb/__721.html"
+        }
+      ]
+    },
+    {
+      "question": "Wer muss ins Handelsregister?",
+      "answers": [
+        {
+          "text": "Die OHG",
+          "correct": true
+        },
+        {
+          "text": "Jede kleine GbR",
+          "correct": false
+        },
+        {
+          "text": "Jeder Freiberufler",
+          "correct": false
+        }
+      ],
+      "explanation": "Die OHG ist eine Handelsgesellschaft und muss eingetragen werden.",
+      "sources": [
+        {
+          "title": "§ 105 HGB",
+          "url": "https://www.gesetze-im-internet.de/hgb/__105.html"
+        }
+      ]
+    },
+    {
+      "question": "Wie haftet der Kommanditist in der KG?",
+      "answers": [
+        {
+          "text": "Nur bis zur Höhe seiner Einlage",
+          "correct": true
+        },
+        {
+          "text": "Unbeschränkt mit allem",
+          "correct": false
+        },
+        {
+          "text": "Doppelt so viel wie der Komplementär",
+          "correct": false
+        }
+      ],
+      "explanation": "Hat er seine Einlage eingezahlt, haftet er nicht mehr persönlich.",
+      "sources": [
+        {
+          "title": "§ 171 HGB",
+          "url": "https://www.gesetze-im-internet.de/hgb/__171.html"
+        }
+      ]
+    },
+    {
+      "question": "Was gilt zuerst bei der Gewinnverteilung in der GbR?",
+      "answers": [
+        {
+          "text": "Was im Gesellschaftsvertrag steht",
+          "correct": true
+        },
+        {
+          "text": "Wer am längsten arbeitet, bekommt alles",
+          "correct": false
+        },
+        {
+          "text": "Der Staat legt die Anteile fest",
+          "correct": false
+        }
+      ],
+      "explanation": "Ohne Vertrag zählen die vereinbarten Anteile, dann der Wert der Einlagen, sonst gleiche Teile.",
+      "sources": [
+        {
+          "title": "§ 709 BGB",
+          "url": "https://www.gesetze-im-internet.de/bgb/__709.html"
+        }
+      ]
+    },
+    {
+      "question": "Anna bringt 30.000 Euro ein, Ben 10.000 Euro, sonst ist nichts vereinbart. Wie wird der Gewinn verteilt?",
+      "answers": [
+        {
+          "text": "3/4 für Anna, 1/4 für Ben",
+          "correct": true
+        },
+        {
+          "text": "Halbe-halbe",
+          "correct": false
+        },
+        {
+          "text": "Alles für Anna",
+          "correct": false
+        }
+      ],
+      "explanation": "Ohne vereinbarte Anteile zählt der Wert der Einlagen.",
+      "sources": [
+        {
+          "title": "§ 709 BGB",
+          "url": "https://www.gesetze-im-internet.de/bgb/__709.html"
+        }
+      ]
+    },
+    {
+      "question": "Ein Gesellschafter der GbR kündigt. Was passiert seit 2024?",
+      "answers": [
+        {
+          "text": "Er scheidet aus, die GbR besteht weiter",
+          "correct": true
+        },
+        {
+          "text": "Die GbR ist sofort aufgelöst",
+          "correct": false
+        },
+        {
+          "text": "Alle müssen neu gründen",
+          "correct": false
+        }
+      ],
+      "explanation": "Ausscheiden statt Auflösung – das regelt das neue Recht.",
+      "sources": [
+        {
+          "title": "§ 723 BGB",
+          "url": "https://www.gesetze-im-internet.de/bgb/__723.html"
+        }
+      ]
+    },
+    {
+      "question": "Was ist eine eGbR?",
+      "answers": [
+        {
+          "text": "Eine GbR, die im Gesellschaftsregister eingetragen ist",
+          "correct": true
+        },
+        {
+          "text": "Eine GbR nur für Online-Firmen",
+          "correct": false
+        },
+        {
+          "text": "Eine GbR mit Ehepartnern",
+          "correct": false
+        }
+      ],
+      "explanation": "Die Eintragung ist freiwillig, aber zum Beispiel für den Kauf einer Immobilie nötig.",
+      "sources": [
+        {
+          "title": "§ 707 BGB",
+          "url": "https://www.gesetze-im-internet.de/bgb/__707.html"
+        }
+      ]
+    }
+  ]
+}

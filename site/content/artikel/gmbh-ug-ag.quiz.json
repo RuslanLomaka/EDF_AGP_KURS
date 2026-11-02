@@ -1,0 +1,249 @@
+{
+  "title": "GmbH, UG und AG",
+  "questions": [
+    {
+      "question": "Was heißt „beschränkte Haftung“?",
+      "answers": [
+        {
+          "text": "Für Schulden haftet nur das Geld der Firma",
+          "correct": true
+        },
+        {
+          "text": "Die Firma muss keine Steuern zahlen",
+          "correct": false
+        },
+        {
+          "text": "Man darf nur wenig verdienen",
+          "correct": false
+        }
+      ],
+      "explanation": "Das Privatvermögen der Gesellschafter ist normalerweise geschützt.",
+      "sources": [
+        {
+          "title": "§ 13 GmbHG",
+          "url": "https://www.gesetze-im-internet.de/gmbhg/__13.html"
+        }
+      ]
+    },
+    {
+      "question": "Wie hoch ist das Stammkapital einer GmbH mindestens?",
+      "answers": [
+        {
+          "text": "25.000 Euro",
+          "correct": true
+        },
+        {
+          "text": "1 Euro",
+          "correct": false
+        },
+        {
+          "text": "50.000 Euro",
+          "correct": false
+        }
+      ],
+      "explanation": "Vor der Eintragung müssen mindestens 12.500 Euro eingezahlt sein.",
+      "sources": [
+        {
+          "title": "§ 5 GmbHG",
+          "url": "https://www.gesetze-im-internet.de/gmbhg/__5.html"
+        },
+        {
+          "title": "§ 7 GmbHG",
+          "url": "https://www.gesetze-im-internet.de/gmbhg/__7.html"
+        }
+      ]
+    },
+    {
+      "question": "Wer muss den Gesellschaftsvertrag einer GmbH beurkunden?",
+      "answers": [
+        {
+          "text": "Ein Notar",
+          "correct": true
+        },
+        {
+          "text": "Das Finanzamt",
+          "correct": false
+        },
+        {
+          "text": "Die Bank",
+          "correct": false
+        }
+      ],
+      "explanation": "Für einfache Fälle gibt es ein Musterprotokoll, auch online per Video.",
+      "sources": [
+        {
+          "title": "§ 2 GmbHG",
+          "url": "https://www.gesetze-im-internet.de/gmbhg/__2.html"
+        }
+      ]
+    },
+    {
+      "question": "Ab wie viel Kapital kann man eine UG gründen?",
+      "answers": [
+        {
+          "text": "Ab 1 Euro",
+          "correct": true
+        },
+        {
+          "text": "Ab 12.500 Euro",
+          "correct": false
+        },
+        {
+          "text": "Ab 100.000 Euro",
+          "correct": false
+        }
+      ],
+      "explanation": "Das Geld muss vollständig in bar eingezahlt werden.",
+      "sources": [
+        {
+          "title": "§ 5a GmbHG – UG",
+          "url": "https://www.gesetze-im-internet.de/gmbhg/__5a.html"
+        }
+      ]
+    },
+    {
+      "question": "Wie viel vom Jahresgewinn muss die UG behalten?",
+      "answers": [
+        {
+          "text": "25 Prozent",
+          "correct": true
+        },
+        {
+          "text": "Nichts",
+          "correct": false
+        },
+        {
+          "text": "100 Prozent",
+          "correct": false
+        }
+      ],
+      "explanation": "Die Rücklage bleibt, bis das Kapital 25.000 Euro erreicht.",
+      "sources": [
+        {
+          "title": "§ 5a GmbHG – UG",
+          "url": "https://www.gesetze-im-internet.de/gmbhg/__5a.html"
+        }
+      ]
+    },
+    {
+      "question": "Wie hoch ist das Grundkapital einer AG mindestens?",
+      "answers": [
+        {
+          "text": "50.000 Euro",
+          "correct": true
+        },
+        {
+          "text": "25.000 Euro",
+          "correct": false
+        },
+        {
+          "text": "500 Euro",
+          "correct": false
+        }
+      ],
+      "explanation": "Das Grundkapital ist in Aktien aufgeteilt.",
+      "sources": [
+        {
+          "title": "§ 7 AktG",
+          "url": "https://www.gesetze-im-internet.de/aktg/__7.html"
+        }
+      ]
+    },
+    {
+      "question": "Wer entscheidet in der AG über die Dividende?",
+      "answers": [
+        {
+          "text": "Die Hauptversammlung",
+          "correct": true
+        },
+        {
+          "text": "Der Notar",
+          "correct": false
+        },
+        {
+          "text": "Jeder Mitarbeiter",
+          "correct": false
+        }
+      ],
+      "explanation": "Die Aktionäre bekommen die Dividende nach der Zahl ihrer Aktien.",
+      "sources": [
+        {
+          "title": "§ 174 AktG",
+          "url": "https://www.gesetze-im-internet.de/aktg/__174.html"
+        }
+      ]
+    },
+    {
+      "question": "Eine GmbH schüttet 50.000 Euro aus. Wie viel bekommt, wer 40 Prozent hält?",
+      "answers": [
+        {
+          "text": "20.000 Euro",
+          "correct": true
+        },
+        {
+          "text": "25.000 Euro",
+          "correct": false
+        },
+        {
+          "text": "40.000 Euro",
+          "correct": false
+        }
+      ],
+      "explanation": "Ohne andere Regel im Vertrag zählt das Verhältnis der Geschäftsanteile.",
+      "sources": [
+        {
+          "title": "§ 29 GmbHG",
+          "url": "https://www.gesetze-im-internet.de/gmbhg/__29.html"
+        }
+      ]
+    },
+    {
+      "question": "Welche Steuer zahlt eine GmbH auf ihren Gewinn?",
+      "answers": [
+        {
+          "text": "Körperschaftsteuer",
+          "correct": true
+        },
+        {
+          "text": "Einkommensteuer",
+          "correct": false
+        },
+        {
+          "text": "Hundesteuer",
+          "correct": false
+        }
+      ],
+      "explanation": "Sie beträgt 15 Prozent und sinkt bis 2032 auf 10 Prozent.",
+      "sources": [
+        {
+          "title": "§ 23 KStG",
+          "url": "https://www.gesetze-im-internet.de/kstg_1977/__23.html"
+        }
+      ]
+    },
+    {
+      "question": "Wo muss eine GmbH ihren Jahresabschluss veröffentlichen?",
+      "answers": [
+        {
+          "text": "Im Unternehmensregister",
+          "correct": true
+        },
+        {
+          "text": "In der Zeitung",
+          "correct": false
+        },
+        {
+          "text": "Auf Instagram",
+          "correct": false
+        }
+      ],
+      "explanation": "Spätestens 12 Monate nach Ende des Geschäftsjahres.",
+      "sources": [
+        {
+          "title": "§ 325 HGB",
+          "url": "https://www.gesetze-im-internet.de/hgb/__325.html"
+        }
+      ]
+    }
+  ]
+}

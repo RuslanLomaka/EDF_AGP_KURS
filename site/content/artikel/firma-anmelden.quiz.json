@@ -1,0 +1,244 @@
+{
+  "title": "Anmelden",
+  "questions": [
+    {
+      "question": "Wann melden Sie ein Gewerbe an?",
+      "answers": [
+        {
+          "text": "Beim Start",
+          "correct": true
+        },
+        {
+          "text": "Ein Jahr später",
+          "correct": false
+        },
+        {
+          "text": "Nur wenn die Firma Gewinn macht",
+          "correct": false
+        }
+      ],
+      "explanation": "Das Gesetz sagt: gleichzeitig mit dem Beginn.",
+      "sources": [
+        {
+          "title": "§ 14 Gewerbeordnung",
+          "url": "https://www.gesetze-im-internet.de/gewo/__14.html"
+        }
+      ]
+    },
+    {
+      "question": "Wie viel kostet die Gewerbeanmeldung meistens?",
+      "answers": [
+        {
+          "text": "Etwa 10 bis 65 Euro",
+          "correct": true
+        },
+        {
+          "text": "Etwa 1.000 Euro",
+          "correct": false
+        },
+        {
+          "text": "Sie ist immer kostenlos",
+          "correct": false
+        }
+      ],
+      "explanation": "Die Gebühr ist je nach Gemeinde unterschiedlich.",
+      "sources": []
+    },
+    {
+      "question": "Wen informiert das Gewerbeamt nach der Anmeldung?",
+      "answers": [
+        {
+          "text": "Unter anderem Finanzamt, IHK und Berufsgenossenschaft",
+          "correct": true
+        },
+        {
+          "text": "Niemanden",
+          "correct": false
+        },
+        {
+          "text": "Nur Ihre Familie",
+          "correct": false
+        }
+      ],
+      "explanation": "Die Daten werden automatisch weitergegeben.",
+      "sources": [
+        {
+          "title": "§ 14 Gewerbeordnung",
+          "url": "https://www.gesetze-im-internet.de/gewo/__14.html"
+        }
+      ]
+    },
+    {
+      "question": "Wie schicken Sie den Fragebogen zur steuerlichen Erfassung?",
+      "answers": [
+        {
+          "text": "Elektronisch über ELSTER",
+          "correct": true
+        },
+        {
+          "text": "Per Brief an das Gewerbeamt",
+          "correct": false
+        },
+        {
+          "text": "Per WhatsApp",
+          "correct": false
+        }
+      ],
+      "explanation": "Papier gibt es nur in Ausnahmefällen.",
+      "sources": [
+        {
+          "title": "§ 138 AO",
+          "url": "https://www.gesetze-im-internet.de/ao_1977/__138.html"
+        }
+      ]
+    },
+    {
+      "question": "Bis wann muss der Fragebogen beim Finanzamt sein?",
+      "answers": [
+        {
+          "text": "Innerhalb von 1 Monat nach dem Start",
+          "correct": true
+        },
+        {
+          "text": "Innerhalb von 1 Jahr",
+          "correct": false
+        },
+        {
+          "text": "Erst bei der ersten Steuererklärung",
+          "correct": false
+        }
+      ],
+      "explanation": "Danach bekommen Sie Ihre Steuernummer.",
+      "sources": [
+        {
+          "title": "§ 138 AO",
+          "url": "https://www.gesetze-im-internet.de/ao_1977/__138.html"
+        }
+      ]
+    },
+    {
+      "question": "Wann sind Sie im ersten Jahr Kleinunternehmer?",
+      "answers": [
+        {
+          "text": "Wenn der Umsatz höchstens 25.000 Euro ist",
+          "correct": true
+        },
+        {
+          "text": "Wenn der Umsatz höchstens 100 Euro ist",
+          "correct": false
+        },
+        {
+          "text": "Nur als GmbH",
+          "correct": false
+        }
+      ],
+      "explanation": "Seit 2025 gelten 25.000 Euro (Vorjahr) und 100.000 Euro (laufendes Jahr).",
+      "sources": [
+        {
+          "title": "§ 19 UStG – Kleinunternehmer",
+          "url": "https://www.gesetze-im-internet.de/ustg_1980/__19.html"
+        },
+        {
+          "title": "Kleinunternehmerregelung (IHK Stuttgart)",
+          "url": "https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/steuerrecht/umsatzsteuer-national/kleinunternehmerregelung-in-der-umsatzsteuer-1843632"
+        }
+      ]
+    },
+    {
+      "question": "Was müssen Kleinunternehmer nicht?",
+      "answers": [
+        {
+          "text": "Umsatzsteuer auf ihre Rechnungen schreiben",
+          "correct": true
+        },
+        {
+          "text": "Ihr Gewerbe anmelden",
+          "correct": false
+        },
+        {
+          "text": "Ihre Belege aufbewahren",
+          "correct": false
+        }
+      ],
+      "explanation": "Auf die Rechnung gehört aber ein Hinweis auf die Steuerbefreiung.",
+      "sources": [
+        {
+          "title": "§ 19 UStG – Kleinunternehmer",
+          "url": "https://www.gesetze-im-internet.de/ustg_1980/__19.html"
+        }
+      ]
+    },
+    {
+      "question": "Wer muss ins Handelsregister?",
+      "answers": [
+        {
+          "text": "Eine GmbH",
+          "correct": true
+        },
+        {
+          "text": "Eine kleine GbR",
+          "correct": false
+        },
+        {
+          "text": "Eine selbstständige Übersetzerin",
+          "correct": false
+        }
+      ],
+      "explanation": "Auch OHG, KG, UG, AG und Kaufleute mit größerem Geschäft gehören hinein – immer über einen Notar.",
+      "sources": [
+        {
+          "title": "Rechtsformen (Existenzgründungsportal)",
+          "url": "https://www.existenzgruendungsportal.de/gruenden-kurz-und-knapp/rechtsformen.html"
+        }
+      ]
+    },
+    {
+      "question": "Welche Versicherung ist für Selbstständige immer Pflicht?",
+      "answers": [
+        {
+          "text": "Kranken- und Pflegeversicherung",
+          "correct": true
+        },
+        {
+          "text": "Lebensversicherung",
+          "correct": false
+        },
+        {
+          "text": "Handyversicherung",
+          "correct": false
+        }
+      ],
+      "explanation": "Wer vorher gesetzlich versichert war, bleibt meistens freiwilliges Mitglied seiner Krankenkasse.",
+      "sources": [
+        {
+          "title": "Versicherungen (Existenzgründungsportal)",
+          "url": "https://www.existenzgruendungsportal.de/Navigation/DE/So-gehts/Versicherungen/versicherungen"
+        }
+      ]
+    },
+    {
+      "question": "Bis wann können Sie die Arbeitslosenversicherung beantragen?",
+      "answers": [
+        {
+          "text": "Innerhalb von 3 Monaten nach dem Start",
+          "correct": true
+        },
+        {
+          "text": "Innerhalb von 3 Jahren",
+          "correct": false
+        },
+        {
+          "text": "Nie, das geht nur für Angestellte",
+          "correct": false
+        }
+      ],
+      "explanation": "Voraussetzung: Sie waren vorher versichert oder haben Arbeitslosengeld bekommen.",
+      "sources": [
+        {
+          "title": "§ 28a SGB III",
+          "url": "https://www.gesetze-im-internet.de/sgb_3/__28a.html"
+        }
+      ]
+    }
+  ]
+}

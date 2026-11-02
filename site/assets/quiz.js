@@ -41,21 +41,23 @@
       const antworten = mische(frage.answers);
       const rueck = el('div', 'quiz-rueckmeldung');
       rueck.setAttribute('aria-live', 'polite');
-      const labels = antworten.map((antwort, i) => {
-        const label = el('label', 'quiz-antwort');
-        const input = el('input');
-        input.type = 'radio';
-        input.name = 'frage-' + n;
-        label.append(input, el('span', 'quiz-buchstabe', BUCHSTABEN[i]), el('span', '', antwort.text));
-        input.addEventListener('change', () => {
+      // buttons, not radio buttons: arrow keys move between radio buttons and would answer by accident
+      const knoepfe = antworten.map((antwort, i) => {
+        const knopf = el('button', 'quiz-antwort');
+        knopf.type = 'button';
+        knopf.append(el('span', 'quiz-buchstabe', BUCHSTABEN[i]), el('span', '', antwort.text));
+        knopf.addEventListener('click', () => {
+          if (feld.dataset.fertig) return;
+          feld.dataset.fertig = 'ja';
           const k = antworten.findIndex(a => a.correct);
-          feld.querySelectorAll('input').forEach(x => { x.disabled = true; });
-          labels[k].classList.add('ist-richtig');
+          knoepfe.forEach(x => x.setAttribute('aria-disabled', 'true'));
+          knopf.setAttribute('aria-pressed', 'true');
+          knoepfe[k].classList.add('ist-richtig');
           if (antwort.correct) {
             richtig++;
             rueck.append(el('p', 'ok', 'Richtig!'));
           } else {
-            label.classList.add('gewaehlt-falsch');
+            knopf.classList.add('gewaehlt-falsch');
             rueck.append(el('p', 'falsch', 'Leider falsch. Richtig ist ' + BUCHSTABEN[k] + ': ' + antworten[k].text));
           }
           if (frage.explanation) rueck.append(el('p', 'quiz-erklaerung', frage.explanation));
@@ -70,9 +72,9 @@
           beantwortet++;
           zeigeStand();
         });
-        return label;
+        return knopf;
       });
-      feld.append(...labels, rueck);
+      feld.append(...knoepfe, rueck);
       box.append(feld);
     });
 

@@ -1,0 +1,235 @@
+{
+  "title": "Selbstständig werden",
+  "questions": [
+    {
+      "question": "Was ist typisch für Selbstständige?",
+      "answers": [
+        {
+          "text": "Sie arbeiten auf eigene Rechnung und tragen das Risiko",
+          "correct": true
+        },
+        {
+          "text": "Sie bekommen jeden Monat festen Lohn",
+          "correct": false
+        },
+        {
+          "text": "Der Arbeitgeber zahlt ihre Sozialversicherung",
+          "correct": false
+        }
+      ],
+      "explanation": "Selbstständige verdienen nur, wenn Kunden zahlen, und kümmern sich selbst um Steuern und Versicherungen.",
+      "sources": []
+    },
+    {
+      "question": "Sie eröffnen einen Imbiss. Wo melden Sie sich an?",
+      "answers": [
+        {
+          "text": "Beim Gewerbeamt",
+          "correct": true
+        },
+        {
+          "text": "Nur beim Finanzamt",
+          "correct": false
+        },
+        {
+          "text": "Beim Jobcenter",
+          "correct": false
+        }
+      ],
+      "explanation": "Ein Imbiss ist ein Gewerbe. Das Gewerbeamt informiert danach das Finanzamt.",
+      "sources": [
+        {
+          "title": "§ 14 Gewerbeordnung",
+          "url": "https://www.gesetze-im-internet.de/gewo/__14.html"
+        }
+      ]
+    },
+    {
+      "question": "Welcher Beruf ist ein freier Beruf?",
+      "answers": [
+        {
+          "text": "Übersetzerin",
+          "correct": true
+        },
+        {
+          "text": "Bäckerin mit eigenem Laden",
+          "correct": false
+        },
+        {
+          "text": "Betreiber eines Online-Shops",
+          "correct": false
+        }
+      ],
+      "explanation": "Übersetzer und Dolmetscher nennt das Einkommensteuergesetz ausdrücklich als freie Berufe.",
+      "sources": [
+        {
+          "title": "§ 18 EStG – freie Berufe",
+          "url": "https://www.gesetze-im-internet.de/estg/__18.html"
+        }
+      ]
+    },
+    {
+      "question": "Wo meldet sich ein Freiberufler an?",
+      "answers": [
+        {
+          "text": "Nur beim Finanzamt",
+          "correct": true
+        },
+        {
+          "text": "Beim Gewerbeamt und bei der IHK",
+          "correct": false
+        },
+        {
+          "text": "Beim Handelsregister",
+          "correct": false
+        }
+      ],
+      "explanation": "Freie Berufe brauchen keine Gewerbeanmeldung und zahlen keine Gewerbesteuer.",
+      "sources": [
+        {
+          "title": "§ 18 EStG – freie Berufe",
+          "url": "https://www.gesetze-im-internet.de/estg/__18.html"
+        }
+      ]
+    },
+    {
+      "question": "Wer entscheidet, ob eine Tätigkeit ein Gewerbe oder ein freier Beruf ist?",
+      "answers": [
+        {
+          "text": "Das Finanzamt",
+          "correct": true
+        },
+        {
+          "text": "Die Gründerin selbst",
+          "correct": false
+        },
+        {
+          "text": "Der Vermieter",
+          "correct": false
+        }
+      ],
+      "explanation": "Fragen Sie im Zweifel vor dem Start nach.",
+      "sources": []
+    },
+    {
+      "question": "Ein Kfz-Techniker will eine eigene Werkstatt. Was braucht er meistens?",
+      "answers": [
+        {
+          "text": "Einen Meisterbrief oder eine gleichwertige Qualifikation",
+          "correct": true
+        },
+        {
+          "text": "Nur einen Führerschein",
+          "correct": false
+        },
+        {
+          "text": "Gar nichts, Handwerk ist frei",
+          "correct": false
+        }
+      ],
+      "explanation": "Für 53 Handwerke gilt die Meisterpflicht mit Eintrag in die Handwerksrolle.",
+      "sources": [
+        {
+          "title": "Handwerksordnung, Anlage A",
+          "url": "https://www.gesetze-im-internet.de/hwo/anlage_a.html"
+        }
+      ]
+    },
+    {
+      "question": "Ihr Aufenthaltstitel sagt nur „Beschäftigung erlaubt“. Was sollten Sie vor der Gründung tun?",
+      "answers": [
+        {
+          "text": "Bei der Ausländerbehörde nachfragen",
+          "correct": true
+        },
+        {
+          "text": "Sofort ein Gewerbe anmelden",
+          "correct": false
+        },
+        {
+          "text": "Nichts, das gilt immer auch für Selbstständigkeit",
+          "correct": false
+        }
+      ],
+      "explanation": "„Beschäftigung“ meint oft nur Arbeit als Angestellte. Eine Selbstständigkeit ohne Erlaubnis kann den Aufenthalt gefährden.",
+      "sources": [
+        {
+          "title": "§ 4a Aufenthaltsgesetz",
+          "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__4a.html"
+        }
+      ]
+    },
+    {
+      "question": "Wer kann den Gründungszuschuss bekommen?",
+      "answers": [
+        {
+          "text": "Menschen mit Arbeitslosengeld und mindestens 150 Tagen Restanspruch",
+          "correct": true
+        },
+        {
+          "text": "Alle, die eine Firma gründen",
+          "correct": false
+        },
+        {
+          "text": "Nur Studierende",
+          "correct": false
+        }
+      ],
+      "explanation": "Die Agentur für Arbeit entscheidet – einen Anspruch gibt es nicht.",
+      "sources": [
+        {
+          "title": "§ 93 SGB III – Gründungszuschuss",
+          "url": "https://www.gesetze-im-internet.de/sgb_3/__93.html"
+        }
+      ]
+    },
+    {
+      "question": "Wann müssen Sie den Gründungszuschuss beantragen?",
+      "answers": [
+        {
+          "text": "Vor dem Start der Selbstständigkeit",
+          "correct": true
+        },
+        {
+          "text": "Ein Jahr nach dem Start",
+          "correct": false
+        },
+        {
+          "text": "Wenn die Firma Gewinn macht",
+          "correct": false
+        }
+      ],
+      "explanation": "Wer schon angefangen hat, bekommt ihn meistens nicht mehr.",
+      "sources": [
+        {
+          "title": "Gründungszuschuss (Arbeitsagentur)",
+          "url": "https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/gruendungszuschuss-beantragen"
+        }
+      ]
+    },
+    {
+      "question": "Wer zahlt das Einstiegsgeld?",
+      "answers": [
+        {
+          "text": "Das Jobcenter",
+          "correct": true
+        },
+        {
+          "text": "Die IHK",
+          "correct": false
+        },
+        {
+          "text": "Die Krankenkasse",
+          "correct": false
+        }
+      ],
+      "explanation": "Das Jobcenter kann eine Selbstständigkeit bis zu 24 Monate lang unterstützen.",
+      "sources": [
+        {
+          "title": "§ 16b SGB II – Einstiegsgeld",
+          "url": "https://www.gesetze-im-internet.de/sgb_2/__16b.html"
+        }
+      ]
+    }
+  ]
+}

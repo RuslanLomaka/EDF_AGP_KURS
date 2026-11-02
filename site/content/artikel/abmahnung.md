@@ -4,6 +4,8 @@ slug: abmahnung
 datum: "2026-11-01"
 reihenfolge: 8
 thema: "Arbeitsrecht"
+serie: "Rund um die Kündigung"
+teil: 3
 stichwoerter:
   - Abmahnung
   - gelbe Karte

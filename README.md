@@ -33,7 +33,8 @@ content is German at about level B1 and works on phones.
 - **Finding things:**
   - search over titles, keywords, summaries and full texts, ignoring umlaut spelling ("abzuge", "abzüge" and
     "abzuege" all match);
-  - topic pages, the articles grouped by the day they were added, and the latest day on the start page.
+  - topic pages, the articles grouped by the day they were added, and the latest day on the start page;
+  - series of articles that build on each other ("Teil 2 von 5", "Weiter mit Teil 3"), shown together in all lists.
 - **Comfortable to use:** works on phones from 320 px, dark mode, keyboard and screen-reader friendly, print view
   for articles.
 

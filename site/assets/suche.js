@@ -16,7 +16,7 @@
   const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
   const artikel = daten.artikel.map(a => ({
-    ...a, t: norm(a.title), s: norm(a.stichwoerter.join(' ')), k: norm(a.kurz), text: '', x: '',
+    ...a, t: norm(a.title), s: norm(a.stichwoerter.join(' ') + ' ' + (a.serie || '')), k: norm(a.kurz), text: '', x: '',
   }));
   let volltext = 'offen'; // offen -> laedt -> da | fehler
   function ladeVolltext() {
@@ -39,6 +39,7 @@
     return (von > 0 ? '… ' : '') + markiere(w.slice(von, bis).join(' '), begriffe) + (bis < w.length ? ' …' : '');
   };
   const badge = a => ' <span class="badge">' + esc(a.thema) + '</span>';
+  const teil = a => a.teil ? ' <span class="badge">Teil ' + a.teil + ' von ' + a.teile + '</span>' : '';
 
   let thema = new URLSearchParams(location.search).get('thema') || '';
   if (!daten.themen.includes(thema)) thema = '';
@@ -61,7 +62,7 @@
             + ' <span class="zahl">(' + n + ')</span></summary><ul class="liste">';
         }
       }
-      html += '<li><a href="' + a.url + '">' + esc(a.title) + '</a>' + (thema ? '' : badge(a)) + '</li>';
+      html += '<li><a href="' + a.url + '">' + esc(a.title) + '</a>' + teil(a) + (thema ? '' : badge(a)) + '</li>';
     }
     schliessen();
     return html;
@@ -85,12 +86,13 @@
       + (begriffe.length ? ' gefunden' : '') + (thema ? ' zum Thema „' + thema + '“' : '')
       + (begriffe.length && volltext === 'laedt' ? ' – Volltext wird geladen …' : '');
     if (!treffer.length) {
-      liste.innerHTML = '<p class="empty">Nichts gefunden. Versuchen Sie ein anderes Wort.</p>';
+      liste.innerHTML = '<p class="empty">Nichts gefunden. Versuchen Sie ein einzelnes, kurzes Wort, zum Beispiel „Kündigung“, '
+        + 'oder wählen Sie oben ein Thema.</p><p><a href="/artikel/">Alle Artikel ansehen</a></p>';
     } else if (begriffe.length) {
       treffer.sort((p, q) => q.punkte - p.punkte);
       liste.innerHTML = '<ul class="liste">' + treffer.map(({ a }) => {
         const imText = !begriffe.every(b => (a.t + ' ' + a.k).includes(b));
-        return '<li><a href="' + a.url + '">' + markiere(a.title, begriffe) + '</a>' + badge(a)
+        return '<li><a href="' + a.url + '">' + markiere(a.title, begriffe) + '</a>' + teil(a) + badge(a)
           + '<br><span class="hinweis">' + markiere(a.kurz, begriffe) + '</span>'
           + (imText && a.text ? '<br><span class="snippet">' + ausschnitt(a.text, begriffe) + '</span>' : '') + '</li>';
       }).join('') + '</ul>';

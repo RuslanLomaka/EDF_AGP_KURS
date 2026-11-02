@@ -34,13 +34,14 @@ deploy/                       compose.yaml + nginx.conf for the web server on th
 ## Site
 
 Top navigation, fixed at three items: **Start · EDV-Kurs · Artikel**.
-- `/`: search box, the two sections, all articles of the latest class day.
+- `/`: search box, the two sections, all articles added on the latest day ("Neu hinzugefügt").
 - `/edv-kurs/<slug>/`: lesson with downloads (ZIP + single files), checkable steps (progress in the visitor's
   browser), help, self-test, files for teachers.
 - `/artikel/`: search (title, keywords, summary, full text; umlaut-insensitive; full texts load from
-  `suchindex.json` on the first search), topic filter, class days as foldable groups (latest two open).
-- `/artikel/<slug>/`: table of contents, quiz, keywords, "Mehr zum Thema" (nearest dates), previous/next in class
-  order.
+  `suchindex.json` on the first search), topic filter, articles grouped by the day they were added (latest two open;
+  no weekday, no "Kurstag"), parts of a series kept together with a "Teil n von m" badge.
+- `/artikel/<slug>/`: table of contents, series box (if any), quiz, then sources, keywords, "Mehr zum Thema"
+  (nearest dates), previous/next in class order or, in a series, within the series.
 - `/hinweis/`: privacy and purpose notice; the same points open as a dialog once per visit on every page.
 - `/artikel/thema/<topic>/`: all articles of one topic, works without JavaScript.
 
@@ -107,6 +108,21 @@ The owner sends photos of a handout (often several per day; several pages can be
 6. Images only if they help: own diagrams or screenshots, never photos of the handout. Put them in
    `site/content/artikel/bilder/`, link them as `/artikel/bilder/<file>`, and always write alt text.
 7. Build, check, commit, push. Lists, search, topic pages, "Mehr zum Thema" and previous/next update by themselves.
+
+**Series.** Articles that build on each other form a series: add `serie: "<name>"` and `teil: <1, 2, 3 …>` to the
+front matter.
+- The build checks the numbering (no gaps or doubles) and that all parts share one `thema`.
+- The page shows a folded series box under the title, a "Weiter mit Teil n" button after the quiz and previous/next
+  within the series. Lists keep the parts together; topic pages show series first.
+- Slugs carry no part numbers: the order may change, URLs may not.
+- Current series: "Rund um die Kündigung" (Arbeitsrecht, 3 parts), "Eine Firma gründen" (Selbstständigkeit, 5 parts).
+
+**Articles not based on a handout** (the owner asks for a topic):
+- `datum` is the day of the request; `quelle: "Eigener Artikel auf Wunsch der Kursleitung, …"`.
+- There is no handout text to separate from additions, so use no `::: ergaenzung` boxes; use `::: info` for tips
+  and `::: achtung` for warnings. Put deadlines and "what to do now" in an `::: achtung` box near the top.
+- Keep each part short for B1 readers: about 10 glossary words, 5 own questions, 10 quiz questions; split a big
+  topic into a series instead of writing one long article.
 
 **Batches of photos.** The owner sends groups of photos and says when to start. Then:
 - first save one own-words note per handout in `entwuerfe/NN-<slug>.md` and push it (photos in the chat may

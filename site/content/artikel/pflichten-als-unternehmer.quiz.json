@@ -1,0 +1,239 @@
+{
+  "title": "Pflichten als Unternehmer",
+  "questions": [
+    {
+      "question": "Was rechnen Sie bei der EÜR?",
+      "answers": [
+        {
+          "text": "Einnahmen minus Ausgaben",
+          "correct": true
+        },
+        {
+          "text": "Nur die Einnahmen",
+          "correct": false
+        },
+        {
+          "text": "Kosten plus Steuern",
+          "correct": false
+        }
+      ],
+      "explanation": "Das Ergebnis ist der Gewinn.",
+      "sources": [
+        {
+          "title": "§ 4 EStG",
+          "url": "https://www.gesetze-im-internet.de/estg/__4.html"
+        }
+      ]
+    },
+    {
+      "question": "Wer muss immer eine Bilanz machen?",
+      "answers": [
+        {
+          "text": "Eine GmbH",
+          "correct": true
+        },
+        {
+          "text": "Eine freiberufliche Lehrerin",
+          "correct": false
+        },
+        {
+          "text": "Ein kleiner Imbiss als Einzelunternehmen",
+          "correct": false
+        }
+      ],
+      "explanation": "GmbH, UG und AG brauchen immer die doppelte Buchführung mit Bilanz.",
+      "sources": [
+        {
+          "title": "§ 141 AO",
+          "url": "https://www.gesetze-im-internet.de/ao_1977/__141.html"
+        }
+      ]
+    },
+    {
+      "question": "Wie lange müssen Sie Rechnungen und Buchungsbelege aufbewahren?",
+      "answers": [
+        {
+          "text": "8 Jahre",
+          "correct": true
+        },
+        {
+          "text": "1 Jahr",
+          "correct": false
+        },
+        {
+          "text": "30 Jahre",
+          "correct": false
+        }
+      ],
+      "explanation": "Seit 2025 – Bücher und Jahresabschlüsse 10 Jahre.",
+      "sources": [
+        {
+          "title": "§ 147 AO",
+          "url": "https://www.gesetze-im-internet.de/ao_1977/__147.html"
+        }
+      ]
+    },
+    {
+      "question": "Welche Steuer zahlen freie Berufe nicht?",
+      "answers": [
+        {
+          "text": "Gewerbesteuer",
+          "correct": true
+        },
+        {
+          "text": "Einkommensteuer",
+          "correct": false
+        },
+        {
+          "text": "Gar keine Steuer",
+          "correct": false
+        }
+      ],
+      "explanation": "Nur Gewerbe zahlen Gewerbesteuer an die Gemeinde.",
+      "sources": []
+    },
+    {
+      "question": "Bis wann ist die Steuererklärung ohne Steuerberater fällig?",
+      "answers": [
+        {
+          "text": "Bis zum 31. Juli des nächsten Jahres",
+          "correct": true
+        },
+        {
+          "text": "Bis Silvester desselben Jahres",
+          "correct": false
+        },
+        {
+          "text": "Es gibt keine Frist",
+          "correct": false
+        }
+      ],
+      "explanation": "Mit einem Steuerberater haben Sie mehr Zeit.",
+      "sources": []
+    },
+    {
+      "question": "Was sind Vorauszahlungen?",
+      "answers": [
+        {
+          "text": "Steuern, die man schon während des Jahres zahlt",
+          "correct": true
+        },
+        {
+          "text": "Geld, das Kunden vorher zahlen",
+          "correct": false
+        },
+        {
+          "text": "Ein Kredit von der Bank",
+          "correct": false
+        }
+      ],
+      "explanation": "Für die Einkommensteuer am 10. März, Juni, September und Dezember.",
+      "sources": [
+        {
+          "title": "§ 37 EStG",
+          "url": "https://www.gesetze-im-internet.de/estg/__37.html"
+        }
+      ]
+    },
+    {
+      "question": "Was gehört auf eine Rechnung?",
+      "answers": [
+        {
+          "text": "Ihre Steuernummer und eine fortlaufende Rechnungsnummer",
+          "correct": true
+        },
+        {
+          "text": "Ihr Geburtsdatum",
+          "correct": false
+        },
+        {
+          "text": "Ihr Kontostand",
+          "correct": false
+        }
+      ],
+      "explanation": "Dazu Name und Anschrift, Datum, Leistung, Betrag und Steuer.",
+      "sources": [
+        {
+          "title": "§ 14 UStG",
+          "url": "https://www.gesetze-im-internet.de/ustg_1980/__14.html"
+        }
+      ]
+    },
+    {
+      "question": "Ist eine PDF-Rechnung per E-Mail eine E-Rechnung?",
+      "answers": [
+        {
+          "text": "Nein",
+          "correct": true
+        },
+        {
+          "text": "Ja, immer",
+          "correct": false
+        },
+        {
+          "text": "Nur am Wochenende",
+          "correct": false
+        }
+      ],
+      "explanation": "Eine E-Rechnung hat ein Datenformat, das ein Computer lesen kann.",
+      "sources": [
+        {
+          "title": "E-Rechnungen (IHK Stuttgart)",
+          "url": "https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/steuerrecht/steuermeldungen/e-rechnungen-5864496"
+        }
+      ]
+    },
+    {
+      "question": "Seit wann müssen Firmen E-Rechnungen empfangen können?",
+      "answers": [
+        {
+          "text": "Seit 2025",
+          "correct": true
+        },
+        {
+          "text": "Erst ab 2030",
+          "correct": false
+        },
+        {
+          "text": "Gar nicht",
+          "correct": false
+        }
+      ],
+      "explanation": "Das gilt auch für Kleinunternehmer. Ab 2028 müssen Rechnungen an Firmen E-Rechnungen sein.",
+      "sources": [
+        {
+          "title": "§ 27 UStG",
+          "url": "https://www.gesetze-im-internet.de/ustg_1980/__27.html"
+        },
+        {
+          "title": "E-Rechnungen (IHK Stuttgart)",
+          "url": "https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/steuerrecht/steuermeldungen/e-rechnungen-5864496"
+        }
+      ]
+    },
+    {
+      "question": "Wie hoch ist der Mindestlohn 2026?",
+      "answers": [
+        {
+          "text": "13,90 Euro pro Stunde",
+          "correct": true
+        },
+        {
+          "text": "9,50 Euro pro Stunde",
+          "correct": false
+        },
+        {
+          "text": "20 Euro pro Stunde",
+          "correct": false
+        }
+      ],
+      "explanation": "Ab 2027 steigt er auf 14,60 Euro.",
+      "sources": [
+        {
+          "title": "Mindestlohnanpassungsverordnung",
+          "url": "https://www.gesetze-im-internet.de/milov5/BJNR10C0A0025.html"
+        }
+      ]
+    }
+  ]
+}
