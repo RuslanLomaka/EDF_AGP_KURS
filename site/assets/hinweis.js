@@ -1,17 +1,19 @@
-// Notice about privacy and purpose, shown once per visit. "Visit" = until the browser tab is closed
-// (sessionStorage); nothing is sent anywhere. Without JavaScript the same text is at /hinweis/.
+// Short notice about privacy and purpose, shown once a day: the browser remembers only today's date
+// (localStorage), nothing is sent anywhere. It is a small bar at the bottom, not a modal: the page stays usable.
+// Without JavaScript the full text is at /hinweis/.
 (function () {
-  const dialog = document.getElementById('hinweis-dialog');
-  if (!dialog || typeof dialog.showModal !== 'function') return;
-  let gesehen = false;
-  try { gesehen = sessionStorage.getItem('hinweis-gesehen') === '1'; } catch (e) { /* storage blocked */ }
-  if (gesehen) return;
-  dialog.querySelector('button').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('close', () => {
-    try { sessionStorage.setItem('hinweis-gesehen', '1'); } catch (e) { /* storage blocked */ }
+  const leiste = document.getElementById('hinweis-dialog');
+  if (!leiste || typeof leiste.show !== 'function') return;
+  const d = new Date();
+  const heute = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+  let gesehen = '';
+  try { gesehen = localStorage.getItem('hinweis-gesehen') || ''; } catch (e) { /* storage blocked */ }
+  if (gesehen === heute) return;
+  leiste.querySelector('button').addEventListener('click', () => {
+    leiste.close();
+    try { localStorage.setItem('hinweis-gesehen', heute); } catch (e) { /* storage blocked */ }
   });
-  dialog.showModal();
-  // focus the button without scrolling the heading out of view on small screens
-  dialog.querySelector('button').focus({ preventScroll: true });
-  dialog.scrollTop = 0;
+  leiste.show();
+  // focus the bar itself: no focus ring on "Mehr dazu", and the next Tab still reaches its links
+  leiste.focus({ preventScroll: true });
 })();

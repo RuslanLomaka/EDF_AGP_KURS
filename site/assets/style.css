@@ -266,13 +266,11 @@ details.tag .liste li:last-child { border-bottom: 0; }
 @media print { .quiz { display: none; } }
 
 /* Notice shown once per visit */
-.hinweis-dialog { max-width: 34rem; width: calc(100% - 2rem); max-height: calc(100dvh - 2rem); overflow: auto; border: 1px solid var(--control); border-radius: 14px; background: var(--card); color: var(--fg); padding: 1.1rem 1.2rem; }
-.hinweis-dialog::backdrop { background: rgb(0 0 0 / 0.55); }
-.hinweis-dialog h2 { margin: 0 0 0.6rem; }
-.hinweis-dialog ul { padding-left: 1.2rem; margin: 0.4rem 0 0.8rem; }
-.hinweis-dialog li { margin: 0.3rem 0; }
-.hinweis-dialog .aktionen { display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; justify-content: space-between; margin-top: 0.6rem; }
-.hinweis-dialog button { font: inherit; font-weight: 700; background: var(--accent); color: var(--bg); border: 0; border-radius: 10px; padding: 0.6rem 1.2rem; cursor: pointer; }
+.hinweis-dialog { position: fixed; inset: auto 0.75rem 0.75rem; margin: 0 auto; max-width: 40rem; z-index: 50; display: none; gap: 0.8rem; align-items: center; border: 1px solid var(--control); border-radius: 12px; background: var(--card); color: var(--fg); padding: 0.6rem 0.8rem; box-shadow: 0 4px 18px rgb(0 0 0 / 0.18); font-size: 0.92rem; }
+.hinweis-dialog[open] { display: flex; }
+.hinweis-dialog:focus { outline: none; }
+.hinweis-dialog p { margin: 0; flex: 1; }
+.hinweis-dialog button { flex: none; font: inherit; font-weight: 700; background: var(--accent); color: var(--bg); border: 0; border-radius: 10px; padding: 0.5rem 0.9rem; cursor: pointer; }
 @media print { .hinweis-dialog { display: none; } }
 
 /* Read-aloud button next to glossary words */

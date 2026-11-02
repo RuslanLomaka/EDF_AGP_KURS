@@ -306,10 +306,10 @@ HINWEIS_PUNKTE = [
     "Die Website enthält keine persönlichen oder vertraulichen Daten über Menschen, Firmen oder andere "
     "Organisationen. Namen in Beispielen sind erfunden.",
 ]
-HINWEIS_DIALOG = f"""<dialog id="hinweis-dialog" class="hinweis-dialog" aria-labelledby="hinweis-titel">
-<h2 id="hinweis-titel">Hinweis zu dieser Website</h2>
-<ul>{"".join(f"<li>{esc(t)}</li>" for t in HINWEIS_PUNKTE)}</ul>
-<div class="aktionen"><a href="/hinweis/">Mehr dazu</a><button type="button">Verstanden</button></div>
+HINWEIS_DIALOG = """<dialog id="hinweis-dialog" class="hinweis-dialog" aria-label="Hinweis zu dieser Website" tabindex="-1">
+<p><strong>Hinweis:</strong> Diese Website ist nur zum Lesen und Lernen da. Kein Konto, keine Cookies, kein Tracking.
+<a href="/hinweis/">Mehr dazu</a></p>
+<button type="button">Verstanden</button>
 </dialog>"""
 
 
@@ -380,7 +380,7 @@ def build_rechtliches(b):
 <p>Zwei kleine Angaben werden nur in Ihrem Browser gespeichert und nie an uns übertragen:</p>
 <ul>
 <li><strong>Fortschritt in Lektionen</strong> (welche Schritte Sie abgehakt haben) im „Local Storage“ Ihres Browsers. Sie können ihn auf der Lektionsseite mit „Alle Haken entfernen“ oder in den Einstellungen Ihres Browsers löschen.</li>
-<li><strong>Ob Sie den Hinweis beim Besuch gelesen haben</strong>, im „Session Storage“. Diese Angabe wird gelöscht, wenn Sie den Tab schließen.</li>
+<li><strong>Ob Sie den kurzen Hinweis heute schon gesehen haben</strong>: nur das heutige Datum, im „Local Storage“. An einem neuen Tag erscheint der Hinweis einmal wieder.</li>
 </ul>
 <p>Diese Speicherung ist für die Funktionen, die Sie selbst nutzen, unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG). Suche und Quiz speichern nichts.</p>
 <h2>6. Vorlesen</h2>
@@ -403,7 +403,7 @@ def build_hinweis():
 <h2>Was in Ihrem Browser bleibt</h2>
 <ul>
 <li><strong>Haken in Lektionen:</strong> Ihr Fortschritt wird nur auf Ihrem Gerät gespeichert (im Speicher Ihres Browsers). Sie können ihn mit „Alle Haken entfernen“ oder über die Einstellungen Ihres Browsers löschen.</li>
-<li><strong>Dieser Hinweis:</strong> Bis Sie den Tab schließen, merkt sich Ihr Browser, dass Sie ihn gelesen haben. Danach erscheint er wieder.</li>
+<li><strong>Der kurze Hinweis unten auf der Seite:</strong> Ihr Browser merkt sich nur das heutige Datum, damit der Hinweis einmal am Tag erscheint.</li>
 <li><strong>Suche und Quiz:</strong> Es wird nichts gespeichert.</li>
 </ul>
 <h2>Technik</h2>

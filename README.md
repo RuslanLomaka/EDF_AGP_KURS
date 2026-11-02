@@ -43,11 +43,11 @@ content is German at about level B1 and works on phones.
 The site is read-only and collects nothing:
 - no accounts, forms, cookies, tracking, analytics, newsletters or third-party scripts;
 - search, quiz answers and lesson ticks never leave the browser. Lesson progress is kept in the visitor's own
-  browser storage; the notice remembers itself only until the tab is closed;
+  browser storage; for the notice, the browser keeps only the date it was last seen;
 - the web server keeps no access logs;
 - the content explains public information (mostly laws) and is not legal advice. Names in examples are invented.
 
-A notice says this once per visit, and [`/hinweis/`](https://edv.ruslanlomaka.org/hinweis/) has the details.
+A small bar at the bottom says this once a day, and [`/hinweis/`](https://edv.ruslanlomaka.org/hinweis/) has the details.
 Pages are served through Cloudflare, which processes connection data such as IP addresses to deliver them.
 
 ## How content gets added

@@ -23,7 +23,7 @@ site/
   themen.yaml                 allowed article topics, in display order
   content/artikel/*.quiz.json  one quiz per article (Quiz Forger JSON format)
   assets/                     style.css, suche.js (article list + search), lektion.js (lesson steps),
-                              quiz.js (article quizzes), hinweis.js (privacy notice once per visit)
+                              quiz.js (article quizzes), hinweis.js (short privacy notice once a day)
   build.py                    builds everything into site/dist/ (git-ignored) and checks it
 materials/serienbrief/        files of lesson 1; README.md explains them; generator/build_kit.sh rebuilds them
 entwuerfe/                    own-words notes on handouts not yet turned into articles (not published)
@@ -42,7 +42,7 @@ Top navigation, fixed at three items: **Start · EDV-Kurs · Artikel**.
   no weekday, no "Kurstag"), parts of a series kept together with a "Teil n von m" badge.
 - `/artikel/<slug>/`: table of contents, series box (if any), quiz, then sources, keywords, "Mehr zum Thema"
   (nearest dates), previous/next in class order or, in a series, within the series.
-- `/hinweis/`: privacy and purpose notice; the same points open as a dialog once per visit on every page.
+- `/hinweis/`: privacy and purpose notice. A short, non-blocking bar at the bottom links to it once a day per device.
 - `/artikel/thema/<topic>/`: all articles of one topic, works without JavaScript.
 
 **URLs are permanent.** Never rename or delete a published slug or topic: links get printed and shared.
@@ -167,7 +167,7 @@ The owner's Raspberry Pi serves the site behind a Cloudflare Tunnel (route `edv.
 
 The notice (dialog + `/hinweis/`, text in `HINWEIS_PUNKTE` in `build.py`) promises:
 - no accounts, forms, cookies, tracking, analytics, e-mails or external scripts;
-- inputs stay in the browser: lesson ticks in `localStorage`, the "notice seen" flag in `sessionStorage`;
+- inputs stay in the browser: lesson ticks and the date the notice was last seen in `localStorage`;
 - no access logs on the server (`access_log off` in `deploy/nginx.conf`);
 - only public information, no legal advice, no personal or confidential data about real people or companies.
 
