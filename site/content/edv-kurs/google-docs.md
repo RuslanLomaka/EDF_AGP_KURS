@@ -27,13 +27,15 @@ ziele:
 
 ### Was ist ein Browser? {#browser}
 
+<p class="bild"><img src="/edv-kurs/bilder/browser.svg" alt="Ein Browser-Fenster hat drei Teile: 1. oben der Tab, das ist eine offene Seite. 2. die Adresszeile mit der Adresse der Seite, zum Beispiel docs.google.com. 3. darunter die Seite selbst." width="400" height="400"></p>
+
 Ein **Browser** ist ein Programm, mit dem Sie **Internetseiten** öffnen. Bekannte Browser sind **Google Chrome**, **Microsoft Edge**, **Firefox** und auf dem iPhone **Safari**.
 
 Oben im Browser ist die **Adresszeile**. Dort steht die Adresse der Seite, zum Beispiel **docs.google.com**. Google Docs ist so eine Internetseite – aber eine, auf der Sie **schreiben** können wie in Word.
 
 ### Programm oder Browser? {#programm-oder-browser}
 
-<p class="bild"><img src="/edv-kurs/bilder/programm-oder-browser.svg" alt="Links: Word ist ein Programm auf dem PC, die Datei liegt auf dem PC. Rechts: Google Docs läuft im Browser, die Datei liegt im Internet und ist von PC und Handy aus erreichbar." width="380" height="710"></p>
+<p class="bild"><img src="/edv-kurs/bilder/programm-oder-browser.svg" alt="Links: Word ist ein Programm auf dem PC. Die Datei liegt auf dem PC. Es geht auch ohne Internet. Rechts: Google Docs läuft im Browser. Die Datei liegt im Internet. Sie öffnen sie am PC und am Handy." width="400" height="400"></p>
 
 - **Word** muss auf dem PC **installiert** sein. Sie speichern die Datei auf dem PC oder auf einem USB-Stick. Wollen Sie an einem anderen PC weiterarbeiten, müssen Sie die Datei mitnehmen.
 - **Google Docs** müssen Sie **nicht installieren**. Sie öffnen den Browser, melden sich an – und Ihre Dateien sind da. An jedem PC, im Kurs, zu Hause und auf dem Handy.
@@ -52,6 +54,8 @@ Oben im Browser ist die **Adresszeile**. Dort steht die Adresse der Seite, zum B
 | Speichern | selbst speichern | speichert automatisch |
 | Ohne Internet? | ja | nur eingeschränkt |
 | Gemeinsam arbeiten | schwierig | sehr einfach |
+
+<p class="bild"><img src="/edv-kurs/bilder/zusammen-arbeiten.svg" alt="Oben, mit Word: Zwei Personen schicken eine Datei per E-Mail hin und her. Am Ende gibt es viele Versionen: Brief, Brief_neu, Brief_final, Brief_final_2. Welche ist die richtige? Unten, mit Google Docs: Drei Personen schreiben gleichzeitig in einem einzigen Dokument." width="400" height="400"></p>
 
 **Vorteile von Google Docs**
 
@@ -72,9 +76,9 @@ Oben im Browser ist die **Adresszeile**. Dort steht die Adresse der Seite, zum B
 **Merke:** Für sich allein ist **beides gut**. Wenn Sie **mit anderen zusammen** schreiben, ist **Google Docs** viel einfacher.
 :::
 
-<p class="bild"><img src="/edv-kurs/bilder/zusammen-arbeiten.svg" alt="Links: Eine Word-Datei wird per E-Mail hin und her geschickt, am Ende gibt es viele Versionen. Rechts: Alle arbeiten gleichzeitig in einem einzigen Google-Dokument." width="380" height="620"></p>
-
 ## Teil 1 – Anmelden und Google Drive öffnen {#drive}
+
+<p class="bild"><img src="/edv-kurs/bilder/drive.svg" alt="So sieht Google Drive aus: 1. links oben die Schaltfläche Neu, für einen neuen Ordner oder ein neues Dokument. 2. Meine Ablage, dort sind Ihre Dateien. 3. Für mich freigegeben, dort sind Dateien, die andere mit Ihnen geteilt haben." width="400" height="400"></p>
 
 ::: schritte
 1. Öffnen Sie den **Browser** (zum Beispiel Chrome oder Edge).
@@ -110,7 +114,7 @@ Oben im Browser ist die **Adresszeile**. Dort steht die Adresse der Seite, zum B
 
 Beim Teilen entscheiden Sie, **wer** die Datei sehen darf und **was** diese Person darf. Dafür gibt es drei **Rollen**:
 
-<p class="bild"><img src="/edv-kurs/bilder/rollen.svg" alt="Drei Rollen beim Teilen: Betrachter dürfen nur lesen. Kommentatoren dürfen lesen und kommentieren. Mitbearbeiter dürfen alles ändern." width="380" height="620"></p>
+<p class="bild"><img src="/edv-kurs/bilder/rollen.svg" alt="Wer darf was? Betrachter dürfen nur lesen. Kommentatoren dürfen lesen und kommentieren. Mitbearbeiter dürfen lesen, kommentieren und ändern." width="400" height="400"></p>
 
 ::: schritte
 1. Öffnen Sie Ihr Dokument. Klicken Sie oben rechts auf die blaue Schaltfläche **Freigeben**.
@@ -132,6 +136,8 @@ Beim Teilen entscheiden Sie, **wer** die Datei sehen darf und **was** diese Pers
 ## Teil 4 – Gemeinsam arbeiten {#zusammen}
 
 **Gleichzeitig schreiben:** Öffnen zwei Personen dasselbe Dokument, sehen Sie den **Cursor der anderen Person** in einer eigenen Farbe – mit ihrem Namen. Jeder sieht sofort, was die anderen schreiben.
+
+<p class="bild"><img src="/edv-kurs/bilder/kommentar-vorschlag.svg" alt="Oben ein Kommentar: Das Wort „Team“ ist gelb markiert. Am Rand steht eine Sprechblase: „Gute Idee! – Anna“. Der Text bleibt gleich. Unten ein Vorschlag: Das Wort „morgen“ ist durchgestrichen, das Wort „heute“ ist neu und grün. Die Besitzerin klickt auf das Häkchen (annehmen) oder auf das X (ablehnen)." width="400" height="400"></p>
 
 **Kommentieren** – etwas sagen, ohne den Text zu ändern:
 
@@ -160,6 +166,8 @@ Beim Teilen entscheiden Sie, **wer** die Datei sehen darf und **was** diese Pers
 :::
 
 ## Teil 5 – Umwandeln: Word, Google Docs und PDF {#umwandeln}
+
+<p class="bild"><img src="/edv-kurs/bilder/umwandeln.svg" alt="Umwandeln: Eine Word-Datei laden Sie in Google Drive hoch und speichern sie als Google-Dokument. Ein Google-Dokument laden Sie als Word-Datei oder als PDF herunter. Für Bewerbungen schicken Sie ein PDF." width="400" height="400"></p>
 
 **Aus einer Word-Datei ein Google-Dokument machen:**
 

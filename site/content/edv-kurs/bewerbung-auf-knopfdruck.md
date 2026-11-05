@@ -62,7 +62,7 @@ lehrkraft:
 <div><strong>Fertige Briefe</strong>eine Seite pro Firma<em>mit einem Klick</em></div>
 </div>
 
-[![Ausschnitt aus einem fertigen Brief: Absender, Anschrift der Firma, Datum, Betreff „Bewerbung als Lagerhelfer“ und Anrede „Sehr geehrte Frau Petersen“](/edv-kurs/bilder/serienbrief-ergebnis.png)](dateien/Beispiel_Ergebnis.pdf)
+<p class="bild"><a href="dateien/Beispiel_Ergebnis.pdf"><img src="/edv-kurs/bilder/serienbrief-ergebnis.png" alt="Ausschnitt aus einem fertigen Brief: Absender, Anschrift der Firma, Datum, Betreff „Bewerbung als Lagerhelfer“ und Anrede „Sehr geehrte Frau Petersen“" width="662" height="580"></a></p>
 
 So sieht ein fertiger Brief aus. Kopf, Anschrift, Betreff und Anrede kommen automatisch – den Text in der Mitte schreiben Sie selbst.
 
@@ -143,6 +143,8 @@ In den grauen Spalten stehen **Formeln**. Klicken Sie in eine graue Zelle – ob
 :::
 
 ## Teil 3 – Word mit Excel verbinden {#verbinden}
+
+<p class="bild"><img src="/edv-kurs/bilder/felder.svg" alt="So funktioniert ein Serienbrief: In der Excel-Liste steht eine Zeile pro Firma. In der Word-Vorlage stehen Felder wie «Firma» und «Stelle». Word setzt für jede Zeile die Daten ein. So entsteht ein Brief pro Firma." width="400" height="400"></p>
 
 ::: schritte
 1. Oben im Menüband: Registerkarte **Sendungen** → **Seriendruck starten** → **Briefe**.

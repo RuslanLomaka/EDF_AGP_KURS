@@ -76,6 +76,13 @@ pages at phone width (390 px).
 - **What is read:** the term without the parts in brackets. Write glossary terms so that reading them aloud makes
   sense.
 
+**Pictures.** Own drawings only (no screenshots of other products, no logos), as square SVGs:
+- `viewBox="0 0 400 400"`, white background, Arial, text at least 15 px, colours from the site palette;
+- placed right before the text they explain as
+  `<p class="bild"><img src="/…/bilder/<file>.svg" alt="…" width="400" height="400"></p>`;
+- on phones they are full width in the text; from 50rem they float right beside the text (`.bild` in `style.css`);
+- the alt text says everything the picture says. The build refuses an `<img>` without `alt`, `width` and `height`.
+
 The live server sends a Content-Security-Policy: no inline scripts and nothing from other domains. JavaScript
 belongs in `site/assets/`; images are stored in the repository.
 
@@ -108,8 +115,8 @@ The owner sends photos of a handout (often several per day; several pages can be
    "sources": [{"title", "url"}]}]}`. About 10 questions, 3 answers, exactly one correct, wrong answers plausible,
    a short explanation for each. The build refuses articles without a valid quiz; the page shuffles questions and
    answers on every load.
-6. Images only if they help: own diagrams or screenshots, never photos of the handout. Put them in
-   `site/content/artikel/bilder/`, link them as `/artikel/bilder/<file>`, and always write alt text.
+6. Pictures: the owner wants information shown visually, so give every article at least one own drawing (see
+   "Pictures" below), never photos of the handout. Put them in `site/content/artikel/bilder/`.
 7. Build, check, commit, push. Lists, search, topic pages, "Mehr zum Thema" and previous/next update by themselves.
 
 **Series.** Articles that build on each other form a series: add `serie: "<name>"` and `teil: <1, 2, 3 …>` to the

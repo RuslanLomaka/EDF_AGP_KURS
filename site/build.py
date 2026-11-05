@@ -121,6 +121,10 @@ def check_body(path, body):
         fail(path, "a '::: box' is not closed or not written correctly (':::' would appear on the page)")
     if re.search(r"<script\b|\son[a-z]+\s*=|javascript:", body, re.I):
         fail(path, "scripts, on...= attributes and javascript: links are not allowed in content")
+    for tag in re.findall(r"<img\b[^>]*>", body):
+        for attr in ("alt", "width", "height"):
+            if not re.search(rf'\s{attr}="[^"]+"', tag):
+                fail(path, f'every <img> needs {attr}="...", also for screen readers: {tag[:90]}')
     for classes in re.findall(r'<div class="([^"]*)"', body):
         for c in classes.split():
             if c not in BOXES:

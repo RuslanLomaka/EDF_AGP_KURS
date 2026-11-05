@@ -57,6 +57,8 @@ Kennen Sie schon den [Serienbrief aus Lektion 1](/edv-kurs/bewerbung-auf-knopfdr
 
 ## Vorbereitung {#vorbereitung}
 
+<p class="bild"><img src="/edv-kurs/bilder/ordner.svg" alt="Nach dem Entpacken liegen vier Dateien zusammen in einem Ordner: das Programm Bewerbungen_erstellen, die Excel-Liste Bewerbungsliste, die Word-Vorlage Anschreiben_Vorlage und LIES_MICH. Nach dem Start kommt der Ordner Bewerbungen dazu." width="400" height="400"></p>
+
 ::: schritte
 1. Klicken Sie oben auf **Bewerbungshelfer herunterladen**. Die ZIP-Datei landet im Ordner **Downloads**.
 2. Rechtsklick auf **Bewerbungshelfer** → **Alle extrahieren …** → **Extrahieren**. Ein neuer Ordner mit vier Dateien öffnet sich.
@@ -72,6 +74,8 @@ Kennen Sie schon den [Serienbrief aus Lektion 1](/edv-kurs/bewerbung-auf-knopfdr
 :::
 
 ## Teil 2 – Ihre Stellen {#stellen}
+
+<p class="bild"><img src="/edv-kurs/bilder/status.svg" alt="Der Status in der Excel-Liste entscheidet: Bei offen oder einem leeren Feld macht das Programm einen neuen Brief. Bei beworben, Einladung, Absage oder Zusage macht es keinen neuen Brief." width="400" height="400"></p>
 
 ::: schritte
 1. Klicken Sie unten auf das Blatt **Bewerbungen**.
@@ -95,6 +99,8 @@ Kennen Sie schon den [Serienbrief aus Lektion 1](/edv-kurs/bewerbung-auf-knopfdr
 :::
 
 ## Teil 4 – Briefe fertig schreiben {#fertig}
+
+<p class="bild"><img src="/edv-kurs/bilder/brief.svg" alt="Ein fertiger Brief vom Bewerbungshelfer. Blau ist alles, was das Programm einsetzt: Ihre Daten, die Firma, das Datum, den Betreff, die Anrede und den Gruß mit Ihrem Namen. Gelb ist der Teil, den Sie selbst schreiben: 3 bis 5 eigene Sätze." width="400" height="400"></p>
 
 ::: schritte
 1. Öffnen Sie einen Brief im Ordner **Bewerbungen**. Der Dateiname nennt Sie, die Firma und die Stelle, z. B. **Anschreiben Max Mustermann – Muster Logistik GmbH (Lagerhelfer)**.

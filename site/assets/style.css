@@ -156,6 +156,15 @@ mark { background: var(--mark); color: inherit; border-radius: 3px; padding: 0 2
 
 /* General */
 img { max-width: 100%; height: auto; }
+
+/* Pictures: own square drawings (400 x 400). On phones in the text flow, on wide screens beside the text. */
+.bild { margin: 1.2rem auto; max-width: 25rem; }
+.bild img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+@media (min-width: 50rem) {
+  .bild { float: right; width: 21rem; margin: 0.3rem 0 1rem 1.4rem; }
+  main h2 { clear: both; }
+  .kurz, .ergaenzung, .info, .achtung, .schritte ol, .prinzip, main details { display: flow-root; }
+}
 .inhalt img { border: 1px solid var(--line); border-radius: 8px; display: block; margin: 1rem 0 0.3rem; }
 code { font-size: 0.88em; background: var(--info-bg); padding: 0.1rem 0.3rem; border-radius: 4px; overflow-wrap: anywhere; }
 .lead { font-size: 1.08rem; margin: 0.4rem 0 1rem; }

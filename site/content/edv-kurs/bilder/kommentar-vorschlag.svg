@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Oben ein Kommentar: Das Wort „Team“ ist gelb markiert. Am Rand steht eine Sprechblase: „Gute Idee! – Anna“. Der Text bleibt gleich. Unten ein Vorschlag: Das Wort „morgen“ ist durchgestrichen, das Wort „heute“ ist neu und grün. Die Besitzerin klickt auf das Häkchen (annehmen) oder auf das X (ablehnen).</title>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="32.0" font-size="21" fill="#b26a00" text-anchor="middle" font-weight="700">Kommentar</text>
+<text x="200" y="56.0" font-size="15" fill="#5b6672" text-anchor="middle">eine Notiz am Rand – der Text bleibt</text>
+<rect x="20" y="72" width="216" height="108" rx="6" fill="#fff" stroke="#d9dee4" stroke-width="2"/>
+<text x="34" y="104.0" font-size="18" fill="#1d232b" text-anchor="start">Ich arbeite gern</text>
+<text x="34" y="132.0" font-size="18" fill="#1d232b" text-anchor="start">im</text>
+<rect x="60" y="113" width="52" height="26" rx="3" fill="#ffe58a"/>
+<text x="64" y="132.0" font-size="18" fill="#1d232b" text-anchor="start">Team.</text>
+<line x1="34" y1="160" x2="200" y2="160" stroke="#c9d1da" stroke-width="6" stroke-linecap="round"/>
+<line x1="112" y1="126" x2="252" y2="112" stroke="#b26a00" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 4"/>
+<path d="M262 76 H376 a10 10 0 0 1 10 10 V140 a10 10 0 0 1 -10 10 H282 l-14 14 v-14 H262 a10 10 0 0 1 -10 -10 V86 a10 10 0 0 1 10 -10 Z" fill="#fff3df" stroke="#b26a00" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="319" y="106.0" font-size="18" fill="#1d232b" text-anchor="middle" font-weight="700">Gute Idee!</text>
+<text x="319" y="132.0" font-size="15" fill="#5b6672" text-anchor="middle">– Anna</text>
+<line x1="20" y1="200" x2="380" y2="200" stroke="#d9dee4" stroke-width="2" stroke-linecap="round"/>
+<text x="200" y="232.0" font-size="21" fill="#2e7d32" text-anchor="middle" font-weight="700">Vorschlag</text>
+<text x="200" y="256.0" font-size="15" fill="#5b6672" text-anchor="middle">der Text ändert sich – farbig</text>
+<rect x="20" y="272" width="216" height="108" rx="6" fill="#fff" stroke="#d9dee4" stroke-width="2"/>
+<text x="34" y="304.0" font-size="18" fill="#1d232b" text-anchor="start">Ich komme</text>
+<text x="34" y="332.0" font-size="18" fill="#c0392b" text-anchor="start" style="text-decoration: line-through">morgen</text>
+<text x="108" y="332.0" font-size="18" fill="#2e7d32" text-anchor="start" font-weight="700" style="text-decoration: underline">heute</text>
+<text x="34" y="360.0" font-size="18" fill="#1d232b" text-anchor="start">zum Kurs.</text>
+<rect x="252" y="282" width="134" height="92" rx="10" fill="#e7f3e8" stroke="#2e7d32" stroke-width="2"/>
+<text x="319" y="308.0" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">annehmen?</text>
+<circle cx="292" cy="342" r="17" fill="#2e7d32"/>
+<path d="M284.5625 342.53125 L289.875 347.84375 L299.96875 336.6875" fill="none" stroke="#fff" stroke-width="3.4000000000000004" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="346" cy="342" r="17" fill="#c0392b"/>
+<line x1="340.15625" y1="336.15625" x2="351.84375" y2="347.84375" stroke="#fff" stroke-width="3.4000000000000004" stroke-linecap="round"/>
+<line x1="351.84375" y1="336.15625" x2="340.15625" y2="347.84375" stroke="#fff" stroke-width="3.4000000000000004" stroke-linecap="round"/>
+</svg>

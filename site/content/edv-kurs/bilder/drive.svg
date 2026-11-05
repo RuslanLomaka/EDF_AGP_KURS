@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">So sieht Google Drive aus: 1. links oben die Schaltfläche Neu, für einen neuen Ordner oder ein neues Dokument. 2. Meine Ablage, dort sind Ihre Dateien. 3. Für mich freigegeben, dort sind Dateien, die andere mit Ihnen geteilt haben.</title>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="34.0" font-size="22" fill="#1f4e79" text-anchor="middle" font-weight="700">Google Drive</text>
+<rect x="16" y="52" width="368" height="210" rx="12" fill="#fff" stroke="#5b6672" stroke-width="3"/>
+<line x1="218" y1="54" x2="218" y2="260" stroke="#d9dee4" stroke-width="2" stroke-linecap="round"/>
+<rect x="30" y="68" width="98" height="40" rx="20" fill="#fff" stroke="#b5bcc4" stroke-width="2"/>
+<text x="79" y="94.0" font-size="18" fill="#1d232b" text-anchor="middle" font-weight="700">+ Neu</text>
+<circle cx="150" cy="88" r="12" fill="#1f4e79"/>
+<text x="150" y="93.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+<rect x="24" y="126" width="186" height="30" rx="15" fill="#e8f0f8"/>
+<circle cx="40" cy="141" r="12" fill="#1f4e79"/>
+<text x="40" y="146.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+<text x="58" y="147.0" font-size="15" fill="#1d232b" text-anchor="start">Meine Ablage</text>
+<circle cx="40" cy="183" r="12" fill="#1f4e79"/>
+<text x="40" y="188.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+<text x="58" y="189.0" font-size="15" fill="#1d232b" text-anchor="start">Für mich freigegeben</text>
+<text x="58" y="231.0" font-size="15" fill="#5b6672" text-anchor="start">Papierkorb</text>
+<path d="M233.0 115.92 V108.0 a4 4 0 0 1 4 -4 H253.88 l7.92 7.92 H287.0 a4 4 0 0 1 4 4 V144.0 a4 4 0 0 1 -4 4 H237.0 a4 4 0 0 1 -4 -4 Z" fill="#f1f3f5" stroke="#5b6672" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="262" y="172.0" font-size="15" fill="#1d232b" text-anchor="middle">EDV-Kurs</text>
+<path d="M321.0 99.0 H351.24 L363.0 110.76 V153.0 H321.0 Z" fill="#fff" stroke="#2e7d32" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M351.24 99.0 V110.76 H363.0" fill="none" stroke="#2e7d32" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="328.56" y1="118.44" x2="355.44" y2="118.44" stroke="#2e7d32" stroke-width="2" stroke-linecap="round"/>
+<line x1="328.56" y1="125.46" x2="347.04" y2="125.46" stroke="#2e7d32" stroke-width="2" stroke-linecap="round"/>
+<line x1="328.56" y1="132.48" x2="355.44" y2="132.48" stroke="#2e7d32" stroke-width="2" stroke-linecap="round"/>
+<text x="342" y="172.0" font-size="15" fill="#1d232b" text-anchor="middle">Brief</text>
+<path d="M233.0 203.92 V196.0 a4 4 0 0 1 4 -4 H253.88 l7.92 7.92 H287.0 a4 4 0 0 1 4 4 V232.0 a4 4 0 0 1 -4 4 H237.0 a4 4 0 0 1 -4 -4 Z" fill="#f1f3f5" stroke="#5b6672" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="262" y="254.0" font-size="15" fill="#1d232b" text-anchor="middle">Job-Mappe</text>
+<circle cx="30" cy="294" r="12" fill="#1f4e79"/>
+<text x="30" y="299.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+<text x="48" y="300.0" font-size="16" fill="#1d232b" text-anchor="start"><tspan font-weight="700">Neu:</tspan> Ordner oder Dokument erstellen</text>
+<circle cx="30" cy="328" r="12" fill="#1f4e79"/>
+<text x="30" y="333.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+<text x="48" y="334.0" font-size="16" fill="#1d232b" text-anchor="start"><tspan font-weight="700">Meine Ablage:</tspan> Ihre Dateien</text>
+<circle cx="30" cy="362" r="12" fill="#1f4e79"/>
+<text x="30" y="367.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+<text x="48" y="368.0" font-size="16" fill="#1d232b" text-anchor="start"><tspan font-weight="700">Für mich freigegeben:</tspan> von anderen</text>
+</svg>

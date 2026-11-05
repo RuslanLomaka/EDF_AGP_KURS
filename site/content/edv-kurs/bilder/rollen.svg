@@ -1,26 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 620" width="380" height="620" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
-  <title id="t">Drei Rollen beim Teilen: Betrachter dürfen nur lesen. Kommentatoren dürfen lesen und kommentieren. Mitbearbeiter dürfen alles ändern.</title>
-  <rect width="380" height="620" fill="#ffffff"/>
-  <g text-anchor="middle">
-    <g transform="translate(55 0)">
-    <rect x="20" y="20" width="230" height="190" rx="12" fill="#f1f3f4" stroke="#5f6368" stroke-width="2"/>
-    <ellipse cx="135" cy="80" rx="42" ry="24" fill="#fff" stroke="#5f6368" stroke-width="4"/><circle cx="135" cy="80" r="11" fill="#5f6368"/>
-    <text x="135" y="140" font-size="20" font-weight="700" fill="#202124">Betrachter</text>
-    <text x="135" y="168" font-size="15" fill="#333">nur lesen</text>
-    </g>
-    <g transform="translate(-190 200)">
-    <rect x="265" y="20" width="230" height="190" rx="12" fill="#fef7e0" stroke="#e37400" stroke-width="2"/>
-    <path d="M345 56 h80 a8 8 0 0 1 8 8 v34 a8 8 0 0 1 -8 8 h-48 l-14 14 v-14 h-18 a8 8 0 0 1 -8 -8 v-34 a8 8 0 0 1 8 -8z" fill="#fff" stroke="#e37400" stroke-width="4"/>
-    <text x="380" y="140" font-size="20" font-weight="700" fill="#202124">Kommentator</text>
-    <text x="380" y="168" font-size="15" fill="#333">lesen und kommentieren,</text>
-    <text x="380" y="188" font-size="15" fill="#333">Änderungen vorschlagen</text>
-    </g>
-    <g transform="translate(-435 400)">
-    <rect x="510" y="20" width="230" height="190" rx="12" fill="#e6f4ea" stroke="#137333" stroke-width="2"/>
-    <g transform="translate(625 80) rotate(-45)"><rect x="-44" y="-10" width="70" height="20" fill="#fff" stroke="#137333" stroke-width="4"/><path d="M26 -10 L46 0 L26 10z" fill="#137333"/></g>
-    <text x="625" y="140" font-size="20" font-weight="700" fill="#202124">Mitbearbeiter</text>
-    <text x="625" y="168" font-size="15" fill="#333">alles ändern,</text>
-    <text x="625" y="188" font-size="15" fill="#333">auch selbst teilen</text>
-    </g>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Wer darf was? Betrachter dürfen nur lesen. Kommentatoren dürfen lesen und kommentieren. Mitbearbeiter dürfen lesen, kommentieren und ändern.</title>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="36.0" font-size="22" fill="#1f4e79" text-anchor="middle" font-weight="700">Wer darf was?</text>
+<path d="M186.0 78 Q206 56.0 226.0 78 Q206 100.0 186.0 78 Z" fill="#fff" stroke="#1d232b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="206" cy="78" r="5.6000000000000005" fill="#1d232b"/>
+<path d="M276 64 H296 a10 10 0 0 1 10 10 V80 a10 10 0 0 1 -10 10 H296 l-14 14 v-14 H276 a10 10 0 0 1 -10 -10 V74 a10 10 0 0 1 10 -10 Z" fill="#fff" stroke="#1d232b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<g transform="translate(362 80) rotate(-45) scale(0.9090909090909091)"><rect x="-18" y="-6" width="30" height="12" fill="#fff" stroke="#1d232b" stroke-width="3" vector-effect="non-scaling-stroke"/><path d="M12 -6 L22 0 L12 6 Z" fill="#1d232b"/><rect x="-24" y="-6" width="6" height="12" fill="#1d232b"/></g>
+<text x="206" y="120.0" font-size="15" fill="#1d232b" text-anchor="middle" font-weight="700">lesen</text>
+<text x="286" y="120.0" font-size="15" fill="#1d232b" text-anchor="middle" font-weight="700">Kommentar</text>
+<text x="362" y="120.0" font-size="15" fill="#1d232b" text-anchor="middle" font-weight="700">ändern</text>
+<rect x="12" y="138" width="376" height="68" rx="10" fill="#f1f3f5" stroke="#d9dee4" stroke-width="1"/>
+<text x="26" y="168.0" font-size="19" fill="#1d232b" text-anchor="start" font-weight="700">Betrachter</text>
+<text x="26" y="192.0" font-size="15" fill="#5b6672" text-anchor="start">nur lesen</text>
+<circle cx="206" cy="172" r="15" fill="#2e7d32"/>
+<path d="M199.4375 172.46875 L204.125 177.15625 L213.03125 167.3125" fill="none" stroke="#fff" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="286" cy="172" r="15" fill="#b5bcc4"/>
+<line x1="280.84375" y1="166.84375" x2="291.15625" y2="177.15625" stroke="#fff" stroke-width="3.0" stroke-linecap="round"/>
+<line x1="291.15625" y1="166.84375" x2="280.84375" y2="177.15625" stroke="#fff" stroke-width="3.0" stroke-linecap="round"/>
+<circle cx="362" cy="172" r="15" fill="#b5bcc4"/>
+<line x1="356.84375" y1="166.84375" x2="367.15625" y2="177.15625" stroke="#fff" stroke-width="3.0" stroke-linecap="round"/>
+<line x1="367.15625" y1="166.84375" x2="356.84375" y2="177.15625" stroke="#fff" stroke-width="3.0" stroke-linecap="round"/>
+<rect x="12" y="214" width="376" height="68" rx="10" fill="#fff" stroke="#d9dee4" stroke-width="1"/>
+<text x="26" y="244.0" font-size="19" fill="#1d232b" text-anchor="start" font-weight="700">Kommentator</text>
+<text x="26" y="268.0" font-size="15" fill="#5b6672" text-anchor="start">+ kommentieren</text>
+<circle cx="206" cy="248" r="15" fill="#2e7d32"/>
+<path d="M199.4375 248.46875 L204.125 253.15625 L213.03125 243.3125" fill="none" stroke="#fff" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="286" cy="248" r="15" fill="#2e7d32"/>
+<path d="M279.4375 248.46875 L284.125 253.15625 L293.03125 243.3125" fill="none" stroke="#fff" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="362" cy="248" r="15" fill="#b5bcc4"/>
+<line x1="356.84375" y1="242.84375" x2="367.15625" y2="253.15625" stroke="#fff" stroke-width="3.0" stroke-linecap="round"/>
+<line x1="367.15625" y1="242.84375" x2="356.84375" y2="253.15625" stroke="#fff" stroke-width="3.0" stroke-linecap="round"/>
+<rect x="12" y="290" width="376" height="68" rx="10" fill="#f1f3f5" stroke="#d9dee4" stroke-width="1"/>
+<text x="26" y="320.0" font-size="19" fill="#1d232b" text-anchor="start" font-weight="700">Mitbearbeiter</text>
+<text x="26" y="344.0" font-size="15" fill="#5b6672" text-anchor="start">darf alles</text>
+<circle cx="206" cy="324" r="15" fill="#2e7d32"/>
+<path d="M199.4375 324.46875 L204.125 329.15625 L213.03125 319.3125" fill="none" stroke="#fff" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="286" cy="324" r="15" fill="#2e7d32"/>
+<path d="M279.4375 324.46875 L284.125 329.15625 L293.03125 319.3125" fill="none" stroke="#fff" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="362" cy="324" r="15" fill="#2e7d32"/>
+<path d="M355.4375 324.46875 L360.125 329.15625 L369.03125 319.3125" fill="none" stroke="#fff" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
 </svg>

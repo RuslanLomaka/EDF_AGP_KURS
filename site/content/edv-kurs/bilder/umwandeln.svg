@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Umwandeln: Eine Word-Datei laden Sie in Google Drive hoch und speichern sie als Google-Dokument. Ein Google-Dokument laden Sie als Word-Datei oder als PDF herunter. Für Bewerbungen schicken Sie ein PDF.</title>
+<defs><marker id="pfeil1" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#5b6672"/></marker></defs>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="34.0" font-size="22" fill="#1f4e79" text-anchor="middle" font-weight="700">Umwandeln</text>
+<path d="M30.0 158.0 H70.32 L86.0 173.68 V234.0 H30.0 Z" fill="#fff" stroke="#2b579a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M70.32 158.0 V173.68 H86.0" fill="none" stroke="#2b579a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="40.08" y1="185.36" x2="75.91999999999999" y2="185.36" stroke="#2b579a" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="40.08" y1="195.24" x2="64.72" y2="195.24" stroke="#2b579a" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="40.08" y1="205.12" x2="75.91999999999999" y2="205.12" stroke="#2b579a" stroke-width="2.5" stroke-linecap="round"/>
+<rect x="33.0" y="208.16" width="50" height="19.76" rx="4" fill="#2b579a"/>
+<text x="58" y="222.8" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">DOCX</text>
+<text x="58" y="260.0" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">Word-Datei</text>
+<path d="M172.0 158.0 H212.32 L228.0 173.68 V234.0 H172.0 Z" fill="#e7f3e8" stroke="#2e7d32" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M212.32 158.0 V173.68 H228.0" fill="none" stroke="#2e7d32" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="182.08" y1="185.36" x2="217.92" y2="185.36" stroke="#2e7d32" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="182.08" y1="195.24" x2="206.72" y2="195.24" stroke="#2e7d32" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="182.08" y1="205.12" x2="217.92" y2="205.12" stroke="#2e7d32" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="182.08" y1="215.0" x2="206.72" y2="215.0" stroke="#2e7d32" stroke-width="2.5" stroke-linecap="round"/>
+<text x="200" y="260.0" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">Google-</text>
+<text x="200" y="280.0" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">Dokument</text>
+<path d="M306.0 82.0 H346.32 L362.0 97.68 V154.0 H306.0 Z" fill="#fff" stroke="#2b579a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M346.32 82.0 V97.68 H362.0" fill="none" stroke="#2b579a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="316.08" y1="107.92" x2="351.92" y2="107.92" stroke="#2b579a" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="316.08" y1="117.28" x2="340.72" y2="117.28" stroke="#2b579a" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="316.08" y1="126.64" x2="351.92" y2="126.64" stroke="#2b579a" stroke-width="2.5" stroke-linecap="round"/>
+<rect x="309.0" y="129.52" width="50" height="18.72" rx="4" fill="#2b579a"/>
+<text x="334" y="143.4" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">DOCX</text>
+<text x="334" y="176.0" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">Word</text>
+<path d="M306.0 238.0 H346.32 L362.0 253.68 V310.0 H306.0 Z" fill="#fff" stroke="#c0392b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M346.32 238.0 V253.68 H362.0" fill="none" stroke="#c0392b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="316.08" y1="263.92" x2="351.92" y2="263.92" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="316.08" y1="273.28000000000003" x2="340.72" y2="273.28000000000003" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="316.08" y1="282.64" x2="351.92" y2="282.64" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round"/>
+<rect x="309.92" y="285.52" width="48.16" height="18.72" rx="4" fill="#c0392b"/>
+<text x="334" y="299.4" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">PDF</text>
+<text x="334" y="332.0" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">PDF</text>
+<line x1="94" y1="196" x2="164" y2="196" stroke="#5b6672" stroke-width="4" stroke-linecap="round" marker-end="url(#pfeil1)"/>
+<text x="129" y="184.0" font-size="15" fill="#5b6672" text-anchor="middle">hochladen</text>
+<line x1="232" y1="176" x2="296" y2="134" stroke="#5b6672" stroke-width="4" stroke-linecap="round" marker-end="url(#pfeil1)"/>
+<line x1="232" y1="216" x2="296" y2="258" stroke="#5b6672" stroke-width="4" stroke-linecap="round" marker-end="url(#pfeil1)"/>
+<text x="300" y="212.0" font-size="15" fill="#5b6672" text-anchor="middle">herunterladen</text>
+<rect x="20" y="352" width="360" height="38" rx="10" fill="#fdecea"/>
+<text x="200" y="377.0" font-size="17" fill="#1d232b" text-anchor="middle">Für Bewerbungen: <tspan font-weight="700">PDF</tspan> schicken.</text>
+</svg>

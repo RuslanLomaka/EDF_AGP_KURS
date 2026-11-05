@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">So funktioniert ein Serienbrief: In der Excel-Liste steht eine Zeile pro Firma. In der Word-Vorlage stehen Felder wie «Firma» und «Stelle». Word setzt für jede Zeile die Daten ein. So entsteht ein Brief pro Firma.</title>
+<defs><marker id="pfeil1" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#5b6672"/></marker></defs>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="30.0" font-size="20" fill="#1f4e79" text-anchor="middle" font-weight="700">Eine Vorlage – viele Briefe</text>
+<text x="20" y="56.0" font-size="15" fill="#2e7d32" text-anchor="start" font-weight="700">Excel-Liste</text>
+<rect x="20" y="64" width="360" height="26" rx="0" fill="#2e7d32"/>
+<text x="28" y="82.0" font-size="15" fill="#fff" text-anchor="start" font-weight="700">Firma</text>
+<text x="238" y="82.0" font-size="15" fill="#fff" text-anchor="start" font-weight="700">Stelle</text>
+<rect x="20" y="90" width="360" height="26" rx="0" fill="#fff3df"/>
+<text x="28" y="108.0" font-size="15" fill="#1d232b" text-anchor="start">Muster Logistik GmbH</text>
+<text x="238" y="108.0" font-size="15" fill="#1d232b" text-anchor="start">Lagerhelfer</text>
+<rect x="20" y="116" width="360" height="26" rx="0" fill="#f1eaf8"/>
+<text x="28" y="134.0" font-size="15" fill="#1d232b" text-anchor="start">Beispiel Bau AG</text>
+<text x="238" y="134.0" font-size="15" fill="#1d232b" text-anchor="start">Helfer</text>
+<rect x="20" y="142" width="360" height="26" rx="0" fill="#e0f2f1"/>
+<text x="28" y="160.0" font-size="15" fill="#1d232b" text-anchor="start">Nord Pflege GmbH</text>
+<text x="238" y="160.0" font-size="15" fill="#1d232b" text-anchor="start">Pflegehelfer</text>
+<rect x="20" y="64" width="360" height="104" rx="0" fill="none" stroke="#2e7d32" stroke-width="2"/>
+<line x1="230" y1="64" x2="230" y2="168" stroke="#2e7d32" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="200" y1="172" x2="200" y2="196" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pfeil1)"/>
+<text x="58" y="238.0" font-size="15" fill="#2b579a" text-anchor="middle" font-weight="700">Vorlage</text>
+<rect x="102" y="202" width="196" height="62" rx="4" fill="#fff" stroke="#2b579a" stroke-width="2.5"/>
+<text x="200" y="226.0" font-size="17" fill="#2b579a" text-anchor="middle" font-weight="700">«Firma»</text>
+<text x="200" y="252.0" font-size="15" fill="#1d232b" text-anchor="middle">Bewerbung als «Stelle»</text>
+<line x1="200" y1="268" x2="74" y2="288" stroke="#5b6672" stroke-width="2.5" stroke-linecap="round" marker-end="url(#pfeil1)"/>
+<rect x="18" y="292" width="112" height="98" rx="4" fill="#fff" stroke="#b26a00" stroke-width="2"/>
+<rect x="18" y="292" width="112" height="46" rx="4" fill="#fff3df"/>
+<text x="74" y="310.0" font-size="14" fill="#b26a00" text-anchor="middle" font-weight="700">Muster</text>
+<text x="74" y="326.8" font-size="14" fill="#b26a00" text-anchor="middle" font-weight="700">Logistik GmbH</text>
+<text x="74" y="356.0" font-size="14" fill="#5b6672" text-anchor="middle">Lagerhelfer</text>
+<line x1="32" y1="374" x2="116" y2="374" stroke="#c9d1da" stroke-width="5" stroke-linecap="round"/>
+<line x1="200" y1="268" x2="200" y2="288" stroke="#5b6672" stroke-width="2.5" stroke-linecap="round" marker-end="url(#pfeil1)"/>
+<rect x="144" y="292" width="112" height="98" rx="4" fill="#fff" stroke="#6a3d9a" stroke-width="2"/>
+<rect x="144" y="292" width="112" height="46" rx="4" fill="#f1eaf8"/>
+<text x="200" y="310.0" font-size="14" fill="#6a3d9a" text-anchor="middle" font-weight="700">Beispiel</text>
+<text x="200" y="326.8" font-size="14" fill="#6a3d9a" text-anchor="middle" font-weight="700">Bau AG</text>
+<text x="200" y="356.0" font-size="14" fill="#5b6672" text-anchor="middle">Helfer</text>
+<line x1="158" y1="374" x2="242" y2="374" stroke="#c9d1da" stroke-width="5" stroke-linecap="round"/>
+<line x1="200" y1="268" x2="326" y2="288" stroke="#5b6672" stroke-width="2.5" stroke-linecap="round" marker-end="url(#pfeil1)"/>
+<rect x="270" y="292" width="112" height="98" rx="4" fill="#fff" stroke="#00796b" stroke-width="2"/>
+<rect x="270" y="292" width="112" height="46" rx="4" fill="#e0f2f1"/>
+<text x="326" y="310.0" font-size="14" fill="#00796b" text-anchor="middle" font-weight="700">Nord Pflege</text>
+<text x="326" y="326.8" font-size="14" fill="#00796b" text-anchor="middle" font-weight="700">GmbH</text>
+<text x="326" y="356.0" font-size="14" fill="#5b6672" text-anchor="middle">Pflegehelfer</text>
+<line x1="284" y1="374" x2="368" y2="374" stroke="#c9d1da" stroke-width="5" stroke-linecap="round"/>
+</svg>
