@@ -36,6 +36,16 @@ quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten 
 - Beratung und Förderung gibt es bei IHK, Handwerkskammer, Arbeitsagentur und Jobcenter. Fördergeld müssen Sie **vor dem Start** beantragen.
 :::
 
+::: notiz
+**So gehen Sie vor** (ca. 45 Min., Teil 1 der Serie)
+
+1. Einstieg: „Wer möchte vielleicht einmal selbstständig sein? Mit welcher Idee?“ Sammeln Sie drei bis vier Ideen an der Tafel.
+2. Prüfen Sie jede Idee mit dem Bild: Gewerbe oder freier Beruf?
+3. Erlaubnis und Meisterbrief: Nicht jede Tätigkeit darf man einfach so anfangen.
+4. Hilfe: IHK, Handwerkskammer, Arbeitsagentur, Jobcenter. Fördergeld beantragt man **vor** dem Start.
+5. Sagen Sie: Die Serie hat 5 Teile. Zum Schluss „Fragen zum Text“, dann das Quiz.
+:::
+
 ## Selbstständig – was heißt das? {#was}
 
 Als **Angestellte** oder **Angestellter** arbeiten Sie für einen Arbeitgeber. Sie bekommen jeden Monat Lohn, und der Arbeitgeber zahlt einen Teil Ihrer Sozialversicherung.
@@ -52,6 +62,16 @@ Das Gründen einer eigenen Firma heißt auch **Existenzgründung**.
 ## Gewerbe oder freier Beruf? {#gewerbe-oder-freier-beruf}
 
 <p class="bild"><img src="/artikel/bilder/gewerbe-oder-freier-beruf.svg" alt="Gewerbe oder freier Beruf? Ein Gewerbe ist zum Beispiel Handel, Gastronomie oder Handwerk. Es wird beim Gewerbeamt und beim Finanzamt angemeldet. Ein freier Beruf ist zum Beispiel Übersetzer, Lehrerin oder Ärztin. Er wird nur beim Finanzamt angemeldet. Im Zweifel entscheidet das Finanzamt." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. „Zuerst die Frage: Was machen Sie?“
+2. Links: „Handel, Gastronomie, Handwerk – das ist ein **Gewerbe**. Sie melden es beim Gewerbeamt an, dazu kommt das Finanzamt.“
+3. Rechts: „Übersetzer, Lehrerin, Ärztin – das sind **freie Berufe**. Sie melden sich nur beim Finanzamt.“
+4. Unten: „Wenn Sie unsicher sind: Das Finanzamt entscheidet. Fragen Sie vorher nach.“
+5. Üben mit den Ideen von der Tafel: „Ein Imbiss – Gewerbe oder freier Beruf?“ (Gewerbe)
+:::
 
 Das ist die erste wichtige Frage. Von der Antwort hängt ab, wo Sie sich anmelden und welche Steuern Sie zahlen.
 

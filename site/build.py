@@ -37,7 +37,8 @@ NAV = [("start", "/", "Start"), ("kurs", "/edv-kurs/", "EDV-Kurs"), ("artikel", 
 MONATE = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober",
           "November", "Dezember"]
 TYP = {".xlsx": "Excel", ".docx": "Word", ".pdf": "PDF", ".zip": "ZIP"}
-BOXES = {"kurz", "ergaenzung", "info", "achtung", "schritte", "prinzip", "zeichen"}
+BOXES = {"kurz", "ergaenzung", "info", "achtung", "schritte", "prinzip", "zeichen", "notiz"}
+LEHRER = "teacher"  # /<page>/teacher/: the same page with the teacher's notes; linked from nowhere on the site
 SLUG = re.compile(r"[a-z0-9]+(-[a-z0-9]+)*")
 DATUM = re.compile(r"\d{4}-\d{2}-\d{2}")
 DATEINAME = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]*")
@@ -114,6 +115,25 @@ def pandoc(path, body, to):
     if r.returncode != 0:
         fail(path, "pandoc: " + (r.stderr.strip() or f"exit code {r.returncode}"))
     return r.stdout
+
+
+def split_notizen(path, body):
+    """Teacher notes are '::: notiz' boxes. Returns (body without them, body with them)."""
+    ohne, im_kasten = [], False
+    for nr, line in enumerate(body.split("\n"), 1):
+        if line.strip() == "::: notiz":
+            if im_kasten:
+                fail(path, f"line {nr}: '::: notiz' inside another '::: notiz' box")
+            im_kasten = True
+        elif im_kasten and line.startswith(":::"):
+            if line.strip() != ":::":
+                fail(path, f"line {nr}: a '::: notiz' box cannot contain other boxes")
+            im_kasten = False
+        elif not im_kasten:
+            ohne.append(line)
+    if im_kasten:
+        fail(path, "a '::: notiz' box is not closed")
+    return "\n".join(ohne), body
 
 
 def check_body(path, body):
@@ -268,7 +288,7 @@ def write(rel, content):
     out.write_text(content, encoding="utf-8")
 
 
-def layout(title, active, main, description="", scripts=()):
+def layout(title, active, main, description="", scripts=(), noindex=False):
     current = ' aria-current="page"'
     links = "".join(f'<a href="{href}"{current if key == active else ""}>{label}</a>' for key, href, label in NAV)
     full_title = BRAND if title == BRAND else f"{title} – {BRAND}"
@@ -279,7 +299,7 @@ def layout(title, active, main, description="", scripts=()):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(full_title)}</title>
-<meta name="description" content="{esc(description)}">
+<meta name="description" content="{esc(description)}">{'<meta name="robots" content="noindex, nofollow">' if noindex else ''}
 <link rel="stylesheet" href="{asset('style.css')}">
 </head>
 <body>
@@ -463,9 +483,13 @@ def load_articles(themen, vorleser):
                 fail(path, "'teil' must be a whole number from 1 (the part of the series)")
         else:
             a["teil"] = 0
+        body, voll = split_notizen(path, body)
         a["body"] = pandoc(path, body, "html5")
         check_body(path, a["body"])
         a["body"] = add_vorlesen(a["body"], vorleser)
+        a["body_lehrer"] = pandoc(path, voll, "html5")
+        check_body(path, a["body_lehrer"])
+        a["body_lehrer"] = add_vorlesen(a["body_lehrer"], vorleser)
         plain = pandoc(path, body, "plain")
         a["text"] = " ".join(re.sub(r"[-=+|]{3,}|\|", " ", plain).split())  # drop ASCII table borders
         a["url"] = f"/artikel/{a['slug']}/"
@@ -583,16 +607,41 @@ def build_article_pages(articles):
             prev = dated[i - 1] if i else None
             nxt = dated[i + 1] if i + 1 < len(dated) else None
             nav = blaettern("Weitere Artikel", prev, nxt, "Vorheriger Artikel" if prev else "", "Nächster Artikel" if nxt else "")
-        # sources come after the quiz: the quiz is the part with feedback, the list of laws is for looking things up
-        inhalt, quellen = a["body"], ""
-        m = re.search(r'<h2 id="quellen">', inhalt)
-        if m:
-            inhalt, quellen = inhalt[:m.start()], f'<section class="quellen inhalt">{inhalt[m.start():]}</section>'
-        extra = [("quiz", "Quiz")] + ([("quellen", "Quellen")] if quellen else [])
-        chips = "".join(f'<li><a href="/artikel/?q={quote(k)}">{esc(k)}</a></li>' for k in a["stichwoerter"])
-        stand = a["datum"][:4] if a["datum"] else str(date.today().year)
-        meta_line = " · ".join(x for x in [esc(a["thema"]), datum_kurz(a["datum"]), f"ca. {a['minuten']} Min. Lesezeit"] if x)
-        main = f"""<p class="crumbs"><a href="/artikel/">Artikel</a> › <a href="{thema_link(a['thema'])}">{esc(a['thema'])}</a></p>
+        for lehrer in (False, True):
+            write_article(a, lehrer, serie, weiter, mehr, nav)
+    bilder = CONTENT / "artikel" / "bilder"
+    if bilder.is_dir():
+        shutil.copytree(bilder, DIST / "artikel" / "bilder")
+
+
+SEITEN = set()  # URLs of all articles and lessons, filled in main()
+
+
+def lehrer_links(main):
+    """On a teacher page, links to other articles and lessons stay in the teacher view."""
+    def ziel(m):
+        url, rest = m.group(1), m.group(2) or ""
+        return f'href="{url}{LEHRER}/{rest}"' if url in SEITEN else m.group(0)
+    return re.sub(r'href="(/(?:artikel|edv-kurs)/[a-z0-9-]+/)(#[^"]*)?"', ziel, main)
+
+
+def lehrer_banner(page_url, notizen):
+    zahl = anzahl(notizen, "Notiz", "Notizen") if notizen else "noch keine Notizen"
+    return (f'<p class="lehrer-banner"><strong>Ansicht für die Lehrkraft</strong> · {zahl} · nirgends verlinkt '
+            f'· <a href="{page_url}">Ansicht der Teilnehmenden</a> · <a href="/{LEHRER}/">Alle Seiten</a></p>')
+
+
+def write_article(a, lehrer, serie, weiter, mehr, nav):
+    # sources come after the quiz: the quiz is the part with feedback, the list of laws is for looking things up
+    inhalt, quellen = (a["body_lehrer"] if lehrer else a["body"]), ""
+    m = re.search(r'<h2 id="quellen">', inhalt)
+    if m:
+        inhalt, quellen = inhalt[:m.start()], f'<section class="quellen inhalt">{inhalt[m.start():]}</section>'
+    extra = [("quiz", "Quiz")] + ([("quellen", "Quellen")] if quellen else [])
+    chips = "".join(f'<li><a href="/artikel/?q={quote(k)}">{esc(k)}</a></li>' for k in a["stichwoerter"])
+    stand = a["datum"][:4] if a["datum"] else str(date.today().year)
+    meta_line = " · ".join(x for x in [esc(a["thema"]), datum_kurz(a["datum"]), f"ca. {a['minuten']} Min. Lesezeit"] if x)
+    main = f"""<p class="crumbs"><a href="/artikel/">Artikel</a> › <a href="{thema_link(a['thema'])}">{esc(a['thema'])}</a></p>
 <h1>{esc(a['title'])}</h1>
 <p class="meta">{meta_line}</p>
 {serie}
@@ -607,10 +656,12 @@ def build_article_pages(articles):
 {mehr}
 {nav}
 <p class="quelle">Grundlage: {esc(a['quelle'])}. Der Inhalt ist in eigenen Worten erklärt. Kästen mit „Ergänzung“ enthalten zusätzliche Informationen (Stand {stand}, ohne Gewähr). Keine Rechtsberatung.</p>"""
+    if lehrer:
+        main = lehrer_banner(a["url"], inhalt.count('<div class="notiz">')) + "\n" + lehrer_links(main)
+        write(f"artikel/{a['slug']}/{LEHRER}/index.html", layout(f"Lehrkraft: {a['title']}", "artikel", main, a["kurz"],
+                                                           ["quiz.js", "vorlesen.js"], noindex=True))
+    else:
         write(f"artikel/{a['slug']}/index.html", layout(a["title"], "artikel", main, a["kurz"], ["quiz.js", "vorlesen.js"]))
-    bilder = CONTENT / "artikel" / "bilder"
-    if bilder.is_dir():
-        shutil.copytree(bilder, DIST / "artikel" / "bilder")
 
 
 def newest_first(articles):
@@ -740,8 +791,12 @@ def load_lessons():
         dupes = sorted({n for n in names if names.count(n) > 1})
         if dupes:
             fail(path, f"two downloads would have the same file name: {', '.join(dupes)}")
+        body, voll = split_notizen(path, body)
         l["body"] = pandoc(path, body, "html5")
         check_body(path, l["body"])
+        # the teacher page lives one folder deeper: relative download links must still reach dateien/
+        l["body_lehrer"] = pandoc(path, voll, "html5").replace('href="dateien/', 'href="../dateien/')
+        check_body(path, l["body_lehrer"])
         l["url"] = f"/edv-kurs/{l['slug']}/"
         lessons.append(l)
     nummern = [l["nummer"] for l in lessons]
@@ -809,7 +864,19 @@ def build_lessons(lessons):
             lehrkraft = f'<section class="lehrkraft"><h2>Für Lehrkräfte</h2>{file_list(l, l["lehrkraft"])}</section>'
         nav = blaettern("Weitere Lektionen", lessons[i - 1] if i else None, lessons[i + 1] if i + 1 < len(lessons) else None,
                         "Vorherige Lektion", "Nächste Lektion")
-        main = f"""<p class="crumbs"><a href="/edv-kurs/">EDV-Kurs</a> › Lektion {l['nummer']}</p>
+        for lehrer in (False, True):
+            body = l["body_lehrer"] if lehrer else l["body"]
+            teile = (ziele, downloads, lehrkraft, nav)
+            if lehrer:  # one folder deeper
+                teile = tuple(x.replace('href="dateien/', 'href="../dateien/') for x in teile)
+            write_lesson(l, lehrer, body, *teile)
+    bilder = CONTENT / "edv-kurs" / "bilder"
+    if bilder.is_dir():
+        shutil.copytree(bilder, DIST / "edv-kurs" / "bilder")
+
+
+def write_lesson(l, lehrer, body, ziele, downloads, lehrkraft, nav):
+    main = f"""<p class="crumbs"><a href="/edv-kurs/">EDV-Kurs</a> › Lektion {l['nummer']}</p>
 <h1>{esc(l['title'])}</h1>
 {f'<p class="untertitel">{esc(l["untertitel"])}</p>' if l['untertitel'] else ''}
 <p class="meta">{lesson_meta(l)}</p>
@@ -820,17 +887,36 @@ def build_lessons(lessons):
   <div class="balken"><span></span></div>
   <p class="zahl"></p>
 </div>
-{toc(l['body'])}
+{toc(body)}
 <article class="inhalt lektion">
-{l['body']}
+{body}
 </article>
 <p class="zuruecksetzen" hidden><button type="button" class="reset">Alle Haken entfernen</button></p>
 {lehrkraft}
 {nav}"""
+    if lehrer:
+        main = lehrer_banner(l["url"], body.count('<div class="notiz">')) + "\n" + lehrer_links(main)
+        write(f"edv-kurs/{l['slug']}/{LEHRER}/index.html",
+              layout(f"Lehrkraft: {l['title']}", "kurs", main, l["kurz"], ["lektion.js"], noindex=True))
+    else:
         write(f"edv-kurs/{l['slug']}/index.html", layout(l["title"], "kurs", main, l["kurz"], ["lektion.js"]))
-    bilder = CONTENT / "edv-kurs" / "bilder"
-    if bilder.is_dir():
-        shutil.copytree(bilder, DIST / "edv-kurs" / "bilder")
+
+
+def build_lehrer_index(articles, lessons):
+    """/teacher/: every page that has a teacher view. Like those pages, it is linked from nowhere."""
+    def zeile(x, label):
+        n = x["body_lehrer"].count('<div class="notiz">')
+        return (f'<li><a href="{x["url"]}{LEHRER}/">{esc(label)}</a> '
+                f'<span class="meta">{anzahl(n, "Notiz", "Notizen") if n else "noch keine Notizen"}</span></li>')
+    kurs = "".join(zeile(l, f"Lektion {l['nummer']}: {l['title']}") for l in lessons)
+    artikel = "".join(zeile(a, a["title"]) for a in newest_first(articles))
+    main = f"""<p class="lehrer-banner"><strong>Ansicht für die Lehrkraft</strong> · nirgends verlinkt</p>
+<h1>Seiten mit Notizen für die Lehrkraft</h1>
+<p>Hängen Sie an die Adresse einer Lektion oder eines Artikels <strong>{LEHRER}/</strong> an, zum Beispiel
+<code>/edv-kurs/google-docs/{LEHRER}/</code>. Die Notizen stehen in den lila Kästen.</p>
+<h2>EDV-Kurs</h2><ul class="liste">{kurs}</ul>
+<h2>Artikel</h2><ul class="liste">{artikel}</ul>"""
+    write(f"{LEHRER}/index.html", layout("Lehrkraft", "", main, "Notizen für die Lehrkraft.", noindex=True))
 
 
 def build_lesson_index(lessons):
@@ -941,11 +1027,13 @@ def main():
     vorleser = Vorleser()
     articles = load_articles(themen, vorleser)
     lessons = load_lessons()
+    SEITEN.update(x["url"] for x in articles + lessons)
     build_article_pages(articles)
     build_article_index(articles, themen)
     build_topic_pages(articles, themen)
     build_lessons(lessons)
     build_lesson_index(lessons)
+    build_lehrer_index(articles, lessons)
     build_start(articles, lessons)
     build_hinweis()
     if BETREIBER:

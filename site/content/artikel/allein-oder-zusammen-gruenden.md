@@ -37,9 +37,28 @@ quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten 
 - Schreiben Sie einen **Gesellschaftsvertrag**: Wer bringt was ein, wer bekommt wie viel Gewinn, was passiert beim Ausstieg?
 :::
 
+::: notiz
+**So gehen Sie vor** (ca. 45 Min., Teil 2 der Serie)
+
+1. Einstieg: „Eine Firma hat Schulden und kann nicht zahlen. Wer zahlt dann?“
+2. Bild „Wer haftet privat?“.
+3. Gesellschaftsvertrag: Warum schriftlich? Damit es keinen Streit gibt, auch wenn jemand aussteigen will.
+4. Zum Schluss: „Fragen zum Text“, dann das Quiz. Ausblick auf Teil 3: Bei GmbH, UG und AG haftet nur die Firma.
+:::
+
 ## Was ist eine Rechtsform? {#rechtsform}
 
 <p class="bild"><img src="/artikel/bilder/haftung-rechtsformen.svg" alt="Wer haftet mit dem Privatvermögen? Einzelunternehmen: eine Person, sie haftet privat. GbR: zwei oder mehr Personen, alle haften privat. OHG: alle haften privat. KG: Der Komplementär haftet privat, die Kommanditisten haften nur mit ihrer Einlage." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. „Haften heißt: für Schulden zahlen. **Privat** haften heißt: mit dem eigenen Geld und Besitz, auch mit dem Ersparten.“
+2. „Einzelunternehmen: eine Person. Sie haftet privat, darum ist sie rot.“
+3. „GbR und OHG: zwei oder mehr Personen. Alle haften privat, alle sind rot.“
+4. „KG: Eine Person haftet voll, das ist der Komplementär, rot. Die anderen sind die Kommanditisten, grün. Sie haften nur mit dem Geld, das sie in die Firma gegeben haben, ihrer Einlage.“
+5. Frage: „Sie gründen mit einer Freundin eine GbR. Die Firma hat Schulden. Wer muss zahlen?“ (Beide, auch mit ihrem Privatvermögen.)
+:::
 
 Jede Firma hat eine **Rechtsform**. Sie bestimmt vor allem:
 

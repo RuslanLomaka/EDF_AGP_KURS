@@ -37,9 +37,28 @@ quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten 
 - Den **Gewinn** bekommen die Gesellschafter nach ihren **Anteilen**, wenn sie die Ausschüttung beschließen.
 :::
 
+::: notiz
+**So gehen Sie vor** (ca. 45 Min., Teil 3 der Serie)
+
+1. Wiederholung aus Teil 2: Beim Einzelunternehmen und bei der GbR haftet man privat.
+2. Bild: Mindestkapital und „Es haftet nur die Firma“.
+3. Die UG als „Mini-GmbH“: 25 Prozent vom Gewinn bleiben in der Firma.
+4. Zum Schluss: „Fragen zum Text“, dann das Quiz.
+:::
+
 ## Was ist eine Kapitalgesellschaft? {#kapitalgesellschaft}
 
 <p class="bild"><img src="/artikel/bilder/kapitalgesellschaften.svg" alt="Mindestkapital: UG ab 1 Euro, GmbH 25.000 Euro, AG 50.000 Euro. Bei allen drei haftet für Schulden nur das Geld der Firma. Das Privatvermögen der Gesellschafter ist geschützt." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. Oben: „Für diese Firmen braucht man Startkapital. UG ab 1 Euro, GmbH mindestens 25.000 Euro, AG mindestens 50.000 Euro.“
+2. „Bei der GmbH müssen vor der Eintragung mindestens 12.500 Euro eingezahlt sein.“
+3. Unten links: „Der große Vorteil: Hat die Firma Schulden, zahlt nur die Firma, mit ihrem eigenen Geld.“
+4. Rechts das Haus: „Das Privatvermögen der Gesellschafter ist geschützt.“
+5. Frage: „Warum gründen viele kleine Firmen eine UG und keine GmbH?“ (Man braucht weniger Startkapital.)
+:::
 
 Eine Kapitalgesellschaft ist eine **eigene Person vor dem Gesetz** (eine „juristische Person“). Sie schließt Verträge, hat ein eigenes Konto und haftet selbst für ihre Schulden.
 

@@ -23,11 +23,35 @@ ziele:
 - Das Beste daran: **Mehrere Menschen arbeiten gleichzeitig** im selben Dokument. Niemand muss Dateien hin- und herschicken.
 :::
 
+::: notiz
+**So gehen Sie vor** (ca. 4 Stunden)
+
+1. Vorher: Bereiten Sie die Job-Mappe vor (Kasten in Teil 6). Fragen Sie, wer schon ein Google-Konto hat. Planen Sie am Anfang 20 bis 30 Minuten für die Anmeldung ein.
+2. Einstieg (10 Min.): „Wer hat schon einmal eine Datei per E-Mail hin- und hergeschickt? Wie viele Versionen gab es am Ende?“
+3. Grundlagen mit den Bildern (30 Min.): Browser, Programm oder Browser, Cloud, Vergleich.
+4. Teil 1 bis 3 (60 Min.): Anmelden, Ordner und Dokument, Teilen. Erst vormachen, dann selbst.
+5. Pause.
+6. Teil 4 und 5 (60 Min.): Kommentieren, Vorschlagen, Umwandeln.
+7. Teil 6 (45 Min.): die Job-Mappe. Hier wenden alle alles an.
+8. Abschluss (15 Min.): „Testen Sie sich“ gemeinsam. Am Schulungs-PC melden sich alle ab.
+:::
+
 ## Erst die Grundlagen {#grundlagen}
 
 ### Was ist ein Browser? {#browser}
 
 <p class="bild"><img src="/edv-kurs/bilder/browser.svg" alt="Ein Browser-Fenster hat drei Teile: 1. oben der Tab, das ist eine offene Seite. 2. die Adresszeile mit der Adresse der Seite, zum Beispiel docs.google.com. 3. darunter die Seite selbst." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. „Ein Browser ist ein Programm für Internetseiten. Alle Browser sehen ähnlich aus.“
+2. Zeigen Sie auf die 1: „Oben ist der **Tab**. Jeder Tab ist eine offene Seite. Man kann viele Tabs gleichzeitig offen haben.“
+3. Zeigen Sie auf die 2: „Die **Adresszeile**. Hier steht, wo Sie gerade sind, hier docs.google.com. Hier tippen Sie auch eine Adresse ein.“
+4. Zeigen Sie auf die 3: „Darunter ist die **Seite** selbst. Bei Google Docs schreiben Sie hier.“
+5. Zum Mitmachen: Alle öffnen ihren Browser und zeigen mit der Maus: Wo ist der Tab? Wo ist die Adresszeile?
+6. Frage: „Welche Browser kennen Sie?“ (Chrome, Edge, Firefox, Safari)
+:::
 
 Ein **Browser** ist ein Programm, mit dem Sie **Internetseiten** öffnen. Bekannte Browser sind **Google Chrome**, **Microsoft Edge**, **Firefox** und auf dem iPhone **Safari**.
 
@@ -37,6 +61,16 @@ Oben im Browser ist die **Adresszeile**. Dort steht die Adresse der Seite, zum B
 
 <p class="bild"><img src="/edv-kurs/bilder/programm-oder-browser.svg" alt="Links: Word ist ein Programm auf dem PC. Die Datei liegt auf dem PC. Es geht auch ohne Internet. Rechts: Google Docs läuft im Browser. Die Datei liegt im Internet. Sie öffnen sie am PC und am Handy." width="400" height="400"></p>
 
+::: notiz
+**Zum Bild**
+
+1. Linke Seite: „Word ist ein Programm. Es ist auf diesem PC installiert. Die Datei liegt auf diesem PC oder auf dem USB-Stick.“
+2. „Vorteil: Es geht auch ohne Internet. Nachteil: Am anderen PC ist die Datei nicht da.“
+3. Rechte Seite: „Google Docs läuft im Browser. Die Datei liegt im Internet, in der **Cloud**.“
+4. Zeigen Sie auf PC und Handy: „Darum öffnen Sie dieselbe Datei im Kurs, zu Hause und auf dem Handy.“
+5. Frage: „Sie schreiben im Kurs einen Brief und wollen zu Hause weiterschreiben. Was ist einfacher?“ (Google Docs: Die Datei ist schon da.)
+:::
+
 - **Word** muss auf dem PC **installiert** sein. Sie speichern die Datei auf dem PC oder auf einem USB-Stick. Wollen Sie an einem anderen PC weiterarbeiten, müssen Sie die Datei mitnehmen.
 - **Google Docs** müssen Sie **nicht installieren**. Sie öffnen den Browser, melden sich an – und Ihre Dateien sind da. An jedem PC, im Kurs, zu Hause und auf dem Handy.
 
@@ -45,6 +79,10 @@ Oben im Browser ist die **Adresszeile**. Dort steht die Adresse der Seite, zum B
 **Cloud** (englisch für „Wolke“) heißt: Ihre Dateien liegen **auf Computern im Internet**, nicht auf Ihrem eigenen Gerät. Bei Google heißt dieser Speicher **Google Drive**. Sie können ihn sich wie einen **Ordner im Internet** vorstellen.
 
 ### Word oder Google Docs? {#vergleich}
+
+::: notiz
+Lesen Sie die Tabelle Zeile für Zeile mit der Gruppe. Fragen Sie bei jeder Zeile: „Was ist für Sie wichtiger?“ Es gibt kein Richtig oder Falsch. Wichtig sind zwei Sätze: Gemeinsam schreiben geht mit Google Docs leichter. Private Daten gehören nicht in die Cloud.
+:::
 
 | | Word | Google Docs |
 |---|---|---|
@@ -56,6 +94,16 @@ Oben im Browser ist die **Adresszeile**. Dort steht die Adresse der Seite, zum B
 | Gemeinsam arbeiten | schwierig | sehr einfach |
 
 <p class="bild"><img src="/edv-kurs/bilder/zusammen-arbeiten.svg" alt="Oben, mit Word: Zwei Personen schicken eine Datei per E-Mail hin und her. Am Ende gibt es viele Versionen: Brief, Brief_neu, Brief_final, Brief_final_2. Welche ist die richtige? Unten, mit Google Docs: Drei Personen schreiben gleichzeitig in einem einzigen Dokument." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. Oben: „So arbeiten viele mit Word zusammen: Eine Person schickt die Datei per E-Mail. Die andere ändert etwas und schickt sie zurück.“
+2. Zeigen Sie auf die Dateinamen: „Am Ende gibt es Brief, Brief_neu, Brief_final und Brief_final_2. Welche ist die richtige? Niemand weiß es.“
+3. Unten: „Bei Google Docs gibt es nur **ein** Dokument. Alle arbeiten gleichzeitig darin.“
+4. Zeigen Sie auf die farbigen Striche: „Jede Person hat eine Farbe. So sieht man, wer gerade wo schreibt.“
+5. Frage: „Kennen Sie das Problem mit vielen Versionen?“
+:::
 
 **Vorteile von Google Docs**
 
@@ -78,7 +126,21 @@ Oben im Browser ist die **Adresszeile**. Dort steht die Adresse der Seite, zum B
 
 ## Teil 1 – Anmelden und Google Drive öffnen {#drive}
 
+::: notiz
+Hier brauchen Anfänger am meisten Hilfe: Passwort vergessen, kein Konto, Bestätigung per Handy. Gehen Sie herum. Wer schon fertig ist, hilft der Nachbarin.
+:::
+
 <p class="bild"><img src="/edv-kurs/bilder/drive.svg" alt="So sieht Google Drive aus: 1. links oben die Schaltfläche Neu, für einen neuen Ordner oder ein neues Dokument. 2. Meine Ablage, dort sind Ihre Dateien. 3. Für mich freigegeben, dort sind Dateien, die andere mit Ihnen geteilt haben." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. „So sieht Google Drive aus, Ihr Ordner im Internet. Das echte Drive sieht etwas anders aus. Diese drei Stellen gibt es aber immer.“
+2. Zeigen Sie auf die 1: „Mit **Neu** erstellen Sie einen Ordner oder ein Dokument.“
+3. Zeigen Sie auf die 2: „**Meine Ablage**: Hier sind Ihre eigenen Dateien.“
+4. Zeigen Sie auf die 3: „**Für mich freigegeben**: Hier sind Dateien, die andere mit Ihnen geteilt haben. Hier finden Sie später die Job-Mappe.“
+5. Zum Mitmachen: Alle öffnen drive.google.com und finden die drei Stellen auf ihrem Bildschirm.
+:::
 
 ::: schritte
 1. Öffnen Sie den **Browser** (zum Beispiel Chrome oder Edge).
@@ -116,6 +178,17 @@ Beim Teilen entscheiden Sie, **wer** die Datei sehen darf und **was** diese Pers
 
 <p class="bild"><img src="/edv-kurs/bilder/rollen.svg" alt="Wer darf was? Betrachter dürfen nur lesen. Kommentatoren dürfen lesen und kommentieren. Mitbearbeiter dürfen lesen, kommentieren und ändern." width="400" height="400"></p>
 
+::: notiz
+**Zum Bild**
+
+1. „Beim Teilen entscheiden Sie: Was darf die andere Person?“
+2. Gehen Sie Zeile für Zeile: „**Betrachter** dürfen nur lesen. **Kommentatoren** dürfen lesen und Kommentare schreiben. **Mitbearbeiter** dürfen alles, auch den Text ändern.“
+3. Zeigen Sie auf die Kreise: „Grün heißt: darf. Grau heißt: darf nicht.“
+4. Beispiele: „Ihr Lebenslauf für die Beraterin: Kommentator. Die Einkaufsliste für die Familie: Mitbearbeiter. Ein Aushang für alle: Betrachter.“
+5. Frage: „Ihre Kollegin soll Ihren Text lesen und Tipps geben, aber nichts ändern. Welche Rolle?“ (Kommentator)
+6. Übung zu zweit: A teilt ein Dokument mit B als Kommentator. B versucht zu schreiben – es geht nicht. Dann ändert A die Rolle auf Mitbearbeiter.
+:::
+
 ::: schritte
 1. Öffnen Sie Ihr Dokument. Klicken Sie oben rechts auf die blaue Schaltfläche **Freigeben**.
 2. Tippen Sie die **E-Mail-Adresse** der anderen Person ein.
@@ -138,6 +211,16 @@ Beim Teilen entscheiden Sie, **wer** die Datei sehen darf und **was** diese Pers
 **Gleichzeitig schreiben:** Öffnen zwei Personen dasselbe Dokument, sehen Sie den **Cursor der anderen Person** in einer eigenen Farbe – mit ihrem Namen. Jeder sieht sofort, was die anderen schreiben.
 
 <p class="bild"><img src="/edv-kurs/bilder/kommentar-vorschlag.svg" alt="Oben ein Kommentar: Das Wort „Team“ ist gelb markiert. Am Rand steht eine Sprechblase: „Gute Idee! – Anna“. Der Text bleibt gleich. Unten ein Vorschlag: Das Wort „morgen“ ist durchgestrichen, das Wort „heute“ ist neu und grün. Die Besitzerin klickt auf das Häkchen (annehmen) oder auf das X (ablehnen)." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. Oben: „Ein **Kommentar** ist wie ein Zettel am Rand. Man markiert ein Wort und schreibt etwas dazu. Der Text selbst bleibt gleich.“
+2. Zeigen Sie auf „Team“ und die Sprechblase: „Anna findet das Wort gut und schreibt: Gute Idee!“
+3. Unten: „Ein **Vorschlag** ändert den Text, aber farbig. Das alte Wort ist durchgestrichen, das neue ist grün.“
+4. Zeigen Sie auf Häkchen und X: „Die Besitzerin entscheidet. Häkchen: annehmen. X: ablehnen.“
+5. Frage: „Sie sehen einen Tippfehler im Text einer anderen Person. Kommentar oder Vorschlag?“ (Besser ein Vorschlag: Die Person nimmt die Korrektur mit einem Klick an.)
+:::
 
 **Kommentieren** – etwas sagen, ohne den Text zu ändern:
 
@@ -169,6 +252,16 @@ Beim Teilen entscheiden Sie, **wer** die Datei sehen darf und **was** diese Pers
 
 <p class="bild"><img src="/edv-kurs/bilder/umwandeln.svg" alt="Umwandeln: Eine Word-Datei laden Sie in Google Drive hoch und speichern sie als Google-Dokument. Ein Google-Dokument laden Sie als Word-Datei oder als PDF herunter. Für Bewerbungen schicken Sie ein PDF." width="400" height="400"></p>
 
+::: notiz
+**Zum Bild**
+
+1. „Links eine Word-Datei, zum Beispiel ein Anschreiben.“
+2. Folgen Sie dem Pfeil: „Sie laden sie in Google Drive hoch. Mit **Datei → Als Google Docs speichern** wird daraus ein Google-Dokument.“
+3. Rechts: „Mit **Datei → Herunterladen** machen Sie daraus wieder eine Word-Datei oder ein PDF.“
+4. Zeigen Sie auf den roten Kasten: „Für Bewerbungen schicken Sie ein PDF. Es sieht überall gleich aus und lässt sich nicht aus Versehen ändern.“
+5. Frage: „Eine Firma möchte Ihre Bewerbung per E-Mail. In welchem Format schicken Sie sie?“ (PDF)
+:::
+
 **Aus einer Word-Datei ein Google-Dokument machen:**
 
 ::: schritte
@@ -195,6 +288,10 @@ Das Gleiche geht mit **Excel**: eine .xlsx-Datei hochladen → **Datei** → **A
 :::
 
 ## Teil 6 – Unser Kursprojekt: die gemeinsame Job-Mappe {#projekt}
+
+::: notiz
+Teilen Sie den Ordner vorher und zeigen Sie den Link als QR-Code oder an der Tafel. Achten Sie darauf, dass niemand echte Adressen oder Telefonnummern einträgt. Nach dem Kurs stellen Sie den Link-Zugriff wieder auf „Eingeschränkt“.
+:::
 
 Jetzt probieren Sie alles zusammen aus. Ihre Lehrkraft hat einen Ordner **Job-Mappe** vorbereitet und mit Ihnen geteilt. Darin sind:
 

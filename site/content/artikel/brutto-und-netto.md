@@ -32,6 +32,16 @@ quelle: "Arbeitsblatt aus dem Kurs (Text und Fragen, 2 Seiten)"
 - **Brutto − Abzüge = Netto**
 :::
 
+::: notiz
+**So gehen Sie vor** (ca. 45 Min.)
+
+1. Einstieg: „In der Stellenanzeige steht 2.500 Euro. Bekommen Sie 2.500 Euro auf Ihr Konto?“ Sammeln Sie Antworten.
+2. Lesen Sie „Kurz gesagt“ gemeinsam. Schreiben Sie an die Tafel: **Brutto − Abzüge = Netto**.
+3. Zeigen Sie das Bild bei „Was wird abgezogen?“. Gehen Sie danach die Sozialversicherungen in der Tabelle einzeln durch.
+4. Merksatz für die Gruppe: In Stellenanzeigen und im Arbeitsvertrag steht fast immer das Brutto.
+5. Zum Schluss: „Fragen zum Text“ zu zweit, dann das Quiz.
+:::
+
 ## Brutto: die Zahl im Arbeitsvertrag {#brutto}
 
 In Stellenanzeigen und im Arbeitsvertrag steht fast immer das **Bruttogehalt**. Das ist der Betrag, den Sie für Ihre Arbeit verdienen – bevor Steuern und Versicherungen abgezogen werden.
@@ -41,6 +51,17 @@ Das Brutto ist also der **Startpunkt** der Rechnung. Es ist aber nicht das Geld,
 ## Was wird abgezogen? {#abzuege}
 
 <p class="bild"><img src="/artikel/bilder/brutto-netto.svg" alt="Von Brutto zu Netto, Beispiel Anna mit Steuerklasse I: Von 2.500 Euro brutto gehen ungefähr 540 Euro für die Sozialversicherung und ungefähr 190 Euro Lohnsteuer ab. Es bleiben ungefähr 1.770 Euro netto, rund 70 Prozent. Netto ist das Geld, das auf Ihr Konto kommt." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. „Oben der blaue Balken ist das **Brutto**: 2.500 Euro. So steht es im Arbeitsvertrag.“
+2. „Davon gehen Abzüge ab.“ Zeigen Sie auf den orangen Teil: „Die Sozialversicherung: Kranken-, Pflege-, Renten- und Arbeitslosenversicherung. Ungefähr 540 Euro.“
+3. Zeigen Sie auf den roten Teil: „Die Lohnsteuer, ungefähr 190 Euro. Dieses Geld bekommt der Staat.“
+4. Zeigen Sie auf den grünen Teil: „Was bleibt, ist das **Netto**: ungefähr 1.770 Euro. Das kommt auf das Konto, rund 70 Prozent.“
+5. „Das ist ein Beispiel. Mit Kindern, einer anderen Steuerklasse oder Kirchensteuer ist das Netto anders.“
+6. Frage: „Was ist größer, Brutto oder Netto?“ (Brutto)
+:::
 
 Bevor das Gehalt ausgezahlt wird, zieht der Arbeitgeber zwei Dinge ab:
 

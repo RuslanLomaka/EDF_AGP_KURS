@@ -36,6 +36,16 @@ quelle: "Arbeitsblatt aus dem Kurs (Text, 2 Seiten, ohne Fragen)"
 - Je **länger** Sie in der Firma sind, desto **länger** ist die Frist, wenn der Arbeitgeber kündigt.
 :::
 
+::: notiz
+**So gehen Sie vor** (ca. 45 Min., Teil 1 der Serie)
+
+1. Einstieg: „Was ist der Unterschied zwischen ‚Ich kündige‘ und ‚Mir wird gekündigt‘?“
+2. Bild „Zwei Arten der Kündigung“.
+3. Kündigungsfristen mit dem Treppen-Bild. Rechnen Sie dann das Beispiel aus dem Text gemeinsam: 6 Jahre in der Firma, Kündigung am 10. März, letzter Tag am 31. Mai.
+4. Sagen Sie, wie es weitergeht: Teil 2 ist der Kündigungsschutz, Teil 3 die Abmahnung.
+5. Zum Schluss: „Fragen zum Text“, dann das Quiz.
+:::
+
 ## Was ist eine Kündigung? {#was}
 
 Mit einer **Kündigung** beendet eine Seite den **Arbeitsvertrag**. Kündigen kann der **Arbeitgeber** – aber auch Sie als **Arbeitnehmer**.
@@ -48,6 +58,16 @@ Mit einer **Kündigung** beendet eine Seite den **Arbeitsvertrag**. Kündigen ka
 ## Die Arten der Kündigung {#arten}
 
 <p class="bild"><img src="/artikel/bilder/kuendigung-arten.svg" alt="Zwei Arten der Kündigung. Ordentlich: Nach der Kündigung kommt die Kündigungsfrist. Sie arbeiten weiter und bekommen Lohn, dann ist das Arbeitsverhältnis zu Ende. Fristlos: Die Kündigung wirkt sofort. Dafür braucht man einen wichtigen Grund, zum Beispiel Diebstahl oder Gewalt gegen Kollegen." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. Oben die **ordentliche** Kündigung: „Der Brief mit der Kündigung kommt an. Danach kommt die Frist, der grüne Balken. In dieser Zeit arbeiten Sie weiter und bekommen Lohn. Dann ist Ende.“
+2. Unten die **fristlose** Kündigung: „Der Brief kommt, und sofort ist Ende. Es gibt keine Frist.“
+3. Roter Kasten: „Das geht nur mit einem wichtigen Grund, zum Beispiel Diebstahl oder Gewalt gegen Kollegen.“
+4. „Auch Arbeitnehmer können fristlos kündigen, zum Beispiel wenn der Lohn lange nicht gezahlt wird.“
+5. Frage: „Eine Mitarbeiterin kommt einmal 5 Minuten zu spät. Ist das ein wichtiger Grund für eine fristlose Kündigung?“ (Nein.)
+:::
 
 ### Ordentliche Kündigung {#ordentlich}
 
@@ -98,6 +118,16 @@ Mehr zu Mutterschutz und Elternzeit lesen Sie im Artikel [Mutterschutz und Elter
 ## Kündigungsfrist und Betriebszugehörigkeit {#fristen}
 
 <p class="bild"><img src="/artikel/bilder/kuendigungsfristen.svg" alt="Kündigungsfristen, wenn der Arbeitgeber kündigt: weniger als 2 Jahre in der Firma 4 Wochen, ab 2 Jahren 1 Monat, ab 5 Jahren 2 Monate, ab 8 Jahren 3 Monate, ab 10 Jahren 4 Monate, ab 12 Jahren 5 Monate, ab 15 Jahren 6 Monate, ab 20 Jahren 7 Monate." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. „Unten stehen die Jahre in der Firma. Über den Balken steht die Kündigungsfrist.“
+2. „Unter 2 Jahren: 4 Wochen. Ab 2 Jahren: 1 Monat. Dann wird es immer länger, bis 7 Monate nach 20 Jahren.“
+3. „Das gilt, wenn der Arbeitgeber kündigt. Wer selbst kündigt, hat meistens nur 4 Wochen.“
+4. „In der Probezeit sind es nur 2 Wochen.“
+5. Rechnen lassen: „Sie arbeiten seit 9 Jahren in der Firma. Wie lang ist die Frist?“ (3 Monate zum Monatsende)
+:::
 
 - Die **Kündigungsfrist** ist die Zeit zwischen der Kündigung und dem **letzten Arbeitstag**. In dieser Zeit bekommen Sie meistens noch Ihren Lohn.
 - Die **Betriebszugehörigkeit** ist die Zeit, die Sie schon **bei derselben Firma** arbeiten.

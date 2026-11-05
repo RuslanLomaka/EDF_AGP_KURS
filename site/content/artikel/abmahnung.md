@@ -34,9 +34,29 @@ quelle: "Arbeitsblatt aus dem Kurs (Text und Fragen, 2 Seiten)"
 - Sie können eine **Gegendarstellung** schreiben. Sie muss in Ihre **Personalakte**.
 :::
 
+::: notiz
+**So gehen Sie vor** (ca. 30 Min., Teil 3 der Serie)
+
+1. Einstieg: „Kennen Sie die gelbe und die rote Karte im Fußball?“
+2. Bild mit den Karten.
+3. Die drei Funktionen an der Tafel: **beschreiben – kritisieren – warnen**.
+4. Was man tun kann: die Gegendarstellung. Sie kommt in die Personalakte.
+5. Zum Schluss: „Fragen zum Text“, dann das Quiz.
+:::
+
 ## Was ist eine Abmahnung? {#was}
 
 <p class="bild"><img src="/artikel/bilder/abmahnung-karten.svg" alt="Die Abmahnung ist wie die gelbe Karte im Fußball. Erst ein Fehlverhalten, zum Beispiel zu spät kommen. Dann die Abmahnung: eine Warnung vor der Kündigung. Passiert es wieder, kann die rote Karte folgen: die Kündigung. Wegen Krankheit gibt es keine Abmahnung." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. „Zuerst passiert etwas Falsches, zum Beispiel: Jemand kommt immer wieder zu spät.“
+2. Gelbe Karte: „Der Arbeitgeber schreibt eine **Abmahnung**. Das ist eine Warnung: Wenn das wieder passiert, droht die Kündigung.“
+3. Rote Karte: „Passiert es wieder, ist eine **Kündigung** möglich.“
+4. Grauer Kasten: „Wegen Krankheit gibt es keine Abmahnung. Dafür kann man nichts.“
+5. Frage: „Warum kommt meistens zuerst die gelbe Karte und nicht sofort die rote?“ (Die Person soll eine Chance bekommen, ihr Verhalten zu ändern.)
+:::
 
 Eine **Abmahnung** ist die Reaktion des Arbeitgebers auf ein **Fehlverhalten**. Man vergleicht sie gern mit dem Fußball:
 

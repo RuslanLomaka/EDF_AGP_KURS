@@ -15,6 +15,8 @@
   --warn-line: #c0392b;
   --ok: #2e7d32;
   --control: #858e99;
+  --notiz-bg: #f3eefa;
+  --notiz-line: #6a3d9a;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
@@ -34,6 +36,8 @@
     --warn-line: #e06c5f;
     --ok: #7bc47f;
     --control: #6b7684;
+    --notiz-bg: #251d33;
+    --notiz-line: #b99ae0;
     color-scheme: dark;
   }
 }
@@ -77,7 +81,7 @@ h3 { font-size: 1.08rem; margin: 1.6rem 0 0.5rem; }
 .toc ul { margin: 0.4rem 0 0.2rem; padding-left: 1.2rem; }
 
 /* Boxes */
-.kurz, .ergaenzung, .info, .achtung {
+.kurz, .ergaenzung, .info, .achtung, .notiz {
   border-radius: 10px;
   padding: 0.8rem 1rem;
   margin: 1.2rem 0;
@@ -97,6 +101,15 @@ h3 { font-size: 1.08rem; margin: 1.6rem 0 0.5rem; }
   margin-bottom: 0.2rem;
 }
 .info { background: var(--info-bg); border-color: var(--line); }
+/* Teacher notes: only on the unlinked /teacher/ pages */
+.notiz { background: var(--notiz-bg); border-color: var(--notiz-line); }
+.notiz::before { content: "Für die Lehrkraft"; display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--notiz-line); margin-bottom: 0.2rem; }
+.notiz > :last-child { margin-bottom: 0; }
+.notiz ol, .notiz ul { padding-left: 1.3rem; }
+.notiz li { margin: 0.25rem 0; }
+.lehrer-banner { background: var(--notiz-bg); border: 1px solid var(--notiz-line); border-radius: 10px; padding: 0.5rem 0.8rem;
+  font-size: 0.9rem; margin: 0 0 1rem; }
 .achtung { background: var(--warn-bg); border-color: var(--warn-line); }
 .kurz > :first-child, .info > :first-child, .achtung > :first-child { margin-top: 0; }
 .kurz > :last-child, .ergaenzung > :last-child, .info > :last-child, .achtung > :last-child { margin-bottom: 0; }
@@ -164,7 +177,7 @@ img { max-width: 100%; height: auto; }
   .bild { float: right; width: 21rem; margin: 0.3rem 0 1rem 1.4rem; }
   main h2 { clear: both; }
   .bild:has(+ table) { float: none; margin: 1.2rem auto; }
-  .kurz, .ergaenzung, .info, .achtung, .schritte ol, .prinzip, main details { display: flow-root; }
+  .kurz, .ergaenzung, .info, .achtung, .notiz, .schritte ol, .prinzip, main details { display: flow-root; }
 }
 .inhalt img { border: 1px solid var(--line); border-radius: 8px; display: block; margin: 1rem 0 0.3rem; }
 code { font-size: 0.88em; background: var(--info-bg); padding: 0.1rem 0.3rem; border-radius: 4px; overflow-wrap: anywhere; }
@@ -251,7 +264,7 @@ details.tag .liste li:last-child { border-bottom: 0; }
   a { color: #000; }
   details > summary { list-style: none; }
   details::details-content { content-visibility: visible; display: block; }
-  .kurz, .ergaenzung, .info, .achtung, .schritte li, main details { break-inside: avoid; }
+  .kurz, .ergaenzung, .info, .achtung, .notiz, .schritte li, main details { break-inside: avoid; }
 }
 
 /* Article quiz */

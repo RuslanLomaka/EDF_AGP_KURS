@@ -36,6 +36,16 @@ dateien:
 - Name, Adresse, Datum, Betreff und Anrede stehen schon richtig im Brief. Sie schreiben nur noch **3 bis 5 eigene Sätze**.
 :::
 
+::: notiz
+**So gehen Sie vor** (ca. 1 Stunde)
+
+1. Prüfen Sie vorher an einem Kurs-PC, ob das Programm startet. Manchmal blockiert ein Virenschutz fremde Programme. Dann zeigen Sie es nur am Beamer.
+2. Einstieg: „Beim Serienbrief in Lektion 1 waren es viele Klicks in Word. Heute geht es mit einem Doppelklick.“
+3. Zeigen Sie die drei Kästen: Excel plus Programm gleich fertige Briefe.
+4. Dann Vorbereitung und Teil 1 bis 4: erst vormachen, dann machen alle selbst.
+5. Ziel für heute: Jede Person hat mindestens einen fertigen Brief als PDF.
+:::
+
 <div class="prinzip">
 <div><strong>Excel</strong>Ihre Daten und Ihre Stellen<em>ausfüllen</em></div>
 <div class="zeichen">+</div>
@@ -59,6 +69,16 @@ Kennen Sie schon den [Serienbrief aus Lektion 1](/edv-kurs/bewerbung-auf-knopfdr
 
 <p class="bild"><img src="/edv-kurs/bilder/ordner.svg" alt="Nach dem Entpacken liegen vier Dateien zusammen in einem Ordner: das Programm Bewerbungen_erstellen, die Excel-Liste Bewerbungsliste, die Word-Vorlage Anschreiben_Vorlage und LIES_MICH. Nach dem Start kommt der Ordner Bewerbungen dazu." width="400" height="400"></p>
 
+::: notiz
+**Zum Bild**
+
+1. „Nach dem Entpacken sehen Sie diesen Ordner. Darin sind vier Dateien.“
+2. Zeigen Sie auf jede Datei: das Programm (schwarzes Fenster), die Excel-Liste (grün), die Word-Vorlage (blau), die Anleitung LIES_MICH.
+3. Der wichtigste Satz: „Diese vier Dateien bleiben immer zusammen in einem Ordner. Nichts umbenennen, nichts verschieben.“
+4. Zeigen Sie nach unten: „Nach dem ersten Start kommt ein neuer Ordner dazu: Bewerbungen. Dort sind Ihre Briefe.“
+5. Frage: „Was passiert, wenn die Excel-Liste in einem anderen Ordner liegt?“ (Das Programm findet sie nicht und meldet: Die Datei fehlt.)
+:::
+
 ::: schritte
 1. Klicken Sie oben auf **Bewerbungshelfer herunterladen**. Die ZIP-Datei landet im Ordner **Downloads**.
 2. Rechtsklick auf **Bewerbungshelfer** → **Alle extrahieren …** → **Extrahieren**. Ein neuer Ordner mit vier Dateien öffnet sich.
@@ -66,6 +86,10 @@ Kennen Sie schon den [Serienbrief aus Lektion 1](/edv-kurs/bewerbung-auf-knopfdr
 :::
 
 ## Teil 1 – Ihre Daten (nur einmal) {#meine-daten}
+
+::: notiz
+Am Kurs-PC: lieber Beispieldaten (Max Mustermann) statt der echten Adresse, oder am Ende alles löschen. Prüfen Sie: Ist jedes gelbe Feld gefüllt? Sonst meldet das Programm einen Fehler.
+:::
 
 ::: schritte
 1. Öffnen Sie **Bewerbungsliste** mit einem Doppelklick. Wenn nötig: **Bearbeitung aktivieren**.
@@ -77,6 +101,16 @@ Kennen Sie schon den [Serienbrief aus Lektion 1](/edv-kurs/bewerbung-auf-knopfdr
 
 <p class="bild"><img src="/edv-kurs/bilder/status.svg" alt="Der Status in der Excel-Liste entscheidet: Bei offen oder einem leeren Feld macht das Programm einen neuen Brief. Bei beworben, Einladung, Absage oder Zusage macht es keinen neuen Brief." width="400" height="400"></p>
 
+::: notiz
+**Zum Bild**
+
+1. „In der Excel-Liste gibt es die Spalte Status. Sie entscheidet, ob das Programm einen Brief macht.“
+2. Grüner Teil: „Steht dort offen – oder nichts –, macht das Programm einen neuen Brief.“
+3. Grauer Teil: „Bei beworben, Einladung, Absage oder Zusage macht es keinen neuen Brief. Diese Firma ist schon erledigt.“
+4. „Nach dem Abschicken ändern Sie den Status auf beworben. So behalten Sie den Überblick – auch für das Jobcenter.“
+5. Frage: „Sie haben eine Einladung bekommen. Was schreiben Sie in den Status?“ (Einladung)
+:::
+
 ::: schritte
 1. Klicken Sie unten auf das Blatt **Bewerbungen**.
 2. **Eine Zeile = eine Firma.** Überschreiben Sie die Beispiel-Firmen mit Ihren Stellenanzeigen.
@@ -86,6 +120,10 @@ Kennen Sie schon den [Serienbrief aus Lektion 1](/edv-kurs/bewerbung-auf-knopfdr
 :::
 
 ## Teil 3 – Doppelklick {#programm}
+
+::: notiz
+Sagen Sie das blaue Windows-Fenster vorher an, damit niemand erschrickt. Windows warnt bei jedem neuen Programm, das nicht bei Microsoft registriert ist. Zeigen Sie danach im schwarzen Fenster, welche Briefe neu sind.
+:::
 
 ::: schritte
 1. Doppelklick auf **Bewerbungen_erstellen**.
@@ -101,6 +139,16 @@ Kennen Sie schon den [Serienbrief aus Lektion 1](/edv-kurs/bewerbung-auf-knopfdr
 ## Teil 4 – Briefe fertig schreiben {#fertig}
 
 <p class="bild"><img src="/edv-kurs/bilder/brief.svg" alt="Ein fertiger Brief vom Bewerbungshelfer. Blau ist alles, was das Programm einsetzt: Ihre Daten, die Firma, das Datum, den Betreff, die Anrede und den Gruß mit Ihrem Namen. Gelb ist der Teil, den Sie selbst schreiben: 3 bis 5 eigene Sätze." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. „So sieht ein Brief aus, den das Programm gemacht hat.“
+2. Zeigen Sie auf die blauen Felder von oben nach unten: Ihre Daten, Firma, Datum, Betreff, Anrede, Gruß mit Name. „Das alles macht das Programm automatisch.“
+3. Zeigen Sie auf das gelbe Feld: „Nur hier schreiben Sie selbst, 3 bis 5 Sätze: Was können Sie? Welche Erfahrung haben Sie? Warum passt die Stelle zu Ihnen?“
+4. „Danach entfernen Sie die gelbe Farbe.“
+5. Frage: „Welchen Teil schreiben Sie für jede Firma neu?“ (Nur den gelben Teil.)
+:::
 
 ::: schritte
 1. Öffnen Sie einen Brief im Ordner **Bewerbungen**. Der Dateiname nennt Sie, die Firma und die Stelle, z. B. **Anschreiben Max Mustermann – Muster Logistik GmbH (Lagerhelfer)**.

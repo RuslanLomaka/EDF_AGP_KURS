@@ -34,6 +34,16 @@ quelle: "Arbeitsblatt aus dem Kurs (Text, 2 Seiten, ohne Fragen)"
 - Mitglieder bekommen **Beratung und Unterstützung**.
 :::
 
+::: notiz
+**So gehen Sie vor** (ca. 45 Min.)
+
+1. Einstieg: „Was ist ein Streik? Haben Sie schon einen erlebt, zum Beispiel bei Bus oder Bahn?“
+2. Lesen Sie „Kurz gesagt“ gemeinsam.
+3. Zeigen Sie das Bild „Der Tarifvertrag“ bei „Wie arbeiten Gewerkschaften?“.
+4. Stellen Sie an der Tafel gegenüber: **Gewerkschaft** (außerhalb der Firma, verhandelt Tarifverträge) und **Betriebsrat** (in der eigenen Firma).
+5. Zum Schluss: „Fragen zum Text“, dann das Quiz.
+:::
+
 ## Was ist eine Gewerkschaft? {#was}
 
 Eine **Gewerkschaft** ist ein Zusammenschluss von **Arbeitnehmerinnen und Arbeitnehmern**. Sie vertritt die **gemeinsamen Interessen** der Beschäftigten gegenüber den **Arbeitgebern**. Es geht zum Beispiel um:
@@ -65,6 +75,16 @@ Darum verhandeln Gewerkschaften für ihre Mitglieder mit **Arbeitgebern** oder m
 ## Wie arbeiten Gewerkschaften? {#arbeit}
 
 <p class="bild"><img src="/artikel/bilder/tarifvertrag.svg" alt="So entsteht ein Tarifvertrag: Die Gewerkschaft und die Arbeitgeber verhandeln. Wenn sie sich einigen, schließen sie einen Tarifvertrag mit Regeln für Lohn, Urlaub und Arbeitszeit. Gibt es keine Einigung, kann die Gewerkschaft zum Streik aufrufen." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. Links: „Die **Gewerkschaft**, das sind viele Arbeitnehmer zusammen.“ Rechts: „Die Arbeitgeber.“
+2. Der Pfeil oben: „Beide verhandeln, zum Beispiel über Lohn, Urlaub und Arbeitszeit.“
+3. Grüner Kasten: „Wenn sie sich einigen, schreiben sie einen **Tarifvertrag**. Darin stehen die Regeln.“
+4. Roter Kasten: „Wenn Verhandlungen nicht helfen, kann die Gewerkschaft zum **Streik** aufrufen. Dann arbeiten viele nicht, damit die Arbeitgeber wieder verhandeln.“
+5. Frage: „Warum verhandeln viele zusammen besser als eine Person allein?“ (Zusammen sind sie stärker.)
+:::
 
 ### 1. Verhandeln {#verhandeln}
 

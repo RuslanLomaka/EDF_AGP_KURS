@@ -38,9 +38,29 @@ quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten 
 - **Mitarbeiter:** Anmeldung bei der Krankenkasse, Mindestlohn (2026: **13,90 Euro** pro Stunde) und weitere Pflichten.
 :::
 
+::: notiz
+**So gehen Sie vor** (ca. 45 Min., Teil 5 der Serie)
+
+1. Einstieg: „Was muss eine Chefin alles machen – außer der eigentlichen Arbeit?“
+2. Bild: Buchhaltung und Aufbewahren.
+3. Steuern: Geld zur Seite legen. Erzählen Sie das Beispiel aus dem Text: Im zweiten Jahr kommen die Nachzahlung und die ersten Vorauszahlungen zusammen.
+4. Rechnungen und Mitarbeiter nur kurz.
+5. Zum Schluss: „Fragen zum Text“, dann das Quiz. Das ist der letzte Teil der Serie.
+:::
+
 ## Buchhaltung {#buchhaltung}
 
 <p class="bild"><img src="/artikel/bilder/buchhaltung-aufbewahren.svg" alt="Buchhaltung: Kleine Firmen rechnen Einnahmen minus Ausgaben gleich Gewinn, das ist die EÜR. GmbH, UG und große Firmen brauchen eine Bilanz. Aufbewahren: Rechnungen und Belege 8 Jahre, Bücher und Jahresabschlüsse 10 Jahre." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. Oben: „Kleine Firmen rechnen einfach: Einnahmen minus Ausgaben gleich Gewinn. Das heißt **EÜR**.“
+2. „GmbH, UG und große Firmen brauchen eine **Bilanz**. Das ist schwieriger. Dabei hilft oft ein Steuerberater.“
+3. Unten links: „Rechnungen und Belege heben Sie **8 Jahre** auf.“
+4. Unten rechts: „Bücher und Jahresabschlüsse **10 Jahre**.“
+5. Frage: „Wie lange heben Sie eine Rechnung auf?“ (8 Jahre)
+:::
 
 Jede Firma muss ihre **Einnahmen** und **Ausgaben** aufschreiben und die **Belege** sammeln: Rechnungen, Quittungen, Kontoauszüge.
 

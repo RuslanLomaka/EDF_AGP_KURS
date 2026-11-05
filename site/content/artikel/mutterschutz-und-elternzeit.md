@@ -36,9 +36,29 @@ quelle: "Arbeitsblatt aus dem Kurs (Text und Fragen, 2 Seiten)"
 - Nach der Elternzeit dürfen Sie in den Job **zurückkehren**, auf einen gleichwertigen Arbeitsplatz.
 :::
 
+::: notiz
+**So gehen Sie vor** (ca. 45 Min.)
+
+1. Sprechen Sie das Thema neutral an. Nicht jede Person möchte über Familie oder Kinderwunsch sprechen.
+2. Erklären Sie den Unterschied: **Mutterschutz** gilt nur für die Mutter und schützt ihre Gesundheit. **Elternzeit** können Mutter und Vater nehmen, für die Zeit mit dem Kind.
+3. Gehen Sie die Zeitleiste im Bild Schritt für Schritt durch.
+4. Betonen Sie: Elterngeld kommt vom Staat, nicht vom Arbeitgeber.
+5. Zum Schluss: „Fragen zum Text“, dann das Quiz.
+:::
+
 ## Zwei Gesetze für Familien {#gesetze}
 
 <p class="bild"><img src="/artikel/bilder/mutterschutz-elternzeit.svg" alt="Zeitleiste: Mutterschutz von 6 Wochen vor der Geburt bis 8 Wochen nach der Geburt, mit vollem Netto. Danach Elternzeit, bis zu 3 Jahre pro Elternteil, mit Elterngeld vom Staat. Kündigungsschutz vom Beginn der Schwangerschaft bis mindestens 4 Monate nach der Geburt und auch während der Elternzeit." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. „Unten ist eine Zeitleiste. Der orange Punkt in der Mitte ist die Geburt.“
+2. Oranger Balken: „Der **Mutterschutz** beginnt 6 Wochen vor der Geburt und endet 8 Wochen nach der Geburt. In dieser Zeit bekommt die Mutter ihr volles Netto weiter.“
+3. Grüner Balken: „Danach kann die **Elternzeit** beginnen, bis zu 3 Jahre für jeden Elternteil. Der Arbeitgeber zahlt dann keinen Lohn. Der Staat zahlt Elterngeld.“
+4. Blauer Balken: „**Kündigungsschutz** gilt vom Beginn der Schwangerschaft bis mindestens 4 Monate nach der Geburt.“ Zeigen Sie auf den gestrichelten Teil: „Auch in der Elternzeit darf der Arbeitgeber nur mit Erlaubnis einer Behörde kündigen.“
+5. Frage: „Wer kann Elternzeit nehmen – nur die Mutter?“ (Nein, jeder Elternteil.)
+:::
 
 Wenn ein Kind kommt, verändert sich viel. Zwei Gesetze helfen berufstätigen Eltern:
 

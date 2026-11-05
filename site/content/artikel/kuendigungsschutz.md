@@ -36,6 +36,16 @@ quelle: "Arbeitsblatt aus dem Kurs (Text und Fragen, 2 Seiten)"
 - Wer die Kündigung für falsch hält, muss **innerhalb von 3 Wochen** beim **Arbeitsgericht** klagen.
 :::
 
+::: notiz
+**So gehen Sie vor** (ca. 45 Min., Teil 2 der Serie)
+
+1. Wiederholung aus Teil 1: ordentliche und fristlose Kündigung.
+2. Bild mit den zwei Bedingungen und den drei Säulen.
+3. Bild „Die richtige Form“: Papier und Unterschrift, 3 Wochen für die Klage.
+4. Sehr wichtig für die Gruppe: Die 3 Wochen sind kurz. Wer eine Kündigung bekommt, holt sich schnell Hilfe: Rechtsantragstelle am Arbeitsgericht, Gewerkschaft oder Anwältin für Arbeitsrecht.
+5. Zum Schluss: „Fragen zum Text“, dann das Quiz.
+:::
+
 ## Ein enges Netz an Regeln {#einleitung}
 
 Eine **Kündigung** ist für viele Menschen ein großer Einschnitt. In Deutschland gibt es deshalb viele Gesetze, die Arbeitnehmer schützen. Das wichtigste ist das **Kündigungsschutzgesetz (KSchG)**. Es soll verhindern, dass ein Arbeitgeber **willkürlich** kündigt – also ohne einen guten, sozialen Grund.
@@ -50,6 +60,16 @@ Einen ersten Überblick über Arten, Gründe und Fristen gibt der Artikel [Künd
 ## Wann gilt das Kündigungsschutzgesetz? {#wann}
 
 <p class="bild"><img src="/artikel/bilder/kuendigungsschutz-saeulen.svg" alt="Das Kündigungsschutzgesetz gilt, wenn Sie länger als 6 Monate in der Firma arbeiten und die Firma mehr als 10 Beschäftigte hat. Dann braucht eine ordentliche Kündigung einen von drei Gründen: im Verhalten, in der Person oder im Betrieb." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. Oben: „Das Kündigungsschutzgesetz gilt nur, wenn zwei Dinge stimmen: Sie arbeiten länger als 6 Monate in der Firma, **und** die Firma hat mehr als 10 Beschäftigte.“
+2. Das Dach: „Dann schützt Sie das Gesetz wie ein Dach.“
+3. Die drei Säulen: „Der Arbeitgeber braucht einen von drei Gründen: im **Verhalten** – zum Beispiel Diebstahl –, in der **Person** – zum Beispiel eine lange Krankheit ohne Besserung – oder im **Betrieb** – zum Beispiel zu wenig Aufträge.“
+4. „Beim Verhalten kommt vorher meistens eine Abmahnung, die gelbe Karte.“
+5. Frage: „Eine kleine Firma hat 5 Beschäftigte. Gilt dort das Kündigungsschutzgesetz?“ (Nein.)
+:::
 
 Das Gesetz schützt **nicht jeden**. Zwei Bedingungen müssen erfüllt sein:
 
@@ -95,6 +115,16 @@ Dann muss der Arbeitgeber eine **Sozialauswahl** machen. Er muss prüfen, **wen 
 ## Die richtige Form {#form}
 
 <p class="bild"><img src="/artikel/bilder/kuendigung-form-frist.svg" alt="Oben: Eine Kündigung muss auf Papier sein und mit der Hand unterschrieben. Eine E-Mail, eine Nachricht im Messenger oder eine mündliche Kündigung reicht nicht. Unten: Wer gegen die Kündigung klagen will, hat 3 Wochen Zeit, ab dem Tag, an dem die Kündigung ankommt. Die Klage geht an das Arbeitsgericht. Wer zu spät kommt: Die Kündigung gilt." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. Oben: „Eine Kündigung ist nur gültig auf **Papier** und **mit der Hand unterschrieben**.“
+2. „Eine E-Mail, eine Nachricht im Messenger oder nur gesprochene Worte – das reicht nicht.“
+3. Unten: „Wer die Kündigung für falsch hält, kann beim Arbeitsgericht klagen. Dafür gibt es nur **3 Wochen**, ab dem Tag, an dem der Brief ankommt.“
+4. Roter Kasten: „Wer zu spät klagt, verliert. Die Kündigung gilt dann, auch wenn sie eigentlich falsch war.“
+5. Frage: „Ihr Chef schreibt Ihnen per WhatsApp: Sie sind gekündigt. Ist das gültig?“ (Nein.)
+:::
 
 Eine Kündigung ist nur gültig, wenn sie **schriftlich** ist (§ 623 BGB). Das heißt: auf **Papier** und **mit der Hand unterschrieben**.
 

@@ -46,6 +46,13 @@ Top navigation, fixed at three items: **Start · EDV-Kurs · Artikel**.
   (nearest dates), previous/next in class order or, in a series, within the series.
 - `/hinweis/`: privacy and purpose notice. A short, non-blocking bar at the bottom links to it once a day per device.
 - `/artikel/thema/<topic>/`: all articles of one topic, works without JavaScript.
+- **Teacher view:** `<page>/teacher/` for every lesson and article, plus an overview at `/teacher/`. It is the same
+  page with the teacher's notes (purple boxes) and a banner; links to other pages stay in the teacher view.
+  - **Never link to it** from any public page or document. It is `noindex`.
+  - It is hidden, not protected: anyone who knows the URL, or reads this public repository, can open it. So notes
+    contain only teaching hints, nothing confidential.
+  - Notes are `::: notiz` boxes in the Markdown (no other boxes inside). The build removes them from the normal page
+    and from the search index.
 
 **URLs are permanent.** Never rename or delete a published slug or topic: links get printed and shared.
 
@@ -115,9 +122,12 @@ The owner sends photos of a handout (often several per day; several pages can be
    "sources": [{"title", "url"}]}]}`. About 10 questions, 3 answers, exactly one correct, wrong answers plausible,
    a short explanation for each. The build refuses articles without a valid quiz; the page shuffles questions and
    answers on every load.
-6. Pictures: the owner wants information shown visually, so give every article at least one own drawing (see
+6. Teacher notes (`::: notiz`, see "Site"): a short plan right after "Kurz gesagt" (opening question, order, what to
+   stress), and after every picture a numbered script for explaining it (what to point at, what to say, one question
+   with its answer). Simple German the owner can read aloud.
+7. Pictures: the owner wants information shown visually, so give every article at least one own drawing (see
    "Pictures" below), never photos of the handout. Put them in `site/content/artikel/bilder/`.
-7. Build, check, commit, push. Lists, search, topic pages, "Mehr zum Thema" and previous/next update by themselves.
+8. Build, check, commit, push. Lists, search, topic pages, "Mehr zum Thema" and previous/next update by themselves.
 
 **Series.** Articles that build on each other form a series: add `serie: "<name>"` and `teil: <1, 2, 3 …>` to the
 front matter.
@@ -150,6 +160,8 @@ Create `site/content/edv-kurs/<slug>.md` like `bewerbung-auf-knopfdruck.md`.
     and `paket` (one ZIP made of several files).
 - **Body:** steps go in `::: schritte` blocks (numbered lists); the boxes are `::: kurz`, `::: info` and
   `::: achtung`.
+- **Teacher notes:** as for articles (`::: notiz`): a plan after "Kurz gesagt", a note after every picture and tips
+  for the hard parts right after their heading.
 - **Files:** lesson files live in `materials/<lesson>/`.
 
 ## Hosting and CI/CD

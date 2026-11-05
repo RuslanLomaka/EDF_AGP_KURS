@@ -35,9 +35,29 @@ quelle: "Arbeitsblatt aus dem Kurs (Text und Fragen, 2 Seiten)"
 - Werden Sie **im Urlaub krank**, zählen die Krankheitstage mit Attest **nicht als Urlaub**.
 :::
 
+::: notiz
+**So gehen Sie vor** (ca. 45 Min.)
+
+1. Einstieg: „Sie wachen morgens krank auf. Was tun Sie zuerst?“
+2. Gehen Sie die vier Schritte im Bild durch.
+3. Trennen Sie die zwei Pflichten an der Tafel: **Bescheid sagen** (sofort) und **Nachweis** (Krankschreibung).
+4. Rollenspiel zu zweit: Eine Person ruft „beim Chef“ an und meldet sich krank. Was sagt sie? Name, dass sie krank ist und wie lange ungefähr. Die Krankheit selbst muss man nicht nennen.
+5. Zum Schluss: „Fragen zum Text“, dann das Quiz.
+:::
+
 ## Warum es Regeln gibt {#warum}
 
 <p class="bild"><img src="/artikel/bilder/krank.svg" alt="Krank im Job, Schritt für Schritt: Am 1. Tag vor Arbeitsbeginn Bescheid sagen. Länger als 3 Tage krank: Krankschreibung vom Arzt. Bis zu 6 Wochen zahlt der Arbeitgeber den Lohn weiter. Danach zahlt die Krankenkasse Krankengeld." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. „Tag 1: Sie sagen sofort Bescheid, vor Arbeitsbeginn, zum Beispiel per Telefon.“
+2. „Sind Sie länger als 3 Tage krank, brauchen Sie eine Krankschreibung vom Arzt. Der Arbeitgeber darf sie auch schon ab dem ersten Tag verlangen.“
+3. Grünes Euro-Zeichen: „Bis zu 6 Wochen zahlt der Arbeitgeber Ihren Lohn weiter, wenn Sie schon mindestens 4 Wochen dort arbeiten.“
+4. Türkises Euro-Zeichen: „Danach zahlt die Krankenkasse Krankengeld.“
+5. Frage: „Sie sind seit Montag krank. Am Donnerstag sind Sie immer noch krank. Was brauchen Sie?“ (Eine Krankschreibung vom Arzt.)
+:::
 
 Wer krank ist, kann nicht arbeiten. Damit Sie dann nicht ohne Geld dastehen, gibt es das **Entgeltfortzahlungsgesetz (EntgFG)**. Es sichert Ihr Einkommen, wenn Sie krank sind.
 

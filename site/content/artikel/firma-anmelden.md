@@ -37,6 +37,16 @@ quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten 
 - **Kranken- und Pflegeversicherung** sind Pflicht. Die **Arbeitslosenversicherung** gibt es auf Antrag.
 :::
 
+::: notiz
+**So gehen Sie vor** (ca. 45 Min., Teil 4 der Serie)
+
+1. Einstieg: „Sie haben eine Idee und wollen starten. Wo müssen Sie sich melden?“
+2. Bild mit den vier Schritten.
+3. Gewerbeamt und Finanzamt genau erklären, das Handelsregister nur kurz. Es gilt nicht für alle.
+4. Kleinunternehmer: Wer wenig Umsatz hat, muss keine Umsatzsteuer berechnen.
+5. Zum Schluss: „Fragen zum Text“, dann das Quiz.
+:::
+
 ::: achtung
 **Diese Fristen sollten Sie kennen**
 
@@ -50,6 +60,16 @@ quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten 
 ## Das Gewerbeamt {#gewerbeamt}
 
 <p class="bild"><img src="/artikel/bilder/firma-anmelden.svg" alt="Anmelden in vier Schritten: 1. Gewerbeamt, wenn Sie anfangen, meist 10 bis 65 Euro. 2. Finanzamt: innerhalb von 1 Monat den Fragebogen über ELSTER schicken. 3. Handelsregister: nur für Kaufleute und Gesellschaften wie OHG, KG, GmbH und UG, über einen Notar. 4. Versicherungen: Kranken- und Pflegeversicherung sind Pflicht." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. Schritt 1: „Zuerst das **Gewerbeamt**, an dem Tag, an dem Sie anfangen. Das kostet meist 10 bis 65 Euro.“
+2. Schritt 2: „Dann das **Finanzamt**: Innerhalb von einem Monat schicken Sie den Fragebogen zur steuerlichen Erfassung, online über ELSTER.“
+3. Schritt 3 ist gestrichelt, er gilt nicht für alle: „Ins **Handelsregister** kommen nur Kaufleute und Gesellschaften wie OHG, KG, GmbH und UG. Das geht über einen Notar.“
+4. Schritt 4: „**Versicherungen**: Kranken- und Pflegeversicherung sind Pflicht.“
+5. Frage: „Eine Frau öffnet einen kleinen Kiosk, allein. Welche Schritte braucht sie sicher?“ (Gewerbeamt, Finanzamt, Versicherungen)
+:::
 
 Ein Gewerbe melden Sie beim **Gewerbeamt** Ihrer Stadt oder Gemeinde an (oft auch „Ordnungsamt“ oder „Bürgerbüro“). In vielen Städten geht das **online**.
 

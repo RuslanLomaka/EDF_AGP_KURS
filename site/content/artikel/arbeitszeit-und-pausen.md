@@ -34,6 +34,16 @@ quelle: "Arbeitsblatt aus dem Kurs (Text und Fragen, 2 Seiten)"
 - **Sonntagsarbeit** ist grundsätzlich verboten – mit Ausnahmen und einem freien Ersatztag.
 :::
 
+::: notiz
+**So gehen Sie vor** (ca. 45 Min.)
+
+1. Einstieg: „Wie lange haben Sie früher gearbeitet – pro Tag und pro Woche?“
+2. Bild „Wie lange arbeiten?“: 8 Stunden, 10 Stunden, 48 Stunden.
+3. Ruhezeit: Rechnen Sie das Beispiel 22 Uhr → 9 Uhr. Dann eigene Beispiele: „Feierabend um 23 Uhr – wann frühestens wieder anfangen?“ (10 Uhr)
+4. Pausen mit der Tabelle und dem Bild.
+5. Zum Schluss: „Fragen zum Text“, dann das Quiz.
+:::
+
 ## Warum gibt es das Arbeitszeitgesetz? {#warum}
 
 Im deutschen Arbeitsrecht ist der **Schutz der Gesundheit** besonders wichtig. Darum gibt es das **Arbeitszeitgesetz (ArbZG)**. Es legt fest, wie lange man höchstens arbeiten darf. So sollen Arbeitnehmer nicht krank werden, weil sie zu viel arbeiten (**Überlastung**).
@@ -43,6 +53,16 @@ Viele denken: „Wenn ich dafür bezahlt werde, darf ich so viel arbeiten, wie i
 ## Wie lange darf man arbeiten? {#arbeitszeit}
 
 <p class="bild"><img src="/artikel/bilder/arbeitszeit.svg" alt="Wie lange darf man arbeiten? Normal höchstens 8 Stunden am Tag. Bis zu 10 Stunden nur mit Ausgleich: Im Durchschnitt von 6 Monaten müssen es wieder 8 Stunden sein. Höchstens 48 Stunden pro Woche, Montag bis Samstag. Nach Feierabend mindestens 11 Stunden Ruhe: Wer um 22 Uhr Feierabend hat, darf frühestens um 9 Uhr wieder anfangen." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. Zeigen Sie auf den ersten grünen Balken: „Normal arbeitet man höchstens 8 Stunden am Tag.“
+2. Der orange Teil: „Manchmal sind es 10 Stunden. Das geht nur, wenn man an anderen Tagen weniger arbeitet. Im Durchschnitt müssen es wieder 8 Stunden sein.“
+3. „Pro Woche höchstens 48 Stunden: Montag bis Samstag, also 6 Tage mal 8 Stunden.“
+4. Unten: „Nach Feierabend kommen mindestens 11 Stunden Ruhe. Wer um 22 Uhr aufhört, darf frühestens um 9 Uhr wieder anfangen.“
+5. Rechnen lassen: „Feierabend um 20 Uhr – wann frühestens wieder arbeiten?“ (7 Uhr)
+:::
 
 - **Werktage** sind Montag bis Samstag – also 6 Tage pro Woche.
 - An jedem Werktag darf man regulär **höchstens 8 Stunden** arbeiten.
@@ -68,6 +88,17 @@ Nach dem Feierabend müssen Sie **mindestens 11 Stunden ohne Unterbrechung** fre
 | mehr als 9 Stunden | **45 Minuten** |
 
 <p class="bild"><img src="/artikel/bilder/pausen.svg" alt="Pausen: Bis 6 Stunden Arbeit gibt es keine Pflicht-Pause. Bei mehr als 6 Stunden mindestens 30 Minuten Pause, bei mehr als 9 Stunden mindestens 45 Minuten. Die Pause liegt mitten in der Arbeitszeit und wird meistens nicht bezahlt." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. „Bis 6 Stunden Arbeit gibt es keine Pflicht-Pause.“
+2. Zeigen Sie auf das gelbe P: „Mehr als 6 Stunden: mindestens 30 Minuten Pause.“
+3. „Mehr als 9 Stunden: mindestens 45 Minuten Pause.“
+4. Zeigen Sie, wo das P liegt: „Die Pause liegt mitten in der Arbeit, nicht am Anfang und nicht am Ende. Man darf sie nicht sparen, um früher zu gehen.“
+5. „Die Pause wird meistens nicht bezahlt.“
+6. Frage: „Sie arbeiten 8 Stunden. Wie lange ist Ihre Pause mindestens?“ (30 Minuten)
+:::
 
 Wichtig:
 

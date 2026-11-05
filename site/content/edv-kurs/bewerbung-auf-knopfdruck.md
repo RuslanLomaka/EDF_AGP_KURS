@@ -54,6 +54,16 @@ lehrkraft:
 - Word holt die Daten aus Excel und macht daraus **fertige Briefe**. Das heißt **Serienbrief**.
 :::
 
+::: notiz
+**So gehen Sie vor** (ausführlicher Zeitplan unten bei „Für Lehrkräfte“)
+
+1. Einstieg: „Wer hat schon zehn Bewerbungen geschrieben? Was war daran nervig?“ Meist kommt: immer wieder Adresse und Anrede abtippen.
+2. Zeigen Sie das Bild mit dem fertigen Brief: „Heute machen wir aus einer Liste und einem Brief viele fertige Briefe.“
+3. Erklären Sie die drei Kästen: Was sich ändert, steht in Excel. Was gleich bleibt, steht in Word. Zusammen gibt es fertige Briefe.
+4. Danach Vorbereitung und Teil 1 bis 4. Machen Sie jeden Schritt am Beamer vor, erst dann arbeiten alle selbst.
+5. Planen Sie für Teil 3 die meiste Zeit ein. Dort gibt es die meisten Fragen.
+:::
+
 <div class="prinzip">
 <div><strong>Excel</strong>Firma, Ansprechpartner, Adresse, Stelle<em>ändert sich</em></div>
 <div class="zeichen">+</div>
@@ -63,6 +73,15 @@ lehrkraft:
 </div>
 
 <p class="bild"><a href="dateien/Beispiel_Ergebnis.pdf"><img src="/edv-kurs/bilder/serienbrief-ergebnis.png" alt="Ausschnitt aus einem fertigen Brief: Absender, Anschrift der Firma, Datum, Betreff „Bewerbung als Lagerhelfer“ und Anrede „Sehr geehrte Frau Petersen“" width="662" height="580"></a></p>
+
+::: notiz
+**Zum Bild**
+
+1. „So sieht ein fertiger Brief aus.“
+2. Zeigen Sie von oben nach unten: Absender, Anschrift der Firma, Datum, Betreff, Anrede.
+3. „Das alles kommt automatisch. Nur den Text in der Mitte schreiben Sie selbst.“
+4. Klick auf das Bild öffnet das ganze Beispiel als PDF.
+:::
 
 So sieht ein fertiger Brief aus. Kopf, Anschrift, Betreff und Anrede kommen automatisch – den Text in der Mitte schreiben Sie selbst.
 
@@ -77,6 +96,10 @@ So sieht ein fertiger Brief aus. Kopf, Anschrift, Betreff und Anrede kommen auto
 
 ## Vorbereitung {#vorbereitung}
 
+::: notiz
+Häufigster Fehler: Die ZIP-Datei wird nicht entpackt. Gehen Sie herum und prüfen Sie: Ist oben im Explorer ein normaler Ordner offen, nicht die ZIP-Datei? Prüfen Sie vorher, ob Word und Excel auf den PCs laufen.
+:::
+
 ::: schritte
 1. Klicken Sie oben auf **Alle Übungsdateien herunterladen**. Die ZIP-Datei landet im Ordner **Downloads**.
 2. Öffnen Sie den **Explorer** (gelbes Ordner-Symbol unten in der Taskleiste) und dann links den Ordner **Downloads**.
@@ -89,6 +112,10 @@ So sieht ein fertiger Brief aus. Kopf, Anschrift, Betreff und Anrede kommen auto
 :::
 
 ## Teil 1 – Excel: die Adressliste {#excel}
+
+::: notiz
+Zeigen Sie die Liste am Beamer: Zeile = Firma, Spalte = Information. Lassen Sie eine Person laut vorlesen, was in Zeile 2 steht. Typische Fehler: in die grauen Spalten schreiben; Excel nicht schließen – dann kann Word die Liste später nicht öffnen.
+:::
 
 ::: schritte
 1. Öffnen Sie die Datei **Bewerbungsliste** (grünes Excel-Symbol) mit einem Doppelklick.
@@ -127,6 +154,10 @@ In den grauen Spalten stehen **Formeln**. Klicken Sie in eine graue Zelle – ob
 
 ## Teil 2 – Word: Ihr Brief {#word}
 
+::: notiz
+Kurz halten. Wichtig ist der Unterschied: **[Ihr …]** tippen alle selbst ein, **[Firma]** und die anderen Felder bleiben stehen. Fragen Sie nach: „Welche Klammern tippen Sie ab, welche nicht?“
+:::
+
 ::: schritte
 1. Öffnen Sie die Datei **Anschreiben_Uebung** (blaues Word-Symbol). Wenn nötig: **Bearbeitung aktivieren**.
 2. Machen Sie einen **Doppelklick oben** auf den Briefkopf (**Kopfzeile**). Ersetzen Sie **[Ihr Vorname Nachname]** und **[Ihre …]** durch Ihre Daten.
@@ -144,7 +175,21 @@ In den grauen Spalten stehen **Formeln**. Klicken Sie in eine graue Zelle – ob
 
 ## Teil 3 – Word mit Excel verbinden {#verbinden}
 
+::: notiz
+Der schwierigste Teil. Machen Sie jeden Klick langsam vor und warten Sie, bis alle so weit sind. Sagen Sie vorher: Nach Schritt 4 passiert scheinbar nichts, das ist richtig. Typischer Fehler: Man klickt auf den oberen Teil von „Seriendruckfeld einfügen“ statt auf den kleinen Pfeil.
+:::
+
 <p class="bild"><img src="/edv-kurs/bilder/felder.svg" alt="So funktioniert ein Serienbrief: In der Excel-Liste steht eine Zeile pro Firma. In der Word-Vorlage stehen Felder wie «Firma» und «Stelle». Word setzt für jede Zeile die Daten ein. So entsteht ein Brief pro Firma." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild** – vor Teil 3 zeigen
+
+1. Zeigen Sie oben auf die Excel-Liste: „Hier stehen drei Firmen. Jede Firma hat eine eigene Zeile und eine eigene Farbe.“
+2. Zeigen Sie auf die Vorlage in der Mitte: „Im Brief steht nicht der Name der Firma, sondern ein Platzhalter: «Firma». Das nennt man ein **Feld**.“
+3. Folgen Sie den Pfeilen nach unten: „Word nimmt jede Zeile und setzt sie in das Feld ein. Aus einer Vorlage werden drei Briefe.“
+4. Zeigen Sie auf die Farben: „Orange Zeile – oranger Brief.“
+5. Frage: „Sie haben 20 Firmen in der Liste. Wie viele Briefe bekommen Sie?“ (20)
+:::
 
 ::: schritte
 1. Oben im Menüband: Registerkarte **Sendungen** → **Seriendruck starten** → **Briefe**.
@@ -159,6 +204,10 @@ In den grauen Spalten stehen **Formeln**. Klicken Sie in eine graue Zelle – ob
 :::
 
 ## Teil 4 – Alle Briefe mit einem Klick {#fertig}
+
+::: notiz
+Lassen Sie alle mit ◄ ► durch die Vorschau blättern, bevor sie zusammenführen. Danach schreibt jede Person in einem Brief 2 bis 3 eigene Sätze und speichert ihn als PDF.
+:::
 
 ::: schritte
 1. **Sendungen** → **Fertig stellen und zusammenführen** → **Einzelne Dokumente bearbeiten …**
