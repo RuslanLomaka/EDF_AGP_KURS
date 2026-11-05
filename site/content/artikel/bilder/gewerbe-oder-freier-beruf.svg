@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Gewerbe oder freier Beruf? Ein Gewerbe ist zum Beispiel Handel, Gastronomie oder Handwerk. Es wird beim Gewerbeamt und beim Finanzamt angemeldet. Ein freier Beruf ist zum Beispiel Übersetzer, Lehrerin oder Ärztin. Er wird nur beim Finanzamt angemeldet. Im Zweifel entscheidet das Finanzamt.</title>
+<defs><marker id="pfeil1" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#5b6672"/></marker></defs>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="34.0" font-size="22" fill="#1f4e79" text-anchor="middle" font-weight="700">Was machen Sie?</text>
+<rect x="14" y="54" width="178" height="40" rx="20" fill="#b26a00"/>
+<text x="103" y="81.0" font-size="19" fill="#fff" text-anchor="middle" font-weight="700">Gewerbe</text>
+<rect x="208" y="54" width="178" height="40" rx="20" fill="#00796b"/>
+<text x="297" y="81.0" font-size="19" fill="#fff" text-anchor="middle" font-weight="700">Freier Beruf</text>
+<line x1="200" y1="104" x2="200" y2="320" stroke="#d9dee4" stroke-width="2" stroke-linecap="round"/>
+<text x="103" y="126.0" font-size="16" fill="#1d232b" text-anchor="middle">Handel</text>
+<text x="103" y="148.4" font-size="16" fill="#1d232b" text-anchor="middle">Gastronomie</text>
+<text x="103" y="170.8" font-size="16" fill="#1d232b" text-anchor="middle">Handwerk</text>
+<text x="297" y="126.0" font-size="16" fill="#1d232b" text-anchor="middle">Übersetzer</text>
+<text x="297" y="148.4" font-size="16" fill="#1d232b" text-anchor="middle">Lehrerin</text>
+<text x="297" y="170.8" font-size="16" fill="#1d232b" text-anchor="middle">Ärztin</text>
+<line x1="103" y1="194" x2="103" y2="220" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pfeil1)"/>
+<line x1="297" y1="194" x2="297" y2="220" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pfeil1)"/>
+<path d="M28.0 249.2 L56 236.0 L84.0 249.2 Z" fill="#b26a00"/>
+<rect x="32.0" y="249.2" width="48" height="30.799999999999997" rx="0" fill="#fff3df" stroke="#b26a00" stroke-width="3"/>
+<rect x="38.72" y="254.48" width="4.800000000000001" height="20.240000000000002" rx="0" fill="#b26a00"/>
+<rect x="50.24" y="254.48" width="4.800000000000001" height="20.240000000000002" rx="0" fill="#b26a00"/>
+<rect x="61.76" y="254.48" width="4.800000000000001" height="20.240000000000002" rx="0" fill="#b26a00"/>
+<rect x="73.28" y="254.48" width="4.800000000000001" height="20.240000000000002" rx="0" fill="#b26a00"/>
+<text x="103" y="266.0" font-size="20" fill="#5b6672" text-anchor="middle" font-weight="700">+</text>
+<path d="M122.0 249.2 L150 236.0 L178.0 249.2 Z" fill="#1f4e79"/>
+<rect x="126.0" y="249.2" width="48" height="30.799999999999997" rx="0" fill="#e8f0f8" stroke="#1f4e79" stroke-width="3"/>
+<rect x="132.72" y="254.48" width="4.800000000000001" height="20.240000000000002" rx="0" fill="#1f4e79"/>
+<rect x="144.24" y="254.48" width="4.800000000000001" height="20.240000000000002" rx="0" fill="#1f4e79"/>
+<rect x="155.76" y="254.48" width="4.800000000000001" height="20.240000000000002" rx="0" fill="#1f4e79"/>
+<rect x="167.28" y="254.48" width="4.800000000000001" height="20.240000000000002" rx="0" fill="#1f4e79"/>
+<text x="56" y="302.0" font-size="15" fill="#1d232b" text-anchor="middle">Gewerbeamt</text>
+<text x="150" y="302.0" font-size="15" fill="#1d232b" text-anchor="middle">Finanzamt</text>
+<path d="M269.0 249.2 L297 236.0 L325.0 249.2 Z" fill="#1f4e79"/>
+<rect x="273.0" y="249.2" width="48" height="30.799999999999997" rx="0" fill="#e8f0f8" stroke="#1f4e79" stroke-width="3"/>
+<rect x="279.72" y="254.48" width="4.800000000000001" height="20.240000000000002" rx="0" fill="#1f4e79"/>
+<rect x="291.24" y="254.48" width="4.800000000000001" height="20.240000000000002" rx="0" fill="#1f4e79"/>
+<rect x="302.76" y="254.48" width="4.800000000000001" height="20.240000000000002" rx="0" fill="#1f4e79"/>
+<rect x="314.28" y="254.48" width="4.800000000000001" height="20.240000000000002" rx="0" fill="#1f4e79"/>
+<text x="297" y="302.0" font-size="15" fill="#1d232b" text-anchor="middle" font-weight="700">nur Finanzamt</text>
+<rect x="14" y="338" width="372" height="46" rx="10" fill="#f1f3f5"/>
+<text x="200" y="367.0" font-size="16" fill="#1d232b" text-anchor="middle">Unsicher? Das <tspan font-weight="700">Finanzamt</tspan> entscheidet.</text>
+</svg>

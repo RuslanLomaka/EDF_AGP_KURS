@@ -47,6 +47,8 @@ Mit einer **Kündigung** beendet eine Seite den **Arbeitsvertrag**. Kündigen ka
 
 ## Die Arten der Kündigung {#arten}
 
+<p class="bild"><img src="/artikel/bilder/kuendigung-arten.svg" alt="Zwei Arten der Kündigung. Ordentlich: Nach der Kündigung kommt die Kündigungsfrist. Sie arbeiten weiter und bekommen Lohn, dann ist das Arbeitsverhältnis zu Ende. Fristlos: Die Kündigung wirkt sofort. Dafür braucht man einen wichtigen Grund, zum Beispiel Diebstahl oder Gewalt gegen Kollegen." width="400" height="400"></p>
+
 ### Ordentliche Kündigung {#ordentlich}
 
 Das ist die **normale** Kündigung. Es gilt eine **Kündigungsfrist**. Sie arbeiten also noch bis zum Ende der Frist weiter und bekommen in dieser Zeit Ihren **Lohn**.
@@ -94,6 +96,8 @@ Mehr zu Mutterschutz und Elternzeit lesen Sie im Artikel [Mutterschutz und Elter
 :::
 
 ## Kündigungsfrist und Betriebszugehörigkeit {#fristen}
+
+<p class="bild"><img src="/artikel/bilder/kuendigungsfristen.svg" alt="Kündigungsfristen, wenn der Arbeitgeber kündigt: weniger als 2 Jahre in der Firma 4 Wochen, ab 2 Jahren 1 Monat, ab 5 Jahren 2 Monate, ab 8 Jahren 3 Monate, ab 10 Jahren 4 Monate, ab 12 Jahren 5 Monate, ab 15 Jahren 6 Monate, ab 20 Jahren 7 Monate." width="400" height="400"></p>
 
 - Die **Kündigungsfrist** ist die Zeit zwischen der Kündigung und dem **letzten Arbeitstag**. In dieser Zeit bekommen Sie meistens noch Ihren Lohn.
 - Die **Betriebszugehörigkeit** ist die Zeit, die Sie schon **bei derselben Firma** arbeiten.

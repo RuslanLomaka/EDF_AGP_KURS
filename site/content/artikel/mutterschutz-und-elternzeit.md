@@ -38,6 +38,8 @@ quelle: "Arbeitsblatt aus dem Kurs (Text und Fragen, 2 Seiten)"
 
 ## Zwei Gesetze für Familien {#gesetze}
 
+<p class="bild"><img src="/artikel/bilder/mutterschutz-elternzeit.svg" alt="Zeitleiste: Mutterschutz von 6 Wochen vor der Geburt bis 8 Wochen nach der Geburt, mit vollem Netto. Danach Elternzeit, bis zu 3 Jahre pro Elternteil, mit Elterngeld vom Staat. Kündigungsschutz vom Beginn der Schwangerschaft bis mindestens 4 Monate nach der Geburt und auch während der Elternzeit." width="400" height="400"></p>
+
 Wenn ein Kind kommt, verändert sich viel. Zwei Gesetze helfen berufstätigen Eltern:
 
 1. das **Mutterschutzgesetz (MuSchG)**,

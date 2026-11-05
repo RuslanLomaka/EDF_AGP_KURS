@@ -36,6 +36,8 @@ quelle: "Arbeitsblatt aus dem Kurs (Text und Fragen, 2 Seiten)"
 
 ## Was ist eine Abmahnung? {#was}
 
+<p class="bild"><img src="/artikel/bilder/abmahnung-karten.svg" alt="Die Abmahnung ist wie die gelbe Karte im Fußball. Erst ein Fehlverhalten, zum Beispiel zu spät kommen. Dann die Abmahnung: eine Warnung vor der Kündigung. Passiert es wieder, kann die rote Karte folgen: die Kündigung. Wegen Krankheit gibt es keine Abmahnung." width="400" height="400"></p>
+
 Eine **Abmahnung** ist die Reaktion des Arbeitgebers auf ein **Fehlverhalten**. Man vergleicht sie gern mit dem Fußball:
 
 - Die Abmahnung ist die **gelbe Karte**.

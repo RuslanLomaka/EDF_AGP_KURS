@@ -37,6 +37,8 @@ quelle: "Arbeitsblatt aus dem Kurs (Text und Fragen, 2 Seiten)"
 
 ## Warum es Regeln gibt {#warum}
 
+<p class="bild"><img src="/artikel/bilder/krank.svg" alt="Krank im Job, Schritt für Schritt: Am 1. Tag vor Arbeitsbeginn Bescheid sagen. Länger als 3 Tage krank: Krankschreibung vom Arzt. Bis zu 6 Wochen zahlt der Arbeitgeber den Lohn weiter. Danach zahlt die Krankenkasse Krankengeld." width="400" height="400"></p>
+
 Wer krank ist, kann nicht arbeiten. Damit Sie dann nicht ohne Geld dastehen, gibt es das **Entgeltfortzahlungsgesetz (EntgFG)**. Es sichert Ihr Einkommen, wenn Sie krank sind.
 
 Wichtig ist aber: Sie müssen die **Regeln kennen und einhalten**. Wer sie nicht beachtet, kann Ärger bekommen – im schlimmsten Fall eine **Abmahnung** oder sogar die **Kündigung**.

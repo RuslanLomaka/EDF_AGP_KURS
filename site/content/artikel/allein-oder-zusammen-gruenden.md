@@ -39,6 +39,8 @@ quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten 
 
 ## Was ist eine Rechtsform? {#rechtsform}
 
+<p class="bild"><img src="/artikel/bilder/haftung-rechtsformen.svg" alt="Wer haftet mit dem Privatvermögen? Einzelunternehmen: eine Person, sie haftet privat. GbR: zwei oder mehr Personen, alle haften privat. OHG: alle haften privat. KG: Der Komplementär haftet privat, die Kommanditisten haften nur mit ihrer Einlage." width="400" height="400"></p>
+
 Jede Firma hat eine **Rechtsform**. Sie bestimmt vor allem:
 
 - wer für die **Schulden** der Firma **haftet**,

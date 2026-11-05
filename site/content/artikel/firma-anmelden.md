@@ -49,6 +49,8 @@ quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten 
 
 ## Das Gewerbeamt {#gewerbeamt}
 
+<p class="bild"><img src="/artikel/bilder/firma-anmelden.svg" alt="Anmelden in vier Schritten: 1. Gewerbeamt, wenn Sie anfangen, meist 10 bis 65 Euro. 2. Finanzamt: innerhalb von 1 Monat den Fragebogen über ELSTER schicken. 3. Handelsregister: nur für Kaufleute und Gesellschaften wie OHG, KG, GmbH und UG, über einen Notar. 4. Versicherungen: Kranken- und Pflegeversicherung sind Pflicht." width="400" height="400"></p>
+
 Ein Gewerbe melden Sie beim **Gewerbeamt** Ihrer Stadt oder Gemeinde an (oft auch „Ordnungsamt“ oder „Bürgerbüro“). In vielen Städten geht das **online**.
 
 Sie brauchen meistens:

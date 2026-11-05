@@ -42,6 +42,8 @@ Viele denken: „Wenn ich dafür bezahlt werde, darf ich so viel arbeiten, wie i
 
 ## Wie lange darf man arbeiten? {#arbeitszeit}
 
+<p class="bild"><img src="/artikel/bilder/arbeitszeit.svg" alt="Wie lange darf man arbeiten? Normal höchstens 8 Stunden am Tag. Bis zu 10 Stunden nur mit Ausgleich: Im Durchschnitt von 6 Monaten müssen es wieder 8 Stunden sein. Höchstens 48 Stunden pro Woche, Montag bis Samstag. Nach Feierabend mindestens 11 Stunden Ruhe: Wer um 22 Uhr Feierabend hat, darf frühestens um 9 Uhr wieder anfangen." width="400" height="400"></p>
+
 - **Werktage** sind Montag bis Samstag – also 6 Tage pro Woche.
 - An jedem Werktag darf man regulär **höchstens 8 Stunden** arbeiten.
 - Das ergibt **höchstens 48 Stunden pro Woche** (6 × 8 Stunden).
@@ -64,6 +66,8 @@ Nach dem Feierabend müssen Sie **mindestens 11 Stunden ohne Unterbrechung** fre
 | bis 6 Stunden | keine Pflicht-Pause |
 | mehr als 6 bis 9 Stunden | **30 Minuten** |
 | mehr als 9 Stunden | **45 Minuten** |
+
+<p class="bild"><img src="/artikel/bilder/pausen.svg" alt="Pausen: Bis 6 Stunden Arbeit gibt es keine Pflicht-Pause. Bei mehr als 6 Stunden mindestens 30 Minuten Pause, bei mehr als 9 Stunden mindestens 45 Minuten. Die Pause liegt mitten in der Arbeitszeit und wird meistens nicht bezahlt." width="400" height="400"></p>
 
 Wichtig:
 

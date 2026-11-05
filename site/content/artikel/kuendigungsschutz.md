@@ -49,6 +49,8 @@ Einen ersten Überblick über Arten, Gründe und Fristen gibt der Artikel [Künd
 
 ## Wann gilt das Kündigungsschutzgesetz? {#wann}
 
+<p class="bild"><img src="/artikel/bilder/kuendigungsschutz-saeulen.svg" alt="Das Kündigungsschutzgesetz gilt, wenn Sie länger als 6 Monate in der Firma arbeiten und die Firma mehr als 10 Beschäftigte hat. Dann braucht eine ordentliche Kündigung einen von drei Gründen: im Verhalten, in der Person oder im Betrieb." width="400" height="400"></p>
+
 Das Gesetz schützt **nicht jeden**. Zwei Bedingungen müssen erfüllt sein:
 
 1. **Wartezeit:** Sie arbeiten **länger als 6 Monate ohne Unterbrechung** in derselben Firma.
@@ -91,6 +93,8 @@ Dann muss der Arbeitgeber eine **Sozialauswahl** machen. Er muss prüfen, **wen 
 :::
 
 ## Die richtige Form {#form}
+
+<p class="bild"><img src="/artikel/bilder/kuendigung-form-frist.svg" alt="Oben: Eine Kündigung muss auf Papier sein und mit der Hand unterschrieben. Eine E-Mail, eine Nachricht im Messenger oder eine mündliche Kündigung reicht nicht. Unten: Wer gegen die Kündigung klagen will, hat 3 Wochen Zeit, ab dem Tag, an dem die Kündigung ankommt. Die Klage geht an das Arbeitsgericht. Wer zu spät kommt: Die Kündigung gilt." width="400" height="400"></p>
 
 Eine Kündigung ist nur gültig, wenn sie **schriftlich** ist (§ 623 BGB). Das heißt: auf **Papier** und **mit der Hand unterschrieben**.
 

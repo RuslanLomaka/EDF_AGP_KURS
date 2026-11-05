@@ -51,6 +51,8 @@ Das Gründen einer eigenen Firma heißt auch **Existenzgründung**.
 
 ## Gewerbe oder freier Beruf? {#gewerbe-oder-freier-beruf}
 
+<p class="bild"><img src="/artikel/bilder/gewerbe-oder-freier-beruf.svg" alt="Gewerbe oder freier Beruf? Ein Gewerbe ist zum Beispiel Handel, Gastronomie oder Handwerk. Es wird beim Gewerbeamt und beim Finanzamt angemeldet. Ein freier Beruf ist zum Beispiel Übersetzer, Lehrerin oder Ärztin. Er wird nur beim Finanzamt angemeldet. Im Zweifel entscheidet das Finanzamt." width="400" height="400"></p>
+
 Das ist die erste wichtige Frage. Von der Antwort hängt ab, wo Sie sich anmelden und welche Steuern Sie zahlen.
 
 **Ein Gewerbe** ist fast jede selbstständige Tätigkeit, mit der man auf Dauer Geld verdienen will, zum Beispiel:

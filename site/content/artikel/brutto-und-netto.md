@@ -40,6 +40,8 @@ Das Brutto ist also der **Startpunkt** der Rechnung. Es ist aber nicht das Geld,
 
 ## Was wird abgezogen? {#abzuege}
 
+<p class="bild"><img src="/artikel/bilder/brutto-netto.svg" alt="Von Brutto zu Netto, Beispiel Anna mit Steuerklasse I: Von 2.500 Euro brutto gehen ungefähr 540 Euro für die Sozialversicherung und ungefähr 190 Euro Lohnsteuer ab. Es bleiben ungefähr 1.770 Euro netto, rund 70 Prozent. Netto ist das Geld, das auf Ihr Konto kommt." width="400" height="400"></p>
+
 Bevor das Gehalt ausgezahlt wird, zieht der Arbeitgeber zwei Dinge ab:
 
 1. **Steuern** – Geld für den Staat, vor allem die **Lohnsteuer**.

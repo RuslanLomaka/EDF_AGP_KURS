@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Oben: Eine Kündigung muss auf Papier sein und mit der Hand unterschrieben. Eine E-Mail, eine Nachricht im Messenger oder eine mündliche Kündigung reicht nicht. Unten: Wer gegen die Kündigung klagen will, hat 3 Wochen Zeit, ab dem Tag, an dem die Kündigung ankommt. Die Klage geht an das Arbeitsgericht. Wer zu spät kommt: Die Kündigung gilt.</title>
+<defs><marker id="pfeil1" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#5b6672"/></marker></defs>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="30.0" font-size="20" fill="#1f4e79" text-anchor="middle" font-weight="700">Die richtige Form</text>
+<path d="M49.0 55.0 H93.64 L111.0 72.36 V133.0 H49.0 Z" fill="#fff" stroke="#1f4e79" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M93.64 55.0 V72.36 H111.0" fill="none" stroke="#1f4e79" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="60.16" y1="83.08" x2="99.84" y2="83.08" stroke="#1f4e79" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="60.16" y1="93.22" x2="87.44" y2="93.22" stroke="#1f4e79" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M60 112 q6 -12 10 0 t10 0 t10 -4 t10 4" fill="none" stroke="#1f4e79" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="108" cy="60" r="13" fill="#2e7d32"/>
+<path d="M102.3125 60.40625 L106.375 64.46875 L114.09375 55.9375" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="80" y="158.0" font-size="15" fill="#2e7d32" text-anchor="middle" font-weight="700">Papier +</text>
+<text x="80" y="177.0" font-size="15" fill="#2e7d32" text-anchor="middle" font-weight="700">Unterschrift</text>
+<rect x="181.0" y="78.0" width="48" height="32" rx="4" fill="#fff" stroke="#5b6672" stroke-width="3"/>
+<path d="M183.0 81.0 L205 97.84 L227.0 81.0" fill="none" stroke="#5b6672" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="271.0" y="71.0" width="28" height="46" rx="6" fill="#fff" stroke="#5b6672" stroke-width="3"/>
+<line x1="280.8" y1="110.0" x2="289.2" y2="110.0" stroke="#5b6672" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M348 78 H372 a10 10 0 0 1 10 10 V96 a10 10 0 0 1 -10 10 H368 l-14 14 v-14 H348 a10 10 0 0 1 -10 -10 V88 a10 10 0 0 1 10 -10 Z" fill="#fff" stroke="#5b6672" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="225" cy="68" r="11" fill="#c0392b"/>
+<line x1="221.21875" y1="64.21875" x2="228.78125" y2="71.78125" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="228.78125" y1="64.21875" x2="221.21875" y2="71.78125" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+<text x="205" y="140.0" font-size="15" fill="#1d232b" text-anchor="middle">E-Mail</text>
+<circle cx="305" cy="68" r="11" fill="#c0392b"/>
+<line x1="301.21875" y1="64.21875" x2="308.78125" y2="71.78125" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="308.78125" y1="64.21875" x2="301.21875" y2="71.78125" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+<text x="285" y="140.0" font-size="15" fill="#1d232b" text-anchor="middle">Messenger</text>
+<circle cx="380" cy="68" r="11" fill="#c0392b"/>
+<line x1="376.21875" y1="64.21875" x2="383.78125" y2="71.78125" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="383.78125" y1="64.21875" x2="376.21875" y2="71.78125" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+<text x="360" y="140.0" font-size="15" fill="#1d232b" text-anchor="middle">mündlich</text>
+<text x="285" y="170.0" font-size="15" fill="#c0392b" text-anchor="middle" font-weight="700">reicht nicht</text>
+<line x1="20" y1="196" x2="380" y2="196" stroke="#d9dee4" stroke-width="2" stroke-linecap="round"/>
+<text x="200" y="228.0" font-size="20" fill="#1f4e79" text-anchor="middle" font-weight="700">3 Wochen für die Klage</text>
+<rect x="24.0" y="260.0" width="40" height="28" rx="4" fill="#fff" stroke="#1f4e79" stroke-width="3"/>
+<path d="M26.0 263.0 L44 277.36 L62.0 263.0" fill="none" stroke="#1f4e79" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="44" y="312.0" font-size="15" fill="#1d232b" text-anchor="middle">kommt an</text>
+<rect x="80" y="258" width="62" height="32" rx="5" fill="#e8f0f8" stroke="#1f4e79" stroke-width="1.5"/>
+<text x="111" y="281.0" font-size="17" fill="#1f4e79" text-anchor="middle" font-weight="700">1</text>
+<rect x="146" y="258" width="62" height="32" rx="5" fill="#e8f0f8" stroke="#1f4e79" stroke-width="1.5"/>
+<text x="177" y="281.0" font-size="17" fill="#1f4e79" text-anchor="middle" font-weight="700">2</text>
+<rect x="212" y="258" width="62" height="32" rx="5" fill="#e8f0f8" stroke="#1f4e79" stroke-width="1.5"/>
+<text x="243" y="281.0" font-size="17" fill="#1f4e79" text-anchor="middle" font-weight="700">3</text>
+<text x="177" y="312.0" font-size="15" fill="#1d232b" text-anchor="middle" font-weight="700">3 Wochen = 21 Tage</text>
+<line x1="282" y1="274" x2="304" y2="274" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pfeil1)"/>
+<path d="M311.0 260.4 L342 246.0 L373.0 260.4 Z" fill="#1f4e79"/>
+<rect x="315.0" y="260.4" width="54" height="33.599999999999994" rx="0" fill="#e8f0f8" stroke="#1f4e79" stroke-width="3"/>
+<rect x="322.56" y="266.16" width="5.4" height="22.080000000000002" rx="0" fill="#1f4e79"/>
+<rect x="335.52" y="266.16" width="5.4" height="22.080000000000002" rx="0" fill="#1f4e79"/>
+<rect x="348.48" y="266.16" width="5.4" height="22.080000000000002" rx="0" fill="#1f4e79"/>
+<rect x="361.44" y="266.16" width="5.4" height="22.080000000000002" rx="0" fill="#1f4e79"/>
+<text x="342" y="312.0" font-size="15" fill="#1d232b" text-anchor="middle">Arbeits-</text>
+<text x="342" y="330.0" font-size="15" fill="#1d232b" text-anchor="middle">gericht</text>
+<rect x="20" y="346" width="360" height="40" rx="10" fill="#fdecea"/>
+<text x="200" y="372.0" font-size="16" fill="#c0392b" text-anchor="middle" font-weight="700">Zu spät? Dann gilt die Kündigung.</text>
+</svg>

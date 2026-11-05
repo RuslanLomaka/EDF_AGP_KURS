@@ -163,6 +163,7 @@ img { max-width: 100%; height: auto; }
 @media (min-width: 50rem) {
   .bild { float: right; width: 21rem; margin: 0.3rem 0 1rem 1.4rem; }
   main h2 { clear: both; }
+  .bild:has(+ table) { float: none; margin: 1.2rem auto; }
   .kurz, .ergaenzung, .info, .achtung, .schritte ol, .prinzip, main details { display: flow-root; }
 }
 .inhalt img { border: 1px solid var(--line); border-radius: 8px; display: block; margin: 1rem 0 0.3rem; }

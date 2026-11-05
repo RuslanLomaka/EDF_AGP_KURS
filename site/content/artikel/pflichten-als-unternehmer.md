@@ -40,6 +40,8 @@ quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten 
 
 ## Buchhaltung {#buchhaltung}
 
+<p class="bild"><img src="/artikel/bilder/buchhaltung-aufbewahren.svg" alt="Buchhaltung: Kleine Firmen rechnen Einnahmen minus Ausgaben gleich Gewinn, das ist die EÜR. GmbH, UG und große Firmen brauchen eine Bilanz. Aufbewahren: Rechnungen und Belege 8 Jahre, Bücher und Jahresabschlüsse 10 Jahre." width="400" height="400"></p>
+
 Jede Firma muss ihre **Einnahmen** und **Ausgaben** aufschreiben und die **Belege** sammeln: Rechnungen, Quittungen, Kontoauszüge.
 
 **Die einfache Form – die EÜR** (Einnahmenüberschussrechnung): Sie rechnen **Einnahmen minus Ausgaben** = **Gewinn**. Die EÜR reicht für:

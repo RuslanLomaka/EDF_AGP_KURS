@@ -39,6 +39,8 @@ quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten 
 
 ## Was ist eine Kapitalgesellschaft? {#kapitalgesellschaft}
 
+<p class="bild"><img src="/artikel/bilder/kapitalgesellschaften.svg" alt="Mindestkapital: UG ab 1 Euro, GmbH 25.000 Euro, AG 50.000 Euro. Bei allen drei haftet für Schulden nur das Geld der Firma. Das Privatvermögen der Gesellschafter ist geschützt." width="400" height="400"></p>
+
 Eine Kapitalgesellschaft ist eine **eigene Person vor dem Gesetz** (eine „juristische Person“). Sie schließt Verträge, hat ein eigenes Konto und haftet selbst für ihre Schulden.
 
 Das heißt: Geht die Firma pleite, verlieren die Gesellschafter das Geld, das sie in die Firma gesteckt haben – ihr **Privatvermögen** bleibt aber normalerweise geschützt. Das ist der große Unterschied zu Einzelunternehmen und GbR ([Teil 2](/artikel/allein-oder-zusammen-gruenden/)).

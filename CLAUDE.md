@@ -78,7 +78,7 @@ pages at phone width (390 px).
 
 **Pictures.** Own drawings only (no screenshots of other products, no logos), as square SVGs:
 - `viewBox="0 0 400 400"`, white background, Arial, text at least 15 px, colours from the site palette;
-- placed right before the text they explain as
+- placed right before the text they explain (not right before a table, which cannot sit beside them) as
   `<p class="bild"><img src="/…/bilder/<file>.svg" alt="…" width="400" height="400"></p>`;
 - on phones they are full width in the text; from 50rem they float right beside the text (`.bild` in `style.css`);
 - the alt text says everything the picture says. The build refuses an `<img>` without `alt`, `width` and `height`.

@@ -64,6 +64,8 @@ Darum verhandeln Gewerkschaften für ihre Mitglieder mit **Arbeitgebern** oder m
 
 ## Wie arbeiten Gewerkschaften? {#arbeit}
 
+<p class="bild"><img src="/artikel/bilder/tarifvertrag.svg" alt="So entsteht ein Tarifvertrag: Die Gewerkschaft und die Arbeitgeber verhandeln. Wenn sie sich einigen, schließen sie einen Tarifvertrag mit Regeln für Lohn, Urlaub und Arbeitszeit. Gibt es keine Einigung, kann die Gewerkschaft zum Streik aufrufen." width="400" height="400"></p>
+
 ### 1. Verhandeln {#verhandeln}
 
 Gewerkschaften verhandeln mit den Arbeitgebern über **Lohn, Arbeitszeit und Urlaub**. Das Ergebnis ist oft ein **Tarifvertrag**. Ein Tarifvertrag ist **verbindlich** für alle, für die er gilt.
