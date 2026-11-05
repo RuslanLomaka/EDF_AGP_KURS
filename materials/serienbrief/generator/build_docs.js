@@ -62,6 +62,15 @@ const letterStyles = {
 };
 
 function sender(mode) {
+  if (mode === "vorlage") {
+    // filled by the Bewerbungshelfer program from the "Meine Daten" sheet
+    return {
+      name: "[Mein Name]",
+      addr: "[Meine Straße] · [Meine PLZ und Ort]",
+      contact: "Telefon: [Mein Telefon] · E-Mail: [Meine E-Mail]",
+      place: "[Mein Wohnort]",
+    };
+  }
   if (mode === "uebung") {
     return {
       name: "[Ihr Vorname Nachname]",
@@ -110,11 +119,13 @@ function letterBody(mode, rec) {
   const s = sender(mode);
   const f = (name) => {
     if (mode === "loesung") return new SimpleMailMergeField(name);
-    if (mode === "uebung") return new TextRun(`[${name}]`);
+    if (mode === "uebung" || mode === "vorlage") return new TextRun(`[${name}]`);
     return new TextRun(rec[name]);
   };
   const date = mode === "merged"
     ? new TextRun("02.11.2026")
+    : mode === "vorlage"
+    ? new TextRun("[Datum]")
     : new SimpleField('DATE \\@ "dd.MM.yyyy"', "28.10.2026");
 
   const out = [];
@@ -145,8 +156,12 @@ function letterBody(mode, rec) {
   }));
   out.push(new Paragraph({
     style: "Brieftext",
-    children: [new TextRun("[Hier schreiben Sie in 3 bis 5 Sätzen: Was können Sie? Welche Erfahrung haben Sie? "
-      + "Warum passt diese Stelle zu Ihnen? Diesen Teil schreiben Sie für jede Firma neu.]")],
+    children: [new TextRun({
+      text: "[Hier schreiben Sie in 3 bis 5 Sätzen: Was können Sie? Welche Erfahrung haben Sie? "
+        + "Warum passt diese Stelle zu Ihnen? Diesen Teil schreiben Sie für jede Firma neu.]",
+      // in the Bewerbungshelfer letters the part to write yourself is marked yellow
+      highlight: mode === "vorlage" ? "yellow" : undefined,
+    })],
   }));
   out.push(new Paragraph({
     style: "Brieftext",
@@ -171,7 +186,8 @@ function letterDoc(mode) {
   const bodies = mode === "merged" ? RECORDS.map((rec) => letterBody(mode, rec)) : [letterBody(mode)];
   return new Document({
     creator: "EDV-Tag",
-    title: mode === "uebung" ? "Anschreiben – Übung" : mode === "loesung" ? "Anschreiben – Lösung (Serienbrief)" : "Beispiel-Ergebnis",
+    title: mode === "uebung" ? "Anschreiben – Übung" : mode === "loesung" ? "Anschreiben – Lösung (Serienbrief)"
+      : mode === "vorlage" ? "Bewerbung" : "Beispiel-Ergebnis",
     styles: letterStyles,
     sections: bodies.map((children) => ({
       properties: { page: letterPage },
@@ -511,6 +527,7 @@ async function write(doc, file) {
   await write(letterDoc("uebung"), path.join(DIR_TN, "Anschreiben_Uebung.docx"));
   await write(letterDoc("loesung"), path.join(DIR_TN, "Anschreiben_Loesung.docx"));
   await write(letterDoc("merged"), path.join(buildDir, "Beispiel_Ergebnis.docx"));
+  await write(letterDoc("vorlage"), path.join(OUT, "..", "bewerbungshelfer", "Anschreiben_Vorlage.docx"));
   await write(handout(), path.join(DIR_PRINT, "Anleitung_Serienbrief.docx"));
   await write(feedback(buildDir), path.join(DIR_PRINT, "Feedbackbogen.docx"));
   await write(trainerPlan(), path.join(DIR_TRAINER, "Ablaufplan_EDV-Tag.docx"));

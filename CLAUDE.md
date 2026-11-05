@@ -26,6 +26,8 @@ site/
                               quiz.js (article quizzes), hinweis.js (short privacy notice once a day)
   build.py                    builds everything into site/dist/ (git-ignored) and checks it
 materials/serienbrief/        files of lesson 1; README.md explains them; generator/build_kit.sh rebuilds them
+materials/bewerbungshelfer/   lesson 2: Go source of the Windows program (programm/), Excel list, Word template;
+                              build_exe.sh builds Bewerbungen_erstellen.exe (CI does; needed before a local build)
 entwuerfe/                    own-words notes on handouts not yet turned into articles (not published)
 deploy/                       compose.yaml + nginx.conf for the web server on the Pi
 .github/workflows/deploy.yml  build on every push, deploy from main
@@ -50,6 +52,7 @@ Top navigation, fixed at three items: **Start · EDV-Kurs · Artikel**.
 ## Build and check
 
 ```bash
+materials/bewerbungshelfer/build_exe.sh       # once: builds the program lesson 2 offers (needs Go)
 python3 site/build.py                          # needs pandoc and PyYAML
 cd site/dist && python3 -m http.server 8000    # links are absolute (/artikel/...), so preview over HTTP
 ```

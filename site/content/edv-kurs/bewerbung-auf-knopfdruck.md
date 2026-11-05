@@ -175,6 +175,10 @@ In den grauen Spalten stehen **Formeln**. Klicken Sie in eine graue Zelle – ob
 4. **Fertig stellen und zusammenführen** → **Einzelne Dokumente bearbeiten** → **Aktueller Datensatz** → **OK**.
 :::
 
+::: info
+**Noch schneller:** Mit dem [Bewerbungshelfer](/edv-kurs/bewerbungshelfer/) tragen Sie alles in Excel ein – ein Doppelklick macht daraus fertige Briefe, ganz ohne Seriendruck in Word.
+:::
+
 ## Wenn etwas nicht klappt {#hilfe}
 
 <details>

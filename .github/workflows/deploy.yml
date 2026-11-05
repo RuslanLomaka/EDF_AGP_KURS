@@ -46,6 +46,13 @@ jobs:
           974adee790533adb273a1ac88f49027d2a1b8f0f2cf4905954a4791e79264e85  de_DE-thorsten-medium.onnx.json
           SUMS
 
+      # The lesson "Bewerbungshelfer" offers a small Windows program; it is built here from its Go source.
+      - name: Build Bewerbungshelfer program
+        run: |
+          command -v go >/dev/null || { sudo apt-get install -y -q --no-install-recommends golang-go; }
+          go version
+          materials/bewerbungshelfer/build_exe.sh
+
       - name: Build
         env:
           PIPER_MODEL: .piper/de_DE-thorsten-medium.onnx

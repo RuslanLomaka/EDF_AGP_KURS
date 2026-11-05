@@ -1,0 +1,20 @@
+Bewerbungshelfer
+
+So geht es:
+1. Den ganzen Ordner entpacken (Rechtsklick auf die ZIP-Datei -> Alle extrahieren).
+   Das Programm nicht direkt aus der ZIP-Datei starten.
+2. Bewerbungsliste.xlsx öffnen:
+   - Blatt "Meine Daten": Ihre Daten in die gelben Felder (nur einmal).
+   - Blatt "Bewerbungen": eine Zeile pro Firma. Status "offen" = es wird ein Brief erstellt.
+   - Speichern und Excel schließen.
+3. Doppelklick auf "Bewerbungen_erstellen.exe".
+   Erscheint "Der Computer wurde durch Windows geschützt":
+   "Weitere Informationen" -> "Trotzdem ausführen".
+4. Im neuen Ordner "Bewerbungen" liegt pro Firma ein fertiger Brief.
+   Ersetzen Sie nur den gelb markierten Text durch Ihre eigenen Sätze.
+
+Schon vorhandene Briefe werden nie überschrieben.
+Nach dem Abschicken: Status in Excel auf "beworben" setzen.
+Das Programm arbeitet nur auf Ihrem PC und schickt nichts ins Internet.
+
+Anleitung: https://edv.ruslanlomaka.org/edv-kurs/bewerbungshelfer/
