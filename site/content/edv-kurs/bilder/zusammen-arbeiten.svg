@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 620" width="380" height="620" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+  <title id="t">Links: Eine Word-Datei wird per E-Mail hin und her geschickt, am Ende gibt es viele Versionen. Rechts: Alle arbeiten gleichzeitig in einem einzigen Google-Dokument.</title>
+  <rect width="380" height="620" fill="#ffffff"/>
+  <text x="190" y="32" text-anchor="middle" font-size="19" font-weight="700" fill="#a50e0e">Datei per E-Mail hin und her</text>
+  <g font-size="14" fill="#333">
+    <rect x="70" y="60" width="240" height="38" rx="6" fill="#fde8e8" stroke="#d93025"/><text x="86" y="84">Plan.docx</text>
+    <rect x="70" y="108" width="240" height="38" rx="6" fill="#fde8e8" stroke="#d93025"/><text x="86" y="132">Plan_neu.docx</text>
+    <rect x="70" y="156" width="240" height="38" rx="6" fill="#fde8e8" stroke="#d93025"/><text x="86" y="180">Plan_neu_Anna.docx</text>
+    <rect x="70" y="204" width="240" height="38" rx="6" fill="#fde8e8" stroke="#d93025"/><text x="86" y="228">Plan_FINAL_wirklich.docx</text>
+  </g>
+  <text x="190" y="280" text-anchor="middle" font-size="16" fill="#333">Welche Version ist die richtige?</text>
+  <line x1="20" y1="296" x2="360" y2="296" stroke="#d0d0d0" stroke-width="2"/>
+<g transform="translate(-380 300)">
+  <text x="570" y="32" text-anchor="middle" font-size="19" font-weight="700" fill="#137333">Ein Dokument für alle</text>
+  <rect x="470" y="56" width="200" height="200" rx="8" fill="#fff" stroke="#137333" stroke-width="3"/>
+  <g stroke="#a8c7b0" stroke-width="6"><line x1="490" y1="88" x2="640" y2="88"/><line x1="490" y1="116" x2="650" y2="116"/><line x1="490" y1="144" x2="610" y2="144"/><line x1="490" y1="172" x2="645" y2="172"/><line x1="490" y1="200" x2="600" y2="200"/></g>
+  <line x1="642" y1="80" x2="642" y2="98" stroke="#d93025" stroke-width="3"/><rect x="642" y="66" width="44" height="16" rx="3" fill="#d93025"/><text x="664" y="78" text-anchor="middle" font-size="11" fill="#fff">Anna</text>
+  <line x1="612" y1="136" x2="612" y2="154" stroke="#1a73e8" stroke-width="3"/><rect x="612" y="122" width="44" height="16" rx="3" fill="#1a73e8"/><text x="634" y="134" text-anchor="middle" font-size="11" fill="#fff">Ben</text>
+  <line x1="602" y1="192" x2="602" y2="210" stroke="#e37400" stroke-width="3"/><rect x="602" y="178" width="44" height="16" rx="3" fill="#e37400"/><text x="624" y="190" text-anchor="middle" font-size="11" fill="#fff">Sie</text>
+  <path d="M684 120 h62 a6 6 0 0 1 6 6 v34 a6 6 0 0 1 -6 6 h-40 l-10 10 v-10 h-12 a6 6 0 0 1 -6 -6 v-34 a6 6 0 0 1 6 -6z" fill="#fef7e0" stroke="#e37400" stroke-width="2"/>
+  <text x="716" y="140" text-anchor="middle" font-size="11" fill="#333">Kommentar:</text><text x="716" y="155" text-anchor="middle" font-size="11" fill="#333">Super Idee!</text>
+  <text x="570" y="280" text-anchor="middle" font-size="16" fill="#333">Alle schreiben gleichzeitig –</text>
+  <text x="570" y="303" text-anchor="middle" font-size="16" fill="#333">es gibt immer nur <tspan font-weight="700">eine</tspan>, die neueste Version.</text>
+</g>
+</svg>

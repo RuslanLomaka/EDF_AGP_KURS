@@ -11,6 +11,10 @@ content is German at about level B1 and works on phones.
 - **EDV-Kurs:** step-by-step computer lessons with downloadable exercise files (single files or one ZIP),
   tick-off steps with a progress bar, a help section and a self-test. Lesson 1, *Bewerbung auf Knopfdruck*, teaches
   mail merge: an Excel list of job offers becomes finished Word cover letters with one click.
+  Lesson 2, *Bewerbungen mit einem Doppelklick*, offers a small Windows program (built from source in CI) that
+  turns the same kind of Excel list into one ready cover letter per company. Lesson 3, *Gemeinsam arbeiten mit
+  Google Docs*, introduces the browser, the cloud, sharing, comments, suggestions and converting Word ↔ Google Docs
+  ↔ PDF, with a shared class project.
 - **Artikel:** handouts from the course rewritten in plain German. Each article has:
   - a short summary;
   - clearly marked additions;
