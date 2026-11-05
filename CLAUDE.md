@@ -90,6 +90,13 @@ pages at phone width (390 px).
 - on phones they are full width in the text; from 50rem they float right beside the text (`.bild` in `style.css`);
 - the alt text says everything the picture says. The build refuses an `<img>` without `alt`, `width` and `height`.
 
+**Design.** One stylesheet, `site/assets/style.css`, with light and dark tokens. It uses no web fonts and no
+framework, so keep it light for the Pi and for old phones.
+- Every topic has a colour: `FARBEN` in `build.py`, assigned in `themen.yaml` order. Lessons use `KURS_FARBE`.
+- The build sets it as `--t` on `<main>` and on list rows. CSS derives `--ton` (text) and `--ton-soft` (backgrounds)
+  from it.
+- Icons are small SVG files in `site/assets/` (`icon-*.svg`, used as CSS masks), plus `hero.svg` on the start page.
+
 The live server sends a Content-Security-Policy: no inline scripts and nothing from other domains. JavaScript
 belongs in `site/assets/`; images are stored in the repository.
 

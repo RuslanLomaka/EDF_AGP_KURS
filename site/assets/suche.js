@@ -38,7 +38,9 @@
     const von = Math.max(0, i - 10), bis = Math.min(w.length, i + 14);
     return (von > 0 ? '… ' : '') + markiere(w.slice(von, bis).join(' '), begriffe) + (bis < w.length ? ' …' : '');
   };
-  const badge = a => ' <span class="badge">' + esc(a.thema) + '</span>';
+  // topic colours come from the build (hex values only), used by CSS as --t
+  const farbe = th => /^#[0-9a-f]{6}$/i.test((daten.farben || {})[th] || '') ? ' style="--t:' + daten.farben[th] + '"' : '';
+  const badge = a => ' <span class="badge thema">' + esc(a.thema) + '</span>';
   const teil = a => a.teil ? ' <span class="badge">Teil ' + a.teil + ' von ' + a.teile + '</span>' : '';
 
   let thema = new URLSearchParams(location.search).get('thema') || '';
@@ -62,7 +64,7 @@
             + ' <span class="zahl">(' + n + ')</span></summary><ul class="liste">';
         }
       }
-      html += '<li><a href="' + a.url + '">' + esc(a.title) + '</a>' + teil(a) + (thema ? '' : badge(a)) + '</li>';
+      html += '<li' + farbe(a.thema) + '><a href="' + a.url + '">' + esc(a.title) + '</a>' + teil(a) + (thema ? '' : badge(a)) + '</li>';
     }
     schliessen();
     return html;
@@ -92,7 +94,7 @@
       treffer.sort((p, q) => q.punkte - p.punkte);
       liste.innerHTML = '<ul class="liste">' + treffer.map(({ a }) => {
         const imText = !begriffe.every(b => (a.t + ' ' + a.k).includes(b));
-        return '<li><a href="' + a.url + '">' + markiere(a.title, begriffe) + '</a>' + teil(a) + badge(a)
+        return '<li' + farbe(a.thema) + '><a href="' + a.url + '">' + markiere(a.title, begriffe) + '</a>' + teil(a) + badge(a)
           + '<br><span class="hinweis">' + markiere(a.kurz, begriffe) + '</span>'
           + (imText && a.text ? '<br><span class="snippet">' + ausschnitt(a.text, begriffe) + '</span>' : '') + '</li>';
       }).join('') + '</ul>';
@@ -108,7 +110,7 @@
   // the server renders the topics as links to topic pages; with JavaScript they become filter buttons
   chips.innerHTML = ['', ...daten.themen].map(t => {
     const n = t ? artikel.filter(a => a.thema === t).length : artikel.length;
-    return '<li><button type="button" data-thema="' + esc(t) + '" aria-pressed="' + (t === thema) + '">'
+    return '<li><button type="button"' + farbe(t) + ' data-thema="' + esc(t) + '" aria-pressed="' + (t === thema) + '">'
       + (t ? esc(t) : 'Alle Themen') + ' (' + n + ')</button></li>';
   }).join('');
   chips.addEventListener('click', e => {

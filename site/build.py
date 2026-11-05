@@ -38,6 +38,14 @@ MONATE = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August"
           "November", "Dezember"]
 TYP = {".xlsx": "Excel", ".docx": "Word", ".pdf": "PDF", ".zip": "ZIP"}
 BOXES = {"kurz", "ergaenzung", "info", "achtung", "schritte", "prinzip", "zeichen", "notiz"}
+# every topic gets a colour (in themen.yaml order); lessons use KURS_FARBE. All readable as text on white.
+FARBEN = ["#047857", "#4338ca", "#c2410c", "#be185d", "#0369a1", "#7c3aed", "#a16207", "#0f766e"]
+KURS_FARBE = "#0e7490"
+THEMEN_FARBE = {}
+SVG = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" '
+       'stroke-linejoin="round" aria-hidden="true">{}</svg>')
+ICON_KURS = SVG.format('<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>')
+ICON_ARTIKEL = SVG.format('<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/>')
 LEHRER = "teacher"  # /<page>/teacher/: the same page with the teacher's notes; linked from nowhere on the site
 SLUG = re.compile(r"[a-z0-9]+(-[a-z0-9]+)*")
 DATUM = re.compile(r"\d{4}-\d{2}-\d{2}")
@@ -256,6 +264,11 @@ def thema_slug(thema):
     return "-".join(re.findall(r"[a-z0-9]+", s))
 
 
+def stil(thema):
+    """style attribute that gives an element its topic colour (used by CSS as --t)."""
+    return f' style="--t:{THEMEN_FARBE.get(thema, FARBEN[1])}"'
+
+
 def thema_link(thema):
     return f"/artikel/thema/{thema_slug(thema)}/"
 
@@ -288,7 +301,7 @@ def write(rel, content):
     out.write_text(content, encoding="utf-8")
 
 
-def layout(title, active, main, description="", scripts=(), noindex=False):
+def layout(title, active, main, description="", scripts=(), noindex=False, farbe=None):
     current = ' aria-current="page"'
     links = "".join(f'<a href="{href}"{current if key == active else ""}>{label}</a>' for key, href, label in NAV)
     full_title = BRAND if title == BRAND else f"{title} – {BRAND}"
@@ -307,7 +320,7 @@ def layout(title, active, main, description="", scripts=(), noindex=False):
   <a class="brand" href="/">{BRAND}</a>
   <nav aria-label="Hauptmenü">{links}</nav>
 </header>
-<main>
+<main{f' style="--t:{farbe}"' if farbe else ''}>
 {main}
 </main>
 <footer class="site-footer"><a href="/">{BRAND}</a> · <a href="/edv-kurs/">EDV-Kurs</a> · <a href="/artikel/">Artikel</a> · <a href="/hinweis/">Hinweise</a>{RECHT_LINKS if BETREIBER else ""}</footer>
@@ -659,9 +672,11 @@ def write_article(a, lehrer, serie, weiter, mehr, nav):
     if lehrer:
         main = lehrer_banner(a["url"], inhalt.count('<div class="notiz">')) + "\n" + lehrer_links(main)
         write(f"artikel/{a['slug']}/{LEHRER}/index.html", layout(f"Lehrkraft: {a['title']}", "artikel", main, a["kurz"],
-                                                           ["quiz.js", "vorlesen.js"], noindex=True))
+                                                           ["quiz.js", "vorlesen.js"], noindex=True,
+                                                           farbe=THEMEN_FARBE.get(a["thema"])))
     else:
-        write(f"artikel/{a['slug']}/index.html", layout(a["title"], "artikel", main, a["kurz"], ["quiz.js", "vorlesen.js"]))
+        write(f"artikel/{a['slug']}/index.html", layout(a["title"], "artikel", main, a["kurz"], ["quiz.js", "vorlesen.js"],
+                                                        farbe=THEMEN_FARBE.get(a["thema"])))
 
 
 def newest_first(articles):
@@ -679,8 +694,9 @@ def grouped_list(ordered, open_days, show_topic=True):
         groups[-1][1].append(a)
     parts = []
     for i, (datum, items) in enumerate(groups):
-        rows = "".join(f'<li><a href="{a["url"]}">{esc(a["title"])}</a>' + teil_badge(a)
-                       + (f' <span class="badge">{esc(a["thema"])}</span>' if show_topic else "") + "</li>" for a in items)
+        rows = "".join(f'<li{stil(a["thema"])}><a href="{a["url"]}">{esc(a["title"])}</a>' + teil_badge(a)
+                       + (f' <span class="badge thema">{esc(a["thema"])}</span>' if show_topic else "") + "</li>"
+                       for a in items)
         if not datum:  # undated articles: a plain list, no date label at all
             parts.append(f'<ul class="liste">{rows}</ul>')
             continue
@@ -707,11 +723,12 @@ def build_article_index(articles, themen):
              "serie": a["serie"], "teil": a["teil"], "teile": len(a["serie_teile"])} for a in ordered]
     used, chips = topic_chips(articles, themen)
     # every "<" escaped: no text can end the <script> element or switch the parser into script-escape mode
-    payload = json.dumps({"artikel": data, "themen": used, "volltext": volltext_url},
+    payload = json.dumps({"artikel": data, "themen": used, "volltext": volltext_url,
+                          "farben": {th: THEMEN_FARBE[th] for th in used}},
                          ensure_ascii=False).replace("<", "\\u003c")
-    main = f"""<h1>Artikel</h1>
-<p class="lead">Arbeitsblätter aus dem Kurs – einfach erklärt. {anzahl(len(articles), "Artikel", "Artikel")}.</p>
-<input id="suche" class="search" type="search" placeholder="Suchen: Titel, Stichwort oder Text …" aria-label="Artikel durchsuchen" autocomplete="off">
+    main = f"""<header class="kopf"><h1>Artikel</h1>
+<p class="lead">Arbeitsblätter aus dem Kurs – einfach erklärt. {anzahl(len(articles), "Artikel", "Artikel")}.</p></header>
+<div class="suchfeld"><input id="suche" class="search" type="search" placeholder="Suchen: Titel, Stichwort oder Text …" aria-label="Artikel durchsuchen" autocomplete="off"></div>
 <ul id="themen" class="chips themen" aria-label="Themen">{chips}</ul>
 <p id="anzahl" class="count" aria-live="polite"></p>
 <div id="liste">{grouped_list(ordered, open_days=2)}</div>
@@ -730,17 +747,18 @@ def build_topic_pages(articles, themen):
             if a["serie"] and a["serie_teile"] not in serien:
                 serien.append(a["serie_teile"])
         bloecke = "".join(f'<section class="serie-block"><h2>Serie „{esc(teile[0]["serie"])}“</h2><ol class="liste">'
-                          + "".join(f'<li><a href="{b["url"]}">{esc(b["title"])}</a><br><span class="hinweis">{esc(b["kurz"])}</span></li>'
+                          + "".join(f'<li{stil(b["thema"])}><a href="{b["url"]}">{esc(b["title"])}</a><br><span class="hinweis">{esc(b["kurz"])}</span></li>'
                                     for b in teile) + "</ol></section>" for teile in serien)
         rest = [a for a in items if not a["serie"]]
         weitere = (("<h2>Weitere Artikel</h2>" if serien else "") + grouped_list(rest, open_days=None, show_topic=False)) if rest else ""
         main = f"""<p class="crumbs"><a href="/artikel/">Artikel</a> › Thema</p>
-<h1>{esc(t)}</h1>
-<p class="lead">{anzahl(len(items), "Artikel", "Artikel")} zu diesem Thema.</p>
+<header class="kopf"><h1>{esc(t)}</h1>
+<p class="lead">{anzahl(len(items), "Artikel", "Artikel")} zu diesem Thema.</p></header>
 {bloecke}
 {weitere}
 <p><a href="/artikel/">Alle Artikel und Suche</a></p>"""
-        write(f"artikel/thema/{thema_slug(t)}/index.html", layout(t, "artikel", main, f"Alle Artikel zum Thema {t}."))
+        write(f"artikel/thema/{thema_slug(t)}/index.html", layout(t, "artikel", main, f"Alle Artikel zum Thema {t}.",
+                                                                 farbe=THEMEN_FARBE.get(t)))
 
 
 # ---------------------------------------------------------------- lessons
@@ -897,9 +915,9 @@ def write_lesson(l, lehrer, body, ziele, downloads, lehrkraft, nav):
     if lehrer:
         main = lehrer_banner(l["url"], body.count('<div class="notiz">')) + "\n" + lehrer_links(main)
         write(f"edv-kurs/{l['slug']}/{LEHRER}/index.html",
-              layout(f"Lehrkraft: {l['title']}", "kurs", main, l["kurz"], ["lektion.js"], noindex=True))
+              layout(f"Lehrkraft: {l['title']}", "kurs", main, l["kurz"], ["lektion.js"], noindex=True, farbe=KURS_FARBE))
     else:
-        write(f"edv-kurs/{l['slug']}/index.html", layout(l["title"], "kurs", main, l["kurz"], ["lektion.js"]))
+        write(f"edv-kurs/{l['slug']}/index.html", layout(l["title"], "kurs", main, l["kurz"], ["lektion.js"], farbe=KURS_FARBE))
 
 
 def build_lehrer_index(articles, lessons):
@@ -923,12 +941,13 @@ def build_lesson_index(lessons):
     cards = ""
     for l in lessons:
         untertitel = f'<p><strong>{esc(l["untertitel"])}</strong></p>' if l["untertitel"] else ""
-        cards += (f'<article class="card"><p class="meta">{lesson_meta(l)}</p>'
-                  f'<h2><a href="{l["url"]}">{esc(l["title"])}</a></h2>{untertitel}<p>{esc(l["kurz"])}</p></article>')
-    main = f"""<h1>EDV-Kurs</h1>
-<p class="lead">Lektionen zum Mitmachen am Computer – Schritt für Schritt, mit Übungsdateien.</p>
+        cards += (f'<article class="card lektion-karte"><p class="nummer" aria-hidden="true">{l["nummer"]}</p><div>'
+                  f'<p class="meta">{lesson_meta(l)}</p>'
+                  f'<h2><a href="{l["url"]}">{esc(l["title"])}</a></h2>{untertitel}<p>{esc(l["kurz"])}</p></div></article>')
+    main = f"""<header class="kopf"><h1>EDV-Kurs</h1>
+<p class="lead">Lektionen zum Mitmachen am Computer – Schritt für Schritt, mit Übungsdateien.</p></header>
 {cards}"""
-    write("edv-kurs/index.html", layout("EDV-Kurs", "kurs", main, "Lektionen zum Mitmachen am Computer."))
+    write("edv-kurs/index.html", layout("EDV-Kurs", "kurs", main, "Lektionen zum Mitmachen am Computer.", farbe=KURS_FARBE))
 
 
 # ---------------------------------------------------------------- start + 404
@@ -947,14 +966,16 @@ def build_start(articles, lessons):
     else:
         neu = newest_first(articles)[:5]
         ueberschrift = "Neueste Artikel"
-    items = "".join(f'<li><a href="{a["url"]}">{esc(a["title"])}</a>{teil_badge(a)} <span class="badge">{esc(a["thema"])}</span></li>'
-                    for a in neu)
-    main = f"""<h1>{BRAND}</h1>
+    items = "".join(f'<li{stil(a["thema"])}><a href="{a["url"]}">{esc(a["title"])}</a>{teil_badge(a)} '
+                    f'<span class="badge thema">{esc(a["thema"])}</span></li>' for a in neu)
+    main = f"""<section class="hero">
+<h1>{BRAND}</h1>
 <p class="lead">Unterlagen, Übungen und Anleitungen aus unserem Kurs – einfach erklärt.</p>
 {SUCHFORMULAR}
+</section>
 <div class="bereiche">
-  <a class="bereich" href="/edv-kurs/"><strong>EDV-Kurs</strong><span>Lektionen zum Mitmachen am Computer</span><small>{anzahl(len(lessons), "Lektion", "Lektionen")}</small></a>
-  <a class="bereich" href="/artikel/"><strong>Artikel</strong><span>Arbeitsblätter aus dem Kurs, einfach erklärt</span><small>{anzahl(len(articles), "Artikel", "Artikel")}</small></a>
+  <a class="bereich" href="/edv-kurs/" style="--t:{KURS_FARBE}"><span class="icon">{ICON_KURS}</span><strong>EDV-Kurs</strong><span>Lektionen zum Mitmachen am Computer</span><small>{anzahl(len(lessons), "Lektion", "Lektionen")}</small></a>
+  <a class="bereich" href="/artikel/" style="--t:{FARBEN[1]}"><span class="icon">{ICON_ARTIKEL}</span><strong>Artikel</strong><span>Arbeitsblätter aus dem Kurs, einfach erklärt</span><small>{anzahl(len(articles), "Artikel", "Artikel")}</small></a>
 </div>
 <h2>{esc(ueberschrift)}</h2>
 <ul class="liste">{items}</ul>
@@ -1024,6 +1045,7 @@ def main():
     global BETREIBER
     BETREIBER = load_betreiber()
     themen = load_themen()
+    THEMEN_FARBE.update({th: FARBEN[i % len(FARBEN)] for i, th in enumerate(themen)})
     vorleser = Vorleser()
     articles = load_articles(themen, vorleser)
     lessons = load_lessons()
