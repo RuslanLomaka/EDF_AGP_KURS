@@ -114,6 +114,8 @@ pages at phone width (390 px).
   `<p class="bild"><img src="/…/bilder/<file>.svg" alt="…" width="400" height="400"></p>`;
 - on phones they are full width in the text; from 50rem they float right beside the text (`.bild` in `style.css`);
 - the alt text says everything the picture says. The build refuses an `<img>` without `alt`, `width` and `height`.
+- the build adds `?v=<hash>` to every picture address, so a changed drawing shows at once (no old copy from a cache);
+  boxes that must never sit under a floating picture use `display: flow-root` or `clear: both` in `style.css`.
 
 **Design.** One stylesheet, `site/assets/style.css`, with light and dark tokens. It uses no web fonts and no
 framework, so keep it light for the Pi and for old phones.

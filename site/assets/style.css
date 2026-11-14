@@ -568,7 +568,7 @@ h2 .nr { margin-right: 0.35rem; }
 .schnellnav a.fertig .titel::after { content: " ✓"; color: var(--ok); }
 .schnellnav-titel { margin: 0 0 0.4rem; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); }
 /* Stille Post with several AIs: three big steps, the 2nd and 3rd appear after copying */
-.stillepost { margin: 1.3rem 0; padding: 1rem 1.1rem; border: 2px solid var(--ton-rand); border-radius: var(--r);
+.stillepost { clear: both; margin: 1.3rem 0; padding: 1rem 1.1rem; border: 2px solid var(--ton-rand); border-radius: var(--r);
   background: linear-gradient(135deg, var(--ton-soft), var(--card) 75%); box-shadow: var(--shadow); }
 .sp-schritte { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.9rem; }
 .sp-schritt { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: 0.8rem; align-items: start; }

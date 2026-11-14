@@ -122,7 +122,18 @@ def pandoc(path, body, to):
                         "--fail-if-warnings"], input=body, capture_output=True, text=True)
     if r.returncode != 0:
         fail(path, "pandoc: " + (r.stderr.strip() or f"exit code {r.returncode}"))
-    return r.stdout
+    return bild_version(r.stdout) if to == "html5" else r.stdout
+
+
+def bild_version(html_text):
+    """Pictures get ?v=<hash of the file>: after a change, browsers and Cloudflare load the new drawing at once
+    instead of showing the old one from their cache."""
+    def ersetze(m):
+        datei = CONTENT / m.group(1).lstrip("/")
+        if not datei.is_file():
+            return m.group(0)  # the link check reports it
+        return f'src="{m.group(1)}?v={hashlib.sha256(datei.read_bytes()).hexdigest()[:8]}"'
+    return re.sub(r'src="(/(?:artikel|edv-kurs)/bilder/[^"?#]+)"', ersetze, html_text)
 
 
 def split_notizen(path, body):
