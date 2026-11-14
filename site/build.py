@@ -181,44 +181,69 @@ def uebungen(path, body):
 
 
 def stillepost_html(path, d):
-    """```stillepost: a one-click start for the translation telephone game. "vorlage" is the prompt for the game
-    leader (Gemini) with the placeholders {1}, {2}, {3}; "gruppen" are three language families. stillepost.js picks
-    one language from each family in a random order, fills them in and copies the prompt; then the link "start"
-    appears. Without JavaScript the prompt is shown with the first language of each family."""
+    """```stillepost: a guided start for the translation telephone game.
+    "saetze": suggested German sentences; learners pick one or write their own ("mindestens" characters, default 50).
+    "vorlage": the prompt for the game leader with {satz} and the languages {1}, {2}, {3};
+    "gruppen": three language families; "start": the link to the game leader (Gemini).
+    stillepost.js picks one language per family in a random order, fills in sentence and languages, and copies the
+    prompt only when the sentence is long enough; then the link appears. Without JavaScript the prompt is shown with the
+    first sentence and the first language of each family."""
     if not isinstance(d, dict) or not isinstance(d.get("vorlage"), str) \
-            or not all(f"{{{i}}}" in d["vorlage"] for i in (1, 2, 3)):
-        fail(path, "stillepost: needs 'vorlage' (text with the placeholders {1}, {2} and {3})")
+            or not all(f"{{{x}}}" in d["vorlage"] for x in ("1", "2", "3", "satz")):
+        fail(path, "stillepost: needs 'vorlage' (text with the placeholders {satz}, {1}, {2} and {3})")
     gruppen = d.get("gruppen")
     if not isinstance(gruppen, dict) or len(gruppen) != 3 or not all(
             isinstance(v, list) and len(v) >= 2 and all(isinstance(x, str) and x.strip() for x in v) for v in gruppen.values()):
         fail(path, "stillepost: 'gruppen' needs exactly 3 language families, each a list of at least 2 languages")
+    mindestens = d.get("mindestens", 50)
+    if not isinstance(mindestens, int) or not 10 <= mindestens <= 200:
+        fail(path, "stillepost: 'mindestens' must be a whole number from 10 to 200")
+    saetze = d.get("saetze")
+    if not isinstance(saetze, list) or len(saetze) < 3 or not all(isinstance(x, str) for x in saetze):
+        fail(path, "stillepost: 'saetze' needs a list of at least 3 sentences")
+    for x in saetze:
+        if not mindestens <= len(x.strip()) <= 300:
+            fail(path, f"stillepost: every sentence needs {mindestens} to 300 characters: {x!r}")
     start = d.get("start", "")
     if not isinstance(start, str) or not start.startswith("https://"):
         fail(path, "stillepost: 'start' must be an https:// link (the AI that leads the game)")
-    name = d.get("start_name", "Gemini")
+    name = esc(d.get("start_name", "Gemini"))
     standard = [v[0] for v in gruppen.values()]
-    text = d["vorlage"].strip()
+    text = d["vorlage"].strip().replace("{satz}", saetze[0].strip())
     for i, sprache in enumerate(standard, 1):
         text = text.replace(f"{{{i}}}", sprache)
     daten = esc(json.dumps(list(gruppen.values()), ensure_ascii=False))
-    return (f'<div class="stillepost" data-vorlage="{esc(d["vorlage"].strip())}" data-gruppen="{daten}">'
+    satzdaten = esc(json.dumps([x.strip() for x in saetze], ensure_ascii=False))
+    return (f'<div class="stillepost" data-vorlage="{esc(d["vorlage"].strip())}" data-gruppen="{daten}" '
+            f'data-saetze="{satzdaten}" data-mindestens="{mindestens}">'
             '<ol class="sp-schritte">'
-            '<li class="sp-schritt sp-eins"><span class="sp-nr" aria-hidden="true">1</span><div>'
+            '<li class="sp-schritt sp-satz-schritt" hidden><span class="sp-nr" aria-hidden="true"></span><div>'
+            '<p class="sp-titel">Satz wählen</p>'
+            '<p class="sp-klein">Tippen Sie auf einen Vorschlag – oder schreiben Sie unten Ihren eigenen Satz.</p>'
+            '<div class="sp-vorschlaege"></div>'
+            '<button type="button" class="sp-andere">🎲 Andere Vorschläge</button>'
+            '<label class="sp-label" for="sp-satz">Ihr Satz:</label>'
+            f'<textarea id="sp-satz" class="sp-satz" rows="3" maxlength="300" placeholder="Mindestens {mindestens} Zeichen. '
+            'Ohne Namen, Adressen oder Telefonnummern." aria-describedby="sp-zaehler"></textarea>'
+            '<div class="balken sp-balken" aria-hidden="true"><span></span></div>'
+            '<p class="sp-zaehler" id="sp-zaehler" aria-live="polite"></p></div></li>'
+            '<li class="sp-schritt sp-eins"><span class="sp-nr" aria-hidden="true"></span><div>'
             '<p class="sp-titel">Prompt kopieren</p>'
+            '<p class="sp-sprachen">Die Reise: <strong class="sp-liste">Deutsch → '
+            f'{" → ".join(esc(x) for x in standard)} → Deutsch</strong> '
+            '<button type="button" class="sp-wuerfeln" hidden>🎲 Andere Sprachen</button></p>'
             '<button type="button" class="btn sp-kopieren" hidden>Prompt kopieren – hier klicken</button>'
             '<p class="sp-ohne-js">Öffnen Sie unten „Den ganzen Prompt ansehen“, markieren Sie alles und kopieren Sie es '
             '(Strg&nbsp;+&nbsp;C).</p></div></li>'
-            f'<li class="sp-schritt sp-zwei"><span class="sp-nr" aria-hidden="true">2</span><div>'
-            f'<p class="sp-titel">{esc(name)} öffnen</p>'
-            f'<a class="btn sp-start" href="{esc(start)}" target="_blank" rel="noopener">{esc(name)} öffnen ↗</a></div></li>'
-            '<li class="sp-schritt sp-drei"><span class="sp-nr" aria-hidden="true">3</span><div>'
+            f'<li class="sp-schritt sp-zwei"><span class="sp-nr" aria-hidden="true"></span><div>'
+            f'<p class="sp-titel">{name} öffnen</p>'
+            f'<a class="btn sp-start" href="{esc(start)}" target="_blank" rel="noopener">{name} öffnen ↗</a></div></li>'
+            '<li class="sp-schritt sp-drei"><span class="sp-nr" aria-hidden="true"></span><div>'
             '<p class="sp-titel">Einfügen – und los!</p>'
-            f'<p>Klicken Sie bei {esc(name)} ins Eingabefeld. Drücken Sie <strong>Strg&nbsp;+&nbsp;V</strong> '
+            f'<p>Klicken Sie bei {name} ins Eingabefeld. Drücken Sie <strong>Strg&nbsp;+&nbsp;V</strong> '
             '(am Handy: lange tippen, dann „Einfügen“) und dann <strong>Enter</strong>. '
-            f'Ab jetzt sagt {esc(name)} Ihnen jeden Schritt.</p></div></li>'
+            f'{name} schickt Sie sofort zur ersten KI und sagt Ihnen jeden Schritt.</p></div></li>'
             '</ol>'
-            f'<p class="sp-sprachen">Ihre drei Sprachen: <strong class="sp-liste">Deutsch → {" → ".join(esc(x) for x in standard)} '
-            '→ Deutsch</strong> <button type="button" class="sp-wuerfeln" hidden>🎲 Andere Sprachen</button></p>'
             f'<details class="sp-ganz"><summary>Den ganzen Prompt ansehen</summary><pre class="sp-text">{esc(text)}</pre></details>'
             '</div>')
 

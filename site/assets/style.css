@@ -570,7 +570,10 @@ h2 .nr { margin-right: 0.35rem; }
 /* Stille Post with several AIs: three big steps, the 2nd and 3rd appear after copying */
 .stillepost { clear: both; margin: 1.3rem 0; padding: 1rem 1.1rem; border: 2px solid var(--ton-rand); border-radius: var(--r);
   background: linear-gradient(135deg, var(--ton-soft), var(--card) 75%); box-shadow: var(--shadow); }
-.sp-schritte { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.9rem; }
+.sp-schritte { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.9rem; counter-reset: sp; }
+.sp-schritt { counter-increment: sp; }
+.sp-schritt[hidden] { display: none; }
+.sp-nr::before { content: counter(sp); }
 .sp-schritt { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: 0.8rem; align-items: start; }
 .sp-nr { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 50%; background: var(--brand);
   color: #fff; font-size: 1.2rem; font-weight: 800; }
@@ -578,6 +581,26 @@ h2 .nr { margin-right: 0.35rem; }
 .sp-schritt p:last-child { margin-bottom: 0; }
 .sp-kopieren, .sp-start { font-size: 1.1rem; min-height: 3.2rem; padding: 0.7rem 1.3rem; margin: 0; }
 .stillepost.sp-aktiv .sp-ohne-js { display: none; }
+.sp-klein { margin: 0 0 0.5rem; font-size: 0.92rem; color: var(--muted); }
+.sp-vorschlaege { display: grid; gap: 0.45rem; }
+.sp-vorschlag { font: inherit; text-align: left; min-height: 2.75rem; padding: 0.55rem 0.8rem; border-radius: 12px; cursor: pointer;
+  color: var(--fg); background: var(--card); border: 1.5px solid var(--line); box-shadow: var(--shadow); }
+.sp-vorschlag:hover { border-color: var(--ton-rand); background: var(--ton-soft); }
+.sp-vorschlag[aria-pressed="true"] { border: 2px solid var(--ton); background: var(--ton-soft); font-weight: 700; }
+.sp-andere { font: inherit; font-weight: 700; min-height: 2.75rem; margin: 0.5rem 0 0.8rem; padding: 0.3rem 0.9rem; border-radius: 999px;
+  border: 1.5px solid var(--ton-rand); background: var(--card); color: var(--ton); cursor: pointer; }
+.sp-label { display: block; font-weight: 700; margin: 0 0 0.3rem; }
+.sp-satz { display: block; width: 100%; box-sizing: border-box; min-height: 5.5rem; padding: 0.6rem 0.75rem; font: inherit; color: var(--fg);
+  background: var(--card); border: 2px solid var(--control); border-radius: 12px; resize: vertical; }
+.sp-satz:focus { outline: 3px solid var(--accent); outline-offset: 1px; }
+.sp-satz-ok .sp-satz { border-color: var(--ok); }
+.sp-balken { margin: 0.5rem 0 0.3rem; }
+.sp-balken span { background: linear-gradient(90deg, #f59e0b, #facc15); }
+.sp-satz-ok .sp-balken span { background: linear-gradient(90deg, #16a34a, #22c55e); }
+.sp-zaehler { margin: 0; font-size: 0.92rem; font-weight: 700; color: var(--muted); }
+.sp-satz-ok .sp-zaehler { color: var(--ok); }
+.sp-kopieren:disabled { background: var(--line); color: var(--muted); box-shadow: none; cursor: not-allowed; transform: none; }
+.sp-eins .sp-sprachen { margin: 0 0 0.6rem; padding: 0; border: 0; }
 .stillepost.sp-aktiv:not(.sp-kopiert) .sp-zwei, .stillepost.sp-aktiv:not(.sp-kopiert) .sp-drei { display: none; }
 .stillepost.sp-kopiert .sp-zwei, .stillepost.sp-kopiert .sp-drei { animation: pop 0.35s ease; }
 .stillepost.sp-kopiert .sp-kopieren { background: var(--ok); box-shadow: none; }

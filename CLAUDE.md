@@ -241,11 +241,16 @@ Create `site/content/edv-kurs/<slug>.md` like `bewerbung-auf-knopfdruck.md`.
   what never), a minimum goal for everyone, and "Lotsen" (fast learners help others first).
 - **Tasks** (lessons 4, 5 and 6): heading, `<p class="zeit">15 Minuten</p>`, instructions, a `::: prompt` box (example
   prompt with a copy button), "Das lernen Sie", and a `::: profi` box (optional challenge in small print).
-- **Stille Post** (lesson 4, ` ```stillepost ` block, YAML): `vorlage` is the prompt for the game leader with the
-  placeholders `{1}`, `{2}`, `{3}`; `gruppen` are three language families; `start` is the link to the game leader
-  (Gemini). `stillepost.js` picks one language per family in a random order, fills them in and copies the prompt with
-  one click; then "Gemini öffnen" and "Strg + V, Enter" appear. Gemini leads the four rounds (ChatGPT, Copilot,
-  Le Chat, Duck.ai) with a progress line and explains the result at the end.
+- **Stille Post** (lesson 4, ` ```stillepost ` block, YAML): `saetze` are suggested sentences (30, each at least
+  `mindestens` characters, default 50); `vorlage` is the prompt for the game leader with `{satz}`, `{1}`, `{2}`, `{3}`;
+  `gruppen` are three language families; `start` is the link to the game leader (Gemini). On the page:
+  1. pick one of three suggestions (🎲 for others) or type an own sentence; a bar fills up to the minimum, and
+     addresses, e-mail addresses or phone numbers block the button;
+  2. "Prompt kopieren" stays locked until then; it copies the prompt with the sentence and three random languages
+     (one per family, random order, 🎲 for others);
+  3. "Gemini öffnen"; 4. Strg + V, Enter.
+  Gemini starts right away with round 1 (ChatGPT, Copilot, Le Chat, Duck.ai), shows "Schritt n von 5" and explains
+  the result at the end. Any change after copying asks for a new copy.
 - **Quiz (optional):** `site/content/edv-kurs/<slug>.quiz.json`, same format as for articles. With `"mode": "test"`,
   learners answer everything first. "Auswerten" then shows the score, a title, strengths and weak areas, and every
   mistake explained. Each question names an `"area"`, and `"areas"` maps each area to a tip. A test keeps its

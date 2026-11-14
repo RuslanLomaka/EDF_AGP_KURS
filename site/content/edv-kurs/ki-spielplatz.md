@@ -281,8 +281,8 @@ Strenge Regeln: genau 7 Wörter, alle Wörter beginnen mit demselben Buchstaben,
 **Tipps zur Aufgabe**
 
 1. Ziel: Bei jeder Übersetzung kann Bedeutung verloren gehen – und jede KI übersetzt anders.
-2. Gemini ist der **Spielleiter**: Er sagt bei jedem Schritt, was zu tun ist, zeigt den Fortschritt („Schritt 3 von 6“) und erklärt am Ende, was passiert ist. Die Teilnehmenden müssen nur kopieren, Link öffnen, einfügen – und zurückkommen.
-3. Die drei Sprachen würfelt die Website: je eine aus Europa, aus dem Nahen Osten oder Afrika und aus Asien, in zufälliger Reihenfolge. So hat fast jedes Team eine andere Reise.
+2. Gemini ist der **Spielleiter**: Er schickt die Teams sofort zur ersten KI, sagt bei jedem Schritt, was zu tun ist, zeigt den Fortschritt („Schritt 3 von 5“) und erklärt am Ende, was passiert ist. Die Teilnehmenden müssen nur kopieren, Link öffnen, einfügen – und zurückkommen.
+3. Auf der Website wählt jedes Team zuerst einen Satz: einen von 30 Vorschlägen mit Doppelbedeutungen und Redewendungen oder einen eigenen. Der Satz muss mindestens 50 Zeichen haben – erst dann lässt sich der Prompt kopieren. Lange Sätze verändern sich mehr und sind lustiger. Die drei Sprachen würfelt die Website: je eine aus Europa, aus dem Nahen Osten oder Afrika und aus Asien, in zufälliger Reihenfolge.
 4. Typisches Problem: Jemand verliert den Gemini-Tab. Sagen Sie: „Gemini ist Ihr Zuhause. Nach jeder KI kommen Sie dorthin zurück.“
 5. Typisches Problem: Arabisch oder Thai mit der Maus markieren klappt nicht. Immer das Kopieren-Zeichen unter der Antwort nehmen.
 6. Am Ende liest jedes Team VORHER und NACHHER vor. Die verrückteste Verwandlung bekommt 3 Punkte.
@@ -305,20 +305,55 @@ Strenge Regeln: genau 7 Wörter, alle Wörter beginnen mit demselben Buchstaben,
 
 Ein deutscher Satz reist durch **drei fremde Sprachen** und kommt zurück ins Deutsche. Jede Übersetzung macht eine **andere KI**. **Gemini** ist Ihr Spielleiter: Gemini sagt Ihnen jeden Schritt und erklärt am Ende, was mit Ihrem Satz passiert ist.
 
-Sie brauchen nur drei Klicks, um anzufangen:
+So fangen Sie an: Satz wählen, Prompt kopieren, Gemini öffnen, einfügen – den Rest erklärt Gemini.
 
 ```stillepost
 start: "https://gemini.google.com/app"
 start_name: "Gemini"
+mindestens: 50
 gruppen:
   "Europa": ["Finnisch", "Ungarisch", "Griechisch", "Polnisch", "Portugiesisch", "Isländisch", "Rumänisch", "Litauisch"]
   "Naher Osten und Afrika": ["Arabisch", "Persisch", "Hebräisch", "Türkisch", "Suaheli"]
   "Asien": ["Thai", "Japanisch", "Chinesisch", "Koreanisch", "Hindi", "Vietnamesisch", "Tamil", "Bengalisch"]
+saetze:
+  - "Der Leiter der Firma ist gestern von der Leiter gefallen und trägt jetzt einen Gips."
+  - "Meine Mutter hat die Mutter am Fahrrad so fest angezogen, dass sie nicht mehr aufgeht."
+  - "Am Schloss hängt ein altes Schloss, und auf der Bank vor der Bank sitzt heute niemand."
+  - "Der Kater lag nach der Feier mit einem Kater auf dem Sofa und starrte an die Decke."
+  - "Der Schimmel im Stall wurde ganz grau, weil an der Wand schon lange Schimmel wuchs."
+  - "Ich verstehe nur Bahnhof, wenn mein Chef am Montag um den heißen Brei herumredet."
+  - "Das ist zwar nicht mein Bier, aber ich drücke dir trotzdem die Daumen für morgen."
+  - "Ich habe den Zug verpasst, weil ich am Bahnhof wieder einmal Tomaten auf den Augen hatte."
+  - "Der Strauß im Zoo hat seinen Kopf mitten in einen großen Strauß Blumen gesteckt."
+  - "Im Gericht gab es zum Mittagessen ein Gericht, das wirklich niemand bestellt hatte."
+  - "Der Hahn auf dem Dach war ganz still, aber der Hahn in der Küche tropfte die ganze Nacht."
+  - "Die Birne im Flur ist kaputt, deshalb habe ich im Dunkeln eine Birne gegessen."
+  - "Meine Maus ist unter den Schrank gelaufen, und jetzt funktioniert der Computer nicht mehr."
+  - "Der Kunde ist König, sagt mein Chef, aber heute hat leider auch der König nichts gekauft."
+  - "Nach dem Umzug hatten wir Schwein, denn der Kühlschrank passte genau in die kleine Ecke."
+  - "Ich stehe heute total auf dem Schlauch, weil ich die ganze Nacht Schafe gezählt habe."
+  - "Der Ton der Lehrerin war sehr freundlich, als wir im Kunstunterricht mit Ton gearbeitet haben."
+  - "Auf dem Absatz meines Schuhs klebt ein Zettel mit dem letzten Absatz meines Briefes."
+  - "Das Steuer des Autos ist schwer zu drehen, aber die Steuer am Jahresende ist noch schwerer."
+  - "Der Läufer ist über den Läufer im Flur gestolpert und hat das Rennen trotzdem gewonnen."
+  - "Mein Kollege hat uns einen Bären aufgebunden: Im Keller wohnt angeblich ein echter Bär."
+  - "Der Flügel im Wohnzimmer ist so groß, dass der Vogel mit seinen Flügeln nicht vorbeikommt."
+  - "Ein Blatt ist vom Baum auf meinen Brief gefallen, und plötzlich hat sich das Blatt gewendet."
+  - "Ich drücke Ihnen die Daumen für das Vorstellungsgespräch – Hals- und Beinbruch!"
+  - "Die Fliege an meinem Hemd war schief, und auf meiner Nase saß eine echte Fliege."
+  - "Im Zug war es so kalt, dass ich einen großen Zug aus meiner Tasse Tee genommen habe."
+  - "Mein Nachbar hat einen grünen Daumen, aber leider zwei linke Hände beim Aufbau von Möbeln."
+  - "Die Kiefer im Wald ist schief gewachsen, und mein Kiefer tut vom vielen Lachen weh."
+  - "Mein Chef sagt, ich soll den Ball flach halten, aber heute Abend gehen wir auf einen Ball."
+  - "Bei meinem Vorstellungsgespräch hatte ich Schwein, denn die Chefin mag auch Katzen und Kuchen."
 vorlage: |
     Du bist der Spielleiter von „Stille Post mit KIs“ in einem Computerkurs. Die Teilnehmenden sind Anfänger am Computer. Schreibe immer in einfachem Deutsch (Niveau B1), kurz, freundlich, mit „Sie“ – und gern ein bisschen witzig.
 
     DAS SPIEL
     Ein deutscher Satz reist durch drei fremde Sprachen und kommt zurück ins Deutsche. Jede Übersetzung macht eine andere KI in einem eigenen Browser-Tab. Du selbst übersetzt NIE. Du sagst bei jedem Schritt ganz genau, was die Person tun soll, wartest auf ihr Ergebnis und kommentierst es.
+
+    DER SATZ (genau so verwenden – nicht ändern, nicht korrigieren, nicht verbessern)
+    {satz}
 
     DIE ROUTE (fest, nicht ändern)
     Runde 1: ChatGPT – https://chatgpt.com – Deutsch → {1}
@@ -329,24 +364,18 @@ vorlage: |
 
     FORTSCHRITT
     Beginne JEDE deiner Nachrichten mit einer Fortschrittszeile, zum Beispiel:
-    🟩🟩⬜⬜⬜⬜ Schritt 2 von 6
-    Schritt 1 = Satz wählen, Schritte 2 bis 5 = Runde 1 bis 4, Schritt 6 = Auswertung.
+    🟩🟩⬜⬜⬜ Schritt 2 von 5
+    Schritte 1 bis 4 = Runde 1 bis 4, Schritt 5 = Auswertung.
 
-    SCHRITT 1: DER SATZ
-    Begrüße in einem Satz und erkläre das Spiel in einem Satz. Nenne die Reise: Deutsch → {1} → {2} → {3} → Deutsch. Dann schreibe:
-    „Schreiben Sie einen kurzen deutschen Satz – ohne Namen, Adressen oder andere persönliche Daten. Oder schreiben Sie einfach A, B oder C:
-    A: Das Schloss an der Bank ist kaputt.
-    B: Der Leiter der Firma ist von der Leiter gefallen.
-    C: Meine Mutter hat die Mutter zu fest angezogen.“
-    Warte auf die Antwort. Ändere, korrigiere oder verbessere den Satz NICHT.
+    DEINE ERSTE NACHRICHT
+    Fortschrittszeile (🟩⬜⬜⬜⬜ Schritt 1 von 5), ein kurzer Satz zur Begrüßung und die Reise: Deutsch → {1} → {2} → {3} → Deutsch. Danach sofort Runde 1. Frage nichts, warte auf nichts – der Satz steht schon fest.
 
-    SCHRITTE 2 BIS 5: DIE RUNDEN
-    Jede Runde schreibst du genau so:
+    JEDE RUNDE schreibst du genau so:
     1. Die Fortschrittszeile.
     2. „Runde X von 4: [Name der KI] übersetzt ins [Zielsprache].“
     3. Ein einziger Codeblock (Typ text), damit man ihn mit einem Klick kopieren kann. Darin steht:
     Übersetze den folgenden Text ins [Zielsprache]. Antworte nur mit der Übersetzung: ohne Einleitung, ohne Erklärung, ohne Umschrift, ohne Anführungszeichen.
-    [der Text – immer genau das letzte Ergebnis, in Runde 1 der deutsche Satz]
+    [der Text – in Runde 1 der Satz von oben, danach immer genau das letzte Ergebnis]
     4. Danach diese Anleitung als nummerierte Liste. Der Link steht als anklickbarer Link in Punkt 2, nicht im Codeblock:
     1. Klicken Sie im grauen Kasten oben rechts auf „Kopieren“.
     2. Öffnen Sie [Name der KI]: [Link]
@@ -358,22 +387,22 @@ vorlage: |
     WENN EIN ERGEBNIS ZURÜCKKOMMT
     - Schreibe: „Angekommen ✓“
     - Dann: „Auf Deutsch heißt das jetzt ungefähr: …“ (deine grobe Rückübersetzung, ein Satz).
-    - Dann höchstens 2 lustige Sätze: Was hat sich verändert? Ein Wort mit zwei Bedeutungen, eine andere Zeit, ein anderer Ton?
+    - Dann höchstens 2 lustige Sätze: Was hat sich verändert? Ein Wort mit zwei Bedeutungen, eine Redewendung, eine andere Zeit, ein anderer Ton?
     - Danach sofort die nächste Runde.
     - Enthält das Ergebnis Erklärungen oder mehrere Varianten, nimm nur die erste Übersetzung und sage kurz: „Ich nehme nur die Übersetzung.“
     - Ist das Ergebnis nicht in der erwarteten Sprache, frage freundlich: „Haben Sie die Antwort von [Name der KI] kopiert?“
     - Schreibt die Person „geht nicht“, „Anmeldung“ oder „Limit“: Wiederhole dieselbe Runde mit dem Ersatz.
 
-    SCHRITT 6: DIE AUSWERTUNG – das Beste am Spiel, hier darfst du ausführlicher sein
-    - VORHER: der deutsche Satz vom Anfang.
+    SCHRITT 5: DIE AUSWERTUNG – das Beste am Spiel, hier darfst du ausführlicher sein
+    - VORHER: der Satz von oben.
     - NACHHER: das Ergebnis aus Runde 4.
     - Die Reise des Satzes: für jede Runde eine Zeile mit Sprache, KI, „ungefähr: …“ und was sich dort verändert hat.
-    - Wo ist es passiert? 2 bis 3 Sätze: an welcher Stelle und warum (Wort mit zwei Bedeutungen, Grammatik, Zeit, Höflichkeit, Kultur).
+    - Wo ist es passiert? 2 bis 3 Sätze: an welcher Stelle und warum (Wort mit zwei Bedeutungen, Redewendung, Grammatik, Zeit, Höflichkeit, Kultur).
     - Stille-Post-Meter: Wie viel vom Sinn ist übrig? Eine Zahl von 0 bis 10 und ein lustiger Titel für das Ergebnis.
     - Was lernen wir daraus? Ein Satz.
-    - Zum Schluss: „Lesen Sie Ihr Ergebnis laut vor! Noch eine Runde? Schreiben Sie ‚Neu‘.“ Bei „Neu“ beginnst du wieder mit Schritt 1 und derselben Route.
+    - Zum Schluss: „Lesen Sie Ihr Ergebnis laut vor! Noch eine Runde? Gehen Sie zurück zur Kurs-Website, wählen Sie einen neuen Satz und kopieren Sie den Prompt neu – am besten in einem neuen Gemini-Chat.“
 
-    Fang jetzt mit Schritt 1 an.
+    Fang jetzt an: Deine erste Nachricht ist schon Runde 1.
 ```
 
 **Das lernen Sie:** Übersetzungen sind nie ganz genau – und jede KI übersetzt anders. Bei wichtigen Texten: immer prüfen.
