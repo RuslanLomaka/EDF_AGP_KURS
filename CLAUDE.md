@@ -54,8 +54,8 @@ Top navigation, fixed at three items: **Start · EDV-Kurs · Artikel**.
   - A summary (tasks done, next open section) is kept as `lektion-stand:<slug>` for the start page and lesson list.
   - The bar at the top shows the section on screen and the whole lesson. Each number in the quick navigation gets a
     ring that turns green with ✓ when its section is done.
-- `/artikel/`: search, which also lists matching lessons above the articles (title, keywords, summary, full text; umlaut-insensitive; full texts load from
-  `suchindex.json` on the first search), topic filter, articles grouped by the day they were added (latest two open;
+- `/artikel/`: search (title, keywords, summary, full text; umlaut-insensitive; full texts load from
+  `suchindex.json` on the first search; matching lessons are listed above the articles), topic filter, articles grouped by the day they were added (latest two open;
   no weekday, no "Kurstag"), parts of a series kept together with a "Teil n von m" badge.
 - `/artikel/<slug>/`: table of contents, series box (if any), quiz, then sources, keywords, "Mehr zum Thema"
   (nearest dates), previous/next in class order or, in a series, within the series.
@@ -250,8 +250,7 @@ The owner's Raspberry Pi serves the site behind a Cloudflare Tunnel (route `edv.
 The notice (dialog + `/hinweis/`, text in `HINWEIS_PUNKTE` in `build.py`) promises:
 - no accounts, forms, cookies, tracking, analytics, e-mails or external scripts;
 - inputs stay in the browser: lesson progress (ticks, solved exercises, sections marked done, and its summary for the
-  start page) and the date the
-  notice was last seen, in `localStorage`;
+  start page) and the date the notice was last seen, in `localStorage`;
 - no access logs on the server (`access_log off` in `deploy/nginx.conf`);
 - only public information, no legal advice, no personal or confidential data about real people or companies.
 
