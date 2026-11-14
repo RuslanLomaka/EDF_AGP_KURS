@@ -233,14 +233,14 @@ h3 { font-size: 1.1rem; letter-spacing: -0.01em; margin: 1.7rem 0 0.5rem; }
 .toc ul { margin: 0.4rem 0 0.2rem; padding-left: 1.2rem; }
 
 /* Boxes: soft colour, rounded, small icon before the first line */
-.kurz, .ergaenzung, .info, .achtung, .notiz {
+.kurz, .ergaenzung, .info, .achtung, .notiz, .fall {
   position: relative;
   border: 1px solid;
   border-radius: var(--r);
   padding: 0.95rem 1.1rem;
   margin: 1.3rem 0;
 }
-.kurz::after, .ergaenzung::after, .info::after, .achtung::after, .notiz::after {
+.kurz::after, .ergaenzung::after, .info::after, .achtung::after, .notiz::after, .fall::after {
   content: "";
   position: absolute;
   left: 1.05rem;
@@ -251,11 +251,16 @@ h3 { font-size: 1.1rem; letter-spacing: -0.01em; margin: 1.7rem 0 0.5rem; }
   mask: var(--icon) center / contain no-repeat;
   background: var(--box-farbe);
 }
-.kurz > :first-child, .info > :first-child, .achtung > :first-child { margin-top: 0; padding-left: 1.9rem; min-height: 1.5rem; }
-.kurz > :last-child, .ergaenzung > :last-child, .info > :last-child, .achtung > :last-child, .notiz > :last-child { margin-bottom: 0; }
+.kurz > :first-child, .info > :first-child, .achtung > :first-child, .fall > :first-child { margin-top: 0; padding-left: 1.9rem; min-height: 1.5rem; }
+.kurz > :last-child, .fall > :last-child, .ergaenzung > :last-child, .info > :last-child, .achtung > :last-child, .notiz > :last-child { margin-bottom: 0; }
 .kurz ul, .ergaenzung ul, .info ul, .info ol, .notiz ol, .notiz ul { padding-left: 1.3rem; }
 .kurz { --icon: url(icon-kurz.svg); --box-farbe: var(--ton); background: linear-gradient(135deg, var(--ton-soft), var(--card) 130%); border-color: var(--ton-rand); box-shadow: var(--shadow); }
 .info { --icon: url(icon-info.svg); --box-farbe: var(--info-line); background: var(--info-bg); border-color: color-mix(in srgb, var(--info-line) 25%, var(--line)); }
+/* a running case ("Der Fall Frau K."): one invented person through several pages */
+.fall { --icon: url(icon-fall.svg); --box-farbe: #0f766e; background: color-mix(in srgb, #0f766e 7%, var(--card));
+  border-color: color-mix(in srgb, #0f766e 35%, var(--line)); }
+.fall details { margin: 0.6rem 0 0.4rem; }
+.fall .weiter { font-weight: 750; }
 .achtung { --icon: url(icon-achtung.svg); --box-farbe: var(--warn-line); background: var(--warn-bg); border-color: color-mix(in srgb, var(--warn-line) 30%, var(--line)); }
 .ergaenzung { --icon: url(icon-plus.svg); --box-farbe: var(--erg-line); background: var(--erg-bg); border-color: color-mix(in srgb, var(--erg-line) 30%, var(--line)); }
 .notiz { --icon: url(icon-notiz.svg); --box-farbe: var(--notiz-line); background: var(--notiz-bg); border-color: color-mix(in srgb, var(--notiz-line) 35%, var(--line)); }
@@ -398,7 +403,7 @@ code { font-size: 0.88em; background: var(--accent-soft); padding: 0.1rem 0.35re
   .bild { float: right; width: 21rem; margin: 0.3rem 0 1rem 1.4rem; }
   main h2 { clear: both; }
   .bild:has(+ table) { float: none; margin: 1.3rem auto; }
-  .kurz, .ergaenzung, .info, .achtung, .notiz, .prompt, .vorlage, .profi, .uebung, .schritte ol, .prinzip, main details { display: flow-root; }
+  .kurz, .ergaenzung, .info, .achtung, .notiz, .fall, .prompt, .vorlage, .profi, .uebung, .schritte ol, .prinzip, main details { display: flow-root; }
 }
 
 /* Footer: dark band across the page */

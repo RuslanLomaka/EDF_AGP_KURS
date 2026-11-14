@@ -154,6 +154,20 @@ In der Praxis enden viele Verfahren mit einem **Vergleich**: Das Arbeitsverhält
 - **Agentur für Arbeit:** Melden Sie sich spätestens **3 Tage** nach der Kündigung **arbeitsuchend** (wenn der Job in weniger als 3 Monaten endet). Wer einen **Aufhebungsvertrag** unterschreibt oder selbst kündigt, bekommt oft für eine Zeit kein Arbeitslosengeld (**Sperrzeit**).
 :::
 
+<p id="fall-frau-k"></p>
+
+::: fall
+**Der Fall Frau K. – Teil 2 von 4** (erfunden)
+
+[Teil 1](/artikel/abmahnung/#fall-frau-k): Frau K., Verkäuferin, seit 4 Jahren in einem Supermarkt mit 25 Beschäftigten, hat eine Abmahnung wegen Verspätungen bekommen. Im Juni kommt sie wieder zu spät. Am Abend schreibt ihr der Filialleiter per WhatsApp: „Sie sind gekündigt.“
+
+<details><summary>Ist das eine gültige Kündigung? Gilt für Frau K. das Kündigungsschutzgesetz?</summary>
+Eine Kündigung per WhatsApp ist **unwirksam** – sie muss auf Papier stehen und mit der Hand unterschrieben sein. Das Kündigungsschutzgesetz **gilt**: Frau K. ist länger als 6 Monate in der Firma, und die Firma hat mehr als 10 Beschäftigte. Kommt eine Kündigung auf Papier, hat sie **3 Wochen** Zeit für eine Klage. Rat bekommt sie zum Beispiel bei der Gewerkschaft oder bei einer Anwältin für Arbeitsrecht.
+</details>
+
+<a class="weiter" href="/artikel/kuendigung-einfach-erklaert/#fall-frau-k">Weiter mit Teil 3: die Kündigung im Briefkasten →</a>
+:::
+
 ```uebung
 typ: zuordnen
 frage: "Welche Säule ist das? Ordnen Sie die Gründe zu."

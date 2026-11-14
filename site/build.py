@@ -37,7 +37,7 @@ NAV = [("start", "/", "Start"), ("kurs", "/edv-kurs/", "EDV-Kurs"), ("artikel", 
 MONATE = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober",
           "November", "Dezember"]
 TYP = {".xlsx": "Excel", ".docx": "Word", ".pdf": "PDF", ".zip": "ZIP"}
-BOXES = {"kurz", "ergaenzung", "info", "achtung", "schritte", "prinzip", "zeichen", "notiz", "prompt", "vorlage", "profi"}
+BOXES = {"kurz", "ergaenzung", "info", "achtung", "schritte", "prinzip", "zeichen", "notiz", "prompt", "vorlage", "profi", "fall"}
 # every topic gets a colour (in themen.yaml order); lessons use KURS_FARBE. All readable as text on white.
 FARBEN = ["#047857", "#4338ca", "#c2410c", "#be185d", "#0369a1", "#7c3aed", "#a16207", "#0f766e"]
 KURS_FARBE = "#0e7490"

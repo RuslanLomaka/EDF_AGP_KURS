@@ -167,6 +167,20 @@ Wenn der **Arbeitgeber** kündigt, gilt: **Je länger Sie in der Firma sind, des
 3. **Selbst kündigen?** Wer selbst kündigt, ohne einen wichtigen Grund zu haben, bekommt oft für **bis zu 12 Wochen kein Arbeitslosengeld** (Sperrzeit). Lassen Sie sich vorher beraten.
 :::
 
+<p id="fall-frau-k"></p>
+
+::: fall
+**Der Fall Frau K. – Teil 3 von 4** (erfunden)
+
+[Teil 2](/artikel/kuendigungsschutz/#fall-frau-k): Die Kündigung per WhatsApp war ungültig. Am 20. Juni liegt eine Kündigung auf Papier, mit Unterschrift, in ihrem Briefkasten. Frau K. arbeitet seit 4 Jahren in der Firma.
+
+<details><summary>Wann endet ihr Job? Was muss Frau K. jetzt sofort tun?</summary>
+Nach 4 Jahren gilt, wenn der Arbeitgeber kündigt: **1 Monat zum Monatsende**. Die Kündigung kam am 20. Juni, also endet der Job am **31. Juli**. Innerhalb von **3 Tagen** meldet sie sich bei der Agentur für Arbeit arbeitssuchend. Will sie sich wehren, muss sie innerhalb von **3 Wochen** klagen.
+</details>
+
+<a class="weiter" href="/edv-kurs/ki-im-alltag/#fall-frau-k">Weiter mit Teil 4: ein Brief von der Agentur für Arbeit →</a>
+:::
+
 ```uebung
 typ: zuordnen
 frage: "Der Arbeitgeber kündigt. Wie lang ist die Frist? Ordnen Sie zu."

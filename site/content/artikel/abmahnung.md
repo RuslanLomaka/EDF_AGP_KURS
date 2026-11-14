@@ -117,6 +117,20 @@ Mehr zu den Gründen für eine Kündigung lesen Sie im Artikel [Kündigung im Br
 
 Ein **Gesetz** mit einer festen Frist, nach der eine Abmahnung gelöscht wird, gibt es **nicht**. Aber: Wenn Sie lange Zeit **keine neuen Fehler** machen – oft nach etwa **2 bis 3 Jahren** –, kann die Abmahnung ihre **Warnfunktion verlieren**. Dann reicht sie nicht mehr als Grundlage für eine Kündigung.
 
+<p id="fall-frau-k"></p>
+
+::: fall
+**Der Fall Frau K. – Teil 1 von 4** (erfunden)
+
+Frau K. arbeitet seit 4 Jahren als Verkäuferin in einem Supermarkt mit 25 Beschäftigten. Im März kommt sie dreimal zu spät, weil ihr Bus ausfällt. Sie sagt nicht Bescheid. Im April bekommt sie eine Abmahnung: mit Datum und Uhrzeit jeder Verspätung und dem Satz „Beim nächsten Mal droht die Kündigung“.
+
+<details><summary>Ist die Abmahnung in Ordnung? Was kann Frau K. tun?</summary>
+Ja: Die Abmahnung beschreibt die Fehler genau und warnt vor der Kündigung. Frau K. kann eine **Gegendarstellung** schreiben (der Bus ist ausgefallen) – sie kommt in ihre Personalakte. Ab jetzt ruft sie bei jeder Verspätung **sofort** an.
+</details>
+
+<a class="weiter" href="/artikel/kuendigungsschutz/#fall-frau-k">Weiter mit Teil 2: die Kündigung per WhatsApp →</a>
+:::
+
 ```uebung
 typ: zuordnen
 frage: "Kann es dafür eine Abmahnung geben?"

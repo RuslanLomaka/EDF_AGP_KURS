@@ -189,6 +189,20 @@ erklaerung: "Zuerst die Daten entfernen – und am Ende immer mit dem Original v
 **Bei echten Briefen:** Entfernen Sie vorher alle persönlichen Daten – Namen, Adressen, Kundennummern, Aktenzeichen. Bei wichtigen Briefen (Jobcenter, Gericht, Kündigung) fragen Sie zusätzlich eine Beratungsstelle.
 :::
 
+<p id="fall-frau-k"></p>
+
+::: fall
+**Der Fall Frau K. – Teil 4 von 4** (erfunden)
+
+[Teil 3](/artikel/kuendigung-einfach-erklaert/#fall-frau-k): Frau K. hat sich arbeitssuchend gemeldet. Jetzt bekommt sie einen langen Brief von der Agentur für Arbeit: eine Einladung zu einem Termin. Sie versteht nicht alles.
+
+<details><summary>Wie nutzt Frau K. die KI dafür sicher?</summary>
+Sie tippt nur den Text ab – **ohne** Namen, Adresse und Kundennummer. Die KI erklärt den Brief und macht eine Liste: Was muss ich tun, bis wann? Datum und Uhrzeit prüft Frau K. **selbst im Original**. Kann sie nicht kommen, sagt sie **vorher** Bescheid.
+</details>
+
+Zurück zum Anfang: [Teil 1 – die Abmahnung](/artikel/abmahnung/#fall-frau-k)
+:::
+
 ## Die heikle E-Mail {#email}
 
 ::: notiz
