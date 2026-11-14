@@ -556,6 +556,22 @@ die Zahl der erledigten Aufgaben für die Übersicht auf der Startseite) im „L
     write("datenschutz/index.html", layout("Datenschutzerklärung", "", datenschutz, "Datenschutzerklärung dieser Website."))
 
 
+def build_aufwaermen(articles):
+    """/aufwaermen/: 5 questions from 5 different article quizzes, new on every load – a warm-up at the start of a day."""
+    fragen = [{**q, "artikel": {"title": a["title"], "url": a["url"]}} for a in articles for q in a["quiz"]["questions"]]
+    daten = json.dumps({"title": "Aufwärmen", "auswahl": 5, "questions": fragen}, ensure_ascii=False).replace("<", "\\u003c")
+    main = f"""<header class="kopf"><h1>Aufwärmen</h1>
+<p class="lead">5 Fragen aus 5 verschiedenen Artikeln – zum Wiederholen am Anfang des Tages.
+Bei jedem Laden kommen neue Fragen. Ihre Antworten werden nirgends gespeichert.</p></header>
+<section class="quiz" aria-label="Aufwärmen">
+<div class="quiz-box" data-quiz></div>
+<noscript><p class="hinweis">Für das Aufwärmen muss JavaScript eingeschaltet sein.</p></noscript>
+<script id="quiz-daten" type="application/json">{daten}</script>
+</section>
+<p><a href="/artikel/">Alle Artikel</a></p>"""
+    write("aufwaermen/index.html", layout("Aufwärmen", "", main, "5 gemischte Fragen aus allen Artikeln.", ["quiz.js"]))
+
+
 def build_hinweis():
     punkte = "".join(f"<li>{esc(t)}</li>" for t in HINWEIS_PUNKTE)
     main = f"""<h1>Hinweise &amp; Datenschutz</h1>
@@ -1234,6 +1250,7 @@ def build_start(articles, lessons):
 <h2>Die Lektionen</h2>
 <ol class="lektionsliste">{lektionen}</ol>
 </section>
+<p class="aufwaermen-link"><a class="btn" href="/aufwaermen/">Aufwärmen <span>5 Fragen aus allen Artikeln</span></a></p>
 <h2>{esc(ueberschrift)}</h2>
 <ul class="liste">{items}</ul>
 <p><a href="/artikel/">Alle Artikel</a></p>"""
@@ -1316,6 +1333,7 @@ def main():
     build_lehrer_index(articles, lessons)
     build_start(articles, lessons)
     build_hinweis()
+    build_aufwaermen(articles)
     if BETREIBER:
         build_rechtliches(BETREIBER)
     vorleser.copy_to_dist()

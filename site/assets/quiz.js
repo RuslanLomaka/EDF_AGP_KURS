@@ -43,10 +43,24 @@
     return b;
   };
 
+  // warm-up: "auswahl" questions, each from a different article
+  const waehleAus = liste => {
+    if (!quiz.auswahl) return mische(liste);
+    const gesehen = new Set(), raus = [];
+    for (const f of mische(liste)) {
+      const k = f.artikel ? f.artikel.url : f.question;
+      if (gesehen.has(k)) continue;
+      gesehen.add(k);
+      raus.push(f);
+      if (raus.length === quiz.auswahl) break;
+    }
+    return raus;
+  };
+
   function starte() {
     box.textContent = '';
     // the test keeps its order, so the class can talk about "Frage 7"; answers are always shuffled
-    const fragen = (test ? quiz.questions : mische(quiz.questions)).map((frage, n) => ({ frage, nr: n + 1, antworten: mische(frage.answers), wahl: -1 }));
+    const fragen = (test ? quiz.questions : waehleAus(quiz.questions)).map((frage, n) => ({ frage, nr: n + 1, antworten: mische(frage.answers), wahl: -1 }));
     let beantwortet = 0, richtig = 0;
     const stand = el('p', 'quiz-stand');
     stand.setAttribute('aria-live', 'polite');
@@ -75,6 +89,14 @@
       }
       if (f.frage.explanation) rueck.append(el('p', 'quiz-erklaerung', f.frage.explanation));
       quellen(f.frage, rueck);
+      const art = f.frage.artikel;
+      if (art && /^\/artikel\/[a-z0-9-]+\/$/.test(art.url)) {
+        const p = el('p', 'quiz-quelle', 'Aus dem Artikel: ');
+        const a = el('a', '', art.title);
+        a.href = art.url;
+        p.append(a);
+        rueck.append(p);
+      }
     };
 
     const felder = fragen.map((f, n) => {
