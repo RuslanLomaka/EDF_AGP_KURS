@@ -39,6 +39,10 @@ Top navigation, fixed at three items: **Start · EDV-Kurs · Artikel**.
 - `/`: search box, the two sections, all articles added on the latest day ("Neu hinzugefügt").
 - `/edv-kurs/<slug>/`: lesson with downloads (ZIP + single files), checkable steps (progress in the visitor's
   browser), help, self-test, files for teachers.
+  - The build numbers every section (h2) of a lesson; help gets "?".
+  - A quick navigation shows these numbers: a bar at the bottom on phones, a list left of the text on wide screens.
+    The class says "we are at 7" and everyone taps 7.
+  - Write no numbers or "Teil n" into lesson headings. In the text, refer to sections as "Abschnitt n".
 - `/artikel/`: search (title, keywords, summary, full text; umlaut-insensitive; full texts load from
   `suchindex.json` on the first search), topic filter, articles grouped by the day they were added (latest two open;
   no weekday, no "Kurstag"), parts of a series kept together with a "Teil n von m" badge.
