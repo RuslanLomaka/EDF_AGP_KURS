@@ -544,7 +544,7 @@ die Zahl der erledigten Aufgaben für die Übersicht auf der Startseite) im „L
 </ul>
 <p>Diese Speicherung ist für die Funktionen, die Sie selbst nutzen, unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG). Suche und Quiz speichern nichts.</p>
 <h2>6. Vorlesen</h2>
-<p>Die Aussprache der Wörter wurde vorab aufgenommen und wird von unserem Server geladen. Fehlt eine Aufnahme, liest eine Stimme vor, die auf Ihrem Gerät installiert ist. Dabei werden keine Daten an andere Anbieter übertragen.</p>
+<p>Die Aussprache der Wörter wurde vorab aufgenommen und wird von unserem Server geladen. Fehlt eine Aufnahme, liest eine Stimme vor, die auf Ihrem Gerät installiert ist. Ganze Abschnitte liest nur eine Stimme auf Ihrem Gerät vor; gibt es keine, erscheint der Knopf nicht. Dabei werden keine Daten an andere Anbieter übertragen.</p>
 <h2>7. Keine Inhalte anderer Anbieter</h2>
 <p>Wir binden keine Schriftarten, Skripte, Videos, Karten oder Social-Media-Funktionen anderer Anbieter ein und verschicken keine Newsletter.</p>
 <h2>8. Links zu anderen Websites</h2>
@@ -586,7 +586,7 @@ def build_hinweis():
 <ul>
 <li>Die Seiten werden über Cloudflare ausgeliefert. Dabei werden technisch nötige Verbindungsdaten, zum Beispiel die IP-Adresse, verarbeitet. Nur wenn Cloudflare eine Sicherheitsprüfung zeigt, kann Cloudflare dafür ein technisch nötiges Cookie setzen.</li>
 <li>Unser Webserver speichert keine Zugriffsprotokolle.</li>
-<li>Vorlesen: Die Wörter wurden vorab aufgenommen und kommen von unserem Server. Fehlt eine Aufnahme, liest eine Stimme vor, die auf Ihrem Gerät installiert ist. Es werden keine Texte an andere Dienste geschickt.</li>
+<li>Vorlesen: Die Wörter wurden vorab aufgenommen und kommen von unserem Server. Fehlt eine Aufnahme, liest eine Stimme vor, die auf Ihrem Gerät installiert ist. Ganze Abschnitte liest nur eine Stimme auf Ihrem Gerät vor. Es werden keine Texte an andere Dienste geschickt.</li>
 <li>Links zu anderen Websites, zum Beispiel zu Gesetzestexten, führen zu Angeboten mit eigenen Datenschutzregeln.</li>
 </ul>
 <h2>Inhalte</h2>
@@ -1146,7 +1146,7 @@ und halten Sie das Handy hoch.</p>
 <p class="zuruecksetzen" hidden><button type="button" class="reset">Fortschritt zurücksetzen</button></p>
 {lehrkraft}
 {nav}"""
-    skripte = ["lektion.js", "quiz.js"] if l["quiz"] else ["lektion.js"]
+    skripte = ["lektion.js", "quiz.js", "vorlesen.js"] if l["quiz"] else ["lektion.js", "vorlesen.js"]
     if lehrer and 'class="jetzt"' in main:
         skripte = [*skripte, "jetzt.js"]
     if lehrer:
