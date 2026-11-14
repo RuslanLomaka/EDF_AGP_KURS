@@ -1,6 +1,6 @@
 // Example prompts ('::: prompt' boxes): a button copies the prompt, so nobody has to type it.
 (function () {
-  document.querySelectorAll('.prompt').forEach(box => {
+  document.querySelectorAll('.prompt, .vorlage').forEach(box => {
     const text = box.innerText.trim();
     const knopf = document.createElement('button');
     knopf.type = 'button';

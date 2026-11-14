@@ -174,12 +174,17 @@ The owner sends photos of a handout (often several per day; several pages can be
    quiz.ruslanlomaka.org): `{"title", "questions": [{"question", "answers": [{"text", "correct"}], "explanation",
    "sources": [{"title", "url"}]}]}`. About 10 questions, 3 answers, exactly one correct, wrong answers plausible,
    a short explanation for each. The build refuses articles without a valid quiz; the page shuffles questions and
-   answers on every load.
+   answers on every load. Wrong answers are real misconceptions (old deadlines, swapped numbers, similar terms), never
+   jokes. Do not let length or words like "immer", "nur", "nie" give the answer away: across all quizzes the correct
+   answer is the longest in about a third of the questions.
 6. Teacher notes (`::: notiz`, see "Site"): a short plan right after "Kurz gesagt" (opening question, order, what to
    stress), and after every picture a numbered script for explaining it (what to point at, what to say, one question
-   with its answer). Simple German the owner can read aloud.
-7. An exercise (` ```uebung `, see "Exercises") right before "Wörter": cards into boxes or steps into order, using
-   facts from the text.
+   with its answer). Simple German the owner can read aloud. There is no projector: learners look at the picture on
+   their own phone, so notes say "Alle schauen auf die 1", never "Zeigen Sie auf …".
+7. Exercises (` ```uebung `, see "Exercises") right before "Wörter", using facts from the text: one that practises the
+   text, and one "Neue Fälle: …" with everyday situations that are not in the text (transfer), including a classic
+   mistake where there is one.
+   Every hard word used in the text (Handelsregister, Sperrzeit …) gets a glossary entry; deadlines go into "Kurz gesagt".
 8. Pictures: the owner wants information shown visually, so give every article at least one own drawing (see
    "Pictures" below), never photos of the handout. Put them in `site/content/artikel/bilder/`.
 9. Build, check, commit, push. Lists, search, topic pages, "Mehr zum Thema" and previous/next update by themselves.
@@ -214,14 +219,18 @@ Create `site/content/edv-kurs/<slug>.md` like `bewerbung-auf-knopfdruck.md`.
   - downloads: `dateien` and `lehrkraft` (lists of `datei`, a path from the repo root, plus `titel` and `text`),
     and `paket` (one ZIP made of several files).
 - **Body:** steps go in `::: schritte` blocks (numbered lists); the boxes are `::: kurz`, `::: info` and
-  `::: achtung`.
+  `::: achtung`; `::: vorlage` is a text to copy (e-mail template) with a copy button.
 - **Teacher notes:** as for articles (`::: notiz`): a plan after "Kurz gesagt", a note after every picture and tips
-  for the hard parts right after their heading.
-- **Tasks** (lessons 4 and 5): heading, `<p class="zeit">15 Minuten</p>`, instructions, a `::: prompt` box (example
+  for every task right after its heading (goal, how to run it, typical problem, one question with its answer).
+  The plan is a realistic timetable (signing in takes 25 minutes) with "Wenn die Zeit knapp ist" (what to drop first,
+  what never), a minimum goal for everyone, and "Lotsen" (fast learners help others first).
+- **Tasks** (lessons 4, 5 and 6): heading, `<p class="zeit">15 Minuten</p>`, instructions, a `::: prompt` box (example
   prompt with a copy button), "Das lernen Sie", and a `::: profi` box (optional challenge in small print).
 - **Quiz (optional):** `site/content/edv-kurs/<slug>.quiz.json`, same format as for articles. With `"mode": "test"`,
   learners answer everything first. "Auswerten" then shows the score, a title, strengths and weak areas, and every
-  mistake explained. Each question names an `"area"`, and `"areas"` maps each area to a tip.
+  mistake explained. Each question names an `"area"`, and `"areas"` maps each area to a tip. A test keeps its
+  question order ("Frage 7"). `"nachlesen": "#id"` or `"<lesson-slug>#id"` links each mistake to the section to read
+  up; the build checks the section exists.
 - **Files:** lesson files live in `materials/<lesson>/`.
 
 ## Hosting and CI/CD

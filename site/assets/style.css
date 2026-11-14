@@ -398,7 +398,7 @@ code { font-size: 0.88em; background: var(--accent-soft); padding: 0.1rem 0.35re
   .bild { float: right; width: 21rem; margin: 0.3rem 0 1rem 1.4rem; }
   main h2 { clear: both; }
   .bild:has(+ table) { float: none; margin: 1.3rem auto; }
-  .kurz, .ergaenzung, .info, .achtung, .notiz, .prompt, .profi, .uebung, .schritte ol, .prinzip, main details { display: flow-root; }
+  .kurz, .ergaenzung, .info, .achtung, .notiz, .prompt, .vorlage, .profi, .uebung, .schritte ol, .prinzip, main details { display: flow-root; }
 }
 
 /* Footer: dark band across the page */
@@ -521,12 +521,13 @@ h1, h2, h3, .liste a, .blaettern a, .card h2, .bereich strong { overflow-wrap: b
   font-size: 0.8rem; font-weight: 700; background: var(--ton-soft); color: var(--ton); }
 .zeit::before { content: ""; width: 0.9rem; height: 0.9rem; background: currentColor;
   -webkit-mask: url(icon-uhr.svg) center / contain no-repeat; mask: url(icon-uhr.svg) center / contain no-repeat; }
-.prompt { position: relative; margin: 1rem 0; padding: 3.4rem 1rem 0.9rem; border: 1.5px dashed var(--ton-rand); border-radius: 14px;
+.prompt, .vorlage { position: relative; margin: 1rem 0; padding: 3.4rem 1rem 0.9rem; border: 1.5px dashed var(--ton-rand); border-radius: 14px;
   background: var(--card); font-size: 1.02rem; }
-.prompt::before { content: "Beispiel-Prompt"; position: absolute; left: 1rem; top: 0.55rem; font-size: 0.72rem; font-weight: 800;
+.prompt::before, .vorlage::before { content: "Beispiel-Prompt"; position: absolute; left: 1rem; top: 0.55rem; font-size: 0.72rem; font-weight: 800;
   letter-spacing: 0.07em; text-transform: uppercase; color: var(--ton); }
-.prompt > :first-child { margin-top: 0; }
-.prompt > p:last-of-type { margin-bottom: 0.2rem; }
+.vorlage::before { content: "Vorlage zum Kopieren"; }
+.prompt > :first-child, .vorlage > :first-child { margin-top: 0; }
+.prompt > p:last-of-type, .vorlage > p:last-of-type { margin-bottom: 0.2rem; }
 .kopieren { position: absolute; right: 0.6rem; top: 0.45rem; font: inherit; font-size: 0.85rem; font-weight: 700; min-height: 2.75rem; padding: 0.3rem 0.9rem;
   border-radius: 999px; border: 1px solid var(--ton-rand); background: var(--ton-soft); color: var(--ton); cursor: pointer; }
 .profi { margin: 0.8rem 0 1.2rem; padding: 0.55rem 0.9rem 0.6rem; border-left: 3px solid var(--erg-line); border-radius: 0 10px 10px 0;
@@ -661,6 +662,9 @@ main .ue-loesung { margin: 0.8rem 0 0; box-shadow: none; font-size: 0.92rem; }
 /* Article quiz */
 .quiz { margin-top: 2.5rem; }
 .quiz-frage { border: 1px solid var(--line); border-radius: var(--r); background: var(--card); padding: 0.8rem 1rem 0.9rem; margin: 0.9rem 0; box-shadow: var(--shadow); }
+fieldset { min-width: 0; }  /* default min-content would let long words widen the page */
+.quiz-antwort > span:last-child { min-width: 0; overflow-wrap: anywhere; hyphens: auto; }
+.ue-karte { max-width: 100%; overflow-wrap: anywhere; }
 .quiz-frage legend { float: left; width: 100%; font-weight: 750; padding: 0; margin: 0 0 0.35rem; }
 .quiz-frage legend + * { clear: both; }
 .quiz-antwort { display: flex; gap: 0.65rem; align-items: flex-start; width: 100%; text-align: left; font: inherit; color: var(--fg); background: var(--card); padding: 0.6rem 0.75rem; margin: 0.45rem 0; border: 1.5px solid var(--line); border-radius: 12px; cursor: pointer; transition: border-color 0.15s ease, background 0.15s ease; }

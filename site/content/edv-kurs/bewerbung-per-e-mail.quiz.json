@@ -1,0 +1,231 @@
+{
+ "title": "Abschlusstest: Bewerbung per E-Mail",
+ "mode": "test",
+ "areas": {
+  "Aufbau der E-Mail": "Schauen Sie sich das Bild in Abschnitt 1 noch einmal an: An, Betreff, Text, Anhang, Senden.",
+  "Der Anhang": "Ein PDF mit Ihrem Namen im Dateinamen, höchstens 5 MB, mit der Büroklammer anhängen.",
+  "Vor dem Senden": "Prüfen Sie mit den 5 Fragen aus Abschnitt 6 und schicken Sie die E-Mail zuerst an sich selbst."
+ },
+ "questions": [
+  {
+   "area": "Aufbau der E-Mail",
+   "question": "Was gehört in den Betreff einer Bewerbung?",
+   "answers": [
+    {
+     "text": "Die Stelle und die Kennziffer, wenn es eine gibt",
+     "correct": true
+    },
+    {
+     "text": "Ihr Name und Ihr Geburtsdatum",
+     "correct": false
+    },
+    {
+     "text": "„Wichtig!“ oder „Bitte lesen“, damit die E-Mail auffällt",
+     "correct": false
+    }
+   ],
+   "explanation": "Der Betreff sagt der Firma sofort, um welche Stelle es geht. Mit der Kennziffer findet sie die Anzeige.",
+   "nachlesen": "#teile"
+  },
+  {
+   "area": "Aufbau der E-Mail",
+   "question": "In der Anzeige steht kein Name. Welche Anrede passt?",
+   "answers": [
+    {
+     "text": "Hallo zusammen,",
+     "correct": false
+    },
+    {
+     "text": "Sehr geehrte Damen und Herren,",
+     "correct": true
+    },
+    {
+     "text": "Liebes Team der Firma Muster Logistik,",
+     "correct": false
+    }
+   ],
+   "explanation": "Ohne Namen schreiben Sie „Sehr geehrte Damen und Herren“. Besser ist ein Name – oft steht er auf der Website der Firma.",
+   "nachlesen": "#teile"
+  },
+  {
+   "area": "Aufbau der E-Mail",
+   "question": "Wie viel Text schreiben Sie in die E-Mail selbst?",
+   "answers": [
+    {
+     "text": "Das ganze Anschreiben noch einmal, Wort für Wort",
+     "correct": false
+    },
+    {
+     "text": "Gar keinen Text, der Anhang sagt schon alles",
+     "correct": false
+    },
+    {
+     "text": "3 bis 5 kurze Sätze – das Anschreiben ist im PDF",
+     "correct": true
+    }
+   ],
+   "explanation": "Die E-Mail ist wie ein Umschlag: kurz und freundlich. Das ausführliche Anschreiben steckt im PDF.",
+   "nachlesen": "#teile"
+  },
+  {
+   "area": "Der Anhang",
+   "question": "In welchem Format schicken Sie Ihre Unterlagen?",
+   "answers": [
+    {
+     "text": "Als ein PDF",
+     "correct": true
+    },
+    {
+     "text": "Als Word-Datei, damit die Firma etwas ändern kann",
+     "correct": false
+    },
+    {
+     "text": "Als Fotos vom Handy, ein Foto pro Seite",
+     "correct": false
+    }
+   ],
+   "explanation": "Ein PDF sieht auf jedem Computer gleich aus und lässt sich nicht aus Versehen ändern.",
+   "nachlesen": "#pdf"
+  },
+  {
+   "area": "Der Anhang",
+   "question": "Welcher Dateiname ist für eine Bewerbung gut?",
+   "answers": [
+    {
+     "text": "Dokument1.pdf",
+     "correct": false
+    },
+    {
+     "text": "Bewerbung_Mustermann_Max.pdf",
+     "correct": true
+    },
+    {
+     "text": "Bewerbung_final_neu_2.pdf",
+     "correct": false
+    }
+   ],
+   "explanation": "Im Dateinamen stehen Ihr Name und der Inhalt. So findet die Firma Ihre Datei unter vielen anderen.",
+   "nachlesen": "#pdf"
+  },
+  {
+   "area": "Der Anhang",
+   "question": "Wie groß darf der Anhang ungefähr höchstens sein?",
+   "answers": [
+    {
+     "text": "Etwa 50 MB, das schafft jedes Postfach",
+     "correct": false
+    },
+    {
+     "text": "Egal – E-Mails haben keine Grenze",
+     "correct": false
+    },
+    {
+     "text": "Etwa 5 MB",
+     "correct": true
+    }
+   ],
+   "explanation": "Viele Firmen nehmen große Anhänge nicht an. Bleiben Sie bei höchstens 5 MB.",
+   "nachlesen": "#teile"
+  },
+  {
+   "area": "Der Anhang",
+   "question": "Sie klicken auf das Drive-Zeichen statt auf die Büroklammer. Was passiert oft?",
+   "answers": [
+    {
+     "text": "Die Firma bekommt nur einen Link und keine Datei",
+     "correct": true
+    },
+    {
+     "text": "Die Datei wird automatisch kleiner",
+     "correct": false
+    },
+    {
+     "text": "Die E-Mail wird verschlüsselt verschickt",
+     "correct": false
+    }
+   ],
+   "explanation": "Mit dem Drive-Zeichen schicken Sie oft nur einen Link. Manche Firmen öffnen keine Links von Fremden.",
+   "nachlesen": "#anhang"
+  },
+  {
+   "area": "Vor dem Senden",
+   "question": "Warum schicken Sie die E-Mail zuerst an sich selbst?",
+   "answers": [
+    {
+     "text": "Damit Gmail die Rechtschreibung prüft",
+     "correct": false
+    },
+    {
+     "text": "Um zu sehen, ob alles ankommt und der Anhang aufgeht",
+     "correct": true
+    },
+    {
+     "text": "Weil die Firma eine Kopie von Ihnen verlangt",
+     "correct": false
+    }
+   ],
+   "explanation": "Erst bei der Probe sehen Sie, was die Firma sieht: Ist der Anhang da? Lässt er sich öffnen?",
+   "nachlesen": "#probe"
+  },
+  {
+   "area": "Vor dem Senden",
+   "question": "Die E-Mail ist ohne Anhang weg. Was tun Sie?",
+   "answers": [
+    {
+     "text": "Nichts – die Firma meldet sich schon",
+     "correct": false
+    },
+    {
+     "text": "Die Firma anrufen und den Lebenslauf am Telefon vorlesen",
+     "correct": false
+    },
+    {
+     "text": "Sofort eine zweite E-Mail mit Anhang und kurzer Entschuldigung",
+     "correct": true
+    }
+   ],
+   "explanation": "Das passiert vielen. Wichtig ist, dass der Anhang schnell nachkommt.",
+   "nachlesen": "#hilfe"
+  },
+  {
+   "area": "Vor dem Senden",
+   "question": "Welche Absender-Adresse ist für eine Bewerbung am besten?",
+   "answers": [
+    {
+     "text": "max.mustermann@…",
+     "correct": true
+    },
+    {
+     "text": "partymaus85@…",
+     "correct": false
+    },
+    {
+     "text": "info@firma-meines-freundes.de",
+     "correct": false
+    }
+   ],
+   "explanation": "Eine Adresse mit Vor- und Nachnamen wirkt seriös. Spitznamen oder fremde Firmen-Adressen nicht.",
+   "nachlesen": "#teile"
+  },
+  {
+   "area": "Vor dem Senden",
+   "question": "Sie bewerben sich bei 20 Firmen. Wie schicken Sie die Bewerbungen?",
+   "answers": [
+    {
+     "text": "Eine E-Mail an alle 20 Firmen gleichzeitig",
+     "correct": false
+    },
+    {
+     "text": "Jede Firma bekommt eine eigene E-Mail",
+     "correct": true
+    },
+    {
+     "text": "Eine E-Mail mit allen Adressen im Feld „Cc“",
+     "correct": false
+    }
+   ],
+   "explanation": "Jede Firma bekommt eine eigene E-Mail mit eigener Anrede. Sonst sehen alle Firmen alle Adressen – und keiner fühlt sich gemeint.",
+   "nachlesen": "#fehler"
+  }
+ ]
+}

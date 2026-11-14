@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Vor dem Senden prüfen: Steht die Stelle im Betreff? Stimmt die Anrede mit Namen? Ist der Anhang wirklich dabei? Ist es ein PDF mit Ihrem Namen, höchstens 5 MB? Haben Sie die E-Mail zuerst an sich selbst geschickt? Erst wenn alle fünf Haken grün sind: Senden.</title>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="34.0" font-size="21" fill="#1f4e79" text-anchor="middle" font-weight="700">Vor dem Senden: 5 Haken</text>
+<rect x="24" y="52" width="352" height="44" rx="12" fill="#e7f3e8"/>
+<circle cx="52" cy="74" r="15" fill="#2e7d32"/>
+<path d="M45.4375 74.46875 L50.125 79.15625 L59.03125 69.3125" fill="none" stroke="#fff" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="80" y="80.0" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">Stelle im Betreff?</text>
+<rect x="24" y="108" width="352" height="44" rx="12" fill="#e7f3e8"/>
+<circle cx="52" cy="130" r="15" fill="#2e7d32"/>
+<path d="M45.4375 130.46875 L50.125 135.15625 L59.03125 125.3125" fill="none" stroke="#fff" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="80" y="136.0" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">Anrede mit Namen?</text>
+<rect x="24" y="164" width="352" height="44" rx="12" fill="#e7f3e8"/>
+<circle cx="52" cy="186" r="15" fill="#2e7d32"/>
+<path d="M45.4375 186.46875 L50.125 191.15625 L59.03125 181.3125" fill="none" stroke="#fff" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="80" y="192.0" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">Anhang wirklich dabei?</text>
+<rect x="24" y="220" width="352" height="44" rx="12" fill="#e7f3e8"/>
+<circle cx="52" cy="242" r="15" fill="#2e7d32"/>
+<path d="M45.4375 242.46875 L50.125 247.15625 L59.03125 237.3125" fill="none" stroke="#fff" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="80" y="248.0" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">PDF mit Ihrem Namen, max. 5 MB?</text>
+<rect x="24" y="276" width="352" height="44" rx="12" fill="#fff3df"/>
+<circle cx="52" cy="298" r="15" fill="#fff" stroke="#b26a00" stroke-width="3"/>
+<text x="80" y="304.0" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">Zuerst an sich selbst geschickt?</text>
+<rect x="168.0" y="330.0" width="64" height="44" rx="4" fill="#fff" stroke="#1f4e79" stroke-width="3"/>
+<path d="M170.0 333.0 L200 357.28 L230.0 333.0" fill="none" stroke="#1f4e79" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="250" y="346.0" font-size="16" fill="#2e7d32" text-anchor="start" font-weight="700">Alles grün?</text>
+<text x="250" y="368.0" font-size="16" fill="#5b6672" text-anchor="start">Dann senden.</text>
+</svg>
