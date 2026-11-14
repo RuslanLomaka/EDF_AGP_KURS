@@ -73,11 +73,12 @@ main, .liste li, .badge.thema, .bereich, .themen button { --ton: var(--t); --ton
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: 4.5rem; }
-html:has(.fortschritt) { scroll-padding-top: 7rem; }
+html:has(.fortschritt) { scroll-padding-top: 4.6rem; }
+@media (min-width: 40.01rem) { html:has(.fortschritt) { scroll-padding-top: 6.6rem; } }
 body {
   margin: 0;
   color: var(--fg);
-  font: 17px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font: 1.0625rem/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background:
     radial-gradient(55rem 26rem at 105% -8%, rgb(124 58 237 / 0.09), transparent 65%),
     radial-gradient(45rem 24rem at -10% -5%, rgb(67 56 202 / 0.08), transparent 65%),
@@ -370,6 +371,20 @@ details.tag > summary .zahl { color: var(--muted); font-weight: 500; }
 .lektion-karte { display: grid; grid-template-columns: 3.1rem minmax(0, 1fr); gap: 1rem; align-items: start; }
 .lektion-karte .nummer { margin: 0.15rem 0 0; display: grid; place-items: center; width: 3.1rem; height: 3.1rem; border-radius: 14px; background: var(--brand); color: #fff; font-size: 1.4rem; font-weight: 800; box-shadow: 0 8px 18px -8px rgb(67 56 202 / 0.7); }
 .lektion-karte .meta { margin: 0; font-size: 0.85rem; }
+/* "Weiter bei Abschnitt n" (stand.js, from the progress in this browser) */
+.stand { margin: 0.4rem 0 0; font-size: 0.9rem; color: var(--muted); }
+.stand a { font-weight: 750; margin-right: 0.3rem; }
+.stand.fertig { color: var(--ok); font-weight: 700; }
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+/* start page: every lesson one tap away */
+.start-lektionen { --ton: var(--t); }
+.lektionsliste { list-style: none; padding: 0; margin: 0.5rem 0 1rem; display: grid; gap: 0.5rem; }
+.lektionsliste li { background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); padding: 0.55rem 0.8rem; }
+.lektionsliste li > a { display: flex; gap: 0.75rem; align-items: center; min-height: 2.75rem; font-weight: 700; color: var(--fg); text-decoration: none; }
+.lektionsliste li > a:hover { color: var(--ton); }
+.lektionsliste .nummer { flex: none; display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 12px; background: var(--brand); color: #fff; font-weight: 800; }
+.lektionsliste .stand { margin: 0.2rem 0 0 3.15rem; }
+.treffer-kopf { font-size: 1rem; margin: 1rem 0 0.3rem; color: var(--muted); }
 
 /* General */
 img { max-width: 100%; height: auto; }
@@ -450,6 +465,13 @@ main a.btn { color: #fff; }
 .einzeln { margin: 0.4rem 0 0.2rem; }
 .fortschritt { position: sticky; top: 0; z-index: 2; background: var(--bg); padding: 0.55rem 0; margin: 0.5rem 0 1rem; border-bottom: 1px solid var(--line); }
 .fortschritt .zahl { margin: 0.3rem 0 0; font-size: 0.82rem; color: var(--muted); }
+.fs-legende { font-size: 0.88rem; color: var(--muted); background: var(--card); border: 1px dashed var(--line); border-radius: 12px; padding: 0.5rem 0.75rem; margin: 0.6rem 0 0; }
+@media (max-width: 40rem) {  /* phones: one thin row, so the text keeps the screen */
+  .fortschritt { padding: 0.35rem 0; margin-bottom: 0.6rem; }
+  .fortschritt .fs-abschnitt { margin-bottom: 0.25rem; font-size: 0.85rem; }
+  .fortschritt .balken { height: 6px; }
+  .fortschritt .zahl { display: none; }
+}
 .fs-abschnitt { display: flex; align-items: center; gap: 0.45rem; margin: 0 0 0.35rem; font-size: 0.9rem; font-weight: 700; min-width: 0; }
 .fs-nr { flex: none; display: inline-grid; place-items: center; min-width: 1.6rem; height: 1.6rem; padding: 0 0.3rem; border-radius: 999px;
   background: var(--ton); color: var(--card); font-size: 0.8rem; font-weight: 800; }
@@ -499,13 +521,13 @@ h1, h2, h3, .liste a, .blaettern a, .card h2, .bereich strong { overflow-wrap: b
   font-size: 0.8rem; font-weight: 700; background: var(--ton-soft); color: var(--ton); }
 .zeit::before { content: ""; width: 0.9rem; height: 0.9rem; background: currentColor;
   -webkit-mask: url(icon-uhr.svg) center / contain no-repeat; mask: url(icon-uhr.svg) center / contain no-repeat; }
-.prompt { position: relative; margin: 1rem 0; padding: 2rem 1rem 0.9rem; border: 1.5px dashed var(--ton-rand); border-radius: 14px;
+.prompt { position: relative; margin: 1rem 0; padding: 3.4rem 1rem 0.9rem; border: 1.5px dashed var(--ton-rand); border-radius: 14px;
   background: var(--card); font-size: 1.02rem; }
 .prompt::before { content: "Beispiel-Prompt"; position: absolute; left: 1rem; top: 0.55rem; font-size: 0.72rem; font-weight: 800;
   letter-spacing: 0.07em; text-transform: uppercase; color: var(--ton); }
 .prompt > :first-child { margin-top: 0; }
 .prompt > p:last-of-type { margin-bottom: 0.2rem; }
-.kopieren { position: absolute; right: 0.6rem; top: 0.45rem; font: inherit; font-size: 0.8rem; font-weight: 700; padding: 0.2rem 0.7rem;
+.kopieren { position: absolute; right: 0.6rem; top: 0.45rem; font: inherit; font-size: 0.85rem; font-weight: 700; min-height: 2.75rem; padding: 0.3rem 0.9rem;
   border-radius: 999px; border: 1px solid var(--ton-rand); background: var(--ton-soft); color: var(--ton); cursor: pointer; }
 .profi { margin: 0.8rem 0 1.2rem; padding: 0.55rem 0.9rem 0.6rem; border-left: 3px solid var(--erg-line); border-radius: 0 10px 10px 0;
   background: var(--erg-bg); font-size: 0.86rem; color: var(--muted); }
@@ -535,6 +557,7 @@ h2 .nr { margin-right: 0.35rem; }
   .schnellnav-titel { display: none; }
   .schnellnav ol { display: flex; gap: 0.4rem; overflow-x: auto; scrollbar-width: none; max-width: 46rem; margin: 0 auto; }
   .schnellnav ol::-webkit-scrollbar { display: none; }
+  .schnellnav a { display: block; }
   .schnellnav .titel { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .schnellnav .nr { min-width: 2.75rem; height: 2.75rem; font-size: 1.05rem; background: var(--ton-soft); color: var(--ton); }
   .schnellnav a[aria-current="true"] .nr { background: var(--ton); color: var(--card); }
@@ -563,9 +586,10 @@ h2 .nr { margin-right: 0.35rem; }
 .ue-pool { display: flex; flex-wrap: wrap; gap: 0.5rem; min-height: 3.2rem; padding: 0.6rem; margin-bottom: 0.8rem; border: 2px dashed var(--line); border-radius: 12px; }
 .ue-pool:empty::before { content: "Alle Karten verteilt – jetzt prüfen!"; align-self: center; color: var(--muted); font-size: 0.88rem; }
 .ue-karte { font: inherit; font-size: 0.95rem; line-height: 1.35; text-align: left; padding: 0.45rem 0.75rem; border-radius: 10px; border: 1.5px solid var(--line);
-  background: var(--card); color: var(--fg); cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; box-shadow: var(--shadow);
+  background: var(--card); color: var(--fg); cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; box-shadow: var(--shadow); min-height: 2.75rem;
   transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease; }
 .ue-karte:hover { transform: translateY(-1px); border-color: var(--ton-rand); }
+.ue-karte.ue-greift { transform: scale(1.06); border-color: var(--ton); box-shadow: var(--shadow-hoch); }  /* finger held: ready to drag */
 .ue-karte[aria-pressed="true"] { border-color: var(--ton); background: var(--ton-soft); box-shadow: 0 0 0 3px var(--ton-soft); }
 .ue-karte.ue-zieht { opacity: 0.35; }
 .ue-geist { position: fixed; z-index: 100; pointer-events: none; margin: 0; transform: translate(-50%, -60%) rotate(-3deg); box-shadow: var(--shadow-hoch); }
@@ -590,7 +614,7 @@ h2 .nr { margin-right: 0.35rem; }
 .ue-text { flex: 1; min-width: 0; overflow-wrap: anywhere; hyphens: auto; }
 .ue-pfeile { flex: none; display: flex; gap: 0.25rem; }
 .ue-pfeile button, .ue-neu { font: inherit; font-weight: 700; border: 1px solid var(--line); background: var(--card); color: var(--fg); border-radius: 10px; cursor: pointer; }
-.ue-pfeile button { width: 2.3rem; height: 2.3rem; }
+.ue-pfeile button { width: 2.75rem; height: 2.75rem; }
 .ue-steuerung { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.9rem 0 0; }
 .ue-pruefen { font: inherit; font-weight: 700; padding: 0.5rem 1.1rem; border: 0; border-radius: 10px; background: var(--brand); color: #fff; cursor: pointer; }
 .ue-neu { padding: 0.5rem 1rem; }
@@ -602,15 +626,17 @@ main .ue-loesung { margin: 0.8rem 0 0; box-shadow: none; font-size: 0.92rem; }
 
 /* Gap texts and marking exercises */
 .ue-satz, .ue-markiertext { margin: 0 0 0.9rem; line-height: 2.5; font-size: 1.02rem; }
-.ue-luecke { display: inline-flex; align-items: center; justify-content: center; min-width: 7.5rem; min-height: 2.1rem; margin: 0 0.15rem;
+.ue-luecke { display: inline-flex; align-items: center; justify-content: center; min-width: 7.5rem; min-height: 2.75rem; margin: 0.1rem 0.15rem;
   padding: 0.1rem; vertical-align: middle; border: 2px dashed var(--ton-rand); border-radius: 10px; background: var(--card); cursor: pointer;
   line-height: 1.35; transition: border-color 0.15s ease, background 0.15s ease; }
 .uebung.ue-waehlt .ue-luecke:empty { border-color: var(--ton); background: var(--ton-soft); }
 .ue-luecke.ue-drueber { border-color: var(--ton); background: var(--ton-soft); }
 .ue-luecke .ue-karte { box-shadow: none; padding: 0.25rem 0.6rem; }
-.ue-wort { font: inherit; line-height: 1.5; margin: 0.1rem 0; padding: 0.05rem 0.3rem; border-radius: 6px; border: 1.5px solid transparent;
+.ue-wort { font: inherit; line-height: 1.5; min-height: 2.75rem; margin: 0.15rem 0; padding: 0.2rem 0.3rem; border-radius: 6px; border: 1.5px solid transparent;
   background: transparent; color: var(--fg); cursor: pointer; }
 .ue-wort:hover { background: var(--ton-soft); }
+.ue-nach { margin-left: -0.28rem; }  /* punctuation sticks to its word */
+.ue-vor { margin-right: -0.28rem; }
 .ue-wort[aria-pressed="true"] { background: var(--mark); border-color: var(--erg-line); }
 .ue-wort.richtig { background: color-mix(in srgb, var(--ok) 18%, var(--card)); border-color: var(--ok); }
 .ue-wort.falsch { background: var(--warn-bg); border-color: var(--warn-line); text-decoration: line-through; animation: wackeln 0.4s; }
@@ -688,7 +714,7 @@ main .ue-loesung { margin: 0.8rem 0 0; box-shadow: none; font-size: 0.92rem; }
 .hinweis-dialog button { flex: none; font: inherit; font-weight: 700; background: var(--brand); color: #fff; border: 0; border-radius: 12px; padding: 0.5rem 0.95rem; cursor: pointer; }
 
 /* Read-aloud button next to glossary words */
-.vorlesen { display: inline-flex; align-items: center; justify-content: center; width: 2.2rem; height: 2.2rem; margin-left: 0.35rem; vertical-align: middle; border: 1px solid var(--line); border-radius: 50%; background: var(--ton-soft); color: var(--ton); cursor: pointer; padding: 0; }
+.vorlesen { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; margin-left: 0.35rem; vertical-align: middle; border: 1px solid var(--line); border-radius: 50%; background: var(--ton-soft); color: var(--ton); cursor: pointer; padding: 0; }
 .vorlesen:hover { border-color: var(--ton-rand); }
 .vorlesen.spielt { background: var(--ton); color: var(--card); border-color: var(--ton); }
 

@@ -101,14 +101,21 @@
     const knopf = document.createElement('button');
     knopf.type = 'button';
     p.append(knopf);
+    const folgt = abschnitte.slice(i + 1).find(zaehlt);
     const naechster = abschnitte[i + 1] && abschnitte[i + 1].h.parentElement === inhalt ? abschnitte[i + 1].h : null;
     inhalt.insertBefore(p, naechster);
     const zeige = () => {
       const an = erledigt.has(key);
       knopf.setAttribute('aria-pressed', String(an));
-      knopf.textContent = an ? 'Abschnitt erledigt ✓' : 'Abschnitt erledigt?';
+      knopf.textContent = an ? 'Erledigt ✓' : '✓ Geschafft' + (folgt ? ' – weiter zu ' + folgt.nr : '');
+      knopf.title = an ? 'Noch einmal tippen: wieder als offen markieren' : '';
     };
-    knopf.addEventListener('click', () => { erledigt.has(key) ? erledigt.delete(key) : erledigt.add(key); speichern(); zeige(); anzeigen(); });
+    knopf.addEventListener('click', () => {
+      const an = !erledigt.has(key);
+      an ? erledigt.add(key) : erledigt.delete(key);
+      speichern(); zeige(); anzeigen();
+      if (an && folgt) setTimeout(() => folgt.h.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }), 350);
+    });
     a.posten.push({ key, zeige });
   });
 
@@ -137,9 +144,16 @@
     const s = stand(aktiv);
     fsNr.textContent = aktiv.nr;
     fsTitel.textContent = aktiv.titel;
-    fsZahl.textContent = s.n ? s.fertig + ' von ' + s.n + (s.fertig === s.n ? ' ✓' : '') : '';
+    fsZahl.textContent = s.n ? s.fertig + ' von ' + s.n + (s.n === 1 ? ' Aufgabe' : ' Aufgaben') + (s.fertig === s.n ? ' ✓' : '') : '';
     balken.style.width = (s.n ? 100 * s.fertig / s.n : 0) + '%';
-    gesamtText.textContent = 'Ganze Lektion: ' + fertig + ' von ' + n + ' erledigt' + (n && fertig === n ? ' – alles gesammelt!' : '');
+    gesamtText.textContent = 'Ganze Lektion: ' + fertig + ' von ' + n + ' Aufgaben erledigt' + (n && fertig === n ? ' – alles gesammelt!' : '');
+    // short summary for "Weiter bei Abschnitt n" on the start page and the lesson list
+    const weiter = abschnitte.find(a => { const x = stand(a); return x.n && x.fertig < x.n; });
+    try {
+      if (fertig) localStorage.setItem('lektion-stand:' + box.dataset.lektion,
+        JSON.stringify({ fertig, n, nr: weiter ? weiter.nr : '', id: weiter ? weiter.id : '' }));
+      else localStorage.removeItem('lektion-stand:' + box.dataset.lektion);
+    } catch (e) { /* storage unavailable */ }
   }
 
   // the section on the screen: the last heading above the upper third
@@ -177,6 +191,7 @@
       if (!window.confirm('Den ganzen Fortschritt in dieser Lektion zurücksetzen?')) return;
       erledigt.clear();
       speichern();
+      try { localStorage.removeItem('lektion-stand:' + box.dataset.lektion); } catch (e) { /* ignore */ }
       abschnitte.forEach(a => a.posten.forEach(p => p.zeige()));
       anzeigen();
     });
@@ -184,5 +199,7 @@
   }
   abschnitte.forEach(a => a.posten.forEach(p => p.zeige()));
   box.hidden = false;
+  const legende = document.querySelector('.fs-legende');
+  if (legende) legende.hidden = false;
   setzeAktiv();
 })();

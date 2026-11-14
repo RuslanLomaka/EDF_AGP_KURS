@@ -33,6 +33,33 @@
     el.dispatchEvent(new CustomEvent('uebung-geloest', { bubbles: true }));
   };
 
+  // a short message for screen readers (and nobody else)
+  const ansage = (el, text) => {
+    let s = el.querySelector('.ue-status');
+    if (!s) {
+      s = document.createElement('p');
+      s.className = 'ue-status vh';
+      s.setAttribute('aria-live', 'polite');
+      el.append(s);
+    }
+    s.textContent = text;
+  };
+  // while dragging near the top or bottom edge of the screen, the page scrolls by itself
+  const randScroll = () => {
+    let y = -1, laeuft = false, beiBewegung = null;
+    const schritt = () => {
+      if (y < 0) { laeuft = false; return; }
+      const unten = window.innerHeight - (document.querySelector('.schnellnav') && window.innerWidth < 1280 ? 140 : 70);
+      const v = y < 80 ? -Math.ceil((80 - y) / 6) : y > unten ? Math.ceil((y - unten) / 6) : 0;
+      if (v) { window.scrollBy(0, v); if (beiBewegung) beiBewegung(); }
+      requestAnimationFrame(schritt);
+    };
+    return {
+      setze(neuY, fn) { y = neuY; beiBewegung = fn; if (!laeuft) { laeuft = true; requestAnimationFrame(schritt); } },
+      stopp() { y = -1; },
+    };
+  };
+
   // "zuordnen" and "luecken": cards that go into places (boxes hold many cards, gaps hold one)
   function karten(el, luecken) {
     const pool = el.querySelector('.ue-pool');
@@ -48,7 +75,10 @@
       gewaehlt = k && k !== gewaehlt ? k : null;
       if (gewaehlt) gewaehlt.setAttribute('aria-pressed', 'true');
       el.classList.toggle('ue-waehlt', Boolean(gewaehlt));
+      pool.tabIndex = gewaehlt && gewaehlt.parentElement !== pool ? 0 : -1;
+      if (gewaehlt) ansage(el, '„' + gewaehlt.textContent.trim() + '“ gewählt. Jetzt ' + (luecken ? 'eine Lücke' : 'einen Kasten') + ' wählen.');
     };
+    const name = platz => luecken ? 'Lücke ' + (plaetze.indexOf(platz) + 1) : 'Kasten „' + platz.querySelector('.ue-ziel-titel').textContent + '“';
     const zuruecksetzen = () => {
       karten.forEach(k => k.classList.remove('richtig', 'falsch'));
       plaetze.forEach(p => p.classList.remove('richtig', 'falsch'));
@@ -66,6 +96,8 @@
       k.classList.add('ue-gelandet');
       waehle(null);
       zuruecksetzen();
+      const platz = ziel === pool ? null : ziel.closest('.ue-luecke, .ue-ziel');
+      ansage(el, '„' + k.textContent.trim() + '“ ' + (platz ? 'liegt jetzt in ' + name(platz) : 'liegt wieder im Stapel') + '.');
     };
     const zielUnter = (x, y) => {
       const t = document.elementFromPoint(x, y);
@@ -85,13 +117,34 @@
         if (gewaehlt && gewaehlt !== k && platz) return lege(gewaehlt, ablage(platz));
         waehle(k);
       });
+      // mouse: drag at once. Finger: hold for a moment, then drag (a quick swipe scrolls the page as usual)
+      k.addEventListener('contextmenu', e => { if (k.dataset.greift) e.preventDefault(); });
+      k.addEventListener('touchmove', e => { if (k.dataset.greift) e.preventDefault(); }, { passive: false });
       k.addEventListener('pointerdown', e => {
         if (e.button !== 0) return;
+        const finger = e.pointerType !== 'mouse';
         const start = { x: e.clientX, y: e.clientY };
-        let geist = null;
+        let geist = null, letzte = start;
+        const rand = randScroll();
+        let warte = null;
+        if (finger) {
+          warte = setTimeout(() => {
+            warte = null;
+            k.dataset.greift = 'ja';
+            k.classList.add('ue-greift');
+            if (navigator.vibrate) navigator.vibrate(15);
+          }, 220);
+        }
+        const markiere = () => {
+          const z = zielUnter(letzte.x, letzte.y);
+          plaetze.forEach(p => p.classList.toggle('ue-drueber', Boolean(z) && (p === z || p.contains(z))));
+        };
         const bewege = ev => {
+          letzte = { x: ev.clientX, y: ev.clientY };
+          const weg = Math.hypot(ev.clientX - start.x, ev.clientY - start.y);
           if (!geist) {
-            if (Math.hypot(ev.clientX - start.x, ev.clientY - start.y) < 6) return;
+            if (finger && !k.dataset.greift) { if (weg > 8) ende(ev); return; }  // a swipe: let the page scroll
+            if (!finger && weg < 6) return;
             geist = k.cloneNode(true);
             geist.classList.add('ue-geist');
             geist.removeAttribute('aria-pressed');
@@ -101,13 +154,17 @@
           ev.preventDefault();
           geist.style.left = ev.clientX + 'px';
           geist.style.top = ev.clientY + 'px';
-          const z = zielUnter(ev.clientX, ev.clientY);
-          plaetze.forEach(p => p.classList.toggle('ue-drueber', Boolean(z) && (p === z || p.contains(z))));
+          markiere();
+          rand.setze(ev.clientY, markiere);
         };
         const ende = ev => {
           document.removeEventListener('pointermove', bewege);
           document.removeEventListener('pointerup', ende);
           document.removeEventListener('pointercancel', ende);
+          if (warte) clearTimeout(warte);
+          rand.stopp();
+          k.classList.remove('ue-greift');
+          setTimeout(() => { delete k.dataset.greift; }, 0);
           if (!geist) return;  // just a tap: the click handler selects the card
           geist.remove();
           k.classList.remove('ue-zieht');
@@ -122,8 +179,20 @@
         document.addEventListener('pointercancel', ende);
       });
     });
-    plaetze.forEach(p => p.addEventListener('click', () => { if (gewaehlt) lege(gewaehlt, ablage(p)); }));
+    plaetze.forEach(p => {
+      p.addEventListener('click', () => { if (gewaehlt) lege(gewaehlt, ablage(p)); });
+      p.tabIndex = 0;  // keyboard: Tab to a box or gap, Enter puts the chosen card there
+      p.setAttribute('role', 'button');
+      p.setAttribute('aria-label', name(p));
+      p.addEventListener('keydown', e => {
+        if ((e.key === 'Enter' || e.key === ' ') && e.target === p) { e.preventDefault(); if (gewaehlt) lege(gewaehlt, ablage(p)); }
+      });
+    });
     pool.addEventListener('click', () => { if (gewaehlt && gewaehlt.parentElement !== pool) lege(gewaehlt, pool); });
+    pool.setAttribute('aria-label', 'Stapel: hierhin zurücklegen');
+    pool.addEventListener('keydown', e => {
+      if ((e.key === 'Enter' || e.key === ' ') && e.target === pool) { e.preventDefault(); pool.click(); }
+    });
 
     el.querySelector('.ue-pruefen').addEventListener('click', () => {
       if (luecken) {
@@ -193,14 +262,22 @@
         if (e.pointerType !== 'mouse' && !e.target.closest('.ue-griff')) return;
         e.preventDefault();
         s.classList.add('ue-zieht');
-        const bewege = ev => {
-          ev.preventDefault();
+        const rand = randScroll();
+        let y = e.clientY;
+        const ordne = () => {
           const andere = [...liste.children].filter(x => x !== s);
-          const vor = andere.find(x => { const r = x.getBoundingClientRect(); return ev.clientY < r.top + r.height / 2; });
+          const vor = andere.find(x => { const r = x.getBoundingClientRect(); return y < r.top + r.height / 2; });
           if (vor) { if (s.nextElementSibling !== vor) liste.insertBefore(s, vor); }
           else if (liste.lastElementChild !== s) liste.append(s);
         };
+        const bewege = ev => {
+          ev.preventDefault();
+          y = ev.clientY;
+          ordne();
+          rand.setze(y, ordne);
+        };
         const ende = () => {
+          rand.stopp();
           document.removeEventListener('pointermove', bewege);
           document.removeEventListener('pointerup', ende);
           document.removeEventListener('pointercancel', ende);
@@ -241,16 +318,21 @@
         zuruecksetzen();
       });
     });
+    // words of one answer form a group: one tapped word finds the whole answer
+    const gruppen = {};
+    woerter.forEach(w => { if (w.dataset.z === '1') (gruppen[w.dataset.g] = gruppen[w.dataset.g] || []).push(w); });
+    const an = w => w.getAttribute('aria-pressed') === 'true';
     el.querySelector('.ue-pruefen').addEventListener('click', () => {
-      let gefunden = 0, zuviel = 0, gesamt = 0;
+      let gefunden = 0, zuviel = 0;
+      const gesamt = Object.keys(gruppen).length;
+      zuruecksetzen();
+      Object.values(gruppen).forEach(g => {
+        const ok = g.some(an);
+        if (ok) gefunden++;
+        g.forEach(w => w.classList.add(ok ? 'richtig' : 'verpasst'));
+      });
       woerter.forEach(w => {
-        const ziel = w.dataset.z === '1', an = w.getAttribute('aria-pressed') === 'true';
-        if (ziel) gesamt++;
-        if (ziel && an) gefunden++;
-        if (!ziel && an) zuviel++;
-        w.classList.toggle('richtig', ziel && an);
-        w.classList.toggle('falsch', !ziel && an);
-        w.classList.toggle('verpasst', ziel && !an);
+        if (w.dataset.z !== '1' && an(w)) { zuviel++; w.classList.add('falsch'); }
       });
       if (gefunden === gesamt && !zuviel) return geloest(el);
       return melden(el, gefunden + ' von ' + gesamt + ' gefunden' + (zuviel ? ', ' + zuviel + ' zu viel markiert' : '')

@@ -37,7 +37,8 @@ deploy/                       compose.yaml + nginx.conf for the web server on th
 ## Site
 
 Top navigation, fixed at three items: **Start · EDV-Kurs · Artikel**.
-- `/`: search box, the two sections, all articles added on the latest day ("Neu hinzugefügt").
+- `/`: search box, the two sections, every lesson (one tap each, with "Weiter bei Abschnitt n" from the visitor's
+  progress), all articles added on the latest day ("Neu hinzugefügt").
 - `/edv-kurs/<slug>/`: lesson with downloads (ZIP + single files), checkable steps (progress in the visitor's
   browser), help, self-test, files for teachers.
   - The build numbers every section (h2) of a lesson; help gets "?".
@@ -48,10 +49,12 @@ Top navigation, fixed at three items: **Start · EDV-Kurs · Artikel**.
     - ticked steps;
     - solved exercises;
     - the evaluated test;
-    - for sections with none of these, an "Abschnitt erledigt?" button.
+    - for sections with none of these, a "✓ Geschafft – weiter zu n" button (marks the section, jumps on).
+  - A one-line legend explains the rings. On phones the bar at the top is one thin row (≤ 8 % of the screen).
+  - A summary (tasks done, next open section) is kept as `lektion-stand:<slug>` for the start page and lesson list.
   - The bar at the top shows the section on screen and the whole lesson. Each number in the quick navigation gets a
     ring that turns green with ✓ when its section is done.
-- `/artikel/`: search (title, keywords, summary, full text; umlaut-insensitive; full texts load from
+- `/artikel/`: search, which also lists matching lessons above the articles (title, keywords, summary, full text; umlaut-insensitive; full texts load from
   `suchindex.json` on the first search), topic filter, articles grouped by the day they were added (latest two open;
   no weekday, no "Kurstag"), parts of a series kept together with a "Teil n von m" badge.
 - `/artikel/<slug>/`: table of contents, series box (if any), quiz, then sources, keywords, "Mehr zum Thema"
@@ -125,9 +128,12 @@ erklaerung: "Shown when everything is right."
 - `typ: reihenfolge` takes `schritte:`, 3 to 8 steps in the right order.
 - `typ: luecken` takes `text:` with `[[answers]]` as gaps, plus `ablenker:`, up to 6 wrong words. Every gap holds
   one word.
-- `typ: markieren` takes `text:`, in which the `[[right parts]]` must be tapped; every other word can be tapped too.
+- `typ: markieren` takes `text:`, in which the `[[right parts]]` must be tapped. Every word is its own button (punctuation
+  is not), so answers do not stand out; tapping one word of a `[[part]]` finds the whole part.
 - Make exercises progressively harder: plausible wrong cards, distractor words, tricky parts to mark.
-- Learners drag with mouse or finger, or tap a card and then a box. Steps also move with arrow buttons.
+- Learners drag with the mouse; on phones they hold a card briefly, then drag (a quick swipe scrolls the page). Near the
+  screen edge the page scrolls by itself. Or tap a card, then a box or gap (also onto a card already there). Keyboard:
+  Tab to a card, Enter, Tab to a box or gap, Enter. Steps also move with arrow buttons. All buttons are at least 44 px.
 - "Prüfen" marks each card or step right or wrong. When everything is right, confetti appears.
 - Without JavaScript, "Lösung anzeigen" shows the answer. Answers are never stored. In lessons, the fact that an
   exercise was solved is kept in the browser as progress.
@@ -243,7 +249,8 @@ The owner's Raspberry Pi serves the site behind a Cloudflare Tunnel (route `edv.
 
 The notice (dialog + `/hinweis/`, text in `HINWEIS_PUNKTE` in `build.py`) promises:
 - no accounts, forms, cookies, tracking, analytics, e-mails or external scripts;
-- inputs stay in the browser: lesson progress (ticks, solved exercises, sections marked done) and the date the
+- inputs stay in the browser: lesson progress (ticks, solved exercises, sections marked done, and its summary for the
+  start page) and the date the
   notice was last seen, in `localStorage`;
 - no access logs on the server (`access_log off` in `deploy/nginx.conf`);
 - only public information, no legal advice, no personal or confidential data about real people or companies.

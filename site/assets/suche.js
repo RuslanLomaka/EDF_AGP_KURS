@@ -18,6 +18,8 @@
   const artikel = daten.artikel.map(a => ({
     ...a, t: norm(a.title), s: norm(a.stichwoerter.join(' ') + ' ' + (a.serie || '')), k: norm(a.kurz), text: '', x: '',
   }));
+  const lektionen = (daten.lektionen || []).map(l => ({ ...l, t: norm(l.title), k: norm(l.kurz + ' ' + l.s) }));
+  const lektionenBox = document.getElementById('lektionen-treffer');
   let volltext = 'offen'; // offen -> laedt -> da | fehler
   function ladeVolltext() {
     if (volltext !== 'offen') return;
@@ -70,9 +72,20 @@
     return html;
   }
 
+  // lessons of the EDV course that match: shown above the articles
+  function zeigeLektionen(begriffe) {
+    const treffer = begriffe.length && !thema
+      ? lektionen.filter(l => begriffe.every(b => l.t.includes(b) || l.k.includes(b))) : [];
+    lektionenBox.innerHTML = treffer.length ? '<h2 class="treffer-kopf">' + (treffer.length === 1 ? '1 Lektion' : treffer.length + ' Lektionen')
+      + ' im EDV-Kurs</h2><ul class="liste">' + treffer.map(l => '<li style="--t:#0e7490"><a href="' + l.url + '">Lektion ' + l.nummer + ': '
+      + markiere(l.title, begriffe) + '</a><br><span class="hinweis">' + markiere(l.kurz, begriffe) + '</span></li>').join('')
+      + '</ul><h2 class="treffer-kopf">Artikel</h2>' : '';
+  }
+
   function zeige() {
     const begriffe = norm(feld.value).split(/\s+/).filter(Boolean);
     if (begriffe.length) ladeVolltext();
+    if (lektionenBox) zeigeLektionen(begriffe);
     const treffer = [];
     for (const a of artikel) {
       if (thema && a.thema !== thema) continue;

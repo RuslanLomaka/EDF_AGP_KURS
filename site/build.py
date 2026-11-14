@@ -215,13 +215,30 @@ def uebung_html(path, nr, d):
             loesung_html = "<p>" + "".join(esc(x) if i % 2 == 0 else f"<strong>{esc(x)}</strong>"
                                            for i, x in enumerate(teile)) + "</p>"
         else:
-            def woerter(abschnitt):
-                return "".join(" " if re.fullmatch(r"\s+", w) else f'<button type="button" class="ue-wort" data-z="0">{esc(w)}</button>'
-                               for w in re.split(r"(\s+)", abschnitt) if w)
-            satz = "".join(woerter(x) if i % 2 == 0 else f'<button type="button" class="ue-wort" data-z="1">{esc(x)}</button>'
-                           for i, x in enumerate(teile))
+            def woerter(abschnitt, gruppe=None):
+                """Every word is its own button (so the answers do not stand out); punctuation stays plain text.
+                Words of one [[answer]] share a group: tapping any of them finds the answer."""
+                html = ""
+                for w in re.split(r"(\s+)", abschnitt):
+                    if not w:
+                        continue
+                    if re.fullmatch(r"\s+", w):
+                        html += " "
+                        continue
+                    m = re.fullmatch(r"([„“\"'(\[–—-]*)(.*?)([.,:;!?…“\"')\]–—]*)", w)
+                    vor, kern, nach = m.groups()
+                    if not kern:  # punctuation right after an [[answer]] sticks to it
+                        html += f'<span class="ue-nach">{esc(w)}</span>' if not html and gruppe is None else esc(w)
+                        continue
+                    z = f'data-z="1" data-g="{gruppe}"' if gruppe is not None else 'data-z="0"'
+                    html += ((f'<span class="ue-vor">{esc(vor)}</span>' if vor else "")
+                             + f'<button type="button" class="ue-wort" {z}>{esc(kern)}</button>'
+                             + (f'<span class="ue-nach">{esc(nach)}</span>' if nach else ""))
+                return html
+            satz = "".join(woerter(x) if i % 2 == 0 else woerter(x, i // 2) for i, x in enumerate(teile))
             inner = f'<p class="ue-markiertext">{satz}</p>'
-            hinweis = "Tippen Sie alles an, was passt. Noch einmal tippen nimmt die Markierung weg."
+            hinweis = ("Tippen Sie die passenden Wörter an. Bei mehreren Wörtern, die zusammengehören, reicht eines. "
+                       "Noch einmal tippen nimmt die Markierung weg.")
             loesung_html = "<ul>" + "".join(f"<li>{esc(x)}</li>" for x in antworten) + "</ul>"
     else:
         schritte = d.get("schritte")
@@ -521,7 +538,8 @@ def build_rechtliches(b):
 <h2>5. Speicherung in Ihrem Browser</h2>
 <p>Zwei kleine Angaben werden nur in Ihrem Browser gespeichert und nie an uns übertragen:</p>
 <ul>
-<li><strong>Fortschritt in Lektionen</strong> (welche Schritte Sie abgehakt, welche Übungen Sie gelöst und welche Abschnitte Sie als erledigt markiert haben) im „Local Storage“ Ihres Browsers. Sie können ihn auf der Lektionsseite mit „Fortschritt zurücksetzen“ oder in den Einstellungen Ihres Browsers löschen.</li>
+<li><strong>Fortschritt in Lektionen</strong> (welche Schritte Sie abgehakt, welche Übungen Sie gelöst und welche Abschnitte Sie als erledigt markiert haben, dazu
+die Zahl der erledigten Aufgaben für die Übersicht auf der Startseite) im „Local Storage“ Ihres Browsers. Sie können ihn auf der Lektionsseite mit „Fortschritt zurücksetzen“ oder in den Einstellungen Ihres Browsers löschen.</li>
 <li><strong>Ob Sie den kurzen Hinweis heute schon gesehen haben</strong>: nur das heutige Datum, im „Local Storage“. An einem neuen Tag erscheint der Hinweis einmal wieder.</li>
 </ul>
 <p>Diese Speicherung ist für die Funktionen, die Sie selbst nutzen, unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG). Suche und Quiz speichern nichts.</p>
@@ -862,7 +880,7 @@ def topic_chips(articles, themen):
                          for t in used)
 
 
-def build_article_index(articles, themen):
+def build_article_index(articles, themen, lessons):
     ordered = newest_first(articles)
     # full texts live in their own file, loaded only when someone searches
     volltext = json.dumps({a["url"]: a["text"] for a in ordered}, ensure_ascii=False)
@@ -873,14 +891,17 @@ def build_article_index(articles, themen):
              "serie": a["serie"], "teil": a["teil"], "teile": len(a["serie_teile"])} for a in ordered]
     used, chips = topic_chips(articles, themen)
     # every "<" escaped: no text can end the <script> element or switch the parser into script-escape mode
-    payload = json.dumps({"artikel": data, "themen": used, "volltext": volltext_url,
+    kurs = [{"title": l["title"], "url": l["url"], "nummer": l["nummer"], "kurz": l["kurz"],
+             "s": " ".join([l["untertitel"] or ""] + l["ziele"] + l["abschnitte"])} for l in lessons]
+    payload = json.dumps({"artikel": data, "lektionen": kurs, "themen": used, "volltext": volltext_url,
                           "farben": {th: THEMEN_FARBE[th] for th in used}},
                          ensure_ascii=False).replace("<", "\\u003c")
     main = f"""<header class="kopf"><h1>Artikel</h1>
 <p class="lead">Arbeitsblätter aus dem Kurs – einfach erklärt. {anzahl(len(articles), "Artikel", "Artikel")}.</p></header>
-<div class="suchfeld"><input id="suche" class="search" type="search" placeholder="Suchen: Titel, Stichwort oder Text …" aria-label="Artikel durchsuchen" autocomplete="off"></div>
+<div class="suchfeld"><input id="suche" class="search" type="search" placeholder="Suchen: Titel, Stichwort oder Text …" aria-label="Artikel und Lektionen durchsuchen" autocomplete="off"></div>
 <ul id="themen" class="chips themen" aria-label="Themen">{chips}</ul>
 <p id="anzahl" class="count" aria-live="polite"></p>
+<div id="lektionen-treffer"></div>
 <div id="liste">{grouped_list(ordered, open_days=2)}</div>
 <script id="daten" type="application/json">{payload}</script>"""
     write("artikel/index.html", layout("Artikel", "artikel", main, "Alle Arbeitsblätter aus dem Kurs, mit Suche.",
@@ -940,6 +961,7 @@ def load_lessons():
             "dauer": text(path, meta, "dauer", required=False),
             "niveau": text(path, meta, "niveau", required=False),
             "ziele": text_list(path, meta, "ziele"),
+            "abschnitte": [m.group(1) for m in re.finditer(r"^## +(.+?)(?: *\{[^}]*\})? *$", body, re.M)],
             "nummer": meta.get("nummer"),
             "dateien": download_list(path, meta, "dateien"),
             "lehrkraft": download_list(path, meta, "lehrkraft"),
@@ -1061,6 +1083,9 @@ def write_lesson(l, lehrer, body, ziele, downloads, lehrkraft, nav):
 <p class="lead">{esc(l['kurz'])}</p>
 {ziele}
 {downloads}
+<p class="fs-legende" hidden><strong>So sammeln Sie Fortschritt:</strong> Schritte abhaken, Übungen lösen,
+Abschnitte mit „Geschafft“ abschließen. Jede Nummer hat einen Ring: Er füllt sich und wird <strong>grün ✓</strong>,
+wenn der Abschnitt fertig ist. Alles bleibt nur auf diesem Gerät.</p>
 <div class="fortschritt" data-lektion="{l['slug']}" hidden>
   <p class="fs-abschnitt"><span class="fs-nr"></span><span class="fs-titel"></span><span class="fs-zahl"></span></p>
   <div class="balken"><span></span></div>
@@ -1101,23 +1126,30 @@ def build_lehrer_index(articles, lessons):
     write(f"{LEHRER}/index.html", layout("Lehrkraft", "", main, "Notizen für die Lehrkraft.", noindex=True))
 
 
+def stand_platz(l):
+    """Filled by stand.js from the lesson progress in this browser: "Weiter bei Abschnitt n"."""
+    return f'<p class="stand" data-stand="{l["slug"]}" data-url="{l["url"]}" hidden></p>'
+
+
 def build_lesson_index(lessons):
     cards = ""
     for l in lessons:
         untertitel = f'<p><strong>{esc(l["untertitel"])}</strong></p>' if l["untertitel"] else ""
         cards += (f'<article class="card lektion-karte"><p class="nummer" aria-hidden="true">{l["nummer"]}</p><div>'
                   f'<p class="meta">{lesson_meta(l)}</p>'
-                  f'<h2><a href="{l["url"]}">{esc(l["title"])}</a></h2>{untertitel}<p>{esc(l["kurz"])}</p></div></article>')
+                  f'<h2><a href="{l["url"]}">{esc(l["title"])}</a></h2>{untertitel}<p>{esc(l["kurz"])}</p>'
+                  f'{stand_platz(l)}</div></article>')
     main = f"""<header class="kopf"><h1>EDV-Kurs</h1>
 <p class="lead">Lektionen zum Mitmachen am Computer – Schritt für Schritt, mit Übungsdateien.</p></header>
 {cards}"""
-    write("edv-kurs/index.html", layout("EDV-Kurs", "kurs", main, "Lektionen zum Mitmachen am Computer.", farbe=KURS_FARBE))
+    write("edv-kurs/index.html", layout("EDV-Kurs", "kurs", main, "Lektionen zum Mitmachen am Computer.", ["stand.js"],
+                                        farbe=KURS_FARBE))
 
 
 # ---------------------------------------------------------------- start + 404
 
 SUCHFORMULAR = """<form class="startsuche" action="/artikel/" method="get" role="search">
-  <input class="search" type="search" name="q" placeholder="Artikel durchsuchen …" aria-label="Artikel durchsuchen">
+  <input class="search" type="search" name="q" placeholder="Suchen in Lektionen und Artikeln …" aria-label="Lektionen und Artikel durchsuchen">
 </form>"""
 
 
@@ -1132,6 +1164,9 @@ def build_start(articles, lessons):
         ueberschrift = "Neueste Artikel"
     items = "".join(f'<li{stil(a["thema"])}><a href="{a["url"]}">{esc(a["title"])}</a>{teil_badge(a)} '
                     f'<span class="badge thema">{esc(a["thema"])}</span></li>' for a in neu)
+    lektionen = "".join(f'<li><a href="{l["url"]}"><span class="nummer" aria-hidden="true">{l["nummer"]}</span>'
+                        f'<span><span class="vh">Lektion {l["nummer"]}: </span>{esc(l["title"])}</span></a>{stand_platz(l)}</li>'
+                        for l in lessons)
     main = f"""<section class="hero">
 <h1>{BRAND}</h1>
 <p class="lead">Unterlagen, Übungen und Anleitungen aus unserem Kurs – einfach erklärt.</p>
@@ -1141,10 +1176,14 @@ def build_start(articles, lessons):
   <a class="bereich" href="/edv-kurs/" style="--t:{KURS_FARBE}"><span class="icon">{ICON_KURS}</span><strong>EDV-Kurs</strong><span>Lektionen zum Mitmachen am Computer</span><small>{anzahl(len(lessons), "Lektion", "Lektionen")}</small></a>
   <a class="bereich" href="/artikel/" style="--t:{FARBEN[1]}"><span class="icon">{ICON_ARTIKEL}</span><strong>Artikel</strong><span>Arbeitsblätter aus dem Kurs, einfach erklärt</span><small>{anzahl(len(articles), "Artikel", "Artikel")}</small></a>
 </div>
+<section class="start-lektionen" style="--t:{KURS_FARBE}">
+<h2>Die Lektionen</h2>
+<ol class="lektionsliste">{lektionen}</ol>
+</section>
 <h2>{esc(ueberschrift)}</h2>
 <ul class="liste">{items}</ul>
 <p><a href="/artikel/">Alle Artikel</a></p>"""
-    write("index.html", layout(BRAND, "start", main, "Unterlagen und Übungen aus unserem Kurs."))
+    write("index.html", layout(BRAND, "start", main, "Unterlagen und Übungen aus unserem Kurs.", ["stand.js"]))
     write("404.html", layout("Seite nicht gefunden", "", f"""<h1>Seite nicht gefunden</h1>
 <p class="lead">Diese Seite gibt es nicht. Vielleicht finden Sie sie mit der Suche:</p>
 {SUCHFORMULAR}
@@ -1215,7 +1254,7 @@ def main():
     lessons = load_lessons()
     SEITEN.update(x["url"] for x in articles + lessons)
     build_article_pages(articles)
-    build_article_index(articles, themen)
+    build_article_index(articles, themen, lessons)
     build_topic_pages(articles, themen)
     build_lessons(lessons)
     build_lesson_index(lessons)
