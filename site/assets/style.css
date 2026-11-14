@@ -73,6 +73,7 @@ main, .liste li, .badge.thema, .bereich, .themen button { --ton: var(--t); --ton
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: 4.5rem; }
+html:has(.fortschritt) { scroll-padding-top: 7rem; }
 body {
   margin: 0;
   color: var(--fg);
@@ -124,7 +125,7 @@ a:hover { text-decoration-thickness: 2px; }
 .site-header nav a:hover { background: var(--accent-soft); color: var(--accent); }
 .site-header nav a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); }
 
-main { max-width: 46rem; margin: 0 auto; padding: 1.4rem 1rem 3rem; }
+main { max-width: 46rem; margin: 0 auto; padding: 1.4rem 1rem 3rem; overflow-wrap: break-word; }
 h1 { font-size: clamp(1.75rem, 1.2rem + 2.2vw, 2.35rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 800; margin: 0.3rem 0 0.5rem; }
 h2 { font-size: 1.35rem; line-height: 1.3; letter-spacing: -0.015em; font-weight: 750; color: var(--ton, var(--accent)); margin: 2.4rem 0 0.6rem; }
 h3 { font-size: 1.1rem; letter-spacing: -0.01em; margin: 1.7rem 0 0.5rem; }
@@ -280,6 +281,7 @@ th + th, td + td { border-left: 1px solid var(--line); }
 tr:last-child td { border-bottom: 0; }
 th { background: var(--ton-soft); color: var(--fg); font-weight: 700; }
 td[style*="right"], th[style*="right"] { white-space: nowrap; }
+th, td { overflow-wrap: anywhere; }  /* long words and web addresses must not widen the page on small phones */
 
 /* Glossary */
 dl { margin: 0.5rem 0; }
@@ -523,7 +525,7 @@ h2 .nr { margin-right: 0.35rem; }
   conic-gradient(var(--ok) calc(var(--p) * 1%), var(--line) 0) !important; color: var(--ton) !important; }
 .schnellnav a[aria-current="true"] .nr { background: radial-gradient(closest-side, var(--ton) 76%, transparent 78% 100%),
   conic-gradient(var(--ok) calc(var(--p) * 1%), var(--line) 0) !important; color: var(--card) !important; }
-.schnellnav a.fertig .nr { background: var(--ok) !important; color: #fff !important; }
+.schnellnav a.fertig .nr { background: var(--ok) !important; color: var(--card) !important; }
 .schnellnav a.fertig[aria-current="true"] .nr { box-shadow: 0 0 0 3px var(--ton); }
 .schnellnav a.fertig .titel::after { content: " ✓"; color: var(--ok); }
 .schnellnav-titel { margin: 0 0 0.4rem; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); }
@@ -585,7 +587,7 @@ h2 .nr { margin-right: 0.35rem; }
 .ue-schritt.ue-zieht { border-color: var(--ton); box-shadow: var(--shadow-hoch); opacity: 0.85; }
 .ue-griff { flex: none; width: 1.1rem; height: 1.7rem; touch-action: none; cursor: grab; opacity: 0.6;
   background-image: radial-gradient(var(--muted) 1.4px, transparent 1.6px); background-size: 6px 6px; }
-.ue-text { flex: 1; }
+.ue-text { flex: 1; min-width: 0; overflow-wrap: anywhere; hyphens: auto; }
 .ue-pfeile { flex: none; display: flex; gap: 0.25rem; }
 .ue-pfeile button, .ue-neu { font: inherit; font-weight: 700; border: 1px solid var(--line); background: var(--card); color: var(--fg); border-radius: 10px; cursor: pointer; }
 .ue-pfeile button { width: 2.3rem; height: 2.3rem; }
@@ -639,6 +641,10 @@ main .ue-loesung { margin: 0.8rem 0 0; box-shadow: none; font-size: 0.92rem; }
 .quiz-frage:not([data-fertig]) .quiz-antwort:hover { border-color: var(--ton-rand); background: var(--ton-soft); }
 .quiz-antwort:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 .quiz-buchstabe { flex: none; width: 1.75rem; height: 1.75rem; border-radius: 50%; display: grid; place-items: center; font-weight: 800; background: var(--ton-soft); color: var(--ton); }
+/* test mode: chosen answer (before right/wrong, so those colours win after "Auswerten") */
+.quiz-antwort[aria-pressed="true"] { border: 2px solid var(--ton); background: var(--ton-soft); }
+.quiz-antwort[aria-pressed="true"] .quiz-buchstabe { background: var(--ton); color: var(--card); }
+.quiz-frage[data-fertig] .quiz-antwort[aria-pressed="true"]:not(.ist-richtig):not(.gewaehlt-falsch) { border-color: var(--line); background: var(--card); }
 .quiz-antwort.ist-richtig { border: 2px solid var(--ok); background: color-mix(in srgb, var(--ok) 7%, var(--card)); }
 .quiz-antwort.ist-richtig .quiz-buchstabe { background: var(--ok); color: var(--card); }
 .quiz-antwort.gewaehlt-falsch { border: 2px solid var(--warn-line); background: var(--warn-bg); }
@@ -650,9 +656,6 @@ main .ue-loesung { margin: 0.8rem 0 0; box-shadow: none; font-size: 0.92rem; }
 .quiz-erklaerung, .quiz-quelle { color: var(--muted); font-size: 0.92rem; }
 .quiz-stand { font-weight: 800; margin: 1rem 0 0.5rem; }
 /* Test mode: choose first, results at the end */
-.quiz-antwort[aria-pressed="true"] { border: 2px solid var(--ton); background: var(--ton-soft); }
-.quiz-antwort[aria-pressed="true"] .quiz-buchstabe { background: var(--ton); color: var(--card); }
-.quiz-frage[data-fertig] .quiz-antwort[aria-pressed="true"]:not(.ist-richtig):not(.gewaehlt-falsch) { border-color: var(--line); background: var(--card); }
 .quiz-warnung { color: var(--warn-line); font-weight: 700; }
 .quiz-ergebnis { border: 1px solid var(--ton-rand); border-radius: 20px; padding: 1.1rem 1.2rem; margin: 0.5rem 0 1.4rem;
   background: linear-gradient(135deg, var(--ton-soft), var(--card) 85%); box-shadow: var(--shadow); }

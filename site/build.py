@@ -708,6 +708,7 @@ def nummeriere(body):
 
 
 def schnellnav(eintraege):
+    eintraege = sorted(eintraege, key=lambda e: e[0] == "?")  # help ("?") always last
     items = "".join(f'<li><a href="#{hid}" title="{esc(titel)}"><span class="nr">{marke}</span>'
                     f'<span class="titel">{esc(titel)}</span></a></li>' for marke, hid, titel in eintraege)
     return f'<nav class="schnellnav" aria-label="Abschnitte"><p class="schnellnav-titel">Abschnitte</p><ol>{items}</ol></nav>'

@@ -133,8 +133,8 @@
       const offen = fragen.findIndex(f => f.wahl < 0);
       if (offen >= 0 && !warnung.dataset.gewarnt) {
         warnung.dataset.gewarnt = 'ja';
-        warnung.textContent = 'Noch ' + fragen.filter(f => f.wahl < 0).length
-          + ' Fragen ohne Antwort. Beantworten Sie sie – oder klicken Sie noch einmal auf „Auswerten“.';
+        const zahl = fragen.filter(f => f.wahl < 0).length;
+        warnung.textContent = 'Noch ' + zahl + (zahl === 1 ? ' Frage' : ' Fragen') + ' ohne Antwort. Beantworten Sie sie – oder klicken Sie noch einmal auf „Auswerten“.';
         felder[offen].feld.scrollIntoView({ block: 'center' });
         return;
       }

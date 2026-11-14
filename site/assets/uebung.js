@@ -55,9 +55,10 @@
       ergebnis.textContent = '';
     };
     const lege = (k, ziel) => {
-      if (luecken && ziel !== pool) {  // a gap holds one word: the old one goes back
+      if (luecken && ziel !== pool) {  // a gap holds one word: the old one swaps places with the new one
         const alt = ziel.querySelector('.ue-karte');
-        if (alt && alt !== k) pool.append(alt);
+        const herkunft = k.parentElement;
+        if (alt && alt !== k) (herkunft && herkunft !== ziel ? herkunft : pool).append(alt);
       }
       ziel.append(k);
       k.classList.remove('ue-gelandet');
@@ -79,6 +80,9 @@
       k.addEventListener('click', e => {
         e.stopPropagation();
         if (k.dataset.gezogen) return;
+        // another card is selected and this one already sits in a box or gap: the selected card goes there
+        const platz = k.parentElement !== pool && k.closest(luecken ? '.ue-luecke' : '.ue-ziel');
+        if (gewaehlt && gewaehlt !== k && platz) return lege(gewaehlt, ablage(platz));
         waehle(k);
       });
       k.addEventListener('pointerdown', e => {

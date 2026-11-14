@@ -32,19 +32,19 @@
    "question": "Sie haben im selben Chat dreimal „noch dramatischer“ geschrieben. Jetzt klicken Sie auf „Neuer Chat“ und schreiben: „Noch dramatischer!“ Was passiert?",
    "answers": [
     {
-     "text": "Die KI weiß nicht, welcher Text gemeint ist.",
+     "text": "Die KI weiß nicht, welcher Text gemeint ist – sie sieht das alte Gespräch nicht.",
      "correct": true
     },
     {
-     "text": "Die KI nimmt automatisch den Text aus Runde 3 und macht ihn noch dramatischer.",
+     "text": "Der neue Chat holt den Text aus Runde 3 automatisch und macht ihn dramatischer.",
      "correct": false
     },
     {
-     "text": "Die KI sucht den letzten Text in Ihrem Konto und macht dort weiter.",
+     "text": "„Neuer Chat“ leert nur den Bildschirm – das Gespräch läuft genauso weiter.",
      "correct": false
     }
    ],
-   "explanation": "Jeder neue Chat beginnt ohne Erinnerung. Wer eine Antwort weiter verbessern will, bleibt im selben Chat."
+   "explanation": "Ein neuer Chat ist ein neues Gespräch: Den alten Text sieht die KI dort nicht. Manche Dienste haben zwar eine „Erinnerung“ und merken sich einzelne Dinge über Sie – darum nichts Persönliches eingeben. Wer eine Antwort weiter verbessern will, bleibt im selben Chat."
   },
   {
    "area": "Prompten",
@@ -143,7 +143,7 @@
   },
   {
    "area": "KI-Fehler erkennen",
-   "question": "Bei „Stille Post“ ging ein Satz durch drei Sprachen und kam verändert zurück. Was lernen Sie daraus?",
+   "question": "Bei „Stille Post“ ging ein Satz durch drei fremde Sprachen und kam verändert zurück. Was lernen Sie daraus?",
    "answers": [
     {
      "text": "Bei jeder Übersetzung kann Bedeutung verloren gehen – wichtige Texte prüfen Sie.",

@@ -53,7 +53,7 @@ Wir melden uns mit unserem **Google-Konto** an. Bei „Mit Google anmelden“ be
 **Zum Bild**
 
 1. „So sieht fast jeder KI-Chat aus – egal ob ChatGPT, Claude, Gemini oder Duck.ai.“
-2. Zeigen Sie auf die 1: „Mit **Neuer Chat** beginnen Sie ein neues Thema. Die KI vergisst dann das alte Gespräch.“
+2. Zeigen Sie auf die 1: „Mit **Neuer Chat** beginnen Sie ein neues Gespräch. Den alten Text sieht die KI dort normalerweise nicht.“ Ergänzen Sie: „Aber Achtung: Viele KI-Dienste haben eine **Erinnerung**. Sie merken sich Dinge über Sie, auch über mehrere Chats. Darum schreiben wir nichts Persönliches hinein.“
 3. Zeigen Sie auf die 2: „Das ist der **Prompt**: Ihre Frage oder Ihr Auftrag an die KI.“
 4. Zeigen Sie auf die 3: „Hier kommt die **Antwort** der KI.“
 5. Zeigen Sie auf die 4: „Im **Eingabefeld** schreiben Sie. Mit **Enter** schicken Sie es ab.“
@@ -76,14 +76,15 @@ Eine **KI** (künstliche Intelligenz) zum Chatten funktioniert wie ein Chat mit 
 
 - Die kostenlosen Versionen haben ein **Limit**: Nach vielen Fragen müssen Sie warten. Dann nehmen Sie einfach ein anderes Werkzeug.
 - Die Anbieter ändern ihre Regeln oft (Stand: November 2026). Ihre Lehrkraft sagt Ihnen, womit wir heute arbeiten.
-- Am Schulungs-PC: Nutzen Sie ein **privates Fenster** (Inkognito, **Strg + Umschalt + N**). Wenn Sie es schließen, sind Sie überall abgemeldet und nichts bleibt gespeichert.
+- Am Schulungs-PC: Nutzen Sie ein **privates Fenster** (Inkognito, **Strg + Umschalt + N**). Wenn Sie es schließen, sind Sie überall abgemeldet und auf dem PC bleibt nichts gespeichert.
+- **Neuer Chat** heißt: neues Gespräch. Aber viele KI-Dienste haben eine **Erinnerung** (Memory): Sie merken sich Dinge über Sie, auch über mehrere Chats hinweg. Ein Grund mehr, nichts Persönliches einzugeben.
 :::
 
 ## Los geht's {#start}
 
 <p class="zeit">15 Minuten</p>
 
-<p class="bild"><img src="/edv-kurs/bilder/google-anmelden.svg" alt="Einmal Google – viele KIs: Sie melden sich einmal mit Ihrem Google-Konto an. Danach klicken Sie bei ChatGPT, Claude, Gemini und Le Chat auf „Mit Google anmelden“. Am Ende melden Sie sich überall ab. Duck.ai geht ganz ohne Konto." width="400" height="400"></p>
+<p class="bild"><img src="/edv-kurs/bilder/google-anmelden.svg" alt="Einmal Google – viele KIs: Sie melden sich einmal mit Ihrem Google-Konto an. Danach klicken Sie bei ChatGPT, Claude und Le Chat auf „Mit Google anmelden“. Bei Gemini sind Sie schon drin, denn Gemini gehört zu Google. Am Ende melden Sie sich überall ab. Duck.ai geht ganz ohne Konto." width="400" height="400"></p>
 
 ::: notiz
 **Zum Bild**
@@ -250,7 +251,7 @@ Strenge Regeln: genau 7 Wörter, alle Wörter beginnen mit demselben Buchstaben,
 5. Frage: „Wann ist das im echten Leben gefährlich?“ (Zum Beispiel bei wichtigen Briefen oder Verträgen.)
 :::
 
-Ein Satz reist durch vier Sprachen und kommt zurück. Was ist von ihm übrig?
+Ein Satz reist durch drei fremde Sprachen und kommt zurück ins Deutsche. Was ist von ihm übrig?
 
 ::: prompt
 Übersetze diesen Satz ins Japanische: „Mein Nachbar hat am Sonntag mit seinem Hund im Garten Kuchen gebacken.“
@@ -338,7 +339,7 @@ erklaerung: "Eine falsche Frage, unauffindbare Quellen und genaue Zahlen ohne Be
 2. Folgen Sie den Säulen: „Fünf Runden. Jedes Mal sagen wir: noch dramatischer!“
 3. Oben rechts: „Am Ende ist aus dem Einkauf ein großes Drama geworden.“
 4. „Das Wichtige: Die KI baut auf ihrer letzten Antwort auf – weil wir im selben Chat bleiben.“
-5. Frage: „Was passiert, wenn Sie zwischendurch auf ‚Neuer Chat‘ klicken?“ (Die KI hat alles vergessen.)
+5. Frage: „Was passiert, wenn Sie zwischendurch auf ‚Neuer Chat‘ klicken?“ (Die KI sieht den alten Text nicht mehr und weiß nicht, was „noch dramatischer“ meint.)
 :::
 
 Ein ganz normaler Satz wird in fünf Runden immer dramatischer. Lesen Sie die letzte Version laut vor – mit viel Gefühl!
