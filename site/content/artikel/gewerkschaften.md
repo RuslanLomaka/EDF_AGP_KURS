@@ -181,6 +181,20 @@ Deshalb schlossen sich Arbeiter zusammen. So entstanden die ersten Gewerkschafte
 
 **Merke:** Eine Gewerkschaft **bündelt die Interessen** vieler Beschäftigter. **Gemeinsam** sind sie stärker als allein.
 
+```uebung
+typ: zuordnen
+frage: "Neue Fälle: Gewerkschaft oder Betriebsrat?"
+gruppen:
+  "Gewerkschaft":
+    - "Verhandelt mit den Arbeitgebern einer Branche über den Lohn."
+    - "Ruft zum Streik auf."
+    - "Zahlt ihren Mitgliedern Streikgeld."
+  "Betriebsrat":
+    - "Wird von den Beschäftigten einer Firma gewählt."
+    - "Kümmert sich um Probleme in der eigenen Firma."
+erklaerung: "Die Gewerkschaft ist eine Organisation außerhalb der Firma: Sie verhandelt Tarifverträge und organisiert Streiks. Den Betriebsrat wählen die Beschäftigten einer Firma."
+```
+
 ## Wörter {#woerter}
 
 **die Gewerkschaft, die Gewerkschaften**

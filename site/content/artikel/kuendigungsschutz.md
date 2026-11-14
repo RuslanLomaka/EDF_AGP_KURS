@@ -163,6 +163,7 @@ gruppen:
     - "Sich weigern zu arbeiten"
   "Person":
     - "Lange Krankheit ohne Besserung"
+    - "Ein Busfahrer verliert wegen einer Krankheit seinen Führerschein"
   "Betrieb":
     - "Zu wenig Aufträge"
     - "Die Firma wird umstrukturiert"
@@ -175,6 +176,20 @@ frage: "Ergänzen Sie die Regeln. Nicht alle Wörter passen."
 text: "Das Kündigungsschutzgesetz gilt, wenn Sie länger als [[6 Monate]] in der Firma arbeiten und die Firma mehr als [[10 Beschäftigte]] hat. Gegen eine Kündigung können Sie innerhalb von [[3 Wochen]] beim Arbeitsgericht klagen."
 ablenker: ["12 Monate", "5 Beschäftigte", "4 Wochen"]
 erklaerung: "6 Monate, mehr als 10 Beschäftigte und 3 Wochen für die Klage – diese drei Zahlen sollten Sie kennen."
+```
+
+```uebung
+typ: zuordnen
+frage: "Neue Fälle: Gilt das Kündigungsschutzgesetz?"
+gruppen:
+  "Gilt":
+    - "Seit 2 Jahren in einer Bäckerei mit 25 Beschäftigten."
+    - "Seit 8 Monaten in einem Lager mit 12 Beschäftigten."
+  "Gilt nicht":
+    - "Seit 3 Monaten in einem Supermarkt mit 80 Beschäftigten."
+    - "Seit 5 Jahren in einem Friseursalon mit 4 Beschäftigten."
+    - "Seit 4 Jahren in einer Arztpraxis mit 7 Beschäftigten."
+erklaerung: "Beides muss stimmen: mehr als 6 Monate in der Firma UND mehr als 10 Beschäftigte. Fehlt eines, gilt das Gesetz nicht."
 ```
 
 ## Wörter {#woerter}

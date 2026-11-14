@@ -181,6 +181,22 @@ gruppen:
 erklaerung: "Je länger Sie in der Firma sind, desto länger die Frist. Ab 5 Jahren 2 Monate, ab 12 Jahren 5 Monate, ab 20 Jahren 7 Monate."
 ```
 
+```uebung
+typ: zuordnen
+frage: "Neue Fälle: Welche Frist gilt hier?"
+gruppen:
+  "4 Wochen zum 15. oder zum Monatsende":
+    - "Sie kündigen selbst – nach 10 Jahren in der Firma."
+    - "Sie kündigen selbst – nach 2 Jahren in der Firma."
+  "2 Wochen":
+    - "Der Chef kündigt Ihnen in der Probezeit."
+  "2 Monate zum Monatsende":
+    - "Der Chef kündigt Ihnen nach 6 Jahren in der Firma."
+  "Fristlos möglich":
+    - "Ein Mitarbeiter hat Geld aus der Kasse gestohlen."
+erklaerung: "Achtung, klassischer Fehler: Die längeren Fristen gelten nur, wenn der Arbeitgeber kündigt. Wer selbst kündigt, hat meistens nur 4 Wochen – auch nach 10 Jahren."
+```
+
 ## Wörter {#woerter}
 
 **die Kündigung, die Kündigungen**

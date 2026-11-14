@@ -150,6 +150,21 @@ gruppen:
 erklaerung: "Die UG ist die „Mini-GmbH“ ab 1 Euro. Die GmbH braucht 25.000 Euro, die AG 50.000 Euro."
 ```
 
+```uebung
+typ: zuordnen
+frage: "Neue Fälle: Welche Rechtsform passt?"
+gruppen:
+  "UG":
+    - "Jana hat nur 500 Euro, will aber nur mit dem Geld der Firma haften."
+    - "Ein Gründer muss jedes Jahr 25 Prozent vom Gewinn zurücklegen."
+  "GmbH":
+    - "Zwei Partner bringen zusammen 30.000 Euro Stammkapital ein."
+  "AG":
+    - "Eine Firma verkauft Aktien und hat eine Hauptversammlung."
+    - "Das Grundkapital ist 50.000 Euro."
+erklaerung: "Die UG geht ab 1 Euro, muss aber 25 Prozent vom Gewinn behalten. Die GmbH braucht 25.000 Euro Stammkapital. Die AG hat Aktien, eine Hauptversammlung und mindestens 50.000 Euro Grundkapital."
+```
+
 ## Wörter {#woerter}
 
 **die Kapitalgesellschaft, die Kapitalgesellschaften**

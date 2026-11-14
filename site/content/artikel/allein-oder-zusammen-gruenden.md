@@ -163,6 +163,23 @@ gruppen:
 erklaerung: "In diesen Rechtsformen haften alle Inhaber privat – nur der Kommanditist in der KG nicht."
 ```
 
+```uebung
+typ: zuordnen
+frage: "Neue Fälle: Welche Rechtsform ist das?"
+gruppen:
+  "Einzelunternehmen":
+    - "Lena repariert allein Fahrräder in ihrer Garage."
+    - "Ein Grafiker arbeitet ohne Partner für mehrere Kunden."
+  "GbR":
+    - "Zwei Freundinnen gründen zusammen einen kleinen Putzservice."
+    - "Ein Ehepaar eröffnet gemeinsam ein kleines Café."
+  "OHG":
+    - "Drei Partner führen einen großen Großhandel und sind im Handelsregister eingetragen."
+  "KG":
+    - "Tom führt die Firma und haftet voll. Seine Tante gibt nur Geld und haftet bis zu ihrer Einlage."
+erklaerung: "Allein: Einzelunternehmen. Zu zweit oder mehr ohne Eintrag: GbR. Großes Handelsgewerbe im Handelsregister: OHG. Einer haftet voll, einer nur mit seiner Einlage: KG."
+```
+
 ## Wörter {#woerter}
 
 **die Rechtsform, die Rechtsformen**

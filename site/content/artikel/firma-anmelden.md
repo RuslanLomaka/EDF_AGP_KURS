@@ -131,6 +131,21 @@ Als Selbstständige oder Selbstständiger zahlt kein Arbeitgeber mehr für Ihre 
 **Wenn Sie Mitarbeiter einstellen**, gibt es weitere Pflichten. Mehr dazu in [Teil 5](/artikel/pflichten-als-unternehmer/).
 :::
 
+```uebung
+typ: zuordnen
+frage: "Neue Fälle: Wohin gehen Sie zuerst?"
+gruppen:
+  "Gewerbeamt":
+    - "Sie eröffnen einen Kiosk."
+    - "Sie starten einen Online-Shop."
+  "Finanzamt":
+    - "Sie arbeiten als freie Übersetzerin."
+    - "Sie schicken den Fragebogen zur steuerlichen Erfassung."
+  "Notar und Handelsregister":
+    - "Sie gründen mit einem Partner eine GmbH."
+erklaerung: "Ein Gewerbe beginnt beim Gewerbeamt. Freie Berufe melden sich nur beim Finanzamt, und den Fragebogen bekommen alle vom Finanzamt. Eine GmbH braucht den Notar und den Eintrag ins Handelsregister."
+```
+
 ## Wörter {#woerter}
 
 **die Gewerbeanmeldung, die Gewerbeanmeldungen**

@@ -179,6 +179,21 @@ ablenker: ["10 Stunden", "40 Stunden", "9 Stunden"]
 erklaerung: "8 Stunden am Tag (bis 10 nur mit Ausgleich), 48 Stunden pro Woche von Montag bis Samstag, 11 Stunden Ruhe."
 ```
 
+```uebung
+typ: zuordnen
+frage: "Neue Fälle: Erlaubt oder nicht erlaubt?"
+gruppen:
+  "Erlaubt":
+    - "Eine Verkäuferin arbeitet 6 Stunden ohne Pause."
+    - "Ein Lagerarbeiter arbeitet 7 Stunden und macht zweimal 15 Minuten Pause."
+    - "Ein Fahrer arbeitet heute 10 Stunden, im Schnitt von 6 Monaten aber 8 Stunden."
+  "Nicht erlaubt":
+    - "Ein Koch arbeitet bis 23 Uhr und fängt am nächsten Tag um 8 Uhr wieder an."
+    - "Eine Pflegerin legt ihre Pause ans Ende und geht 30 Minuten früher."
+    - "Ein Maler arbeitet 10 Stunden und macht 30 Minuten Pause."
+erklaerung: "Bis 6 Stunden ist keine Pause Pflicht. Pausen dürfen in Blöcken von 15 Minuten sein. Zwischen zwei Arbeitstagen liegen 11 Stunden Ruhe. Die Pause liegt mitten in der Arbeit. Über 9 Stunden sind 45 Minuten Pause Pflicht."
+```
+
 ## Wörter {#woerter}
 
 **das Arbeitszeitgesetz (ArbZG)**

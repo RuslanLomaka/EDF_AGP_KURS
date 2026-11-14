@@ -141,6 +141,20 @@ schritte:
   - "Danach: Krankengeld von der Krankenkasse"
 ```
 
+```uebung
+typ: zuordnen
+frage: "Neue Fälle: Richtig oder falsch gemacht?"
+gruppen:
+  "Richtig gemacht":
+    - "Murat ist Montag früh krank und ruft vor Arbeitsbeginn an."
+    - "Anna wird im Urlaub krank, geht zum Arzt und meldet sich sofort."
+    - "Paul ist 2 Tage krank. Sein Chef verlangt kein Attest, also bringt er keins."
+  "Falsch gemacht":
+    - "Svetlana meldet sich erst am Mittwoch, nachdem sie beim Arzt war."
+    - "Ben ist krankgeschrieben und hilft abends in der Kneipe seines Bruders."
+erklaerung: "Krankmelden: sofort, vor Arbeitsbeginn. Ein Attest braucht man meist erst ab dem 4. Tag – außer der Chef verlangt es früher. Krank im Urlaub: mit Attest zählen die Tage nicht als Urlaub. Wer krankgeschrieben ist, arbeitet nicht woanders."
+```
+
 ## Wörter {#woerter}
 
 **krank sein / arbeitsunfähig sein**

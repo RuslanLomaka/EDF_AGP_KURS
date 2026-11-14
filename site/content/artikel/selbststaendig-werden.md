@@ -165,6 +165,21 @@ gruppen:
 erklaerung: "Ein Gewerbe melden Sie beim Gewerbeamt an. Freie Berufe melden sich nur beim Finanzamt."
 ```
 
+```uebung
+typ: zuordnen
+frage: "Neue Fälle: Wohin zuerst?"
+gruppen:
+  "Gewerbeamt":
+    - "Ali will einen Imbiss eröffnen."
+    - "Peter startet einen Online-Shop."
+  "Nur Finanzamt":
+    - "Sandra gibt als freie Lehrerin Sprachkurse."
+    - "Igor arbeitet als freier Übersetzer."
+  "Erst Ausländerbehörde fragen":
+    - "Olgas Aufenthaltstitel erlaubt nur „Beschäftigung“."
+erklaerung: "Gewerbe: Gewerbeamt. Freie Berufe wie Lehrerin oder Übersetzer: nur Finanzamt. Erlaubt der Aufenthaltstitel nur eine Beschäftigung, fragen Sie vor der Gründung bei der Ausländerbehörde."
+```
+
 ## Wörter {#woerter}
 
 **selbstständig**

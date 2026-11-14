@@ -155,6 +155,21 @@ gruppen:
 erklaerung: "Rechnungen und Belege 8 Jahre, Bücher und Jahresabschlüsse 10 Jahre."
 ```
 
+```uebung
+typ: zuordnen
+frage: "Neue Fälle: Richtig oder falsch?"
+gruppen:
+  "Richtig":
+    - "Ein kleiner Imbiss als Einzelunternehmen macht eine EÜR."
+    - "Ein Übersetzer zahlt keine Gewerbesteuer."
+  "Falsch":
+    - "Eine Friseurin schickt ein PDF per E-Mail und nennt es E-Rechnung."
+    - "Eine GmbH macht nur eine EÜR statt einer Bilanz."
+    - "Ein Maler wirft seine Belege nach 2 Jahren weg."
+    - "Eine Firma zahlt 2026 einer Aushilfe 12 Euro pro Stunde."
+erklaerung: "Kleine Einzelunternehmen dürfen die EÜR machen, eine GmbH braucht eine Bilanz. Freie Berufe zahlen keine Gewerbesteuer. Ein PDF ist keine E-Rechnung. Belege heben Sie 8 Jahre auf. Der Mindestlohn 2026 ist 13,90 Euro."
+```
+
 ## Wörter {#woerter}
 
 **die Buchhaltung**

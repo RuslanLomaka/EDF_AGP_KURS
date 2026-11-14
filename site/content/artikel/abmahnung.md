@@ -131,6 +131,21 @@ gruppen:
 erklaerung: "Eine Abmahnung gibt es für Fehlverhalten. Für Krankheit kann man nichts – dafür gibt es keine Abmahnung."
 ```
 
+```uebung
+typ: zuordnen
+frage: "Neue Fälle: Ist diese Abmahnung genau genug?"
+gruppen:
+  "Genau genug":
+    - "„Am 12. Mai haben Sie um 14 Uhr die Kasse 3 offen gelassen.“"
+    - "„Am 3. und 5. März kamen Sie 40 Minuten zu spät, ohne Bescheid zu sagen.“"
+    - "„Am 2. Juni sind Sie ohne Helm auf das Gerüst gestiegen.“"
+  "Zu ungenau":
+    - "„Sie sind in letzter Zeit oft unfreundlich.“"
+    - "„Ihr Verhalten gefällt uns nicht.“"
+    - "„Sie kommen ständig zu spät.“"
+erklaerung: "Eine Abmahnung muss den Fehler genau beschreiben: Datum, Uhrzeit, Ort und was passiert ist. Allgemeine Vorwürfe reichen nicht."
+```
+
 ## Wörter {#woerter}
 
 **die Abmahnung, die Abmahnungen**

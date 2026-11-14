@@ -196,6 +196,22 @@ gruppen:
 erklaerung: "Vom Brutto gehen Lohnsteuer und vier Sozialversicherungen ab. Die Unfallversicherung zahlt der Arbeitgeber allein."
 ```
 
+```uebung
+typ: zuordnen
+frage: "Neue Fälle: Wird das vom Brutto abgezogen?"
+gruppen:
+  "Wird abgezogen":
+    - "Beitrag zur Rentenversicherung"
+    - "Lohnsteuer"
+    - "Beitrag zur Pflegeversicherung"
+    - "Beitrag zur Arbeitslosenversicherung"
+  "Wird nicht abgezogen":
+    - "Die Miete für die Wohnung"
+    - "Die Haftpflichtversicherung"
+    - "Der Vertrag für das Handy"
+erklaerung: "Vom Brutto gehen Steuern und die Beiträge zur Sozialversicherung ab. Miete, private Versicherungen und Verträge zahlen Sie selbst vom Netto."
+```
+
 ## Wörter {#woerter}
 
 **die Stellenanzeige, die Stellenanzeigen**

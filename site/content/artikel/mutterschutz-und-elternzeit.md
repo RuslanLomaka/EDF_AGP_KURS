@@ -181,6 +181,20 @@ schritte:
   - "Elternzeit – bis zu 3 Jahre pro Elternteil"
 ```
 
+```uebung
+typ: zuordnen
+frage: "Neue Fälle: Mutterschutz oder Elternzeit?"
+gruppen:
+  "Mutterschutz":
+    - "Frau K. darf in den 8 Wochen nach der Geburt nicht arbeiten."
+    - "Frau N. bekommt ab 6 Wochen vor dem Termin ihr volles Netto weiter."
+  "Elternzeit":
+    - "Herr L. bleibt ein Jahr zu Hause bei seiner Tochter."
+    - "Frau M. meldet 7 Wochen vorher an, dass sie 2 Jahre zu Hause bleibt."
+    - "Mutter und Vater sind gleichzeitig zu Hause."
+erklaerung: "Mutterschutz gilt nur für die Mutter: 6 Wochen vor bis 8 Wochen nach der Geburt. Elternzeit können Mütter und Väter nehmen, auch gleichzeitig, bis zu 3 Jahre."
+```
+
 ## Wörter {#woerter}
 
 **das Mutterschutzgesetz (MuSchG)**
