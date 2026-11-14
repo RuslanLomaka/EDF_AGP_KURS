@@ -478,6 +478,26 @@ main a.btn { color: #fff; }
 /* Long German words must never push the page sideways */
 h1, h2, h3, .liste a, .blaettern a, .card h2, .bereich strong { overflow-wrap: break-word; hyphens: auto; hyphenate-limit-chars: 12 5 5; }
 
+/* Lesson tasks: time badge, example prompt with copy button, optional challenge in small print */
+.zeit { display: inline-flex; align-items: center; gap: 0.35rem; margin: -0.2rem 0 0.6rem; padding: 0.12rem 0.65rem; border-radius: 999px;
+  font-size: 0.8rem; font-weight: 700; background: var(--ton-soft); color: var(--ton); }
+.zeit::before { content: ""; width: 0.9rem; height: 0.9rem; background: currentColor;
+  -webkit-mask: url(icon-uhr.svg) center / contain no-repeat; mask: url(icon-uhr.svg) center / contain no-repeat; }
+.prompt { position: relative; margin: 1rem 0; padding: 2rem 1rem 0.9rem; border: 1.5px dashed var(--ton-rand); border-radius: 14px;
+  background: var(--card); font-size: 1.02rem; }
+.prompt::before { content: "Beispiel-Prompt"; position: absolute; left: 1rem; top: 0.55rem; font-size: 0.72rem; font-weight: 800;
+  letter-spacing: 0.07em; text-transform: uppercase; color: var(--ton); }
+.prompt > :first-child { margin-top: 0; }
+.prompt > p:last-of-type { margin-bottom: 0.2rem; }
+.kopieren { position: absolute; right: 0.6rem; top: 0.45rem; font: inherit; font-size: 0.8rem; font-weight: 700; padding: 0.2rem 0.7rem;
+  border-radius: 999px; border: 1px solid var(--ton-rand); background: var(--ton-soft); color: var(--ton); cursor: pointer; }
+.profi { margin: 0.8rem 0 1.2rem; padding: 0.55rem 0.9rem 0.6rem; border-left: 3px solid var(--erg-line); border-radius: 0 10px 10px 0;
+  background: var(--erg-bg); font-size: 0.86rem; color: var(--muted); }
+.profi::before { content: "★ Für Profis – freiwillig"; display: block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--erg-line); margin-bottom: 0.15rem; }
+.profi > :first-child { margin-top: 0; }
+.profi > :last-child { margin-bottom: 0; }
+
 /* Article quiz */
 .quiz { margin-top: 2.5rem; }
 .quiz-frage { border: 1px solid var(--line); border-radius: var(--r); background: var(--card); padding: 0.8rem 1rem 0.9rem; margin: 0.9rem 0; box-shadow: var(--shadow); }
@@ -497,6 +517,33 @@ h1, h2, h3, .liste a, .blaettern a, .card h2, .bereich strong { overflow-wrap: b
 .quiz-rueckmeldung .falsch { color: var(--warn-line); font-weight: 800; }
 .quiz-erklaerung, .quiz-quelle { color: var(--muted); font-size: 0.92rem; }
 .quiz-stand { font-weight: 800; margin: 1rem 0 0.5rem; }
+/* Test mode: choose first, results at the end */
+.quiz-antwort[aria-pressed="true"] { border: 2px solid var(--ton); background: var(--ton-soft); }
+.quiz-antwort[aria-pressed="true"] .quiz-buchstabe { background: var(--ton); color: var(--card); }
+.quiz-frage[data-fertig] .quiz-antwort[aria-pressed="true"]:not(.ist-richtig):not(.gewaehlt-falsch) { border-color: var(--line); background: var(--card); }
+.quiz-warnung { color: var(--warn-line); font-weight: 700; }
+.quiz-ergebnis { border: 1px solid var(--ton-rand); border-radius: 20px; padding: 1.1rem 1.2rem; margin: 0.5rem 0 1.4rem;
+  background: linear-gradient(135deg, var(--ton-soft), var(--card) 85%); box-shadow: var(--shadow); }
+.quiz-ergebnis:focus { outline: none; }
+.quiz-ergebnis h3 { margin: 1.2rem 0 0.4rem; }
+.quiz-titel { margin: 0; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; color: var(--ton); }
+.quiz-punkte { margin: 0.1rem 0 0.5rem; font-weight: 700; font-size: 1.1rem; }
+.quiz-balken { height: 12px; border-radius: 999px; background: var(--line); overflow: hidden; }
+.quiz-balken span { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #16a34a, #22c55e); }
+.quiz-bereiche { display: grid; gap: 0.6rem; }
+.quiz-bereich { display: grid; grid-template-columns: 1fr auto; gap: 0.2rem 0.6rem; align-items: center; font-weight: 650; }
+.quiz-bereich .quiz-balken { grid-column: 1 / -1; height: 8px; }
+.quiz-bereich-zahl { color: var(--muted); font-weight: 700; }
+.quiz-stark { color: var(--ok); font-weight: 700; }
+.quiz-ueben { color: var(--warn-line); font-weight: 700; margin-bottom: 0.2rem; }
+.quiz-tipps { margin: 0.2rem 0 0; padding-left: 1.2rem; }
+.quiz-fehler { padding-left: 1.3rem; }
+.quiz-fehler li { margin: 0.7rem 0; }
+.quiz-fehler p { margin: 0.15rem 0; }
+.quiz-fehler-frage { font-weight: 700; }
+.quiz-fehler .falsch { color: var(--warn-line); }
+.quiz-fehler .ok { color: var(--ok); }
+.quiz-neu + .quiz-neu { margin-left: 0.5rem; }
 
 /* Notice shown once a day */
 .hinweis-dialog { position: fixed; inset: auto 0.75rem 0.75rem; margin: 0 auto; max-width: 40rem; z-index: 50; display: none; gap: 0.8rem; align-items: center; border: 1px solid var(--line); border-radius: var(--r); background: var(--card); color: var(--fg); padding: 0.65rem 0.85rem; box-shadow: 0 12px 34px rgb(0 0 0 / 0.2); font-size: 0.92rem; }

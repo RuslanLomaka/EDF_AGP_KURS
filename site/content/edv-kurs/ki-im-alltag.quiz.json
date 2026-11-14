@@ -1,0 +1,278 @@
+{
+ "title": "Abschlusstest: KI sicher und klug nutzen",
+ "mode": "test",
+ "areas": {
+  "Prompten": "Denken Sie an R-Z-F-L: Rolle, Ziel, Format, Länge. Und verbessern Sie Antworten im selben Chat.",
+  "KI-Fehler erkennen": "Die KI klingt immer sicher, auch wenn sie sich irrt. Prüfen Sie wichtige Fakten mit einer sicheren Quelle.",
+  "Datenschutz": "Keine echten Namen, Adressen, Lebensläufe oder Daten über andere. Üben Sie mit Max Mustermann.",
+  "Werkzeuge und Grenzen": "Am Ende abmelden. Limit erreicht? Werkzeug wechseln. Die KI hilft – entscheiden tun Sie."
+ },
+ "questions": [
+  {
+   "area": "Prompten",
+   "question": "Wofür stehen die Buchstaben R-Z-F-L bei einem guten Prompt?",
+   "answers": [
+    {
+     "text": "Rolle, Ziel, Format, Länge",
+     "correct": true
+    },
+    {
+     "text": "Regeln, Zeit, Fehler, Lösung",
+     "correct": false
+    },
+    {
+     "text": "Rechnen, Zählen, Fragen, Lernen",
+     "correct": false
+    }
+   ],
+   "explanation": "R-Z-F-L: Wer soll die KI sein (Rolle), was soll herauskommen (Ziel), in welcher Form (Format) und wie lang (Länge)."
+  },
+  {
+   "area": "Prompten",
+   "question": "Die Antwort der KI ist zu lang. Was tun Sie am besten?",
+   "answers": [
+    {
+     "text": "Im selben Chat schreiben: „Bitte kürzer, höchstens 3 Sätze.“",
+     "correct": true
+    },
+    {
+     "text": "Einen neuen Chat öffnen und genau dieselbe Frage stellen.",
+     "correct": false
+    },
+    {
+     "text": "Aufgeben – eine KI kann nicht kurz antworten.",
+     "correct": false
+    }
+   ],
+   "explanation": "Im selben Chat kennt die KI ihre Antwort und kann sie verbessern. Sagen Sie genau, was Sie wollen."
+  },
+  {
+   "area": "Prompten",
+   "question": "Welcher Prompt bringt wahrscheinlich die beste Antwort?",
+   "answers": [
+    {
+     "text": "„Du bist Bewerbungstrainerin. Schreibe 3 typische Fragen für ein Vorstellungsgespräch als Lagerhelfer, als Liste.“",
+     "correct": true
+    },
+    {
+     "text": "„Vorstellungsgespräch.“",
+     "correct": false
+    },
+    {
+     "text": "„Schreib was über Arbeit.“",
+     "correct": false
+    }
+   ],
+   "explanation": "Dieser Prompt hat eine Rolle, ein klares Ziel und ein Format. Die anderen sind zu ungenau."
+  },
+  {
+   "area": "Prompten",
+   "question": "Sie wollen eine Antwort Schritt für Schritt verändern – wie bei der Aufgabe „Eskalation“. Wo schreiben Sie weiter?",
+   "answers": [
+    {
+     "text": "Im selben Chat – dort erinnert sich die KI an die Antworten davor.",
+     "correct": true
+    },
+    {
+     "text": "Jedes Mal in einem neuen Chat.",
+     "correct": false
+    },
+    {
+     "text": "In einer E-Mail an den Anbieter.",
+     "correct": false
+    }
+   ],
+   "explanation": "Ein neuer Chat beginnt ohne Erinnerung. Nur im selben Chat baut die KI auf ihren letzten Antworten auf."
+  },
+  {
+   "area": "KI-Fehler erkennen",
+   "question": "Sie fragen: „Warum mussten Pinguine im Mittelalter Steuern zahlen?“ Die KI erklärt es genau, mit Jahreszahl. Was stimmt?",
+   "answers": [
+    {
+     "text": "Die KI hat wahrscheinlich etwas erfunden – schon die Frage ist falsch.",
+     "correct": true
+    },
+    {
+     "text": "Es stimmt, weil die KI es sehr sicher sagt.",
+     "correct": false
+    },
+    {
+     "text": "Es stimmt, weil die KI eine Jahreszahl nennt.",
+     "correct": false
+    }
+   ],
+   "explanation": "Eine KI kann Dinge erfinden und dabei sicher klingen. Genaue Details sind kein Beweis."
+  },
+  {
+   "area": "KI-Fehler erkennen",
+   "question": "Die KI nennt eine Quelle für ihre Antwort. Was tun Sie?",
+   "answers": [
+    {
+     "text": "Prüfen, ob es die Quelle wirklich gibt und ob dort dasselbe steht.",
+     "correct": true
+    },
+    {
+     "text": "Glauben – Quellen von einer KI sind immer echt.",
+     "correct": false
+    },
+    {
+     "text": "Die Quelle nicht beachten, sie ist unwichtig.",
+     "correct": false
+    }
+   ],
+   "explanation": "Manchmal erfindet die KI sogar Quellen oder Links. Öffnen und lesen Sie die Quelle selbst."
+  },
+  {
+   "area": "KI-Fehler erkennen",
+   "question": "Die KI sagt: Nach 6 Jahren in der Firma beträgt die Kündigungsfrist 4 Wochen. Unser Artikel sagt: 2 Monate zum Monatsende. Was tun Sie?",
+   "answers": [
+    {
+     "text": "Der geprüften Quelle glauben und die KI fragen: „Bist du sicher?“",
+     "correct": true
+    },
+    {
+     "text": "Der KI glauben, weil sie neuer ist.",
+     "correct": false
+    },
+    {
+     "text": "Den Mittelwert nehmen: ungefähr 6 Wochen.",
+     "correct": false
+    }
+   ],
+   "explanation": "Bei wichtigen Fakten zählt die sichere Quelle. Laut Gesetz sind es nach 5 Jahren 2 Monate zum Monatsende, wenn der Arbeitgeber kündigt."
+  },
+  {
+   "area": "KI-Fehler erkennen",
+   "question": "Wie nennt man es, wenn eine KI etwas erfindet und dabei sicher klingt?",
+   "answers": [
+    {
+     "text": "Halluzination",
+     "correct": true
+    },
+    {
+     "text": "Kalibrierung",
+     "correct": false
+    },
+    {
+     "text": "Navigation",
+     "correct": false
+    }
+   ],
+   "explanation": "Halluzination heißt: Die KI erfindet Fakten, Zahlen oder Quellen, die es nicht gibt."
+  },
+  {
+   "area": "Datenschutz",
+   "question": "Was dürfen Sie in unserem Kurs in die KI eingeben?",
+   "answers": [
+    {
+     "text": "Einen erfundenen Lebenslauf von Max Mustermann",
+     "correct": true
+    },
+    {
+     "text": "Ihren echten Lebenslauf mit Adresse",
+     "correct": false
+    },
+    {
+     "text": "Name und Telefonnummer Ihrer Nachbarin",
+     "correct": false
+    }
+   ],
+   "explanation": "Wir üben nur mit erfundenen Beispielen. Echte persönliche Daten – auch von anderen – gehören nicht hinein."
+  },
+  {
+   "area": "Datenschutz",
+   "question": "Warum geben wir keine persönlichen Daten in kostenlose KI-Werkzeuge ein?",
+   "answers": [
+    {
+     "text": "Die Anbieter können Eingaben speichern und damit ihre KI trainieren.",
+     "correct": true
+    },
+    {
+     "text": "Weil die KI mit persönlichen Daten langsamer wird.",
+     "correct": false
+    },
+    {
+     "text": "Weil persönliche Daten zu lang für die KI sind.",
+     "correct": false
+    }
+   ],
+   "explanation": "Was Sie eingeben, verlässt Ihren Computer. Manche Anbieter speichern es und nutzen es zum Training. Das bekommen Sie nicht zurück."
+  },
+  {
+   "area": "Datenschutz",
+   "question": "Sie haben einen echten Brief vom Amt und wollen ihn verstehen. Was ist am sichersten?",
+   "answers": [
+    {
+     "text": "Vorher Namen, Adressen, Nummern und Aktenzeichen entfernen – und bei wichtigen Briefen eine Beratungsstelle fragen.",
+     "correct": true
+    },
+    {
+     "text": "Den Brief mit allen Daten abfotografieren und hochladen.",
+     "correct": false
+    },
+    {
+     "text": "Den Brief zusammen mit einem Foto vom Ausweis hochladen.",
+     "correct": false
+    }
+   ],
+   "explanation": "Ohne persönliche Daten kann die KI den Inhalt trotzdem erklären. Bei wichtigen Briefen hilft zusätzlich eine Beratungsstelle."
+  },
+  {
+   "area": "Werkzeuge und Grenzen",
+   "question": "Sie arbeiten am Schulungs-PC. Was machen Sie am Ende?",
+   "answers": [
+    {
+     "text": "Abmelden und das Browserfenster schließen",
+     "correct": true
+    },
+    {
+     "text": "Nichts – die nächste Person darf ruhig weiterlesen.",
+     "correct": false
+    },
+    {
+     "text": "Das Passwort auf einen Zettel neben den PC legen.",
+     "correct": false
+    }
+   ],
+   "explanation": "Wer sich nicht abmeldet, lässt sein Konto offen. Ein privates Fenster (Inkognito) hilft zusätzlich."
+  },
+  {
+   "area": "Werkzeuge und Grenzen",
+   "question": "Die KI meldet: „Limit erreicht.“ Was tun Sie?",
+   "answers": [
+    {
+     "text": "Ein anderes Werkzeug nehmen, zum Beispiel Duck.ai, oder später weitermachen.",
+     "correct": true
+    },
+    {
+     "text": "Den Computer neu starten – dann ist das Limit weg.",
+     "correct": false
+    },
+    {
+     "text": "Sofort ein teures Abo kaufen – sonst geht es nie wieder.",
+     "correct": false
+    }
+   ],
+   "explanation": "Kostenlose Versionen haben Limits. Mit einem anderen Werkzeug oder etwas später geht es weiter."
+  },
+  {
+   "area": "Werkzeuge und Grenzen",
+   "question": "Wofür ist ein KI-Chat gut geeignet?",
+   "answers": [
+    {
+     "text": "Texte erklären, umformulieren und Ideen sammeln – und Sie prüfen das Ergebnis.",
+     "correct": true
+    },
+    {
+     "text": "Wichtige Entscheidungen ohne Prüfung treffen",
+     "correct": false
+    },
+    {
+     "text": "Eine Rechtsberatung ersetzen",
+     "correct": false
+    }
+   ],
+   "explanation": "Die KI ist ein Helfer für Texte und Ideen. Entscheidungen und rechtliche Fragen prüfen Sie selbst oder mit Fachleuten."
+  }
+ ]
+}

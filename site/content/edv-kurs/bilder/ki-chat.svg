@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">So sieht ein KI-Chat aus: 1. Neuer Chat – damit beginnen Sie ein neues Thema. 2. Der Prompt – Ihre Frage oder Ihr Auftrag, zum Beispiel „Schreib ein Gedicht über Kaffee“. 3. Die Antwort der KI. 4. Das Eingabefeld – hier schreiben Sie und drücken Enter.</title>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="34.0" font-size="21" fill="#1f4e79" text-anchor="middle" font-weight="700">So sieht ein KI-Chat aus</text>
+<rect x="16" y="50" width="368" height="222" rx="12" fill="#fff" stroke="#5b6672" stroke-width="3"/>
+<rect x="28" y="62" width="112" height="30" rx="15" fill="#fff" stroke="#b5bcc4" stroke-width="2"/>
+<text x="84" y="83.0" font-size="15" fill="#1d232b" text-anchor="middle" font-weight="700">+ Neuer Chat</text>
+<circle cx="156" cy="77" r="12" fill="#1f4e79"/>
+<text x="156" y="82.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+<rect x="196" y="102" width="176" height="54" rx="14" fill="#1f4e79"/>
+<text x="284" y="125.0" font-size="15" fill="#fff" text-anchor="middle">Schreib ein Gedicht</text>
+<text x="284" y="143.0" font-size="15" fill="#fff" text-anchor="middle">über Kaffee.</text>
+<circle cx="178" cy="129" r="12" fill="#1f4e79"/>
+<text x="178" y="134.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+<rect x="28" y="168" width="226" height="56" rx="14" fill="#f1f3f5"/>
+<line x1="44" y1="184" x2="224" y2="184" stroke="#b5bcc4" stroke-width="6" stroke-linecap="round"/>
+<line x1="44" y1="198" x2="194" y2="198" stroke="#b5bcc4" stroke-width="6" stroke-linecap="round"/>
+<line x1="44" y1="212" x2="164" y2="212" stroke="#b5bcc4" stroke-width="6" stroke-linecap="round"/>
+<circle cx="270" cy="196" r="12" fill="#1f4e79"/>
+<text x="270" y="201.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+<rect x="28" y="234" width="280" height="28" rx="14" fill="#f1f3f5" stroke="#b5bcc4" stroke-width="1.5"/>
+<text x="44" y="253.0" font-size="15" fill="#5b6672" text-anchor="start">Nachricht eingeben …</text>
+<circle cx="330" cy="248" r="14" fill="#1f4e79"/>
+<path d="M323 248 h12 M330 242 l6 6 -6 6" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="364" cy="248" r="12" fill="#1f4e79"/>
+<text x="364" y="253.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">4</text>
+<circle cx="30" cy="296" r="12" fill="#1f4e79"/>
+<text x="30" y="301.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+<text x="50" y="302.0" font-size="16" fill="#1d232b" text-anchor="start"><tspan font-weight="700">Neuer Chat:</tspan> ein neues Thema</text>
+<circle cx="30" cy="326" r="12" fill="#1f4e79"/>
+<text x="30" y="331.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+<text x="50" y="332.0" font-size="16" fill="#1d232b" text-anchor="start"><tspan font-weight="700">Prompt:</tspan> Ihre Frage oder Ihr Auftrag</text>
+<circle cx="30" cy="356" r="12" fill="#1f4e79"/>
+<text x="30" y="361.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+<text x="50" y="362.0" font-size="16" fill="#1d232b" text-anchor="start"><tspan font-weight="700">Antwort:</tspan> das schreibt die KI</text>
+<circle cx="30" cy="386" r="12" fill="#1f4e79"/>
+<text x="30" y="391.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">4</text>
+<text x="50" y="392.0" font-size="16" fill="#1d232b" text-anchor="start"><tspan font-weight="700">Eingabefeld:</tspan> schreiben, dann Enter</text>
+</svg>

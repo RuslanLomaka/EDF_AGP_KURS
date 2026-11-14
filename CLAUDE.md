@@ -169,6 +169,11 @@ Create `site/content/edv-kurs/<slug>.md` like `bewerbung-auf-knopfdruck.md`.
   `::: achtung`.
 - **Teacher notes:** as for articles (`::: notiz`): a plan after "Kurz gesagt", a note after every picture and tips
   for the hard parts right after their heading.
+- **Tasks** (lessons 4 and 5): heading, `<p class="zeit">15 Minuten</p>`, instructions, a `::: prompt` box (example
+  prompt with a copy button), "Das lernen Sie", and a `::: profi` box (optional challenge in small print).
+- **Quiz (optional):** `site/content/edv-kurs/<slug>.quiz.json`, same format as for articles. With `"mode": "test"`,
+  learners answer everything first. "Auswerten" then shows the score, a title, strengths and weak areas, and every
+  mistake explained. Each question names an `"area"`, and `"areas"` maps each area to a tip.
 - **Files:** lesson files live in `materials/<lesson>/`.
 
 ## Hosting and CI/CD

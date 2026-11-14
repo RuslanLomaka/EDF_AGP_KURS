@@ -37,7 +37,7 @@ NAV = [("start", "/", "Start"), ("kurs", "/edv-kurs/", "EDV-Kurs"), ("artikel", 
 MONATE = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober",
           "November", "Dezember"]
 TYP = {".xlsx": "Excel", ".docx": "Word", ".pdf": "PDF", ".zip": "ZIP"}
-BOXES = {"kurz", "ergaenzung", "info", "achtung", "schritte", "prinzip", "zeichen", "notiz"}
+BOXES = {"kurz", "ergaenzung", "info", "achtung", "schritte", "prinzip", "zeichen", "notiz", "prompt", "profi"}
 # every topic gets a colour (in themen.yaml order); lessons use KURS_FARBE. All readable as text on white.
 FARBEN = ["#047857", "#4338ca", "#c2410c", "#be185d", "#0369a1", "#7c3aed", "#a16207", "#0f766e"]
 KURS_FARBE = "#0e7490"
@@ -542,7 +542,9 @@ def teil_badge(a):
 
 
 def load_quiz(path):
-    """Every article has a quiz in Quiz Forger's JSON format (quiz.ruslanlomaka.org), one correct answer per question."""
+    """Every article has a quiz in Quiz Forger's JSON format (quiz.ruslanlomaka.org), one correct answer per question.
+    "mode": "test" (optional, used by lessons) shows the results only at the end, scored per area: every question then
+    names its "area", and "areas" maps each area to a short tip for people who should practise it."""
     if not path.is_file():
         fail(path, "missing: every article needs a quiz file <slug>.quiz.json (see CLAUDE.md)")
     try:
@@ -570,14 +572,31 @@ def load_quiz(path):
         for s in q.get("sources") or []:
             if not isinstance(s, dict) or not re.fullmatch(r"https?://[^\s<>\"']+", str(s.get("url", ""))):
                 fail(path, f"question {n}: every source needs an http(s) 'url'")
+    if quiz.get("mode", "lernen") not in ("lernen", "test"):
+        fail(path, "'mode' must be 'lernen' (feedback after each question) or 'test' (results at the end)")
+    if quiz.get("mode") == "test":
+        areas = quiz.get("areas")
+        if not isinstance(areas, dict) or not areas or not all(isinstance(v, str) and v.strip() for v in areas.values()):
+            fail(path, "a test needs 'areas': {\"<area>\": \"<tip for practising it>\"}")
+        for n, q in enumerate(quiz["questions"], start=1):
+            if q.get("area") not in areas:
+                fail(path, f"question {n}: 'area' must be one of: {', '.join(areas)}")
     return quiz
 
 
 def quiz_section(quiz):
     data = json.dumps(quiz, ensure_ascii=False).replace("<", "\\u003c")
+    if quiz.get("mode") == "test":
+        titel = "Abschlusstest"
+        hinweis = (f"{len(quiz['questions'])} Fragen. Beantworten Sie alle Fragen und klicken Sie dann auf „Auswerten“. "
+                   "Danach sehen Sie Ihre Punkte, Ihre Stärken und alle Fehler mit Erklärung. Ihre Antworten werden nirgends gespeichert.")
+    else:
+        titel = "Quiz"
+        hinweis = (f"{len(quiz['questions'])} Fragen mit je einer richtigen Antwort. Fragen und Antworten werden jedes Mal neu "
+                   "gemischt. Ihre Antworten werden nirgends gespeichert.")
     return f"""<section class="quiz" aria-labelledby="quiz">
-<h2 id="quiz">Quiz</h2>
-<p class="hinweis">{len(quiz['questions'])} Fragen mit je einer richtigen Antwort. Fragen und Antworten werden jedes Mal neu gemischt. Ihre Antworten werden nirgends gespeichert.</p>
+<h2 id="quiz">{titel}</h2>
+<p class="hinweis">{hinweis}</p>
 <div class="quiz-box" data-quiz></div>
 <noscript><p class="hinweis">Für das Quiz muss JavaScript eingeschaltet sein.</p></noscript>
 <script id="quiz-daten" type="application/json">{data}</script>
@@ -816,6 +835,8 @@ def load_lessons():
         l["body_lehrer"] = pandoc(path, voll, "html5").replace('href="dateien/', 'href="../dateien/')
         check_body(path, l["body_lehrer"])
         l["url"] = f"/edv-kurs/{l['slug']}/"
+        quizdatei = path.with_name(f"{l['slug']}.quiz.json")
+        l["quiz"] = load_quiz(quizdatei) if quizdatei.is_file() else None
         lessons.append(l)
     nummern = [l["nummer"] for l in lessons]
     for l in lessons:
@@ -905,19 +926,21 @@ def write_lesson(l, lehrer, body, ziele, downloads, lehrkraft, nav):
   <div class="balken"><span></span></div>
   <p class="zahl"></p>
 </div>
-{toc(body)}
+{toc(body, [("quiz", "Abschlusstest" if l["quiz"].get("mode") == "test" else "Quiz")] if l["quiz"] else ())}
 <article class="inhalt lektion">
 {body}
 </article>
+{quiz_section(l["quiz"]) if l["quiz"] else ""}
 <p class="zuruecksetzen" hidden><button type="button" class="reset">Alle Haken entfernen</button></p>
 {lehrkraft}
 {nav}"""
+    skripte = ["lektion.js", "quiz.js"] if l["quiz"] else ["lektion.js"]
     if lehrer:
         main = lehrer_banner(l["url"], body.count('<div class="notiz">')) + "\n" + lehrer_links(main)
         write(f"edv-kurs/{l['slug']}/{LEHRER}/index.html",
-              layout(f"Lehrkraft: {l['title']}", "kurs", main, l["kurz"], ["lektion.js"], noindex=True, farbe=KURS_FARBE))
+              layout(f"Lehrkraft: {l['title']}", "kurs", main, l["kurz"], skripte, noindex=True, farbe=KURS_FARBE))
     else:
-        write(f"edv-kurs/{l['slug']}/index.html", layout(l["title"], "kurs", main, l["kurz"], ["lektion.js"], farbe=KURS_FARBE))
+        write(f"edv-kurs/{l['slug']}/index.html", layout(l["title"], "kurs", main, l["kurz"], skripte, farbe=KURS_FARBE))
 
 
 def build_lehrer_index(articles, lessons):

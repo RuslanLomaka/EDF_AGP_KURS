@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Faktencheck: Links die Antwort einer KI, rechts ein Artikel aus einer sicheren Quelle, zum Beispiel unserer Kurs-Website. Stimmen sie überein? Wenn nicht: Der sicheren Quelle glauben und genauer nachfragen.</title>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="34.0" font-size="22" fill="#1f4e79" text-anchor="middle" font-weight="700">Faktencheck</text>
+<path d="M26 60 H166 a10 10 0 0 1 10 10 V178 a10 10 0 0 1 -10 10 H46 l-14 14 v-14 H26 a10 10 0 0 1 -10 -10 V70 a10 10 0 0 1 10 -10 Z" fill="#f1f3f5" stroke="#5b6672" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="96" y="92.0" font-size="16" fill="#5b6672" text-anchor="middle" font-weight="700">KI sagt:</text>
+<text x="96" y="122.0" font-size="18" fill="#1d232b" text-anchor="middle" font-weight="700">Frist:</text>
+<text x="96" y="145.4" font-size="18" fill="#1d232b" text-anchor="middle" font-weight="700">4 Wochen</text>
+<path d="M244.0 52.0 H330.4 L364.0 85.6 V188.0 H244.0 Z" fill="#fff" stroke="#1f4e79" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M330.4 52.0 V85.6 H364.0" fill="none" stroke="#1f4e79" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="304" y="102.0" font-size="16" fill="#1f4e79" text-anchor="middle" font-weight="700">Artikel:</text>
+<text x="304" y="132.0" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">2 Monate</text>
+<text x="304" y="152.0" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">zum</text>
+<text x="304" y="172.0" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">Monatsende</text>
+<text x="200" y="132.0" font-size="40" fill="#c0392b" text-anchor="middle" font-weight="700">≠</text>
+<rect x="16" y="230" width="368" height="152" rx="14" fill="#e7f3e8"/>
+<circle cx="46" cy="264" r="14" fill="#2e7d32"/>
+<path d="M39.875 264.4375 L44.25 268.8125 L52.5625 259.625" fill="none" stroke="#fff" stroke-width="2.8000000000000003" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="70" y="270.0" font-size="16" fill="#1d232b" text-anchor="start" font-weight="700">Vergleichen Sie immer mit</text>
+<text x="70" y="294.0" font-size="16" fill="#1d232b" text-anchor="start" font-weight="700">einer sicheren Quelle.</text>
+<text x="32" y="332.0" font-size="16" fill="#1d232b" text-anchor="start">Nicht gleich? Dann der Quelle glauben</text>
+<text x="32" y="356.0" font-size="16" fill="#1d232b" text-anchor="start">und die KI fragen: „Bist du sicher?“</text>
+</svg>

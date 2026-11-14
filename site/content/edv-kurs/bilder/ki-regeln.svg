@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Das gehört nicht in die KI: Ihr Name, Ihre Adresse, Telefonnummer und E-Mail, Geburtsdatum und Ausweis, Lebenslauf und Zeugnisse, Daten über andere Menschen. Erlaubt sind erfundene Beispiele wie Max Mustermann.</title>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="34.0" font-size="21" fill="#c0392b" text-anchor="middle" font-weight="700">Das gehört NICHT in die KI</text>
+<rect x="16" y="52" width="368" height="42" rx="10" fill="#fdecea"/>
+<circle cx="44" cy="73" r="14" fill="#c0392b"/>
+<line x1="39.1875" y1="68.1875" x2="48.8125" y2="77.8125" stroke="#fff" stroke-width="2.8000000000000003" stroke-linecap="round"/>
+<line x1="48.8125" y1="68.1875" x2="39.1875" y2="77.8125" stroke="#fff" stroke-width="2.8000000000000003" stroke-linecap="round"/>
+<text x="72" y="79.0" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">Ihr Name</text>
+<rect x="16" y="102" width="368" height="42" rx="10" fill="#fff"/>
+<circle cx="44" cy="123" r="14" fill="#c0392b"/>
+<line x1="39.1875" y1="118.1875" x2="48.8125" y2="127.8125" stroke="#fff" stroke-width="2.8000000000000003" stroke-linecap="round"/>
+<line x1="48.8125" y1="118.1875" x2="39.1875" y2="127.8125" stroke="#fff" stroke-width="2.8000000000000003" stroke-linecap="round"/>
+<text x="72" y="129.0" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">Adresse, Telefon, E-Mail</text>
+<rect x="16" y="152" width="368" height="42" rx="10" fill="#fdecea"/>
+<circle cx="44" cy="173" r="14" fill="#c0392b"/>
+<line x1="39.1875" y1="168.1875" x2="48.8125" y2="177.8125" stroke="#fff" stroke-width="2.8000000000000003" stroke-linecap="round"/>
+<line x1="48.8125" y1="168.1875" x2="39.1875" y2="177.8125" stroke="#fff" stroke-width="2.8000000000000003" stroke-linecap="round"/>
+<text x="72" y="179.0" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">Geburtsdatum, Ausweis</text>
+<rect x="16" y="202" width="368" height="42" rx="10" fill="#fff"/>
+<circle cx="44" cy="223" r="14" fill="#c0392b"/>
+<line x1="39.1875" y1="218.1875" x2="48.8125" y2="227.8125" stroke="#fff" stroke-width="2.8000000000000003" stroke-linecap="round"/>
+<line x1="48.8125" y1="218.1875" x2="39.1875" y2="227.8125" stroke="#fff" stroke-width="2.8000000000000003" stroke-linecap="round"/>
+<text x="72" y="229.0" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">Lebenslauf, Zeugnisse</text>
+<rect x="16" y="252" width="368" height="42" rx="10" fill="#fdecea"/>
+<circle cx="44" cy="273" r="14" fill="#c0392b"/>
+<line x1="39.1875" y1="268.1875" x2="48.8125" y2="277.8125" stroke="#fff" stroke-width="2.8000000000000003" stroke-linecap="round"/>
+<line x1="48.8125" y1="268.1875" x2="39.1875" y2="277.8125" stroke="#fff" stroke-width="2.8000000000000003" stroke-linecap="round"/>
+<text x="72" y="279.0" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">Daten über andere Menschen</text>
+<rect x="16" y="318" width="368" height="66" rx="12" fill="#e7f3e8" stroke="#2e7d32" stroke-width="2"/>
+<circle cx="44" cy="351" r="15" fill="#2e7d32"/>
+<path d="M37.4375 351.46875 L42.125 356.15625 L51.03125 346.3125" fill="none" stroke="#fff" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="72" y="344.0" font-size="17" fill="#2e7d32" text-anchor="start" font-weight="700">Erlaubt: erfundene Beispiele</text>
+<text x="72" y="368.0" font-size="16" fill="#1d232b" text-anchor="start">wie „Max Mustermann“</text>
+</svg>

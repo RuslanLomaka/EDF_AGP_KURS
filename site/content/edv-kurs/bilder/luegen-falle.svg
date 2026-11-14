@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Die Lügen-Falle: Jemand fragt „Warum mussten Pinguine im Mittelalter Steuern zahlen?“. Die KI antwortet sicher und nennt sogar eine Quelle – aber alles ist erfunden. Darum: immer prüfen, ob es die Quelle wirklich gibt.</title>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="34.0" font-size="21" fill="#c0392b" text-anchor="middle" font-weight="700">Die KI erfindet manchmal</text>
+<path d="M140 54 H374 a10 10 0 0 1 10 10 V108 a10 10 0 0 1 -10 10 H368 v14 l-14 -14 H140 a10 10 0 0 1 -10 -10 V64 a10 10 0 0 1 10 -10 Z" fill="#1f4e79" stroke="#1f4e79" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="257" y="80.0" font-size="15" fill="#fff" text-anchor="middle">Warum mussten Pinguine im</text>
+<text x="257" y="98.8" font-size="15" fill="#fff" text-anchor="middle">Mittelalter Steuern zahlen?</text>
+<path d="M26 140 H286 a10 10 0 0 1 10 10 V226 a10 10 0 0 1 -10 10 H46 l-14 14 v-14 H26 a10 10 0 0 1 -10 -10 V150 a10 10 0 0 1 10 -10 Z" fill="#f1f3f5" stroke="#5b6672" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="30" y="166.0" font-size="16" fill="#1d232b" text-anchor="start">Gute Frage! Im Jahr 1243 …</text>
+<text x="30" y="190.0" font-size="16" fill="#1d232b" text-anchor="start">Das war ganz normal.</text>
+<text x="30" y="216.0" font-size="15" fill="#5b6672" text-anchor="start">Quelle: „Pinguin-Chronik“, S. 12</text>
+<circle cx="334" cy="196" r="24" fill="#fff" stroke="#5b6672" stroke-width="3"/>
+<circle cx="326" cy="192" r="3" fill="#5b6672"/>
+<circle cx="342" cy="192" r="3" fill="#5b6672"/>
+<path d="M324 204 q10 8 20 0" fill="none" stroke="#5b6672" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="16" y="266" width="368" height="118" rx="14" fill="#fdecea"/>
+<circle cx="64" cy="314" r="24" fill="#fff" stroke="#c0392b" stroke-width="4"/>
+<line x1="81" y1="331" x2="100" y2="350" stroke="#c0392b" stroke-width="6" stroke-linecap="round"/>
+<text x="116" y="304.0" font-size="20" fill="#c0392b" text-anchor="start" font-weight="700">Prüfen!</text>
+<text x="116" y="330.0" font-size="16" fill="#1d232b" text-anchor="start">Gibt es die Quelle wirklich?</text>
+<text x="116" y="354.0" font-size="16" fill="#1d232b" text-anchor="start">Stimmt die Frage überhaupt?</text>
+</svg>

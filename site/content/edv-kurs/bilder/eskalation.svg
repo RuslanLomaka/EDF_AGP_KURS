@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Eskalation: Ein normaler Satz „Ich gehe einkaufen.“ wird in fünf Runden immer dramatischer. Jede Runde baut auf der letzten Antwort auf. So lernen Sie: Man kann eine Antwort Schritt für Schritt verändern.</title>
+<defs><marker id="pfeil1" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#5b6672"/></marker></defs>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="34.0" font-size="20" fill="#1f4e79" text-anchor="middle" font-weight="700">Schritt für Schritt: noch mehr!</text>
+<rect x="20" y="344" width="68" height="40" rx="8" fill="#1f4e79"/>
+<text x="54.0" y="370.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">Runde 1</text>
+<rect x="92" y="292" width="68" height="92" rx="8" fill="#00796b"/>
+<text x="126.0" y="318.0" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">Runde 2</text>
+<rect x="164" y="240" width="68" height="144" rx="8" fill="#b26a00"/>
+<text x="198.0" y="266.0" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">Runde 3</text>
+<rect x="236" y="188" width="68" height="196" rx="8" fill="#6a3d9a"/>
+<text x="270.0" y="214.0" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">Runde 4</text>
+<rect x="308" y="136" width="68" height="248" rx="8" fill="#c0392b"/>
+<text x="342.0" y="162.0" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">Runde 5</text>
+<path d="M26 226 H156 a10 10 0 0 1 10 10 V256 a10 10 0 0 1 -10 10 H46 l-14 14 v-14 H26 a10 10 0 0 1 -10 -10 V236 a10 10 0 0 1 10 -10 Z" fill="#fff" stroke="#1f4e79" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="91" y="252.0" font-size="14" fill="#1d232b" text-anchor="middle">Ich gehe einkaufen.</text>
+<path d="M160 64 H370 a10 10 0 0 1 10 10 V108 a10 10 0 0 1 -10 10 H364 v14 l-14 -14 H160 a10 10 0 0 1 -10 -10 V74 a10 10 0 0 1 10 -10 Z" fill="#fdecea" stroke="#c0392b" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="265" y="88.0" font-size="15" fill="#c0392b" text-anchor="middle" font-weight="700">DRAMA! Der Supermarkt</text>
+<text x="265" y="108.0" font-size="15" fill="#c0392b" text-anchor="middle" font-weight="700">ruft nach mir!!!</text>
+<line x1="150" y1="220" x2="286" y2="132" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pfeil1)"/>
+<text x="20" y="170.0" font-size="15" fill="#5b6672" text-anchor="start">„noch dramatischer!“</text>
+</svg>

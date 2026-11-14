@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Erklär&#x27;s mir in drei Stufen: Das gleiche Wort, zum Beispiel Tarifvertrag, erklärt für ein Kind (ganz einfach), für Lernende (einfach mit Beispiel) und für Profis (genau, mit Fachwörtern).</title>
+<defs><marker id="pfeil1" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#5b6672"/></marker></defs>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="34.0" font-size="21" fill="#1f4e79" text-anchor="middle" font-weight="700">Ein Wort – drei Stufen</text>
+<rect x="110" y="50" width="180" height="40" rx="20" fill="#1f4e79"/>
+<text x="200" y="77.0" font-size="18" fill="#fff" text-anchor="middle" font-weight="700">„Tarifvertrag“</text>
+<line x1="200" y1="94" x2="76" y2="252" stroke="#5b6672" stroke-width="2.5" stroke-linecap="round" marker-end="url(#pfeil1)"/>
+<rect x="20" y="260" width="112" height="120" rx="12" fill="#e7f3e8" stroke="#2e7d32" stroke-width="2"/>
+<circle cx="76" cy="291.88" r="9.200000000000001" fill="#2e7d32"/>
+<path d="M59.44 325.0 V313.77599999999995 A16.56 11.591999999999999 0 0 1 92.56 313.77599999999995 V325.0 Z" fill="#2e7d32"/>
+<text x="76" y="352.0" font-size="17" fill="#2e7d32" text-anchor="middle" font-weight="700">Kind</text>
+<text x="76" y="374.0" font-size="15" fill="#1d232b" text-anchor="middle">ganz einfach</text>
+<line x1="200" y1="94" x2="200" y2="192" stroke="#5b6672" stroke-width="2.5" stroke-linecap="round" marker-end="url(#pfeil1)"/>
+<rect x="144" y="200" width="112" height="180" rx="12" fill="#fff3df" stroke="#b26a00" stroke-width="2"/>
+<circle cx="200" cy="231.88" r="9.200000000000001" fill="#b26a00"/>
+<path d="M183.44 265.0 V253.776 A16.56 11.591999999999999 0 0 1 216.56 253.776 V265.0 Z" fill="#b26a00"/>
+<text x="200" y="292.0" font-size="17" fill="#b26a00" text-anchor="middle" font-weight="700">Lernende</text>
+<text x="200" y="314.0" font-size="14" fill="#1d232b" text-anchor="middle">einfach</text>
+<text x="200" y="334.0" font-size="14" fill="#1d232b" text-anchor="middle">+ Beispiel</text>
+<line x1="200" y1="94" x2="324" y2="132" stroke="#5b6672" stroke-width="2.5" stroke-linecap="round" marker-end="url(#pfeil1)"/>
+<rect x="268" y="140" width="112" height="240" rx="12" fill="#f1eaf8" stroke="#6a3d9a" stroke-width="2"/>
+<circle cx="324" cy="171.88" r="9.200000000000001" fill="#6a3d9a"/>
+<path d="M307.44 205.0 V193.776 A16.56 11.591999999999999 0 0 1 340.56 193.776 V205.0 Z" fill="#6a3d9a"/>
+<text x="324" y="232.0" font-size="17" fill="#6a3d9a" text-anchor="middle" font-weight="700">Profi</text>
+<text x="324" y="254.0" font-size="14" fill="#1d232b" text-anchor="middle">genau</text>
+<text x="324" y="274.0" font-size="14" fill="#1d232b" text-anchor="middle">+ Fachwörter</text>
+</svg>

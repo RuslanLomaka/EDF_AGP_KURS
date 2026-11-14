@@ -1,3 +1,28 @@
+// Example prompts ('::: prompt' boxes): a button copies the prompt, so nobody has to type it.
+(function () {
+  document.querySelectorAll('.prompt').forEach(box => {
+    const text = box.innerText.trim();
+    const knopf = document.createElement('button');
+    knopf.type = 'button';
+    knopf.className = 'kopieren';
+    knopf.textContent = 'Kopieren';
+    knopf.addEventListener('click', () => {
+      const fertig = () => { knopf.textContent = 'Kopiert ✓'; setTimeout(() => { knopf.textContent = 'Kopieren'; }, 2000); };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(fertig, () => { knopf.textContent = 'Bitte markieren und kopieren'; });
+      } else {
+        const r = document.createRange();
+        r.selectNodeContents(box.firstElementChild || box);
+        const s = window.getSelection();
+        s.removeAllRanges();
+        s.addRange(r);
+        knopf.textContent = 'Markiert – jetzt Strg + C';
+      }
+    });
+    box.append(knopf);
+  });
+})();
+
 // Lesson pages: every step in a `::: schritte` list becomes a tappable card with a checkbox.
 // Progress is kept in this browser, keyed by section and step text, so editing the lesson
 // does not move ticks to the wrong steps.
