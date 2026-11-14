@@ -297,6 +297,18 @@ In den fertigen Briefen: **Strg + A**, dann **Strg + Umschalt + F9**. Jetzt ist 
 
 ## Testen Sie sich {#test}
 
+```uebung
+typ: reihenfolge
+frage: "In welcher Reihenfolge machen Sie einen Serienbrief?"
+schritte:
+  - "Sendungen → Seriendruck starten → Briefe"
+  - "Empfänger auswählen → Vorhandene Liste verwenden"
+  - "Seriendruckfelder in den Brief einfügen"
+  - "Vorschau Ergebnisse: durch die Firmen blättern"
+  - "Fertig stellen und zusammenführen"
+erklaerung: "Erst Word sagen, dass es ein Serienbrief wird, dann die Liste wählen, dann die Felder einfügen, prüfen und fertigstellen."
+```
+
 <details>
 <summary>Wo beginnt ein Serienbrief – in Excel oder in Word?</summary>
 

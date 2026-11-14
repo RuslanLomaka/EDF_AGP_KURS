@@ -166,6 +166,21 @@ Wenn der **Arbeitgeber** kündigt, gilt: **Je länger Sie in der Firma sind, des
 3. **Selbst kündigen?** Wer selbst kündigt, ohne einen wichtigen Grund zu haben, bekommt oft für **bis zu 12 Wochen kein Arbeitslosengeld** (Sperrzeit). Lassen Sie sich vorher beraten.
 :::
 
+```uebung
+typ: zuordnen
+frage: "Der Arbeitgeber kündigt. Wie lang ist die Frist? Ordnen Sie zu."
+gruppen:
+  "4 Wochen zum 15. oder Monatsende":
+    - "1 Jahr in der Firma"
+  "2 Monate zum Monatsende":
+    - "6 Jahre in der Firma"
+  "5 Monate zum Monatsende":
+    - "13 Jahre in der Firma"
+  "7 Monate zum Monatsende":
+    - "22 Jahre in der Firma"
+erklaerung: "Je länger Sie in der Firma sind, desto länger die Frist. Ab 5 Jahren 2 Monate, ab 12 Jahren 5 Monate, ab 20 Jahren 7 Monate."
+```
+
 ## Wörter {#woerter}
 
 **die Kündigung, die Kündigungen**

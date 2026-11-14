@@ -22,8 +22,9 @@ site/
   content/edv-kurs/*.md       interactive lessons; content/edv-kurs/bilder/ holds their images
   themen.yaml                 allowed article topics, in display order
   content/artikel/*.quiz.json  one quiz per article (Quiz Forger JSON format)
-  assets/                     style.css, suche.js (article list + search), lektion.js (lesson steps),
-                              quiz.js (article quizzes), hinweis.js (short privacy notice once a day)
+  assets/                     style.css, suche.js (article list + search), lektion.js (lesson steps, copy buttons,
+                              quick navigation), quiz.js (quizzes and tests), uebung.js (exercises),
+                              animation.js (slide-in and confetti), hinweis.js (short privacy notice once a day)
   build.py                    builds everything into site/dist/ (git-ignored) and checks it
 materials/serienbrief/        files of lesson 1; README.md explains them; generator/build_kit.sh rebuilds them
 materials/bewerbungshelfer/   lesson 2: Go source of the Windows program (programm/), Excel list, Word template;
@@ -101,6 +102,28 @@ framework, so keep it light for the Pi and for old phones.
   from it.
 - Icons are small SVG files in `site/assets/` (`icon-*.svg`, used as CSS masks), plus `hero.svg` on the start page.
 
+**Exercises.** A fenced block in any article or lesson becomes an interactive exercise:
+
+````
+```uebung
+typ: zuordnen            # cards into boxes: 2 to 5 boxes, 3 to 12 cards in total
+frage: "Darf das in die KI?"
+gruppen:
+  "Darf in die KI": ["Ein Rezept für Apfelkuchen"]
+  "Bleibt draußen": ["Ihre Handynummer", "Ein Foto von Ihrem Ausweis"]
+erklaerung: "Shown when everything is right."
+```
+````
+
+- `typ: reihenfolge` takes `schritte:`, 3 to 8 steps in the right order.
+- Learners drag with mouse or finger, or tap a card and then a box. Steps also move with arrow buttons.
+- "Prüfen" marks each card or step right or wrong. When everything is right, confetti appears.
+- Without JavaScript, "Lösung anzeigen" shows the answer. Nothing is stored.
+- Articles have their exercise right before "Wörter". Exercises use only facts from the text.
+
+**Animations.** Content below the first screen slides in, quiz answers pop or shake, and top results get confetti.
+Everything respects "reduce motion" and uses only opacity and transforms.
+
 The live server sends a Content-Security-Policy: no inline scripts and nothing from other domains. JavaScript
 belongs in `site/assets/`; images are stored in the repository.
 
@@ -136,9 +159,11 @@ The owner sends photos of a handout (often several per day; several pages can be
 6. Teacher notes (`::: notiz`, see "Site"): a short plan right after "Kurz gesagt" (opening question, order, what to
    stress), and after every picture a numbered script for explaining it (what to point at, what to say, one question
    with its answer). Simple German the owner can read aloud.
-7. Pictures: the owner wants information shown visually, so give every article at least one own drawing (see
+7. An exercise (` ```uebung `, see "Exercises") right before "Wörter": cards into boxes or steps into order, using
+   facts from the text.
+8. Pictures: the owner wants information shown visually, so give every article at least one own drawing (see
    "Pictures" below), never photos of the handout. Put them in `site/content/artikel/bilder/`.
-8. Build, check, commit, push. Lists, search, topic pages, "Mehr zum Thema" and previous/next update by themselves.
+9. Build, check, commit, push. Lists, search, topic pages, "Mehr zum Thema" and previous/next update by themselves.
 
 **Series.** Articles that build on each other form a series: add `serie: "<name>"` and `teil: <1, 2, 3 …>` to the
 front matter.

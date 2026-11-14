@@ -137,6 +137,19 @@ Ist ein Gesellschafter auch **Geschäftsführer**, bekommt er für seine Arbeit 
 **Weitere Formen:** Eine **Genossenschaft** (eG) braucht mindestens 3 Mitglieder, zum Beispiel für eine gemeinsame Wohnanlage. Ein **eingetragener Verein** (e.V.) braucht mindestens 7 Mitglieder – er ist für Vereinsarbeit da, nicht für eine Firma.
 :::
 
+```uebung
+typ: zuordnen
+frage: "Wie viel Kapital braucht man mindestens?"
+gruppen:
+  "ab 1 Euro":
+    - "UG (haftungsbeschränkt)"
+  "mindestens 25.000 Euro":
+    - "GmbH"
+  "mindestens 50.000 Euro":
+    - "AG"
+erklaerung: "Die UG ist die „Mini-GmbH“ ab 1 Euro. Die GmbH braucht 25.000 Euro, die AG 50.000 Euro."
+```
+
 ## Wörter {#woerter}
 
 **die Kapitalgesellschaft, die Kapitalgesellschaften**

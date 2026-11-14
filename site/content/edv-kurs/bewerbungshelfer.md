@@ -230,6 +230,21 @@ Text markieren → **Start** → Pfeil neben **Texthervorhebungsfarbe** → **Ke
 
 ## Testen Sie sich {#test}
 
+```uebung
+typ: zuordnen
+frage: "Macht das Programm einen neuen Brief? Ordnen Sie den Status zu."
+gruppen:
+  "Neuer Brief":
+    - "offen"
+    - "Status leer"
+  "Kein neuer Brief":
+    - "beworben"
+    - "Einladung"
+    - "Absage"
+    - "Zusage"
+erklaerung: "Nur bei „offen“ oder einem leeren Status macht das Programm einen Brief."
+```
+
 <details>
 <summary>Wo tragen Sie Ihren Namen und Ihre Adresse ein?</summary>
 

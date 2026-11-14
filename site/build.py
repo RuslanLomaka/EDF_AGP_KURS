@@ -144,6 +144,76 @@ def split_notizen(path, body):
     return "\n".join(ohne), body
 
 
+UEBUNG_BLOCK = re.compile(r"^```uebung[ \t]*\n(.*?)^```[ \t]*$", re.M | re.S)
+
+
+def uebungen(path, body):
+    """Exercises are ```uebung blocks (YAML). They become placeholders before pandoc and finished HTML afterwards."""
+    fertig = []
+    def ersetze(m):
+        try:
+            daten = yaml.safe_load(m.group(1))
+        except yaml.YAMLError as e:
+            fail(path, f"exercise {len(fertig) + 1}: invalid YAML: {e}")
+        fertig.append(uebung_html(path, len(fertig) + 1, daten))
+        return f"<!--uebung-{len(fertig) - 1}-->"
+    return UEBUNG_BLOCK.sub(ersetze, body), fertig
+
+
+def uebungen_einsetzen(html_text, fertig):
+    for i, teil in enumerate(fertig):
+        html_text = html_text.replace(f"<!--uebung-{i}-->", teil)
+    return html_text
+
+
+def uebung_html(path, nr, d):
+    """typ "zuordnen": cards into boxes ("gruppen": {box: [cards]}); typ "reihenfolge": "schritte" in the right order."""
+    def text(x):
+        return isinstance(x, str) and x.strip()
+    if not isinstance(d, dict) or d.get("typ") not in ("zuordnen", "reihenfolge") or not text(d.get("frage")):
+        fail(path, f"exercise {nr}: needs 'typ' (zuordnen or reihenfolge) and 'frage'")
+    erkl = d.get("erklaerung", "")
+    if erkl and not text(erkl):
+        fail(path, f"exercise {nr}: 'erklaerung' must be text")
+    if d["typ"] == "zuordnen":
+        gruppen = d.get("gruppen")
+        if not isinstance(gruppen, dict) or not 2 <= len(gruppen) <= 5 or not all(
+                text(g) and isinstance(k, list) and k and all(text(x) for x in k) for g, k in gruppen.items()):
+            fail(path, f"exercise {nr}: 'gruppen' needs 2 to 5 boxes, each with a list of cards")
+        karten = [(x, gi) for gi, k in enumerate(gruppen.values()) for x in k]
+        if not 3 <= len(karten) <= 12:
+            fail(path, f"exercise {nr}: needs 3 to 12 cards in total")
+        loesung = [gi for _, gi in karten]
+        pool = "".join(f'<button type="button" class="ue-karte" data-i="{i}">{esc(x)}</button>' for i, (x, _) in enumerate(karten))
+        ziele = "".join(f'<div class="ue-ziel" data-g="{gi}"><p class="ue-ziel-titel">{esc(g)}</p><div class="ue-ablage"></div></div>'
+                        for gi, g in enumerate(gruppen))
+        inner = f'<div class="ue-pool">{pool}</div><div class="ue-ziele">{ziele}</div>'
+        hinweis = "Ziehen Sie jede Karte in das passende Feld. Oder: erst auf eine Karte tippen, dann auf ein Feld."
+        loesung_html = "<ul>" + "".join(f"<li><strong>{esc(g)}:</strong> {esc(', '.join(k))}</li>" for g, k in gruppen.items()) + "</ul>"
+    else:
+        schritte = d.get("schritte")
+        if not isinstance(schritte, list) or not 3 <= len(schritte) <= 8 or not all(text(x) for x in schritte):
+            fail(path, f"exercise {nr}: 'schritte' needs 3 to 8 steps, in the right order")
+        loesung = list(range(len(schritte)))
+        items = "".join(f'<li class="ue-schritt" data-i="{i}"><span class="ue-griff" aria-hidden="true"></span>'
+                        f'<span class="ue-text">{esc(x)}</span><span class="ue-pfeile">'
+                        f'<button type="button" class="ue-hoch" aria-label="nach oben">↑</button>'
+                        f'<button type="button" class="ue-runter" aria-label="nach unten">↓</button></span></li>'
+                        for i, x in enumerate(schritte))
+        inner = f'<ol class="ue-liste">{items}</ol>'
+        hinweis = "Bringen Sie die Schritte in die richtige Reihenfolge: ziehen oder mit den Pfeilen verschieben."
+        loesung_html = "<ol>" + "".join(f"<li>{esc(x)}</li>" for x in schritte) + "</ol>"
+    erkl_html = f"<p>{esc(erkl)}</p>" if erkl else ""
+    return (f'<div class="uebung" data-typ="{d["typ"]}" data-loesung="{esc(json.dumps(loesung))}" '
+            f'data-erklaerung="{esc(erkl)}">'
+            f'<p class="ue-kopf"><span class="ue-marke">Übung</span> {esc(d["frage"])}</p>'
+            f'<p class="ue-hinweis">{hinweis}</p>{inner}'
+            f'<p class="ue-steuerung"><button type="button" class="ue-pruefen">Prüfen</button> '
+            f'<button type="button" class="ue-neu">Nochmal</button></p>'
+            f'<div class="ue-ergebnis" aria-live="polite"></div>'
+            f'<details class="ue-loesung"><summary>Lösung anzeigen</summary>{loesung_html}{erkl_html}</details></div>')
+
+
 def check_body(path, body):
     if ":::" in body:
         fail(path, "a '::: box' is not closed or not written correctly (':::' would appear on the page)")
@@ -305,7 +375,9 @@ def layout(title, active, main, description="", scripts=(), noindex=False, farbe
     current = ' aria-current="page"'
     links = "".join(f'<a href="{href}"{current if key == active else ""}>{label}</a>' for key, href, label in NAV)
     full_title = BRAND if title == BRAND else f"{title} – {BRAND}"
-    script_tags = "".join(f'<script src="{asset(s)}"></script>' for s in ("hinweis.js", *scripts))
+    if 'class="uebung"' in main:
+        scripts = (*scripts, "uebung.js")
+    script_tags = "".join(f'<script src="{asset(s)}"></script>' for s in ("hinweis.js", "animation.js", *scripts))
     return f"""<!doctype html>
 <html lang="de">
 <head>
@@ -496,13 +568,14 @@ def load_articles(themen, vorleser):
                 fail(path, "'teil' must be a whole number from 1 (the part of the series)")
         else:
             a["teil"] = 0
+        body, fertig = uebungen(path, body)
         body, voll = split_notizen(path, body)
         a["body"] = pandoc(path, body, "html5")
         check_body(path, a["body"])
-        a["body"] = add_vorlesen(a["body"], vorleser)
+        a["body"] = uebungen_einsetzen(add_vorlesen(a["body"], vorleser), fertig)
         a["body_lehrer"] = pandoc(path, voll, "html5")
         check_body(path, a["body_lehrer"])
-        a["body_lehrer"] = add_vorlesen(a["body_lehrer"], vorleser)
+        a["body_lehrer"] = uebungen_einsetzen(add_vorlesen(a["body_lehrer"], vorleser), fertig)
         plain = pandoc(path, body, "plain")
         a["text"] = " ".join(re.sub(r"[-=+|]{3,}|\|", " ", plain).split())  # drop ASCII table borders
         a["url"] = f"/artikel/{a['slug']}/"
@@ -852,12 +925,15 @@ def load_lessons():
         dupes = sorted({n for n in names if names.count(n) > 1})
         if dupes:
             fail(path, f"two downloads would have the same file name: {', '.join(dupes)}")
+        body, fertig = uebungen(path, body)
         body, voll = split_notizen(path, body)
         l["body"] = pandoc(path, body, "html5")
         check_body(path, l["body"])
+        l["body"] = uebungen_einsetzen(l["body"], fertig)
         # the teacher page lives one folder deeper: relative download links must still reach dateien/
         l["body_lehrer"] = pandoc(path, voll, "html5").replace('href="dateien/', 'href="../dateien/')
         check_body(path, l["body_lehrer"])
+        l["body_lehrer"] = uebungen_einsetzen(l["body_lehrer"], fertig)
         l["url"] = f"/edv-kurs/{l['slug']}/"
         quizdatei = path.with_name(f"{l['slug']}.quiz.json")
         l["quiz"] = load_quiz(quizdatei) if quizdatei.is_file() else None

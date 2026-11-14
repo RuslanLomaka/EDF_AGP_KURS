@@ -131,6 +131,16 @@ Es gibt also **keine strenge Bettruhe**. Entscheidend ist: Hilft es der Heilung 
 Mehr dazu, was eine Abmahnung ist, lesen Sie im Artikel [Abmahnung im Job](/artikel/abmahnung/).
 :::
 
+```uebung
+typ: reihenfolge
+frage: "Was passiert, wenn Sie krank werden? Bringen Sie es in die richtige Reihenfolge."
+schritte:
+  - "Vor Arbeitsbeginn Bescheid sagen"
+  - "Länger als 3 Tage krank: Krankschreibung vom Arzt"
+  - "Bis 6 Wochen: Lohn vom Arbeitgeber"
+  - "Danach: Krankengeld von der Krankenkasse"
+```
+
 ## Wörter {#woerter}
 
 **krank sein / arbeitsunfähig sein**

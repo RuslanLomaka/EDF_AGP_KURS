@@ -154,6 +154,21 @@ In der Praxis enden viele Verfahren mit einem **Vergleich**: Das Arbeitsverhält
 - **Agentur für Arbeit:** Melden Sie sich spätestens **3 Tage** nach der Kündigung **arbeitsuchend** (wenn der Job in weniger als 3 Monaten endet). Wer einen **Aufhebungsvertrag** unterschreibt oder selbst kündigt, bekommt oft für eine Zeit kein Arbeitslosengeld (**Sperrzeit**).
 :::
 
+```uebung
+typ: zuordnen
+frage: "Welche Säule ist das? Ordnen Sie die Gründe zu."
+gruppen:
+  "Verhalten":
+    - "Diebstahl im Betrieb"
+    - "Sich weigern zu arbeiten"
+  "Person":
+    - "Lange Krankheit ohne Besserung"
+  "Betrieb":
+    - "Zu wenig Aufträge"
+    - "Die Firma wird umstrukturiert"
+erklaerung: "Verhalten: Die Person hat etwas falsch gemacht. Person: Der Grund liegt in der Person. Betrieb: Der Grund liegt in der Firma."
+```
+
 ## Wörter {#woerter}
 
 **der Einschnitt, die Einschnitte**

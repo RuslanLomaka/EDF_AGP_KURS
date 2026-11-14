@@ -381,7 +381,7 @@ code { font-size: 0.88em; background: var(--accent-soft); padding: 0.1rem 0.35re
   .bild { float: right; width: 21rem; margin: 0.3rem 0 1rem 1.4rem; }
   main h2 { clear: both; }
   .bild:has(+ table) { float: none; margin: 1.3rem auto; }
-  .kurz, .ergaenzung, .info, .achtung, .notiz, .prompt, .profi, .schritte ol, .prinzip, main details { display: flow-root; }
+  .kurz, .ergaenzung, .info, .achtung, .notiz, .prompt, .profi, .uebung, .schritte ol, .prinzip, main details { display: flow-root; }
 }
 
 /* Footer: dark band across the page */
@@ -515,6 +515,7 @@ h2 .nr { margin-right: 0.35rem; }
   .schnellnav .nr { min-width: 2.75rem; height: 2.75rem; font-size: 1.05rem; background: var(--ton-soft); color: var(--ton); }
   .schnellnav a[aria-current="true"] .nr { background: var(--ton); color: var(--card); }
   body:has(.schnellnav) { padding-bottom: 4.2rem; }
+  html:has(.schnellnav) { scroll-padding-bottom: 4.6rem; }
   body:has(.schnellnav) .hinweis-dialog { bottom: 4.4rem; }
 }
 @media (min-width: 80rem) {
@@ -526,6 +527,70 @@ h2 .nr { margin-right: 0.35rem; }
   .schnellnav a[aria-current="true"] { background: var(--ton-soft); color: var(--fg); font-weight: 700; }
   .schnellnav a[aria-current="true"] .nr { background: var(--ton); color: var(--card); }
 }
+
+/* Exercises (```uebung): cards into boxes, steps into order */
+.uebung { position: relative; overflow: hidden; margin: 1.4rem 0; padding: 1rem 1.1rem; border-radius: var(--r);
+  border: 1.5px solid var(--ton-rand); background: linear-gradient(135deg, var(--ton-soft), var(--card) 70%); box-shadow: var(--shadow); }
+.ue-kopf { margin: 0 0 0.25rem; font-weight: 750; font-size: 1.05rem; }
+.ue-marke { display: inline-block; margin-right: 0.35rem; padding: 0.05rem 0.55rem; border-radius: 999px; background: var(--ton); color: var(--card);
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; vertical-align: 0.15em; }
+.ue-hinweis { margin: 0 0 0.8rem; font-size: 0.88rem; color: var(--muted); }
+.uebung:not(.ue-aktiv) .ue-steuerung, .uebung:not(.ue-aktiv) .ue-hinweis { display: none; }
+.ue-pool { display: flex; flex-wrap: wrap; gap: 0.5rem; min-height: 3.2rem; padding: 0.6rem; margin-bottom: 0.8rem; border: 2px dashed var(--line); border-radius: 12px; }
+.ue-pool:empty::before { content: "Alle Karten verteilt – jetzt prüfen!"; align-self: center; color: var(--muted); font-size: 0.88rem; }
+.ue-karte { font: inherit; font-size: 0.95rem; line-height: 1.35; text-align: left; padding: 0.45rem 0.75rem; border-radius: 10px; border: 1.5px solid var(--line);
+  background: var(--card); color: var(--fg); cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; box-shadow: var(--shadow);
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease; }
+.ue-karte:hover { transform: translateY(-1px); border-color: var(--ton-rand); }
+.ue-karte[aria-pressed="true"] { border-color: var(--ton); background: var(--ton-soft); box-shadow: 0 0 0 3px var(--ton-soft); }
+.ue-karte.ue-zieht { opacity: 0.35; }
+.ue-geist { position: fixed; z-index: 100; pointer-events: none; margin: 0; transform: translate(-50%, -60%) rotate(-3deg); box-shadow: var(--shadow-hoch); }
+.ue-karte.richtig, .ue-schritt.richtig { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, var(--card)); }
+.ue-karte.falsch, .ue-schritt.falsch { border-color: var(--warn-line); background: var(--warn-bg); animation: wackeln 0.4s; }
+.ue-ziele { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 0.7rem; }
+.ue-ziel { min-height: 6rem; padding: 0.5rem 0.6rem 0.7rem; border: 2px solid var(--line); border-radius: 12px; background: var(--card); cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease; }
+.uebung.ue-waehlt .ue-ziel { border-style: dashed; border-color: var(--ton-rand); }
+.ue-ziel.ue-drueber { border-color: var(--ton); background: var(--ton-soft); }
+.ue-ziel-titel { margin: 0 0 0.45rem; font-weight: 800; font-size: 0.95rem; color: var(--ton); }
+.ue-ablage { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.ue-gelandet { animation: pop 0.3s ease; }
+.ue-liste { list-style: none; padding: 0; margin: 0; counter-reset: ue; }
+.ue-schritt { display: flex; align-items: center; gap: 0.55rem; margin: 0.45rem 0; padding: 0.45rem 0.5rem; border: 1.5px solid var(--line); border-radius: 12px;
+  background: var(--card); box-shadow: var(--shadow); counter-increment: ue; cursor: grab; user-select: none; -webkit-user-select: none; }
+.ue-schritt::before { content: counter(ue); flex: none; display: grid; place-items: center; width: 1.6rem; height: 1.6rem; border-radius: 50%;
+  background: var(--ton-soft); color: var(--ton); font-size: 0.82rem; font-weight: 800; }
+.ue-schritt.ue-zieht { border-color: var(--ton); box-shadow: var(--shadow-hoch); opacity: 0.85; }
+.ue-griff { flex: none; width: 1.1rem; height: 1.7rem; touch-action: none; cursor: grab; opacity: 0.6;
+  background-image: radial-gradient(var(--muted) 1.4px, transparent 1.6px); background-size: 6px 6px; }
+.ue-text { flex: 1; }
+.ue-pfeile { flex: none; display: flex; gap: 0.25rem; }
+.ue-pfeile button, .ue-neu { font: inherit; font-weight: 700; border: 1px solid var(--line); background: var(--card); color: var(--fg); border-radius: 10px; cursor: pointer; }
+.ue-pfeile button { width: 2.3rem; height: 2.3rem; }
+.ue-steuerung { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.9rem 0 0; }
+.ue-pruefen { font: inherit; font-weight: 700; padding: 0.5rem 1.1rem; border: 0; border-radius: 10px; background: var(--brand); color: #fff; cursor: pointer; }
+.ue-neu { padding: 0.5rem 1rem; }
+.ue-ergebnis p { margin: 0.6rem 0 0; }
+.ue-ergebnis .ok { color: var(--ok); font-weight: 800; }
+.ue-ergebnis .falsch { color: var(--warn-line); font-weight: 700; }
+.ue-erklaerung { color: var(--muted); }
+main .ue-loesung { margin: 0.8rem 0 0; box-shadow: none; font-size: 0.92rem; }
+
+/* Animations: slide in, landing pop, wrong-answer shake, confetti, floating hero drawing */
+.einblenden { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.einblenden.sichtbar { opacity: 1; transform: none; }
+@keyframes pop { 0% { transform: scale(0.9); } 60% { transform: scale(1.05); } 100% { transform: scale(1); } }
+@keyframes wackeln { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+@keyframes schweben { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
+@keyframes konfetti { to { transform: translate(var(--x), 460px) rotate(var(--dreh)); opacity: 0; } }
+.konfetti { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 5; }
+.konfetti span { position: absolute; top: -14px; width: 8px; height: 12px; border-radius: 2px; animation: konfetti 1.6s ease-in forwards; }
+.quiz-antwort.ist-richtig { animation: pop 0.35s ease; }
+.quiz-antwort.gewaehlt-falsch { animation: wackeln 0.4s; }
+.quiz-ergebnis { position: relative; overflow: hidden; }
+.quiz-balken span { transition: width 0.9s ease; }
+.schritte li.erledigt .haken { animation: pop 0.3s ease; }
+@media (min-width: 40rem) { .hero::after { animation: schweben 6s ease-in-out infinite; } }
 
 /* Article quiz */
 .quiz { margin-top: 2.5rem; }
@@ -598,7 +663,7 @@ h2 .nr { margin-right: 0.35rem; }
 .serie-block .hinweis, .liste .hinweis { color: var(--muted); font-size: 0.92rem; }
 
 @media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; }
+  * { transition: none !important; animation: none !important; }
   .card:hover, .bereich:hover, .blaettern a:hover, .btn:hover { transform: none; }
 }
 
@@ -606,7 +671,8 @@ h2 .nr { margin-right: 0.35rem; }
 @media print {
   body { background: #fff; color: #000; font-size: 11pt; }
   .site-header, .site-footer, .toc, .fortschritt, .zuruecksetzen, .blaettern, .startsuche, .suchfeld, .chips, .downloads .btn,
-  .quiz, .hinweis-dialog, .vorlesen, .schnellnav { display: none !important; }
+  .quiz, .hinweis-dialog, .vorlesen, .schnellnav, .ue-steuerung, .ue-hinweis { display: none !important; }
+  .einblenden { opacity: 1 !important; transform: none !important; }
   main { max-width: none; padding: 0; }
   a, main a { color: #000; }
   .hero { color: #000; background: none; box-shadow: none; padding: 0; }

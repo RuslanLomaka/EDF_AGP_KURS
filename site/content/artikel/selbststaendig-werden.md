@@ -150,6 +150,21 @@ Andere Handwerke sind **zulassungsfrei**, zum Beispiel Schuhmacher, Maßschneide
 **Wichtig:** Gründungszuschuss und KfW-Kredit müssen Sie **vor dem Start** beantragen. Wer schon angefangen hat, bekommt oft nichts mehr. Sprechen Sie deshalb zuerst mit der Arbeitsagentur oder dem Jobcenter.
 :::
 
+```uebung
+typ: zuordnen
+frage: "Gewerbe oder freier Beruf? Ordnen Sie zu."
+gruppen:
+  "Gewerbe":
+    - "Kiosk (Handel)"
+    - "Imbiss (Gastronomie)"
+    - "Malerbetrieb (Handwerk)"
+  "Freier Beruf":
+    - "Übersetzerin"
+    - "Lehrerin"
+    - "Ärztin"
+erklaerung: "Ein Gewerbe melden Sie beim Gewerbeamt an. Freie Berufe melden sich nur beim Finanzamt."
+```
+
 ## Wörter {#woerter}
 
 **selbstständig**

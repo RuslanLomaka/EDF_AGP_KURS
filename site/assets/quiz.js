@@ -36,7 +36,9 @@
   const balken = anteil => {
     const b = el('div', 'quiz-balken');
     const s = el('span');
-    s.style.width = Math.round(anteil * 100) + '%';
+    s.style.width = '0%';
+    // grows from zero once it is on the page
+    requestAnimationFrame(() => requestAnimationFrame(() => { s.style.width = Math.round(anteil * 100) + '%'; }));
     b.append(s);
     return b;
   };
@@ -142,6 +144,7 @@
       box.prepend(ergebnis);
       ergebnis.scrollIntoView({ block: 'start' });
       ergebnis.focus({ preventScroll: true });
+      if (ergebnis.dataset.anteil >= 0.8 && window.kursKonfetti) window.kursKonfetti(ergebnis);
     });
     box.append(stand, warnung, auswerten, neu);
     zeigeStand();
@@ -151,6 +154,7 @@
     const r = fragen.filter(f => f.wahl >= 0 && f.antworten[f.wahl].correct).length;
     const anteil = r / fragen.length;
     const e = el('section', 'quiz-ergebnis');
+    e.dataset.anteil = String(anteil);
     e.tabIndex = -1;
     e.setAttribute('aria-label', 'Ihr Ergebnis');
     const stufe = anteil >= 0.8 ? ['KI-Profi', 'Stark! Sie haben heute gezeigt, dass Sie KI sicher und klug nutzen.']

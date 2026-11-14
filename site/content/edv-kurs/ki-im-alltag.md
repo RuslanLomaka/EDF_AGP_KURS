@@ -68,6 +68,25 @@ Gestern haben Sie gesehen: Die KI kann viel – aber sie **erfindet manchmal Din
 
 **R-Z-F-L** – Rolle, Ziel, Format, Länge. Sie müssen nicht immer alle vier nutzen. Aber je mehr, desto besser wird die Antwort.
 
+```uebung
+typ: zuordnen
+frage: "Welcher Baustein ist das? Ordnen Sie die Teile eines Prompts zu."
+gruppen:
+  "Rolle":
+    - "Du bist Bewerbungstrainerin."
+    - "Du bist eine strenge Personalchefin."
+  "Ziel":
+    - "Schreibe 3 Fragen für ein Vorstellungsgespräch."
+    - "Erkläre mir das Wort Tarifvertrag."
+  "Format":
+    - "als Tabelle"
+    - "als kurze Liste"
+  "Länge":
+    - "höchstens 5 Sätze"
+    - "in einem einzigen Satz"
+erklaerung: "Rolle = wer die KI sein soll. Ziel = was herauskommen soll. Format = in welcher Form. Länge = wie lang."
+```
+
 ## Prompt-Reparatur {#reparatur}
 
 <p class="zeit">15 Minuten</p>
@@ -120,6 +139,17 @@ Erkläre mir diesen Brief in einfachem Deutsch. Mache danach eine Liste: Was mus
 ::: profi
 Lassen Sie sich den Brief in Ihrer Muttersprache erklären. Fragen Sie dann: „Was passiert, wenn ich den Ersatztermin vergesse?“ Stimmt die Antwort mit dem Brief überein?
 :::
+
+```uebung
+typ: reihenfolge
+frage: "So nutzen Sie die KI sicher für einen echten Brief. Welche Reihenfolge stimmt?"
+schritte:
+  - "Persönliche Daten entfernen"
+  - "Den Text in die KI kopieren"
+  - "Erklärung und To-do-Liste lesen"
+  - "Die Liste mit dem Brief vergleichen"
+erklaerung: "Zuerst die Daten entfernen – und am Ende immer mit dem Original vergleichen."
+```
 
 ::: achtung
 **Bei echten Briefen:** Entfernen Sie vorher alle persönlichen Daten – Namen, Adressen, Kundennummern, Aktenzeichen. Bei wichtigen Briefen (Jobcenter, Gericht, Kündigung) fragen Sie zusätzlich eine Beratungsstelle.

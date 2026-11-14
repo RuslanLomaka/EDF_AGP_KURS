@@ -180,6 +180,22 @@ Abzüge sind ärgerlich – aber sie haben einen Sinn. Mit Steuern und Sozialver
 
 Alle zahlen ein, solange sie arbeiten. Dafür bekommen alle Hilfe, wenn sie krank, arbeitslos, pflegebedürftig oder alt sind. So sichern sich die Menschen in der Gesellschaft **gemeinsam** ab.
 
+```uebung
+typ: zuordnen
+frage: "Was ist was? Ordnen Sie zu."
+gruppen:
+  "Steuer":
+    - "Lohnsteuer"
+  "Sozialversicherung (Sie zahlen mit)":
+    - "Krankenversicherung"
+    - "Rentenversicherung"
+    - "Pflegeversicherung"
+    - "Arbeitslosenversicherung"
+  "Zahlt nur der Arbeitgeber":
+    - "Unfallversicherung"
+erklaerung: "Vom Brutto gehen Lohnsteuer und vier Sozialversicherungen ab. Die Unfallversicherung zahlt der Arbeitgeber allein."
+```
+
 ## Wörter {#woerter}
 
 **die Stellenanzeige, die Stellenanzeigen**

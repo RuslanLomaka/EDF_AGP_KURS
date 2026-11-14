@@ -170,6 +170,17 @@ Möglich ist auch **Elternteilzeit**: Sie arbeiten in der Elternzeit weniger Stu
 - Nach der Elternzeit gilt wieder die **Stundenzahl von vorher**.
 :::
 
+```uebung
+typ: reihenfolge
+frage: "Bringen Sie die Zeitleiste in die richtige Reihenfolge."
+schritte:
+  - "Schwangerschaft beginnt – Kündigungsschutz beginnt"
+  - "6 Wochen vor der Geburt: Mutterschutz beginnt"
+  - "Die Geburt"
+  - "8 Wochen nach der Geburt: Mutterschutz endet"
+  - "Elternzeit – bis zu 3 Jahre pro Elternteil"
+```
+
 ## Wörter {#woerter}
 
 **das Mutterschutzgesetz (MuSchG)**

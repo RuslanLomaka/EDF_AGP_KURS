@@ -121,6 +121,21 @@ Eine **KI** (künstliche Intelligenz) zum Chatten funktioniert wie ein Chat mit 
 
 **Die goldene Regel:** Was Sie nicht auf ein Plakat am Bahnhof schreiben würden, gehört auch nicht in eine KI.
 
+```uebung
+typ: zuordnen
+frage: "Darf das in die KI?"
+gruppen:
+  "Darf in die KI":
+    - "Ein Rezept für Apfelkuchen"
+    - "Ein erfundener Lebenslauf von Max Mustermann"
+    - "Die Frage: Was ist ein Tarifvertrag?"
+  "Bleibt draußen":
+    - "Ihre Handynummer"
+    - "Der Lebenslauf Ihrer Nachbarin"
+    - "Ein Foto von Ihrem Ausweis"
+erklaerung: "Erfundene Beispiele und allgemeine Fragen sind in Ordnung. Echte Daten – auch von anderen – bleiben draußen."
+```
+
 ## Der Wettbewerb {#wettbewerb}
 
 <p class="bild"><img src="/edv-kurs/bilder/wettbewerb.svg" alt="So funktioniert der Wettbewerb: 1. 15 Minuten mit der KI ausprobieren. 2. Das beste Ergebnis laut vorlesen. 3. Die Gruppe klatscht – der lauteste Applaus bekommt Punkte. 4. Am Ende gewinnt die Person mit den meisten Punkten die Goldene Gurke." width="400" height="400"></p>

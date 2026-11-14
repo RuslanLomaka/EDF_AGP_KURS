@@ -142,6 +142,19 @@ Dabei gelten alle Regeln des Arbeitsrechts – zum Beispiel für [Arbeitszeit un
 Das war der letzte Teil der Serie. Beraten lassen können Sie sich kostenlos oder günstig bei der **IHK**, der **Handwerkskammer** und in Gründerzentren – fragen Sie, bevor Sie Fehler machen.
 :::
 
+```uebung
+typ: zuordnen
+frage: "Wie lange heben Sie das auf?"
+gruppen:
+  "8 Jahre":
+    - "Rechnungen"
+    - "Belege"
+  "10 Jahre":
+    - "Bücher"
+    - "Jahresabschlüsse"
+erklaerung: "Rechnungen und Belege 8 Jahre, Bücher und Jahresabschlüsse 10 Jahre."
+```
+
 ## Wörter {#woerter}
 
 **die Buchhaltung**

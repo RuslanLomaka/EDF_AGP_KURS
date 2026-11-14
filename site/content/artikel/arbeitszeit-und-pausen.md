@@ -155,6 +155,22 @@ Ob die Regeln eingehalten werden, kontrollieren die **Gewerbeaufsichtsämter**. 
 - **Wenn Sie Probleme haben:** Sprechen Sie mit dem **Betriebsrat** (wenn es einen gibt) oder mit Ihrer **Gewerkschaft**. Sie können sich auch direkt an das **Gewerbeaufsichtsamt** wenden.
 :::
 
+```uebung
+typ: zuordnen
+frage: "Wie lange ist die Pause mindestens? Ordnen Sie die Arbeitszeit zu."
+gruppen:
+  "Keine Pflicht-Pause":
+    - "5 Stunden"
+    - "6 Stunden"
+  "Mindestens 30 Minuten":
+    - "7 Stunden"
+    - "8 Stunden"
+  "Mindestens 45 Minuten":
+    - "9,5 Stunden"
+    - "10 Stunden"
+erklaerung: "Bis 6 Stunden: keine Pflicht-Pause. Mehr als 6 bis 9 Stunden: 30 Minuten. Mehr als 9 Stunden: 45 Minuten."
+```
+
 ## Wörter {#woerter}
 
 **das Arbeitszeitgesetz (ArbZG)**

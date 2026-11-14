@@ -117,6 +117,20 @@ Mehr zu den Gründen für eine Kündigung lesen Sie im Artikel [Kündigung im Br
 
 Ein **Gesetz** mit einer festen Frist, nach der eine Abmahnung gelöscht wird, gibt es **nicht**. Aber: Wenn Sie lange Zeit **keine neuen Fehler** machen – oft nach etwa **2 bis 3 Jahren** –, kann die Abmahnung ihre **Warnfunktion verlieren**. Dann reicht sie nicht mehr als Grundlage für eine Kündigung.
 
+```uebung
+typ: zuordnen
+frage: "Kann es dafür eine Abmahnung geben?"
+gruppen:
+  "Abmahnung möglich":
+    - "Immer wieder zu spät kommen"
+    - "Unentschuldigt fehlen"
+    - "Ohne Schutzhelm arbeiten"
+    - "Verbotene private Internetnutzung"
+  "Keine Abmahnung":
+    - "Mit Attest krank zu Hause bleiben"
+erklaerung: "Eine Abmahnung gibt es für Fehlverhalten. Für Krankheit kann man nichts – dafür gibt es keine Abmahnung."
+```
+
 ## Wörter {#woerter}
 
 **die Abmahnung, die Abmahnungen**

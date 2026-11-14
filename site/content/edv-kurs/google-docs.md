@@ -287,6 +287,16 @@ Beim Teilen entscheiden Sie, **wer** die Datei sehen darf und **was** diese Pers
 Das Gleiche geht mit **Excel**: eine .xlsx-Datei hochladen → **Datei** → **Als Google Tabellen speichern**.
 :::
 
+```uebung
+typ: reihenfolge
+frage: "So wird aus einer Word-Datei ein PDF über Google Docs. Bringen Sie die Schritte in die richtige Reihenfolge."
+schritte:
+  - "In Google Drive: Neu → Datei hochladen"
+  - "Die Word-Datei öffnen"
+  - "Datei → Als Google Docs speichern"
+  - "Datei → Herunterladen → PDF-Dokument"
+```
+
 ## Unser Kursprojekt: die gemeinsame Job-Mappe {#projekt}
 
 ::: notiz
@@ -373,6 +383,21 @@ Oben rechts auf Ihr **Profilbild** klicken → **Abmelden**. Sonst können ander
 </details>
 
 ## Testen Sie sich {#test}
+
+```uebung
+typ: zuordnen
+frage: "Word oder Google Docs? Was passt wozu?"
+gruppen:
+  "Word":
+    - "Programm auf dem PC"
+    - "Datei liegt auf dem PC"
+    - "geht ohne Internet"
+  "Google Docs":
+    - "läuft im Browser"
+    - "Datei liegt im Internet"
+    - "speichert automatisch"
+erklaerung: "Word ist ein Programm auf dem PC. Google Docs läuft im Browser und speichert automatisch im Internet."
+```
 
 <details>
 <summary>Was ist der wichtigste Unterschied zwischen Word und Google Docs?</summary>

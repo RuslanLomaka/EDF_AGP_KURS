@@ -149,6 +149,20 @@ Ein schriftlicher Vertrag schützt alle. Regeln Sie mindestens:
 Lassen Sie den Vertrag von einer Anwältin, einem Notar oder bei der IHK prüfen. Ein guter Vertrag kostet am Anfang etwas Geld – ein Streit ohne Vertrag kostet oft viel mehr.
 :::
 
+```uebung
+typ: zuordnen
+frage: "Wer haftet womit?"
+gruppen:
+  "Haftet mit dem Privatvermögen":
+    - "Einzelunternehmer"
+    - "Gesellschafter einer GbR"
+    - "Gesellschafter einer OHG"
+    - "Komplementär in der KG"
+  "Haftet nur mit der Einlage":
+    - "Kommanditist in der KG"
+erklaerung: "In diesen Rechtsformen haften alle Inhaber privat – nur der Kommanditist in der KG nicht."
+```
+
 ## Wörter {#woerter}
 
 **die Rechtsform, die Rechtsformen**
