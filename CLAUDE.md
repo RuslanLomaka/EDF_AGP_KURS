@@ -59,6 +59,11 @@ Top navigation, fixed at three items: **Start · EDV-Kurs · Artikel**.
   no weekday, no "Kurstag"), parts of a series kept together with a "Teil n von m" badge.
 - `/artikel/<slug>/`: table of contents, series box (if any), quiz, then sources, keywords, "Mehr zum Thema"
   (nearest dates), previous/next in class order or, in a series, within the series.
+- **Hilfe-Ampel** (lessons): a traffic-light button in the quick navigation turns the whole screen green ("7 ✓ fertig")
+  or red ("7 ? Hilfe") with the section on screen. Learners hold up their phone; nothing is stored or sent.
+- **Teacher view of lessons:** a "Jetzt" bar in the sticky progress bar reads the timetable of the plan (`| 8:30 | … |`
+  rows; a plan starting at `0:00` gets a Start button) and shows the planned part, minutes left and a 15/5-minute timer.
+- `/aufwaermen/`: warm-up, 5 questions from 5 different article quizzes, new on every load (linked from the start page).
 - `/hinweis/`: privacy and purpose notice. A short, non-blocking bar at the bottom links to it once a day per device.
 - `/artikel/thema/<topic>/`: all articles of one topic, works without JavaScript.
 - **Teacher view:** `<page>/teacher/` for every lesson and article, plus an overview at `/teacher/`. It is the same
@@ -97,6 +102,9 @@ pages at phone width (390 px).
   (only `localService` voices, so no text leaves the browser).
 - **What is read:** the term without the parts in brackets. Write glossary terms so that reading them aloud makes
   sense.
+- **Whole sections** (articles and lessons, not Wörter, Fragen, Quellen, Hilfe): a speaker button at each heading reads
+  the section with a German voice installed on the device only (no button without one). Notes, exercises and pictures
+  are skipped.
 
 **Pictures.** Own drawings only (no screenshots of other products, no logos), as square SVGs:
 - `viewBox="0 0 400 400"`, white background, Arial, text at least 15 px, colours from the site palette;
@@ -196,6 +204,9 @@ front matter.
   within the series. Lists keep the parts together; topic pages show series first.
 - Slugs carry no part numbers: the order may change, URLs may not.
 - Current series: "Rund um die Kündigung" (Arbeitsrecht, 3 parts), "Eine Firma gründen" (Selbstständigkeit, 5 parts).
+- **Running case:** `::: fall` boxes tell one invented person's story across pages ("Der Fall Frau K.", 4 parts:
+  abmahnung → kuendigungsschutz → kuendigung-einfach-erklaert → lesson ki-im-alltag), each with an anchor
+  `<p id="fall-frau-k"></p>`, a question in `<details>` and a link to the next part.
 
 **Articles not based on a handout** (the owner asks for a topic):
 - `datum` is the day of the request; `quelle: "Eigener Artikel auf Wunsch der Kursleitung, …"`.

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Eine Firma prüfen in drei Schritten: 1. Suchen Sie den Namen der Firma zusammen mit dem Wort Betrug oder Erfahrungen. 2. Schauen Sie ins Impressum der Website: Gibt es eine echte Adresse und eine Handelsregister-Nummer? 3. Rufen Sie die Firma unter der Nummer auf ihrer eigenen Website an. Und nie: Geld zahlen, Ausweis schicken, Pakete annehmen.</title>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="32.0" font-size="21" fill="#1f4e79" text-anchor="middle" font-weight="700">Eine Firma prüfen</text>
+<rect x="24" y="52" width="352" height="62" rx="14" fill="#e8f0f8"/>
+<circle cx="54" cy="83" r="16" fill="#1f4e79"/>
+<text x="54" y="89.7" font-size="19" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+<text x="84" y="78.0" font-size="19" fill="#1f4e79" text-anchor="start" font-weight="700">Suchen</text>
+<text x="84" y="101.0" font-size="15" fill="#1d232b" text-anchor="start">Firmenname + „Betrug“</text>
+<rect x="24" y="128" width="352" height="62" rx="14" fill="#e0f2f1"/>
+<circle cx="54" cy="159" r="16" fill="#00796b"/>
+<text x="54" y="165.7" font-size="19" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+<text x="84" y="154.0" font-size="19" fill="#00796b" text-anchor="start" font-weight="700">Impressum</text>
+<text x="84" y="177.0" font-size="15" fill="#1d232b" text-anchor="start">Adresse? Handelsregister?</text>
+<rect x="24" y="204" width="352" height="62" rx="14" fill="#e7f3e8"/>
+<circle cx="54" cy="235" r="16" fill="#2e7d32"/>
+<text x="54" y="241.7" font-size="19" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+<text x="84" y="230.0" font-size="19" fill="#2e7d32" text-anchor="start" font-weight="700">Anrufen</text>
+<text x="84" y="253.0" font-size="15" fill="#1d232b" text-anchor="start">Nummer von der Website</text>
+<rect x="24" y="290" width="352" height="92" rx="14" fill="#fdecea"/>
+<text x="200" y="318.0" font-size="18" fill="#c0392b" text-anchor="middle" font-weight="700">Nie:</text>
+<text x="200" y="344.0" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">Geld zahlen · Ausweis schicken</text>
+<text x="200" y="368.0" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">Pakete oder Geld weiterleiten</text>
+</svg>
