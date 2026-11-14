@@ -37,7 +37,7 @@ quelle: "Arbeitsblatt aus dem Kurs (Text und Fragen, 2 Seiten)"
 
 1. Einstieg: „In der Stellenanzeige steht 2.500 Euro. Bekommen Sie 2.500 Euro auf Ihr Konto?“ Sammeln Sie Antworten.
 2. Lesen Sie „Kurz gesagt“ gemeinsam. Schreiben Sie an die Tafel: **Brutto − Abzüge = Netto**.
-3. Zeigen Sie das Bild bei „Was wird abgezogen?“. Gehen Sie danach die Sozialversicherungen in der Tabelle einzeln durch.
+3. Alle schauen auf das Bild bei „Was wird abgezogen?“. Gehen Sie danach die Sozialversicherungen in der Tabelle einzeln durch.
 4. Merksatz für die Gruppe: In Stellenanzeigen und im Arbeitsvertrag steht fast immer das Brutto.
 5. Zum Schluss: „Fragen zum Text“ zu zweit, dann das Quiz.
 :::
@@ -56,9 +56,9 @@ Das Brutto ist also der **Startpunkt** der Rechnung. Es ist aber nicht das Geld,
 **Zum Bild**
 
 1. „Oben der blaue Balken ist das **Brutto**: 2.500 Euro. So steht es im Arbeitsvertrag.“
-2. „Davon gehen Abzüge ab.“ Zeigen Sie auf den orangen Teil: „Die Sozialversicherung: Kranken-, Pflege-, Renten- und Arbeitslosenversicherung. Ungefähr 540 Euro.“
-3. Zeigen Sie auf den roten Teil: „Die Lohnsteuer, ungefähr 190 Euro. Dieses Geld bekommt der Staat.“
-4. Zeigen Sie auf den grünen Teil: „Was bleibt, ist das **Netto**: ungefähr 1.770 Euro. Das kommt auf das Konto, rund 70 Prozent.“
+2. „Davon gehen Abzüge ab.“ Alle schauen auf den orangen Teil: „Die Sozialversicherung: Kranken-, Pflege-, Renten- und Arbeitslosenversicherung. Ungefähr 540 Euro.“
+3. Alle schauen auf den roten Teil: „Die Lohnsteuer, ungefähr 190 Euro. Dieses Geld bekommt der Staat.“
+4. Alle schauen auf den grünen Teil: „Was bleibt, ist das **Netto**: ungefähr 1.770 Euro. Das kommt auf das Konto, rund 70 Prozent.“
 5. „Das ist ein Beispiel. Mit Kindern, einer anderen Steuerklasse oder Kirchensteuer ist das Netto anders.“
 6. Frage: „Was ist größer, Brutto oder Netto?“ (Brutto)
 :::

@@ -27,14 +27,23 @@ ziele:
 
 | Uhrzeit | Was |
 |---|---|
-| 8:30 | Rückblick auf Tag 1: Was hat die KI falsch gemacht? Dann R-Z-F-L |
-| 8:45 | Abschnitte 2 bis 6 (je 15 Min.) |
+| 8:30 | Anmelden wie gestern (10 Min.), Rückblick: Was hat die KI gestern falsch gemacht? |
+| 8:45 | Abschnitt 1 (R-Z-F-L) und Abschnitt 2 (Prompt-Reparatur), je 15 Min. |
+| 9:15 | Abschnitt 3: Brief verstehen – **30 Min.**, der Brief ist lang und die Frist zu prüfen braucht Zeit |
+| 9:45 | Puffer, Fragen |
 | 10:00 | **Pause** bis 10:20 |
-| 10:20 | Abschnitte 7 bis 9 (je 15 Min.) |
-| 11:05 | Abschlusstest (ca. 25 Min.) |
-| 11:30 | Ergebnisse besprechen, Feedback, alle melden sich ab |
+| 10:20 | Abschnitt 4 (heikle E-Mail, 15 Min.) und Abschnitt 7 (Faktencheck, 20 Min.) |
+| 10:55 | Abschnitt 5 oder 6, je nach Gruppe (15 Min.) |
+| 11:10 | Abschlusstest: 15 Min. beantworten, 10 Min. besprechen |
+| 11:35 | Feedback, alle melden sich ab und schließen das private Fenster |
 
-Abschlusstest (letzter Abschnitt): 15 Minuten zum Beantworten, dann gemeinsam die Fragen besprechen, bei denen viele Fehler hatten. Fragen Sie: „Wer ist KI-Profi geworden?“ Zum Schluss melden sich alle ab und schließen das Browserfenster.
+**Wenn die Zeit knapp ist:** Diese Abschnitte fallen zuerst weg, in dieser Reihenfolge: 9 (Vergleich), 8 (drei Stufen), 6 (Deutsch-Trainer), 5 (Vorstellungsgespräch – als Übung für zu Hause empfehlen). **Nie weglassen:** 3 (Brief), 7 (Faktencheck) und den Abschlusstest.
+
+**Mindestziel für alle:** einen Brief mit der KI verstanden und die Frist selbst geprüft; den Abschlusstest gemacht.
+
+**Lotsen:** Wie gestern – wer schnell fertig ist, hilft zuerst anderen und macht dann die Profi-Aufgabe.
+
+Abschlusstest (letzter Abschnitt): 15 Minuten zum Beantworten, dann gemeinsam die Fragen besprechen, bei denen viele Fehler hatten. Die Fragen haben feste Nummern („Frage 7“), und unter jedem Fehler steht ein Link zum passenden Abschnitt. Fragen Sie: „Wer ist KI-Profi geworden?“ Zum Schluss melden sich alle ab und schließen das Browserfenster.
 
 Heute gibt es keinen Wettbewerb. Lassen Sie stattdessen nach jeder Aufgabe 2 bis 3 Personen erzählen, was gut und was schlecht funktioniert hat.
 :::
@@ -59,10 +68,10 @@ Gestern haben Sie gesehen: Die KI kann viel – aber sie **erfindet manchmal Din
 **Zum Bild**
 
 1. „Ein guter Prompt hat vier Bausteine. Merken Sie sich: R-Z-F-L.“
-2. Zeigen Sie auf R: „**Rolle**: Wer soll die KI sein? Zum Beispiel eine Bewerbungstrainerin.“
-3. Zeigen Sie auf Z: „**Ziel**: Was soll herauskommen?“
-4. Zeigen Sie auf F: „**Format**: Liste, E-Mail, Tabelle, kurzer Text?“
-5. Zeigen Sie auf L: „**Länge**: Wie lang? Zum Beispiel höchstens 5 Sätze.“
+2. Alle schauen auf R: „**Rolle**: Wer soll die KI sein? Zum Beispiel eine Bewerbungstrainerin.“
+3. Alle schauen auf Z: „**Ziel**: Was soll herauskommen?“
+4. Alle schauen auf F: „**Format**: Liste, E-Mail, Tabelle, kurzer Text?“
+5. Alle schauen auf L: „**Länge**: Wie lang? Zum Beispiel höchstens 5 Sätze.“
 6. Frage: „Welcher Baustein fehlt in ‚Schreib eine E-Mail‘?“ (Rolle, genaues Ziel, Format und Länge – fast alles.)
 :::
 
@@ -97,6 +106,16 @@ erklaerung: "Rolle, Ziel, Format, Länge – und kein echter Name oder keine Adr
 
 ## Prompt-Reparatur {#reparatur}
 
+::: notiz
+**Tipps zur Aufgabe**
+
+1. Ziel: Den Unterschied zwischen einem schlechten und einem guten Prompt **selbst sehen**.
+2. Wichtig: Erst den schlechten Prompt wirklich eingeben. Erst wenn die lange, allgemeine Antwort da ist, reparieren.
+3. Lassen Sie zwei Teams ihre reparierten Prompts vorlesen. Die Gruppe prüft mit R-Z-F-L: Was ist da, was fehlt?
+4. Typisches Problem: Persönliche Daten rutschen in die Rolle („Ich bin Olga, 52 …“). Erinnern Sie an die Regel.
+5. Frage: „Welcher Baustein hat die Antwort am meisten verändert?“ (Meist das Format oder die Länge.)
+:::
+
 <p class="zeit">15 Minuten</p>
 
 Hier ist ein **schlechter Prompt**. Geben Sie ihn zuerst genau so in die KI ein. Dann reparieren Sie ihn mit R-Z-F-L und vergleichen die Antworten.
@@ -119,7 +138,7 @@ Fragen Sie die KI: „Was fehlt an dem Prompt ‚Schreib was über Arbeit‘? Wi
 
 ## Einen Brief verstehen {#brief}
 
-<p class="zeit">15 Minuten</p>
+<p class="zeit">30 Minuten</p>
 
 <p class="bild"><img src="/edv-kurs/bilder/brief-verstehen.svg" alt="Einen Brief verstehen mit KI: Sie geben den Text eines erfundenen Briefs in die KI. Die KI erklärt ihn einfach und macht eine Liste: Was muss ich tun, bis wann? Danach vergleichen Sie die Liste mit dem Brief." width="400" height="400"></p>
 
@@ -171,6 +190,15 @@ erklaerung: "Zuerst die Daten entfernen – und am Ende immer mit dem Original v
 :::
 
 ## Die heikle E-Mail {#email}
+
+::: notiz
+**Tipps zur Aufgabe**
+
+1. Ziel: Die KI passt den **Ton** an – Sie entscheiden, welcher passt.
+2. Lassen Sie abstimmen: „Wer würde Version 1 schicken? Version 2? Version 3?“ Es gibt keine einzige richtige Antwort – aber eine Begründung.
+3. Typisches Problem: Jemand gibt den echten Namen der eigenen Ärztin ein. Nur Max Mustermann und eine erfundene Praxis.
+4. Frage: „Wann passt die ganz kurze Version?“ (Wenn man die Praxis schon kennt oder per Kontaktformular schreibt.)
+:::
 
 <p class="zeit">15 Minuten</p>
 
@@ -225,6 +253,15 @@ Lassen Sie 2 Personen ihr Gespräch kurz nachspielen: Eine liest die Fragen der 
 
 ## Deutsch-Trainer {#deutsch}
 
+::: notiz
+**Tipps zur Aufgabe**
+
+1. Ziel: Die KI als **Lernpartner** – erst selbst schreiben, dann korrigieren lassen.
+2. Sagen Sie deutlich: „Erst schreiben Sie selbst, ohne KI. Fehler sind erwünscht.“ Sonst lassen manche die Sätze gleich von der KI schreiben.
+3. Typisches Problem: Persönliche Details (Wohnort, Familie). Das Thema „Traum-Wochenende“ ist absichtlich ausgedacht.
+4. Frage: „Welche Erklärung der KI hat Ihnen am meisten geholfen?“ Zwei oder drei Personen antworten.
+:::
+
 <p class="zeit">15 Minuten</p>
 
 Schreiben Sie 5 Sätze über Ihr **Traum-Wochenende** – ohne persönliche Daten. Die KI korrigiert und erklärt.
@@ -241,7 +278,7 @@ Hier sind 5 Sätze von mir. Korrigiere sie auf Niveau B1 und erkläre jeden Fehl
 
 ## Faktencheck gegen unsere Website {#faktencheck}
 
-<p class="zeit">15 Minuten</p>
+<p class="zeit">20 Minuten</p>
 
 <p class="bild"><img src="/edv-kurs/bilder/faktencheck.svg" alt="Faktencheck: Links die Antwort einer KI, rechts ein Artikel aus einer sicheren Quelle, zum Beispiel unserer Kurs-Website. Stimmen sie überein? Wenn nicht: Der sicheren Quelle glauben und genauer nachfragen." width="400" height="400"></p>
 
@@ -314,6 +351,15 @@ Lassen Sie die KI 3 Quizfragen zu dem Wort machen. Testen Sie damit Ihre Nachbar
 :::
 
 ## Gleicher Prompt, verschiedene KIs {#vergleich}
+
+::: notiz
+**Tipps zur Aufgabe**
+
+1. Ziel: Jede KI antwortet anders. Vergleichen lohnt sich – und Widersprüche sind ein Warnzeichen.
+2. Teams mit nur einem Gerät: Ein Team nimmt Gemini, das Nachbarteam ChatGPT, dann vergleichen beide.
+3. Typisches Problem: Ein Werkzeug meldet ein Limit. Dann Duck.ai nehmen – das geht ohne Konto.
+4. Frage: „Zwei KIs sagen etwas Verschiedenes. Wem glauben Sie?“ (Keiner automatisch – bei Fakten prüfen Sie eine zuverlässige Quelle, wie in Abschnitt 7.)
+:::
 
 <p class="zeit">15 Minuten</p>
 

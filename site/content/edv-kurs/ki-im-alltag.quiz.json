@@ -25,7 +25,8 @@
      "correct": false
     }
    ],
-   "explanation": "Rolle (Bewerbungstrainerin), Ziel (Tipps fürs Gespräch) und Länge (höchstens 5 Sätze) sind da. Es fehlt die Form, zum Beispiel Liste, Tabelle oder E-Mail."
+   "explanation": "Rolle (Bewerbungstrainerin), Ziel (Tipps fürs Gespräch) und Länge (höchstens 5 Sätze) sind da. Es fehlt die Form, zum Beispiel Liste, Tabelle oder E-Mail.",
+   "nachlesen": "#prompt"
   },
   {
    "area": "Prompten",
@@ -44,7 +45,8 @@
      "correct": false
     }
    ],
-   "explanation": "Ein neuer Chat ist ein neues Gespräch: Den alten Text sieht die KI dort nicht. Manche Dienste haben zwar eine „Erinnerung“ und merken sich einzelne Dinge über Sie – darum nichts Persönliches eingeben. Wer eine Antwort weiter verbessern will, bleibt im selben Chat."
+   "explanation": "Ein neuer Chat ist ein neues Gespräch: Den alten Text sieht die KI dort nicht. Manche Dienste haben zwar eine „Erinnerung“ und merken sich einzelne Dinge über Sie – darum nichts Persönliches eingeben. Wer eine Antwort weiter verbessern will, bleibt im selben Chat.",
+   "nachlesen": "ki-spielplatz#eskalation"
   },
   {
    "area": "Prompten",
@@ -63,7 +65,8 @@
      "correct": false
     }
    ],
-   "explanation": "Die richtige Antwort hat Rolle, ein klares Ziel und eine Form (eine Frage nach der anderen). „Hilf mir bitte“ ist zu ungenau."
+   "explanation": "Die richtige Antwort hat Rolle, ein klares Ziel und eine Form (eine Frage nach der anderen). „Hilf mir bitte“ ist zu ungenau.",
+   "nachlesen": "#gespraech"
   },
   {
    "area": "Prompten",
@@ -82,7 +85,8 @@
      "correct": false
     }
    ],
-   "explanation": "Sagen Sie der KI genau, was sie ändern darf – und was nicht. Sonst schreibt sie Ihren Text neu."
+   "explanation": "Sagen Sie der KI genau, was sie ändern darf – und was nicht. Sonst schreibt sie Ihren Text neu.",
+   "nachlesen": "#email"
   },
   {
    "area": "KI-Fehler erkennen",
@@ -101,7 +105,8 @@
      "correct": false
     }
    ],
-   "explanation": "Eine KI kann Titel, Autoren und Seitenzahlen erfinden, die echt klingen. Das ist ein Teil der Halluzination."
+   "explanation": "Eine KI kann Titel, Autoren und Seitenzahlen erfinden, die echt klingen. Das ist ein Teil der Halluzination.",
+   "nachlesen": "ki-spielplatz#luegen-falle"
   },
   {
    "area": "KI-Fehler erkennen",
@@ -120,7 +125,8 @@
      "correct": false
     }
    ],
-   "explanation": "Halluzination heißt: Die Antwort klingt überzeugend, ist aber erfunden."
+   "explanation": "Halluzination heißt: Die Antwort klingt überzeugend, ist aber erfunden.",
+   "nachlesen": "ki-spielplatz#luegen-falle"
   },
   {
    "area": "KI-Fehler erkennen",
@@ -139,7 +145,8 @@
      "correct": false
     }
    ],
-   "explanation": "Laut § 622 BGB sind es ab 5 Jahren 2 Monate zum Monatsende, wenn der Arbeitgeber kündigt. Bei Fakten zählt die geprüfte Quelle."
+   "explanation": "Laut § 622 BGB sind es ab 5 Jahren 2 Monate zum Monatsende, wenn der Arbeitgeber kündigt. Bei Fakten zählt die geprüfte Quelle.",
+   "nachlesen": "#faktencheck"
   },
   {
    "area": "KI-Fehler erkennen",
@@ -158,7 +165,8 @@
      "correct": false
     }
    ],
-   "explanation": "Jeder Schritt verändert ein bisschen. Bei Verträgen oder Briefen vom Amt kann das teuer werden."
+   "explanation": "Jeder Schritt verändert ein bisschen. Bei Verträgen oder Briefen vom Amt kann das teuer werden.",
+   "nachlesen": "ki-spielplatz#stille-post"
   },
   {
    "area": "Datenschutz",
@@ -177,7 +185,8 @@
      "correct": false
     }
    ],
-   "explanation": "Auch Adressen und Nummern zeigen, wer Sie sind. Ohne diese Angaben kann die KI den Inhalt trotzdem erklären."
+   "explanation": "Auch Adressen und Nummern zeigen, wer Sie sind. Ohne diese Angaben kann die KI den Inhalt trotzdem erklären.",
+   "nachlesen": "#brief"
   },
   {
    "area": "Datenschutz",
@@ -196,7 +205,8 @@
      "correct": false
     }
    ],
-   "explanation": "Ihr Passwort bleibt bei Google. Der Anbieter erfährt aber, wer Sie sind – darum: Was Sie in den Chat schreiben, gehört zu Ihrem Namen."
+   "explanation": "Ihr Passwort bleibt bei Google. Der Anbieter erfährt aber, wer Sie sind – darum: Was Sie in den Chat schreiben, gehört zu Ihrem Namen.",
+   "nachlesen": "ki-spielplatz#start"
   },
   {
    "area": "Datenschutz",
@@ -215,7 +225,8 @@
      "correct": false
     }
    ],
-   "explanation": "Gesundheitsdaten sind besonders geschützt, und Daten über andere gehören auch nicht in die KI. Löschen hilft nicht sicher – der Anbieter kann sie schon gespeichert haben."
+   "explanation": "Gesundheitsdaten sind besonders geschützt, und Daten über andere gehören auch nicht in die KI. Löschen hilft nicht sicher – der Anbieter kann sie schon gespeichert haben.",
+   "nachlesen": "#email"
   },
   {
    "area": "Datenschutz",
@@ -234,7 +245,8 @@
      "correct": false
     }
    ],
-   "explanation": "Die KI kann nichts „vergessen“, was der Anbieter schon gespeichert hat. Löschen und Training ausschalten ist das, was Sie selbst tun können."
+   "explanation": "Die KI kann nichts „vergessen“, was der Anbieter schon gespeichert hat. Löschen und Training ausschalten ist das, was Sie selbst tun können.",
+   "nachlesen": "#hilfe"
   },
   {
    "area": "Werkzeuge und Grenzen",
@@ -253,7 +265,8 @@
      "correct": false
     }
    ],
-   "explanation": "Das Limit hängt am Konto, nicht am Chat. Ein anderes Werkzeug wie Duck.ai ist der schnellste Weg – ohne neue Konten."
+   "explanation": "Das Limit hängt am Konto, nicht am Chat. Ein anderes Werkzeug wie Duck.ai ist der schnellste Weg – ohne neue Konten.",
+   "nachlesen": "ki-spielplatz#werkzeuge"
   },
   {
    "area": "Werkzeuge und Grenzen",
@@ -272,7 +285,8 @@
      "correct": false
     }
    ],
-   "explanation": "KIs sind unterschiedlich trainiert. Mehr Text heißt nicht mehr Wahrheit."
+   "explanation": "KIs sind unterschiedlich trainiert. Mehr Text heißt nicht mehr Wahrheit.",
+   "nachlesen": "#vergleich"
   },
   {
    "area": "Werkzeuge und Grenzen",
@@ -291,7 +305,8 @@
      "correct": false
     }
    ],
-   "explanation": "Bei rechtlichen Fragen kann die KI irren. Verbindliche Hilfe geben Beratungsstellen, Gewerkschaften oder Fachanwälte."
+   "explanation": "Bei rechtlichen Fragen kann die KI irren. Verbindliche Hilfe geben Beratungsstellen, Gewerkschaften oder Fachanwälte.",
+   "nachlesen": "#faktencheck"
   },
   {
    "area": "Werkzeuge und Grenzen",
@@ -310,7 +325,8 @@
      "correct": false
     }
    ],
-   "explanation": "Wer angemeldet bleibt, lässt sein Konto offen – auch ohne Verlauf. Ein gespeichertes Passwort hilft dem Nächsten am PC."
+   "explanation": "Wer angemeldet bleibt, lässt sein Konto offen – auch ohne Verlauf. Ein gespeichertes Passwort hilft dem Nächsten am PC.",
+   "nachlesen": "ki-spielplatz#start"
   }
  ]
 }

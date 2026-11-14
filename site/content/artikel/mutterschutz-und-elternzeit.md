@@ -56,7 +56,7 @@ quelle: "Arbeitsblatt aus dem Kurs (Text und Fragen, 2 Seiten)"
 1. „Unten ist eine Zeitleiste. Der orange Punkt in der Mitte ist die Geburt.“
 2. Oranger Balken: „Der **Mutterschutz** beginnt 6 Wochen vor der Geburt und endet 8 Wochen nach der Geburt. In dieser Zeit bekommt die Mutter ihr volles Netto weiter.“
 3. Grüner Balken: „Danach kann die **Elternzeit** beginnen, bis zu 3 Jahre für jeden Elternteil. Der Arbeitgeber zahlt dann keinen Lohn. Der Staat zahlt Elterngeld.“
-4. Blauer Balken: „**Kündigungsschutz** gilt vom Beginn der Schwangerschaft bis mindestens 4 Monate nach der Geburt.“ Zeigen Sie auf den gestrichelten Teil: „Auch in der Elternzeit darf der Arbeitgeber nur mit Erlaubnis einer Behörde kündigen.“
+4. Blauer Balken: „**Kündigungsschutz** gilt vom Beginn der Schwangerschaft bis mindestens 4 Monate nach der Geburt.“ Alle schauen auf den gestrichelten Teil: „Auch in der Elternzeit darf der Arbeitgeber nur mit Erlaubnis einer Behörde kündigen.“
 5. Frage: „Wer kann Elternzeit nehmen – nur die Mutter?“ (Nein, jeder Elternteil.)
 :::
 

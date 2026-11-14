@@ -58,9 +58,9 @@ lehrkraft:
 **So gehen Sie vor** (ausführlicher Zeitplan unten bei „Für Lehrkräfte“)
 
 1. Einstieg: „Wer hat schon zehn Bewerbungen geschrieben? Was war daran nervig?“ Meist kommt: immer wieder Adresse und Anrede abtippen.
-2. Zeigen Sie das Bild mit dem fertigen Brief: „Heute machen wir aus einer Liste und einem Brief viele fertige Briefe.“
+2. Alle schauen auf das Bild mit dem fertigen Brief: „Heute machen wir aus einer Liste und einem Brief viele fertige Briefe.“
 3. Erklären Sie die drei Kästen: Was sich ändert, steht in Excel. Was gleich bleibt, steht in Word. Zusammen gibt es fertige Briefe.
-4. Danach die Abschnitte 1 bis 5. Machen Sie jeden Schritt am Beamer vor, erst dann arbeiten alle selbst.
+4. Danach die Abschnitte 1 bis 5. Machen Sie jeden Schritt an einem PC vor, um den sich alle stellen – oder lesen Sie ihn laut vor und gehen Sie herum. Erst dann arbeiten alle selbst.
 5. Planen Sie für Abschnitt 4 die meiste Zeit ein. Dort gibt es die meisten Fragen.
 :::
 
@@ -78,7 +78,7 @@ lehrkraft:
 **Zum Bild**
 
 1. „So sieht ein fertiger Brief aus.“
-2. Zeigen Sie von oben nach unten: Absender, Anschrift der Firma, Datum, Betreff, Anrede.
+2. Alle gehen im Bild von oben nach unten: Absender, Anschrift der Firma, Datum, Betreff, Anrede.
 3. „Das alles kommt automatisch. Nur den Text in der Mitte schreiben Sie selbst.“
 4. Klick auf das Bild öffnet das ganze Beispiel als PDF.
 :::
@@ -114,7 +114,7 @@ Häufigster Fehler: Die ZIP-Datei wird nicht entpackt. Gehen Sie herum und prüf
 ## Excel: die Adressliste {#excel}
 
 ::: notiz
-Zeigen Sie die Liste am Beamer: Zeile = Firma, Spalte = Information. Lassen Sie eine Person laut vorlesen, was in Zeile 2 steht. Typische Fehler: in die grauen Spalten schreiben; Excel nicht schließen – dann kann Word die Liste später nicht öffnen.
+Alle öffnen die Liste auf ihrem Gerät: Zeile = Firma, Spalte = Information. Lassen Sie eine Person laut vorlesen, was in Zeile 2 steht. Typische Fehler: in die grauen Spalten schreiben; Excel nicht schließen – dann kann Word die Liste später nicht öffnen.
 :::
 
 ::: schritte
@@ -192,10 +192,10 @@ Der schwierigste Teil. Machen Sie jeden Klick langsam vor und warten Sie, bis al
 ::: notiz
 **Zum Bild** – vor Abschnitt 4 zeigen
 
-1. Zeigen Sie oben auf die Excel-Liste: „Hier stehen drei Firmen. Jede Firma hat eine eigene Zeile und eine eigene Farbe.“
-2. Zeigen Sie auf die Vorlage in der Mitte: „Im Brief steht nicht der Name der Firma, sondern ein Platzhalter: «Firma». Das nennt man ein **Feld**.“
+1. Alle schauen oben auf die Excel-Liste: „Hier stehen drei Firmen. Jede Firma hat eine eigene Zeile und eine eigene Farbe.“
+2. Alle schauen auf die Vorlage in der Mitte: „Im Brief steht nicht der Name der Firma, sondern ein Platzhalter: «Firma». Das nennt man ein **Feld**.“
 3. Folgen Sie den Pfeilen nach unten: „Word nimmt jede Zeile und setzt sie in das Feld ein. Aus einer Vorlage werden drei Briefe.“
-4. Zeigen Sie auf die Farben: „Orange Zeile – oranger Brief.“
+4. Alle schauen auf die Farben: „Orange Zeile – oranger Brief.“
 5. Frage: „Sie haben 20 Firmen in der Liste. Wie viele Briefe bekommen Sie?“ (20)
 :::
 

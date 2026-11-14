@@ -45,7 +45,8 @@
 
   function starte() {
     box.textContent = '';
-    const fragen = mische(quiz.questions).map(frage => ({ frage, antworten: mische(frage.answers), wahl: -1 }));
+    // the test keeps its order, so the class can talk about "Frage 7"; answers are always shuffled
+    const fragen = (test ? quiz.questions : mische(quiz.questions)).map((frage, n) => ({ frage, nr: n + 1, antworten: mische(frage.answers), wahl: -1 }));
     let beantwortet = 0, richtig = 0;
     const stand = el('p', 'quiz-stand');
     stand.setAttribute('aria-live', 'polite');
@@ -78,7 +79,7 @@
 
     const felder = fragen.map((f, n) => {
       const feld = el('fieldset', 'quiz-frage');
-      feld.append(el('legend', '', (n + 1) + '. ' + f.frage.question));
+      feld.append(el('legend', '', (test ? 'Frage ' : '') + (n + 1) + (test ? ': ' : '. ') + f.frage.question));
       const rueck = el('div', 'quiz-rueckmeldung');
       rueck.setAttribute('aria-live', 'polite');
       // buttons, not radio buttons: arrow keys move between radio buttons and would answer by accident
@@ -196,10 +197,20 @@
       falsch.forEach(f => {
         const li = el('li');
         const k = f.antworten.findIndex(a => a.correct);
-        li.append(el('p', 'quiz-fehler-frage', f.frage.question),
+        li.append(el('p', 'quiz-fehler-frage', 'Frage ' + f.nr + ': ' + f.frage.question),
           el('p', 'falsch', 'Ihre Antwort: ' + (f.wahl >= 0 ? f.antworten[f.wahl].text : 'keine')),
           el('p', 'ok', 'Richtig: ' + f.antworten[k].text));
         if (f.frage.explanation) li.append(el('p', 'quiz-erklaerung', f.frage.explanation));
+        const n = f.frage.nachlesen;
+        if (n && /^\/edv-kurs\/[a-z0-9-]+\/#[a-z0-9-]+$/.test(n.url)) {
+          const p = el('p', 'quiz-nachlesen', 'Nachlesen: ');
+          const a = el('a', '', n.text + ' →');
+          const lehrer = /\/teacher\/$/.test(location.pathname);  // the teacher view stays in the teacher view
+          const url = lehrer ? n.url.replace('/#', '/teacher/#') : n.url;
+          a.href = url.startsWith(location.pathname + '#') ? url.slice(location.pathname.length) : url;
+          p.append(a);
+          li.append(p);
+        }
         ol.append(li);
       });
       e.append(ol);

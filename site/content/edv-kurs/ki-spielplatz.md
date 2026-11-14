@@ -17,8 +17,8 @@ ziele:
 ::: kurz
 **Die Idee**
 
-- Heute ist **Spieltag**: 9 kurze, verrückte Aufgaben mit einer KI, jede etwa **15 Minuten**.
-- Nach jeder Aufgabe lesen Sie Ihr bestes Ergebnis vor. Die Gruppe entscheidet: Was ist am lustigsten?
+- Heute ist **Spieltag**: kurze, verrückte Aufgaben mit einer KI, jede etwa **15 Minuten**. Sie arbeiten **zu zweit**.
+- Nach jeder Aufgabe lesen einige Teams ihr bestes Ergebnis vor. Alle stimmen ab: Was ist am lustigsten?
 - Wir **speichern nichts**. Lesen, lachen, weiter – so lernen Sie die KI kennen.
 :::
 
@@ -27,14 +27,22 @@ ziele:
 
 | Uhrzeit | Was |
 |---|---|
-| 8:30 | Begrüßung, Hinweis, Regeln, Wettbewerb erklären |
-| 8:45 | Alle melden sich bei Google an, öffnen ein KI-Werkzeug und schreiben den ersten Prompt |
-| 9:00 | Abschnitte 5 bis 8 (je 15 Min.) |
+| 8:30 | Begrüßung, Hinweis „Nur zum Lernen“, Regeln (Abschnitt 3), Wettbewerb und Teams (Abschnitt 4) |
+| 8:45 | Anmelden (Abschnitte 1 und 2): privates Fenster, Google, erstes KI-Werkzeug, erster Prompt. **Planen Sie 25 Minuten ein** – Passwörter sind vergessen, Bestätigungscodes kommen aufs Handy. |
+| 9:10 | Aufgaben 5, 6 und 7 (je 15 Min.) |
+| 9:55 | Punkte an die Tafel, Puffer |
 | 10:00 | **Pause** bis 10:20 |
-| 10:20 | Abschnitte 9 bis 13 (je 15 Min.) |
-| 11:35 | Siegerehrung „Goldene Gurke“, Abschlussrunde |
+| 10:20 | Aufgaben 9, 11 und 12 (je 15 Min.), dann 8 oder 10, wenn Zeit ist |
+| 11:25 | Abschluss (Abschnitt 15), Siegerehrung „Goldene Gurke“ |
+| 11:45 | Ende: überall abmelden, privates Fenster schließen |
 
-Jede Aufgabe: 2 Min. erklären, 8 Min. ausprobieren, 5 Min. vorlesen und klatschen. Schreiben Sie die Punkte an die Tafel. Die Bonus-Aufgabe ist Reserve für schnelle Gruppen oder für Personen, deren Limit erreicht ist.
+Jede Aufgabe: 2 Min. erklären, 8 Min. ausprobieren, 5 Min. vorlesen und abstimmen. Schreiben Sie die Punkte an die Tafel. Die Bonus-Aufgabe (14) ist Reserve für schnelle Teams oder für Teams, deren Limit erreicht ist.
+
+**Wenn die Zeit knapp ist:** Diese Aufgaben fallen zuerst weg, in dieser Reihenfolge: 13 (Rotkäppchen), 10 (Emoji-Kino), 8 (Werbung), 6 (Amtsdeutsch). **Nie weglassen:** 3 (Regeln), 11 (Lügen-Falle) und 12 (Eskalation) – sie tragen die Lernziele.
+
+**Mindestziel für alle:** angemeldet sein, eine Aufgabe ganz durchspielen, die Lügen-Falle (11) mit dem Team erleben, am Ende abmelden. Wer das schafft, hat den Tag geschafft.
+
+**Lotsen:** Wer schnell fertig ist, hilft zuerst einem anderen Team (beim Anmelden, beim Kopieren des Prompts) und macht erst dann die Profi-Aufgabe. Sagen Sie das gleich am Anfang: „Helfen bringt auch Punkte: 1 Lotsenpunkt pro Hilfe, die Sie mir melden.“
 :::
 
 ::: achtung
@@ -53,10 +61,10 @@ Wir melden uns mit unserem **Google-Konto** an. Bei „Mit Google anmelden“ be
 **Zum Bild**
 
 1. „So sieht fast jeder KI-Chat aus – egal ob ChatGPT, Claude, Gemini oder Duck.ai.“
-2. Zeigen Sie auf die 1: „Mit **Neuer Chat** beginnen Sie ein neues Gespräch. Den alten Text sieht die KI dort normalerweise nicht.“ Ergänzen Sie: „Aber Achtung: Viele KI-Dienste haben eine **Erinnerung**. Sie merken sich Dinge über Sie, auch über mehrere Chats. Darum schreiben wir nichts Persönliches hinein.“
-3. Zeigen Sie auf die 2: „Das ist der **Prompt**: Ihre Frage oder Ihr Auftrag an die KI.“
-4. Zeigen Sie auf die 3: „Hier kommt die **Antwort** der KI.“
-5. Zeigen Sie auf die 4: „Im **Eingabefeld** schreiben Sie. Mit **Enter** schicken Sie es ab.“
+2. Alle schauen auf die 1: „Mit **Neuer Chat** beginnen Sie ein neues Gespräch. Den alten Text sieht die KI dort normalerweise nicht.“ Ergänzen Sie: „Aber Achtung: Viele KI-Dienste haben eine **Erinnerung**. Sie merken sich Dinge über Sie, auch über mehrere Chats. Darum schreiben wir nichts Persönliches hinein.“
+3. Alle schauen auf die 2: „Das ist der **Prompt**: Ihre Frage oder Ihr Auftrag an die KI.“
+4. Alle schauen auf die 3: „Hier kommt die **Antwort** der KI.“
+5. Alle schauen auf die 4: „Im **Eingabefeld** schreiben Sie. Mit **Enter** schicken Sie es ab.“
 6. Frage: „Was machen Sie, wenn Sie ein ganz neues Thema beginnen wollen?“ (Neuer Chat)
 :::
 
@@ -116,7 +124,7 @@ Eine **KI** (künstliche Intelligenz) zum Chatten funktioniert wie ein Chat mit 
 1. „Bevor wir anfangen: die wichtigste Regel des Tages.“
 2. Gehen Sie die roten Zeilen langsam durch: Name, Adresse und Telefon, Geburtsdatum und Ausweis, Lebenslauf und Zeugnisse, Daten über andere.
 3. Erklären Sie warum: „Kostenlose KI-Werkzeuge können Ihre Eingaben speichern und damit ihre KI trainieren. Was einmal drin ist, bekommen Sie nicht zurück.“
-4. Zeigen Sie auf den grünen Kasten: „Wir üben mit erfundenen Beispielen. Max Mustermann hat nichts dagegen.“
+4. Alle schauen auf den grünen Kasten: „Wir üben mit erfundenen Beispielen. Max Mustermann hat nichts dagegen.“
 5. Frage: „Darf ich den Namen meiner Chefin in die KI schreiben?“ (Nein – auch keine Daten über andere.)
 :::
 
@@ -146,19 +154,23 @@ erklaerung: "Name, Geburtsdatum, Adresse und Handynummer gehören nicht in die K
 
 ## Der Wettbewerb {#wettbewerb}
 
-<p class="bild"><img src="/edv-kurs/bilder/wettbewerb.svg" alt="So funktioniert der Wettbewerb: 1. 15 Minuten mit der KI ausprobieren. 2. Das beste Ergebnis laut vorlesen. 3. Die Gruppe klatscht – der lauteste Applaus bekommt Punkte. 4. Am Ende gewinnt die Person mit den meisten Punkten die Goldene Gurke." width="400" height="400"></p>
+<p class="bild"><img src="/edv-kurs/bilder/wettbewerb.svg" alt="So funktioniert der Wettbewerb: 1. 15 Minuten zu zweit mit der KI ausprobieren. 2. Das beste Ergebnis laut vorlesen. 3. Alle stimmen per Handzeichen ab, nicht für das eigene Team. Für jeden echten Fehler der KI gibt es einen Extrapunkt. 4. Am Ende gewinnt das Team mit den meisten Punkten die Goldene Gurke." width="400" height="400"></p>
 
 ::: notiz
 **Zum Bild**
 
-1. „Heute ist Wettbewerb! Jede Aufgabe hat 15 Minuten.“
+1. „Heute ist Wettbewerb! Sie spielen zu zweit. Jede Aufgabe hat 15 Minuten.“ Bilden Sie die Teams so, dass neben jeder unsicheren Person jemand Sicheres sitzt.
 2. „Zuerst probieren Sie aus – so absurd wie möglich.“
-3. „Dann lesen einige ihr bestes Ergebnis vor.“
-4. „Die Gruppe klatscht. Der lauteste Applaus bekommt 3 Punkte, der zweite 2, der dritte 1.“
-5. „Am Ende gewinnt die Person mit den meisten Punkten die **Goldene Gurke**.“ (Ein lustiger Preis wirkt Wunder – eine echte Gurke reicht.)
-6. Zwei Regeln: keine echten Menschen (keine Promis, niemand aus dem Kurs) und keine Beleidigungen.
+3. „Dann lesen drei Teams ihr bestes Ergebnis vor – reihum, so kommt jedes Team dran.“
+4. „Dann stimmen alle per Handzeichen ab, aber nie für das eigene Team. Platz 1 bekommt 3 Punkte, Platz 2 bekommt 2, Platz 3 bekommt 1.“ So gewinnt nicht der lauteste Tisch.
+5. „Extrapunkt: Wer einen echten Fehler der KI findet – eine falsche Tatsache, eine erfundene Quelle – bekommt 1 Punkt mehr.“ Lassen Sie den Fehler kurz vorlesen und prüfen.
+6. „Am Ende gewinnt das Team mit den meisten Punkten die **Goldene Gurke**.“ (Ein lustiger Preis wirkt Wunder – eine echte Gurke reicht.)
+7. Zwei Regeln: keine echten Menschen (keine Promis, niemand aus dem Kurs) und keine Beleidigungen.
 :::
 
+- Sie spielen **zu zweit**: zwei Köpfe, ein Gerät. Wechseln Sie sich beim Tippen ab.
+- **Punkte:** Alle stimmen per Handzeichen ab – nie für das eigene Team. Platz 1 bekommt 3 Punkte, Platz 2 bekommt 2, Platz 3 bekommt 1.
+- **Extrapunkt:** Sie finden einen echten Fehler der KI (eine falsche Tatsache, eine erfundene Quelle)? Dafür gibt es 1 Punkt mehr.
 - Keine echten Menschen in den Texten: keine Promis, niemand aus dem Kurs.
 - Keine Beleidigungen. Lustig ja, gemein nein.
 - **Für Profis:** Unter jeder Aufgabe steht eine kleine Zusatzaufgabe. Sie ist **freiwillig** – nur wenn Sie Lust auf mehr haben.
@@ -185,6 +197,16 @@ Achten Sie beim Vorlesen darauf, wie unterschiedlich die Prompts waren. Fragen S
 
 ## Die Amtsdeutsch-Maschine {#amtsdeutsch}
 
+::: notiz
+**Tipps zur Aufgabe**
+
+1. Ziel: Die KI ändert den **Stil**. Erst kompliziert, dann einfach – derselbe Inhalt.
+2. Lesen Sie selbst einen Satz aus einem komplizierten Ergebnis mit ernster Amtsstimme vor. Das löst die Stimmung.
+3. Wichtig ist der zweite Schritt: „in ganz einfachem Deutsch“. Fragen Sie: „Wer hat schon einmal einen Brief vom Amt nicht verstanden?“ Genau dafür kann man das morgen nutzen.
+4. Typisches Problem: Die KI erfindet Paragrafen, die echt klingen. Sagen Sie: „Diese Paragrafen gibt es nicht. Merken Sie sich das für Abschnitt 11.“
+5. Frage: „Was hat sich geändert, was ist gleich geblieben?“ (Der Stil hat sich geändert, der Inhalt ist gleich.)
+:::
+
 <p class="zeit">15 Minuten</p>
 
 Machen Sie aus etwas ganz Normalem einen schrecklich komplizierten Brief vom Amt – mit Paragrafen und langen Wörtern. Danach lassen Sie ihn wieder in einfaches Deutsch übersetzen.
@@ -203,6 +225,15 @@ Lassen Sie die KI das längste deutsche Wort erfinden, das sie kann, und jeden T
 
 ## Der beleidigte Kühlschrank {#kuehlschrank}
 
+::: notiz
+**Tipps zur Aufgabe**
+
+1. Ziel: Die KI spielt eine **Rolle** und erinnert sich im selben Chat an das Gespräch.
+2. Ein Team stellt die Fragen, das andere Team liest die Antworten mit verstellter Stimme vor – das macht am meisten Spaß.
+3. Typisches Problem: Jemand klickt zwischendurch auf „Neuer Chat“. Dann ist der Kühlschrank weg. Gut so – fragen Sie: „Warum?“
+4. Frage: „Woher weiß die KI bei der dritten Frage noch, dass sie ein Kühlschrank ist?“ (Weil wir im selben Chat sind – sie sieht das ganze Gespräch.)
+:::
+
 <p class="zeit">15 Minuten</p>
 
 Die KI spielt einen Gegenstand mit Gefühlen: einen beleidigten Kühlschrank, einen alten Drucker oder ein Handy mit 1 % Akku. Machen Sie ein Interview mit ihm.
@@ -220,6 +251,15 @@ Versuchen Sie, die KI aus ihrer Rolle zu bringen: „Bist du eigentlich eine KI?
 :::
 
 ## Die schlechteste Werbung der Welt {#werbung}
+
+::: notiz
+**Tipps zur Aufgabe**
+
+1. Ziel: Eine Antwort **Schritt für Schritt verbessern**, statt neu anzufangen.
+2. Lassen Sie jedes Team mindestens dreimal nachsteuern: „noch schlechter“, „kürzer“, „mit Reim“.
+3. Typisches Problem: Manche schreiben den ganzen Prompt neu. Zeigen Sie: Ein kurzer Satz im selben Chat reicht.
+4. Frage: „Wie viele Wörter brauchen Sie, um die Antwort zu ändern?“ (Oft nur zwei: „noch schlechter“.)
+:::
 
 <p class="zeit">15 Minuten</p>
 
@@ -246,7 +286,7 @@ Strenge Regeln: genau 7 Wörter, alle Wörter beginnen mit demselben Buchstaben,
 
 1. „Kennen Sie das Spiel Stille Post? Wir spielen es heute mit der KI.“
 2. Folgen Sie den Pfeilen: „Ein deutscher Satz geht ins Japanische, dann ins Finnische, dann ins Arabische – und zurück ins Deutsche.“
-3. Zeigen Sie auf die Mitte: „Was bleibt am Ende übrig? Oft etwas Lustiges.“
+3. Alle schauen auf die Mitte: „Was bleibt am Ende übrig? Oft etwas Lustiges.“
 4. „Und genau das lernen wir: Bei jeder Übersetzung kann etwas verloren gehen.“
 5. Frage: „Wann ist das im echten Leben gefährlich?“ (Zum Beispiel bei wichtigen Briefen oder Verträgen.)
 :::
@@ -266,6 +306,15 @@ Spielen Sie die Kette nur mit Emojis: Text → Emojis → Text. Der verrücktest
 :::
 
 ## Emoji-Kino {#emoji}
+
+::: notiz
+**Tipps zur Aufgabe**
+
+1. Ziel: Die KI kann **zusammenfassen** – hier extrem kurz.
+2. Ablauf als Rätsel: Ein Team liest seine Emojis vor (oder hält das Handy hoch), die anderen raten. Wer richtig rät, bekommt 1 Punkt.
+3. Typisches Problem: Die KI schreibt doch Wörter dazu. Dann im selben Chat: „Nur Emojis, keine Wörter.“
+4. Frage: „Welche Teile der Geschichte hat die KI weggelassen?“ (Alles Unwichtige – das ist Zusammenfassen.)
+:::
 
 <p class="zeit">15 Minuten</p>
 
@@ -292,7 +341,7 @@ Bauen Sie ein Emoji-Rätsel, das so schwer ist, dass die KI selbst es nicht mehr
 
 1. Oben die Frage: „Warum mussten Pinguine im Mittelalter Steuern zahlen?“ – „Ist die Frage überhaupt richtig?“ (Nein, das ist Unsinn.)
 2. Die Antwort der KI: „Die KI antwortet trotzdem ganz sicher – mit Jahreszahl.“
-3. Zeigen Sie auf die Quelle: „Sie nennt sogar eine Quelle. Aber die gibt es nicht. Die KI hat alles **erfunden**.“
+3. Alle schauen auf die Quelle: „Sie nennt sogar eine Quelle. Aber die gibt es nicht. Die KI hat alles **erfunden**.“
 4. „Das nennt man **Halluzination**. Die KI klingt immer sicher – auch wenn sie sich irrt.“
 5. Unten: „Darum immer prüfen: Gibt es die Quelle? Stimmt die Frage überhaupt?“
 6. Frage: „Woran erkennen Sie, dass eine Antwort erfunden sein könnte?“ (Seltsame Frage, sehr genaue Details, unbekannte Quellen.)
@@ -358,6 +407,15 @@ Machen Sie die Version aus Runde 5 in einem einzigen Schritt wieder zu einem gan
 
 ## Rotkäppchen im falschen Genre {#genre}
 
+::: notiz
+**Tipps zur Aufgabe**
+
+1. Ziel: Die KI kennt viele **Textsorten** und erzählt denselben Inhalt ganz anders.
+2. Verteilen Sie die Textsorten, damit nicht alle Fußball nehmen: Radio-Nachricht, Gerichtsurteil, Wetterbericht, Kochrezept.
+3. Typisches Problem: Der Text wird zu lang. Dann: „Höchstens 10 Sätze.“ – das ist das L aus R-Z-F-L von morgen.
+4. Frage: „Woran erkennen Sie, dass es ein Wetterbericht ist?“ (An typischen Wörtern und am Aufbau: Temperatur, Aussichten, „morgen“.)
+:::
+
 <p class="zeit">15 Minuten</p>
 
 Das Märchen Rotkäppchen – aber ganz anders: als Nachricht im Radio, als Urteil vom Gericht, als Fußball-Kommentar oder als Wetterbericht.
@@ -373,6 +431,14 @@ Als Nachricht im Radio – aber jeder Satz muss ein Wort mit „K“ am Anfang h
 :::
 
 ## Bonus: Kühlschrank-Gourmet {#bonus}
+
+::: notiz
+**Tipps zur Aufgabe**
+
+1. Reserve-Aufgabe: für schnelle Teams und für Teams, deren KI ein Limit meldet (dann mit einem anderen Werkzeug).
+2. Kein Vorlesen nötig. Wenn am Ende Zeit ist, liest das schnellste Team den eleganten Namen vor.
+3. Frage: „Würden Sie das Gericht essen?“ Lachen erlaubt. Ernst gemeint: „Kann die KI wissen, ob es schmeckt?“ (Nein – sie kombiniert nur Wörter.)
+:::
 
 <p class="zeit">für schnelle Gruppen</p>
 
@@ -390,7 +456,7 @@ Lassen Sie danach eine strenge Kritik von einem Sterne-Koch schreiben – über 
 
 <p class="zeit">10 Minuten</p>
 
-**Siegerehrung:** Wer hat die meisten Punkte? Die **Goldene Gurke** geht an …
+**Siegerehrung:** Welches Team hat die meisten Punkte? Die **Goldene Gurke** geht an …
 
 **Abschlussrunde:** Jede Person sagt einen Satz:
 

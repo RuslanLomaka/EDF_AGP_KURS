@@ -46,9 +46,9 @@ ziele:
 **Zum Bild**
 
 1. „Ein Browser ist ein Programm für Internetseiten. Alle Browser sehen ähnlich aus.“
-2. Zeigen Sie auf die 1: „Oben ist der **Tab**. Jeder Tab ist eine offene Seite. Man kann viele Tabs gleichzeitig offen haben.“
-3. Zeigen Sie auf die 2: „Die **Adresszeile**. Hier steht, wo Sie gerade sind, hier docs.google.com. Hier tippen Sie auch eine Adresse ein.“
-4. Zeigen Sie auf die 3: „Darunter ist die **Seite** selbst. Bei Google Docs schreiben Sie hier.“
+2. Alle schauen auf die 1: „Oben ist der **Tab**. Jeder Tab ist eine offene Seite. Man kann viele Tabs gleichzeitig offen haben.“
+3. Alle schauen auf die 2: „Die **Adresszeile**. Hier steht, wo Sie gerade sind, hier docs.google.com. Hier tippen Sie auch eine Adresse ein.“
+4. Alle schauen auf die 3: „Darunter ist die **Seite** selbst. Bei Google Docs schreiben Sie hier.“
 5. Zum Mitmachen: Alle öffnen ihren Browser und zeigen mit der Maus: Wo ist der Tab? Wo ist die Adresszeile?
 6. Frage: „Welche Browser kennen Sie?“ (Chrome, Edge, Firefox, Safari)
 :::
@@ -67,7 +67,7 @@ Oben im Browser ist die **Adresszeile**. Dort steht die Adresse der Seite, zum B
 1. Linke Seite: „Word ist ein Programm. Es ist auf diesem PC installiert. Die Datei liegt auf diesem PC oder auf dem USB-Stick.“
 2. „Vorteil: Es geht auch ohne Internet. Nachteil: Am anderen PC ist die Datei nicht da.“
 3. Rechte Seite: „Google Docs läuft im Browser. Die Datei liegt im Internet, in der **Cloud**.“
-4. Zeigen Sie auf PC und Handy: „Darum öffnen Sie dieselbe Datei im Kurs, zu Hause und auf dem Handy.“
+4. Alle schauen auf PC und Handy: „Darum öffnen Sie dieselbe Datei im Kurs, zu Hause und auf dem Handy.“
 5. Frage: „Sie schreiben im Kurs einen Brief und wollen zu Hause weiterschreiben. Was ist einfacher?“ (Google Docs: Die Datei ist schon da.)
 :::
 
@@ -99,9 +99,9 @@ Lesen Sie die Tabelle Zeile für Zeile mit der Gruppe. Fragen Sie bei jeder Zeil
 **Zum Bild**
 
 1. Oben: „So arbeiten viele mit Word zusammen: Eine Person schickt die Datei per E-Mail. Die andere ändert etwas und schickt sie zurück.“
-2. Zeigen Sie auf die Dateinamen: „Am Ende gibt es Brief, Brief_neu, Brief_final und Brief_final_2. Welche ist die richtige? Niemand weiß es.“
+2. Alle schauen auf die Dateinamen: „Am Ende gibt es Brief, Brief_neu, Brief_final und Brief_final_2. Welche ist die richtige? Niemand weiß es.“
 3. Unten: „Bei Google Docs gibt es nur **ein** Dokument. Alle arbeiten gleichzeitig darin.“
-4. Zeigen Sie auf die farbigen Striche: „Jede Person hat eine Farbe. So sieht man, wer gerade wo schreibt.“
+4. Alle schauen auf die farbigen Striche: „Jede Person hat eine Farbe. So sieht man, wer gerade wo schreibt.“
 5. Frage: „Kennen Sie das Problem mit vielen Versionen?“
 :::
 
@@ -136,9 +136,9 @@ Hier brauchen Anfänger am meisten Hilfe: Passwort vergessen, kein Konto, Bestä
 **Zum Bild**
 
 1. „So sieht Google Drive aus, Ihr Ordner im Internet. Das echte Drive sieht etwas anders aus. Diese drei Stellen gibt es aber immer.“
-2. Zeigen Sie auf die 1: „Mit **Neu** erstellen Sie einen Ordner oder ein Dokument.“
-3. Zeigen Sie auf die 2: „**Meine Ablage**: Hier sind Ihre eigenen Dateien.“
-4. Zeigen Sie auf die 3: „**Für mich freigegeben**: Hier sind Dateien, die andere mit Ihnen geteilt haben. Hier finden Sie später die Job-Mappe.“
+2. Alle schauen auf die 1: „Mit **Neu** erstellen Sie einen Ordner oder ein Dokument.“
+3. Alle schauen auf die 2: „**Meine Ablage**: Hier sind Ihre eigenen Dateien.“
+4. Alle schauen auf die 3: „**Für mich freigegeben**: Hier sind Dateien, die andere mit Ihnen geteilt haben. Hier finden Sie später die Job-Mappe.“
 5. Zum Mitmachen: Alle öffnen drive.google.com und finden die drei Stellen auf ihrem Bildschirm.
 :::
 
@@ -183,7 +183,7 @@ Beim Teilen entscheiden Sie, **wer** die Datei sehen darf und **was** diese Pers
 
 1. „Beim Teilen entscheiden Sie: Was darf die andere Person?“
 2. Gehen Sie Zeile für Zeile: „**Betrachter** dürfen nur lesen. **Kommentatoren** dürfen lesen und Kommentare schreiben. **Mitbearbeiter** dürfen alles, auch den Text ändern.“
-3. Zeigen Sie auf die Kreise: „Grün heißt: darf. Grau heißt: darf nicht.“
+3. Alle schauen auf die Kreise: „Grün heißt: darf. Grau heißt: darf nicht.“
 4. Beispiele: „Ihr Lebenslauf für die Beraterin: Kommentator. Die Einkaufsliste für die Familie: Mitbearbeiter. Ein Aushang für alle: Betrachter.“
 5. Frage: „Ihre Kollegin soll Ihren Text lesen und Tipps geben, aber nichts ändern. Welche Rolle?“ (Kommentator)
 6. Übung zu zweit: A teilt ein Dokument mit B als Kommentator. B versucht zu schreiben – es geht nicht. Dann ändert A die Rolle auf Mitbearbeiter.
@@ -224,9 +224,9 @@ erklaerung: "Betrachter lesen nur. Kommentatoren schreiben Kommentare und Vorsch
 **Zum Bild**
 
 1. Oben: „Ein **Kommentar** ist wie ein Zettel am Rand. Man markiert ein Wort und schreibt etwas dazu. Der Text selbst bleibt gleich.“
-2. Zeigen Sie auf „Team“ und die Sprechblase: „Anna findet das Wort gut und schreibt: Gute Idee!“
+2. Alle schauen auf „Team“ und die Sprechblase: „Anna findet das Wort gut und schreibt: Gute Idee!“
 3. Unten: „Ein **Vorschlag** ändert den Text, aber farbig. Das alte Wort ist durchgestrichen, das neue ist grün.“
-4. Zeigen Sie auf Häkchen und X: „Die Besitzerin entscheidet. Häkchen: annehmen. X: ablehnen.“
+4. Alle schauen auf Häkchen und X: „Die Besitzerin entscheidet. Häkchen: annehmen. X: ablehnen.“
 5. Frage: „Sie sehen einen Tippfehler im Text einer anderen Person. Kommentar oder Vorschlag?“ (Besser ein Vorschlag: Die Person nimmt die Korrektur mit einem Klick an.)
 :::
 
@@ -266,7 +266,7 @@ erklaerung: "Betrachter lesen nur. Kommentatoren schreiben Kommentare und Vorsch
 1. „Links eine Word-Datei, zum Beispiel ein Anschreiben.“
 2. Folgen Sie dem Pfeil: „Sie laden sie in Google Drive hoch. Mit **Datei → Als Google Docs speichern** wird daraus ein Google-Dokument.“
 3. Rechts: „Mit **Datei → Herunterladen** machen Sie daraus wieder eine Word-Datei oder ein PDF.“
-4. Zeigen Sie auf den roten Kasten: „Für Bewerbungen schicken Sie ein PDF. Es sieht überall gleich aus und lässt sich nicht aus Versehen ändern.“
+4. Alle schauen auf den roten Kasten: „Für Bewerbungen schicken Sie ein PDF. Es sieht überall gleich aus und lässt sich nicht aus Versehen ändern.“
 5. Frage: „Eine Firma möchte Ihre Bewerbung per E-Mail. In welchem Format schicken Sie sie?“ (PDF)
 :::
 

@@ -39,9 +39,9 @@ dateien:
 ::: notiz
 **So gehen Sie vor** (ca. 1 Stunde)
 
-1. Prüfen Sie vorher an einem Kurs-PC, ob das Programm startet. Manchmal blockiert ein Virenschutz fremde Programme. Dann zeigen Sie es nur am Beamer.
+1. Prüfen Sie vorher an einem Kurs-PC, ob das Programm startet. Manchmal blockiert ein Virenschutz fremde Programme. Dann zeigen Sie es an Ihrem Gerät, und die Gruppe schaut zu.
 2. Einstieg: „Beim Serienbrief in Lektion 1 waren es viele Klicks in Word. Heute geht es mit einem Doppelklick.“
-3. Zeigen Sie die drei Kästen: Excel plus Programm gleich fertige Briefe.
+3. Alle schauen auf die drei Kästen: Excel plus Programm gleich fertige Briefe.
 4. Dann die Abschnitte 1 bis 5: erst vormachen, dann machen alle selbst.
 5. Ziel für heute: Jede Person hat mindestens einen fertigen Brief als PDF.
 :::
@@ -73,9 +73,9 @@ Kennen Sie schon den [Serienbrief aus Lektion 1](/edv-kurs/bewerbung-auf-knopfdr
 **Zum Bild**
 
 1. „Nach dem Entpacken sehen Sie diesen Ordner. Darin sind vier Dateien.“
-2. Zeigen Sie auf jede Datei: das Programm (schwarzes Fenster), die Excel-Liste (grün), die Word-Vorlage (blau), die Anleitung LIES_MICH.
+2. Alle schauen auf jede Datei: das Programm (schwarzes Fenster), die Excel-Liste (grün), die Word-Vorlage (blau), die Anleitung LIES_MICH.
 3. Der wichtigste Satz: „Diese vier Dateien bleiben immer zusammen in einem Ordner. Nichts umbenennen, nichts verschieben.“
-4. Zeigen Sie nach unten: „Nach dem ersten Start kommt ein neuer Ordner dazu: Bewerbungen. Dort sind Ihre Briefe.“
+4. Alle schauen nach unten: „Nach dem ersten Start kommt ein neuer Ordner dazu: Bewerbungen. Dort sind Ihre Briefe.“
 5. Frage: „Was passiert, wenn die Excel-Liste in einem anderen Ordner liegt?“ (Das Programm findet sie nicht und meldet: Die Datei fehlt.)
 :::
 
@@ -144,8 +144,8 @@ Sagen Sie das blaue Windows-Fenster vorher an, damit niemand erschrickt. Windows
 **Zum Bild**
 
 1. „So sieht ein Brief aus, den das Programm gemacht hat.“
-2. Zeigen Sie auf die blauen Felder von oben nach unten: Ihre Daten, Firma, Datum, Betreff, Anrede, Gruß mit Name. „Das alles macht das Programm automatisch.“
-3. Zeigen Sie auf das gelbe Feld: „Nur hier schreiben Sie selbst, 3 bis 5 Sätze: Was können Sie? Welche Erfahrung haben Sie? Warum passt die Stelle zu Ihnen?“
+2. Alle schauen auf die blauen Felder von oben nach unten: Ihre Daten, Firma, Datum, Betreff, Anrede, Gruß mit Name. „Das alles macht das Programm automatisch.“
+3. Alle schauen auf das gelbe Feld: „Nur hier schreiben Sie selbst, 3 bis 5 Sätze: Was können Sie? Welche Erfahrung haben Sie? Warum passt die Stelle zu Ihnen?“
 4. „Danach entfernen Sie die gelbe Farbe.“
 5. Frage: „Welchen Teil schreiben Sie für jede Firma neu?“ (Nur den gelben Teil.)
 :::

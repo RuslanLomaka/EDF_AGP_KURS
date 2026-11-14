@@ -809,7 +809,9 @@ def lehrer_links(main):
 def lehrer_banner(page_url, notizen):
     zahl = anzahl(notizen, "Notiz", "Notizen") if notizen else "noch keine Notizen"
     return (f'<p class="lehrer-banner"><strong>Ansicht für die Lehrkraft</strong> · {zahl} · nirgends verlinkt '
-            f'· <a href="{page_url}">Ansicht der Teilnehmenden</a> · <a href="/{LEHRER}/">Alle Seiten</a></p>')
+            f'· <a href="{page_url}">Ansicht der Teilnehmenden</a> · <a href="/{LEHRER}/">Alle Seiten</a><br>'
+            f'<strong>Ohne Beamer:</strong> Sagen Sie die Nummer des Abschnitts („Wir sind bei 5“) – alle tippen sie an und '
+            f'sehen dasselbe Bild auf ihrem Gerät. „Alle schauen auf die 1“ heißt: Sagen Sie „Schauen Sie im Bild auf die 1“.</p>')
 
 
 def write_article(a, lehrer, serie, weiter, mehr, nav):
@@ -962,6 +964,7 @@ def load_lessons():
             "niveau": text(path, meta, "niveau", required=False),
             "ziele": text_list(path, meta, "ziele"),
             "abschnitte": [m.group(1) for m in re.finditer(r"^## +(.+?)(?: *\{[^}]*\})? *$", body, re.M)],
+            "kapitel": re.findall(r"^## +(.+?) *\{#([a-z0-9-]+)\} *$", body, re.M),
             "nummer": meta.get("nummer"),
             "dateien": download_list(path, meta, "dateien"),
             "lehrkraft": download_list(path, meta, "lehrkraft"),
@@ -1131,6 +1134,28 @@ def stand_platz(l):
     return f'<p class="stand" data-stand="{l["slug"]}" data-url="{l["url"]}" hidden></p>'
 
 
+def nachlesen_aufloesen(lessons):
+    """Test questions may name where to read up: "nachlesen": "#id" (same lesson) or "<lesson-slug>#id".
+    The build checks the section exists and turns it into a link with the section number and title."""
+    nach_slug = {l["slug"]: l for l in lessons}
+    for l in lessons:
+        for n, q in enumerate((l["quiz"] or {}).get("questions", []), 1):
+            ziel = q.get("nachlesen")
+            if ziel is None:
+                continue
+            m = re.fullmatch(r"([a-z0-9-]*)#([a-z0-9-]+)", ziel) if isinstance(ziel, str) else None
+            andere = nach_slug.get(m.group(1) or l["slug"]) if m else None
+            kapitel = [k for k in (andere or {}).get("kapitel", [])]
+            treffer = [i for i, (_, hid) in enumerate(kapitel) if m and hid == m.group(2)]
+            if not treffer:
+                fail(l["path"].with_suffix(".quiz.json"), f"question {n}: 'nachlesen' must be '#<section id>' or "
+                     f"'<lesson slug>#<section id>' of an existing section, not {ziel!r}")
+            titel, hid = kapitel[treffer[0]]
+            nr = "?" if hid == "hilfe" else str(sum(1 for _, x in kapitel[:treffer[0] + 1] if x != "hilfe"))
+            vorne = "" if andere is l else f"Lektion {andere['nummer']}, "
+            q["nachlesen"] = {"url": f"{andere['url']}#{hid}", "text": f"{vorne}Abschnitt {nr}: {titel}"}
+
+
 def build_lesson_index(lessons):
     cards = ""
     for l in lessons:
@@ -1252,6 +1277,7 @@ def main():
     vorleser = Vorleser()
     articles = load_articles(themen, vorleser)
     lessons = load_lessons()
+    nachlesen_aufloesen(lessons)
     SEITEN.update(x["url"] for x in articles + lessons)
     build_article_pages(articles)
     build_article_index(articles, themen, lessons)

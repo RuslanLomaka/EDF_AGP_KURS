@@ -39,7 +39,7 @@ quelle: "Arbeitsblatt aus dem Kurs (Text, 2 Seiten, ohne Fragen)"
 
 1. Einstieg: „Was ist ein Streik? Haben Sie schon einen erlebt, zum Beispiel bei Bus oder Bahn?“
 2. Lesen Sie „Kurz gesagt“ gemeinsam.
-3. Zeigen Sie das Bild „Der Tarifvertrag“ bei „Wie arbeiten Gewerkschaften?“.
+3. Alle schauen auf das Bild „Der Tarifvertrag“ bei „Wie arbeiten Gewerkschaften?“.
 4. Stellen Sie an der Tafel gegenüber: **Gewerkschaft** (außerhalb der Firma, verhandelt Tarifverträge) und **Betriebsrat** (in der eigenen Firma).
 5. Zum Schluss: „Fragen zum Text“, dann das Quiz.
 :::

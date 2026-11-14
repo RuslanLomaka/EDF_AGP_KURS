@@ -698,7 +698,8 @@ main .ue-loesung { margin: 0.8rem 0 0; box-shadow: none; font-size: 0.92rem; }
 .quiz-stark { color: var(--ok); font-weight: 700; }
 .quiz-ueben { color: var(--warn-line); font-weight: 700; margin-bottom: 0.2rem; }
 .quiz-tipps { margin: 0.2rem 0 0; padding-left: 1.2rem; }
-.quiz-fehler { padding-left: 1.3rem; }
+.quiz-fehler { list-style: none; padding-left: 0; }
+.quiz-nachlesen a { font-weight: 700; }
 .quiz-fehler li { margin: 0.7rem 0; }
 .quiz-fehler p { margin: 0.15rem 0; }
 .quiz-fehler-frage { font-weight: 700; }

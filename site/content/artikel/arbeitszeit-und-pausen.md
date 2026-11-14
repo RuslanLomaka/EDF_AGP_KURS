@@ -57,7 +57,7 @@ Viele denken: „Wenn ich dafür bezahlt werde, darf ich so viel arbeiten, wie i
 ::: notiz
 **Zum Bild**
 
-1. Zeigen Sie auf den ersten grünen Balken: „Normal arbeitet man höchstens 8 Stunden am Tag.“
+1. Alle schauen auf den ersten grünen Balken: „Normal arbeitet man höchstens 8 Stunden am Tag.“
 2. Der orange Teil: „Manchmal sind es 10 Stunden. Das geht nur, wenn man an anderen Tagen weniger arbeitet. Im Durchschnitt müssen es wieder 8 Stunden sein.“
 3. „Pro Woche höchstens 48 Stunden: Montag bis Samstag, also 6 Tage mal 8 Stunden.“
 4. Unten: „Nach Feierabend kommen mindestens 11 Stunden Ruhe. Wer um 22 Uhr aufhört, darf frühestens um 9 Uhr wieder anfangen.“
@@ -93,9 +93,9 @@ Nach dem Feierabend müssen Sie **mindestens 11 Stunden ohne Unterbrechung** fre
 **Zum Bild**
 
 1. „Bis 6 Stunden Arbeit gibt es keine Pflicht-Pause.“
-2. Zeigen Sie auf das gelbe P: „Mehr als 6 Stunden: mindestens 30 Minuten Pause.“
+2. Alle schauen auf das gelbe P: „Mehr als 6 Stunden: mindestens 30 Minuten Pause.“
 3. „Mehr als 9 Stunden: mindestens 45 Minuten Pause.“
-4. Zeigen Sie, wo das P liegt: „Die Pause liegt mitten in der Arbeit, nicht am Anfang und nicht am Ende. Man darf sie nicht sparen, um früher zu gehen.“
+4. Fragen Sie, wo das P liegt: „Die Pause liegt mitten in der Arbeit, nicht am Anfang und nicht am Ende. Man darf sie nicht sparen, um früher zu gehen.“
 5. „Die Pause wird meistens nicht bezahlt.“
 6. Frage: „Sie arbeiten 8 Stunden. Wie lange ist Ihre Pause mindestens?“ (30 Minuten)
 :::
