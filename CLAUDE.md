@@ -129,7 +129,8 @@ erklaerung: "Shown when everything is right."
 - Make exercises progressively harder: plausible wrong cards, distractor words, tricky parts to mark.
 - Learners drag with mouse or finger, or tap a card and then a box. Steps also move with arrow buttons.
 - "Prüfen" marks each card or step right or wrong. When everything is right, confetti appears.
-- Without JavaScript, "Lösung anzeigen" shows the answer. Nothing is stored.
+- Without JavaScript, "Lösung anzeigen" shows the answer. Answers are never stored. In lessons, the fact that an
+  exercise was solved is kept in the browser as progress.
 - Articles have their exercises right before "Wörter". Exercises use only facts from the text.
 - In lessons, put an exercise in the section it practises, so it counts for that section's progress.
 
@@ -242,7 +243,8 @@ The owner's Raspberry Pi serves the site behind a Cloudflare Tunnel (route `edv.
 
 The notice (dialog + `/hinweis/`, text in `HINWEIS_PUNKTE` in `build.py`) promises:
 - no accounts, forms, cookies, tracking, analytics, e-mails or external scripts;
-- inputs stay in the browser: lesson ticks and the date the notice was last seen in `localStorage`;
+- inputs stay in the browser: lesson progress (ticks, solved exercises, sections marked done) and the date the
+  notice was last seen, in `localStorage`;
 - no access logs on the server (`access_log off` in `deploy/nginx.conf`);
 - only public information, no legal advice, no personal or confidential data about real people or companies.
 
