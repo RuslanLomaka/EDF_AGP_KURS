@@ -26,13 +26,13 @@ ziele:
 ::: notiz
 **So gehen Sie vor** (ca. 4 Stunden)
 
-1. Vorher: Bereiten Sie die Job-Mappe vor (Kasten in Teil 6). Fragen Sie, wer schon ein Google-Konto hat. Planen Sie am Anfang 20 bis 30 Minuten für die Anmeldung ein.
+1. Vorher: Bereiten Sie die Job-Mappe vor (Kasten in Abschnitt 7). Fragen Sie, wer schon ein Google-Konto hat. Planen Sie am Anfang 20 bis 30 Minuten für die Anmeldung ein.
 2. Einstieg (10 Min.): „Wer hat schon einmal eine Datei per E-Mail hin- und hergeschickt? Wie viele Versionen gab es am Ende?“
 3. Grundlagen mit den Bildern (30 Min.): Browser, Programm oder Browser, Cloud, Vergleich.
-4. Teil 1 bis 3 (60 Min.): Anmelden, Ordner und Dokument, Teilen. Erst vormachen, dann selbst.
+4. Abschnitte 2 bis 4 (60 Min.): Anmelden, Ordner und Dokument, Teilen. Erst vormachen, dann selbst.
 5. Pause.
-6. Teil 4 und 5 (60 Min.): Kommentieren, Vorschlagen, Umwandeln.
-7. Teil 6 (45 Min.): die Job-Mappe. Hier wenden alle alles an.
+6. Abschnitte 5 und 6 (60 Min.): Kommentieren, Vorschlagen, Umwandeln.
+7. Abschnitt 7 (45 Min.): die Job-Mappe. Hier wenden alle alles an.
 8. Abschluss (15 Min.): „Testen Sie sich“ gemeinsam. Am Schulungs-PC melden sich alle ab.
 :::
 
@@ -124,7 +124,7 @@ Lesen Sie die Tabelle Zeile für Zeile mit der Gruppe. Fragen Sie bei jeder Zeil
 **Merke:** Für sich allein ist **beides gut**. Wenn Sie **mit anderen zusammen** schreiben, ist **Google Docs** viel einfacher.
 :::
 
-## Teil 1 – Anmelden und Google Drive öffnen {#drive}
+## Anmelden und Google Drive öffnen {#drive}
 
 ::: notiz
 Hier brauchen Anfänger am meisten Hilfe: Passwort vergessen, kein Konto, Bestätigung per Handy. Gehen Sie herum. Wer schon fertig ist, hilft der Nachbarin.
@@ -157,7 +157,7 @@ Hier brauchen Anfänger am meisten Hilfe: Passwort vergessen, kein Konto, Bestä
 - Speichern Sie in Google Drive **keine sensiblen Daten** (Ausweis, Gesundheit, Kontodaten).
 :::
 
-## Teil 2 – Ordner und Dokument erstellen {#erstellen}
+## Ordner und Dokument erstellen {#erstellen}
 
 ::: schritte
 1. **Neu** → **Neuer Ordner**. Geben Sie dem Ordner einen Namen, zum Beispiel **EDV-Kurs** → **Erstellen**.
@@ -172,7 +172,7 @@ Hier brauchen Anfänger am meisten Hilfe: Passwort vergessen, kein Konto, Bestä
 **Tabellen wie in Excel:** **Neu** → **Google Tabellen** (englisch: Google Sheets). Das funktioniert genauso – nur mit Zeilen und Spalten.
 :::
 
-## Teil 3 – Teilen {#teilen}
+## Teilen {#teilen}
 
 Beim Teilen entscheiden Sie, **wer** die Datei sehen darf und **was** diese Person darf. Dafür gibt es drei **Rollen**:
 
@@ -206,7 +206,7 @@ Beim Teilen entscheiden Sie, **wer** die Datei sehen darf und **was** diese Pers
 **Vorsicht mit Links:** Bei „Jeder, der über den Link verfügt“ kann **jeder** die Datei öffnen, der den Link bekommt – auch Fremde. Nutzen Sie das nur für Dateien ohne private Daten.
 :::
 
-## Teil 4 – Gemeinsam arbeiten {#zusammen}
+## Gemeinsam arbeiten {#zusammen}
 
 **Gleichzeitig schreiben:** Öffnen zwei Personen dasselbe Dokument, sehen Sie den **Cursor der anderen Person** in einer eigenen Farbe – mit ihrem Namen. Jeder sieht sofort, was die anderen schreiben.
 
@@ -248,7 +248,7 @@ Beim Teilen entscheiden Sie, **wer** die Datei sehen darf und **was** diese Pers
 3. Wollen Sie zurück zu dieser Version? Klicken Sie oben auf **Diese Version wiederherstellen**.
 :::
 
-## Teil 5 – Umwandeln: Word, Google Docs und PDF {#umwandeln}
+## Umwandeln: Word, Google Docs und PDF {#umwandeln}
 
 <p class="bild"><img src="/edv-kurs/bilder/umwandeln.svg" alt="Umwandeln: Eine Word-Datei laden Sie in Google Drive hoch und speichern sie als Google-Dokument. Ein Google-Dokument laden Sie als Word-Datei oder als PDF herunter. Für Bewerbungen schicken Sie ein PDF." width="400" height="400"></p>
 
@@ -287,7 +287,7 @@ Beim Teilen entscheiden Sie, **wer** die Datei sehen darf und **was** diese Pers
 Das Gleiche geht mit **Excel**: eine .xlsx-Datei hochladen → **Datei** → **Als Google Tabellen speichern**.
 :::
 
-## Teil 6 – Unser Kursprojekt: die gemeinsame Job-Mappe {#projekt}
+## Unser Kursprojekt: die gemeinsame Job-Mappe {#projekt}
 
 ::: notiz
 Teilen Sie den Ordner vorher und zeigen Sie den Link als QR-Code oder an der Tafel. Achten Sie darauf, dass niemand echte Adressen oder Telefonnummern einträgt. Nach dem Kurs stellen Sie den Link-Zugriff wieder auf „Eingeschränkt“.

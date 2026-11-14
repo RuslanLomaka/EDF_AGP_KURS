@@ -584,7 +584,30 @@ def load_quiz(path):
     return quiz
 
 
-def quiz_section(quiz):
+def nummeriere(body):
+    """Lessons: every section (h2) gets a number, so the class can say "we are at 5" and everyone taps 5.
+    Help gets "?". Returns the numbered body, the entries for the quick navigation and the last number."""
+    eintraege, n = [], 0
+    def h2(m):
+        nonlocal n
+        hid, inner = m.group(1), m.group(2)
+        if hid == "hilfe":
+            marke = "?"
+        else:
+            n += 1
+            marke = str(n)
+        eintraege.append((marke, hid, " ".join(re.sub(r"<[^>]+>", "", inner).split())))
+        return f'<h2 id="{hid}"><span class="nr">{marke}</span> {inner}</h2>'
+    return re.sub(r'<h2 id="([^"]+)">(.*?)</h2>', h2, body, flags=re.S), eintraege, n
+
+
+def schnellnav(eintraege):
+    items = "".join(f'<li><a href="#{hid}" title="{esc(titel)}"><span class="nr">{marke}</span>'
+                    f'<span class="titel">{esc(titel)}</span></a></li>' for marke, hid, titel in eintraege)
+    return f'<nav class="schnellnav" aria-label="Abschnitte"><p class="schnellnav-titel">Abschnitte</p><ol>{items}</ol></nav>'
+
+
+def quiz_section(quiz, nummer=None):
     data = json.dumps(quiz, ensure_ascii=False).replace("<", "\\u003c")
     if quiz.get("mode") == "test":
         titel = "Abschlusstest"
@@ -594,8 +617,9 @@ def quiz_section(quiz):
         titel = "Quiz"
         hinweis = (f"{len(quiz['questions'])} Fragen mit je einer richtigen Antwort. Fragen und Antworten werden jedes Mal neu "
                    "gemischt. Ihre Antworten werden nirgends gespeichert.")
+    nr = f'<span class="nr">{nummer}</span> ' if nummer else ""
     return f"""<section class="quiz" aria-labelledby="quiz">
-<h2 id="quiz">{titel}</h2>
+<h2 id="quiz">{nr}{titel}</h2>
 <p class="hinweis">{hinweis}</p>
 <div class="quiz-box" data-quiz></div>
 <noscript><p class="hinweis">Für das Quiz muss JavaScript eingeschaltet sein.</p></noscript>
@@ -915,6 +939,11 @@ def build_lessons(lessons):
 
 
 def write_lesson(l, lehrer, body, ziele, downloads, lehrkraft, nav):
+    body, eintraege, n = nummeriere(body)
+    quiz = ""
+    if l["quiz"]:
+        quiz = quiz_section(l["quiz"], n + 1)
+        eintraege.append((str(n + 1), "quiz", "Abschlusstest" if l["quiz"].get("mode") == "test" else "Quiz"))
     main = f"""<p class="crumbs"><a href="/edv-kurs/">EDV-Kurs</a> › Lektion {l['nummer']}</p>
 <h1>{esc(l['title'])}</h1>
 {f'<p class="untertitel">{esc(l["untertitel"])}</p>' if l['untertitel'] else ''}
@@ -926,11 +955,12 @@ def write_lesson(l, lehrer, body, ziele, downloads, lehrkraft, nav):
   <div class="balken"><span></span></div>
   <p class="zahl"></p>
 </div>
-{toc(body, [("quiz", "Abschlusstest" if l["quiz"].get("mode") == "test" else "Quiz")] if l["quiz"] else ())}
+{toc(body, [("quiz", eintraege[-1][0] + " " + eintraege[-1][2])] if l["quiz"] else ())}
+{schnellnav(eintraege)}
 <article class="inhalt lektion">
 {body}
 </article>
-{quiz_section(l["quiz"]) if l["quiz"] else ""}
+{quiz}
 <p class="zuruecksetzen" hidden><button type="button" class="reset">Alle Haken entfernen</button></p>
 {lehrkraft}
 {nav}"""

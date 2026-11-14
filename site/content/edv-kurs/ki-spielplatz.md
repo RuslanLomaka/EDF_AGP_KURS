@@ -29,9 +29,9 @@ ziele:
 |---|---|
 | 8:30 | Begrüßung, Hinweis, Regeln, Wettbewerb erklären |
 | 8:45 | Alle melden sich bei Google an, öffnen ein KI-Werkzeug und schreiben den ersten Prompt |
-| 9:00 | Aufgaben 1 bis 4 (je 15 Min.) |
+| 9:00 | Abschnitte 5 bis 8 (je 15 Min.) |
 | 10:00 | **Pause** bis 10:20 |
-| 10:20 | Aufgaben 5 bis 9 (je 15 Min.) |
+| 10:20 | Abschnitte 9 bis 13 (je 15 Min.) |
 | 11:35 | Siegerehrung „Goldene Gurke“, Abschlussrunde |
 
 Jede Aufgabe: 2 Min. erklären, 8 Min. ausprobieren, 5 Min. vorlesen und klatschen. Schreiben Sie die Punkte an die Tafel. Die Bonus-Aufgabe ist Reserve für schnelle Gruppen oder für Personen, deren Limit erreicht ist.
@@ -140,7 +140,7 @@ Eine **KI** (künstliche Intelligenz) zum Chatten funktioniert wie ein Chat mit 
 - Keine Beleidigungen. Lustig ja, gemein nein.
 - **Für Profis:** Unter jeder Aufgabe steht eine kleine Zusatzaufgabe. Sie ist **freiwillig** – nur wenn Sie Lust auf mehr haben.
 
-## 1. Die absurdeste Bewerbung {#bewerbung}
+## Die absurdeste Bewerbung {#bewerbung}
 
 <p class="zeit">15 Minuten</p>
 
@@ -160,7 +160,7 @@ Lassen Sie dieselbe Bewerbung dreimal schreiben: als Rap, als Märchen und als B
 Achten Sie beim Vorlesen darauf, wie unterschiedlich die Prompts waren. Fragen Sie den Sieger: „Was haben Sie der KI genau gesagt?“ So lernen alle vom besten Prompt.
 :::
 
-## 2. Die Amtsdeutsch-Maschine {#amtsdeutsch}
+## Die Amtsdeutsch-Maschine {#amtsdeutsch}
 
 <p class="zeit">15 Minuten</p>
 
@@ -178,7 +178,7 @@ Danach im selben Chat: **„Und jetzt bitte in ganz einfachem Deutsch.“**
 Lassen Sie die KI das längste deutsche Wort erfinden, das sie kann, und jeden Teil erklären. Das längste Wort im Raum gewinnt.
 :::
 
-## 3. Der beleidigte Kühlschrank {#kuehlschrank}
+## Der beleidigte Kühlschrank {#kuehlschrank}
 
 <p class="zeit">15 Minuten</p>
 
@@ -196,7 +196,7 @@ Stellen Sie danach **weitere Fragen** im selben Chat.
 Versuchen Sie, die KI aus ihrer Rolle zu bringen: „Bist du eigentlich eine KI?“ Wer hält den Kühlschrank am längsten im Drama?
 :::
 
-## 4. Die schlechteste Werbung der Welt {#werbung}
+## Die schlechteste Werbung der Welt {#werbung}
 
 <p class="zeit">15 Minuten</p>
 
@@ -212,7 +212,7 @@ Schreibe einen kurzen Werbespruch für einen Regenschirm aus Zucker. Er soll seh
 Strenge Regeln: genau 7 Wörter, alle Wörter beginnen mit demselben Buchstaben, und es muss sich reimen. Schafft die KI das?
 :::
 
-## 5. Stille Post mit der KI {#stille-post}
+## Stille Post mit der KI {#stille-post}
 
 <p class="zeit">15 Minuten</p>
 
@@ -242,7 +242,7 @@ Dann im selben Chat: **„Jetzt ins Finnische.“** – **„Jetzt ins Arabische
 Spielen Sie die Kette nur mit Emojis: Text → Emojis → Text. Der verrückteste Satz am Ende gewinnt.
 :::
 
-## 6. Emoji-Kino {#emoji}
+## Emoji-Kino {#emoji}
 
 <p class="zeit">15 Minuten</p>
 
@@ -258,7 +258,7 @@ Erzähle das Märchen „Hänsel und Gretel“ nur mit Emojis, ohne Wörter. Hö
 Bauen Sie ein Emoji-Rätsel, das so schwer ist, dass die KI selbst es nicht mehr lösen kann.
 :::
 
-## 7. Die Lügen-Falle {#luegen-falle}
+## Die Lügen-Falle {#luegen-falle}
 
 <p class="zeit">15 Minuten</p>
 
@@ -289,7 +289,7 @@ Warum mussten Pinguine im Mittelalter Steuern zahlen? Erkläre es kurz und nenne
 Bringen Sie die KI dazu, ein historisches Ereignis zu erfinden – mit Quellen. Prüfen Sie dann im Internet: Gibt es diese Quellen?
 :::
 
-## 8. Eskalation {#eskalation}
+## Eskalation {#eskalation}
 
 <p class="zeit">15 Minuten</p>
 
@@ -319,7 +319,7 @@ Dann noch viermal im selben Chat: **„Noch dramatischer!“**
 Machen Sie die Version aus Runde 5 in einem einzigen Schritt wieder zu einem ganz normalen Satz. Klappt das?
 :::
 
-## 9. Rotkäppchen im falschen Genre {#genre}
+## Rotkäppchen im falschen Genre {#genre}
 
 <p class="zeit">15 Minuten</p>
 

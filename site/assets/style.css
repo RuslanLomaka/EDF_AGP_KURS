@@ -381,7 +381,7 @@ code { font-size: 0.88em; background: var(--accent-soft); padding: 0.1rem 0.35re
   .bild { float: right; width: 21rem; margin: 0.3rem 0 1rem 1.4rem; }
   main h2 { clear: both; }
   .bild:has(+ table) { float: none; margin: 1.3rem auto; }
-  .kurz, .ergaenzung, .info, .achtung, .notiz, .schritte ol, .prinzip, main details { display: flow-root; }
+  .kurz, .ergaenzung, .info, .achtung, .notiz, .prompt, .profi, .schritte ol, .prinzip, main details { display: flow-root; }
 }
 
 /* Footer: dark band across the page */
@@ -498,6 +498,35 @@ h1, h2, h3, .liste a, .blaettern a, .card h2, .bereich strong { overflow-wrap: b
 .profi > :first-child { margin-top: 0; }
 .profi > :last-child { margin-bottom: 0; }
 
+/* Section numbers and quick navigation (lessons): the class says "we are at 5", everyone taps 5 */
+h2 .nr, .schnellnav .nr { display: inline-grid; place-items: center; min-width: 1.9rem; height: 1.9rem; padding: 0 0.4rem;
+  border-radius: 999px; background: var(--ton); color: var(--card); font-size: 0.95rem; font-weight: 800; vertical-align: 0.12em; }
+h2 .nr { margin-right: 0.35rem; }
+.schnellnav ol { list-style: none; margin: 0; padding: 0; }
+.schnellnav a { text-decoration: none; color: var(--fg); }
+.schnellnav-titel { margin: 0 0 0.4rem; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); }
+@media (max-width: 79.99rem) {
+  .schnellnav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; background: var(--card); border-top: 1px solid var(--line);
+    box-shadow: 0 -4px 16px rgb(0 0 0 / 0.08); padding: 0.45rem 0.5rem calc(0.45rem + env(safe-area-inset-bottom)); }
+  .schnellnav-titel { display: none; }
+  .schnellnav ol { display: flex; gap: 0.4rem; overflow-x: auto; scrollbar-width: none; max-width: 46rem; margin: 0 auto; }
+  .schnellnav ol::-webkit-scrollbar { display: none; }
+  .schnellnav .titel { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .schnellnav .nr { min-width: 2.75rem; height: 2.75rem; font-size: 1.05rem; background: var(--ton-soft); color: var(--ton); }
+  .schnellnav a[aria-current="true"] .nr { background: var(--ton); color: var(--card); }
+  body:has(.schnellnav) { padding-bottom: 4.2rem; }
+  body:has(.schnellnav) .hinweis-dialog { bottom: 4.4rem; }
+}
+@media (min-width: 80rem) {
+  .schnellnav { position: fixed; top: 5.5rem; left: max(1rem, calc(50% - 23rem - 15rem)); width: 13.5rem; max-height: calc(100vh - 7rem); overflow-y: auto; }
+  .schnellnav li { margin: 0.1rem 0; }
+  .schnellnav a { display: flex; gap: 0.55rem; align-items: center; padding: 0.3rem 0.5rem; border-radius: 10px; font-size: 0.88rem; line-height: 1.3; color: var(--muted); }
+  .schnellnav a:hover { background: var(--ton-soft); color: var(--fg); }
+  .schnellnav .nr { flex: none; min-width: 1.7rem; height: 1.7rem; font-size: 0.8rem; background: var(--ton-soft); color: var(--ton); }
+  .schnellnav a[aria-current="true"] { background: var(--ton-soft); color: var(--fg); font-weight: 700; }
+  .schnellnav a[aria-current="true"] .nr { background: var(--ton); color: var(--card); }
+}
+
 /* Article quiz */
 .quiz { margin-top: 2.5rem; }
 .quiz-frage { border: 1px solid var(--line); border-radius: var(--r); background: var(--card); padding: 0.8rem 1rem 0.9rem; margin: 0.9rem 0; box-shadow: var(--shadow); }
@@ -577,7 +606,7 @@ h1, h2, h3, .liste a, .blaettern a, .card h2, .bereich strong { overflow-wrap: b
 @media print {
   body { background: #fff; color: #000; font-size: 11pt; }
   .site-header, .site-footer, .toc, .fortschritt, .zuruecksetzen, .blaettern, .startsuche, .suchfeld, .chips, .downloads .btn,
-  .quiz, .hinweis-dialog, .vorlesen { display: none !important; }
+  .quiz, .hinweis-dialog, .vorlesen, .schnellnav { display: none !important; }
   main { max-width: none; padding: 0; }
   a, main a { color: #000; }
   .hero { color: #000; background: none; box-shadow: none; padding: 0; }

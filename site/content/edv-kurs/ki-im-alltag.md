@@ -28,11 +28,13 @@ ziele:
 | Uhrzeit | Was |
 |---|---|
 | 8:30 | Rückblick auf Tag 1: Was hat die KI falsch gemacht? Dann R-Z-F-L |
-| 8:45 | Aufgaben 1 bis 5 (je 15 Min.) |
+| 8:45 | Abschnitte 2 bis 6 (je 15 Min.) |
 | 10:00 | **Pause** bis 10:20 |
-| 10:20 | Aufgaben 6 bis 8 (je 15 Min.) |
+| 10:20 | Abschnitte 7 bis 9 (je 15 Min.) |
 | 11:05 | Abschlusstest (ca. 25 Min.) |
 | 11:30 | Ergebnisse besprechen, Feedback, alle melden sich ab |
+
+Abschlusstest (letzter Abschnitt): 15 Minuten zum Beantworten, dann gemeinsam die Fragen besprechen, bei denen viele Fehler hatten. Fragen Sie: „Wer ist KI-Profi geworden?“ Zum Schluss melden sich alle ab und schließen das Browserfenster.
 
 Heute gibt es keinen Wettbewerb. Lassen Sie stattdessen nach jeder Aufgabe 2 bis 3 Personen erzählen, was gut und was schlecht funktioniert hat.
 :::
@@ -66,7 +68,7 @@ Gestern haben Sie gesehen: Die KI kann viel – aber sie **erfindet manchmal Din
 
 **R-Z-F-L** – Rolle, Ziel, Format, Länge. Sie müssen nicht immer alle vier nutzen. Aber je mehr, desto besser wird die Antwort.
 
-## 1. Prompt-Reparatur {#reparatur}
+## Prompt-Reparatur {#reparatur}
 
 <p class="zeit">15 Minuten</p>
 
@@ -88,7 +90,7 @@ Du bist Bewerbungstrainerin. Schreibe 5 Tipps für den ersten Arbeitstag in eine
 Fragen Sie die KI: „Was fehlt an dem Prompt ‚Schreib was über Arbeit‘? Wie hätte ich besser fragen können?“
 :::
 
-## 2. Einen Brief verstehen {#brief}
+## Einen Brief verstehen {#brief}
 
 <p class="zeit">15 Minuten</p>
 
@@ -123,7 +125,7 @@ Lassen Sie sich den Brief in Ihrer Muttersprache erklären. Fragen Sie dann: „
 **Bei echten Briefen:** Entfernen Sie vorher alle persönlichen Daten – Namen, Adressen, Kundennummern, Aktenzeichen. Bei wichtigen Briefen (Jobcenter, Gericht, Kündigung) fragen Sie zusätzlich eine Beratungsstelle.
 :::
 
-## 3. Die heikle E-Mail {#email}
+## Die heikle E-Mail {#email}
 
 <p class="zeit">15 Minuten</p>
 
@@ -141,7 +143,7 @@ Vergleichen Sie die Versionen: Welche würden Sie schicken? Warum?
 Schreiben Sie die E-Mail zuerst selbst. Dann: „Korrigiere meine E-Mail und erkläre mir meine Fehler.“
 :::
 
-## 4. Vorstellungsgespräch-Simulator {#gespraech}
+## Vorstellungsgespräch-Simulator {#gespraech}
 
 <p class="zeit">15 Minuten</p>
 
@@ -161,7 +163,7 @@ Du bist Personalchefin in einem Lager. Ich bewerbe mich als Lagerhelfer. Stelle 
 Lassen Sie 2 Personen ihr Gespräch kurz nachspielen: Eine liest die Fragen der KI vor, die andere antwortet. Achten Sie darauf, dass niemand echte Daten aus dem eigenen Lebenslauf eingibt.
 :::
 
-## 5. Deutsch-Trainer {#deutsch}
+## Deutsch-Trainer {#deutsch}
 
 <p class="zeit">15 Minuten</p>
 
@@ -177,7 +179,7 @@ Hier sind 5 Sätze von mir. Korrigiere sie auf Niveau B1 und erkläre jeden Fehl
 „Mach mir 3 kleine Übungen zu meinen typischen Fehlern.“ Lösen Sie die Übungen und lassen Sie sie prüfen.
 :::
 
-## 6. Faktencheck gegen unsere Website {#faktencheck}
+## Faktencheck gegen unsere Website {#faktencheck}
 
 <p class="zeit">15 Minuten</p>
 
@@ -214,7 +216,7 @@ Vergleichen Sie mit dem Artikel [Arbeitszeit und Pausen](/artikel/arbeitszeit-un
 Fragen Sie die KI nach ihren Quellen. Öffnen Sie die Links: Gibt es die Seiten, und steht dort wirklich das, was die KI sagt?
 :::
 
-## 7. Erklär's mir in drei Stufen {#stufen}
+## Erklär's mir in drei Stufen {#stufen}
 
 <p class="zeit">15 Minuten</p>
 
@@ -243,7 +245,7 @@ Erkläre das Wort „Tarifvertrag“ dreimal: 1. für ein Kind mit 8 Jahren, 2. 
 Lassen Sie die KI 3 Quizfragen zu dem Wort machen. Testen Sie damit Ihre Nachbarin oder Ihren Nachbarn.
 :::
 
-## 8. Gleicher Prompt, verschiedene KIs {#vergleich}
+## Gleicher Prompt, verschiedene KIs {#vergleich}
 
 <p class="zeit">15 Minuten</p>
 
@@ -290,13 +292,3 @@ Löschen Sie den Chat (meist über die drei Punkte neben dem Chat). Bei einem Ko
 Markieren Sie den Text mit der Maus und drücken Sie **Strg + C**. Im KI-Chat fügen Sie ihn mit **Strg + V** ein.
 
 </details>
-
-## Zum Abschluss: der Test {#abschluss}
-
-<p class="zeit">25 Minuten</p>
-
-Jetzt zeigen Sie, was Sie in zwei Tagen gelernt haben. Der Test steht direkt hier unten. Beantworten Sie alle Fragen und klicken Sie auf **Auswerten**. Sie sehen dann Ihre Punkte, Ihre Stärken und alle Fehler mit Erklärung. **Nichts wird gespeichert.**
-
-::: notiz
-Geben Sie 15 Minuten für den Test. Danach besprechen Sie gemeinsam die Fragen, bei denen viele Fehler hatten. Fragen Sie: „Wer ist KI-Profi geworden?“ Zum Schluss: alle melden sich ab und schließen das Browserfenster.
-:::

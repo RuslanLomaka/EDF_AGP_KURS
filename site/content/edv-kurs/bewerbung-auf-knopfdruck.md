@@ -60,8 +60,8 @@ lehrkraft:
 1. Einstieg: „Wer hat schon zehn Bewerbungen geschrieben? Was war daran nervig?“ Meist kommt: immer wieder Adresse und Anrede abtippen.
 2. Zeigen Sie das Bild mit dem fertigen Brief: „Heute machen wir aus einer Liste und einem Brief viele fertige Briefe.“
 3. Erklären Sie die drei Kästen: Was sich ändert, steht in Excel. Was gleich bleibt, steht in Word. Zusammen gibt es fertige Briefe.
-4. Danach Vorbereitung und Teil 1 bis 4. Machen Sie jeden Schritt am Beamer vor, erst dann arbeiten alle selbst.
-5. Planen Sie für Teil 3 die meiste Zeit ein. Dort gibt es die meisten Fragen.
+4. Danach die Abschnitte 1 bis 5. Machen Sie jeden Schritt am Beamer vor, erst dann arbeiten alle selbst.
+5. Planen Sie für Abschnitt 4 die meiste Zeit ein. Dort gibt es die meisten Fragen.
 :::
 
 <div class="prinzip">
@@ -111,7 +111,7 @@ Häufigster Fehler: Die ZIP-Datei wird nicht entpackt. Gehen Sie herum und prüf
 **Ihre Daten:** Gleich tippen Sie Ihre eigenen Daten ein. Am Ende speichern Sie alles auf **Ihrem USB-Stick** oder schicken es **per E-Mail an sich selbst** – und löschen es dann vom Schulungs-PC.
 :::
 
-## Teil 1 – Excel: die Adressliste {#excel}
+## Excel: die Adressliste {#excel}
 
 ::: notiz
 Zeigen Sie die Liste am Beamer: Zeile = Firma, Spalte = Information. Lassen Sie eine Person laut vorlesen, was in Zeile 2 steht. Typische Fehler: in die grauen Spalten schreiben; Excel nicht schließen – dann kann Word die Liste später nicht öffnen.
@@ -152,7 +152,7 @@ In den grauen Spalten stehen **Formeln**. Klicken Sie in eine graue Zelle – ob
 **Tipp für Ihre Bewerbungen:** Die Spalten **Beworben_am** und **Status** helfen beim Nachweis Ihrer Bewerbungen, z. B. für das Jobcenter. Mit **Daten → Filtern** sehen Sie zum Beispiel nur die offenen Bewerbungen.
 :::
 
-## Teil 2 – Word: Ihr Brief {#word}
+## Word: Ihr Brief {#word}
 
 ::: notiz
 Kurz halten. Wichtig ist der Unterschied: **[Ihr …]** tippen alle selbst ein, **[Firma]** und die anderen Felder bleiben stehen. Fragen Sie nach: „Welche Klammern tippen Sie ab, welche nicht?“
@@ -170,10 +170,10 @@ Kurz halten. Wichtig ist der Unterschied: **[Ihr …]** tippen alle selbst ein, 
 **Eckige Klammern – was mache ich?**
 
 - **[Ihr …] / [Ihre …]** → tippen Sie **selbst** ein.
-- **[Firma], [Stelle], [Briefanrede] …** → **nicht abtippen!** Diese Daten kommen gleich aus Excel (Teil 3).
+- **[Firma], [Stelle], [Briefanrede] …** → **nicht abtippen!** Diese Daten kommen gleich aus Excel (Abschnitt 4).
 :::
 
-## Teil 3 – Word mit Excel verbinden {#verbinden}
+## Word mit Excel verbinden {#verbinden}
 
 ::: notiz
 Der schwierigste Teil. Machen Sie jeden Klick langsam vor und warten Sie, bis alle so weit sind. Sagen Sie vorher: Nach Schritt 4 passiert scheinbar nichts, das ist richtig. Typischer Fehler: Man klickt auf den oberen Teil von „Seriendruckfeld einfügen“ statt auf den kleinen Pfeil.
@@ -182,7 +182,7 @@ Der schwierigste Teil. Machen Sie jeden Klick langsam vor und warten Sie, bis al
 <p class="bild"><img src="/edv-kurs/bilder/felder.svg" alt="So funktioniert ein Serienbrief: In der Excel-Liste steht eine Zeile pro Firma. In der Word-Vorlage stehen Felder wie «Firma» und «Stelle». Word setzt für jede Zeile die Daten ein. So entsteht ein Brief pro Firma." width="400" height="400"></p>
 
 ::: notiz
-**Zum Bild** – vor Teil 3 zeigen
+**Zum Bild** – vor Abschnitt 4 zeigen
 
 1. Zeigen Sie oben auf die Excel-Liste: „Hier stehen drei Firmen. Jede Firma hat eine eigene Zeile und eine eigene Farbe.“
 2. Zeigen Sie auf die Vorlage in der Mitte: „Im Brief steht nicht der Name der Firma, sondern ein Platzhalter: «Firma». Das nennt man ein **Feld**.“
@@ -203,7 +203,7 @@ Der schwierigste Teil. Machen Sie jeden Klick langsam vor und warten Sie, bis al
 9. **Datei** → **Speichern unter** → Name **Anschreiben_Serienbrief** – im **gleichen Ordner** wie die Excel-Liste.
 :::
 
-## Teil 4 – Alle Briefe mit einem Klick {#fertig}
+## Alle Briefe mit einem Klick {#fertig}
 
 ::: notiz
 Lassen Sie alle mit ◄ ► durch die Vorschau blättern, bevor sie zusammenführen. Danach schreibt jede Person in einem Brief 2 bis 3 eigene Sätze und speichert ihn als PDF.
@@ -242,7 +242,7 @@ Lassen Sie alle mit ◄ ► durch die Vorschau blättern, bevor sie zusammenfüh
 <details>
 <summary>Die Knöpfe unter „Sendungen“ sind grau.</summary>
 
-Oben steht **Geschützte Ansicht** → **Bearbeitung aktivieren**. Oder Sie haben Teil 3, Schritt 1–4 noch nicht gemacht.
+Oben steht **Geschützte Ansicht** → **Bearbeitung aktivieren**. Oder Sie haben Abschnitt 4, Schritt 1–4 noch nicht gemacht.
 
 </details>
 

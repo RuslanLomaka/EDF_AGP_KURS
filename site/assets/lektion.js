@@ -23,6 +23,46 @@
   });
 })();
 
+// Quick navigation: highlights the section being read and keeps its number visible in the bar.
+(function () {
+  const nav = document.querySelector('.schnellnav');
+  if (!nav) return;
+  const liste = nav.querySelector('ol');
+  const links = [...nav.querySelectorAll('a')];
+  const ziele = links.map(a => document.getElementById(decodeURIComponent(a.hash.slice(1)))).filter(Boolean);
+  if (!ziele.length) return;
+  let aktiv = null;
+  const setze = id => {
+    if (id === aktiv) return;
+    aktiv = id;
+    links.forEach(a => {
+      if (a.hash.slice(1) !== id) { a.removeAttribute('aria-current'); return; }
+      a.setAttribute('aria-current', 'true');
+      if (liste.scrollWidth > liste.clientWidth) {  // phone bar: keep the active number in view
+        const li = a.parentElement;
+        liste.scrollTo({ left: li.offsetLeft - liste.offsetLeft - (liste.clientWidth - li.offsetWidth) / 2, behavior: 'smooth' });
+      }
+    });
+  };
+  // the active section is the last heading above the upper third of the screen
+  const pruefe = () => {
+    const grenze = window.innerHeight * 0.3;
+    let id = ziele[0].id;
+    for (const z of ziele) {
+      if (z.getBoundingClientRect().top <= grenze) id = z.id;
+      else break;
+    }
+    setze(id);
+  };
+  let geplant = false;
+  window.addEventListener('scroll', () => {
+    if (geplant) return;
+    geplant = true;
+    requestAnimationFrame(() => { geplant = false; pruefe(); });
+  }, { passive: true });
+  pruefe();
+})();
+
 // Lesson pages: every step in a `::: schritte` list becomes a tappable card with a checkbox.
 // Progress is kept in this browser, keyed by section and step text, so editing the lesson
 // does not move ticks to the wrong steps.

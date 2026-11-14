@@ -42,7 +42,7 @@ dateien:
 1. Prüfen Sie vorher an einem Kurs-PC, ob das Programm startet. Manchmal blockiert ein Virenschutz fremde Programme. Dann zeigen Sie es nur am Beamer.
 2. Einstieg: „Beim Serienbrief in Lektion 1 waren es viele Klicks in Word. Heute geht es mit einem Doppelklick.“
 3. Zeigen Sie die drei Kästen: Excel plus Programm gleich fertige Briefe.
-4. Dann Vorbereitung und Teil 1 bis 4: erst vormachen, dann machen alle selbst.
+4. Dann die Abschnitte 1 bis 5: erst vormachen, dann machen alle selbst.
 5. Ziel für heute: Jede Person hat mindestens einen fertigen Brief als PDF.
 :::
 
@@ -85,7 +85,7 @@ Kennen Sie schon den [Serienbrief aus Lektion 1](/edv-kurs/bewerbung-auf-knopfdr
 3. Arbeiten Sie nur in diesem Ordner. Die Dateien müssen **zusammen in einem Ordner** bleiben. Starten Sie das Programm **nicht direkt aus der ZIP-Datei**.
 :::
 
-## Teil 1 – Ihre Daten (nur einmal) {#meine-daten}
+## Ihre Daten (nur einmal) {#meine-daten}
 
 ::: notiz
 Am Kurs-PC: lieber Beispieldaten (Max Mustermann) statt der echten Adresse, oder am Ende alles löschen. Prüfen Sie: Ist jedes gelbe Feld gefüllt? Sonst meldet das Programm einen Fehler.
@@ -97,7 +97,7 @@ Am Kurs-PC: lieber Beispieldaten (Max Mustermann) statt der echten Adresse, oder
 3. Schreiben Sie Ihre Daten in die **gelben Felder**: Name, Straße, PLZ und Wohnort, Telefon, E-Mail. Rechts steht ein Beispiel.
 :::
 
-## Teil 2 – Ihre Stellen {#stellen}
+## Ihre Stellen {#stellen}
 
 <p class="bild"><img src="/edv-kurs/bilder/status.svg" alt="Der Status in der Excel-Liste entscheidet: Bei offen oder einem leeren Feld macht das Programm einen neuen Brief. Bei beworben, Einladung, Absage oder Zusage macht es keinen neuen Brief." width="400" height="400"></p>
 
@@ -119,7 +119,7 @@ Am Kurs-PC: lieber Beispieldaten (Max Mustermann) statt der echten Adresse, oder
 5. Speichern mit **Strg + S**. Dann **Excel schließen**.
 :::
 
-## Teil 3 – Doppelklick {#programm}
+## Doppelklick {#programm}
 
 ::: notiz
 Sagen Sie das blaue Windows-Fenster vorher an, damit niemand erschrickt. Windows warnt bei jedem neuen Programm, das nicht bei Microsoft registriert ist. Zeigen Sie danach im schwarzen Fenster, welche Briefe neu sind.
@@ -136,7 +136,7 @@ Sagen Sie das blaue Windows-Fenster vorher an, damit niemand erschrickt. Windows
 **Warum warnt Windows?** Das Programm ist neu und nicht bei Microsoft registriert. Darum fragt Windows lieber nach. Klicken Sie **„Trotzdem ausführen“** nur bei Programmen aus einer Quelle, der Sie vertrauen – wie hier von unserer Kursseite. Der Bewerbungshelfer arbeitet **nur auf Ihrem PC** und schickt **nichts ins Internet**.
 :::
 
-## Teil 4 – Briefe fertig schreiben {#fertig}
+## Briefe fertig schreiben {#fertig}
 
 <p class="bild"><img src="/edv-kurs/bilder/brief.svg" alt="Ein fertiger Brief vom Bewerbungshelfer. Blau ist alles, was das Programm einsetzt: Ihre Daten, die Firma, das Datum, den Betreff, die Anrede und den Gruß mit Ihrem Namen. Gelb ist der Teil, den Sie selbst schreiben: 3 bis 5 eigene Sätze." width="400" height="400"></p>
 
