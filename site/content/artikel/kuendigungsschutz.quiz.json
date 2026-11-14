@@ -5,15 +5,15 @@
       "question": "Wann gilt das Kündigungsschutzgesetz?",
       "answers": [
         {
-          "text": "Nach mehr als 6 Monaten in einer Firma mit mehr als 10 Beschäftigten",
+          "text": "Nach 6 Monaten in einer Firma mit mehr als 10 Beschäftigten",
           "correct": true
         },
         {
-          "text": "Ab dem ersten Arbeitstag in jeder Firma",
+          "text": "Nach der Probezeit, egal wie groß die Firma ist",
           "correct": false
         },
         {
-          "text": "Nur im öffentlichen Dienst",
+          "text": "Ab 5 Beschäftigten, sobald man einen unbefristeten Vertrag hat",
           "correct": false
         }
       ],
@@ -33,11 +33,11 @@
           "correct": true
         },
         {
-          "text": "Ja, immer",
+          "text": "Ja, nach 6 Monaten gilt es in jeder Firma",
           "correct": false
         },
         {
-          "text": "Ja, aber nur für Frauen",
+          "text": "Ja, wenn mindestens 5 Personen in Vollzeit arbeiten",
           "correct": false
         }
       ],
@@ -57,11 +57,11 @@
           "correct": true
         },
         {
-          "text": "altersbedingt, wetterbedingt, zeitbedingt",
+          "text": "verhaltensbedingt, krankheitsbedingt, altersbedingt",
           "correct": false
         },
         {
-          "text": "persönlich, privat, politisch",
+          "text": "personenbedingt, betriebsbedingt, auftragsbedingt",
           "correct": false
         }
       ],
@@ -85,7 +85,7 @@
           "correct": false
         },
         {
-          "text": "Eine Gehaltserhöhung",
+          "text": "Eine Anhörung beim Integrationsamt",
           "correct": false
         }
       ],
@@ -101,15 +101,15 @@
       "question": "Was zählt bei der Sozialauswahl?",
       "answers": [
         {
-          "text": "Lebensalter, Betriebszugehörigkeit, Unterhaltspflichten und Schwerbehinderung",
+          "text": "Alter, Dauer im Betrieb, Unterhaltspflichten, Schwerbehinderung",
           "correct": true
         },
         {
-          "text": "Aussehen und Hobbys",
+          "text": "Ausbildung, Sprachkenntnisse, Führerschein und Wohnort",
           "correct": false
         },
         {
-          "text": "Nur die Leistung im letzten Monat",
+          "text": "Leistung, Krankheitstage, Höhe des Lohns und Zahl der Abmahnungen",
           "correct": false
         }
       ],
@@ -133,7 +133,7 @@
           "correct": false
         },
         {
-          "text": "Bei jeder Kündigung in der Probezeit",
+          "text": "Bei einer Kündigung in der Probezeit",
           "correct": false
         }
       ],
@@ -149,15 +149,15 @@
       "question": "Ist eine Kündigung per WhatsApp gültig?",
       "answers": [
         {
-          "text": "Nein, sie muss auf Papier und eigenhändig unterschrieben sein",
+          "text": "Nein, sie muss auf Papier stehen und mit der Hand unterschrieben sein",
           "correct": true
         },
         {
-          "text": "Ja, wenn ein Foto dabei ist",
+          "text": "Ja, wenn ein Foto der unterschriebenen Kündigung dabei ist",
           "correct": false
         },
         {
-          "text": "Ja, wenn der Chef sie abschickt",
+          "text": "Ja, wenn der Chef sie selbst von seinem Handy abschickt",
           "correct": false
         }
       ],
@@ -177,11 +177,11 @@
           "correct": true
         },
         {
-          "text": "3 Monate",
+          "text": "4 Wochen nach dem letzten Arbeitstag",
           "correct": false
         },
         {
-          "text": "1 Jahr",
+          "text": "3 Monate nach Zugang der Kündigung",
           "correct": false
         }
       ],
@@ -205,11 +205,11 @@
           "correct": true
         },
         {
-          "text": "Sie hat immer 4 Wochen Frist",
+          "text": "Sie gilt nach 2 Wochen, wenn der Grund schwer ist",
           "correct": false
         },
         {
-          "text": "Sie braucht keinen Grund",
+          "text": "Sie gilt sofort, wenn vorher drei Abmahnungen kamen",
           "correct": false
         }
       ],
@@ -229,11 +229,11 @@
           "correct": true
         },
         {
-          "text": "Immer der Arbeitgeber",
+          "text": "Wer verliert, zahlt beide Anwälte – wie bei anderen Gerichten",
           "correct": false
         },
         {
-          "text": "Immer der Staat",
+          "text": "Der Arbeitgeber, weil er gekündigt hat",
           "correct": false
         }
       ],
@@ -249,15 +249,15 @@
       "question": "Haben Sie nach einer Kündigung immer Anspruch auf eine Abfindung?",
       "answers": [
         {
-          "text": "Nein, einen allgemeinen Anspruch gibt es nicht",
+          "text": "Nein, einen allgemeinen Anspruch auf Abfindung gibt es nicht",
           "correct": true
         },
         {
-          "text": "Ja, immer ein Monatsgehalt pro Jahr",
+          "text": "Ja, ein halbes Monatsgehalt pro Jahr im Betrieb",
           "correct": false
         },
         {
-          "text": "Ja, aber nur nach 20 Jahren",
+          "text": "Ja, wenn Sie mehr als 10 Jahre in der Firma waren",
           "correct": false
         }
       ],

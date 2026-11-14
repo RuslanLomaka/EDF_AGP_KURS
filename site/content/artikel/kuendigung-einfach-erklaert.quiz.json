@@ -9,7 +9,7 @@
           "correct": true
         },
         {
-          "text": "Sie gilt immer sofort",
+          "text": "Sie wirkt ab dem Tag, an dem man sie bekommt",
           "correct": false
         },
         {
@@ -33,11 +33,11 @@
           "correct": true
         },
         {
-          "text": "Nur eine kurze E-Mail",
+          "text": "Zwei Abmahnungen wegen derselben Sache",
           "correct": false
         },
         {
-          "text": "Die Zustimmung aller Kollegen",
+          "text": "Die Zustimmung der Agentur für Arbeit",
           "correct": false
         }
       ],
@@ -81,11 +81,11 @@
           "correct": true
         },
         {
-          "text": "Eine Gehaltserhöhung",
+          "text": "Ein Gespräch mit dem Betriebsarzt",
           "correct": false
         },
         {
-          "text": "Ein Brief vom Arbeitsamt",
+          "text": "Eine Sozialauswahl",
           "correct": false
         }
       ],
@@ -101,15 +101,15 @@
       "question": "Wie muss eine Kündigung aussehen, damit sie gültig ist?",
       "answers": [
         {
-          "text": "Auf Papier und mit der Hand unterschrieben",
+          "text": "Auf Papier, mit der Hand unterschrieben",
           "correct": true
         },
         {
-          "text": "Eine E-Mail reicht",
+          "text": "Als E-Mail mit eingescannter Unterschrift",
           "correct": false
         },
         {
-          "text": "Ein Anruf reicht",
+          "text": "Als Brief oder als Nachricht per WhatsApp",
           "correct": false
         }
       ],
@@ -125,11 +125,11 @@
       "question": "Was bedeutet Betriebszugehörigkeit?",
       "answers": [
         {
-          "text": "Wie lange man schon bei derselben Firma arbeitet",
+          "text": "Wie lange man schon ohne Unterbrechung bei derselben Firma arbeitet",
           "correct": true
         },
         {
-          "text": "Wie viele Mitarbeiter eine Firma hat",
+          "text": "Wie viele Mitarbeiter in einer Firma zusammen arbeiten",
           "correct": false
         },
         {
@@ -181,7 +181,7 @@
           "correct": false
         },
         {
-          "text": "1 Tag",
+          "text": "4 Wochen",
           "correct": false
         }
       ],
@@ -201,11 +201,11 @@
           "correct": true
         },
         {
-          "text": "Die Krankenkasse",
+          "text": "Die Agentur für Arbeit",
           "correct": false
         },
         {
-          "text": "Das Finanzamt",
+          "text": "Der Betriebsrat",
           "correct": false
         }
       ],
@@ -229,7 +229,7 @@
           "correct": false
         },
         {
-          "text": "Es gibt keine Frist",
+          "text": "Innerhalb von 3 Monaten",
           "correct": false
         }
       ],
@@ -245,11 +245,11 @@
       "question": "Ihr Job endet in einem Monat. Bis wann müssen Sie sich bei der Agentur für Arbeit melden?",
       "answers": [
         {
-          "text": "Innerhalb von 3 Tagen, nachdem Sie davon erfahren haben",
+          "text": "Innerhalb von 3 Tagen, nachdem Sie vom Ende erfahren haben",
           "correct": true
         },
         {
-          "text": "Erst am ersten Tag ohne Arbeit",
+          "text": "Erst am ersten Tag ohne Arbeit, vorher geht es nicht",
           "correct": false
         },
         {

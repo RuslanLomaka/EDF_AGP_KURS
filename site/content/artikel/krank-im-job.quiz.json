@@ -5,15 +5,15 @@
       "question": "Wann müssen Sie sich beim Arbeitgeber krankmelden?",
       "answers": [
         {
-          "text": "Sofort, normalerweise vor Arbeitsbeginn am ersten Krankheitstag",
+          "text": "Sofort am ersten Tag, möglichst noch vor Beginn der Arbeitszeit",
           "correct": true
         },
         {
-          "text": "Erst wenn Sie beim Arzt waren",
+          "text": "Erst wenn Sie beim Arzt waren und die Krankschreibung haben",
           "correct": false
         },
         {
-          "text": "Spätestens nach drei Tagen",
+          "text": "Spätestens am dritten Tag, wenn das Attest fällig ist",
           "correct": false
         }
       ],
@@ -33,11 +33,11 @@
           "correct": true
         },
         {
-          "text": "Erst nach 2 Wochen",
+          "text": "Erst nach 2 Wochen, vorher reicht ein Anruf",
           "correct": false
         },
         {
-          "text": "Nie, eine Nachricht reicht immer",
+          "text": "Ab dem ersten Tag, an dem man nicht zur Arbeit kommen kann",
           "correct": false
         }
       ],
@@ -61,7 +61,7 @@
           "correct": false
         },
         {
-          "text": "Nur in der Probezeit",
+          "text": "Nein, frühestens ab dem zweiten Tag",
           "correct": false
         }
       ],
@@ -77,15 +77,15 @@
       "question": "Was passiert bei der eAU?",
       "answers": [
         {
-          "text": "Die Praxis schickt die Krankschreibung an die Krankenkasse, der Arbeitgeber ruft sie ab",
+          "text": "Die Praxis schickt sie an die Kasse, die Firma ruft sie dort ab",
           "correct": true
         },
         {
-          "text": "Der Arbeitgeber ruft selbst beim Arzt an",
+          "text": "Der Arbeitgeber ruft beim Arzt an und fragt dort nach der Diagnose",
           "correct": false
         },
         {
-          "text": "Man muss sich nicht mehr krankmelden",
+          "text": "Sie müssen sich nicht mehr selbst beim Arbeitgeber krankmelden",
           "correct": false
         }
       ],
@@ -125,15 +125,15 @@
       "question": "Welche Voraussetzung gilt für die Lohnfortzahlung?",
       "answers": [
         {
-          "text": "Sie arbeiten seit mindestens 4 Wochen ohne Unterbrechung in der Firma",
+          "text": "Das Arbeitsverhältnis besteht seit mindestens 4 Wochen",
           "correct": true
         },
         {
-          "text": "Sie arbeiten seit mindestens 1 Jahr dort",
+          "text": "Sie arbeiten seit mindestens 6 Monaten, also nach der Probezeit, dort",
           "correct": false
         },
         {
-          "text": "Sie sind in einer Gewerkschaft",
+          "text": "Sie haben eine Vollzeitstelle mit festem Vertrag",
           "correct": false
         }
       ],
@@ -149,15 +149,15 @@
       "question": "Wie hoch ist das Krankengeld der Krankenkasse?",
       "answers": [
         {
-          "text": "70 Prozent vom Bruttolohn, höchstens 90 Prozent vom Netto",
+          "text": "70 % vom Brutto, aber höchstens 90 % vom Netto",
           "correct": true
         },
         {
-          "text": "100 Prozent vom Bruttolohn",
+          "text": "90 % vom Brutto, ohne eine Obergrenze",
           "correct": false
         },
         {
-          "text": "Immer 500 Euro im Monat",
+          "text": "Die Hälfte vom Netto, wie beim Arbeitslosengeld",
           "correct": false
         }
       ],
@@ -177,11 +177,11 @@
           "correct": true
         },
         {
-          "text": "Der Urlaub ist trotzdem verbraucht",
+          "text": "Der Urlaub verfällt, weil Sie ihn nicht genommen haben",
           "correct": false
         },
         {
-          "text": "Sie müssen sofort zurück zur Arbeit",
+          "text": "Die Krankheitstage zählen nur mit Krankenhausaufenthalt nicht als Urlaub",
           "correct": false
         }
       ],
@@ -197,15 +197,15 @@
       "question": "Was ist bei Krankschreibung meistens erlaubt?",
       "answers": [
         {
-          "text": "Ein Spaziergang, wenn der Arzt nichts dagegen hat",
+          "text": "Ein Spaziergang an der frischen Luft, wenn er die Genesung nicht stört",
           "correct": true
         },
         {
-          "text": "Mit Grippe auf eine Party gehen",
+          "text": "Im Garten arbeiten, solange man das Haus nicht verlässt",
           "correct": false
         },
         {
-          "text": "Nebenbei in einem anderen Job arbeiten",
+          "text": "Kurz in der Firma vorbeischauen und ein paar Stunden helfen",
           "correct": false
         }
       ],
@@ -221,15 +221,15 @@
       "question": "Ihr Kind (8 Jahre) ist krank. Was können Sie bekommen?",
       "answers": [
         {
-          "text": "Kinderkrankengeld von der Krankenkasse",
+          "text": "Kinderkrankengeld von der Krankenkasse, wenn Sie zu Hause bleiben müssen",
           "correct": true
         },
         {
-          "text": "Elterngeld vom Staat",
+          "text": "Elterngeld vom Staat, wenn das Kind länger krank ist",
           "correct": false
         },
         {
-          "text": "Nichts, Sie müssen Urlaub nehmen",
+          "text": "Bezahlten Sonderurlaub vom Arbeitgeber für 6 Wochen",
           "correct": false
         }
       ],

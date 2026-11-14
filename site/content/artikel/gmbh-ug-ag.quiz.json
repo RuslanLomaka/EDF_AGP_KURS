@@ -9,11 +9,11 @@
           "correct": true
         },
         {
-          "text": "Die Firma muss keine Steuern zahlen",
+          "text": "Die Gesellschafter haften mit der Hälfte ihres Privatvermögens",
           "correct": false
         },
         {
-          "text": "Man darf nur wenig verdienen",
+          "text": "Die Firma darf höchstens 25.000 Euro Schulden machen",
           "correct": false
         }
       ],
@@ -109,7 +109,7 @@
           "correct": true
         },
         {
-          "text": "Nichts",
+          "text": "10 Prozent",
           "correct": false
         },
         {
@@ -157,11 +157,11 @@
           "correct": true
         },
         {
-          "text": "Der Notar",
+          "text": "Der Vorstand",
           "correct": false
         },
         {
-          "text": "Jeder Mitarbeiter",
+          "text": "Der Aufsichtsrat",
           "correct": false
         }
       ],
@@ -209,7 +209,7 @@
           "correct": false
         },
         {
-          "text": "Hundesteuer",
+          "text": "Kapitalertragsteuer",
           "correct": false
         }
       ],
@@ -229,11 +229,11 @@
           "correct": true
         },
         {
-          "text": "In der Zeitung",
+          "text": "Im Grundbuch",
           "correct": false
         },
         {
-          "text": "Auf Instagram",
+          "text": "Beim Gewerbeamt",
           "correct": false
         }
       ],

@@ -5,15 +5,15 @@
       "question": "Was ist eine Abmahnung?",
       "answers": [
         {
-          "text": "Eine Warnung vor der Kündigung wegen Fehlverhalten",
+          "text": "Eine Warnung, dass eine Kündigung droht",
           "correct": true
         },
         {
-          "text": "Eine Kündigung ohne Frist",
+          "text": "Eine Kündigung, die erst nach einer Frist wirkt",
           "correct": false
         },
         {
-          "text": "Ein Lob vom Chef",
+          "text": "Ein Eintrag, der zu weniger Lohn im nächsten Monat führt",
           "correct": false
         }
       ],
@@ -33,11 +33,11 @@
           "correct": true
         },
         {
-          "text": "Lohn-, Urlaubs- und Pausenfunktion",
+          "text": "Melde-, Straf- und Kontrollfunktion",
           "correct": false
         },
         {
-          "text": "Lob-, Dank- und Bonusfunktion",
+          "text": "Hinweis-, Straf- und Lohnabzugsfunktion",
           "correct": false
         }
       ],
@@ -101,15 +101,15 @@
       "question": "Wofür gibt es KEINE Abmahnung?",
       "answers": [
         {
-          "text": "Für eine Krankheit, zum Beispiel eine Grippe",
+          "text": "Für eine Krankheit, zum Beispiel eine Grippe mit Fieber",
           "correct": true
         },
         {
-          "text": "Für unentschuldigtes Fehlen",
+          "text": "Für unentschuldigtes Fehlen an einem Arbeitstag",
           "correct": false
         },
         {
-          "text": "Für wiederholte Unpünktlichkeit",
+          "text": "Für wiederholtes Zuspätkommen ohne Grund",
           "correct": false
         }
       ],
@@ -129,11 +129,11 @@
           "correct": true
         },
         {
-          "text": "Die Abmahnung ist mit der Hand geschrieben",
+          "text": "Der Chef hat die Abmahnung persönlich mit der Hand unterschrieben",
           "correct": false
         },
         {
-          "text": "Der Fehler war sehr schwer",
+          "text": "Der Fehler war sehr schwer und hat viel Geld gekostet",
           "correct": false
         }
       ],
@@ -153,11 +153,11 @@
           "correct": true
         },
         {
-          "text": "Mit einer Beschwerde bei der Polizei",
+          "text": "Mit einer Anzeige bei der Polizei",
           "correct": false
         },
         {
-          "text": "Gar nicht",
+          "text": "Gar nicht – eine Abmahnung muss man still hinnehmen",
           "correct": false
         }
       ],
@@ -173,15 +173,15 @@
       "question": "Dürfen Sie Ihre Personalakte ansehen?",
       "answers": [
         {
-          "text": "Ja, das ist Ihr Recht",
+          "text": "Ja, das ist Ihr Recht – auf Wunsch mit dem Betriebsrat",
           "correct": true
         },
         {
-          "text": "Nein, nur der Chef darf das",
+          "text": "Nein, die Akte gehört der Firma",
           "correct": false
         },
         {
-          "text": "Nur mit einem Anwalt",
+          "text": "Ja, aber erst nach einer Kündigung",
           "correct": false
         }
       ],
@@ -197,15 +197,15 @@
       "question": "Gibt es eine feste Frist im Gesetz, nach der eine Abmahnung gelöscht wird?",
       "answers": [
         {
-          "text": "Nein, aber nach längerer Zeit ohne Vorfälle kann sie ihre Wirkung verlieren",
+          "text": "Nein – aber mit der Zeit kann sie ihre Wirkung verlieren",
           "correct": true
         },
         {
-          "text": "Ja, genau nach 6 Monaten",
+          "text": "Ja, nach genau 6 Monaten wird sie automatisch gelöscht",
           "correct": false
         },
         {
-          "text": "Ja, sie bleibt für immer gültig",
+          "text": "Ja, nach 2 Jahren muss die Firma sie aus der Akte nehmen",
           "correct": false
         }
       ],
@@ -221,15 +221,15 @@
       "question": "Muss vor jeder Kündigung wegen Fehlverhalten eine Abmahnung kommen?",
       "answers": [
         {
-          "text": "Meistens ja – bei sehr schweren Fällen wie Diebstahl aber nicht",
+          "text": "Meistens ja – bei sehr schweren Fällen wie Diebstahl nicht",
           "correct": true
         },
         {
-          "text": "Ja, immer drei Abmahnungen",
+          "text": "Ja, und zwar mindestens drei Abmahnungen zum gleichen Thema",
           "correct": false
         },
         {
-          "text": "Nein, nie",
+          "text": "Nein, eine Abmahnung vorher ist für die Firma freiwillig",
           "correct": false
         }
       ],

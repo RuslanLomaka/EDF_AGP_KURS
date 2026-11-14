@@ -9,11 +9,11 @@
           "correct": true
         },
         {
-          "text": "Eine GmbH",
+          "text": "Eine Ein-Personen-GmbH",
           "correct": false
         },
         {
-          "text": "Eine AG",
+          "text": "Eine Kleingewerbe-GbR",
           "correct": false
         }
       ],
@@ -33,11 +33,11 @@
           "correct": true
         },
         {
-          "text": "Nur mit 1.000 Euro",
+          "text": "Mit dem Geld, das er in die Firma gesteckt hat",
           "correct": false
         },
         {
-          "text": "Gar nicht",
+          "text": "Mit höchstens 25.000 Euro wie bei einer GmbH",
           "correct": false
         }
       ],
@@ -77,15 +77,15 @@
       "question": "Die GbR hat Schulden. Wer haftet?",
       "answers": [
         {
-          "text": "Jeder Gesellschafter persönlich für die ganzen Schulden",
+          "text": "Jeder Gesellschafter persönlich – auch für die ganzen Schulden",
           "correct": true
         },
         {
-          "text": "Nur der jüngste Gesellschafter",
+          "text": "Jeder für seinen Anteil, bei zwei Personen also die Hälfte",
           "correct": false
         },
         {
-          "text": "Niemand, nur die GbR",
+          "text": "Die GbR mit ihrem Geschäftsvermögen, nicht die Personen",
           "correct": false
         }
       ],
@@ -105,11 +105,11 @@
           "correct": true
         },
         {
-          "text": "Jede kleine GbR",
+          "text": "Eine GbR von zwei Freunden",
           "correct": false
         },
         {
-          "text": "Jeder Freiberufler",
+          "text": "Ein Freiberufler, zum Beispiel eine Übersetzerin",
           "correct": false
         }
       ],
@@ -129,11 +129,11 @@
           "correct": true
         },
         {
-          "text": "Unbeschränkt mit allem",
+          "text": "Unbeschränkt mit seinem ganzen Privatvermögen",
           "correct": false
         },
         {
-          "text": "Doppelt so viel wie der Komplementär",
+          "text": "Gar nicht, sobald die KG eingetragen ist",
           "correct": false
         }
       ],
@@ -149,15 +149,15 @@
       "question": "Was gilt zuerst bei der Gewinnverteilung in der GbR?",
       "answers": [
         {
-          "text": "Was im Gesellschaftsvertrag steht",
+          "text": "Was die Gesellschafter im Vertrag vereinbart haben",
           "correct": true
         },
         {
-          "text": "Wer am längsten arbeitet, bekommt alles",
+          "text": "Wer am meisten arbeitet, bekommt mehr",
           "correct": false
         },
         {
-          "text": "Der Staat legt die Anteile fest",
+          "text": "Das Finanzamt legt die Anteile fest",
           "correct": false
         }
       ],
@@ -177,11 +177,11 @@
           "correct": true
         },
         {
-          "text": "Halbe-halbe",
+          "text": "Halbe-halbe, weil beide Gesellschafter sind",
           "correct": false
         },
         {
-          "text": "Alles für Anna",
+          "text": "2/3 für Anna, 1/3 für Ben",
           "correct": false
         }
       ],
@@ -197,15 +197,15 @@
       "question": "Ein Gesellschafter der GbR kündigt. Was passiert seit 2024?",
       "answers": [
         {
-          "text": "Er scheidet aus, die GbR besteht weiter",
+          "text": "Er scheidet aus, und die GbR besteht mit den anderen weiter",
           "correct": true
         },
         {
-          "text": "Die GbR ist sofort aufgelöst",
+          "text": "Die GbR ist aufgelöst und muss abgewickelt werden",
           "correct": false
         },
         {
-          "text": "Alle müssen neu gründen",
+          "text": "Er bleibt Gesellschafter, bis alle anderen zustimmen",
           "correct": false
         }
       ],
@@ -221,15 +221,15 @@
       "question": "Was ist eine eGbR?",
       "answers": [
         {
-          "text": "Eine GbR, die im Gesellschaftsregister eingetragen ist",
+          "text": "Eine GbR, die im Gesellschaftsregister steht",
           "correct": true
         },
         {
-          "text": "Eine GbR nur für Online-Firmen",
+          "text": "Eine GbR, die ihre Rechnungen elektronisch schreibt",
           "correct": false
         },
         {
-          "text": "Eine GbR mit Ehepartnern",
+          "text": "Eine GbR mit einem Gesellschafter aus der EU",
           "correct": false
         }
       ],

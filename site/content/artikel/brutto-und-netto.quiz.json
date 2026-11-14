@@ -41,15 +41,15 @@
       "question": "Welche zwei Arten von Abzügen gibt es?",
       "answers": [
         {
-          "text": "Steuern und Beiträge zur Sozialversicherung",
+          "text": "Steuern (vor allem Lohnsteuer) und Sozialversicherungsbeiträge",
           "correct": true
         },
         {
-          "text": "Miete und Lebensmittel",
+          "text": "Lohnsteuer und Beiträge zur Haftpflichtversicherung",
           "correct": false
         },
         {
-          "text": "Urlaubsgeld und Weihnachtsgeld",
+          "text": "Kirchensteuer und Beiträge für die Gewerkschaft",
           "correct": false
         }
       ],
@@ -77,15 +77,15 @@
       "question": "Wer zahlt Beiträge zur Sozialversicherung?",
       "answers": [
         {
-          "text": "Arbeitnehmer und Arbeitgeber, meist ungefähr je zur Hälfte",
+          "text": "Arbeitnehmer und Arbeitgeber, meist je zur Hälfte",
           "correct": true
         },
         {
-          "text": "Nur der Arbeitnehmer",
+          "text": "Der Arbeitnehmer allein, der Arbeitgeber zahlt die Steuer",
           "correct": false
         },
         {
-          "text": "Nur der Staat",
+          "text": "Der Arbeitgeber allein, als Teil der Lohnkosten",
           "correct": false
         }
       ],
@@ -195,11 +195,11 @@
           "correct": true
         },
         {
-          "text": "Weil im Arbeitsvertrag immer das Netto steht",
+          "text": "Weil Firmen das Netto in der Stellenanzeige angeben müssen",
           "correct": false
         },
         {
-          "text": "Weil das Netto immer gleich hoch ist wie das Brutto",
+          "text": "Weil das Brutto im Vertrag oft noch verhandelt wird",
           "correct": false
         }
       ],

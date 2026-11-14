@@ -9,11 +9,11 @@
           "correct": true
         },
         {
-          "text": "Ein Amt des Staates",
+          "text": "Ein Amt des Staates für Arbeitsfragen",
           "correct": false
         },
         {
-          "text": "Ein Zusammenschluss von Firmen",
+          "text": "Ein Zusammenschluss von Firmen einer Branche",
           "correct": false
         }
       ],
@@ -33,7 +33,7 @@
           "correct": true
         },
         {
-          "text": "Weil das Gesetz es vorschreibt",
+          "text": "Weil das Gesetz es ab 20 Beschäftigten vorschreibt",
           "correct": false
         },
         {
@@ -53,15 +53,15 @@
       "question": "Was ist ein Tarifvertrag?",
       "answers": [
         {
-          "text": "Ein Vertrag zwischen Gewerkschaft und Arbeitgebern über Lohn, Arbeitszeit und Urlaub",
+          "text": "Ein Vertrag von Gewerkschaft und Arbeitgebern über Lohn, Arbeitszeit und Urlaub",
           "correct": true
         },
         {
-          "text": "Der Mietvertrag für die Firma",
+          "text": "Eine Vereinbarung zwischen Betriebsrat und Chef über die Pausen in der Firma",
           "correct": false
         },
         {
-          "text": "Ein Vertrag zwischen zwei Kollegen",
+          "text": "Der persönliche Arbeitsvertrag mit festen Löhnen für jede einzelne Person",
           "correct": false
         }
       ],
@@ -77,15 +77,15 @@
       "question": "Für wen gilt ein Tarifvertrag nach dem Gesetz?",
       "answers": [
         {
-          "text": "Für die Mitglieder der Gewerkschaft bei tarifgebundenen Arbeitgebern",
+          "text": "Für Mitglieder der Gewerkschaft bei tarifgebundenen Arbeitgebern",
           "correct": true
         },
         {
-          "text": "Für alle Menschen in Deutschland",
+          "text": "Für die Beschäftigten, die bei der Abstimmung dafür waren",
           "correct": false
         },
         {
-          "text": "Nur für den Chef",
+          "text": "Für alle Beschäftigten einer Branche, sobald der Vertrag unterschrieben ist",
           "correct": false
         }
       ],
@@ -109,11 +109,11 @@
           "correct": true
         },
         {
-          "text": "Die Firma wird für immer geschlossen",
+          "text": "Die Firma schließt und die Beschäftigten werden entlassen",
           "correct": false
         },
         {
-          "text": "Alle Beschäftigten bekommen mehr Lohn",
+          "text": "Die Beschäftigten arbeiten weiter, tragen aber Plakate",
           "correct": false
         }
       ],
@@ -157,11 +157,11 @@
           "correct": true
         },
         {
-          "text": "Teilzeitkräfte",
+          "text": "Beschäftigte in der Probezeit",
           "correct": false
         },
         {
-          "text": "Frauen über 50",
+          "text": "Minijobber und Aushilfen",
           "correct": false
         }
       ],
@@ -177,15 +177,15 @@
       "question": "Wie hoch ist der Mitgliedsbeitrag meistens?",
       "answers": [
         {
-          "text": "Etwa 1 Prozent vom monatlichen Bruttolohn",
+          "text": "Etwa 1 Prozent vom Bruttolohn",
           "correct": true
         },
         {
-          "text": "10 Prozent vom Nettolohn",
+          "text": "Etwa 5 Prozent vom monatlichen Nettolohn",
           "correct": false
         },
         {
-          "text": "Immer 100 Euro im Monat",
+          "text": "Ein fester Betrag von 50 Euro im Monat",
           "correct": false
         }
       ],
@@ -205,11 +205,11 @@
           "correct": true
         },
         {
-          "text": "Im Arbeitsvertrag",
+          "text": "Im Betriebsverfassungsgesetz",
           "correct": false
         },
         {
-          "text": "Im Mietrecht",
+          "text": "Im Arbeitszeitgesetz",
           "correct": false
         }
       ],
@@ -225,11 +225,11 @@
       "question": "Was ist der Unterschied zwischen Gewerkschaft und Betriebsrat?",
       "answers": [
         {
-          "text": "Den Betriebsrat wählen die Beschäftigten einer Firma, die Gewerkschaft ist eine Organisation außerhalb",
+          "text": "Den Betriebsrat wählen die Beschäftigten einer Firma; die Gewerkschaft steht außerhalb",
           "correct": true
         },
         {
-          "text": "Es gibt keinen Unterschied",
+          "text": "Die Gewerkschaft ist für eine Firma zuständig, der Betriebsrat für eine ganze Branche",
           "correct": false
         },
         {
@@ -249,15 +249,15 @@
       "question": "Warum entstanden im 19. Jahrhundert die ersten Gewerkschaften?",
       "answers": [
         {
-          "text": "Wegen langer Arbeitstage, wenig Lohn und Kinderarbeit in den Fabriken",
+          "text": "Wegen sehr langer Arbeitstage, wenig Lohn und Kinderarbeit in den Fabriken",
           "correct": true
         },
         {
-          "text": "Weil die Fabriken zu wenig Arbeit hatten",
+          "text": "Weil die Fabriken zu wenig Arbeit für die Menschen hatten",
           "correct": false
         },
         {
-          "text": "Weil der Staat es befohlen hat",
+          "text": "Weil der Staat Vertreter für die Arbeiter in den Fabriken brauchte",
           "correct": false
         }
       ],

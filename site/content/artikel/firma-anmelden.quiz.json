@@ -5,15 +5,15 @@
       "question": "Wann melden Sie ein Gewerbe an?",
       "answers": [
         {
-          "text": "Beim Start",
+          "text": "Spätestens zu Beginn der selbstständigen Tätigkeit",
           "correct": true
         },
         {
-          "text": "Ein Jahr später",
+          "text": "Nach dem ersten Monat",
           "correct": false
         },
         {
-          "text": "Nur wenn die Firma Gewinn macht",
+          "text": "Wenn der erste Gewinn da ist",
           "correct": false
         }
       ],
@@ -37,7 +37,7 @@
           "correct": false
         },
         {
-          "text": "Sie ist immer kostenlos",
+          "text": "Sie ist für Gründer kostenlos",
           "correct": false
         }
       ],
@@ -48,15 +48,15 @@
       "question": "Wen informiert das Gewerbeamt nach der Anmeldung?",
       "answers": [
         {
-          "text": "Unter anderem Finanzamt, IHK und Berufsgenossenschaft",
+          "text": "Unter anderem Finanzamt, IHK oder Handwerkskammer und Berufsgenossenschaft",
           "correct": true
         },
         {
-          "text": "Niemanden",
+          "text": "Niemanden – das müssen Sie selbst bei allen Stellen tun",
           "correct": false
         },
         {
-          "text": "Nur Ihre Familie",
+          "text": "Nur das Finanzamt, die anderen Stellen melden Sie selbst",
           "correct": false
         }
       ],
@@ -80,7 +80,7 @@
           "correct": false
         },
         {
-          "text": "Per WhatsApp",
+          "text": "Per E-Mail an das Finanzamt",
           "correct": false
         }
       ],
@@ -104,7 +104,7 @@
           "correct": false
         },
         {
-          "text": "Erst bei der ersten Steuererklärung",
+          "text": "Innerhalb von 3 Monaten nach dem Start",
           "correct": false
         }
       ],
@@ -120,15 +120,15 @@
       "question": "Wann sind Sie im ersten Jahr Kleinunternehmer?",
       "answers": [
         {
-          "text": "Wenn der Umsatz höchstens 25.000 Euro ist",
+          "text": "Wenn der Umsatz im ersten Jahr voraussichtlich höchstens 25.000 Euro ist",
           "correct": true
         },
         {
-          "text": "Wenn der Umsatz höchstens 100 Euro ist",
+          "text": "Wenn der Umsatz höchstens 100.000 Euro ist",
           "correct": false
         },
         {
-          "text": "Nur als GmbH",
+          "text": "Wenn der Gewinn im ersten Jahr höchstens 25.000 Euro ist",
           "correct": false
         }
       ],
@@ -152,11 +152,11 @@
           "correct": true
         },
         {
-          "text": "Ihr Gewerbe anmelden",
+          "text": "Eine Steuererklärung beim Finanzamt abgeben",
           "correct": false
         },
         {
-          "text": "Ihre Belege aufbewahren",
+          "text": "Ihre Belege und Rechnungen aufbewahren",
           "correct": false
         }
       ],
@@ -200,11 +200,11 @@
           "correct": true
         },
         {
-          "text": "Lebensversicherung",
+          "text": "Rentenversicherung, wie bei Angestellten",
           "correct": false
         },
         {
-          "text": "Handyversicherung",
+          "text": "Haftpflichtversicherung für die Firma",
           "correct": false
         }
       ],
@@ -224,11 +224,11 @@
           "correct": true
         },
         {
-          "text": "Innerhalb von 3 Jahren",
+          "text": "Jederzeit, solange die Firma besteht",
           "correct": false
         },
         {
-          "text": "Nie, das geht nur für Angestellte",
+          "text": "Gar nicht, sie ist Angestellten vorbehalten",
           "correct": false
         }
       ],

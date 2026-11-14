@@ -9,11 +9,11 @@
           "correct": true
         },
         {
-          "text": "Nur die Einnahmen",
+          "text": "Umsatz minus Steuern",
           "correct": false
         },
         {
-          "text": "Kosten plus Steuern",
+          "text": "Einnahmen plus Vorauszahlungen",
           "correct": false
         }
       ],
@@ -57,11 +57,11 @@
           "correct": true
         },
         {
-          "text": "1 Jahr",
+          "text": "10 Jahre",
           "correct": false
         },
         {
-          "text": "30 Jahre",
+          "text": "2 Jahre",
           "correct": false
         }
       ],
@@ -85,7 +85,7 @@
           "correct": false
         },
         {
-          "text": "Gar keine Steuer",
+          "text": "Umsatzsteuer",
           "correct": false
         }
       ],
@@ -100,11 +100,11 @@
           "correct": true
         },
         {
-          "text": "Bis Silvester desselben Jahres",
+          "text": "Bis zum 31. Mai des nächsten Jahres",
           "correct": false
         },
         {
-          "text": "Es gibt keine Frist",
+          "text": "Bis zum 31. Dezember des gleichen Jahres",
           "correct": false
         }
       ],
@@ -115,15 +115,15 @@
       "question": "Was sind Vorauszahlungen?",
       "answers": [
         {
-          "text": "Steuern, die man schon während des Jahres zahlt",
+          "text": "Steuern, die man schon während des laufenden Jahres im Voraus zahlt",
           "correct": true
         },
         {
-          "text": "Geld, das Kunden vorher zahlen",
+          "text": "Geld, das Kunden schon vor der Lieferung an Sie bezahlen",
           "correct": false
         },
         {
-          "text": "Ein Kredit von der Bank",
+          "text": "Ein Kredit von der Bank für die ersten Monate",
           "correct": false
         }
       ],
@@ -139,15 +139,15 @@
       "question": "Was gehört auf eine Rechnung?",
       "answers": [
         {
-          "text": "Ihre Steuernummer und eine fortlaufende Rechnungsnummer",
+          "text": "Ihre Steuernummer und eine fortlaufende Nummer",
           "correct": true
         },
         {
-          "text": "Ihr Geburtsdatum",
+          "text": "Ihre Steuernummer und Ihr Geburtsdatum",
           "correct": false
         },
         {
-          "text": "Ihr Kontostand",
+          "text": "Eine Unterschrift von Ihnen und eine vom Kunden mit Datum",
           "correct": false
         }
       ],
@@ -163,15 +163,15 @@
       "question": "Ist eine PDF-Rechnung per E-Mail eine E-Rechnung?",
       "answers": [
         {
-          "text": "Nein",
+          "text": "Nein, eine E-Rechnung hat ein festes Datenformat",
           "correct": true
         },
         {
-          "text": "Ja, immer",
+          "text": "Ja, sobald sie elektronisch per E-Mail verschickt wird",
           "correct": false
         },
         {
-          "text": "Nur am Wochenende",
+          "text": "Ja, wenn das PDF unterschrieben ist",
           "correct": false
         }
       ],
@@ -191,11 +191,11 @@
           "correct": true
         },
         {
-          "text": "Erst ab 2030",
+          "text": "Erst ab 2028",
           "correct": false
         },
         {
-          "text": "Gar nicht",
+          "text": "Seit 2020",
           "correct": false
         }
       ],
@@ -219,11 +219,11 @@
           "correct": true
         },
         {
-          "text": "9,50 Euro pro Stunde",
+          "text": "12,82 Euro pro Stunde",
           "correct": false
         },
         {
-          "text": "20 Euro pro Stunde",
+          "text": "14,60 Euro pro Stunde",
           "correct": false
         }
       ],

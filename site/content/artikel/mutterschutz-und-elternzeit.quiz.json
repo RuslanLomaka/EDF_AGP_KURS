@@ -9,11 +9,11 @@
           "correct": true
         },
         {
-          "text": "4 Wochen vor bis 4 Wochen nach der Geburt",
+          "text": "8 Wochen vor dem Geburtstermin bis 6 Wochen nach der Geburt",
           "correct": false
         },
         {
-          "text": "Nur 8 Wochen nach der Geburt",
+          "text": "Ab Beginn der Schwangerschaft bis 4 Monate nach der Geburt",
           "correct": false
         }
       ],
@@ -29,15 +29,15 @@
       "question": "Darf eine Frau in den 8 Wochen nach der Geburt arbeiten, wenn sie es möchte?",
       "answers": [
         {
-          "text": "Nein, nach der Geburt gilt ein Beschäftigungsverbot",
+          "text": "Nein, in diesen 8 Wochen gilt ein strenges Beschäftigungsverbot",
           "correct": true
         },
         {
-          "text": "Ja, wenn sie es schriftlich erklärt",
+          "text": "Ja, wenn der Arzt bestätigt, dass sie gesund ist",
           "correct": false
         },
         {
-          "text": "Ja, aber nur halbtags",
+          "text": "Ja, wenn sie es dem Arbeitgeber schriftlich erklärt",
           "correct": false
         }
       ],
@@ -53,15 +53,15 @@
       "question": "Wie viel Geld bekommt eine Angestellte im Mutterschutz?",
       "answers": [
         {
-          "text": "Ihr volles Netto: Mutterschaftsgeld plus Zuschuss vom Arbeitgeber",
+          "text": "Ihr volles Netto: Mutterschaftsgeld plus Zuschuss der Firma",
           "correct": true
         },
         {
-          "text": "Kein Geld, die Zeit ist unbezahlt",
+          "text": "65 Prozent vom Netto, wie beim Elterngeld, von der Krankenkasse",
           "correct": false
         },
         {
-          "text": "Die Hälfte ihres Bruttogehalts",
+          "text": "Ihr Brutto, aber nur für die 6 Wochen vor der Geburt",
           "correct": false
         }
       ],
@@ -77,15 +77,15 @@
       "question": "Von wann bis wann ist eine Frau besonders vor einer Kündigung geschützt?",
       "answers": [
         {
-          "text": "Ab Beginn der Schwangerschaft bis mindestens 4 Monate nach der Geburt",
+          "text": "Von der Schwangerschaft bis mindestens 4 Monate nach der Geburt",
           "correct": true
         },
         {
-          "text": "Erst ab dem Mutterschutz bis zur Geburt",
+          "text": "Ab der Mitteilung an den Chef bis zum Ende des Mutterschutzes",
           "correct": false
         },
         {
-          "text": "Nur während der Elternzeit",
+          "text": "Ab dem Beginn des Mutterschutzes bis 8 Wochen nach der Geburt des Kindes",
           "correct": false
         }
       ],
@@ -101,15 +101,15 @@
       "question": "Wer hat das Recht auf Elternzeit?",
       "answers": [
         {
-          "text": "Mütter und Väter",
+          "text": "Mütter und Väter, auch zur gleichen Zeit",
           "correct": true
         },
         {
-          "text": "Nur Mütter",
+          "text": "Mütter; Väter, wenn die Mutter wieder arbeitet",
           "correct": false
         },
         {
-          "text": "Nur Eltern mit mehr als einem Kind",
+          "text": "Wer seit mindestens 1 Jahr in der Firma ist",
           "correct": false
         }
       ],
@@ -157,11 +157,11 @@
           "correct": true
         },
         {
-          "text": "Spätestens 1 Woche vorher",
+          "text": "Spätestens 1 Woche vor dem Beginn",
           "correct": false
         },
         {
-          "text": "Spätestens 6 Monate vorher",
+          "text": "Spätestens 6 Monate vor dem Beginn",
           "correct": false
         }
       ],
@@ -185,7 +185,7 @@
           "correct": false
         },
         {
-          "text": "Die Gewerkschaft",
+          "text": "Die Krankenkasse",
           "correct": false
         }
       ],
@@ -205,11 +205,11 @@
           "correct": true
         },
         {
-          "text": "100 Prozent vom Bruttogehalt",
+          "text": "100 Prozent vom Netto, das nach der Geburt fehlt",
           "correct": false
         },
         {
-          "text": "Immer genau 300 Euro",
+          "text": "300 Euro im Monat, egal wie viel man vorher verdient hat",
           "correct": false
         }
       ],
@@ -233,11 +233,11 @@
           "correct": true
         },
         {
-          "text": "Für Eltern mit sehr hohem Einkommen",
+          "text": "Für Eltern, die nach der Geburt gar nicht arbeiten",
           "correct": false
         },
         {
-          "text": "Für Großeltern",
+          "text": "Für Eltern mit Zwillingen oder mehr Kindern",
           "correct": false
         }
       ],
@@ -253,7 +253,7 @@
       "question": "Welchen Arbeitsplatz bekommen Sie nach der Elternzeit?",
       "answers": [
         {
-          "text": "Den früheren oder einen gleichwertigen, nicht schlechter bezahlten",
+          "text": "Den früheren oder einen gleichwertigen Platz mit gleichem Lohn",
           "correct": true
         },
         {
@@ -261,7 +261,7 @@
           "correct": false
         },
         {
-          "text": "Keinen, der Vertrag endet mit der Elternzeit",
+          "text": "Den früheren Platz, aber erst nach einer neuen Probezeit",
           "correct": false
         }
       ],

@@ -9,11 +9,11 @@
           "correct": true
         },
         {
-          "text": "Mehr Gewinn für die Firmen",
+          "text": "Längere Öffnungszeiten für Geschäfte und Betriebe",
           "correct": false
         },
         {
-          "text": "Weniger Urlaub für alle",
+          "text": "Ein fester Stundenlohn für Arbeitnehmer",
           "correct": false
         }
       ],
@@ -71,15 +71,15 @@
       "question": "Wann darf man 10 Stunden am Tag arbeiten?",
       "answers": [
         {
-          "text": "Wenn man in 6 Monaten im Durchschnitt wieder auf 8 Stunden pro Werktag kommt",
+          "text": "Wenn es im Schnitt von 6 Monaten bei 8 Stunden bleibt",
           "correct": true
         },
         {
-          "text": "Immer, wenn der Chef es möchte",
+          "text": "Wenn der Chef es anordnet und die Überstunden bezahlt",
           "correct": false
         },
         {
-          "text": "Nur am Samstag",
+          "text": "Wenn man vorher schriftlich zugestimmt hat",
           "correct": false
         }
       ],
@@ -95,15 +95,15 @@
       "question": "Wie lange muss die Ruhezeit nach Feierabend mindestens sein?",
       "answers": [
         {
-          "text": "11 Stunden ohne Unterbrechung",
+          "text": "11 Stunden am Stück",
           "correct": true
         },
         {
-          "text": "8 Stunden",
+          "text": "8 Stunden ohne Unterbrechung",
           "correct": false
         },
         {
-          "text": "6 Stunden",
+          "text": "11 Stunden, die man aufteilen darf",
           "correct": false
         }
       ],
@@ -149,15 +149,15 @@
       "question": "Darf man die Pause an das Ende legen, um früher nach Hause zu gehen?",
       "answers": [
         {
-          "text": "Nein, die Pause ist zum Erholen während der Arbeit",
+          "text": "Nein, die Pause liegt mitten in der Arbeitszeit",
           "correct": true
         },
         {
-          "text": "Ja, immer",
+          "text": "Ja, bei einer Arbeitszeit unter 9 Stunden",
           "correct": false
         },
         {
-          "text": "Ja, wenn die Kollegen einverstanden sind",
+          "text": "Ja, wenn die Kollegen im Team damit einverstanden sind",
           "correct": false
         }
       ],
@@ -171,11 +171,11 @@
           "correct": true
         },
         {
-          "text": "Gar nicht",
+          "text": "Gar nicht – sie gehören zum Gehalt dazu",
           "correct": false
         },
         {
-          "text": "Nur mit zusätzlichen Urlaubstagen im nächsten Jahr",
+          "text": "Mit zusätzlichen Urlaubstagen im nächsten Jahr",
           "correct": false
         }
       ],
@@ -185,15 +185,15 @@
       "question": "Was muss der Arbeitgeber geben, wenn Sie am Sonntag arbeiten?",
       "answers": [
         {
-          "text": "Einen Ersatzruhetag innerhalb von 2 Wochen",
+          "text": "Einen freien Ersatzruhetag innerhalb von 2 Wochen",
           "correct": true
         },
         {
-          "text": "Nichts",
+          "text": "Nichts, wenn das im Arbeitsvertrag so steht",
           "correct": false
         },
         {
-          "text": "Einen zusätzlichen Urlaubstag im Jahr",
+          "text": "Einen zusätzlichen Urlaubstag am Jahresende",
           "correct": false
         }
       ],

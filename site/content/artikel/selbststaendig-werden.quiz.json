@@ -5,15 +5,15 @@
       "question": "Was ist typisch für Selbstständige?",
       "answers": [
         {
-          "text": "Sie arbeiten auf eigene Rechnung und tragen das Risiko",
+          "text": "Sie arbeiten auf eigene Rechnung und tragen das Risiko für ihre Firma",
           "correct": true
         },
         {
-          "text": "Sie bekommen jeden Monat festen Lohn",
+          "text": "Sie bekommen jeden Monat einen festen Lohn von der Kundschaft",
           "correct": false
         },
         {
-          "text": "Der Arbeitgeber zahlt ihre Sozialversicherung",
+          "text": "Der Staat zahlt ihre Sozialversicherung zur Hälfte mit",
           "correct": false
         }
       ],
@@ -28,11 +28,11 @@
           "correct": true
         },
         {
-          "text": "Nur beim Finanzamt",
+          "text": "Bei der Agentur für Arbeit",
           "correct": false
         },
         {
-          "text": "Beim Jobcenter",
+          "text": "Beim Handelsregister",
           "correct": false
         }
       ],
@@ -104,7 +104,7 @@
           "correct": false
         },
         {
-          "text": "Der Vermieter",
+          "text": "Das Gewerbeamt",
           "correct": false
         }
       ],
@@ -115,15 +115,15 @@
       "question": "Ein Kfz-Techniker will eine eigene Werkstatt. Was braucht er meistens?",
       "answers": [
         {
-          "text": "Einen Meisterbrief oder eine gleichwertige Qualifikation",
+          "text": "Einen Meisterbrief oder etwas Gleichwertiges",
           "correct": true
         },
         {
-          "text": "Nur einen Führerschein",
+          "text": "Eine Gewerbeanmeldung reicht, der Meister ist freiwillig",
           "correct": false
         },
         {
-          "text": "Gar nichts, Handwerk ist frei",
+          "text": "Eine Ausbildung als Geselle und 2 Jahre Berufserfahrung",
           "correct": false
         }
       ],
@@ -139,15 +139,15 @@
       "question": "Ihr Aufenthaltstitel sagt nur „Beschäftigung erlaubt“. Was sollten Sie vor der Gründung tun?",
       "answers": [
         {
-          "text": "Bei der Ausländerbehörde nachfragen",
+          "text": "Bei der Ausländerbehörde nachfragen, ob Selbstständigkeit erlaubt ist",
           "correct": true
         },
         {
-          "text": "Sofort ein Gewerbe anmelden",
+          "text": "Einfach ein Gewerbe anmelden, das Amt prüft es dann",
           "correct": false
         },
         {
-          "text": "Nichts, das gilt immer auch für Selbstständigkeit",
+          "text": "Nichts – die Erlaubnis gilt auch für eigene Firmen",
           "correct": false
         }
       ],
@@ -163,15 +163,15 @@
       "question": "Wer kann den Gründungszuschuss bekommen?",
       "answers": [
         {
-          "text": "Menschen mit Arbeitslosengeld und mindestens 150 Tagen Restanspruch",
+          "text": "Wer Arbeitslosengeld bekommt und noch 150 Tage Anspruch hat",
           "correct": true
         },
         {
-          "text": "Alle, die eine Firma gründen",
+          "text": "Wer Bürgergeld bekommt und ein Gewerbe anmeldet",
           "correct": false
         },
         {
-          "text": "Nur Studierende",
+          "text": "Wer eine Firma gründet und mindestens 25.000 Euro einbringt",
           "correct": false
         }
       ],
@@ -195,7 +195,7 @@
           "correct": false
         },
         {
-          "text": "Wenn die Firma Gewinn macht",
+          "text": "Innerhalb von 6 Monaten nach dem Start",
           "correct": false
         }
       ],
@@ -219,7 +219,7 @@
           "correct": false
         },
         {
-          "text": "Die Krankenkasse",
+          "text": "Die Agentur für Arbeit",
           "correct": false
         }
       ],
