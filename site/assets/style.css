@@ -447,7 +447,21 @@ main a.btn { color: #fff; }
 .dateiname { font-family: ui-monospace, Consolas, monospace; font-size: 0.85rem; color: var(--muted); overflow-wrap: anywhere; }
 .einzeln { margin: 0.4rem 0 0.2rem; }
 .fortschritt { position: sticky; top: 0; z-index: 2; background: var(--bg); padding: 0.55rem 0; margin: 0.5rem 0 1rem; border-bottom: 1px solid var(--line); }
-.fortschritt .zahl { margin: 0.3rem 0 0; font-size: 0.9rem; color: var(--muted); }
+.fortschritt .zahl { margin: 0.3rem 0 0; font-size: 0.82rem; color: var(--muted); }
+.fs-abschnitt { display: flex; align-items: center; gap: 0.45rem; margin: 0 0 0.35rem; font-size: 0.9rem; font-weight: 700; min-width: 0; }
+.fs-nr { flex: none; display: inline-grid; place-items: center; min-width: 1.6rem; height: 1.6rem; padding: 0 0.3rem; border-radius: 999px;
+  background: var(--ton); color: var(--card); font-size: 0.8rem; font-weight: 800; }
+.fs-nr:empty { display: none; }
+.fs-titel { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fs-zahl { flex: none; margin-left: auto; color: var(--muted); font-weight: 600; font-size: 0.85rem; }
+.abschnitt-fertig { margin: 1.2rem 0 0.4rem; }
+.abschnitt-fertig button { font: inherit; font-weight: 700; padding: 0.55rem 1rem; border-radius: 999px; border: 2px dashed var(--ton-rand);
+  background: var(--card); color: var(--ton); cursor: pointer; transition: background 0.15s ease, border-color 0.15s ease; }
+.abschnitt-fertig button[aria-pressed="true"] { border-style: solid; border-color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, var(--card));
+  color: var(--ok); animation: pop 0.3s ease; }
+.ue-geloest { display: inline-block; margin-left: 0.4rem; padding: 0.05rem 0.55rem; border-radius: 999px; background: var(--ok); color: var(--card);
+  font-size: 0.72rem; font-weight: 800; vertical-align: 0.15em; }
+.ue-geloest[hidden] { display: none; }
 .balken { height: 10px; border-radius: 999px; background: var(--line); overflow: hidden; }
 .balken span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #16a34a, #22c55e); border-radius: 999px; transition: width 0.25s ease; }
 .zuruecksetzen { margin: 1.5rem 0; }
@@ -503,7 +517,15 @@ h2 .nr, .schnellnav .nr { display: inline-grid; place-items: center; min-width: 
   border-radius: 999px; background: var(--ton); color: var(--card); font-size: 0.95rem; font-weight: 800; vertical-align: 0.12em; }
 h2 .nr { margin-right: 0.35rem; }
 .schnellnav ol { list-style: none; margin: 0; padding: 0; }
-.schnellnav a { text-decoration: none; color: var(--fg); }
+.schnellnav a { --p: 0; text-decoration: none; color: var(--fg); }
+/* progress ring around each number; a finished section turns green */
+.schnellnav .nr { background: radial-gradient(closest-side, var(--ton-soft) 76%, transparent 78% 100%),
+  conic-gradient(var(--ok) calc(var(--p) * 1%), var(--line) 0) !important; color: var(--ton) !important; }
+.schnellnav a[aria-current="true"] .nr { background: radial-gradient(closest-side, var(--ton) 76%, transparent 78% 100%),
+  conic-gradient(var(--ok) calc(var(--p) * 1%), var(--line) 0) !important; color: var(--card) !important; }
+.schnellnav a.fertig .nr { background: var(--ok) !important; color: #fff !important; }
+.schnellnav a.fertig[aria-current="true"] .nr { box-shadow: 0 0 0 3px var(--ton); }
+.schnellnav a.fertig .titel::after { content: " ✓"; color: var(--ok); }
 .schnellnav-titel { margin: 0 0 0.4rem; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); }
 @media (max-width: 79.99rem) {
   .schnellnav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; background: var(--card); border-top: 1px solid var(--line);
@@ -575,6 +597,22 @@ h2 .nr { margin-right: 0.35rem; }
 .ue-ergebnis .falsch { color: var(--warn-line); font-weight: 700; }
 .ue-erklaerung { color: var(--muted); }
 main .ue-loesung { margin: 0.8rem 0 0; box-shadow: none; font-size: 0.92rem; }
+
+/* Gap texts and marking exercises */
+.ue-satz, .ue-markiertext { margin: 0 0 0.9rem; line-height: 2.5; font-size: 1.02rem; }
+.ue-luecke { display: inline-flex; align-items: center; justify-content: center; min-width: 7.5rem; min-height: 2.1rem; margin: 0 0.15rem;
+  padding: 0.1rem; vertical-align: middle; border: 2px dashed var(--ton-rand); border-radius: 10px; background: var(--card); cursor: pointer;
+  line-height: 1.35; transition: border-color 0.15s ease, background 0.15s ease; }
+.uebung.ue-waehlt .ue-luecke:empty { border-color: var(--ton); background: var(--ton-soft); }
+.ue-luecke.ue-drueber { border-color: var(--ton); background: var(--ton-soft); }
+.ue-luecke .ue-karte { box-shadow: none; padding: 0.25rem 0.6rem; }
+.ue-wort { font: inherit; line-height: 1.5; margin: 0.1rem 0; padding: 0.05rem 0.3rem; border-radius: 6px; border: 1.5px solid transparent;
+  background: transparent; color: var(--fg); cursor: pointer; }
+.ue-wort:hover { background: var(--ton-soft); }
+.ue-wort[aria-pressed="true"] { background: var(--mark); border-color: var(--erg-line); }
+.ue-wort.richtig { background: color-mix(in srgb, var(--ok) 18%, var(--card)); border-color: var(--ok); }
+.ue-wort.falsch { background: var(--warn-bg); border-color: var(--warn-line); text-decoration: line-through; animation: wackeln 0.4s; }
+.ue-wort.verpasst { border: 2px dashed var(--warn-line); }
 
 /* Animations: slide in, landing pop, wrong-answer shake, confetti, floating hero drawing */
 .einblenden { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }

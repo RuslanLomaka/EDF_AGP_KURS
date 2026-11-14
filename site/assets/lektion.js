@@ -23,103 +23,166 @@
   });
 })();
 
-// Quick navigation: highlights the section being read and keeps its number visible in the bar.
+// Lesson progress, per section: ticked steps, solved exercises, the test, and an "Abschnitt erledigt" button
+// for sections without any of these. Kept only in this browser (localStorage, keyed by section and text, so
+// editing a lesson does not move ticks). The bar at the top shows the section on the screen and the whole lesson;
+// the quick navigation shows a ring per section that turns green when it is done.
 (function () {
+  const box = document.querySelector('.fortschritt');
+  const inhalt = document.querySelector('.inhalt.lektion');
+  if (!box || !inhalt) return;
+  const speicher = 'lektion-v2:' + box.dataset.lektion;
+  const hash = s => { let h = 5381; for (const c of s) h = (h * 33 + c.codePointAt(0)) >>> 0; return h.toString(36); };
+  let erledigt = new Set();
+  try { erledigt = new Set(JSON.parse(localStorage.getItem(speicher) || '[]')); } catch (e) { /* storage unavailable */ }
+  const speichern = () => { try { localStorage.setItem(speicher, JSON.stringify([...erledigt])); } catch (e) { /* ignore */ } };
+
+  // sections: every h2 of the lesson, plus the test below it
+  const ohneNr = h => [...h.childNodes].filter(n => !(n.classList && n.classList.contains('nr'))).map(n => n.textContent).join('').trim();
+  const abschnitte = [...inhalt.querySelectorAll(':scope > h2[id]')].map(h => ({ id: h.id, h, posten: [] }));
+  const quizH2 = document.getElementById('quiz');
+  if (quizH2) abschnitte.push({ id: 'quiz', h: quizH2, posten: [] });
+  abschnitte.forEach(a => {
+    a.nr = (a.h.querySelector('.nr') || {}).textContent || '';
+    a.titel = ohneNr(a.h);
+  });
+  const abschnittVon = el => {
+    let gefunden = null;
+    for (const a of abschnitte) if (a.h.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_FOLLOWING) gefunden = a;
+    return gefunden;
+  };
+  const zaehlt = a => a && a.id !== 'hilfe';
+
+  // 1. steps: the whole card is the label, so tapping the text ticks the step
+  inhalt.querySelectorAll('.schritte li').forEach(li => {
+    const a = abschnittVon(li);
+    if (!zaehlt(a)) return;
+    const key = a.id + ':' + hash(li.textContent.replace(/\s+/g, ' ').trim());
+    const label = document.createElement('label');
+    const cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.className = 'haken';
+    label.append(cb, ...li.childNodes);
+    li.append(label);
+    const zeige = () => { cb.checked = erledigt.has(key); li.classList.toggle('erledigt', cb.checked); };
+    cb.addEventListener('change', () => { cb.checked ? erledigt.add(key) : erledigt.delete(key); speichern(); zeige(); anzeigen(); });
+    a.posten.push({ key, zeige });
+  });
+
+  // 2. exercises: solved once = done (they can always be played again)
+  const zaehler = {};
+  inhalt.querySelectorAll('.uebung').forEach(ue => {
+    const a = abschnittVon(ue);
+    if (!zaehlt(a)) return;
+    zaehler[a.id] = (zaehler[a.id] || 0) + 1;
+    const key = 'ue:' + a.id + ':' + zaehler[a.id];
+    const marke = document.createElement('span');
+    marke.className = 'ue-geloest';
+    marke.textContent = 'gelöst ✓';
+    ue.querySelector('.ue-kopf').append(marke);
+    const zeige = () => { marke.hidden = !erledigt.has(key); };
+    ue.addEventListener('uebung-geloest', () => { erledigt.add(key); speichern(); zeige(); anzeigen(); });
+    a.posten.push({ key, zeige });
+  });
+
+  // 3. the test: done when it has been evaluated once
+  if (quizH2) {
+    const a = abschnitte[abschnitte.length - 1];
+    document.addEventListener('quiz-fertig', () => { erledigt.add('quiz'); speichern(); anzeigen(); });
+    a.posten.push({ key: 'quiz', zeige: () => {} });
+  }
+
+  // 4. sections without anything to tick get a button at their end
+  abschnitte.forEach((a, i) => {
+    if (!zaehlt(a) || a.posten.length) return;
+    const key = 'fertig:' + a.id;
+    const p = document.createElement('p');
+    p.className = 'abschnitt-fertig';
+    const knopf = document.createElement('button');
+    knopf.type = 'button';
+    p.append(knopf);
+    const naechster = abschnitte[i + 1] && abschnitte[i + 1].h.parentElement === inhalt ? abschnitte[i + 1].h : null;
+    inhalt.insertBefore(p, naechster);
+    const zeige = () => {
+      const an = erledigt.has(key);
+      knopf.setAttribute('aria-pressed', String(an));
+      knopf.textContent = an ? 'Abschnitt erledigt ✓' : 'Abschnitt erledigt?';
+    };
+    knopf.addEventListener('click', () => { erledigt.has(key) ? erledigt.delete(key) : erledigt.add(key); speichern(); zeige(); anzeigen(); });
+    a.posten.push({ key, zeige });
+  });
+
   const nav = document.querySelector('.schnellnav');
-  if (!nav) return;
-  const liste = nav.querySelector('ol');
-  const links = [...nav.querySelectorAll('a')];
-  const ziele = links.map(a => document.getElementById(decodeURIComponent(a.hash.slice(1)))).filter(Boolean);
-  if (!ziele.length) return;
-  let aktiv = null;
-  const setze = id => {
-    if (id === aktiv) return;
-    aktiv = id;
-    links.forEach(a => {
-      if (a.hash.slice(1) !== id) { a.removeAttribute('aria-current'); return; }
-      a.setAttribute('aria-current', 'true');
+  const links = nav ? [...nav.querySelectorAll('a')] : [];
+  const fsNr = box.querySelector('.fs-nr'), fsTitel = box.querySelector('.fs-titel'), fsZahl = box.querySelector('.fs-zahl');
+  const balken = box.querySelector('.balken span'), gesamtText = box.querySelector('.zahl');
+  let aktiv = abschnitte[0];
+
+  const stand = a => {
+    const n = a.posten.length, fertig = a.posten.filter(p => erledigt.has(p.key)).length;
+    return { n, fertig };
+  };
+  function anzeigen() {
+    let n = 0, fertig = 0;
+    abschnitte.forEach(a => {
+      const s = stand(a);
+      n += s.n;
+      fertig += s.fertig;
+      const link = links.find(l => l.hash.slice(1) === a.id);
+      if (!link || !s.n) return;
+      link.style.setProperty('--p', Math.round(100 * s.fertig / s.n));
+      link.classList.toggle('fertig', s.fertig === s.n);
+      link.title = a.titel + ' – ' + s.fertig + ' von ' + s.n + ' erledigt';
+    });
+    const s = stand(aktiv);
+    fsNr.textContent = aktiv.nr;
+    fsTitel.textContent = aktiv.titel;
+    fsZahl.textContent = s.n ? s.fertig + ' von ' + s.n + (s.fertig === s.n ? ' ✓' : '') : '';
+    balken.style.width = (s.n ? 100 * s.fertig / s.n : 0) + '%';
+    gesamtText.textContent = 'Ganze Lektion: ' + fertig + ' von ' + n + ' erledigt' + (n && fertig === n ? ' – alles gesammelt!' : '');
+  }
+
+  // the section on the screen: the last heading above the upper third
+  const setzeAktiv = () => {
+    const grenze = window.innerHeight * 0.3;
+    let neu = abschnitte[0];
+    for (const a of abschnitte) {
+      if (a.h.getBoundingClientRect().top <= grenze) neu = a;
+      else break;
+    }
+    if (neu === aktiv && box.dataset.bereit) return;
+    aktiv = neu;
+    box.dataset.bereit = 'ja';
+    links.forEach(l => {
+      if (l.hash.slice(1) !== aktiv.id) { l.removeAttribute('aria-current'); return; }
+      l.setAttribute('aria-current', 'true');
+      const liste = nav.querySelector('ol');
       if (liste.scrollWidth > liste.clientWidth) {  // phone bar: keep the active number in view
-        const li = a.parentElement;
+        const li = l.parentElement;
         liste.scrollTo({ left: li.offsetLeft - liste.offsetLeft - (liste.clientWidth - li.offsetWidth) / 2, behavior: 'smooth' });
       }
     });
-  };
-  // the active section is the last heading above the upper third of the screen
-  const pruefe = () => {
-    const grenze = window.innerHeight * 0.3;
-    let id = ziele[0].id;
-    for (const z of ziele) {
-      if (z.getBoundingClientRect().top <= grenze) id = z.id;
-      else break;
-    }
-    setze(id);
+    anzeigen();
   };
   let geplant = false;
   window.addEventListener('scroll', () => {
     if (geplant) return;
     geplant = true;
-    requestAnimationFrame(() => { geplant = false; pruefe(); });
+    requestAnimationFrame(() => { geplant = false; setzeAktiv(); });
   }, { passive: true });
-  pruefe();
-})();
-
-// Lesson pages: every step in a `::: schritte` list becomes a tappable card with a checkbox.
-// Progress is kept in this browser, keyed by section and step text, so editing the lesson
-// does not move ticks to the wrong steps.
-(function () {
-  const box = document.querySelector('.fortschritt');
-  const schritte = [...document.querySelectorAll('.schritte li')];
-  if (!box || !schritte.length) return;
-  const speicher = 'lektion-v2:' + box.dataset.lektion;
-  const hash = s => { let h = 5381; for (const c of s) h = (h * 33 + c.codePointAt(0)) >>> 0; return h.toString(36); };
-  const abschnitt = li => {
-    let el = li.closest('.schritte');
-    while (el && !(el.tagName === 'H2' && el.id)) el = el.previousElementSibling;
-    return el ? el.id : '';
-  };
-  const schluessel = schritte.map(li => abschnitt(li) + ':' + hash(li.textContent.replace(/\s+/g, ' ').trim()));
-
-  let erledigt = new Set();
-  try { erledigt = new Set(JSON.parse(localStorage.getItem(speicher) || '[]')); } catch (e) { /* storage unavailable */ }
-  const speichern = () => { try { localStorage.setItem(speicher, JSON.stringify([...erledigt])); } catch (e) { /* ignore */ } };
-
-  const balken = box.querySelector('.balken span');
-  const zahl = box.querySelector('.zahl');
-  const anzeigen = () => {
-    const n = schluessel.filter(k => erledigt.has(k)).length;
-    balken.style.width = (100 * n / schritte.length) + '%';
-    zahl.textContent = n + ' von ' + schritte.length + ' Schritten erledigt' + (n === schritte.length ? ' – super!' : '');
-  };
-
-  schritte.forEach((li, i) => {
-    // the whole card is the label, so tapping the text ticks the step; its text is the checkbox's name
-    const label = document.createElement('label');
-    const cb = document.createElement('input');
-    cb.type = 'checkbox';
-    cb.className = 'haken';
-    cb.checked = erledigt.has(schluessel[i]);
-    label.append(cb, ...li.childNodes);
-    li.append(label);
-    li.classList.toggle('erledigt', cb.checked);
-    cb.addEventListener('change', () => {
-      cb.checked ? erledigt.add(schluessel[i]) : erledigt.delete(schluessel[i]);
-      li.classList.toggle('erledigt', cb.checked);
-      speichern();
-      anzeigen();
-    });
-  });
 
   const reset = document.querySelector('.reset');
   if (reset) {
     reset.addEventListener('click', () => {
-      if (!window.confirm('Alle Haken in dieser Lektion entfernen?')) return;
+      if (!window.confirm('Den ganzen Fortschritt in dieser Lektion zurücksetzen?')) return;
       erledigt.clear();
-      schritte.forEach(li => { li.classList.remove('erledigt'); li.querySelector('.haken').checked = false; });
       speichern();
+      abschnitte.forEach(a => a.posten.forEach(p => p.zeige()));
       anzeigen();
     });
     reset.parentElement.hidden = false;
   }
+  abschnitte.forEach(a => a.posten.forEach(p => p.zeige()));
   box.hidden = false;
-  anzeigen();
+  setzeAktiv();
 })();

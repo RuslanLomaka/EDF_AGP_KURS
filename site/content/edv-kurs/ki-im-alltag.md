@@ -87,6 +87,14 @@ gruppen:
 erklaerung: "Rolle = wer die KI sein soll. Ziel = was herauskommen soll. Format = in welcher Form. Länge = wie lang."
 ```
 
+```uebung
+typ: luecken
+frage: "Bauen Sie einen guten Prompt nach R-Z-F-L. Nicht alle Teile passen."
+text: "Du bist [[Bewerbungstrainerin]]. Schreibe [[3 typische Fragen]] für ein Vorstellungsgespräch als Lagerhelfer, [[als Liste]], [[höchstens 5 Sätze]]."
+ablenker: ["Olga Petrenko", "so lang wie möglich", "irgendwas", "meine Adresse"]
+erklaerung: "Rolle, Ziel, Format, Länge – und kein echter Name oder keine Adresse im Prompt."
+```
+
 ## Prompt-Reparatur {#reparatur}
 
 <p class="zeit">15 Minuten</p>
@@ -141,6 +149,13 @@ Lassen Sie sich den Brief in Ihrer Muttersprache erklären. Fragen Sie dann: „
 :::
 
 ```uebung
+typ: markieren
+frage: "Prüfen Sie die Liste der KI: Tippen Sie im Brief alle Termine, Fristen und Kosten an."
+text: "Am [[8. Dezember]] zwischen [[8:00 und 12:00 Uhr]] lesen wir die Zähler ab. Wenn Sie an diesem Tag nicht zu Hause sind, vereinbaren Sie bitte bis spätestens [[1. Dezember]] einen Ersatztermin. Für einen zweiten Ablesetermin berechnen wir [[25 Euro]]."
+erklaerung: "Das sind die Angaben, die in Ihrer To-do-Liste stehen müssen. Fehlt eine davon, hat die KI etwas vergessen."
+```
+
+```uebung
 typ: reihenfolge
 frage: "So nutzen Sie die KI sicher für einen echten Brief. Welche Reihenfolge stimmt?"
 schritte:
@@ -172,6 +187,21 @@ Vergleichen Sie die Versionen: Welche würden Sie schicken? Warum?
 ::: profi
 Schreiben Sie die E-Mail zuerst selbst. Dann: „Korrigiere meine E-Mail und erkläre mir meine Fehler.“
 :::
+
+```uebung
+typ: zuordnen
+frage: "Passt das in eine E-Mail an die Arztpraxis?"
+gruppen:
+  "Passt (höflich)":
+    - "Sehr geehrte Damen und Herren,"
+    - "Ich bitte Sie um einen neuen Termin."
+    - "Mit freundlichen Grüßen"
+  "Zu locker":
+    - "Hey Leute!"
+    - "Kann leider nicht, sorry!!!"
+    - "Was geht bei euch nächste Woche?"
+erklaerung: "An eine Praxis oder ein Amt schreiben Sie höflich und förmlich: mit Anrede, einer klaren Bitte und einem Gruß."
+```
 
 ## Vorstellungsgespräch-Simulator {#gespraech}
 
@@ -245,6 +275,14 @@ Vergleichen Sie mit dem Artikel [Arbeitszeit und Pausen](/artikel/arbeitszeit-un
 ::: profi
 Fragen Sie die KI nach ihren Quellen. Öffnen Sie die Links: Gibt es die Seiten, und steht dort wirklich das, was die KI sagt?
 :::
+
+```uebung
+typ: luecken
+frage: "Was steht in unseren Artikeln? Füllen Sie die Lücken."
+text: "Nach 6 Jahren in der Firma beträgt die Kündigungsfrist [[2 Monate]] zum Monatsende, wenn der Arbeitgeber kündigt. Bei 8 Stunden Arbeit am Tag ist die Pause mindestens [[30 Minuten]] lang."
+ablenker: ["4 Wochen", "3 Monate", "45 Minuten", "15 Minuten"]
+erklaerung: "So steht es in den Artikeln „Kündigung einfach erklärt“ und „Arbeitszeit und Pausen“ – mit Quellen aus dem Gesetz."
+```
 
 ## Erklär's mir in drei Stufen {#stufen}
 

@@ -44,6 +44,13 @@ Top navigation, fixed at three items: **Start · EDV-Kurs · Artikel**.
   - A quick navigation shows these numbers: a bar at the bottom on phones, a list left of the text on wide screens.
     The class says "we are at 7" and everyone taps 7.
   - Write no numbers or "Teil n" into lesson headings. In the text, refer to sections as "Abschnitt n".
+  - **Progress per section** (`lektion.js`, kept in the visitor's browser) counts:
+    - ticked steps;
+    - solved exercises;
+    - the evaluated test;
+    - for sections with none of these, an "Abschnitt erledigt?" button.
+  - The bar at the top shows the section on screen and the whole lesson. Each number in the quick navigation gets a
+    ring that turns green with ✓ when its section is done.
 - `/artikel/`: search (title, keywords, summary, full text; umlaut-insensitive; full texts load from
   `suchindex.json` on the first search), topic filter, articles grouped by the day they were added (latest two open;
   no weekday, no "Kurstag"), parts of a series kept together with a "Teil n von m" badge.
@@ -116,10 +123,15 @@ erklaerung: "Shown when everything is right."
 ````
 
 - `typ: reihenfolge` takes `schritte:`, 3 to 8 steps in the right order.
+- `typ: luecken` takes `text:` with `[[answers]]` as gaps, plus `ablenker:`, up to 6 wrong words. Every gap holds
+  one word.
+- `typ: markieren` takes `text:`, in which the `[[right parts]]` must be tapped; every other word can be tapped too.
+- Make exercises progressively harder: plausible wrong cards, distractor words, tricky parts to mark.
 - Learners drag with mouse or finger, or tap a card and then a box. Steps also move with arrow buttons.
 - "Prüfen" marks each card or step right or wrong. When everything is right, confetti appears.
 - Without JavaScript, "Lösung anzeigen" shows the answer. Nothing is stored.
-- Articles have their exercise right before "Wörter". Exercises use only facts from the text.
+- Articles have their exercises right before "Wörter". Exercises use only facts from the text.
+- In lessons, put an exercise in the section it practises, so it counts for that section's progress.
 
 **Animations.** Content below the first screen slides in, quiz answers pop or shake, and top results get confetti.
 Everything respects "reduce motion" and uses only opacity and transforms.

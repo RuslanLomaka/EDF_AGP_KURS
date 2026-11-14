@@ -103,6 +103,7 @@
           beantwortet++;
           loese(f, feld, knoepfe, rueck);
           zeigeStand();
+          if (beantwortet === fragen.length) box.dispatchEvent(new CustomEvent('quiz-fertig', { bubbles: true }));
         });
         return knopf;
       });
@@ -145,6 +146,7 @@
       ergebnis.scrollIntoView({ block: 'start' });
       ergebnis.focus({ preventScroll: true });
       if (ergebnis.dataset.anteil >= 0.8 && window.kursKonfetti) window.kursKonfetti(ergebnis);
+      box.dispatchEvent(new CustomEvent('quiz-fertig', { bubbles: true }));
     });
     box.append(stand, warnung, auswerten, neu);
     zeigeStand();

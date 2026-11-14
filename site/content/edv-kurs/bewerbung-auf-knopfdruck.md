@@ -148,6 +148,14 @@ In den grauen Spalten stehen **Formeln**. Klicken Sie in eine graue Zelle – ob
 
 </details>
 
+```uebung
+typ: luecken
+frage: "Ergänzen Sie die Regeln für eine gute Adressliste."
+text: "In Excel ist jede [[Zeile]] eine Firma und jede [[Spalte]] eine Information. In Zeile 1 stehen die [[Überschriften]]. Zwischen den Firmen gibt es keine [[leeren Zeilen]], und die PLZ speichern Sie als [[Text]]."
+ablenker: ["Zelle", "Seite", "Zahl", "Formeln"]
+erklaerung: "Eine Zeile pro Firma, eine Spalte pro Information, Überschriften in Zeile 1, keine Lücken – und die PLZ als Text, sonst verschwindet die Null vorne."
+```
+
 ::: info
 **Tipp für Ihre Bewerbungen:** Die Spalten **Beworben_am** und **Status** helfen beim Nachweis Ihrer Bewerbungen, z. B. für das Jobcenter. Mit **Daten → Filtern** sehen Sie zum Beispiel nur die offenen Bewerbungen.
 :::

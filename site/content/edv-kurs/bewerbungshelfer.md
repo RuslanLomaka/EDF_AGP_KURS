@@ -158,6 +158,13 @@ Sagen Sie das blaue Windows-Fenster vorher an, damit niemand erschrickt. Windows
 5. Speichern mit **Strg + S**. Für eine E-Mail-Bewerbung: **Datei** → **Speichern unter** → Dateityp **PDF**.
 :::
 
+```uebung
+typ: markieren
+frage: "Welche Teile dieses Dateinamens holt das Programm aus Excel? Tippen Sie sie an."
+text: "Anschreiben [[Max Mustermann]] – [[Muster Logistik GmbH]] ([[Lagerhelfer]]).docx"
+erklaerung: "Name, Firma und Stelle kommen aus der Excel-Liste. „Anschreiben“ und „.docx“ sind immer gleich."
+```
+
 ::: info
 **Später: eine neue Stelle**
 

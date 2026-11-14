@@ -169,6 +169,14 @@ gruppen:
 erklaerung: "Verhalten: Die Person hat etwas falsch gemacht. Person: Der Grund liegt in der Person. Betrieb: Der Grund liegt in der Firma."
 ```
 
+```uebung
+typ: luecken
+frage: "Ergänzen Sie die Regeln. Nicht alle Wörter passen."
+text: "Das Kündigungsschutzgesetz gilt, wenn Sie länger als [[6 Monate]] in der Firma arbeiten und die Firma mehr als [[10 Beschäftigte]] hat. Gegen eine Kündigung können Sie innerhalb von [[3 Wochen]] beim Arbeitsgericht klagen."
+ablenker: ["12 Monate", "5 Beschäftigte", "4 Wochen"]
+erklaerung: "6 Monate, mehr als 10 Beschäftigte und 3 Wochen für die Klage – diese drei Zahlen sollten Sie kennen."
+```
+
 ## Wörter {#woerter}
 
 **der Einschnitt, die Einschnitte**

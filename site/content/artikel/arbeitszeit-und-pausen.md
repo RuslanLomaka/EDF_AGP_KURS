@@ -171,6 +171,14 @@ gruppen:
 erklaerung: "Bis 6 Stunden: keine Pflicht-Pause. Mehr als 6 bis 9 Stunden: 30 Minuten. Mehr als 9 Stunden: 45 Minuten."
 ```
 
+```uebung
+typ: luecken
+frage: "Ergänzen Sie die Zahlen. Nicht alle passen."
+text: "Pro Werktag arbeiten Sie normal höchstens [[8 Stunden]], pro Woche höchstens [[48 Stunden]]. Nach Feierabend haben Sie mindestens [[11 Stunden]] Ruhe."
+ablenker: ["10 Stunden", "40 Stunden", "9 Stunden"]
+erklaerung: "8 Stunden am Tag (bis 10 nur mit Ausgleich), 48 Stunden pro Woche von Montag bis Samstag, 11 Stunden Ruhe."
+```
+
 ## Wörter {#woerter}
 
 **das Arbeitszeitgesetz (ArbZG)**

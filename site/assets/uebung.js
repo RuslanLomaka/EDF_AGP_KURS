@@ -1,6 +1,8 @@
-// Exercises built from ```uebung blocks: "zuordnen" (cards into boxes) and "reihenfolge" (steps in order).
-// Works with mouse and finger (drag), and by tapping (card, then box) or with the arrow buttons.
-// Nothing is stored or sent anywhere.
+// Exercises built from ```uebung blocks:
+//   "zuordnen"    cards into boxes          "luecken"    words into the gaps of a text (some words do not fit)
+//   "reihenfolge" steps into the right order "markieren"  tap the right words in a text
+// Works with mouse and finger (drag), by tapping (card, then box or gap) and with arrow buttons.
+// A solved exercise sends the event "uebung-geloest" (lessons count it as progress). Nothing is sent anywhere.
 (function () {
   const mische = liste => {
     const neu = liste.slice();
@@ -16,25 +18,29 @@
     p.textContent = text;
     return p;
   };
-  // result line under an exercise; all right: explanation + confetti
-  const auswerten = (el, ok, gesamt) => {
+  const melden = (el, text) => {
     const ergebnis = el.querySelector('.ue-ergebnis');
     ergebnis.textContent = '';
-    if (ok === gesamt) {
-      ergebnis.append(absatz('ok', 'Alles richtig – super!'));
-      if (el.dataset.erklaerung) ergebnis.append(absatz('ue-erklaerung', el.dataset.erklaerung));
-      if (window.kursKonfetti) window.kursKonfetti(el);
-    } else {
-      ergebnis.append(absatz('falsch', ok + ' von ' + gesamt + ' richtig. Die rot markierten noch einmal verschieben und erneut prüfen.'));
-    }
+    ergebnis.append(absatz('falsch', text));
+  };
+  // all right: explanation, confetti and the event for the lesson progress
+  const geloest = el => {
+    const ergebnis = el.querySelector('.ue-ergebnis');
+    ergebnis.textContent = '';
+    ergebnis.append(absatz('ok', 'Alles richtig – super!'));
+    if (el.dataset.erklaerung) ergebnis.append(absatz('ue-erklaerung', el.dataset.erklaerung));
+    if (window.kursKonfetti) window.kursKonfetti(el);
+    el.dispatchEvent(new CustomEvent('uebung-geloest', { bubbles: true }));
   };
 
-  function zuordnen(el) {
-    const loesung = JSON.parse(el.dataset.loesung);
+  // "zuordnen" and "luecken": cards that go into places (boxes hold many cards, gaps hold one)
+  function karten(el, luecken) {
     const pool = el.querySelector('.ue-pool');
-    const ziele = [...el.querySelectorAll('.ue-ziel')];
     const karten = [...el.querySelectorAll('.ue-karte')];
+    const plaetze = [...el.querySelectorAll(luecken ? '.ue-luecke' : '.ue-ziel')];
+    const ablage = platz => (luecken ? platz : platz.querySelector('.ue-ablage'));
     const ergebnis = el.querySelector('.ue-ergebnis');
+    const loesung = luecken ? null : JSON.parse(el.dataset.loesung);
     let gewaehlt = null;
 
     const waehle = k => {
@@ -45,23 +51,27 @@
     };
     const zuruecksetzen = () => {
       karten.forEach(k => k.classList.remove('richtig', 'falsch'));
+      plaetze.forEach(p => p.classList.remove('richtig', 'falsch'));
       ergebnis.textContent = '';
     };
-    const lege = (k, ablage) => {
-      ablage.append(k);
+    const lege = (k, ziel) => {
+      if (luecken && ziel !== pool) {  // a gap holds one word: the old one goes back
+        const alt = ziel.querySelector('.ue-karte');
+        if (alt && alt !== k) pool.append(alt);
+      }
+      ziel.append(k);
       k.classList.remove('ue-gelandet');
       void k.offsetWidth;  // restart the landing animation
       k.classList.add('ue-gelandet');
       waehle(null);
       zuruecksetzen();
     };
-    const ablageUnter = (x, y) => {
+    const zielUnter = (x, y) => {
       const t = document.elementFromPoint(x, y);
       if (!t) return null;
-      const z = t.closest('.ue-ziel');
-      if (z && el.contains(z)) return z.querySelector('.ue-ablage');
-      const p = t.closest('.ue-pool');
-      return p === pool ? pool : null;
+      const platz = t.closest(luecken ? '.ue-luecke' : '.ue-ziel');
+      if (platz && el.contains(platz)) return ablage(platz);
+      return t.closest('.ue-pool') === pool ? pool : null;
     };
 
     karten.forEach(k => {
@@ -87,8 +97,8 @@
           ev.preventDefault();
           geist.style.left = ev.clientX + 'px';
           geist.style.top = ev.clientY + 'px';
-          const a = ablageUnter(ev.clientX, ev.clientY);
-          ziele.forEach(z => z.classList.toggle('ue-drueber', Boolean(a) && z.contains(a)));
+          const z = zielUnter(ev.clientX, ev.clientY);
+          plaetze.forEach(p => p.classList.toggle('ue-drueber', Boolean(z) && (p === z || p.contains(z))));
         };
         const ende = ev => {
           document.removeEventListener('pointermove', bewege);
@@ -97,27 +107,37 @@
           if (!geist) return;  // just a tap: the click handler selects the card
           geist.remove();
           k.classList.remove('ue-zieht');
-          ziele.forEach(z => z.classList.remove('ue-drueber'));
+          plaetze.forEach(p => p.classList.remove('ue-drueber'));
           k.dataset.gezogen = 'ja';  // swallow the click that may follow the drop
           setTimeout(() => { delete k.dataset.gezogen; }, 0);
-          const a = ev.type === 'pointerup' ? ablageUnter(ev.clientX, ev.clientY) : null;
-          if (a) lege(k, a);
+          const z = ev.type === 'pointerup' ? zielUnter(ev.clientX, ev.clientY) : null;
+          if (z) lege(k, z);
         };
         document.addEventListener('pointermove', bewege);
         document.addEventListener('pointerup', ende);
         document.addEventListener('pointercancel', ende);
       });
     });
-    ziele.forEach(z => z.addEventListener('click', () => { if (gewaehlt) lege(gewaehlt, z.querySelector('.ue-ablage')); }));
+    plaetze.forEach(p => p.addEventListener('click', () => { if (gewaehlt) lege(gewaehlt, ablage(p)); }));
     pool.addEventListener('click', () => { if (gewaehlt && gewaehlt.parentElement !== pool) lege(gewaehlt, pool); });
 
     el.querySelector('.ue-pruefen').addEventListener('click', () => {
-      const rest = pool.querySelectorAll('.ue-karte').length;
-      if (rest) {
-        ergebnis.textContent = '';
-        ergebnis.append(absatz('falsch', 'Noch ' + rest + (rest === 1 ? ' Karte' : ' Karten') + ' übrig. Bitte erst alle verteilen.'));
-        return;
+      if (luecken) {
+        const leer = plaetze.filter(p => !p.querySelector('.ue-karte')).length;
+        if (leer) return melden(el, 'Noch ' + leer + (leer === 1 ? ' Lücke' : ' Lücken') + ' leer. Bitte erst alle füllen.');
+        let ok = 0;
+        plaetze.forEach(p => {
+          const k = p.querySelector('.ue-karte');
+          const richtig = k.textContent.trim() === p.dataset.wort;
+          k.classList.toggle('richtig', richtig);
+          k.classList.toggle('falsch', !richtig);
+          if (richtig) ok++;
+        });
+        return ok === plaetze.length ? geloest(el)
+          : melden(el, ok + ' von ' + plaetze.length + ' Lücken richtig. Die roten Wörter passen nicht – tauschen und erneut prüfen.');
       }
+      const rest = pool.querySelectorAll('.ue-karte').length;
+      if (rest) return melden(el, 'Noch ' + rest + (rest === 1 ? ' Karte' : ' Karten') + ' übrig. Bitte erst alle verteilen.');
       let ok = 0;
       karten.forEach(k => {
         const z = k.closest('.ue-ziel');
@@ -126,7 +146,8 @@
         k.classList.toggle('falsch', !richtig);
         if (richtig) ok++;
       });
-      auswerten(el, ok, karten.length);
+      return ok === karten.length ? geloest(el)
+        : melden(el, ok + ' von ' + karten.length + ' richtig. Die rot markierten noch einmal verschieben und erneut prüfen.');
     });
     const neu = () => {
       waehle(null);
@@ -151,7 +172,6 @@
       folge.forEach(s => liste.append(s));
       zuruecksetzen();
     };
-
     schritte.forEach(s => {
       s.querySelector('.ue-hoch').addEventListener('click', e => {
         if (s.previousElementSibling) liste.insertBefore(s, s.previousElementSibling);
@@ -188,7 +208,6 @@
         document.addEventListener('pointercancel', ende);
       });
     });
-
     el.querySelector('.ue-pruefen').addEventListener('click', () => {
       let ok = 0;
       [...liste.children].forEach((s, i) => {
@@ -197,14 +216,53 @@
         s.classList.toggle('falsch', !richtig);
         if (richtig) ok++;
       });
-      auswerten(el, ok, schritte.length);
+      return ok === schritte.length ? geloest(el)
+        : melden(el, ok + ' von ' + schritte.length + ' an der richtigen Stelle. Die roten noch einmal verschieben und erneut prüfen.');
     });
     el.querySelector('.ue-neu').addEventListener('click', neu);
     neu();
   }
 
+  function markieren(el) {
+    const woerter = [...el.querySelectorAll('.ue-wort')];
+    const ergebnis = el.querySelector('.ue-ergebnis');
+    const zuruecksetzen = () => {
+      woerter.forEach(w => w.classList.remove('richtig', 'falsch', 'verpasst'));
+      ergebnis.textContent = '';
+    };
+    woerter.forEach(w => {
+      w.setAttribute('aria-pressed', 'false');
+      w.addEventListener('click', () => {
+        w.setAttribute('aria-pressed', String(w.getAttribute('aria-pressed') !== 'true'));
+        zuruecksetzen();
+      });
+    });
+    el.querySelector('.ue-pruefen').addEventListener('click', () => {
+      let gefunden = 0, zuviel = 0, gesamt = 0;
+      woerter.forEach(w => {
+        const ziel = w.dataset.z === '1', an = w.getAttribute('aria-pressed') === 'true';
+        if (ziel) gesamt++;
+        if (ziel && an) gefunden++;
+        if (!ziel && an) zuviel++;
+        w.classList.toggle('richtig', ziel && an);
+        w.classList.toggle('falsch', !ziel && an);
+        w.classList.toggle('verpasst', ziel && !an);
+      });
+      if (gefunden === gesamt && !zuviel) return geloest(el);
+      return melden(el, gefunden + ' von ' + gesamt + ' gefunden' + (zuviel ? ', ' + zuviel + ' zu viel markiert' : '')
+        + '. Gestrichelt: noch nicht gefunden. Rot: passt nicht.');
+    });
+    el.querySelector('.ue-neu').addEventListener('click', () => {
+      woerter.forEach(w => w.setAttribute('aria-pressed', 'false'));
+      zuruecksetzen();
+    });
+  }
+
   document.querySelectorAll('.uebung').forEach(el => {
     el.classList.add('ue-aktiv');
-    (el.dataset.typ === 'reihenfolge' ? reihenfolge : zuordnen)(el);
+    const typ = el.dataset.typ;
+    if (typ === 'reihenfolge') reihenfolge(el);
+    else if (typ === 'markieren') markieren(el);
+    else karten(el, typ === 'luecken');
   });
 })();

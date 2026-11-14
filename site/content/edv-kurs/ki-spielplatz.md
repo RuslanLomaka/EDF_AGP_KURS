@@ -136,6 +136,13 @@ gruppen:
 erklaerung: "Erfundene Beispiele und allgemeine Fragen sind in Ordnung. Echte Daten – auch von anderen – bleiben draußen."
 ```
 
+```uebung
+typ: markieren
+frage: "Dieser Prompt ist gefährlich. Tippen Sie alle persönlichen Daten an."
+text: "Hallo KI, ich bin [[Olga Petrenko]] und [[am 3. März 1971 geboren]]. Ich wohne in der [[Lindenstraße 12 in Husum]]. Schreib mir eine Bewerbung als Verkäuferin für die Firma Muster Mode GmbH. Meine Handynummer ist [[0171 2345678]]. Meine Chefin [[Frau Becker]] war immer unfreundlich zu mir."
+erklaerung: "Name, Geburtsdatum, Adresse und Handynummer gehören nicht in die KI – und auch nicht der Name Ihrer Chefin. Der Beruf und eine erfundene Firma sind kein Problem."
+```
+
 ## Der Wettbewerb {#wettbewerb}
 
 <p class="bild"><img src="/edv-kurs/bilder/wettbewerb.svg" alt="So funktioniert der Wettbewerb: 1. 15 Minuten mit der KI ausprobieren. 2. Das beste Ergebnis laut vorlesen. 3. Die Gruppe klatscht – der lauteste Applaus bekommt Punkte. 4. Am Ende gewinnt die Person mit den meisten Punkten die Goldene Gurke." width="400" height="400"></p>
@@ -303,6 +310,20 @@ Warum mussten Pinguine im Mittelalter Steuern zahlen? Erkläre es kurz und nenne
 ::: profi
 Bringen Sie die KI dazu, ein historisches Ereignis zu erfinden – mit Quellen. Prüfen Sie dann im Internet: Gibt es diese Quellen?
 :::
+
+```uebung
+typ: zuordnen
+frage: "Warnzeichen oder nicht? Ordnen Sie zu."
+gruppen:
+  "Warnzeichen: genau prüfen!":
+    - "Schon die Frage ist falsch (Pinguine zahlen Steuern)."
+    - "Die KI nennt ein Buch, das Sie nirgends finden."
+    - "Sehr genaue Zahlen, aber keine Quelle."
+  "Kein Warnzeichen":
+    - "Die Antwort stimmt mit unserem Artikel überein."
+    - "Die KI schreibt: Das weiß ich nicht sicher."
+erklaerung: "Eine falsche Frage, unauffindbare Quellen und genaue Zahlen ohne Beleg sind typische Zeichen für erfundene Antworten. Wenn die KI zugibt, dass sie unsicher ist, ist das ehrlich – kein Warnzeichen."
+```
 
 ## Eskalation {#eskalation}
 

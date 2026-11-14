@@ -202,6 +202,14 @@ Beim Teilen entscheiden Sie, **wer** die Datei sehen darf und **was** diese Pers
 **Einen ganzen Ordner teilen:** In Google Drive mit der rechten Maustaste auf den Ordner klicken → **Freigeben**. Dann sehen die anderen alle Dateien im Ordner.
 :::
 
+```uebung
+typ: luecken
+frage: "Welche Rolle passt? Ziehen Sie die Rollen in die Lücken."
+text: "Ihre Nachbarin soll Ihren Aushang nur lesen: Sie wird [[Betrachterin]]. Ihr Berater soll Tipps an den Rand schreiben, aber nichts ändern: Er wird [[Kommentator]]. Ihr Mann soll die Einkaufsliste selbst ergänzen: Er wird [[Mitbearbeiter]]."
+ablenker: ["Besucher", "Leser", "Gast"]
+erklaerung: "Betrachter lesen nur. Kommentatoren schreiben Kommentare und Vorschläge. Mitbearbeiter dürfen alles ändern."
+```
+
 ::: achtung
 **Vorsicht mit Links:** Bei „Jeder, der über den Link verfügt“ kann **jeder** die Datei öffnen, der den Link bekommt – auch Fremde. Nutzen Sie das nur für Dateien ohne private Daten.
 :::

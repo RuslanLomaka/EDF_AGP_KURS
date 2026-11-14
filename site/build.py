@@ -167,11 +167,14 @@ def uebungen_einsetzen(html_text, fertig):
 
 
 def uebung_html(path, nr, d):
-    """typ "zuordnen": cards into boxes ("gruppen": {box: [cards]}); typ "reihenfolge": "schritte" in the right order."""
+    """typ "zuordnen": cards into boxes ("gruppen": {box: [cards]}); "reihenfolge": "schritte" in the right order;
+    "luecken": "text" with [[gaps]] plus wrong words in "ablenker"; "markieren": "text" where the [[right parts]]
+    must be tapped."""
     def text(x):
         return isinstance(x, str) and x.strip()
-    if not isinstance(d, dict) or d.get("typ") not in ("zuordnen", "reihenfolge") or not text(d.get("frage")):
-        fail(path, f"exercise {nr}: needs 'typ' (zuordnen or reihenfolge) and 'frage'")
+    if not isinstance(d, dict) or d.get("typ") not in ("zuordnen", "reihenfolge", "luecken", "markieren") \
+            or not text(d.get("frage")):
+        fail(path, f"exercise {nr}: needs 'typ' (zuordnen, reihenfolge, luecken or markieren) and 'frage'")
     erkl = d.get("erklaerung", "")
     if erkl and not text(erkl):
         fail(path, f"exercise {nr}: 'erklaerung' must be text")
@@ -190,6 +193,36 @@ def uebung_html(path, nr, d):
         inner = f'<div class="ue-pool">{pool}</div><div class="ue-ziele">{ziele}</div>'
         hinweis = "Ziehen Sie jede Karte in das passende Feld. Oder: erst auf eine Karte tippen, dann auf ein Feld."
         loesung_html = "<ul>" + "".join(f"<li><strong>{esc(g)}:</strong> {esc(', '.join(k))}</li>" for g, k in gruppen.items()) + "</ul>"
+    elif d["typ"] in ("luecken", "markieren"):
+        if not text(d.get("text")):
+            fail(path, f"exercise {nr}: needs 'text' with [[...]] around the answers")
+        teile = re.split(r"\[\[(.+?)\]\]", d["text"])
+        antworten = teile[1::2]
+        if not 1 <= len(antworten) <= 10 or len(d["text"].split()) > 120:
+            fail(path, f"exercise {nr}: 'text' needs 1 to 10 [[answers]] and at most 120 words")
+        loesung = antworten
+        if d["typ"] == "luecken":
+            ablenker = d.get("ablenker") or []
+            if not isinstance(ablenker, list) or len(ablenker) > 6 or not all(text(x) for x in ablenker):
+                fail(path, f"exercise {nr}: 'ablenker' must be a list of up to 6 wrong words")
+            satz = "".join(esc(x) if i % 2 == 0 else f'<span class="ue-luecke" data-wort="{esc(x)}"></span>'
+                           for i, x in enumerate(teile))
+            pool = "".join(f'<button type="button" class="ue-karte" data-i="{i}">{esc(x)}</button>'
+                           for i, x in enumerate(antworten + ablenker))
+            inner = f'<p class="ue-satz">{satz}</p><div class="ue-pool">{pool}</div>'
+            hinweis = ("Ziehen Sie die passenden Wörter in die Lücken. Oder: erst ein Wort antippen, dann eine Lücke. "
+                       "Nicht alle Wörter passen.")
+            loesung_html = "<p>" + "".join(esc(x) if i % 2 == 0 else f"<strong>{esc(x)}</strong>"
+                                           for i, x in enumerate(teile)) + "</p>"
+        else:
+            def woerter(abschnitt):
+                return "".join(" " if re.fullmatch(r"\s+", w) else f'<button type="button" class="ue-wort" data-z="0">{esc(w)}</button>'
+                               for w in re.split(r"(\s+)", abschnitt) if w)
+            satz = "".join(woerter(x) if i % 2 == 0 else f'<button type="button" class="ue-wort" data-z="1">{esc(x)}</button>'
+                           for i, x in enumerate(teile))
+            inner = f'<p class="ue-markiertext">{satz}</p>'
+            hinweis = "Tippen Sie alles an, was passt. Noch einmal tippen nimmt die Markierung weg."
+            loesung_html = "<ul>" + "".join(f"<li>{esc(x)}</li>" for x in antworten) + "</ul>"
     else:
         schritte = d.get("schritte")
         if not isinstance(schritte, list) or not 3 <= len(schritte) <= 8 or not all(text(x) for x in schritte):
@@ -488,7 +521,7 @@ def build_rechtliches(b):
 <h2>5. Speicherung in Ihrem Browser</h2>
 <p>Zwei kleine Angaben werden nur in Ihrem Browser gespeichert und nie an uns übertragen:</p>
 <ul>
-<li><strong>Fortschritt in Lektionen</strong> (welche Schritte Sie abgehakt haben) im „Local Storage“ Ihres Browsers. Sie können ihn auf der Lektionsseite mit „Alle Haken entfernen“ oder in den Einstellungen Ihres Browsers löschen.</li>
+<li><strong>Fortschritt in Lektionen</strong> (welche Schritte Sie abgehakt, welche Übungen Sie gelöst und welche Abschnitte Sie als erledigt markiert haben) im „Local Storage“ Ihres Browsers. Sie können ihn auf der Lektionsseite mit „Fortschritt zurücksetzen“ oder in den Einstellungen Ihres Browsers löschen.</li>
 <li><strong>Ob Sie den kurzen Hinweis heute schon gesehen haben</strong>: nur das heutige Datum, im „Local Storage“. An einem neuen Tag erscheint der Hinweis einmal wieder.</li>
 </ul>
 <p>Diese Speicherung ist für die Funktionen, die Sie selbst nutzen, unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG). Suche und Quiz speichern nichts.</p>
@@ -511,7 +544,7 @@ def build_hinweis():
 <ul>{punkte}</ul>
 <h2>Was in Ihrem Browser bleibt</h2>
 <ul>
-<li><strong>Haken in Lektionen:</strong> Ihr Fortschritt wird nur auf Ihrem Gerät gespeichert (im Speicher Ihres Browsers). Sie können ihn mit „Alle Haken entfernen“ oder über die Einstellungen Ihres Browsers löschen.</li>
+<li><strong>Fortschritt in Lektionen:</strong> Haken, gelöste Übungen und erledigte Abschnitte werden nur auf Ihrem Gerät gespeichert (im Speicher Ihres Browsers). Sie können ihn mit „Fortschritt zurücksetzen“ oder über die Einstellungen Ihres Browsers löschen.</li>
 <li><strong>Der kurze Hinweis unten auf der Seite:</strong> Ihr Browser merkt sich nur das heutige Datum, damit der Hinweis einmal am Tag erscheint.</li>
 <li><strong>Suche und Quiz:</strong> Es wird nichts gespeichert.</li>
 </ul>
@@ -1028,6 +1061,7 @@ def write_lesson(l, lehrer, body, ziele, downloads, lehrkraft, nav):
 {ziele}
 {downloads}
 <div class="fortschritt" data-lektion="{l['slug']}" hidden>
+  <p class="fs-abschnitt"><span class="fs-nr"></span><span class="fs-titel"></span><span class="fs-zahl"></span></p>
   <div class="balken"><span></span></div>
   <p class="zahl"></p>
 </div>
@@ -1037,7 +1071,7 @@ def write_lesson(l, lehrer, body, ziele, downloads, lehrkraft, nav):
 {body}
 </article>
 {quiz}
-<p class="zuruecksetzen" hidden><button type="button" class="reset">Alle Haken entfernen</button></p>
+<p class="zuruecksetzen" hidden><button type="button" class="reset">Fortschritt zurücksetzen</button></p>
 {lehrkraft}
 {nav}"""
     skripte = ["lektion.js", "quiz.js"] if l["quiz"] else ["lektion.js"]
