@@ -465,6 +465,16 @@ main a.btn { color: #fff; }
 .einzeln { margin: 0.4rem 0 0.2rem; }
 .fortschritt { position: sticky; top: 0; z-index: 2; background: var(--bg); padding: 0.55rem 0; margin: 0.5rem 0 1rem; border-bottom: 1px solid var(--line); }
 .fortschritt .zahl { margin: 0.3rem 0 0; font-size: 0.82rem; color: var(--muted); }
+/* teacher view: what the plan says right now, and a timer */
+.jetzt { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem 0.6rem; margin: 0 0 0.45rem; padding: 0.35rem 0.6rem;
+  border-radius: 10px; background: var(--notiz-bg); border: 1px solid var(--notiz-line); font-size: 0.85rem; }
+.jetzt-text { flex: 1 1 14rem; margin: 0; min-width: 0; }
+.jetzt-knoepfe { display: flex; gap: 0.35rem; margin: 0; }
+.jetzt button { font: inherit; font-weight: 700; min-height: 2.75rem; padding: 0.2rem 0.7rem; border-radius: 999px; cursor: pointer;
+  color: var(--notiz-line); background: var(--card); border: 1.5px solid var(--notiz-line); }
+.jetzt button[hidden] { display: none; }
+.jetzt.um { animation: blinken 1s steps(2) infinite; }
+@keyframes blinken { 50% { background: var(--warn-bg); border-color: var(--warn-line); } }
 .fs-legende { font-size: 0.88rem; color: var(--muted); background: var(--card); border: 1px dashed var(--line); border-radius: 12px; padding: 0.5rem 0.75rem; margin: 0.6rem 0 0; }
 @media (max-width: 40rem) {  /* phones: one thin row, so the text keeps the screen */
   .fortschritt { padding: 0.35rem 0; margin-bottom: 0.6rem; }

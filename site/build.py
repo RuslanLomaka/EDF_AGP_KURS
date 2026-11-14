@@ -1078,6 +1078,25 @@ def build_lessons(lessons):
         shutil.copytree(bilder, DIST / "edv-kurs" / "bilder")
 
 
+def zeitplan(body_html):
+    """Teacher view: the rows "| 8:30 | … |" of the first timetable in a teacher note, for the "Jetzt" bar."""
+    for notiz in re.findall(r'<div class="notiz">(.*?)</div>', body_html, re.S):
+        zeilen = re.findall(r'<tr[^>]*>\s*<td[^>]*>\s*(\d{1,2}:\d{2})\s*</td>\s*<td[^>]*>(.*?)</td>', notiz, re.S)
+        if len(zeilen) >= 2:
+            return [[t, " ".join(re.sub(r"<[^>]+>", "", html.unescape(x)).split())] for t, x in zeilen]
+    return []
+
+
+def jetzt_leiste(plan):
+    if not plan:
+        return ""
+    daten = esc(json.dumps(plan, ensure_ascii=False))
+    return (f'<div class="jetzt" data-plan="{daten}"><p class="jetzt-text">Zeitplan wird geladen …</p>'
+            '<p class="jetzt-knoepfe"><button type="button" class="jetzt-start" hidden>▶ Start</button>'
+            '<button type="button" class="jetzt-timer" data-min="15">⏱ 15 Min.</button>'
+            '<button type="button" class="jetzt-timer" data-min="5">5 Min.</button></p></div>')
+
+
 def write_lesson(l, lehrer, body, ziele, downloads, lehrkraft, nav):
     body, eintraege, n = nummeriere(body)
     quiz = ""
@@ -1097,6 +1116,7 @@ wenn der Abschnitt fertig ist. Alles bleibt nur auf diesem Gerät.
 <strong>Fertig oder Hilfe nötig?</strong> Tippen Sie auf die <strong>Ampel</strong> (am Handy unten links, am PC links oben)
 und halten Sie das Handy hoch.</p>
 <div class="fortschritt" data-lektion="{l['slug']}" hidden>
+  {jetzt_leiste(zeitplan(body)) if lehrer else ""}
   <p class="fs-abschnitt"><span class="fs-nr"></span><span class="fs-titel"></span><span class="fs-zahl"></span></p>
   <div class="balken"><span></span></div>
   <p class="zahl"></p>
@@ -1111,6 +1131,8 @@ und halten Sie das Handy hoch.</p>
 {lehrkraft}
 {nav}"""
     skripte = ["lektion.js", "quiz.js"] if l["quiz"] else ["lektion.js"]
+    if lehrer and 'class="jetzt"' in main:
+        skripte = [*skripte, "jetzt.js"]
     if lehrer:
         main = lehrer_banner(l["url"], body.count('<div class="notiz">')) + "\n" + lehrer_links(main)
         write(f"edv-kurs/{l['slug']}/{LEHRER}/index.html",
