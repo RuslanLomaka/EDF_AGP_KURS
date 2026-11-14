@@ -42,7 +42,7 @@ Heute gibt es keinen Wettbewerb. Lassen Sie stattdessen nach jeder Aufgabe 2 bis
 
 Alles, was wir heute mit KI machen, dient **nur dem Lernen**. Wir geben **keine persönlichen Daten** ein: keinen Lebenslauf, keine Namen, keine Adressen, keine Telefonnummern, keine Daten über andere Menschen. Alle Briefe und Personen auf dieser Seite sind **erfunden**. Wir speichern nichts.
 
-Die Nutzung ist **freiwillig**. Ein Konto bei einem KI-Anbieter ist **Ihr privates Konto**, auf Ihre eigene Verantwortung. Die Werkzeuge finden Sie in [Lektion 4](/edv-kurs/ki-spielplatz/#werkzeuge).
+Wir melden uns wie gestern mit dem **Google-Konto** an. Die Nutzung ist **freiwillig** und erfolgt mit **Ihrem privaten Konto**, auf Ihre eigene Verantwortung. Die Werkzeuge und die Anmeldung finden Sie in [Lektion 4](/edv-kurs/ki-spielplatz/#start).
 :::
 
 ## Rückblick und der gute Prompt {#prompt}

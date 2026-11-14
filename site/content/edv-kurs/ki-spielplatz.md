@@ -28,7 +28,7 @@ ziele:
 | Uhrzeit | Was |
 |---|---|
 | 8:30 | Begrüßung, Hinweis, Regeln, Wettbewerb erklären |
-| 8:45 | Werkzeug öffnen, erster Prompt |
+| 8:45 | Alle melden sich bei Google an, öffnen ein KI-Werkzeug und schreiben den ersten Prompt |
 | 9:00 | Aufgaben 1 bis 4 (je 15 Min.) |
 | 10:00 | **Pause** bis 10:20 |
 | 10:20 | Aufgaben 5 bis 9 (je 15 Min.) |
@@ -42,7 +42,7 @@ Jede Aufgabe: 2 Min. erklären, 8 Min. ausprobieren, 5 Min. vorlesen und klatsch
 
 Alles, was wir heute mit KI machen, dient **nur dem Lernen und der Unterhaltung**. Wir geben **keine persönlichen Daten** ein: keinen Lebenslauf, keine Namen, keine Adressen, keine Telefonnummern, keine Daten über andere Menschen. Wir speichern nichts.
 
-Die Nutzung ist **freiwillig**. Ein Konto bei einem KI-Anbieter ist **Ihr privates Konto**, auf Ihre eigene Verantwortung.
+Wir melden uns mit unserem **Google-Konto** an. Bei „Mit Google anmelden“ bekommt der KI-Anbieter Ihren Namen und Ihre E-Mail-Adresse von Google. Die Nutzung ist **freiwillig** und erfolgt mit **Ihrem privaten Konto**, auf Ihre eigene Verantwortung.
 :::
 
 ## Die KI-Werkzeuge {#werkzeuge}
@@ -64,11 +64,11 @@ Eine **KI** (künstliche Intelligenz) zum Chatten funktioniert wie ein Chat mit 
 
 | Werkzeug | Adresse | Anmelden |
 |---|---|---|
-| Duck.ai (DuckDuckGo) | [duck.ai](https://duck.ai) | kein Konto nötig |
-| ChatGPT (OpenAI) | [chatgpt.com](https://chatgpt.com) | oft ohne Konto möglich, mehr mit kostenlosem Konto |
-| Claude (Anthropic) | [claude.ai](https://claude.ai) | kostenloses Konto, z. B. mit Google anmelden |
-| Gemini (Google) | [gemini.google.com](https://gemini.google.com) | mit Ihrem Google-Konto |
-| Le Chat (Mistral) | [chat.mistral.ai](https://chat.mistral.ai) | kostenloses Konto |
+| Gemini (Google) | [gemini.google.com](https://gemini.google.com) | direkt mit Ihrem Google-Konto |
+| ChatGPT (OpenAI) | [chatgpt.com](https://chatgpt.com) | „Mit Google anmelden“ |
+| Claude (Anthropic) | [claude.ai](https://claude.ai) | „Mit Google anmelden“ |
+| Le Chat (Mistral) | [chat.mistral.ai](https://chat.mistral.ai) | „Mit Google anmelden“ |
+| Duck.ai (DuckDuckGo) | [duck.ai](https://duck.ai) | kein Konto nötig – gut als Reserve |
 | Copilot (Microsoft) | [copilot.microsoft.com](https://copilot.microsoft.com) | oft ohne Konto möglich |
 
 ::: info
@@ -76,19 +76,33 @@ Eine **KI** (künstliche Intelligenz) zum Chatten funktioniert wie ein Chat mit 
 
 - Die kostenlosen Versionen haben ein **Limit**: Nach vielen Fragen müssen Sie warten. Dann nehmen Sie einfach ein anderes Werkzeug.
 - Die Anbieter ändern ihre Regeln oft (Stand: November 2026). Ihre Lehrkraft sagt Ihnen, womit wir heute arbeiten.
-- Am Schulungs-PC: Nutzen Sie ein **privates Fenster** (Inkognito, **Strg + Umschalt + N**). Dann bleibt nach dem Schließen nichts gespeichert.
+- Am Schulungs-PC: Nutzen Sie ein **privates Fenster** (Inkognito, **Strg + Umschalt + N**). Wenn Sie es schließen, sind Sie überall abgemeldet und nichts bleibt gespeichert.
 :::
 
 ## Los geht's {#start}
 
 <p class="zeit">15 Minuten</p>
 
+<p class="bild"><img src="/edv-kurs/bilder/google-anmelden.svg" alt="Einmal Google – viele KIs: Sie melden sich einmal mit Ihrem Google-Konto an. Danach klicken Sie bei ChatGPT, Claude, Gemini und Le Chat auf „Mit Google anmelden“. Am Ende melden Sie sich überall ab. Duck.ai geht ganz ohne Konto." width="400" height="400"></p>
+
+::: notiz
+**Zum Bild**
+
+1. „Sie haben alle schon ein Google-Konto. Das ist heute unser Schlüssel.“
+2. Oben: „Zuerst melden Sie sich einmal bei Google an.“
+3. Die Liste: „Bei ChatGPT, Claude und Le Chat klicken Sie dann auf **Mit Google anmelden**. Gemini gehört zu Google – dort sind Sie sofort drin.“
+4. Unten: „Und am Ende: überall abmelden. Im privaten Fenster reicht es, das Fenster zu schließen.“
+5. „Wer kein Google-Konto nutzen möchte, nimmt Duck.ai – ganz ohne Konto.“
+6. Frage: „Was bekommt ChatGPT von Google, wenn Sie ‚Mit Google anmelden‘ klicken?“ (Ihren Namen und Ihre E-Mail-Adresse – mehr nicht.)
+:::
+
 ::: schritte
-1. Öffnen Sie den Browser. Am Schulungs-PC am besten ein **privates Fenster**: **Strg + Umschalt + N**.
-2. Tippen Sie die Adresse des Werkzeugs in die Adresszeile, zum Beispiel **duck.ai**, und drücken Sie **Enter**.
-3. Wenn nötig: Melden Sie sich an, zum Beispiel mit Ihrem Google-Konto.
-4. Schreiben Sie Ihren ersten Prompt: **„Hallo! Erkläre mir in 3 Sätzen, was du kannst.“** Drücken Sie **Enter**.
-5. Lesen Sie die Antwort. Fertig – Sie haben mit einer KI gesprochen!
+1. Öffnen Sie ein **privates Fenster** im Browser: **Strg + Umschalt + N**.
+2. Tippen Sie **accounts.google.com** in die Adresszeile und melden Sie sich mit Ihrem **Google-Konto** an.
+3. Öffnen Sie das KI-Werkzeug, das Ihre Lehrkraft nennt, zum Beispiel **gemini.google.com** oder **claude.ai**.
+4. Klicken Sie auf **Anmelden** und dann auf **Mit Google anmelden** (oder „Continue with Google“). Wählen Sie Ihr Konto.
+5. Schreiben Sie Ihren ersten Prompt: **„Hallo! Erkläre mir in 3 Sätzen, was du kannst.“** Drücken Sie **Enter**.
+6. Lesen Sie die Antwort. Fertig – Sie haben mit einer KI gesprochen!
 :::
 
 ## Die Regeln {#regeln}
@@ -353,7 +367,7 @@ Sammeln Sie die Antworten kurz an der Tafel – besonders die Fehler der KI. Mor
 ::: info
 **Morgen:** In [Lektion 5](/edv-kurs/ki-im-alltag/) wird es nützlich: Briefe verstehen, E-Mails schreiben, ein Vorstellungsgespräch üben – und am Ende gibt es einen Abschlusstest.
 
-**Zum Schluss:** Melden Sie sich ab und schließen Sie das Browserfenster.
+**Zum Schluss:** Melden Sie sich überall ab – bei den KI-Werkzeugen und bei Google – und schließen Sie das Browserfenster.
 :::
 
 ## Wenn etwas nicht klappt {#hilfe}
@@ -387,8 +401,15 @@ Das ist eine Sicherheitsprüfung. Klicken Sie das Kästchen an oder lösen Sie d
 </details>
 
 <details>
-<summary>Ich weiß mein Passwort nicht mehr.</summary>
+<summary>Ich weiß mein Google-Passwort nicht mehr.</summary>
 
-Nehmen Sie ein Werkzeug ohne Konto, zum Beispiel **duck.ai**. Das Passwort können Sie später in Ruhe zu Hause zurücksetzen.
+Nehmen Sie heute ein Werkzeug ohne Konto, zum Beispiel **duck.ai**. Das Passwort setzen Sie später in Ruhe zu Hause zurück (auf der Google-Anmeldeseite: **Passwort vergessen?**).
+
+</details>
+
+<details>
+<summary>Google fragt nach einem Code auf dem Handy.</summary>
+
+Das ist die Bestätigung in zwei Schritten. Nehmen Sie Ihr Handy und tippen Sie auf **Ja** oder geben Sie den Code ein. Ohne Handy: Arbeiten Sie heute mit **duck.ai**.
 
 </details>
