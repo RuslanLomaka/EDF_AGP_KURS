@@ -567,6 +567,28 @@ h2 .nr { margin-right: 0.35rem; }
 .schnellnav a.fertig[aria-current="true"] .nr { box-shadow: 0 0 0 3px var(--ton); }
 .schnellnav a.fertig .titel::after { content: " ✓"; color: var(--ok); }
 .schnellnav-titel { margin: 0 0 0.4rem; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); }
+/* Stille Post with several AIs: three big steps, the 2nd and 3rd appear after copying */
+.stillepost { margin: 1.3rem 0; padding: 1rem 1.1rem; border: 2px solid var(--ton-rand); border-radius: var(--r);
+  background: linear-gradient(135deg, var(--ton-soft), var(--card) 75%); box-shadow: var(--shadow); }
+.sp-schritte { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.9rem; }
+.sp-schritt { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: 0.8rem; align-items: start; }
+.sp-nr { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 50%; background: var(--brand);
+  color: #fff; font-size: 1.2rem; font-weight: 800; }
+.sp-titel { margin: 0.35rem 0 0.4rem; font-size: 1.12rem; font-weight: 800; }
+.sp-schritt p:last-child { margin-bottom: 0; }
+.sp-kopieren, .sp-start { font-size: 1.1rem; min-height: 3.2rem; padding: 0.7rem 1.3rem; margin: 0; }
+.stillepost.sp-aktiv .sp-ohne-js { display: none; }
+.stillepost.sp-aktiv:not(.sp-kopiert) .sp-zwei, .stillepost.sp-aktiv:not(.sp-kopiert) .sp-drei { display: none; }
+.stillepost.sp-kopiert .sp-zwei, .stillepost.sp-kopiert .sp-drei { animation: pop 0.35s ease; }
+.stillepost.sp-kopiert .sp-kopieren { background: var(--ok); box-shadow: none; }
+.sp-sprachen { margin: 1rem 0 0.4rem; padding-top: 0.8rem; border-top: 1px dashed var(--ton-rand); font-size: 0.95rem; }
+.sp-wuerfeln { font: inherit; font-weight: 700; min-height: 2.75rem; padding: 0.3rem 0.9rem; margin-left: 0.3rem; border-radius: 999px;
+  border: 1.5px solid var(--ton-rand); background: var(--card); color: var(--ton); cursor: pointer; }
+.sp-wuerfeln[hidden], .sp-kopieren[hidden] { display: none; }
+.sp-ganz { margin-top: 0.6rem; }
+.sp-text { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 22rem; overflow-y: auto; margin: 0.5rem 0 0; padding: 0.7rem;
+  font-size: 0.82rem; line-height: 1.45; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+@media (max-width: 40rem) { .sp-kopieren, .sp-start { display: block; width: 100%; text-align: center; } }
 /* Hilfe-Ampel: button in the quick navigation, full-screen green or red */
 .ampel-knopf { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.3rem 0.7rem; font: inherit;
   font-size: 0.88rem; font-weight: 700; color: var(--fg); background: var(--card); border: 1.5px solid var(--line); border-radius: 999px; cursor: pointer; }

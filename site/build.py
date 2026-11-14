@@ -145,6 +145,7 @@ def split_notizen(path, body):
 
 
 UEBUNG_BLOCK = re.compile(r"^```uebung[ \t]*\n(.*?)^```[ \t]*$", re.M | re.S)
+STILLEPOST_BLOCK = re.compile(r"^```stillepost[ \t]*\n(.*?)^```[ \t]*$", re.M | re.S)
 
 
 def uebungen(path, body):
@@ -157,7 +158,58 @@ def uebungen(path, body):
             fail(path, f"exercise {len(fertig) + 1}: invalid YAML: {e}")
         fertig.append(uebung_html(path, len(fertig) + 1, daten))
         return f"<!--uebung-{len(fertig) - 1}-->"
-    return UEBUNG_BLOCK.sub(ersetze, body), fertig
+    def stillepost(m):
+        try:
+            daten = yaml.safe_load(m.group(1))
+        except yaml.YAMLError as e:
+            fail(path, f"stillepost: invalid YAML: {e}")
+        fertig.append(stillepost_html(path, daten))
+        return f"<!--uebung-{len(fertig) - 1}-->"
+    body = UEBUNG_BLOCK.sub(ersetze, body)
+    return STILLEPOST_BLOCK.sub(stillepost, body), fertig
+
+
+def stillepost_html(path, d):
+    """```stillepost: a one-click start for the translation telephone game. "vorlage" is the prompt for the game
+    leader (Gemini) with the placeholders {1}, {2}, {3}; "gruppen" are three language families. stillepost.js picks
+    one language from each family in a random order, fills them in and copies the prompt; then the link "start"
+    appears. Without JavaScript the prompt is shown with the first language of each family."""
+    if not isinstance(d, dict) or not isinstance(d.get("vorlage"), str) \
+            or not all(f"{{{i}}}" in d["vorlage"] for i in (1, 2, 3)):
+        fail(path, "stillepost: needs 'vorlage' (text with the placeholders {1}, {2} and {3})")
+    gruppen = d.get("gruppen")
+    if not isinstance(gruppen, dict) or len(gruppen) != 3 or not all(
+            isinstance(v, list) and len(v) >= 2 and all(isinstance(x, str) and x.strip() for x in v) for v in gruppen.values()):
+        fail(path, "stillepost: 'gruppen' needs exactly 3 language families, each a list of at least 2 languages")
+    start = d.get("start", "")
+    if not isinstance(start, str) or not start.startswith("https://"):
+        fail(path, "stillepost: 'start' must be an https:// link (the AI that leads the game)")
+    name = d.get("start_name", "Gemini")
+    standard = [v[0] for v in gruppen.values()]
+    text = d["vorlage"].strip()
+    for i, sprache in enumerate(standard, 1):
+        text = text.replace(f"{{{i}}}", sprache)
+    daten = esc(json.dumps(list(gruppen.values()), ensure_ascii=False))
+    return (f'<div class="stillepost" data-vorlage="{esc(d["vorlage"].strip())}" data-gruppen="{daten}">'
+            '<ol class="sp-schritte">'
+            '<li class="sp-schritt sp-eins"><span class="sp-nr" aria-hidden="true">1</span><div>'
+            '<p class="sp-titel">Prompt kopieren</p>'
+            '<button type="button" class="btn sp-kopieren" hidden>Prompt kopieren – hier klicken</button>'
+            '<p class="sp-ohne-js">Öffnen Sie unten „Den ganzen Prompt ansehen“, markieren Sie alles und kopieren Sie es '
+            '(Strg&nbsp;+&nbsp;C).</p></div></li>'
+            f'<li class="sp-schritt sp-zwei"><span class="sp-nr" aria-hidden="true">2</span><div>'
+            f'<p class="sp-titel">{esc(name)} öffnen</p>'
+            f'<a class="btn sp-start" href="{esc(start)}" target="_blank" rel="noopener">{esc(name)} öffnen ↗</a></div></li>'
+            '<li class="sp-schritt sp-drei"><span class="sp-nr" aria-hidden="true">3</span><div>'
+            '<p class="sp-titel">Einfügen – und los!</p>'
+            f'<p>Klicken Sie bei {esc(name)} ins Eingabefeld. Drücken Sie <strong>Strg&nbsp;+&nbsp;V</strong> '
+            '(am Handy: lange tippen, dann „Einfügen“) und dann <strong>Enter</strong>. '
+            f'Ab jetzt sagt {esc(name)} Ihnen jeden Schritt.</p></div></li>'
+            '</ol>'
+            f'<p class="sp-sprachen">Ihre drei Sprachen: <strong class="sp-liste">Deutsch → {" → ".join(esc(x) for x in standard)} '
+            '→ Deutsch</strong> <button type="button" class="sp-wuerfeln" hidden>🎲 Andere Sprachen</button></p>'
+            f'<details class="sp-ganz"><summary>Den ganzen Prompt ansehen</summary><pre class="sp-text">{esc(text)}</pre></details>'
+            '</div>')
 
 
 def uebungen_einsetzen(html_text, fertig):
@@ -427,6 +479,8 @@ def layout(title, active, main, description="", scripts=(), noindex=False, farbe
     full_title = BRAND if title == BRAND else f"{title} – {BRAND}"
     if 'class="uebung"' in main:
         scripts = (*scripts, "uebung.js")
+    if 'class="stillepost"' in main:
+        scripts = (*scripts, "stillepost.js")
     script_tags = "".join(f'<script src="{asset(s)}"></script>' for s in ("hinweis.js", "animation.js", *scripts))
     return f"""<!doctype html>
 <html lang="de">

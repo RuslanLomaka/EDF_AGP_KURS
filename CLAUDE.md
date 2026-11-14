@@ -24,7 +24,9 @@ site/
   content/artikel/*.quiz.json  one quiz per article (Quiz Forger JSON format)
   assets/                     style.css, suche.js (article list + search), lektion.js (lesson steps, copy buttons,
                               quick navigation), quiz.js (quizzes and tests), uebung.js (exercises),
-                              animation.js (slide-in and confetti), hinweis.js (short privacy notice once a day)
+                              animation.js (slide-in and confetti), hinweis.js (short privacy notice once a day),
+                              vorlesen.js (reading aloud), stand.js ("Weiter bei"), jetzt.js (teacher "Jetzt" bar),
+                              stillepost.js (Stille Post start in lesson 4)
   build.py                    builds everything into site/dist/ (git-ignored) and checks it
 materials/serienbrief/        files of lesson 1; README.md explains them; generator/build_kit.sh rebuilds them
 materials/bewerbungshelfer/   lesson 2: Go source of the Windows program (programm/), Excel list, Word template;
@@ -237,6 +239,11 @@ Create `site/content/edv-kurs/<slug>.md` like `bewerbung-auf-knopfdruck.md`.
   what never), a minimum goal for everyone, and "Lotsen" (fast learners help others first).
 - **Tasks** (lessons 4, 5 and 6): heading, `<p class="zeit">15 Minuten</p>`, instructions, a `::: prompt` box (example
   prompt with a copy button), "Das lernen Sie", and a `::: profi` box (optional challenge in small print).
+- **Stille Post** (lesson 4, ` ```stillepost ` block, YAML): `vorlage` is the prompt for the game leader with the
+  placeholders `{1}`, `{2}`, `{3}`; `gruppen` are three language families; `start` is the link to the game leader
+  (Gemini). `stillepost.js` picks one language per family in a random order, fills them in and copies the prompt with
+  one click; then "Gemini öffnen" and "Strg + V, Enter" appear. Gemini leads the four rounds (ChatGPT, Copilot,
+  Le Chat, Duck.ai) with a progress line and explains the result at the end.
 - **Quiz (optional):** `site/content/edv-kurs/<slug>.quiz.json`, same format as for articles. With `"mode": "test"`,
   learners answer everything first. "Auswerten" then shows the score, a title, strengths and weak areas, and every
   mistake explained. Each question names an `"area"`, and `"areas"` maps each area to a tip. A test keeps its

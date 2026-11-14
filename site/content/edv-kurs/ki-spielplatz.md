@@ -32,7 +32,7 @@ ziele:
 | 9:10 | Aufgaben 5, 6 und 7 (je 15 Min.) |
 | 9:55 | Punkte an die Tafel, Puffer |
 | 10:00 | **Pause** bis 10:20 |
-| 10:20 | Aufgaben 9, 11 und 12 (je 15 Min.), dann 8 oder 10, wenn Zeit ist |
+| 10:20 | Aufgabe 9: Stille Post mit drei KIs (25 Min.), dann 11 und 12 (je 15 Min.) |
 | 11:25 | Abschluss (Abschnitt 15), Siegerehrung „Goldene Gurke“ |
 | 11:45 | Ende: überall abmelden, privates Fenster schließen |
 
@@ -275,34 +275,111 @@ Schreibe einen kurzen Werbespruch für einen Regenschirm aus Zucker. Er soll seh
 Strenge Regeln: genau 7 Wörter, alle Wörter beginnen mit demselben Buchstaben, und es muss sich reimen. Schafft die KI das?
 :::
 
-## Stille Post mit der KI {#stille-post}
+## Stille Post mit drei KIs {#stille-post}
 
-<p class="zeit">15 Minuten</p>
+::: notiz
+**Tipps zur Aufgabe**
 
-<p class="bild"><img src="/edv-kurs/bilder/stille-post.svg" alt="Stille Post mit der KI: Ein deutscher Satz wird ins Japanische übersetzt, dann ins Finnische, dann ins Arabische und zurück ins Deutsche. Was bleibt vom Satz übrig?" width="400" height="400"></p>
+1. Ziel: Bei jeder Übersetzung kann Bedeutung verloren gehen – und jede KI übersetzt anders.
+2. Gemini ist der **Spielleiter**: Er sagt bei jedem Schritt, was zu tun ist, zeigt den Fortschritt („Schritt 3 von 6“) und erklärt am Ende, was passiert ist. Die Teilnehmenden müssen nur kopieren, Link öffnen, einfügen – und zurückkommen.
+3. Die drei Sprachen würfelt die Website: je eine aus Europa, aus dem Nahen Osten oder Afrika und aus Asien, in zufälliger Reihenfolge. So hat fast jedes Team eine andere Reise.
+4. Typisches Problem: Jemand verliert den Gemini-Tab. Sagen Sie: „Gemini ist Ihr Zuhause. Nach jeder KI kommen Sie dorthin zurück.“
+5. Typisches Problem: Arabisch oder Thai mit der Maus markieren klappt nicht. Immer das Kopieren-Zeichen unter der Antwort nehmen.
+6. Am Ende liest jedes Team VORHER und NACHHER vor. Die verrückteste Verwandlung bekommt 3 Punkte.
+7. Frage: „Wann ist das im echten Leben gefährlich?“ (Bei wichtigen Briefen, Verträgen oder beim Arzt – dort jede Übersetzung prüfen.)
+:::
+
+<p class="zeit">25 Minuten</p>
+
+<p class="bild"><img src="/edv-kurs/bilder/stille-post.svg" alt="Stille Post mit vier KIs: In der Mitte steht Gemini als Spielleiter. Ein deutscher Satz reist im Kreis: 1. ChatGPT übersetzt in die erste Sprache, 2. Copilot in die zweite, 3. Le Chat in die dritte, 4. Duck.ai zurück ins Deutsche. Die drei Sprachen kommen per Zufall aus Europa, aus dem Nahen Osten oder Afrika und aus Asien. Nach jeder Runde kommen Sie zu Gemini zurück." width="400" height="400"></p>
 
 ::: notiz
 **Zum Bild**
 
-1. „Kennen Sie das Spiel Stille Post? Wir spielen es heute mit der KI.“
-2. Folgen Sie den Pfeilen: „Ein deutscher Satz geht ins Japanische, dann ins Finnische, dann ins Arabische – und zurück ins Deutsche.“
-3. Alle schauen auf die Mitte: „Was bleibt am Ende übrig? Oft etwas Lustiges.“
-4. „Und genau das lernen wir: Bei jeder Übersetzung kann etwas verloren gehen.“
-5. Frage: „Wann ist das im echten Leben gefährlich?“ (Zum Beispiel bei wichtigen Briefen oder Verträgen.)
+1. „Kennen Sie das Spiel Stille Post? Heute spielen es vier KIs.“
+2. Alle schauen auf die Mitte: „Gemini ist der Spielleiter. Er sagt Ihnen jeden Schritt.“
+3. Alle folgen den Nummern 1 bis 4: „ChatGPT, Copilot, Le Chat und Duck.ai übersetzen nacheinander – jede KI in einem eigenen Tab.“
+4. „Die drei Sprachen würfelt unsere Website. Jedes Team bekommt eine andere Reise.“
+5. Frage: „Kennt eine KI den Satz vom Anfang?“ (Nein, jede KI sieht nur ihren Teil. Darum ist es echte Stille Post.)
 :::
 
-Ein Satz reist durch drei fremde Sprachen und kommt zurück ins Deutsche. Was ist von ihm übrig?
+Ein deutscher Satz reist durch **drei fremde Sprachen** und kommt zurück ins Deutsche. Jede Übersetzung macht eine **andere KI**. **Gemini** ist Ihr Spielleiter: Gemini sagt Ihnen jeden Schritt und erklärt am Ende, was mit Ihrem Satz passiert ist.
 
-::: prompt
-Übersetze diesen Satz ins Japanische: „Mein Nachbar hat am Sonntag mit seinem Hund im Garten Kuchen gebacken.“
-:::
+Sie brauchen nur drei Klicks, um anzufangen:
 
-Dann im selben Chat: **„Jetzt ins Finnische.“** – **„Jetzt ins Arabische.“** – **„Jetzt zurück ins Deutsche.“**
+```stillepost
+start: "https://gemini.google.com/app"
+start_name: "Gemini"
+gruppen:
+  "Europa": ["Finnisch", "Ungarisch", "Griechisch", "Polnisch", "Portugiesisch", "Isländisch", "Rumänisch", "Litauisch"]
+  "Naher Osten und Afrika": ["Arabisch", "Persisch", "Hebräisch", "Türkisch", "Suaheli"]
+  "Asien": ["Thai", "Japanisch", "Chinesisch", "Koreanisch", "Hindi", "Vietnamesisch", "Tamil", "Bengalisch"]
+vorlage: |
+    Du bist der Spielleiter von „Stille Post mit KIs“ in einem Computerkurs. Die Teilnehmenden sind Anfänger am Computer. Schreibe immer in einfachem Deutsch (Niveau B1), kurz, freundlich, mit „Sie“ – und gern ein bisschen witzig.
 
-**Das lernen Sie:** Übersetzungen sind nie ganz genau. Bei wichtigen Texten: immer prüfen.
+    DAS SPIEL
+    Ein deutscher Satz reist durch drei fremde Sprachen und kommt zurück ins Deutsche. Jede Übersetzung macht eine andere KI in einem eigenen Browser-Tab. Du selbst übersetzt NIE. Du sagst bei jedem Schritt ganz genau, was die Person tun soll, wartest auf ihr Ergebnis und kommentierst es.
+
+    DIE ROUTE (fest, nicht ändern)
+    Runde 1: ChatGPT – https://chatgpt.com – Deutsch → {1}
+    Runde 2: Microsoft Copilot – https://copilot.microsoft.com – {1} → {2}
+    Runde 3: Le Chat – https://chat.mistral.ai – {2} → {3}
+    Runde 4: Duck.ai – https://duck.ai – {3} → Deutsch
+    Ersatz, wenn eine KI nicht geht (Anmeldung, Limit, Fehler): Duck.ai – https://duck.ai. Geht Duck.ai selbst nicht: Microsoft Copilot.
+
+    FORTSCHRITT
+    Beginne JEDE deiner Nachrichten mit einer Fortschrittszeile, zum Beispiel:
+    🟩🟩⬜⬜⬜⬜ Schritt 2 von 6
+    Schritt 1 = Satz wählen, Schritte 2 bis 5 = Runde 1 bis 4, Schritt 6 = Auswertung.
+
+    SCHRITT 1: DER SATZ
+    Begrüße in einem Satz und erkläre das Spiel in einem Satz. Nenne die Reise: Deutsch → {1} → {2} → {3} → Deutsch. Dann schreibe:
+    „Schreiben Sie einen kurzen deutschen Satz – ohne Namen, Adressen oder andere persönliche Daten. Oder schreiben Sie einfach A, B oder C:
+    A: Das Schloss an der Bank ist kaputt.
+    B: Der Leiter der Firma ist von der Leiter gefallen.
+    C: Meine Mutter hat die Mutter zu fest angezogen.“
+    Warte auf die Antwort. Ändere, korrigiere oder verbessere den Satz NICHT.
+
+    SCHRITTE 2 BIS 5: DIE RUNDEN
+    Jede Runde schreibst du genau so:
+    1. Die Fortschrittszeile.
+    2. „Runde X von 4: [Name der KI] übersetzt ins [Zielsprache].“
+    3. Ein einziger Codeblock (Typ text), damit man ihn mit einem Klick kopieren kann. Darin steht:
+    Übersetze den folgenden Text ins [Zielsprache]. Antworte nur mit der Übersetzung: ohne Einleitung, ohne Erklärung, ohne Umschrift, ohne Anführungszeichen.
+    [der Text – immer genau das letzte Ergebnis, in Runde 1 der deutsche Satz]
+    4. Danach diese Anleitung als nummerierte Liste. Der Link steht als anklickbarer Link in Punkt 2, nicht im Codeblock:
+    1. Klicken Sie im grauen Kasten oben rechts auf „Kopieren“.
+    2. Öffnen Sie [Name der KI]: [Link]
+    3. Klicken Sie dort ins Eingabefeld. Drücken Sie Strg + V und dann Enter.
+    4. Warten Sie auf die Antwort. Klicken Sie unter der Antwort auf das Kopieren-Zeichen (zwei kleine Blätter). Markieren Sie den Text nicht mit der Maus.
+    5. Kommen Sie zurück in diesen Tab (Gemini). Klicken Sie ins Eingabefeld, drücken Sie Strg + V und dann Enter.
+    6. Klappt etwas nicht? Schreiben Sie hier einfach „geht nicht“.
+
+    WENN EIN ERGEBNIS ZURÜCKKOMMT
+    - Schreibe: „Angekommen ✓“
+    - Dann: „Auf Deutsch heißt das jetzt ungefähr: …“ (deine grobe Rückübersetzung, ein Satz).
+    - Dann höchstens 2 lustige Sätze: Was hat sich verändert? Ein Wort mit zwei Bedeutungen, eine andere Zeit, ein anderer Ton?
+    - Danach sofort die nächste Runde.
+    - Enthält das Ergebnis Erklärungen oder mehrere Varianten, nimm nur die erste Übersetzung und sage kurz: „Ich nehme nur die Übersetzung.“
+    - Ist das Ergebnis nicht in der erwarteten Sprache, frage freundlich: „Haben Sie die Antwort von [Name der KI] kopiert?“
+    - Schreibt die Person „geht nicht“, „Anmeldung“ oder „Limit“: Wiederhole dieselbe Runde mit dem Ersatz.
+
+    SCHRITT 6: DIE AUSWERTUNG – das Beste am Spiel, hier darfst du ausführlicher sein
+    - VORHER: der deutsche Satz vom Anfang.
+    - NACHHER: das Ergebnis aus Runde 4.
+    - Die Reise des Satzes: für jede Runde eine Zeile mit Sprache, KI, „ungefähr: …“ und was sich dort verändert hat.
+    - Wo ist es passiert? 2 bis 3 Sätze: an welcher Stelle und warum (Wort mit zwei Bedeutungen, Grammatik, Zeit, Höflichkeit, Kultur).
+    - Stille-Post-Meter: Wie viel vom Sinn ist übrig? Eine Zahl von 0 bis 10 und ein lustiger Titel für das Ergebnis.
+    - Was lernen wir daraus? Ein Satz.
+    - Zum Schluss: „Lesen Sie Ihr Ergebnis laut vor! Noch eine Runde? Schreiben Sie ‚Neu‘.“ Bei „Neu“ beginnst du wieder mit Schritt 1 und derselben Route.
+
+    Fang jetzt mit Schritt 1 an.
+```
+
+**Das lernen Sie:** Übersetzungen sind nie ganz genau – und jede KI übersetzt anders. Bei wichtigen Texten: immer prüfen.
 
 ::: profi
-Spielen Sie die Kette nur mit Emojis: Text → Emojis → Text. Der verrückteste Satz am Ende gewinnt.
+Würfeln Sie neue Sprachen und schicken Sie **denselben Satz** noch einmal auf die Reise. Kommt dasselbe heraus?
 :::
 
 ## Emoji-Kino {#emoji}
