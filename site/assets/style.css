@@ -552,10 +552,43 @@ h2 .nr { margin-right: 0.35rem; }
 .schnellnav a.fertig[aria-current="true"] .nr { box-shadow: 0 0 0 3px var(--ton); }
 .schnellnav a.fertig .titel::after { content: " ✓"; color: var(--ok); }
 .schnellnav-titel { margin: 0 0 0.4rem; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); }
+/* Hilfe-Ampel: button in the quick navigation, full-screen green or red */
+.ampel-knopf { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.3rem 0.7rem; font: inherit;
+  font-size: 0.88rem; font-weight: 700; color: var(--fg); background: var(--card); border: 1.5px solid var(--line); border-radius: 999px; cursor: pointer; }
+.ampel-knopf[hidden] { display: none; }
+.ampel-icon { display: inline-flex; flex-direction: column; gap: 2px; padding: 3px; border-radius: 6px; background: #1f2433; }
+.ampel-icon i { width: 7px; height: 7px; border-radius: 50%; background: #ef4444; }
+.ampel-icon i:nth-child(2) { background: #facc15; }
+.ampel-icon i:nth-child(3) { background: #22c55e; }
+.ampel { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 1.5rem; background: rgb(13 16 32 / 0.92); }
+.ampel[hidden] { display: none; }
+.ampel-wahl { display: grid; gap: 0.8rem; width: min(26rem, 100%); }
+.ampel-frage { margin: 0 0 0.4rem; color: #fff; font-size: 1.3rem; font-weight: 800; text-align: center; }
+.ampel-wahl button { font: inherit; font-size: 1.25rem; font-weight: 800; min-height: 4.5rem; border: 0; border-radius: 18px; cursor: pointer; color: #fff; }
+.ampel-gruen { background: #15803d; }
+.ampel-rot { background: #c81e1e; }
+button.ampel-zu { min-height: 3rem; font-size: 1rem; background: transparent; border: 1.5px solid #fff; }
+.ampel-anzeige { display: none; }
+.ampel.gruen, .ampel.rot { padding: 0; }
+.ampel.gruen { background: #15803d; }
+.ampel.rot { background: #c81e1e; }
+.ampel.gruen .ampel-wahl, .ampel.rot .ampel-wahl { display: none; }
+.ampel.gruen .ampel-anzeige, .ampel.rot .ampel-anzeige { display: grid; place-items: center; align-content: center; gap: 0.5rem; width: 100%; height: 100%;
+  font: inherit; color: #fff; background: transparent; border: 0; cursor: pointer; }
+.ampel-nr { font-size: min(45vw, 45vh); font-weight: 900; line-height: 1; }
+.ampel-wort { font-size: clamp(2rem, 10vw, 4rem); font-weight: 900; }
+.ampel-tipp { font-size: 1rem; opacity: 0.85; }
+html.ampel-offen { overflow: hidden; }
 @media (max-width: 79.99rem) {
   .schnellnav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; background: var(--card); border-top: 1px solid var(--line);
     box-shadow: 0 -4px 16px rgb(0 0 0 / 0.08); padding: 0.45rem 0.5rem calc(0.45rem + env(safe-area-inset-bottom)); }
   .schnellnav-titel { display: none; }
+  .schnellnav:has(.ampel-knopf:not([hidden])) { display: flex; align-items: center; gap: 0.4rem; }
+  .schnellnav ol { flex: 1; min-width: 0; }
+  .ampel-knopf { flex: none; justify-content: center; width: 2.75rem; padding: 0; background: #1f2433; border-color: #1f2433; }
+  .ampel-knopf .ampel-icon { padding: 0; gap: 3px; }
+  .ampel-knopf .ampel-icon i { width: 9px; height: 9px; }
+  .ampel-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .schnellnav ol { display: flex; gap: 0.4rem; overflow-x: auto; scrollbar-width: none; max-width: 46rem; margin: 0 auto; }
   .schnellnav ol::-webkit-scrollbar { display: none; }
   .schnellnav a { display: block; }
@@ -569,6 +602,7 @@ h2 .nr { margin-right: 0.35rem; }
 @media (min-width: 80rem) {
   .schnellnav { position: fixed; top: 5.5rem; left: max(1rem, calc(50% - 23rem - 15rem)); width: 13.5rem; max-height: calc(100vh - 7rem); overflow-y: auto; }
   .schnellnav li { margin: 0.1rem 0; }
+  .ampel-knopf { width: 100%; margin-bottom: 0.7rem; justify-content: center; }
   .schnellnav a { display: flex; gap: 0.55rem; align-items: center; padding: 0.3rem 0.5rem; border-radius: 10px; font-size: 0.88rem; line-height: 1.3; color: var(--muted); }
   .schnellnav a:hover { background: var(--ton-soft); color: var(--fg); }
   .schnellnav .nr { flex: none; min-width: 1.7rem; height: 1.7rem; font-size: 0.8rem; background: var(--ton-soft); color: var(--ton); }

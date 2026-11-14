@@ -729,7 +729,10 @@ def schnellnav(eintraege):
     eintraege = sorted(eintraege, key=lambda e: e[0] == "?")  # help ("?") always last
     items = "".join(f'<li><a href="#{hid}" title="{esc(titel)}"><span class="nr">{marke}</span>'
                     f'<span class="titel">{esc(titel)}</span></a></li>' for marke, hid, titel in eintraege)
-    return f'<nav class="schnellnav" aria-label="Abschnitte"><p class="schnellnav-titel">Abschnitte</p><ol>{items}</ol></nav>'
+    ampel = ('<button type="button" class="ampel-knopf" aria-haspopup="dialog" hidden>'
+             '<span class="ampel-icon" aria-hidden="true"><i></i><i></i><i></i></span><span class="ampel-text">Hilfe-Ampel</span></button>')
+    return (f'<nav class="schnellnav" aria-label="Abschnitte">{ampel}<p class="schnellnav-titel">Abschnitte</p>'
+            f'<ol>{items}</ol></nav>')
 
 
 def quiz_section(quiz, nummer=None):
@@ -811,7 +814,9 @@ def lehrer_banner(page_url, notizen):
     return (f'<p class="lehrer-banner"><strong>Ansicht für die Lehrkraft</strong> · {zahl} · nirgends verlinkt '
             f'· <a href="{page_url}">Ansicht der Teilnehmenden</a> · <a href="/{LEHRER}/">Alle Seiten</a><br>'
             f'<strong>Ohne Beamer:</strong> Sagen Sie die Nummer des Abschnitts („Wir sind bei 5“) – alle tippen sie an und '
-            f'sehen dasselbe Bild auf ihrem Gerät. „Alle schauen auf die 1“ heißt: Sagen Sie „Schauen Sie im Bild auf die 1“.</p>')
+            f'sehen dasselbe Bild auf ihrem Gerät. „Alle schauen auf die 1“ heißt: Sagen Sie „Schauen Sie im Bild auf die 1“.<br>'
+            f'<strong>Hilfe-Ampel:</strong> „Wer fertig ist oder Hilfe braucht: Ampel antippen und das Handy hochhalten.“ '
+            f'Grün = fertig, Rot = Hilfe, die große Zahl ist der Abschnitt.</p>')
 
 
 def write_article(a, lehrer, serie, weiter, mehr, nav):
@@ -1088,7 +1093,9 @@ def write_lesson(l, lehrer, body, ziele, downloads, lehrkraft, nav):
 {downloads}
 <p class="fs-legende" hidden><strong>So sammeln Sie Fortschritt:</strong> Schritte abhaken, Übungen lösen,
 Abschnitte mit „Geschafft“ abschließen. Jede Nummer hat einen Ring: Er füllt sich und wird <strong>grün ✓</strong>,
-wenn der Abschnitt fertig ist. Alles bleibt nur auf diesem Gerät.</p>
+wenn der Abschnitt fertig ist. Alles bleibt nur auf diesem Gerät.
+<strong>Fertig oder Hilfe nötig?</strong> Tippen Sie auf die <strong>Ampel</strong> (am Handy unten links, am PC links oben)
+und halten Sie das Handy hoch.</p>
 <div class="fortschritt" data-lektion="{l['slug']}" hidden>
   <p class="fs-abschnitt"><span class="fs-nr"></span><span class="fs-titel"></span><span class="fs-zahl"></span></p>
   <div class="balken"><span></span></div>

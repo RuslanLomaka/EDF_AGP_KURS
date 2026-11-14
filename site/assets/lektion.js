@@ -167,6 +167,7 @@
     if (neu === aktiv && box.dataset.bereit) return;
     aktiv = neu;
     box.dataset.bereit = 'ja';
+    box.dataset.nr = aktiv.nr;  // for the Hilfe-Ampel
     links.forEach(l => {
       if (l.hash.slice(1) !== aktiv.id) { l.removeAttribute('aria-current'); return; }
       l.setAttribute('aria-current', 'true');
@@ -202,4 +203,69 @@
   const legende = document.querySelector('.fs-legende');
   if (legende) legende.hidden = false;
   setzeAktiv();
+})();
+
+// Hilfe-Ampel: one tap turns the whole screen green ("7 ✓ fertig") or red ("7 ? Hilfe"). Learners hold up their
+// phone, and the teacher sees at a glance who is stuck. Nothing is stored or sent.
+(function () {
+  const knopf = document.querySelector('.ampel-knopf');
+  if (!knopf) return;
+  const el = (tag, klasse, text) => {
+    const e = document.createElement(tag);
+    if (klasse) e.className = klasse;
+    if (text) e.textContent = text;
+    return e;
+  };
+  const nummer = () => {
+    const box = document.querySelector('.fortschritt');
+    const aktiv = document.querySelector('.schnellnav a[aria-current="true"] .nr');
+    return (box && box.dataset.nr) || (aktiv ? aktiv.textContent : '');
+  };
+  const ampel = el('div', 'ampel');
+  ampel.setAttribute('role', 'dialog');
+  ampel.setAttribute('aria-modal', 'true');
+  ampel.setAttribute('aria-label', 'Hilfe-Ampel');
+  ampel.hidden = true;
+  const wahl = el('div', 'ampel-wahl');
+  const frage = el('p', 'ampel-frage');
+  const gruen = el('button', 'ampel-gruen', '✓ Ich bin fertig');
+  const rot = el('button', 'ampel-rot', '? Ich brauche Hilfe');
+  const zu = el('button', 'ampel-zu', 'Schließen');
+  [gruen, rot, zu].forEach(b => { b.type = 'button'; });
+  wahl.append(frage, gruen, rot, zu);
+  const anzeige = el('button', 'ampel-anzeige');
+  anzeige.type = 'button';
+  ampel.append(wahl, anzeige);
+  document.body.append(ampel);
+
+  const schliessen = () => {
+    ampel.hidden = true;
+    ampel.className = 'ampel';
+    document.documentElement.classList.remove('ampel-offen');
+    knopf.focus();
+  };
+  const zeige = farbe => {
+    const nr = nummer();
+    ampel.className = 'ampel ' + farbe;
+    anzeige.textContent = '';
+    anzeige.append(el('span', 'ampel-nr', nr || (farbe === 'gruen' ? '✓' : '?')),
+      el('span', 'ampel-wort', farbe === 'gruen' ? '✓ fertig' : '? Hilfe'),
+      el('span', 'ampel-tipp', 'Handy hochhalten. Tippen zum Schließen.'));
+    anzeige.setAttribute('aria-label', (farbe === 'gruen' ? 'Fertig' : 'Hilfe') + (nr ? ' bei Abschnitt ' + nr : '') + '. Tippen zum Schließen.');
+    anzeige.focus();
+  };
+  knopf.addEventListener('click', () => {
+    const nr = nummer();
+    frage.textContent = (nr ? 'Abschnitt ' + nr + ': ' : '') + 'Wie geht es Ihnen?';
+    ampel.className = 'ampel';
+    ampel.hidden = false;
+    document.documentElement.classList.add('ampel-offen');
+    gruen.focus();
+  });
+  gruen.addEventListener('click', () => zeige('gruen'));
+  rot.addEventListener('click', () => zeige('rot'));
+  zu.addEventListener('click', schliessen);
+  anzeige.addEventListener('click', schliessen);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !ampel.hidden) schliessen(); });
+  knopf.hidden = false;
 })();
