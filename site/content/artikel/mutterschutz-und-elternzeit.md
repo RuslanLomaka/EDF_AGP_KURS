@@ -31,7 +31,7 @@ quelle: "Arbeitsblatt aus dem Kurs (Text und Fragen, 2 Seiten)"
 
 - **Mutterschutz:** 6 Wochen vor dem errechneten Geburtstermin bis 8 Wochen nach der Geburt. In dieser Zeit bekommt die Mutter ihr **volles Netto** weiter.
 - **Kündigungsschutz:** von Beginn der Schwangerschaft bis mindestens **4 Monate nach der Geburt**.
-- **Elternzeit:** Jeder Elternteil kann bis zu **3 Jahre pro Kind** zu Hause bleiben, bis das Kind 8 Jahre alt ist. Der Arbeitgeber zahlt dann keinen Lohn.
+- **Elternzeit:** Jeder Elternteil kann bis zu **3 Jahre pro Kind** zu Hause bleiben, bis das Kind 8 Jahre alt ist. Der Arbeitgeber zahlt dann keinen Lohn. Melden Sie die Elternzeit **spätestens 7 Wochen vorher** schriftlich an.
 - **Elterngeld** kommt in dieser Zeit vom **Staat**: meistens 65 bis 67 Prozent vom früheren Netto.
 - Nach der Elternzeit dürfen Sie in den Job **zurückkehren**, auf einen gleichwertigen Arbeitsplatz.
 :::

@@ -248,6 +248,12 @@ erklaerung: "Beides muss stimmen: mehr als 6 Monate in der Firma UND mehr als 10
 **die Abfindung, die Abfindungen**
 :   Eine einmalige Zahlung, wenn ein Arbeitsverhältnis endet.
 
+**die Betriebszugehörigkeit**
+:   Wie lange Sie schon bei derselben Firma arbeiten. *Nach 10 Jahren Betriebszugehörigkeit hat der Arbeitgeber eine längere Kündigungsfrist.*
+
+**die Sperrzeit, die Sperrzeiten**
+:   Eine Zeit, in der die Agentur für Arbeit kein Arbeitslosengeld zahlt. *Wer ohne wichtigen Grund selbst kündigt, bekommt oft eine Sperrzeit von bis zu 12 Wochen.*
+
 ## Fragen zum Text {#fragen}
 
 Tippen Sie auf eine Frage, um die Antwort zu sehen.

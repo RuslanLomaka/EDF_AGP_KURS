@@ -34,6 +34,7 @@ quelle: "Arbeitsblatt aus dem Kurs (Text, 2 Seiten, ohne Fragen)"
 - Ein Grund allein reicht nicht: Der Arbeitgeber muss auch die **gesetzlichen Regeln** einhalten.
 - Manche Menschen haben **besonderen Kündigungsschutz**, z. B. Schwangere oder Menschen in Elternzeit.
 - Je **länger** Sie in der Firma sind, desto **länger** ist die Frist, wenn der Arbeitgeber kündigt.
+- **Zwei Fristen für Sie:** Melden Sie sich innerhalb von **3 Tagen** bei der Agentur für Arbeit arbeitssuchend. Wenn Sie sich wehren wollen: Klage beim Arbeitsgericht innerhalb von **3 Wochen**.
 :::
 
 ::: notiz

@@ -200,6 +200,36 @@ erklaerung: "Die UG geht ab 1 Euro, muss aber 25 Prozent vom Gewinn behalten. Di
 **die Bürgschaft, die Bürgschaften**
 :   Das Versprechen, Schulden eines anderen zu zahlen, wenn er es nicht kann.
 
+**das Handelsregister**
+:   Ein öffentliches Verzeichnis beim Amtsgericht. Dort stehen zum Beispiel GmbH, UG, AG und OHG mit Name, Sitz und Geschäftsführung. *Jeder kann im Handelsregister nachsehen, wer eine Firma leitet.*
+
+**das Privatvermögen**
+:   Alles, was einer Person privat gehört: Erspartes, Auto, Wohnung. *Bei einer GmbH ist das Privatvermögen der Gesellschafter geschützt.*
+
+**die Körperschaftsteuer**
+:   Die Steuer, die eine GmbH, UG oder AG auf ihren Gewinn zahlt – ähnlich wie die Einkommensteuer bei einer Person. *Die GmbH zahlt Körperschaftsteuer an das Finanzamt.*
+
+**das Grundkapital**
+:   Das Geld, das bei der Gründung einer AG eingebracht wird, mindestens 50.000 Euro. *Das Grundkapital ist in Aktien aufgeteilt.*
+
+**der Gesellschaftsvertrag, die Gesellschaftsverträge**
+:   Der Vertrag, in dem die Gründer die Regeln ihrer Firma festlegen. *Der Gesellschaftsvertrag einer GmbH muss zum Notar.*
+
+**die Hauptversammlung, die Hauptversammlungen**
+:   Das Treffen der Aktionärinnen und Aktionäre einer AG. *Die Hauptversammlung entscheidet über die Dividende.*
+
+**beurkunden**
+:   Ein Notar liest einen Vertrag vor, prüft ihn und bestätigt ihn offiziell (er beurkundet, er hat beurkundet). *Der Notar beurkundet den Vertrag.*
+
+**der Gesellschafter, die Gesellschafter / die Gesellschafterin, die Gesellschafterinnen**
+:   Eine Person, der ein Teil der Firma gehört. *Die GmbH hat zwei Gesellschafter.*
+
+**die Haftung**
+:   Man muss für Schulden einstehen und sie bezahlen. Das Verb heißt *haften*. *Bei der GbR haften alle Gesellschafter persönlich.*
+
+**die Rechtsform, die Rechtsformen**
+:   Die Art einer Firma nach dem Gesetz, zum Beispiel Einzelunternehmen, GbR oder GmbH. *Welche Rechtsform passt zu Ihrer Idee?*
+
 ## Fragen zum Text {#fragen}
 
 Tippen Sie auf eine Frage, um die Antwort zu sehen.

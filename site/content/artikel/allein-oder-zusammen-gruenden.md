@@ -215,6 +215,18 @@ erklaerung: "Allein: Einzelunternehmen. Zu zweit oder mehr ohne Eintrag: GbR. Gr
 **die Gewinnverteilung**
 :   Die Regel, wer wie viel vom Gewinn bekommt.
 
+**der Notar, die Notare / die Notarin, die Notarinnen**
+:   Eine Juristin oder ein Jurist, der wichtige Verträge prüft und offiziell bestätigt (beurkundet). *Für eine GmbH müssen alle Gründer zum Notar.*
+
+**der Gläubiger, die Gläubiger**
+:   Eine Person oder Firma, die noch Geld von Ihnen bekommt. *Der Gläubiger will sein Geld zurück.*
+
+**die Haftung**
+:   Man muss für Schulden einstehen und sie bezahlen. Das Verb heißt *haften*. *Bei der GbR haften alle Gesellschafter persönlich.*
+
+**die Einkommensteuer**
+:   Die Steuer auf das Geld, das eine Person im Jahr verdient. Bei Angestellten zieht der Arbeitgeber sie jeden Monat als *Lohnsteuer* ab; Selbstständige zahlen sie auf ihren Gewinn. *Die Lohnsteuer ist eine Form der Einkommensteuer.*
+
 ## Fragen zum Text {#fragen}
 
 Tippen Sie auf eine Frage, um die Antwort zu sehen.

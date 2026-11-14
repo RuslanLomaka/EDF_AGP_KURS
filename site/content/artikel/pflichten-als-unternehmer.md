@@ -202,6 +202,21 @@ erklaerung: "Kleine Einzelunternehmen dürfen die EÜR machen, eine GmbH braucht
 **der Mindestlohn**
 :   Der niedrigste Lohn pro Stunde, den ein Arbeitgeber zahlen darf.
 
+**die Gewerbesteuer**
+:   Eine Steuer für Gewerbebetriebe. Sie geht an die Stadt oder Gemeinde. Freie Berufe zahlen sie nicht. *Der Imbiss zahlt Gewerbesteuer, die Übersetzerin nicht.*
+
+**der Kleinunternehmer, die Kleinunternehmer / die Kleinunternehmerin, die Kleinunternehmerinnen**
+:   Selbstständige mit wenig Umsatz. Sie schreiben keine Umsatzsteuer auf ihre Rechnungen. *Als Kleinunternehmerin schreibt sie keine Umsatzsteuer auf die Rechnung.*
+
+**die Rechtsform, die Rechtsformen**
+:   Die Art einer Firma nach dem Gesetz, zum Beispiel Einzelunternehmen, GbR oder GmbH. *Welche Rechtsform passt zu Ihrer Idee?*
+
+**die Einkommensteuer**
+:   Die Steuer auf das Geld, das eine Person im Jahr verdient. Bei Angestellten zieht der Arbeitgeber sie jeden Monat als *Lohnsteuer* ab; Selbstständige zahlen sie auf ihren Gewinn. *Die Lohnsteuer ist eine Form der Einkommensteuer.*
+
+**das Finanzamt, die Finanzämter**
+:   Das Amt für Steuern. *Das Finanzamt schickt Ihnen nach der Anmeldung eine Steuernummer.*
+
 ## Fragen zum Text {#fragen}
 
 Tippen Sie auf eine Frage, um die Antwort zu sehen.

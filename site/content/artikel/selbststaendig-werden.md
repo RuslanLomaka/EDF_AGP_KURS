@@ -215,6 +215,12 @@ erklaerung: "Gewerbe: Gewerbeamt. Freie Berufe wie Lehrerin oder Übersetzer: nu
 **das Einstiegsgeld**
 :   Geld vom Jobcenter, zum Beispiel für den Start in die Selbstständigkeit.
 
+**das Gewerbeamt, die Gewerbeämter**
+:   Das Amt der Stadt oder Gemeinde, bei dem man ein Gewerbe anmeldet. *Ali meldet seinen Imbiss beim Gewerbeamt an.*
+
+**das Finanzamt, die Finanzämter**
+:   Das Amt für Steuern. *Das Finanzamt schickt Ihnen nach der Anmeldung eine Steuernummer.*
+
 ## Fragen zum Text {#fragen}
 
 Tippen Sie auf eine Frage, um die Antwort zu sehen.

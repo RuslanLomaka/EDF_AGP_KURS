@@ -181,6 +181,15 @@ erklaerung: "Ein Gewerbe beginnt beim Gewerbeamt. Freie Berufe melden sich nur b
 **die Betriebshaftpflicht**
 :   Eine Versicherung, die zahlt, wenn die Firma anderen einen Schaden verursacht.
 
+**das Handelsregister**
+:   Ein öffentliches Verzeichnis beim Amtsgericht. Dort stehen zum Beispiel GmbH, UG, AG und OHG mit Name, Sitz und Geschäftsführung. *Jeder kann im Handelsregister nachsehen, wer eine Firma leitet.*
+
+**der Notar, die Notare / die Notarin, die Notarinnen**
+:   Eine Juristin oder ein Jurist, der wichtige Verträge prüft und offiziell bestätigt (beurkundet). *Für eine GmbH müssen alle Gründer zum Notar.*
+
+**das Finanzamt, die Finanzämter**
+:   Das Amt für Steuern. *Das Finanzamt schickt Ihnen nach der Anmeldung eine Steuernummer.*
+
 ## Fragen zum Text {#fragen}
 
 Tippen Sie auf eine Frage, um die Antwort zu sehen.

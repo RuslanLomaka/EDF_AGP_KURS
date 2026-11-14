@@ -253,6 +253,9 @@ erklaerung: "Vom Brutto gehen Steuern und die Beiträge zur Sozialversicherung a
 **der Brutto-Netto-Rechner**
 :   Ein Programm im Internet, das aus dem Brutto ungefähr das Netto ausrechnet.
 
+**die Einkommensteuer**
+:   Die Steuer auf das Geld, das eine Person im Jahr verdient. Bei Angestellten zieht der Arbeitgeber sie jeden Monat als *Lohnsteuer* ab; Selbstständige zahlen sie auf ihren Gewinn. *Die Lohnsteuer ist eine Form der Einkommensteuer.*
+
 ## Fragen zum Text {#fragen}
 
 Tippen Sie auf eine Frage, um die Antwort zu sehen.
