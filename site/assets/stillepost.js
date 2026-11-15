@@ -7,6 +7,9 @@
     const vorlage = box.dataset.vorlage;
     let gruppen, saetze;
     try { gruppen = JSON.parse(box.dataset.gruppen); saetze = JSON.parse(box.dataset.saetze); } catch (e) { return; }
+    // "|" marks the parts of long words: shown as soft hyphens (break only there), removed for the prompt
+    const sauber = s => s.replace(/\|/g, '');
+    const anzeige = s => s.replace(/\|/g, '\u00AD');
     const min = Number(box.dataset.mindestens) || 50;
     const $ = sel => box.querySelector(sel);
     const knopf = $('.sp-kopieren'), wuerfel = $('.sp-wuerfeln'), liste = $('.sp-liste'), pre = $('.sp-text');
@@ -22,7 +25,7 @@
     const bereit = () => satz().length >= min && !persoenlich(satz());
 
     const prompt = () => {
-      text = vorlage.split('{satz}').join(satz() || saetze[0]);
+      text = vorlage.split('{satz}').join(satz() || sauber(saetze[0]));
       sprachen.forEach((s, i) => { text = text.split('{' + (i + 1) + '}').join(s); });
       pre.textContent = text;
     };
@@ -39,20 +42,24 @@
       else if (n >= min) zaehler.textContent = '✓ ' + n + ' Zeichen – lang genug! Jetzt weiter mit Schritt 2.';
       else if (n === 0) zaehler.textContent = 'Mindestens ' + min + ' Zeichen – längere Sätze verändern sich mehr.';
       else zaehler.textContent = n + ' von ' + min + ' Zeichen – noch ' + (min - n) + '.';
-      vorschlaege.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.textContent === satz())));
+      vorschlaege.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.satz === satz())));
       prompt();
       neuKopieren();
     };
+    // the first sentence (the Eierschalensollbruchstellenverursacher) is always among the first suggestions
+    let erstesMal = true;
     const zeigeVorschlaege = () => {
       const rest = saetze.filter(s => !gezeigt.includes(s));
-      gezeigt = mische(rest.length >= 3 ? rest : saetze).slice(0, 3);
+      gezeigt = erstesMal ? [saetze[0], ...mische(saetze.slice(1)).slice(0, 2)] : mische(rest.length >= 3 ? rest : saetze).slice(0, 3);
+      erstesMal = false;
       vorschlaege.textContent = '';
       gezeigt.forEach(s => {
         const b = document.createElement('button');
         b.type = 'button';
         b.className = 'sp-vorschlag';
-        b.textContent = s;
-        b.addEventListener('click', () => { feld.value = s; pruefe(); knopf.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
+        b.textContent = anzeige(s);
+        b.dataset.satz = sauber(s);
+        b.addEventListener('click', () => { feld.value = sauber(s); pruefe(); knopf.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
         vorschlaege.append(b);
       });
       pruefe();

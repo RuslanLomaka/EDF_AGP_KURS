@@ -183,6 +183,7 @@ def uebungen(path, body):
 def stillepost_html(path, d):
     """```stillepost: a guided start for the translation telephone game.
     "saetze": suggested German sentences; learners pick one or write their own ("mindestens" characters, default 50).
+    In long words, "|" marks the word parts: the suggestions break only there (soft hyphens); the copied text has none.
     "vorlage": the prompt for the game leader with {satz} and the languages {1}, {2}, {3};
     "gruppen": three language families; "start": the link to the game leader (Gemini).
     stillepost.js picks one language per family in a random order, fills in sentence and languages, and copies the
@@ -202,14 +203,14 @@ def stillepost_html(path, d):
     if not isinstance(saetze, list) or len(saetze) < 3 or not all(isinstance(x, str) for x in saetze):
         fail(path, "stillepost: 'saetze' needs a list of at least 3 sentences")
     for x in saetze:
-        if not mindestens <= len(x.strip()) <= 300:
+        if not mindestens <= len(x.replace("|", "").strip()) <= 300:
             fail(path, f"stillepost: every sentence needs {mindestens} to 300 characters: {x!r}")
     start = d.get("start", "")
     if not isinstance(start, str) or not start.startswith("https://"):
         fail(path, "stillepost: 'start' must be an https:// link (the AI that leads the game)")
     name = esc(d.get("start_name", "Gemini"))
     standard = [v[0] for v in gruppen.values()]
-    text = d["vorlage"].strip().replace("{satz}", saetze[0].strip())
+    text = d["vorlage"].strip().replace("{satz}", saetze[0].replace("|", "").strip())
     for i, sprache in enumerate(standard, 1):
         text = text.replace(f"{{{i}}}", sprache)
     daten = esc(json.dumps(list(gruppen.values()), ensure_ascii=False))

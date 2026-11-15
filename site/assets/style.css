@@ -583,7 +583,7 @@ h2 .nr { margin-right: 0.35rem; }
 .stillepost.sp-aktiv .sp-ohne-js { display: none; }
 .sp-klein { margin: 0 0 0.5rem; font-size: 0.92rem; color: var(--muted); }
 .sp-vorschlaege { display: grid; gap: 0.45rem; }
-.sp-vorschlag { font: inherit; text-align: left; min-height: 2.75rem; padding: 0.55rem 0.8rem; border-radius: 12px; cursor: pointer;
+.sp-vorschlag { font: inherit; text-align: left; overflow-wrap: anywhere; hyphens: manual; min-height: 2.75rem; padding: 0.55rem 0.8rem; border-radius: 12px; cursor: pointer;
   color: var(--fg); background: var(--card); border: 1.5px solid var(--line); box-shadow: var(--shadow); }
 .sp-vorschlag:hover { border-color: var(--ton-rand); background: var(--ton-soft); }
 .sp-vorschlag[aria-pressed="true"] { border: 2px solid var(--ton); background: var(--ton-soft); font-weight: 700; }

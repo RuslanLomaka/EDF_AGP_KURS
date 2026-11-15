@@ -242,7 +242,9 @@ Create `site/content/edv-kurs/<slug>.md` like `bewerbung-auf-knopfdruck.md`.
 - **Tasks** (lessons 4, 5 and 6): heading, `<p class="zeit">15 Minuten</p>`, instructions, a `::: prompt` box (example
   prompt with a copy button), "Das lernen Sie", and a `::: profi` box (optional challenge in small print).
 - **Stille Post** (lesson 4, ` ```stillepost ` block, YAML): `saetze` are suggested sentences (30, each at least
-  `mindestens` characters, default 50); `vorlage` is the prompt for the game leader with `{satz}`, `{1}`, `{2}`, `{3}`;
+  `mindestens` characters, default 50; two thirds contain funny long words, and the first one, with
+  "Eierschalensollbruchstellenverursacher", is always among the first suggestions; in long words `|` marks the parts,
+  shown as soft hyphens and removed from the copied text); `vorlage` is the prompt for the game leader with `{satz}`, `{1}`, `{2}`, `{3}`;
   `gruppen` are three language families; `start` is the link to the game leader (Gemini). On the page:
   1. pick one of three suggestions (🎲 for others) or type an own sentence; a bar fills up to the minimum, and
      addresses, e-mail addresses or phone numbers block the button;

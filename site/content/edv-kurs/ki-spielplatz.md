@@ -282,7 +282,7 @@ Strenge Regeln: genau 7 Wörter, alle Wörter beginnen mit demselben Buchstaben,
 
 1. Ziel: Bei jeder Übersetzung kann Bedeutung verloren gehen – und jede KI übersetzt anders.
 2. Gemini ist der **Spielleiter**: Er schickt die Teams sofort zur ersten KI, sagt bei jedem Schritt, was zu tun ist, zeigt den Fortschritt („Schritt 3 von 5“) und erklärt am Ende, was passiert ist. Die Teilnehmenden müssen nur kopieren, Link öffnen, einfügen – und zurückkommen.
-3. Auf der Website wählt jedes Team zuerst einen Satz: einen von 30 Vorschlägen mit Doppelbedeutungen und Redewendungen oder einen eigenen. Der Satz muss mindestens 50 Zeichen haben – erst dann lässt sich der Prompt kopieren. Lange Sätze verändern sich mehr und sind lustiger. Die drei Sprachen würfelt die Website: je eine aus Europa, aus dem Nahen Osten oder Afrika und aus Asien, in zufälliger Reihenfolge.
+3. Auf der Website wählt jedes Team zuerst einen Satz: einen von 30 Vorschlägen mit Doppelbedeutungen und Redewendungen oder einen eigenen. Der Satz muss mindestens 50 Zeichen haben – erst dann lässt sich der Prompt kopieren. Zwei Drittel der Vorschläge enthalten lange deutsche Wörter wie „Eierschalensollbruchstellenverursacher“ – wie übersetzen KIs so etwas? Lange Sätze verändern sich mehr und sind lustiger. Die drei Sprachen würfelt die Website: je eine aus Europa, aus dem Nahen Osten oder Afrika und aus Asien, in zufälliger Reihenfolge.
 4. Typisches Problem: Jemand verliert den Gemini-Tab. Sagen Sie: „Gemini ist Ihr Zuhause. Nach jeder KI kommen Sie dorthin zurück.“
 5. Typisches Problem: Arabisch oder Thai mit der Maus markieren klappt nicht. Immer das Kopieren-Zeichen unter der Antwort nehmen.
 6. Am Ende liest jedes Team VORHER und NACHHER vor. Die verrückteste Verwandlung bekommt 3 Punkte.
@@ -316,11 +316,27 @@ gruppen:
   "Naher Osten und Afrika": ["Arabisch", "Persisch", "Hebräisch", "Türkisch", "Suaheli"]
   "Asien": ["Thai", "Japanisch", "Chinesisch", "Koreanisch", "Hindi", "Vietnamesisch", "Tamil", "Bengalisch"]
 saetze:
-  - "Der Leiter der Firma ist gestern von der Leiter gefallen und trägt jetzt einen Gips."
-  - "Meine Mutter hat die Mutter am Fahrrad so fest angezogen, dass sie nicht mehr aufgeht."
+  - "Mit dem Eier|schalen|soll|bruch|stellen|verursacher öffnet mein Opa jeden Sonntag sein Frühstücksei – nur heute ist das Ei explodiert."
+  - "Im Kaufhaus habe ich einen Eier|schalen|soll|bruch|stellen|verursacher gesucht, aber die Verkäuferin hat mir einen Schneebesen gebracht."
+  - "Der Donau|dampf|schiff|fahrts|gesellschafts|kapitän hat seine Mütze vergessen und sucht sie jetzt auf dem ganzen Schiff."
+  - "Die Wasch|maschinen|bedienungs|anleitung ist so dick, dass ich meine Socken lieber mit der Hand wasche."
+  - "Der Bezirks|schornstein|feger|meister soll Glück bringen, aber heute hat er nur Ruß auf meinen neuen Teppich gebracht."
+  - "Seit dem Umzug habe ich Kummerspeck, weil der Wohnungs|besichtigungs|termin dreimal verschoben wurde."
+  - "Ob die Kühlschrank|innen|beleuchtung wirklich ausgeht, wenn man die Tür schließt, weiß bis heute niemand genau."
+  - "Das Rind|fleisch|etikettierungs|überwachungs|aufgaben|übertragungs|gesetz gibt es nicht mehr, aber aussprechen kann ich es immer noch nicht."
+  - "Der Brief von meiner Kraft|fahrzeug|haft|pflicht|versicherung war länger als meine Fahrt zum Bäcker an der Ecke."
+  - "Der Leiter der Firma ist von der Leiter gefallen und füllt jetzt eine Arbeits|unfall|meldung in dreifacher Ausfertigung aus."
+  - "Meine Mutter hat die Mutter am Fahrrad so fest angezogen, dass jetzt nur noch die Fahrrad|reparatur|werkstatt helfen kann."
+  - "Der Kater lag nach der Geburtstags|überraschungs|party mit einem Kater auf dem Sofa und starrte an die Decke."
+  - "Der Kunde ist König, sagt mein Chef, aber bei der Kunden|zufriedenheits|umfrage hat der König nur einen Stern gegeben."
+  - "Ich stehe heute total auf dem Schlauch, weil ich die ganze Nacht nach der Steuer|erklärungs|abgabe|frist gesucht habe."
+  - "Unser Streichholz|schächtelchen ist leer, deshalb brennt heute Abend keine einzige Advents|kranz|kerze."
+  - "Auf meiner Vorstellungs|gesprächs|vorbereitungs|liste steht nur noch ein Punkt: Daumen drücken und Hals- und Beinbruch!"
+  - "„Fischers Fritz fischt frische Fische“ ist leichter als das Wort Grundstücks|verkehrs|genehmigungs|zuständigkeits|übertragungs|verordnung."
+  - "Mein Nachbar hat einen grünen Daumen, aber leider zwei linke Hände, wenn er eine Möbel|aufbau|anleitung lesen soll."
+  - "Die Kiefer im Wald ist schief gewachsen, und mein Kiefer tut vom Lachen über die Verschlimm|besserung des Försters weh."
+  - "Auf der Betriebs|weihnachts|feier habe ich mich fremdgeschämt und dazu einen Ohrwurm bekommen, der bis heute nicht aufhört."
   - "Am Schloss hängt ein altes Schloss, und auf der Bank vor der Bank sitzt heute niemand."
-  - "Der Kater lag nach der Feier mit einem Kater auf dem Sofa und starrte an die Decke."
-  - "Der Schimmel im Stall wurde ganz grau, weil an der Wand schon lange Schimmel wuchs."
   - "Ich verstehe nur Bahnhof, wenn mein Chef am Montag um den heißen Brei herumredet."
   - "Das ist zwar nicht mein Bier, aber ich drücke dir trotzdem die Daumen für morgen."
   - "Ich habe den Zug verpasst, weil ich am Bahnhof wieder einmal Tomaten auf den Augen hatte."
@@ -328,24 +344,8 @@ saetze:
   - "Im Gericht gab es zum Mittagessen ein Gericht, das wirklich niemand bestellt hatte."
   - "Der Hahn auf dem Dach war ganz still, aber der Hahn in der Küche tropfte die ganze Nacht."
   - "Die Birne im Flur ist kaputt, deshalb habe ich im Dunkeln eine Birne gegessen."
-  - "Meine Maus ist unter den Schrank gelaufen, und jetzt funktioniert der Computer nicht mehr."
-  - "Der Kunde ist König, sagt mein Chef, aber heute hat leider auch der König nichts gekauft."
-  - "Nach dem Umzug hatten wir Schwein, denn der Kühlschrank passte genau in die kleine Ecke."
-  - "Ich stehe heute total auf dem Schlauch, weil ich die ganze Nacht Schafe gezählt habe."
-  - "Der Ton der Lehrerin war sehr freundlich, als wir im Kunstunterricht mit Ton gearbeitet haben."
-  - "Auf dem Absatz meines Schuhs klebt ein Zettel mit dem letzten Absatz meines Briefes."
   - "Das Steuer des Autos ist schwer zu drehen, aber die Steuer am Jahresende ist noch schwerer."
   - "Der Läufer ist über den Läufer im Flur gestolpert und hat das Rennen trotzdem gewonnen."
-  - "Mein Kollege hat uns einen Bären aufgebunden: Im Keller wohnt angeblich ein echter Bär."
-  - "Der Flügel im Wohnzimmer ist so groß, dass der Vogel mit seinen Flügeln nicht vorbeikommt."
-  - "Ein Blatt ist vom Baum auf meinen Brief gefallen, und plötzlich hat sich das Blatt gewendet."
-  - "Ich drücke Ihnen die Daumen für das Vorstellungsgespräch – Hals- und Beinbruch!"
-  - "Die Fliege an meinem Hemd war schief, und auf meiner Nase saß eine echte Fliege."
-  - "Im Zug war es so kalt, dass ich einen großen Zug aus meiner Tasse Tee genommen habe."
-  - "Mein Nachbar hat einen grünen Daumen, aber leider zwei linke Hände beim Aufbau von Möbeln."
-  - "Die Kiefer im Wald ist schief gewachsen, und mein Kiefer tut vom vielen Lachen weh."
-  - "Mein Chef sagt, ich soll den Ball flach halten, aber heute Abend gehen wir auf einen Ball."
-  - "Bei meinem Vorstellungsgespräch hatte ich Schwein, denn die Chefin mag auch Katzen und Kuchen."
 vorlage: |
     Du bist der Spielleiter von „Stille Post mit KIs“ in einem Computerkurs. Die Teilnehmenden sind Anfänger am Computer. Schreibe immer in einfachem Deutsch (Niveau B1), kurz, freundlich, mit „Sie“ – und gern ein bisschen witzig.
 
@@ -387,7 +387,7 @@ vorlage: |
     WENN EIN ERGEBNIS ZURÜCKKOMMT
     - Schreibe: „Angekommen ✓“
     - Dann: „Auf Deutsch heißt das jetzt ungefähr: …“ (deine grobe Rückübersetzung, ein Satz).
-    - Dann höchstens 2 lustige Sätze: Was hat sich verändert? Ein Wort mit zwei Bedeutungen, eine Redewendung, eine andere Zeit, ein anderer Ton?
+    - Dann höchstens 2 lustige Sätze: Was hat sich verändert? Ein Wort mit zwei Bedeutungen, eine Redewendung, ein langes deutsches Wort, eine andere Zeit, ein anderer Ton?
     - Danach sofort die nächste Runde.
     - Enthält das Ergebnis Erklärungen oder mehrere Varianten, nimm nur die erste Übersetzung und sage kurz: „Ich nehme nur die Übersetzung.“
     - Ist das Ergebnis nicht in der erwarteten Sprache, frage freundlich: „Haben Sie die Antwort von [Name der KI] kopiert?“
@@ -398,6 +398,7 @@ vorlage: |
     - NACHHER: das Ergebnis aus Runde 4.
     - Die Reise des Satzes: für jede Runde eine Zeile mit Sprache, KI, „ungefähr: …“ und was sich dort verändert hat.
     - Wo ist es passiert? 2 bis 3 Sätze: an welcher Stelle und warum (Wort mit zwei Bedeutungen, Redewendung, Grammatik, Zeit, Höflichkeit, Kultur).
+    - Lange deutsche Wörter (zum Beispiel Eierschalensollbruchstellenverursacher): Was ist aus ihnen geworden? Hat eine KI sie in Teile zerlegt, umschrieben oder einfach weggelassen?
     - Stille-Post-Meter: Wie viel vom Sinn ist übrig? Eine Zahl von 0 bis 10 und ein lustiger Titel für das Ergebnis.
     - Was lernen wir daraus? Ein Satz.
     - Zum Schluss: „Lesen Sie Ihr Ergebnis laut vor! Noch eine Runde? Gehen Sie zurück zur Kurs-Website, wählen Sie einen neuen Satz und kopieren Sie den Prompt neu – am besten in einem neuen Gemini-Chat.“
