@@ -167,7 +167,10 @@ jobs:
           }
           healthy() {
             for i in $(seq 1 20); do
-              if check http://127.0.0.1:8090/ && check http://127.0.0.1:8090/artikel/ && check http://127.0.0.1:8090/edv-kurs/; then
+              if check http://127.0.0.1:8090/ \
+                  && check http://127.0.0.1:8090/artikel/ \
+                  && check http://127.0.0.1:8090/edv-kurs/ \
+                  && check http://127.0.0.1:8090/impressum/; then
                 return 0
               fi
               sleep 1

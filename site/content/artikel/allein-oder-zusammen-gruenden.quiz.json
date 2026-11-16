@@ -2,7 +2,7 @@
   "title": "Allein oder zusammen gründen",
   "questions": [
     {
-      "question": "Sie beginnen allein ein Gewerbe. Welche Rechtsform haben Sie?",
+      "question": "Sie beginnen allein ein Gewerbe und gründen keine GmbH, UG oder AG. Welche Rechtsform haben Sie?",
       "answers": [
         {
           "text": "Ein Einzelunternehmen",
@@ -17,7 +17,7 @@
           "correct": false
         }
       ],
-      "explanation": "Das Einzelunternehmen entsteht automatisch, ohne Notar und ohne Startkapital.",
+      "explanation": "Ohne Kapitalgesellschaft entsteht das Einzelunternehmen automatisch. Eine GmbH kann auch eine Person gründen – dann braucht sie Notar und Stammkapital.",
       "sources": [
         {
           "title": "Rechtsformen (Existenzgründungsportal)",

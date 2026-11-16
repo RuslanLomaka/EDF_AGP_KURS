@@ -42,7 +42,12 @@
         }
       ],
       "explanation": "Die Gebühr ist je nach Gemeinde unterschiedlich.",
-      "sources": []
+      "sources": [
+        {
+          "title": "Unternehmensanmeldung (Existenzgründungsportal)",
+          "url": "https://www.existenzgruendungsportal.de/Navigation/DE/So-gehts/Unternehmensanmeldung/unternehmensanmeldung"
+        }
+      ]
     },
     {
       "question": "Wen informiert das Gewerbeamt nach der Anmeldung?",

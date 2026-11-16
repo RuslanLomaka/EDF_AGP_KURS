@@ -332,8 +332,8 @@ Jetzt probieren Sie alles zusammen aus. Ihre Lehrkraft hat einen Ordner **Job-Ma
 **In die gemeinsame Mappe gehören keine privaten Daten** – keine Adresse, keine Telefonnummer, kein Geburtsdatum. Nutzen Sie für das Anschreiben die Beispieldaten (Max Mustermann).
 :::
 
-<details>
-<summary>Für die Lehrkraft: So bereiten Sie die Job-Mappe vor</summary>
+::: notiz
+**Job-Mappe vorbereiten**
 
 1. In Ihrem Google Drive: **Neu** → **Neuer Ordner** → **Job-Mappe – Kurs** (mit Monat).
 2. Im Ordner: **Neu** → **Google Tabellen** → Name **Stellenbörse**. In Zeile 1 die Überschriften: **Firma · Stelle · Ort · Link zur Anzeige · Gefunden von · Kommentar**. Zeile 1 fett machen und fixieren (**Ansicht** → **Fixieren** → **1 Zeile**).
@@ -343,8 +343,7 @@ Jetzt probieren Sie alles zusammen aus. Ihre Lehrkraft hat einen Ordner **Job-Ma
 6. Nach dem Kurs: den Link-Zugriff wieder auf **Eingeschränkt** stellen.
 
 Tipp: Ohne Google-Konto können Teilnehmende einen geteilten Link öffnen. Zum Kommentieren und für den eigenen Ordner brauchen sie ein Konto – planen Sie am Anfang Zeit für die Anmeldung ein.
-
-</details>
+:::
 
 ## Wenn etwas nicht klappt {#hilfe}
 

@@ -136,16 +136,25 @@ def bild_version(html_text):
     return re.sub(r'src="(/(?:artikel|edv-kurs)/bilder/[^"?#]+)"', ersetze, html_text)
 
 
+# Pandoc turns these into <div class="notiz">. Only the plain '::: notiz' form is allowed in content;
+# other spellings would skip the strip below and leak onto the public page.
+NOTIZ_START = re.compile(r"^:{3,}\s+(?:notiz\b|\{\.notiz\}|\{\s*\.notiz\s*\})")
+
+
 def split_notizen(path, body):
     """Teacher notes are '::: notiz' boxes. Returns (body without them, body with them)."""
     ohne, im_kasten = [], False
     for nr, line in enumerate(body.split("\n"), 1):
-        if line.strip() == "::: notiz":
+        stripped = line.strip()
+        if stripped == "::: notiz":
             if im_kasten:
                 fail(path, f"line {nr}: '::: notiz' inside another '::: notiz' box")
             im_kasten = True
+        elif NOTIZ_START.match(stripped) and stripped != "::: notiz":
+            fail(path, f"line {nr}: write teacher notes as '::: notiz' (not '{stripped}'); "
+                 "other spellings stay on the public page")
         elif im_kasten and line.startswith(":::"):
-            if line.strip() != ":::":
+            if stripped != ":::" and not re.fullmatch(r":{3,}", stripped):
                 fail(path, f"line {nr}: a '::: notiz' box cannot contain other boxes")
             im_kasten = False
         elif not im_kasten:
@@ -563,8 +572,8 @@ HINWEIS_DIALOG = """<dialog id="hinweis-dialog" class="hinweis-dialog" aria-labe
 </dialog>"""
 
 
-# Legal pages. They need the owner's real name, address and e-mail (Impressum duty) from site/betreiber.yaml;
-# until that file exists they are not built and the footer does not link to them.
+# Legal pages. They need the owner's real name, address and e-mail (Impressum duty) from site/betreiber.yaml.
+# The build fails without that file so Impressum/Datenschutz cannot disappear silently.
 BETREIBER = None
 RECHT_LINKS = ' · <a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a>'
 
@@ -572,7 +581,8 @@ RECHT_LINKS = ' · <a href="/impressum/">Impressum</a> · <a href="/datenschutz/
 def load_betreiber():
     path = SITE / "betreiber.yaml"
     if not path.is_file():
-        return None
+        fail(path, "missing: Impressum and Datenschutz need the owner's name, address and e-mail "
+             "(see CLAUDE.md). Without this file the legal pages would disappear silently.")
     try:
         meta = yaml.safe_load(path.read_text(encoding="utf-8"))
     except yaml.YAMLError as e:
@@ -1401,6 +1411,21 @@ def check_links():
         raise SystemExit("ERROR in the built site (fix the Markdown file of that page):\n  " + "\n  ".join(errors))
 
 
+def check_public_no_notiz():
+    """Teacher notes belong only on /…/teacher/ pages. A leaked '::: {.notiz}' / ':::: notiz' must fail the build."""
+    errors = []
+    for f in DIST.rglob("*.html"):
+        rel = f.relative_to(DIST).as_posix()
+        if LEHRER in rel.split("/"):
+            continue
+        html_text = f.read_text(encoding="utf-8")
+        if 'class="notiz"' in html_text or "class='notiz'" in html_text:
+            errors.append(f"/{rel}: public page contains a teacher note (class=\"notiz\")")
+    if errors:
+        raise SystemExit("ERROR in the built site (a teacher note leaked onto a public page):\n  "
+                         + "\n  ".join(errors))
+
+
 def main():
     if DIST.exists():
         shutil.rmtree(DIST)
@@ -1425,10 +1450,10 @@ def main():
     build_start(articles, lessons)
     build_hinweis()
     build_aufwaermen(articles)
-    if BETREIBER:
-        build_rechtliches(BETREIBER)
+    build_rechtliches(BETREIBER)
     vorleser.copy_to_dist()
     check_links()
+    check_public_no_notiz()
     audio = f"{len(vorleser.files)} audio file(s)" if vorleser.voice else "no audio (PIPER_MODEL not set: browser voice only)"
     print(f"built {len(articles)} article(s), {len(lessons)} lesson(s), {audio} into {DIST}; all links checked")
 

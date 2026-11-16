@@ -262,7 +262,12 @@
         }
       ],
       "explanation": "Die Arbeiter schlossen sich zusammen, um bessere Bedingungen durchzusetzen.",
-      "sources": []
+      "sources": [
+        {
+          "title": "DGB: Mitglied werden",
+          "url": "https://www.dgb.de/mitmachen/mitglied-werden/"
+        }
+      ]
     }
   ]
 }

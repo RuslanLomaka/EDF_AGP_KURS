@@ -197,7 +197,7 @@ Neben der Büroklammer gibt es ein Zeichen für Google Drive. Damit schicken Sie
 ```uebung
 typ: markieren
 frage: "Diese E-Mail hat fünf Fehler. Tippen Sie sie an."
-text: "Absender: [[partymaus85@mail.de]] – Betreff: [[Hallo]] – Text: [[Hi]] Frau Weber, ich möchte mich als Lagerhelfer bewerben. Meine Unterlagen sind im Anhang: [[Lebenslauf.docx]]. [[LG]] Max"
+text: "Absender: [[partymaus85@example.com]] – Betreff: [[Hallo]] – Text: [[Hi]] Frau Weber, ich möchte mich als Lagerhelfer bewerben. Meine Unterlagen sind im Anhang: [[Lebenslauf.docx]]. [[LG]] Max"
 erklaerung: "Besser: eine Adresse mit Ihrem Namen, ein Betreff mit der Stelle, „Sehr geehrte Frau Weber“, ein PDF mit Ihrem Namen und „Mit freundlichen Grüßen“."
 ```
 

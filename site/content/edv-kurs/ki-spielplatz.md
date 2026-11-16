@@ -32,7 +32,7 @@ ziele:
 | 9:10 | Aufgaben 5, 6 und 7 (je 15 Min.) |
 | 9:55 | Punkte an die Tafel, Puffer |
 | 10:00 | **Pause** bis 10:20 |
-| 10:20 | Aufgabe 9: Stille Post mit drei KIs (25 Min.), dann 11 und 12 (je 15 Min.) |
+| 10:20 | Aufgabe 9: Stille Post mit vier KIs (25 Min.), dann 11 und 12 (je 15 Min.) |
 | 11:25 | Abschluss (Abschnitt 15), Siegerehrung „Goldene Gurke“ |
 | 11:45 | Ende: überall abmelden, privates Fenster schließen |
 
@@ -275,7 +275,7 @@ Schreibe einen kurzen Werbespruch für einen Regenschirm aus Zucker. Er soll seh
 Strenge Regeln: genau 7 Wörter, alle Wörter beginnen mit demselben Buchstaben, und es muss sich reimen. Schafft die KI das?
 :::
 
-## Stille Post mit drei KIs {#stille-post}
+## Stille Post mit vier KIs {#stille-post}
 
 ::: notiz
 **Tipps zur Aufgabe**

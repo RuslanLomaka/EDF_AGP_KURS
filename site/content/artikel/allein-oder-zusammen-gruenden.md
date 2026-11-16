@@ -23,7 +23,7 @@ stichwoerter:
   - Gesellschaftsvertrag
   - Gewinnverteilung
   - Gesellschafter
-kurz: "Wer allein gründet, hat automatisch ein Einzelunternehmen. Wer mit anderen gründet, hat oft eine GbR. In diesen Rechtsformen haften Sie mit Ihrem ganzen Privatvermögen. Ein schriftlicher Gesellschaftsvertrag regelt, wer wie viel Gewinn bekommt."
+kurz: "Wer allein ein Gewerbe startet und keine Kapitalgesellschaft wählt, hat automatisch ein Einzelunternehmen. Wer mit anderen gründet, hat oft eine GbR. In diesen Rechtsformen haften Sie mit Ihrem ganzen Privatvermögen. Ein schriftlicher Gesellschaftsvertrag regelt, wer wie viel Gewinn bekommt."
 quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten und offiziellen Seiten"
 ---
 
@@ -31,8 +31,8 @@ quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten 
 **Kurz gesagt**
 
 - Die **Rechtsform** bestimmt, wer für Schulden haftet, wie man sich anmeldet und welche Steuern anfallen.
-- **Allein** gründen Sie automatisch ein **Einzelunternehmen**.
-- **Zu zweit oder mehr** gründen Sie meistens eine **GbR**. Größere Firmen sind eine **OHG** oder **KG**.
+- **Allein** und ohne GmbH, UG oder AG: Dann haben Sie automatisch ein **Einzelunternehmen**. Eine GmbH kann auch **eine Person** gründen – das ist aber kein Einzelunternehmen ([Teil 3](/artikel/gmbh-ug-ag/)).
+- **Zu zweit oder mehr** und ohne Kapitalgesellschaft: Meistens eine **GbR**. Größere Firmen sind eine **OHG** oder **KG**.
 - In all diesen Rechtsformen **haften** die Inhaber mit ihrem **Privatvermögen** – nur der Kommanditist in der KG nicht.
 - Schreiben Sie einen **Gesellschaftsvertrag**: Wer bringt was ein, wer bekommt wie viel Gewinn, was passiert beim Ausstieg?
 :::
@@ -73,7 +73,7 @@ Es gibt zwei große Gruppen:
 
 ## Das Einzelunternehmen {#einzelunternehmen}
 
-Wenn Sie **allein** ein Gewerbe oder einen freien Beruf beginnen, haben Sie automatisch ein **Einzelunternehmen**.
+Wenn Sie **allein** ein Gewerbe oder einen freien Beruf beginnen **und keine Kapitalgesellschaft** (GmbH, UG, AG) gründen, haben Sie automatisch ein **Einzelunternehmen**. Wer allein eine GmbH will, braucht Notar und Stammkapital – das steht in [Teil 3](/artikel/gmbh-ug-ag/).
 
 - Sie brauchen **kein Startkapital** und keinen Notar.
 - Sie entscheiden **alles allein**.
@@ -177,7 +177,7 @@ gruppen:
     - "Drei Partner führen einen großen Großhandel und sind im Handelsregister eingetragen."
   "KG":
     - "Tom führt die Firma und haftet voll. Seine Tante gibt nur Geld und haftet bis zu ihrer Einlage."
-erklaerung: "Allein: Einzelunternehmen. Zu zweit oder mehr ohne Eintrag: GbR. Großes Handelsgewerbe im Handelsregister: OHG. Einer haftet voll, einer nur mit seiner Einlage: KG."
+erklaerung: "Allein ohne GmbH/UG/AG: Einzelunternehmen. Zu zweit oder mehr ohne Eintrag: GbR. Großes Handelsgewerbe im Handelsregister: OHG. Einer haftet voll, einer nur mit seiner Einlage: KG."
 ```
 
 ## Wörter {#woerter}
@@ -234,7 +234,7 @@ Tippen Sie auf eine Frage, um die Antwort zu sehen.
 <details>
 <summary>Sie eröffnen allein einen Online-Shop. Welche Rechtsform haben Sie?</summary>
 
-Ein **Einzelunternehmen** – es entsteht automatisch.
+Ein **Einzelunternehmen** – es entsteht automatisch, **wenn** Sie keine GmbH, UG oder AG gründen. Eine Ein-Personen-GmbH geht auch, braucht aber Notar und Stammkapital.
 
 </details>
 

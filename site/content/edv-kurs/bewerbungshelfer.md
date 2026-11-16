@@ -87,14 +87,18 @@ Kennen Sie schon den [Serienbrief aus Lektion 1](/edv-kurs/bewerbung-auf-knopfdr
 
 ## Ihre Daten (nur einmal) {#meine-daten}
 
+::: achtung
+Am **Kurs-PC** schreiben Sie **Beispieldaten** (zum Beispiel **Max Mustermann** mit einer erfundenen Adresse) – nicht Ihre echte Adresse. Oder löschen Sie Ihre Daten am Ende der Stunde. Zu Hause dürfen Sie Ihre echten Daten eintragen.
+:::
+
 ::: notiz
-Am Kurs-PC: lieber Beispieldaten (Max Mustermann) statt der echten Adresse, oder am Ende alles löschen. Prüfen Sie: Ist jedes gelbe Feld gefüllt? Sonst meldet das Programm einen Fehler.
+Prüfen Sie: Ist jedes gelbe Feld gefüllt? Sonst meldet das Programm einen Fehler. Erinnern Sie an Max Mustermann am Kurs-PC, bevor jemand echte Daten tippt.
 :::
 
 ::: schritte
 1. Öffnen Sie **Bewerbungsliste** mit einem Doppelklick. Wenn nötig: **Bearbeitung aktivieren**.
 2. Unten links sehen Sie zwei Blätter. Klicken Sie auf **Meine Daten**.
-3. Schreiben Sie Ihre Daten in die **gelben Felder**: Name, Straße, PLZ und Wohnort, Telefon, E-Mail. Rechts steht ein Beispiel.
+3. Schreiben Sie in die **gelben Felder**: Name, Straße, PLZ und Wohnort, Telefon, E-Mail. Rechts steht ein Beispiel. Am Kurs-PC: die Beispieldaten von Max Mustermann.
 :::
 
 ## Ihre Stellen {#stellen}

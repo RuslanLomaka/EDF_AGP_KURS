@@ -90,7 +90,12 @@
         }
       ],
       "explanation": "Nur Gewerbe zahlen Gewerbesteuer an die Gemeinde.",
-      "sources": []
+      "sources": [
+        {
+          "title": "§ 2 Gewerbesteuergesetz",
+          "url": "https://www.gesetze-im-internet.de/gewstg/__2.html"
+        }
+      ]
     },
     {
       "question": "Bis wann ist die Steuererklärung ohne Steuerberater fällig?",
@@ -109,7 +114,12 @@
         }
       ],
       "explanation": "Mit einem Steuerberater haben Sie mehr Zeit.",
-      "sources": []
+      "sources": [
+        {
+          "title": "§ 149 Abgabenordnung – Steuererklärung",
+          "url": "https://www.gesetze-im-internet.de/ao_1977/__149.html"
+        }
+      ]
     },
     {
       "question": "Was sind Vorauszahlungen?",

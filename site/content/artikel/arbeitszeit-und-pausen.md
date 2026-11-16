@@ -20,15 +20,15 @@ stichwoerter:
   - Sonntagsarbeit
   - Ersatzruhetag
   - Gewerbeaufsichtsamt
-kurz: "Das Arbeitszeitgesetz schützt Ihre Gesundheit: höchstens 8 Stunden pro Werktag, 11 Stunden Ruhe nach Feierabend und feste Pausen. Auch für Überstunden, Nachtarbeit und Sonntage gibt es klare Regeln."
+kurz: "Das Arbeitszeitgesetz schützt Ihre Gesundheit: höchstens 8 Stunden pro Werktag im Durchschnitt, 11 Stunden Ruhe nach Feierabend und feste Pausen. Auch für Überstunden, Nachtarbeit und Sonntage gibt es klare Regeln."
 quelle: "Arbeitsblatt aus dem Kurs (Text und Fragen, 2 Seiten)"
 ---
 
 ::: kurz
 **Kurz gesagt**
 
-- Pro Werktag (Montag bis Samstag) arbeiten Sie **höchstens 8 Stunden** – also höchstens **48 Stunden pro Woche**.
-- **10 Stunden** am Tag sind nur erlaubt, wenn es im Durchschnitt von 6 Monaten wieder 8 Stunden sind.
+- Pro Werktag (Montag bis Samstag) arbeiten Sie normal **höchstens 8 Stunden**. Im **Durchschnitt** sind das **48 Stunden pro Woche**.
+- **10 Stunden** am Tag sind nur erlaubt, wenn es im Durchschnitt von 6 Monaten wieder 8 Stunden sind. Dann kann eine Woche **bis zu 60 Stunden** haben (6 × 10).
 - Nach Feierabend haben Sie **mindestens 11 Stunden Ruhe**.
 - **Pausen:** mehr als 6 Stunden Arbeit → 30 Minuten, mehr als 9 Stunden → 45 Minuten. Pausen werden meistens **nicht bezahlt**.
 - **Sonntagsarbeit** ist grundsätzlich verboten – mit Ausnahmen und einem freien Ersatztag.
@@ -38,7 +38,7 @@ quelle: "Arbeitsblatt aus dem Kurs (Text und Fragen, 2 Seiten)"
 **So gehen Sie vor** (ca. 45 Min.)
 
 1. Einstieg: „Wie lange haben Sie früher gearbeitet – pro Tag und pro Woche?“
-2. Bild „Wie lange arbeiten?“: 8 Stunden, 10 Stunden, 48 Stunden.
+2. Bild „Wie lange arbeiten?“: 8 Stunden, 10 Stunden, 48 Stunden im Durchschnitt, bis 60 in einer Woche.
 3. Ruhezeit: Rechnen Sie das Beispiel 22 Uhr → 9 Uhr. Dann eigene Beispiele: „Feierabend um 23 Uhr – wann frühestens wieder anfangen?“ (10 Uhr)
 4. Pausen mit der Tabelle und dem Bild.
 5. Zum Schluss: „Fragen zum Text“, dann das Quiz.
@@ -52,23 +52,23 @@ Viele denken: „Wenn ich dafür bezahlt werde, darf ich so viel arbeiten, wie i
 
 ## Wie lange darf man arbeiten? {#arbeitszeit}
 
-<p class="bild"><img src="/artikel/bilder/arbeitszeit.svg" alt="Wie lange darf man arbeiten? Normal höchstens 8 Stunden am Tag. Bis zu 10 Stunden nur mit Ausgleich: Im Durchschnitt von 6 Monaten müssen es wieder 8 Stunden sein. Höchstens 48 Stunden pro Woche, Montag bis Samstag. Nach Feierabend mindestens 11 Stunden Ruhe: Wer um 22 Uhr Feierabend hat, darf frühestens um 9 Uhr wieder anfangen." width="400" height="400"></p>
+<p class="bild"><img src="/artikel/bilder/arbeitszeit.svg" alt="Wie lange darf man arbeiten? Normal höchstens 8 Stunden am Tag. Bis zu 10 Stunden nur mit Ausgleich: Im Durchschnitt von 6 Monaten müssen es wieder 8 Stunden sein. Im Durchschnitt höchstens 48 Stunden pro Woche; in einer Woche bis zu 60 Stunden möglich (6 × 10), Montag bis Samstag. Nach Feierabend mindestens 11 Stunden Ruhe: Wer um 22 Uhr Feierabend hat, darf frühestens um 9 Uhr wieder anfangen." width="400" height="400"></p>
 
 ::: notiz
 **Zum Bild**
 
 1. Alle schauen auf den ersten grünen Balken: „Normal arbeitet man höchstens 8 Stunden am Tag.“
 2. Der orange Teil: „Manchmal sind es 10 Stunden. Das geht nur, wenn man an anderen Tagen weniger arbeitet. Im Durchschnitt müssen es wieder 8 Stunden sein.“
-3. „Pro Woche höchstens 48 Stunden: Montag bis Samstag, also 6 Tage mal 8 Stunden.“
+3. „Im Durchschnitt höchstens 48 Stunden pro Woche: Montag bis Samstag, also 6 × 8. Mit Ausgleich kann eine Woche bis 60 Stunden haben: 6 × 10.“
 4. Unten: „Nach Feierabend kommen mindestens 11 Stunden Ruhe. Wer um 22 Uhr aufhört, darf frühestens um 9 Uhr wieder anfangen.“
 5. Rechnen lassen: „Feierabend um 20 Uhr – wann frühestens wieder arbeiten?“ (7 Uhr)
 :::
 
 - **Werktage** sind Montag bis Samstag – also 6 Tage pro Woche.
 - An jedem Werktag darf man regulär **höchstens 8 Stunden** arbeiten.
-- Das ergibt **höchstens 48 Stunden pro Woche** (6 × 8 Stunden).
+- Im **Durchschnitt** sind das **48 Stunden pro Woche** (6 × 8 Stunden).
 
-**Bis zu 10 Stunden** an einem Tag sind erlaubt – aber nur, wenn man in **6 Monaten (oder 24 Wochen)** im Durchschnitt wieder auf **8 Stunden pro Werktag** kommt. Diese Zeit heißt **Ausgleichszeitraum**. Wer also an einigen Tagen 10 Stunden arbeitet, muss an anderen Tagen weniger arbeiten.
+**Bis zu 10 Stunden** an einem Tag sind erlaubt – aber nur, wenn man in **6 Monaten (oder 24 Wochen)** im Durchschnitt wieder auf **8 Stunden pro Werktag** kommt. Diese Zeit heißt **Ausgleichszeitraum**. Wer also an einigen Tagen 10 Stunden arbeitet, muss an anderen Tagen weniger arbeiten. In einer einzelnen Woche können so **bis zu 60 Stunden** liegen (6 Werktage × 10 Stunden) – aber nur mit diesem Ausgleich.
 
 ## Ruhezeit nach Feierabend {#ruhezeit}
 
@@ -174,9 +174,9 @@ erklaerung: "Bis 6 Stunden: keine Pflicht-Pause. Mehr als 6 bis 9 Stunden: 30 Mi
 ```uebung
 typ: luecken
 frage: "Ergänzen Sie die Zahlen. Nicht alle passen."
-text: "Pro Werktag arbeiten Sie normal höchstens [[8 Stunden]], pro Woche höchstens [[48 Stunden]]. Nach Feierabend haben Sie mindestens [[11 Stunden]] Ruhe."
+text: "Pro Werktag arbeiten Sie normal höchstens [[8 Stunden]]. Im Durchschnitt sind das [[48 Stunden]] pro Woche; mit Ausgleich bis zu [[60 Stunden]] in einer Woche. Nach Feierabend haben Sie mindestens [[11 Stunden]] Ruhe."
 ablenker: ["10 Stunden", "40 Stunden", "9 Stunden"]
-erklaerung: "8 Stunden am Tag (bis 10 nur mit Ausgleich), 48 Stunden pro Woche von Montag bis Samstag, 11 Stunden Ruhe."
+erklaerung: "8 Stunden am Tag (bis 10 nur mit Ausgleich). 48 Stunden sind der Wochendurchschnitt; bis 60 Stunden in einer Woche nur mit Ausgleich. 11 Stunden Ruhe."
 ```
 
 ```uebung
@@ -321,7 +321,7 @@ Einen **Ersatzruhetag** – einen anderen freien Tag innerhalb von 2 Wochen.
 <details>
 <summary>Die Wochenarbeitszeit ist laut Gesetz höchstens 40 Stunden.</summary>
 
-**Falsch.** Höchstens **48 Stunden** (6 Werktage × 8 Stunden).
+**Falsch.** Im **Durchschnitt** sind es **48 Stunden** (6 Werktage × 8 Stunden). Mit Ausgleich kann eine Woche **bis zu 60 Stunden** haben.
 
 </details>
 

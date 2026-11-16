@@ -293,10 +293,13 @@ The notice (dialog + `/hinweis/`, text in `HINWEIS_PUNKTE` in `build.py`) promis
 Any change that would break one of these promises must also change the notice text, and needs the owner's OK.
 
 Legal pages: `/impressum/` and `/datenschutz/` are built from `site/betreiber.yaml`, which holds the owner's name,
-address and e-mail (`name`, `strasse`, `ort`, `email`, optional `telefon`). Without that file they are not built.
-This file is the only allowed personal data in the repository, and only the owner provides its values. The
-Datenschutzerklärung describes the real setup (`build_rechtliches` in `build.py`). Update it together with any
-change to hosting, browser storage, external services or logging.
+address and e-mail (`name`, `strasse`, `ort`, `email`, optional `telefon`). The build fails without that file; deploy
+health checks include `/impressum/`. This file is the only allowed personal data in the repository, and only the
+owner provides its values. The Datenschutzerklärung describes the real setup (`build_rechtliches` in `build.py`).
+Update it together with any change to hosting, browser storage, external services or logging.
+
+**Caching (nginx):** HTML pages send `Cache-Control: no-cache`. Files requested with `?v=<hash>` (assets and drawings)
+are cached for one year. The Content-Security-Policy header stays on every response.
 
 ## Open points
 

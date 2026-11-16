@@ -17,7 +17,13 @@
           "correct": false
         }
       ],
-      "explanation": "Brutto steht im Arbeitsvertrag. Davon gehen noch Steuern und Sozialversicherung ab."
+      "explanation": "Brutto steht im Arbeitsvertrag. Davon gehen noch Steuern und Sozialversicherung ab.",
+      "sources": [
+        {
+          "title": "§ 28d SGB IV – Gesamtsozialversicherungsbeitrag",
+          "url": "https://www.gesetze-im-internet.de/sgb_4/__28d.html"
+        }
+      ]
     },
     {
       "question": "Was ist das Nettogehalt?",
@@ -35,7 +41,13 @@
           "correct": false
         }
       ],
-      "explanation": "Netto = Brutto minus Steuern minus Sozialversicherung."
+      "explanation": "Netto = Brutto minus Steuern minus Sozialversicherung.",
+      "sources": [
+        {
+          "title": "§ 28d SGB IV – Gesamtsozialversicherungsbeitrag",
+          "url": "https://www.gesetze-im-internet.de/sgb_4/__28d.html"
+        }
+      ]
     },
     {
       "question": "Welche zwei Arten von Abzügen gibt es?",
@@ -53,7 +65,13 @@
           "correct": false
         }
       ],
-      "explanation": "Vom Brutto werden Steuern (vor allem Lohnsteuer) und Sozialversicherungsbeiträge abgezogen."
+      "explanation": "Vom Brutto werden Steuern (vor allem Lohnsteuer) und Sozialversicherungsbeiträge abgezogen.",
+      "sources": [
+        {
+          "title": "§ 28d SGB IV – Gesamtsozialversicherungsbeitrag",
+          "url": "https://www.gesetze-im-internet.de/sgb_4/__28d.html"
+        }
+      ]
     },
     {
       "question": "Welche Versicherung gehört NICHT zu den vier wichtigsten Sozialversicherungen im Text?",
@@ -71,7 +89,13 @@
           "correct": false
         }
       ],
-      "explanation": "Die vier sind: Kranken-, Renten-, Pflege- und Arbeitslosenversicherung. Eine Haftpflichtversicherung ist privat."
+      "explanation": "Die vier sind: Kranken-, Renten-, Pflege- und Arbeitslosenversicherung. Eine Haftpflichtversicherung ist privat.",
+      "sources": [
+        {
+          "title": "Deutsche Rentenversicherung",
+          "url": "https://www.deutsche-rentenversicherung.de/"
+        }
+      ]
     },
     {
       "question": "Wer zahlt Beiträge zur Sozialversicherung?",
@@ -89,7 +113,13 @@
           "correct": false
         }
       ],
-      "explanation": "Ihr Teil wird vom Brutto abgezogen, der Teil des Arbeitgebers kommt zusätzlich dazu."
+      "explanation": "Ihr Teil wird vom Brutto abgezogen, der Teil des Arbeitgebers kommt zusätzlich dazu.",
+      "sources": [
+        {
+          "title": "§ 28d SGB IV – Gesamtsozialversicherungsbeitrag",
+          "url": "https://www.gesetze-im-internet.de/sgb_4/__28d.html"
+        }
+      ]
     },
     {
       "question": "Was bestimmt die Steuerklasse?",
@@ -203,7 +233,13 @@
           "correct": false
         }
       ],
-      "explanation": "Im Vertrag und in Anzeigen steht meist das Brutto. Leben müssen Sie aber vom Netto."
+      "explanation": "Im Vertrag und in Anzeigen steht meist das Brutto. Leben müssen Sie aber vom Netto.",
+      "sources": [
+        {
+          "title": "Lohnsteuerrechner des Bundesfinanzministeriums",
+          "url": "https://www.bmf-steuerrechner.de/"
+        }
+      ]
     }
   ]
 }

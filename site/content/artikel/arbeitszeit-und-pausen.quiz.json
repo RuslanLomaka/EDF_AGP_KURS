@@ -65,7 +65,13 @@
           "correct": false
         }
       ],
-      "explanation": "Darum sind höchstens 6 × 8 = 48 Stunden pro Woche erlaubt."
+      "explanation": "Im Durchschnitt 6 × 8 = 48 Stunden pro Woche; mit Ausgleich bis zu 60 Stunden in einer Woche.",
+      "sources": [
+        {
+          "title": "Arbeitszeitgesetz (ArbZG)",
+          "url": "https://www.gesetze-im-internet.de/arbzg/"
+        }
+      ]
     },
     {
       "question": "Wann darf man 10 Stunden am Tag arbeiten?",
@@ -107,7 +113,13 @@
           "correct": false
         }
       ],
-      "explanation": "Beispiel: Feierabend um 22 Uhr, Arbeitsbeginn frühestens um 9 Uhr."
+      "explanation": "Beispiel: Feierabend um 22 Uhr, Arbeitsbeginn frühestens um 9 Uhr.",
+      "sources": [
+        {
+          "title": "Arbeitszeitgesetz (ArbZG)",
+          "url": "https://www.gesetze-im-internet.de/arbzg/"
+        }
+      ]
     },
     {
       "question": "Sie arbeiten 7 Stunden. Wie lang muss Ihre Pause mindestens sein?",
@@ -125,7 +137,13 @@
           "correct": false
         }
       ],
-      "explanation": "Bei mehr als 6 Stunden Arbeit: 30 Minuten. Bei mehr als 9 Stunden: 45 Minuten."
+      "explanation": "Bei mehr als 6 Stunden Arbeit: 30 Minuten. Bei mehr als 9 Stunden: 45 Minuten.",
+      "sources": [
+        {
+          "title": "Arbeitszeitgesetz (ArbZG)",
+          "url": "https://www.gesetze-im-internet.de/arbzg/"
+        }
+      ]
     },
     {
       "question": "Sie arbeiten 9,5 Stunden. Wie lang muss Ihre Pause mindestens sein?",
@@ -143,7 +161,13 @@
           "correct": false
         }
       ],
-      "explanation": "Ab mehr als 9 Stunden Arbeit sind es mindestens 45 Minuten."
+      "explanation": "Ab mehr als 9 Stunden Arbeit sind es mindestens 45 Minuten.",
+      "sources": [
+        {
+          "title": "Arbeitszeitgesetz (ArbZG)",
+          "url": "https://www.gesetze-im-internet.de/arbzg/"
+        }
+      ]
     },
     {
       "question": "Darf man die Pause an das Ende legen, um früher nach Hause zu gehen?",
@@ -161,7 +185,13 @@
           "correct": false
         }
       ],
-      "explanation": "Eine Pause am Anfang oder am Ende der Arbeitszeit erfüllt ihren Zweck nicht."
+      "explanation": "Eine Pause am Anfang oder am Ende der Arbeitszeit erfüllt ihren Zweck nicht.",
+      "sources": [
+        {
+          "title": "Arbeitszeitgesetz (ArbZG)",
+          "url": "https://www.gesetze-im-internet.de/arbzg/"
+        }
+      ]
     },
     {
       "question": "Wie werden Überstunden normalerweise ausgeglichen?",
@@ -179,7 +209,13 @@
           "correct": false
         }
       ],
-      "explanation": "Ausgleich mit Freizeit heißt Freizeitausgleich."
+      "explanation": "Ausgleich mit Freizeit heißt Freizeitausgleich.",
+      "sources": [
+        {
+          "title": "Arbeitszeitgesetz (ArbZG)",
+          "url": "https://www.gesetze-im-internet.de/arbzg/"
+        }
+      ]
     },
     {
       "question": "Was muss der Arbeitgeber geben, wenn Sie am Sonntag arbeiten?",

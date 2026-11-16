@@ -18,7 +18,12 @@
         }
       ],
       "explanation": "Selbstständige verdienen nur, wenn Kunden zahlen, und kümmern sich selbst um Steuern und Versicherungen.",
-      "sources": []
+      "sources": [
+        {
+          "title": "Unternehmensanmeldung (Existenzgründungsportal)",
+          "url": "https://www.existenzgruendungsportal.de/Navigation/DE/So-gehts/Unternehmensanmeldung/unternehmensanmeldung"
+        }
+      ]
     },
     {
       "question": "Sie eröffnen einen Imbiss. Wo melden Sie sich an?",
@@ -109,7 +114,12 @@
         }
       ],
       "explanation": "Fragen Sie im Zweifel vor dem Start nach.",
-      "sources": []
+      "sources": [
+        {
+          "title": "§ 18 EStG – freie Berufe",
+          "url": "https://www.gesetze-im-internet.de/estg/__18.html"
+        }
+      ]
     },
     {
       "question": "Ein Kfz-Techniker will eine eigene Werkstatt. Was braucht er meistens?",
