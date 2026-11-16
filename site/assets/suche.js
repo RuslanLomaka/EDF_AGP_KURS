@@ -7,12 +7,13 @@
   const zahl = document.getElementById('anzahl');
   const chips = document.getElementById('themen');
 
-  // Same transform for text and query: lower case, umlauts and their ae/oe/ue spellings folded
-  // together, so "abzuge", "abzüge" and "abzuege" all find "Abzüge".
-  const norm = s => s.toLowerCase()
-    .replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/ü/g, 'u').replace(/ß/g, 'ss')
-    .replace(/ae/g, 'a').replace(/oe/g, 'o').replace(/ue/g, 'u')
-    .normalize('NFD').replace(/[̀-ͯ]/g, '');
+  // Same transform for text and query (kern.js when available).
+  const norm = (window.kurs && window.kurs.norm)
+    ? window.kurs.norm
+    : s => s.toLowerCase()
+      .replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/ü/g, 'u').replace(/ß/g, 'ss')
+      .replace(/ae/g, 'a').replace(/oe/g, 'o').replace(/ue/g, 'u')
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
   const artikel = daten.artikel.map(a => ({

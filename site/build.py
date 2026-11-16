@@ -28,7 +28,8 @@ from urllib.parse import quote, unquote, urlsplit
 
 import yaml
 
-SITE = Path(__file__).resolve().parent
+# KURS_SITE: optional path to a site/ tree (for tests and vergleich.py). Default: this directory.
+SITE = Path(os.environ["KURS_SITE"]).resolve() if os.environ.get("KURS_SITE") else Path(__file__).resolve().parent
 REPO = SITE.parent
 CONTENT = SITE / "content"
 DIST = SITE / "dist"
@@ -520,7 +521,8 @@ def layout(title, active, main, description="", scripts=(), noindex=False, farbe
         scripts = (*scripts, "uebung.js")
     if 'class="stillepost"' in main:
         scripts = (*scripts, "stillepost.js")
-    script_tags = "".join(f'<script src="{asset(s)}"></script>' for s in ("hinweis.js", "animation.js", *scripts))
+    script_tags = "".join(f'<script src="{asset(s)}"></script>'
+                          for s in ("kern.js", "hinweis.js", "animation.js", *scripts))
     return f"""<!doctype html>
 <html lang="de">
 <head>

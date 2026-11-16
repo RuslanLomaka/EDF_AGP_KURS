@@ -10,15 +10,17 @@
   const test = quiz.mode === 'test';
   const BUCHSTABEN = 'ABCD';
 
-  // Fisher–Yates shuffle on a copy
-  const mische = liste => {
-    const neu = liste.slice();
-    for (let i = neu.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [neu[i], neu[j]] = [neu[j], neu[i]];
-    }
-    return neu;
-  };
+  // Fisher–Yates shuffle on a copy (shared helper in kern.js when available)
+  const mische = (window.kurs && window.kurs.mische)
+    ? window.kurs.mische
+    : liste => {
+      const neu = liste.slice();
+      for (let i = neu.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [neu[i], neu[j]] = [neu[j], neu[i]];
+      }
+      return neu;
+    };
   const el = (tag, klasse, text) => {
     const e = document.createElement(tag);
     if (klasse) e.className = klasse;
