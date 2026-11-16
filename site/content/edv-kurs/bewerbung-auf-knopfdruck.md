@@ -62,6 +62,8 @@ lehrkraft:
 3. Erklären Sie die drei Kästen: Was sich ändert, steht in Excel. Was gleich bleibt, steht in Word. Zusammen gibt es fertige Briefe.
 4. Danach die Abschnitte 1 bis 5. Machen Sie jeden Schritt an einem PC vor, um den sich alle stellen – oder lesen Sie ihn laut vor und gehen Sie herum. Erst dann arbeiten alle selbst.
 5. Planen Sie für Abschnitt 4 die meiste Zeit ein. Dort gibt es die meisten Fragen.
+
+**Lotsen:** Wer schnell fertig ist, hilft zuerst dem Nachbarn bei den Feldern in Excel und macht dann die Profi-Aufgabe.
 :::
 
 <div class="prinzip">
@@ -84,6 +86,10 @@ lehrkraft:
 :::
 
 So sieht ein fertiger Brief aus. Kopf, Anschrift, Betreff und Anrede kommen automatisch – den Text in der Mitte schreiben Sie selbst.
+
+::: achtung
+**Am Kurs-PC:** Üben Sie mit **Beispieldaten** (zum Beispiel **Max Mustermann** und einer erfundenen Adresse). Ihre echten Bewerbungsdaten tippen Sie zu Hause.
+:::
 
 ::: info
 **Das brauchen Sie**

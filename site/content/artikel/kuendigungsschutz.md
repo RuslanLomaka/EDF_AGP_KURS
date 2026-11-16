@@ -159,13 +159,13 @@ In der Praxis enden viele Verfahren mit einem **Vergleich**: Das Arbeitsverhält
 ::: fall
 **Der Fall Frau K. – Teil 2 von 4** (erfunden)
 
-[Teil 1](/artikel/abmahnung/#fall-frau-k): Frau K., Verkäuferin, seit 4 Jahren in einem Supermarkt mit 25 Beschäftigten, hat eine Abmahnung wegen Verspätungen bekommen. Im Juni kommt sie wieder zu spät. Am Abend schreibt ihr der Filialleiter per WhatsApp: „Sie sind gekündigt.“
+[Teil 1](/artikel/kuendigung-einfach-erklaert/#fall-frau-k): Frau K. hat eine Kündigung auf Papier bekommen. Zwei Wochen zuvor hatte der Filialleiter schon per WhatsApp geschrieben: „Sie sind gekündigt.“ Frau K. ist länger als 6 Monate in der Firma; der Supermarkt hat 25 Beschäftigte.
 
-<details><summary>Ist das eine gültige Kündigung? Gilt für Frau K. das Kündigungsschutzgesetz?</summary>
-Eine Kündigung per WhatsApp ist **unwirksam** – sie muss auf Papier stehen und mit der Hand unterschrieben sein. Das Kündigungsschutzgesetz **gilt**: Frau K. ist länger als 6 Monate in der Firma, und die Firma hat mehr als 10 Beschäftigte. Kommt eine Kündigung auf Papier, hat sie **3 Wochen** Zeit für eine Klage. Rat bekommt sie zum Beispiel bei der Gewerkschaft oder bei einer Anwältin für Arbeitsrecht.
+<details><summary>War die WhatsApp-Nachricht eine Kündigung? Gilt für Frau K. das Kündigungsschutzgesetz?</summary>
+Eine Kündigung per WhatsApp ist **unwirksam** – sie muss auf Papier stehen und mit der Hand unterschrieben sein. Das Kündigungsschutzgesetz **gilt**: Frau K. ist länger als 6 Monate da, und die Firma hat mehr als 10 Beschäftigte. Gegen die Kündigung auf Papier hat sie **3 Wochen** Zeit für eine Klage. Rat bekommt sie zum Beispiel bei der Gewerkschaft oder bei einer Anwältin für Arbeitsrecht.
 </details>
 
-<a class="weiter" href="/artikel/kuendigung-einfach-erklaert/#fall-frau-k">Weiter mit Teil 3: die Kündigung im Briefkasten →</a>
+<a class="weiter" href="/artikel/abmahnung/#fall-frau-k">Weiter mit Teil 3: die Abmahnung davor →</a>
 :::
 
 ```uebung

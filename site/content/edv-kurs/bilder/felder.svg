@@ -26,22 +26,22 @@
 <line x1="200" y1="268" x2="74" y2="288" stroke="#5b6672" stroke-width="2.5" stroke-linecap="round" marker-end="url(#pfeil1)"/>
 <rect x="18" y="292" width="112" height="98" rx="4" fill="#fff" stroke="#b26a00" stroke-width="2"/>
 <rect x="18" y="292" width="112" height="46" rx="4" fill="#fff3df"/>
-<text x="74" y="310.0" font-size="14" fill="#b26a00" text-anchor="middle" font-weight="700">Muster</text>
-<text x="74" y="326.8" font-size="14" fill="#b26a00" text-anchor="middle" font-weight="700">Logistik GmbH</text>
-<text x="74" y="356.0" font-size="14" fill="#5b6672" text-anchor="middle">Lagerhelfer</text>
+<text x="74" y="310.0" font-size="15" fill="#b26a00" text-anchor="middle" font-weight="700">Muster</text>
+<text x="74" y="326.8" font-size="15" fill="#b26a00" text-anchor="middle" font-weight="700">Logistik GmbH</text>
+<text x="74" y="356.0" font-size="15" fill="#5b6672" text-anchor="middle">Lagerhelfer</text>
 <line x1="32" y1="374" x2="116" y2="374" stroke="#c9d1da" stroke-width="5" stroke-linecap="round"/>
 <line x1="200" y1="268" x2="200" y2="288" stroke="#5b6672" stroke-width="2.5" stroke-linecap="round" marker-end="url(#pfeil1)"/>
 <rect x="144" y="292" width="112" height="98" rx="4" fill="#fff" stroke="#6a3d9a" stroke-width="2"/>
 <rect x="144" y="292" width="112" height="46" rx="4" fill="#f1eaf8"/>
-<text x="200" y="310.0" font-size="14" fill="#6a3d9a" text-anchor="middle" font-weight="700">Beispiel</text>
-<text x="200" y="326.8" font-size="14" fill="#6a3d9a" text-anchor="middle" font-weight="700">Bau AG</text>
-<text x="200" y="356.0" font-size="14" fill="#5b6672" text-anchor="middle">Helfer</text>
+<text x="200" y="310.0" font-size="15" fill="#6a3d9a" text-anchor="middle" font-weight="700">Beispiel</text>
+<text x="200" y="326.8" font-size="15" fill="#6a3d9a" text-anchor="middle" font-weight="700">Bau AG</text>
+<text x="200" y="356.0" font-size="15" fill="#5b6672" text-anchor="middle">Helfer</text>
 <line x1="158" y1="374" x2="242" y2="374" stroke="#c9d1da" stroke-width="5" stroke-linecap="round"/>
 <line x1="200" y1="268" x2="326" y2="288" stroke="#5b6672" stroke-width="2.5" stroke-linecap="round" marker-end="url(#pfeil1)"/>
 <rect x="270" y="292" width="112" height="98" rx="4" fill="#fff" stroke="#00796b" stroke-width="2"/>
 <rect x="270" y="292" width="112" height="46" rx="4" fill="#e0f2f1"/>
-<text x="326" y="310.0" font-size="14" fill="#00796b" text-anchor="middle" font-weight="700">Nord Pflege</text>
-<text x="326" y="326.8" font-size="14" fill="#00796b" text-anchor="middle" font-weight="700">GmbH</text>
-<text x="326" y="356.0" font-size="14" fill="#5b6672" text-anchor="middle">Pflegehelfer</text>
+<text x="326" y="310.0" font-size="15" fill="#00796b" text-anchor="middle" font-weight="700">Nord Pflege</text>
+<text x="326" y="326.8" font-size="15" fill="#00796b" text-anchor="middle" font-weight="700">GmbH</text>
+<text x="326" y="356.0" font-size="15" fill="#5b6672" text-anchor="middle">Pflegehelfer</text>
 <line x1="284" y1="374" x2="368" y2="374" stroke="#c9d1da" stroke-width="5" stroke-linecap="round"/>
 </svg>

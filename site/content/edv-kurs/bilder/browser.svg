@@ -25,18 +25,18 @@
 <line x1="168" y1="242" x2="278" y2="242" stroke="#b7c3d0" stroke-width="6" stroke-linecap="round"/>
 <rect x="20" y="52" width="360" height="220" rx="12" fill="none" stroke="#5b6672" stroke-width="3"/>
 <circle cx="203" cy="77" r="12" fill="#1f4e79"/>
-<text x="203" y="82.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+<text x="203" y="82.0" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">1</text>
 <circle cx="345" cy="113" r="12" fill="#1f4e79"/>
-<text x="345" y="118.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+<text x="345" y="118.0" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">2</text>
 <circle cx="100" cy="200" r="12" fill="#1f4e79"/>
-<text x="100" y="205.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+<text x="100" y="205.0" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">3</text>
 <circle cx="34" cy="300" r="12" fill="#1f4e79"/>
-<text x="34" y="305.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+<text x="34" y="305.0" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">1</text>
 <text x="54" y="306.0" font-size="17" fill="#1d232b" text-anchor="start"><tspan font-weight="700">Tab:</tspan> eine offene Seite</text>
 <circle cx="34" cy="334" r="12" fill="#1f4e79"/>
-<text x="34" y="339.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+<text x="34" y="339.0" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">2</text>
 <text x="54" y="340.0" font-size="17" fill="#1d232b" text-anchor="start"><tspan font-weight="700">Adresszeile:</tspan> die Adresse der Seite</text>
 <circle cx="34" cy="368" r="12" fill="#1f4e79"/>
-<text x="34" y="373.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+<text x="34" y="373.0" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">3</text>
 <text x="54" y="374.0" font-size="17" fill="#1d232b" text-anchor="start"><tspan font-weight="700">Seite:</tspan> hier lesen und schreiben Sie</text>
 </svg>

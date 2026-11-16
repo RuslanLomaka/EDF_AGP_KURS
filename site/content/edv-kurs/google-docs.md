@@ -34,6 +34,8 @@ ziele:
 6. Abschnitte 5 und 6 (60 Min.): Kommentieren, Vorschlagen, Umwandeln.
 7. Abschnitt 7 (45 Min.): die Job-Mappe. Hier wenden alle alles an.
 8. Abschluss (15 Min.): „Testen Sie sich“ gemeinsam. Am Schulungs-PC melden sich alle ab.
+
+**Lotsen:** Wer schon ein Google-Konto hat und angemeldet ist, hilft zuerst Nachbarn bei der Anmeldung.
 :::
 
 ## Erst die Grundlagen {#grundlagen}

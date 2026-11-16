@@ -41,7 +41,13 @@ ziele:
 
 **Mindestziel für alle:** die 6 Warnzeichen kennen und wissen: Geld, Ausweis und Kontodaten nie vor einem Vertrag schicken.
 
-**Achtung:** Manche im Kurs sind vielleicht schon auf so etwas hereingefallen. Sprechen Sie ohne Vorwurf: „Die Betrüger sind Profis. Das kann jedem passieren.“
+**Achtung:** Manche im Kurs sind vielleicht schon auf so etwas hereingefallen. Sprechen Sie ohne Vorwurf: „Die Betrüger sind Profis. Das kann jedem passieren.“ Keine echten Namen, Konten oder Chat-Verläufe im Kurs zeigen.
+
+**Lotsen:** Wer fertig ist, hilft zuerst beim Markieren der Warnzeichen und macht dann die Profi-Aufgabe.
+:::
+
+::: info
+**Datenschutz im Kurs:** Erzählen Sie Betrugsversuche **ohne** echte Namen, Adressen oder Kontonummern. Zum Üben reichen erfundene Beispiele.
 :::
 
 ## Warum gibt es Fake-Jobs? {#warum}

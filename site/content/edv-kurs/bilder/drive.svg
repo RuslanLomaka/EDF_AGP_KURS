@@ -7,13 +7,13 @@
 <rect x="30" y="68" width="98" height="40" rx="20" fill="#fff" stroke="#b5bcc4" stroke-width="2"/>
 <text x="79" y="94.0" font-size="18" fill="#1d232b" text-anchor="middle" font-weight="700">+ Neu</text>
 <circle cx="150" cy="88" r="12" fill="#1f4e79"/>
-<text x="150" y="93.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+<text x="150" y="93.0" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">1</text>
 <rect x="24" y="126" width="186" height="30" rx="15" fill="#e8f0f8"/>
 <circle cx="40" cy="141" r="12" fill="#1f4e79"/>
-<text x="40" y="146.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+<text x="40" y="146.0" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">2</text>
 <text x="58" y="147.0" font-size="15" fill="#1d232b" text-anchor="start">Meine Ablage</text>
 <circle cx="40" cy="183" r="12" fill="#1f4e79"/>
-<text x="40" y="188.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+<text x="40" y="188.0" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">3</text>
 <text x="58" y="189.0" font-size="15" fill="#1d232b" text-anchor="start">Für mich freigegeben</text>
 <text x="58" y="231.0" font-size="15" fill="#5b6672" text-anchor="start">Papierkorb</text>
 <path d="M233.0 115.92 V108.0 a4 4 0 0 1 4 -4 H253.88 l7.92 7.92 H287.0 a4 4 0 0 1 4 4 V144.0 a4 4 0 0 1 -4 4 H237.0 a4 4 0 0 1 -4 -4 Z" fill="#f1f3f5" stroke="#5b6672" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
@@ -27,12 +27,12 @@
 <path d="M233.0 203.92 V196.0 a4 4 0 0 1 4 -4 H253.88 l7.92 7.92 H287.0 a4 4 0 0 1 4 4 V232.0 a4 4 0 0 1 -4 4 H237.0 a4 4 0 0 1 -4 -4 Z" fill="#f1f3f5" stroke="#5b6672" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
 <text x="262" y="254.0" font-size="15" fill="#1d232b" text-anchor="middle">Job-Mappe</text>
 <circle cx="30" cy="294" r="12" fill="#1f4e79"/>
-<text x="30" y="299.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+<text x="30" y="299.0" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">1</text>
 <text x="48" y="300.0" font-size="16" fill="#1d232b" text-anchor="start"><tspan font-weight="700">Neu:</tspan> Ordner oder Dokument erstellen</text>
 <circle cx="30" cy="328" r="12" fill="#1f4e79"/>
-<text x="30" y="333.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+<text x="30" y="333.0" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">2</text>
 <text x="48" y="334.0" font-size="16" fill="#1d232b" text-anchor="start"><tspan font-weight="700">Meine Ablage:</tspan> Ihre Dateien</text>
 <circle cx="30" cy="362" r="12" fill="#1f4e79"/>
-<text x="30" y="367.0" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+<text x="30" y="367.0" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">3</text>
 <text x="48" y="368.0" font-size="16" fill="#1d232b" text-anchor="start"><tspan font-weight="700">Für mich freigegeben:</tspan> von anderen</text>
 </svg>
