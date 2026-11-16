@@ -136,25 +136,18 @@ def bild_version(html_text):
     return re.sub(r'src="(/(?:artikel|edv-kurs)/bilder/[^"?#]+)"', ersetze, html_text)
 
 
-# Pandoc turns these into <div class="notiz">. Only the plain '::: notiz' form is allowed in content;
-# other spellings would skip the strip below and leak onto the public page.
-NOTIZ_START = re.compile(r"^:{3,}\s+(?:notiz\b|\{\.notiz\}|\{\s*\.notiz\s*\})")
-
-
 def split_notizen(path, body):
-    """Teacher notes are '::: notiz' boxes. Returns (body without them, body with them)."""
+    """Teacher notes are '::: notiz' boxes. Returns (body without them, body with them).
+    Only the plain form is stripped; odd spellings (:::: notiz, ::: {.notiz}) would reach
+    pandoc and show on the public page – the built-site check catches that."""
     ohne, im_kasten = [], False
     for nr, line in enumerate(body.split("\n"), 1):
-        stripped = line.strip()
-        if stripped == "::: notiz":
+        if line.strip() == "::: notiz":
             if im_kasten:
                 fail(path, f"line {nr}: '::: notiz' inside another '::: notiz' box")
             im_kasten = True
-        elif NOTIZ_START.match(stripped) and stripped != "::: notiz":
-            fail(path, f"line {nr}: write teacher notes as '::: notiz' (not '{stripped}'); "
-                 "other spellings stay on the public page")
         elif im_kasten and line.startswith(":::"):
-            if stripped != ":::" and not re.fullmatch(r":{3,}", stripped):
+            if line.strip() != ":::":
                 fail(path, f"line {nr}: a '::: notiz' box cannot contain other boxes")
             im_kasten = False
         elif not im_kasten:
@@ -1412,18 +1405,12 @@ def check_links():
 
 
 def check_public_no_notiz():
-    """Teacher notes belong only on /…/teacher/ pages. A leaked '::: {.notiz}' / ':::: notiz' must fail the build."""
-    errors = []
-    for f in DIST.rglob("*.html"):
-        rel = f.relative_to(DIST).as_posix()
-        if LEHRER in rel.split("/"):
-            continue
-        html_text = f.read_text(encoding="utf-8")
-        if 'class="notiz"' in html_text or "class='notiz'" in html_text:
-            errors.append(f"/{rel}: public page contains a teacher note (class=\"notiz\")")
-    if errors:
-        raise SystemExit("ERROR in the built site (a teacher note leaked onto a public page):\n  "
-                         + "\n  ".join(errors))
+    """Fail if a teacher note leaked onto a normal page (only /…/teacher/ may have class=\"notiz\")."""
+    leaks = [f"/{f.relative_to(DIST).as_posix()}"
+             for f in DIST.rglob("*.html")
+             if LEHRER not in f.relative_to(DIST).parts and 'class="notiz"' in f.read_text(encoding="utf-8")]
+    if leaks:
+        raise SystemExit("ERROR: teacher note on a public page:\n  " + "\n  ".join(leaks))
 
 
 def main():
