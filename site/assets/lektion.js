@@ -34,9 +34,14 @@
   const speicher = 'lektion-v3:' + box.dataset.lektion;
   const altSpeicher = 'lektion-v2:' + box.dataset.lektion;
   const hash = s => { let h = 5381; for (const c of s) h = (h * 33 + c.codePointAt(0)) >>> 0; return h.toString(36); };
-  let erledigt = new Set();
-  try { erledigt = new Set(JSON.parse(localStorage.getItem(speicher) || '[]')); } catch (e) { /* storage unavailable */ }
-  const speichern = () => { try { localStorage.setItem(speicher, JSON.stringify([...erledigt])); } catch (e) { /* ignore */ } };
+  const lese = (window.kurs && window.kurs.leseJSON)
+    ? window.kurs.leseJSON
+    : (k, fb) => { try { const r = localStorage.getItem(k); return r ? JSON.parse(r) : fb; } catch (e) { return fb; } };
+  const schreibe = (window.kurs && window.kurs.schreibeJSON)
+    ? window.kurs.schreibeJSON
+    : (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return false; } };
+  let erledigt = new Set(lese(speicher, []));
+  const speichern = () => { schreibe(speicher, [...erledigt]); };
   let standCache = '';
 
   // sections: every h2 of the lesson, plus the test below it

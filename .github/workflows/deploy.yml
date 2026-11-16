@@ -35,14 +35,17 @@ jobs:
           .venv/bin/python -m unittest discover -s site/tests -p 'test_*.py' -v
           node --test site/assets/kern.test.js
 
-      # Voice model and already rendered words are reused between builds; only new words are rendered.
+      # Voice model and rendered words: separate caches so a content change does not drop the model.
       - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
-          path: |
-            .piper
-            site/.audio-cache
-          key: piper-thorsten-${{ hashFiles('site/content/artikel/*.md') }}
-          restore-keys: piper-thorsten-
+          path: .piper
+          key: piper-model-thorsten-b4e358
+          restore-keys: piper-model-thorsten-
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: site/.audio-cache
+          key: piper-audio-${{ hashFiles('site/content/artikel/*.md', 'site/content/edv-kurs/*.md') }}
+          restore-keys: piper-audio-
 
       # German voice "Thorsten" (open source, dataset CC0), pinned to a commit and checked by hash
       - name: Download German voice
@@ -68,6 +71,13 @@ jobs:
         env:
           PIPER_MODEL: .piper/de_DE-thorsten-medium.onnx
         run: .venv/bin/python site/build.py
+
+      - name: Check nginx pin and Cache-Control
+        run: |
+          grep -q 'nginxinc/nginx-unprivileged:1.30.6-alpine@sha256:' deploy/compose.yaml \
+            || { echo "::error::nginx image must stay pinned to an exact tag+digest"; exit 1; }
+          grep -q 'Cache-Control' deploy/nginx.conf \
+            || { echo "::error::deploy/nginx.conf must set Cache-Control"; exit 1; }
 
       - name: Package release
         run: |
@@ -96,7 +106,20 @@ jobs:
       PI_HOST: ${{ secrets.PI_HOST }}
       PI_USER: ${{ secrets.PI_USER }}
     steps:
+      - name: Skip if a newer commit is already on main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tip=$(gh api "repos/${{ github.repository }}/commits/main" --jq .sha)
+          if [ "$tip" != "${{ github.sha }}" ]; then
+            echo "This run is for ${{ github.sha }}, but main tip is $tip — skipping outdated deploy."
+            echo "skip=true" >> "$GITHUB_ENV"
+          else
+            echo "skip=false" >> "$GITHUB_ENV"
+          fi
+
       - name: Check deploy secrets
+        if: env.skip != 'true'
         env:
           HAS_ALL: ${{ secrets.PI_HOST != '' && secrets.PI_USER != '' && secrets.PI_SSH_PRIVATE_KEY != '' && secrets.TS_OAUTH_CLIENT_ID != '' && secrets.TS_OAUTH_SECRET != '' }}
         run: |
@@ -106,10 +129,12 @@ jobs:
           fi
 
       - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        if: env.skip != 'true'
         with:
           name: release
 
       - name: Connect GitHub runner to Tailscale
+        if: env.skip != 'true'
         uses: tailscale/github-action@064b10558093f38325e838ddea35486bdc6b1d5c # v4.4.0
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
@@ -118,6 +143,7 @@ jobs:
           ping: ${{ secrets.PI_HOST }}
 
       - name: Configure SSH
+        if: env.skip != 'true'
         env:
           PI_SSH_PRIVATE_KEY: ${{ secrets.PI_SSH_PRIVATE_KEY }}
         run: |
@@ -143,6 +169,7 @@ jobs:
 
       # Before anything is changed on the Pi: port 8090 must be free or already ours.
       - name: Check port 8090 on the Pi
+        if: env.skip != 'true'
         run: |
           ssh pi 'bash -s' <<'REMOTE'
           set -euo pipefail
@@ -161,6 +188,7 @@ jobs:
           REMOTE
 
       - name: Upload release to the Pi
+        if: env.skip != 'true'
         run: |
           ssh pi \
             'set -e; D="$HOME/projects/kursmaterial"; mkdir -p "$D"; rm -rf "$D/incoming"; mkdir "$D/incoming"; tar -xzf - -C "$D/incoming"' \
@@ -168,6 +196,7 @@ jobs:
 
       # If the new version does not answer, the previous one is restored and the job fails.
       - name: Start new version, roll back if it does not answer
+        if: env.skip != 'true'
         run: |
           ssh pi 'bash -s' <<'REMOTE'
           set -euo pipefail

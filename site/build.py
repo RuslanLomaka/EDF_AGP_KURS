@@ -19,8 +19,10 @@ import posixpath
 import re
 import shutil
 import subprocess
+import threading
 import wave
 import zipfile
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date
 from html.parser import HTMLParser
 from pathlib import Path
@@ -444,6 +446,7 @@ LAUTSPRECHER = ('<svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="
 class Vorleser:
     def __init__(self):
         self.voice, self.files = None, {}
+        self._lock = threading.Lock()
         model = os.environ.get("PIPER_MODEL")
         if not model:
             return
@@ -460,15 +463,16 @@ class Vorleser:
             return None
         key = hashlib.sha256(f"{self.model_name}|{SPRECHTEMPO}|{text}".encode()).hexdigest()[:16]
         mp3 = AUDIO_CACHE / f"{key}.mp3"
-        if not mp3.is_file():
-            AUDIO_CACHE.mkdir(parents=True, exist_ok=True)
-            wav = mp3.with_suffix(".wav")
-            with wave.open(str(wav), "wb") as wf:
-                self.voice.synthesize_wav(text, wf, syn_config=self.config)
-            subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(wav), "-ac", "1", "-codec:a", "libmp3lame",
-                            "-b:a", "48k", str(mp3)], check=True)
-            wav.unlink()
-        self.files[key] = mp3
+        with self._lock:
+            if not mp3.is_file():
+                AUDIO_CACHE.mkdir(parents=True, exist_ok=True)
+                wav = mp3.with_suffix(".wav")
+                with wave.open(str(wav), "wb") as wf:
+                    self.voice.synthesize_wav(text, wf, syn_config=self.config)
+                subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(wav), "-ac", "1", "-codec:a", "libmp3lame",
+                                "-b:a", "48k", str(mp3)], check=True)
+                wav.unlink()
+            self.files[key] = mp3
         return f"/audio/{key}.mp3"
 
     def copy_to_dist(self):
@@ -764,58 +768,71 @@ def load_themen():
     return themen
 
 
+def _load_one_article(path, themen, vorleser):
+    meta, body = read_source(path)
+    a = {
+        "slug": slug_of(path, meta),
+        "title": text(path, meta, "title"),
+        "thema": text(path, meta, "thema"),
+        "kurz": text(path, meta, "kurz"),
+        "quelle": text(path, meta, "quelle"),
+        "datum": datum_of(path, meta),
+        "stichwoerter": text_list(path, meta, "stichwoerter"),
+        "reihenfolge": meta.get("reihenfolge", 0),
+    }
+    if a["thema"] not in themen:
+        fail(path, f"thema '{a['thema']}' is not in site/themen.yaml (add it there first)")
+    if not isinstance(a["reihenfolge"], int) or isinstance(a["reihenfolge"], bool):
+        fail(path, "'reihenfolge' must be a whole number (position of the handout within its class day)")
+    saetze = [s for s in re.split(r"(?<=(?<!\d)[.!?])\s+", a["kurz"].strip()) if s.strip()]
+    if len(saetze) > 2:
+        fail(path, f"'kurz' must be at most 2 sentences (found {len(saetze)})",
+             line=line_of(path.read_text(encoding="utf-8"), a["kurz"][:40]))
+    if not a["stichwoerter"]:
+        fail(path, "'stichwoerter' needs at least one entry")
+    a["pfad"] = path
+    a["serie"], a["teil"], a["serie_teile"] = text(path, meta, "serie", required=False), meta.get("teil"), []
+    if a["serie"] or a["teil"] is not None:
+        if not a["serie"]:
+            fail(path, "'teil' needs 'serie' (the name of the series)")
+        if not isinstance(a["teil"], int) or isinstance(a["teil"], bool) or a["teil"] < 1:
+            fail(path, "'teil' must be a whole number from 1 (the part of the series)")
+    else:
+        a["teil"] = 0
+    body, fertig = uebungen(path, body)
+    body, voll = split_notizen(path, body)
+    # three pandoc runs for one article: parallel within the article
+    with ThreadPoolExecutor(max_workers=3) as pool:
+        f_html = pool.submit(pandoc, path, body, "html5")
+        f_lehrer = pool.submit(pandoc, path, voll, "html5")
+        f_plain = pool.submit(pandoc, path, body, "plain")
+        a["body"] = f_html.result()
+        a["body_lehrer"] = f_lehrer.result()
+        plain = f_plain.result()
+    check_body(path, a["body"])
+    a["body"] = uebungen_einsetzen(add_vorlesen(a["body"], vorleser), fertig)
+    check_body(path, a["body_lehrer"])
+    a["body_lehrer"] = uebungen_einsetzen(add_vorlesen(a["body_lehrer"], vorleser), fertig)
+    if not re.search(r'id="woerter"', a["body"]):
+        fail(path, "article needs a 'Wörter' section with {#woerter}")
+    if not re.search(r'id="fragen"', a["body"]):
+        fail(path, "article needs a 'Fragen zum Text' section with {#fragen}")
+    a["text"] = " ".join(re.sub(r"[-=+|]{3,}|\|", " ", plain).split())
+    a["url"] = f"/artikel/{a['slug']}/"
+    a["minuten"] = max(1, math.ceil(len(a["text"].split()) / 100))
+    a["quiz"] = load_quiz(path.with_name(f"{a['slug']}.quiz.json"))
+    return a
+
+
 def load_articles(themen, vorleser):
+    paths = sorted((CONTENT / "artikel").glob("*.md"))
+    workers = min(8, max(1, len(paths)))
     articles = []
-    for path in sorted((CONTENT / "artikel").glob("*.md")):
-        meta, body = read_source(path)
-        a = {
-            "slug": slug_of(path, meta),
-            "title": text(path, meta, "title"),
-            "thema": text(path, meta, "thema"),
-            "kurz": text(path, meta, "kurz"),
-            "quelle": text(path, meta, "quelle"),
-            "datum": datum_of(path, meta),
-            "stichwoerter": text_list(path, meta, "stichwoerter"),
-            "reihenfolge": meta.get("reihenfolge", 0),
-        }
-        if a["thema"] not in themen:
-            fail(path, f"thema '{a['thema']}' is not in site/themen.yaml (add it there first)")
-        if not isinstance(a["reihenfolge"], int) or isinstance(a["reihenfolge"], bool):
-            fail(path, "'reihenfolge' must be a whole number (position of the handout within its class day)")
-        # kurz: at most two sentences (ignore ordinals like "4. Tag")
-        saetze = [s for s in re.split(r"(?<=(?<!\d)[.!?])\s+", a["kurz"].strip()) if s.strip()]
-        if len(saetze) > 2:
-            fail(path, f"'kurz' must be at most 2 sentences (found {len(saetze)})",
-                 line=line_of(path.read_text(encoding="utf-8"), a["kurz"][:40]))
-        if not a["stichwoerter"]:
-            fail(path, "'stichwoerter' needs at least one entry")
-        a["pfad"] = path
-        a["serie"], a["teil"], a["serie_teile"] = text(path, meta, "serie", required=False), meta.get("teil"), []
-        if a["serie"] or a["teil"] is not None:
-            if not a["serie"]:
-                fail(path, "'teil' needs 'serie' (the name of the series)")
-            if not isinstance(a["teil"], int) or isinstance(a["teil"], bool) or a["teil"] < 1:
-                fail(path, "'teil' must be a whole number from 1 (the part of the series)")
-        else:
-            a["teil"] = 0
-        body, fertig = uebungen(path, body)
-        body, voll = split_notizen(path, body)
-        a["body"] = pandoc(path, body, "html5")
-        check_body(path, a["body"])
-        a["body"] = uebungen_einsetzen(add_vorlesen(a["body"], vorleser), fertig)
-        a["body_lehrer"] = pandoc(path, voll, "html5")
-        check_body(path, a["body_lehrer"])
-        a["body_lehrer"] = uebungen_einsetzen(add_vorlesen(a["body_lehrer"], vorleser), fertig)
-        if not re.search(r'id="woerter"', a["body"]):
-            fail(path, "article needs a 'Wörter' section with {#woerter}")
-        if not re.search(r'id="fragen"', a["body"]):
-            fail(path, "article needs a 'Fragen zum Text' section with {#fragen}")
-        plain = pandoc(path, body, "plain")
-        a["text"] = " ".join(re.sub(r"[-=+|]{3,}|\|", " ", plain).split())  # drop ASCII table borders
-        a["url"] = f"/artikel/{a['slug']}/"
-        a["minuten"] = max(1, math.ceil(len(a["text"].split()) / 100))
-        a["quiz"] = load_quiz(path.with_name(f"{a['slug']}.quiz.json"))
-        articles.append(a)
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futs = {pool.submit(_load_one_article, p, themen, vorleser): p for p in paths}
+        for fut in as_completed(futs):
+            articles.append(fut.result())
+    articles.sort(key=lambda a: a["slug"])
     link_series(articles)
     return articles
 
@@ -1143,53 +1160,64 @@ def download_list(path, meta, key):
     return result
 
 
-def load_lessons():
-    lessons = []
-    for path in sorted((CONTENT / "edv-kurs").glob("*.md")):
-        meta, body = read_source(path)
-        l = {
-            "path": path,
-            "slug": slug_of(path, meta),
-            "title": text(path, meta, "title"),
-            "kurz": text(path, meta, "kurz"),
-            "untertitel": text(path, meta, "untertitel", required=False),
-            "dauer": text(path, meta, "dauer", required=False),
-            "niveau": text(path, meta, "niveau", required=False),
-            "ziele": text_list(path, meta, "ziele"),
-            "abschnitte": [m.group(1) for m in re.finditer(r"^## +(.+?)(?: *\{[^}]*\})? *$", body, re.M)],
-            "kapitel": re.findall(r"^## +(.+?) *\{#([a-z0-9-]+)\} *$", body, re.M),
-            "nummer": meta.get("nummer"),
-            "dateien": download_list(path, meta, "dateien"),
-            "lehrkraft": download_list(path, meta, "lehrkraft"),
-            "paket": None,
-        }
-        if not isinstance(l["nummer"], int) or isinstance(l["nummer"], bool) or l["nummer"] < 1:
-            fail(path, "'nummer' must be a whole number from 1 (the lesson number)")
-        if meta.get("paket") is not None:
-            p = meta["paket"]
-            if not isinstance(p, dict) or not isinstance(p.get("name"), str) or not isinstance(p.get("titel"), str) \
-                    or not isinstance(p.get("dateien"), list) or not p["dateien"]:
-                fail(path, "'paket' needs 'name' (file name ending in .zip), 'titel' and a list 'dateien'")
-            if not DATEINAME.fullmatch(p["name"]) or not p["name"].endswith(".zip"):
-                fail(path, f"paket name '{p['name']}' must be a plain file name ending in .zip")
-            l["paket"] = {"name": p["name"], "titel": p["titel"], "dateien": [repo_file(path, f) for f in p["dateien"]]}
-        names = [d["src"].name for d in l["dateien"] + l["lehrkraft"]] + ([l["paket"]["name"]] if l["paket"] else [])
-        dupes = sorted({n for n in names if names.count(n) > 1})
-        if dupes:
-            fail(path, f"two downloads would have the same file name: {', '.join(dupes)}")
-        body, fertig = uebungen(path, body)
-        body, voll = split_notizen(path, body)
-        l["body"] = pandoc(path, body, "html5")
-        check_body(path, l["body"])
-        l["body"] = uebungen_einsetzen(l["body"], fertig)
+def _load_one_lesson(path):
+    meta, body = read_source(path)
+    l = {
+        "path": path,
+        "slug": slug_of(path, meta),
+        "title": text(path, meta, "title"),
+        "kurz": text(path, meta, "kurz"),
+        "untertitel": text(path, meta, "untertitel", required=False),
+        "dauer": text(path, meta, "dauer", required=False),
+        "niveau": text(path, meta, "niveau", required=False),
+        "ziele": text_list(path, meta, "ziele"),
+        "abschnitte": [m.group(1) for m in re.finditer(r"^## +(.+?)(?: *\{[^}]*\})? *$", body, re.M)],
+        "kapitel": re.findall(r"^## +(.+?) *\{#([a-z0-9-]+)\} *$", body, re.M),
+        "nummer": meta.get("nummer"),
+        "dateien": download_list(path, meta, "dateien"),
+        "lehrkraft": download_list(path, meta, "lehrkraft"),
+        "paket": None,
+    }
+    if not isinstance(l["nummer"], int) or isinstance(l["nummer"], bool) or l["nummer"] < 1:
+        fail(path, "'nummer' must be a whole number from 1 (the lesson number)")
+    if meta.get("paket") is not None:
+        p = meta["paket"]
+        if not isinstance(p, dict) or not isinstance(p.get("name"), str) or not isinstance(p.get("titel"), str) \
+                or not isinstance(p.get("dateien"), list) or not p["dateien"]:
+            fail(path, "'paket' needs 'name' (file name ending in .zip), 'titel' and a list 'dateien'")
+        if not DATEINAME.fullmatch(p["name"]) or not p["name"].endswith(".zip"):
+            fail(path, f"paket name '{p['name']}' must be a plain file name ending in .zip")
+        l["paket"] = {"name": p["name"], "titel": p["titel"], "dateien": [repo_file(path, f) for f in p["dateien"]]}
+    names = [d["src"].name for d in l["dateien"] + l["lehrkraft"]] + ([l["paket"]["name"]] if l["paket"] else [])
+    dupes = sorted({n for n in names if names.count(n) > 1})
+    if dupes:
+        fail(path, f"two downloads would have the same file name: {', '.join(dupes)}")
+    body, fertig = uebungen(path, body)
+    body, voll = split_notizen(path, body)
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        f_html = pool.submit(pandoc, path, body, "html5")
+        f_lehrer = pool.submit(pandoc, path, voll, "html5")
+        l["body"] = f_html.result()
         # the teacher page lives one folder deeper: relative download links must still reach dateien/
-        l["body_lehrer"] = pandoc(path, voll, "html5").replace('href="dateien/', 'href="../dateien/')
-        check_body(path, l["body_lehrer"])
-        l["body_lehrer"] = uebungen_einsetzen(l["body_lehrer"], fertig)
-        l["url"] = f"/edv-kurs/{l['slug']}/"
-        quizdatei = path.with_name(f"{l['slug']}.quiz.json")
-        l["quiz"] = load_quiz(quizdatei) if quizdatei.is_file() else None
-        lessons.append(l)
+        l["body_lehrer"] = f_lehrer.result().replace('href="dateien/', 'href="../dateien/')
+    check_body(path, l["body"])
+    l["body"] = uebungen_einsetzen(l["body"], fertig)
+    check_body(path, l["body_lehrer"])
+    l["body_lehrer"] = uebungen_einsetzen(l["body_lehrer"], fertig)
+    l["url"] = f"/edv-kurs/{l['slug']}/"
+    quizdatei = path.with_name(f"{l['slug']}.quiz.json")
+    l["quiz"] = load_quiz(quizdatei) if quizdatei.is_file() else None
+    return l
+
+
+def load_lessons():
+    paths = sorted((CONTENT / "edv-kurs").glob("*.md"))
+    workers = min(8, max(1, len(paths)))
+    lessons = []
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futs = {pool.submit(_load_one_lesson, p): p for p in paths}
+        for fut in as_completed(futs):
+            lessons.append(fut.result())
     nummern = [l["nummer"] for l in lessons]
     for l in lessons:
         if nummern.count(l["nummer"]) > 1:

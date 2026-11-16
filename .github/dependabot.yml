@@ -1,7 +1,11 @@
-# Proposes updates for the SHA-pinned GitHub Actions in .github/workflows/.
+# Proposes updates for SHA-pinned GitHub Actions and the pinned nginx image.
 version: 2
 updates:
   - package-ecosystem: github-actions
     directory: /
+    schedule:
+      interval: monthly
+  - package-ecosystem: docker
+    directory: /deploy
     schedule:
       interval: monthly
