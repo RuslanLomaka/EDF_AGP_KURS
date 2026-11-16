@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Links: Word ist ein Programm auf dem PC. Die Datei liegt auf dem PC. Es geht auch ohne Internet. Rechts: Google Docs läuft im Browser. Die Datei liegt im Internet. Sie öffnen sie am PC und am Handy.</title>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="100" y="38.0" font-size="24" fill="#2b579a" text-anchor="middle" font-weight="700">Word</text>
+<text x="300" y="38.0" font-size="24" fill="#2e7d32" text-anchor="middle" font-weight="700">Google Docs</text>
+<line x1="200" y1="58" x2="200" y2="384" stroke="#d9dee4" stroke-width="2" stroke-linecap="round"/>
+<rect x="35.0" y="74.0" width="130" height="84" rx="6" fill="#e8f0f8" stroke="#2b579a" stroke-width="3"/>
+<rect x="89.6" y="158.0" width="20.8" height="12.6" rx="0" fill="#2b579a"/>
+<rect x="67.5" y="170.6" width="65.0" height="7.56" rx="3" fill="#2b579a"/>
+<path d="M78.0 86.0 H109.68 L122.0 98.32 V146.0 H78.0 Z" fill="#fff" stroke="#2b579a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M109.68 86.0 V98.32 H122.0" fill="none" stroke="#2b579a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="85.92" y1="107.6" x2="114.08" y2="107.6" stroke="#2b579a" stroke-width="2" stroke-linecap="round"/>
+<line x1="85.92" y1="115.39999999999999" x2="105.28" y2="115.39999999999999" stroke="#2b579a" stroke-width="2" stroke-linecap="round"/>
+<line x1="85.92" y1="123.19999999999999" x2="114.08" y2="123.19999999999999" stroke="#2b579a" stroke-width="2" stroke-linecap="round"/>
+<line x1="85.92" y1="131.0" x2="105.28" y2="131.0" stroke="#2b579a" stroke-width="2" stroke-linecap="round"/>
+<g transform="translate(240.0 50.800000000000004) scale(1.2)"><path d="M20 50 A15 15 0 0 1 22 21 A20 20 0 0 1 58 12 A16 16 0 0 1 84 26 A12.1 12.1 0 0 1 82 50 Z" fill="#e7f3e8" stroke="#2e7d32" stroke-width="3" vector-effect="non-scaling-stroke" stroke-linejoin="round"/></g>
+<text x="300" y="100.0" font-size="15" fill="#2e7d32" text-anchor="middle" font-weight="700">Internet</text>
+<rect x="226.0" y="138.0" width="64" height="40" rx="6" fill="#e7f3e8" stroke="#2e7d32" stroke-width="3"/>
+<rect x="252.88" y="178.0" width="10.24" height="6.0" rx="0" fill="#2e7d32"/>
+<rect x="242.0" y="184.0" width="32.0" height="3.5999999999999996" rx="3" fill="#2e7d32"/>
+<rect x="330.0" y="135.0" width="30" height="50" rx="6" fill="#fff" stroke="#2e7d32" stroke-width="3"/>
+<line x1="340.5" y1="178.0" x2="349.5" y2="178.0" stroke="#2e7d32" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="282" y1="112" x2="266" y2="136" stroke="#2e7d32" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/>
+<line x1="322" y1="112" x2="340" y2="133" stroke="#2e7d32" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/>
+<rect x="14" y="207" width="172" height="42" rx="10" fill="#e8f0f8"/>
+<rect x="214" y="207" width="172" height="42" rx="10" fill="#e7f3e8"/>
+<text x="100" y="234.0" font-size="16" fill="#1d232b" text-anchor="middle"><tspan font-weight="700">Programm</tspan> auf dem PC</text>
+<text x="300" y="234.0" font-size="16" fill="#1d232b" text-anchor="middle">läuft im <tspan font-weight="700">Browser</tspan></text>
+<rect x="14" y="263" width="172" height="42" rx="10" fill="#e8f0f8"/>
+<rect x="214" y="263" width="172" height="42" rx="10" fill="#e7f3e8"/>
+<text x="100" y="290.0" font-size="16" fill="#1d232b" text-anchor="middle">Datei <tspan font-weight="700">auf dem PC</tspan></text>
+<text x="300" y="290.0" font-size="16" fill="#1d232b" text-anchor="middle">Datei <tspan font-weight="700">im Internet</tspan></text>
+<rect x="14" y="319" width="172" height="42" rx="10" fill="#e8f0f8"/>
+<rect x="214" y="319" width="172" height="42" rx="10" fill="#e7f3e8"/>
+<text x="100" y="346.0" font-size="16" fill="#1d232b" text-anchor="middle">geht <tspan font-weight="700">ohne Internet</tspan></text>
+<text x="300" y="346.0" font-size="16" fill="#1d232b" text-anchor="middle">am <tspan font-weight="700">PC und Handy</tspan></text>
+</svg>

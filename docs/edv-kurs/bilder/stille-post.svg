@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Stille Post mit vier KIs: In der Mitte steht Gemini als Spielleiter. Ein deutscher Satz reist im Kreis: 1. ChatGPT übersetzt in die erste Sprache, 2. Copilot in die zweite, 3. Le Chat in die dritte, 4. Duck.ai zurück ins Deutsche. Die drei Sprachen kommen per Zufall aus Europa, aus dem Nahen Osten oder Afrika und aus Asien. Nach jeder Runde kommen Sie zu Gemini zurück.</title>
+<defs><marker id="pfeil1" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#5b6672"/></marker></defs>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="28.0" font-size="21" fill="#1f4e79" text-anchor="middle" font-weight="700">Stille Post mit vier KIs</text>
+<line x1="200" y1="205" x2="200" y2="112" stroke="#d9dee4" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 5"/>
+<line x1="200" y1="205" x2="300" y2="205" stroke="#d9dee4" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 5"/>
+<line x1="200" y1="205" x2="200" y2="300" stroke="#d9dee4" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 5"/>
+<line x1="200" y1="205" x2="100" y2="205" stroke="#d9dee4" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 5"/>
+<rect x="140" y="62" width="120" height="46" rx="12" fill="#e8f0f8" stroke="#1f4e79" stroke-width="2"/>
+<text x="200" y="91.0" font-size="17" fill="#1f4e79" text-anchor="middle" font-weight="700">1 ChatGPT</text>
+<rect x="272" y="182" width="120" height="46" rx="12" fill="#e0f2f1" stroke="#00796b" stroke-width="2"/>
+<text x="332" y="211.0" font-size="17" fill="#00796b" text-anchor="middle" font-weight="700">2 Copilot</text>
+<rect x="140" y="302" width="120" height="46" rx="12" fill="#fff3df" stroke="#b26a00" stroke-width="2"/>
+<text x="200" y="331.0" font-size="17" fill="#b26a00" text-anchor="middle" font-weight="700">3 Le Chat</text>
+<rect x="8" y="182" width="120" height="46" rx="12" fill="#e7f3e8" stroke="#2e7d32" stroke-width="2"/>
+<text x="68" y="211.0" font-size="17" fill="#2e7d32" text-anchor="middle" font-weight="700">4 Duck.ai</text>
+<circle cx="200" cy="205" r="50" fill="#fff" stroke="#6a3d9a" stroke-width="3"/>
+<text x="200" y="202.0" font-size="18" fill="#6a3d9a" text-anchor="middle" font-weight="700">Gemini</text>
+<text x="200" y="222.0" font-size="15" fill="#5b6672" text-anchor="middle">Spielleiter</text>
+<line x1="262" y1="92" x2="318" y2="178" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pfeil1)"/>
+<line x1="318" y1="230" x2="262" y2="312" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pfeil1)"/>
+<line x1="138" y1="330" x2="82" y2="232" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pfeil1)"/>
+<line x1="82" y1="180" x2="138" y2="96" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pfeil1)"/>
+<text x="332" y="132.0" font-size="15" fill="#5b6672" text-anchor="middle" font-weight="700">Sprache 1</text>
+<text x="330" y="290.0" font-size="15" fill="#5b6672" text-anchor="middle" font-weight="700">Sprache 2</text>
+<text x="70" y="290.0" font-size="15" fill="#5b6672" text-anchor="middle" font-weight="700">Sprache 3</text>
+<text x="66" y="132.0" font-size="15" fill="#5b6672" text-anchor="middle" font-weight="700">Deutsch</text>
+<text x="200" y="368.0" font-size="15" fill="#1d232b" text-anchor="middle">Die 3 Sprachen würfelt die Website:</text>
+<text x="200" y="388.0" font-size="15" fill="#1d232b" text-anchor="middle" font-weight="700">Europa · Naher Osten/Afrika · Asien</text>
+</svg>

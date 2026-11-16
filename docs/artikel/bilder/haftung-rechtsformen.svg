@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Wer haftet mit dem Privatvermögen? Einzelunternehmen: eine Person, sie haftet privat. GbR: zwei oder mehr Personen, alle haften privat. OHG: alle haften privat. KG: Der Komplementär haftet privat, die Kommanditisten haften nur mit ihrer Einlage.</title>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="32.0" font-size="22" fill="#1f4e79" text-anchor="middle" font-weight="700">Wer haftet privat?</text>
+<text x="200" y="56.0" font-size="15" fill="#5b6672" text-anchor="middle">mit dem eigenen Geld und Besitz</text>
+<rect x="12" y="73" width="376" height="58" rx="10" fill="#f1f3f5" stroke="#d9dee4" stroke-width="1"/>
+<text x="24" y="99.0" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">Einzelunternehmen</text>
+<text x="24" y="121.0" font-size="15" fill="#5b6672" text-anchor="start">allein</text>
+<circle cx="262" cy="94.76" r="8.4" fill="#c0392b"/>
+<path d="M246.88 125.0 V114.75200000000001 A15.12 10.584 0 0 1 277.12 114.75200000000001 V125.0 Z" fill="#c0392b"/>
+<rect x="12" y="137" width="376" height="58" rx="10" fill="#fff" stroke="#d9dee4" stroke-width="1"/>
+<text x="24" y="163.0" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">GbR</text>
+<text x="24" y="185.0" font-size="15" fill="#5b6672" text-anchor="start">2 oder mehr</text>
+<circle cx="262" cy="158.76" r="8.4" fill="#c0392b"/>
+<path d="M246.88 189.0 V178.752 A15.12 10.584 0 0 1 277.12 178.752 V189.0 Z" fill="#c0392b"/>
+<circle cx="306" cy="158.76" r="8.4" fill="#c0392b"/>
+<path d="M290.88 189.0 V178.752 A15.12 10.584 0 0 1 321.12 178.752 V189.0 Z" fill="#c0392b"/>
+<circle cx="350" cy="158.76" r="8.4" fill="#c0392b"/>
+<path d="M334.88 189.0 V178.752 A15.12 10.584 0 0 1 365.12 178.752 V189.0 Z" fill="#c0392b"/>
+<rect x="12" y="201" width="376" height="58" rx="10" fill="#f1f3f5" stroke="#d9dee4" stroke-width="1"/>
+<text x="24" y="227.0" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">OHG</text>
+<text x="24" y="249.0" font-size="15" fill="#5b6672" text-anchor="start">größere Firma</text>
+<circle cx="262" cy="222.76" r="8.4" fill="#c0392b"/>
+<path d="M246.88 253.0 V242.752 A15.12 10.584 0 0 1 277.12 242.752 V253.0 Z" fill="#c0392b"/>
+<circle cx="306" cy="222.76" r="8.4" fill="#c0392b"/>
+<path d="M290.88 253.0 V242.752 A15.12 10.584 0 0 1 321.12 242.752 V253.0 Z" fill="#c0392b"/>
+<circle cx="350" cy="222.76" r="8.4" fill="#c0392b"/>
+<path d="M334.88 253.0 V242.752 A15.12 10.584 0 0 1 365.12 242.752 V253.0 Z" fill="#c0392b"/>
+<rect x="12" y="265" width="376" height="58" rx="10" fill="#fff" stroke="#d9dee4" stroke-width="1"/>
+<text x="24" y="291.0" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">KG</text>
+<text x="24" y="313.0" font-size="15" fill="#5b6672" text-anchor="start">größere Firma</text>
+<circle cx="262" cy="286.76" r="8.4" fill="#c0392b"/>
+<path d="M246.88 317.0 V306.752 A15.12 10.584 0 0 1 277.12 306.752 V317.0 Z" fill="#c0392b"/>
+<circle cx="306" cy="286.76" r="8.4" fill="#2e7d32"/>
+<path d="M290.88 317.0 V306.752 A15.12 10.584 0 0 1 321.12 306.752 V317.0 Z" fill="#2e7d32"/>
+<circle cx="350" cy="286.76" r="8.4" fill="#2e7d32"/>
+<path d="M334.88 317.0 V306.752 A15.12 10.584 0 0 1 365.12 306.752 V317.0 Z" fill="#2e7d32"/>
+<circle cx="34" cy="355.4" r="6.0" fill="#c0392b"/>
+<path d="M23.200000000000003 377.0 V369.68 A10.799999999999999 7.559999999999999 0 0 1 44.8 369.68 V377.0 Z" fill="#c0392b"/>
+<text x="56" y="366.0" font-size="15" fill="#1d232b" text-anchor="start">haftet mit Privatvermögen</text>
+<circle cx="34" cy="381.4" r="6.0" fill="#2e7d32"/>
+<path d="M23.200000000000003 403.0 V395.68 A10.799999999999999 7.559999999999999 0 0 1 44.8 395.68 V403.0 Z" fill="#2e7d32"/>
+<text x="56" y="392.0" font-size="15" fill="#1d232b" text-anchor="start">nur mit der Einlage (Kommanditist)</text>
+</svg>

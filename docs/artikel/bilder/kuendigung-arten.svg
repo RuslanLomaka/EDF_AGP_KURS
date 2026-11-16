@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Zwei Arten der Kündigung. Ordentlich: Nach der Kündigung kommt die Kündigungsfrist. Sie arbeiten weiter und bekommen Lohn, dann ist das Arbeitsverhältnis zu Ende. Fristlos: Die Kündigung wirkt sofort. Dafür braucht man einen wichtigen Grund, zum Beispiel Diebstahl oder Gewalt gegen Kollegen.</title>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="34.0" font-size="21" fill="#1f4e79" text-anchor="middle" font-weight="700">Zwei Arten der Kündigung</text>
+<text x="20" y="78.0" font-size="19" fill="#1f4e79" text-anchor="start" font-weight="700">ordentlich</text>
+<rect x="21.0" y="110.0" width="46" height="32" rx="4" fill="#fff" stroke="#1f4e79" stroke-width="3"/>
+<path d="M23.0 113.0 L44 129.84 L65.0 113.0" fill="none" stroke="#1f4e79" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="44" y="168.0" font-size="15" fill="#1d232b" text-anchor="middle">Kündigung</text>
+<rect x="80" y="110" width="214" height="32" rx="6" fill="#e7f3e8" stroke="#2e7d32" stroke-width="2"/>
+<text x="187" y="132.0" font-size="15" fill="#1d232b" text-anchor="middle">Frist: Sie arbeiten</text>
+<text x="187" y="168.0" font-size="15" fill="#5b6672" text-anchor="middle">mit Lohn</text>
+<line x1="306" y1="104" x2="306" y2="148" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/>
+<text x="316" y="132.0" font-size="17" fill="#c0392b" text-anchor="start" font-weight="700">Ende</text>
+<line x1="20" y1="196" x2="380" y2="196" stroke="#d9dee4" stroke-width="2" stroke-linecap="round"/>
+<text x="20" y="234.0" font-size="19" fill="#c0392b" text-anchor="start" font-weight="700">fristlos</text>
+<rect x="21.0" y="266.0" width="46" height="32" rx="4" fill="#fff" stroke="#c0392b" stroke-width="3"/>
+<path d="M23.0 269.0 L44 285.84 L65.0 269.0" fill="none" stroke="#c0392b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="44" y="324.0" font-size="15" fill="#1d232b" text-anchor="middle">Kündigung</text>
+<line x1="86" y1="260" x2="86" y2="304" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/>
+<text x="98" y="289.0" font-size="19" fill="#c0392b" text-anchor="start" font-weight="700">sofort Ende</text>
+<rect x="20" y="340" width="360" height="46" rx="10" fill="#fdecea"/>
+<text x="200" y="369.0" font-size="17" fill="#1d232b" text-anchor="middle">nur mit einem <tspan font-weight="700">wichtigen Grund</tspan></text>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Oben, mit Word: Zwei Personen schicken eine Datei per E-Mail hin und her. Am Ende gibt es viele Versionen: Brief, Brief_neu, Brief_final, Brief_final_2. Welche ist die richtige? Unten, mit Google Docs: Drei Personen schreiben gleichzeitig in einem einzigen Dokument.</title>
+<defs><marker id="pfeil1" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2b579a"/></marker></defs>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="30.0" font-size="18" fill="#2b579a" text-anchor="middle" font-weight="700">Word: per E-Mail hin und her</text>
+<circle cx="50" cy="91.68" r="11.200000000000001" fill="#2b579a"/>
+<path d="M29.84 132.0 V118.336 A20.16 14.111999999999998 0 0 1 70.16 118.336 V132.0 Z" fill="#2b579a"/>
+<circle cx="350" cy="91.68" r="11.200000000000001" fill="#2b579a"/>
+<path d="M329.84 132.0 V118.336 A20.16 14.111999999999998 0 0 1 370.16 118.336 V132.0 Z" fill="#2b579a"/>
+<rect x="118" y="46" width="164" height="25" rx="5" fill="#e8f0f8" stroke="#2b579a" stroke-width="1.5"/>
+<text x="200" y="64.0" font-size="15" fill="#1d232b" text-anchor="middle">Brief.docx</text>
+<rect x="118" y="76" width="164" height="25" rx="5" fill="#e8f0f8" stroke="#2b579a" stroke-width="1.5"/>
+<text x="200" y="94.0" font-size="15" fill="#1d232b" text-anchor="middle">Brief_neu.docx</text>
+<rect x="118" y="106" width="164" height="25" rx="5" fill="#e8f0f8" stroke="#2b579a" stroke-width="1.5"/>
+<text x="200" y="124.0" font-size="15" fill="#1d232b" text-anchor="middle">Brief_final.docx</text>
+<rect x="118" y="136" width="164" height="25" rx="5" fill="#e8f0f8" stroke="#2b579a" stroke-width="1.5"/>
+<text x="200" y="154.0" font-size="15" fill="#1d232b" text-anchor="middle">Brief_final_2.docx</text>
+<line x1="92" y1="182" x2="308" y2="182" stroke="#2b579a" stroke-width="3" stroke-linecap="round" marker-end="url(#pfeil1)" marker-start="url(#pfeil1)"/>
+<rect x="180.0" y="169.0" width="40" height="26" rx="4" fill="#fff" stroke="#2b579a" stroke-width="3"/>
+<path d="M182.0 172.0 L200 185.12 L218.0 172.0" fill="none" stroke="#2b579a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="200" y="218.0" font-size="16" fill="#c0392b" text-anchor="middle">Viele Versionen – welche ist richtig?</text>
+<line x1="20" y1="234" x2="380" y2="234" stroke="#d9dee4" stroke-width="2" stroke-linecap="round"/>
+<text x="200" y="262.0" font-size="18" fill="#2e7d32" text-anchor="middle" font-weight="700">Google Docs: ein Dokument für alle</text>
+<line x1="92" y1="330" x2="155" y2="330" stroke="#b26a00" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/>
+<line x1="305" y1="303" x2="245" y2="315" stroke="#6a3d9a" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/>
+<line x1="305" y1="365" x2="245" y2="352" stroke="#00796b" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/>
+<rect x="155" y="278" width="90" height="112" rx="4" fill="#fff" stroke="#2e7d32" stroke-width="3"/>
+<line x1="167" y1="296" x2="227" y2="296" stroke="#b9d6bd" stroke-width="5" stroke-linecap="round"/>
+<line x1="167" y1="315" x2="233" y2="315" stroke="#b9d6bd" stroke-width="5" stroke-linecap="round"/>
+<line x1="167" y1="334" x2="217" y2="334" stroke="#b9d6bd" stroke-width="5" stroke-linecap="round"/>
+<line x1="167" y1="353" x2="231" y2="353" stroke="#b9d6bd" stroke-width="5" stroke-linecap="round"/>
+<line x1="167" y1="372" x2="223" y2="372" stroke="#b9d6bd" stroke-width="5" stroke-linecap="round"/>
+<line x1="211" y1="287" x2="211" y2="305" stroke="#b26a00" stroke-width="3" stroke-linecap="butt"/>
+<rect x="211" y="281" width="10" height="8" rx="1" fill="#b26a00"/>
+<line x1="190" y1="325" x2="190" y2="343" stroke="#6a3d9a" stroke-width="3" stroke-linecap="butt"/>
+<rect x="190" y="319" width="10" height="8" rx="1" fill="#6a3d9a"/>
+<line x1="215" y1="363" x2="215" y2="381" stroke="#00796b" stroke-width="3" stroke-linecap="butt"/>
+<rect x="215" y="357" width="10" height="8" rx="1" fill="#00796b"/>
+<circle cx="70" cy="319.88" r="9.200000000000001" fill="#b26a00"/>
+<path d="M53.44 353.0 V341.77599999999995 A16.56 11.591999999999999 0 0 1 86.56 341.77599999999995 V353.0 Z" fill="#b26a00"/>
+<circle cx="330" cy="289.88" r="9.200000000000001" fill="#6a3d9a"/>
+<path d="M313.44 323.0 V311.77599999999995 A16.56 11.591999999999999 0 0 1 346.56 311.77599999999995 V323.0 Z" fill="#6a3d9a"/>
+<circle cx="330" cy="351.88" r="9.200000000000001" fill="#00796b"/>
+<path d="M313.44 385.0 V373.77599999999995 A16.56 11.591999999999999 0 0 1 346.56 373.77599999999995 V385.0 Z" fill="#00796b"/>
+</svg>

@@ -238,7 +238,7 @@
           el('p', 'ok', 'Richtig: ' + f.antworten[k].text));
         if (f.frage.explanation) li.append(el('p', 'quiz-erklaerung', f.frage.explanation));
         const n = f.frage.nachlesen;
-        if (n && /^\/edv-kurs\/[a-z0-9-]+\/#[a-z0-9-]+$/.test(n.url)) {
+        if (n && /^(\/[A-Za-z0-9_-]+)?\/edv-kurs\/[a-z0-9-]+\/#[a-z0-9-]+$/.test(n.url)) {  // optional prefix: GitHub Pages copy
           const p = el('p', 'quiz-nachlesen', 'Nachlesen: ');
           const a = el('a', '', n.text + ' →');
           const lehrer = /\/teacher\/$/.test(location.pathname);  // the teacher view stays in the teacher view

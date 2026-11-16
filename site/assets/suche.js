@@ -103,7 +103,7 @@
       + (begriffe.length && volltext === 'laedt' ? ' – Volltext wird geladen …' : '');
     if (!treffer.length) {
       liste.innerHTML = '<p class="empty">Nichts gefunden. Versuchen Sie ein einzelnes, kurzes Wort, zum Beispiel „Kündigung“, '
-        + 'oder wählen Sie oben ein Thema.</p><p><a href="/artikel/">Alle Artikel ansehen</a></p>';
+        + 'oder wählen Sie oben ein Thema.</p><p><a href="' + (document.documentElement.dataset.basis || '') + '/artikel/">Alle Artikel ansehen</a></p>';
     } else if (begriffe.length) {
       treffer.sort((p, q) => q.punkte - p.punkte);
       liste.innerHTML = '<ul class="liste">' + treffer.map(({ a }) => {

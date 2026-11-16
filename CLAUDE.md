@@ -28,6 +28,8 @@ site/
                               vorlesen.js (reading aloud), stand.js ("Weiter bei"), jetzt.js (teacher "Jetzt" bar),
                               stillepost.js (Stille Post start in lesson 4)
   build.py                    builds everything into site/dist/ (git-ignored) and checks it
+  pages.py                    builds the GitHub Pages copy into docs/ (see "Hosting and CI/CD")
+docs/                         generated GitHub Pages copy of the site; never edit by hand
 materials/serienbrief/        files of lesson 1; README.md explains them; generator/build_kit.sh rebuilds them
 materials/bewerbungshelfer/   lesson 2: Go source of the Windows program (programm/), Excel list, Word template;
                               build_exe.sh builds Bewerbungen_erstellen.exe (CI does; needed before a local build)
@@ -280,6 +282,12 @@ The owner's Raspberry Pi serves the site behind a Cloudflare Tunnel (route `edv.
   - non-root nginx on `127.0.0.1:8090`;
   - read-only file system, no capabilities, limits on CPU, memory and processes.
 - Actions logs are public: never print secrets, IP addresses or web server access logs.
+
+**Copy on GitHub Pages:** https://ruslanlomaka.github.io/EDF_AGP_KURS/ (Pages source: `main`, folder `/docs`).
+- `python3 site/pages.py` rebuilds `docs/`: every site address gets the prefix `/EDF_AGP_KURS/`, and
+  `KURS_HOSTING=github-pages` makes the Datenschutzerklärung and `/hinweis/` describe GitHub Pages instead of the Pi.
+- Run it and commit `docs/` together with every content change; otherwise the copy stays old.
+- On this copy GitHub, not the owner, logs visitors' IP addresses; the texts there say so.
 
 ## Privacy promises (keep them true)
 

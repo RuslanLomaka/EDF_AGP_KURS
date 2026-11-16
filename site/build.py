@@ -35,6 +35,10 @@ SITE = Path(os.environ["KURS_SITE"]).resolve() if os.environ.get("KURS_SITE") el
 REPO = SITE.parent
 CONTENT = SITE / "content"
 DIST = SITE / "dist"
+# Where the site is served: "pi" (the owner's Pi behind Cloudflare) or "github-pages" (the copy built by
+# site/pages.py). Only the hosting parts of the privacy texts depend on it.
+HOSTING = os.environ.get("KURS_HOSTING", "pi")
+ADRESSE = os.environ.get("KURS_ADRESSE", "edv.ruslanlomaka.org")
 BRAND = "Kursmaterial"
 NAV = [("start", "/", "Start"), ("kurs", "/edv-kurs/", "EDV-Kurs"), ("artikel", "/artikel/", "Artikel")]
 MONATE = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober",
@@ -683,18 +687,29 @@ def build_rechtliches(b):
 <p>Die Texte auf dieser Website sind eigene Erklärungen. Die Aussprache der Wörter wurde mit der freien Software Piper und der Stimme „Thorsten“ (Datensatz unter CC0) erzeugt.</p>"""
     write("impressum/index.html", layout("Impressum", "", impressum, "Impressum dieser Website."))
 
-    datenschutz = f"""<h1>Datenschutzerklärung</h1>
-<p class="meta">für edv.ruslanlomaka.org · Stand: November 2026</p>
-<h2>1. Verantwortlicher</h2>
-<p>{anschrift}<br>{kontakt}</p>
-<h2>2. Das Wichtigste in Kürze</h2>
-<p>Diese Website ist ein reines Leseangebot. Es gibt keine Konten, keine Formulare, keine Cookies von uns, kein Tracking und keine Analyse-Werkzeuge. Wir selbst erheben und speichern keine personenbezogenen Daten.</p>
-<h2>3. Auslieferung der Website über Cloudflare</h2>
+    if HOSTING == "github-pages":
+        auslieferung = """<h2>3. Auslieferung der Website über GitHub Pages</h2>
+<p>Die Seiten werden über GitHub Pages ausgeliefert, einen Dienst der GitHub, Inc. (88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA). Dabei verarbeitet GitHub technisch notwendige Verbindungsdaten, insbesondere Ihre IP-Adresse, Datum und Uhrzeit des Abrufs, die aufgerufene Adresse sowie Angaben zu Browser und Betriebssystem. GitHub speichert die IP-Adresse aus Sicherheitsgründen in Protokollen. Das ist nötig, um die Seiten auszuliefern und den Dienst vor Angriffen zu schützen.</p>
+<p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse ist eine sichere und zuverlässige Bereitstellung der Website. GitHub kann Daten auch in den USA verarbeiten. GitHub ist nach dem EU-US Data Privacy Framework zertifiziert; dafür gilt der Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO).</p>
+<p>Mehr dazu: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement">Datenschutzerklärung von GitHub</a> · <a href="https://docs.github.com/de/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">Datenerhebung bei GitHub Pages</a></p>
+<h2>4. Kein eigener Webserver</h2>
+<p>Für diese Adresse betreiben wir keinen eigenen Server. Wir erhalten von GitHub keine Zugriffsprotokolle und speichern selbst keine IP-Adressen.</p>"""
+        vorlesen_quelle = "wird zusammen mit der Website geladen"
+    else:
+        auslieferung = """<h2>3. Auslieferung der Website über Cloudflare</h2>
 <p>Die Seiten werden über das Netzwerk von Cloudflare ausgeliefert (Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA). Dabei werden technisch notwendige Verbindungsdaten verarbeitet, insbesondere Ihre IP-Adresse, Datum und Uhrzeit des Abrufs, die aufgerufene Adresse sowie Angaben zu Browser und Betriebssystem. Das ist nötig, um die Seiten auszuliefern und die Website vor Angriffen zu schützen.</p>
 <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse ist eine sichere und zuverlässige Bereitstellung der Website. Cloudflare kann Daten auch in den USA verarbeiten. Cloudflare ist nach dem EU-US Data Privacy Framework zertifiziert; dafür gilt der Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO). Nur wenn Cloudflare eine Sicherheitsprüfung anzeigt, kann Cloudflare dafür ein technisch notwendiges Cookie setzen.</p>
 <p>Mehr dazu: <a href="https://www.cloudflare.com/de-de/privacypolicy/">Datenschutzerklärung von Cloudflare</a></p>
 <h2>4. Unser Webserver</h2>
-<p>Die Website liegt auf einem eigenen Server des Betreibers. Dieser Server speichert keine Zugriffsprotokolle und damit auch keine IP-Adressen.</p>
+<p>Die Website liegt auf einem eigenen Server des Betreibers. Dieser Server speichert keine Zugriffsprotokolle und damit auch keine IP-Adressen.</p>"""
+        vorlesen_quelle = "wird von unserem Server geladen"
+    datenschutz = f"""<h1>Datenschutzerklärung</h1>
+<p class="meta">für {esc(ADRESSE)} · Stand: November 2026</p>
+<h2>1. Verantwortlicher</h2>
+<p>{anschrift}<br>{kontakt}</p>
+<h2>2. Das Wichtigste in Kürze</h2>
+<p>Diese Website ist ein reines Leseangebot. Es gibt keine Konten, keine Formulare, keine Cookies von uns, kein Tracking und keine Analyse-Werkzeuge. Wir selbst erheben und speichern keine personenbezogenen Daten.</p>
+{auslieferung}
 <h2>5. Speicherung in Ihrem Browser</h2>
 <p>Zwei kleine Angaben werden nur in Ihrem Browser gespeichert und nie an uns übertragen:</p>
 <ul>
@@ -704,7 +719,7 @@ die Zahl der erledigten Aufgaben für die Übersicht auf der Startseite) im „L
 </ul>
 <p>Diese Speicherung ist für die Funktionen, die Sie selbst nutzen, unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG). Suche und Quiz speichern nichts.</p>
 <h2>6. Vorlesen</h2>
-<p>Die Aussprache der Wörter wurde vorab aufgenommen und wird von unserem Server geladen. Fehlt eine Aufnahme, liest eine Stimme vor, die auf Ihrem Gerät installiert ist. Ganze Abschnitte liest nur eine Stimme auf Ihrem Gerät vor; gibt es keine, erscheint der Knopf nicht. Dabei werden keine Daten an andere Anbieter übertragen.</p>
+<p>Die Aussprache der Wörter wurde vorab aufgenommen und {vorlesen_quelle}. Fehlt eine Aufnahme, liest eine Stimme vor, die auf Ihrem Gerät installiert ist. Ganze Abschnitte liest nur eine Stimme auf Ihrem Gerät vor; gibt es keine, erscheint der Knopf nicht. Dabei werden keine Daten an andere Anbieter übertragen.</p>
 <h2>7. Keine Inhalte anderer Anbieter</h2>
 <p>Wir binden keine Schriftarten, Skripte, Videos, Karten oder Social-Media-Funktionen anderer Anbieter ein und verschicken keine Newsletter.</p>
 <h2>8. Links zu anderen Websites</h2>
@@ -734,6 +749,14 @@ Bei jedem Laden kommen neue Fragen. Ihre Antworten werden nirgends gespeichert.<
 
 def build_hinweis():
     punkte = "".join(f"<li>{esc(t)}</li>" for t in HINWEIS_PUNKTE)
+    if HOSTING == "github-pages":
+        technik = """<li>Die Seiten werden über GitHub Pages ausgeliefert (GitHub, Inc., USA). Dabei werden technisch nötige Verbindungsdaten verarbeitet; GitHub speichert die IP-Adresse aus Sicherheitsgründen in Protokollen.</li>
+<li>Wir selbst erhalten keine Zugriffsprotokolle und speichern keine IP-Adressen.</li>
+<li>Vorlesen: Die Wörter wurden vorab aufgenommen und werden mit der Website geladen."""
+    else:
+        technik = """<li>Die Seiten werden über Cloudflare ausgeliefert. Dabei werden technisch nötige Verbindungsdaten, zum Beispiel die IP-Adresse, verarbeitet. Nur wenn Cloudflare eine Sicherheitsprüfung zeigt, kann Cloudflare dafür ein technisch nötiges Cookie setzen.</li>
+<li>Unser Webserver speichert keine Zugriffsprotokolle.</li>
+<li>Vorlesen: Die Wörter wurden vorab aufgenommen und kommen von unserem Server."""
     main = f"""<h1>Hinweise &amp; Datenschutz</h1>
 <ul>{punkte}</ul>
 <h2>Was in Ihrem Browser bleibt</h2>
@@ -744,9 +767,7 @@ def build_hinweis():
 </ul>
 <h2>Technik</h2>
 <ul>
-<li>Die Seiten werden über Cloudflare ausgeliefert. Dabei werden technisch nötige Verbindungsdaten, zum Beispiel die IP-Adresse, verarbeitet. Nur wenn Cloudflare eine Sicherheitsprüfung zeigt, kann Cloudflare dafür ein technisch nötiges Cookie setzen.</li>
-<li>Unser Webserver speichert keine Zugriffsprotokolle.</li>
-<li>Vorlesen: Die Wörter wurden vorab aufgenommen und kommen von unserem Server. Fehlt eine Aufnahme, liest eine Stimme vor, die auf Ihrem Gerät installiert ist. Ganze Abschnitte liest nur eine Stimme auf Ihrem Gerät vor. Es werden keine Texte an andere Dienste geschickt.</li>
+{technik} Fehlt eine Aufnahme, liest eine Stimme vor, die auf Ihrem Gerät installiert ist. Ganze Abschnitte liest nur eine Stimme auf Ihrem Gerät vor. Es werden keine Texte an andere Dienste geschickt.</li>
 <li>Links zu anderen Websites, zum Beispiel zu Gesetzestexten, führen zu Angeboten mit eigenen Datenschutzregeln.</li>
 </ul>
 <h2>Inhalte</h2>
