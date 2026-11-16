@@ -24,7 +24,7 @@ stichwoerter:
   - Impressum
   - Mitarbeiter einstellen
   - Mindestlohn
-kurz: "Als Unternehmer müssen Sie Ihre Einnahmen und Ausgaben aufschreiben, Belege 8 Jahre aufbewahren, Steuern pünktlich zahlen und korrekte Rechnungen schreiben. E-Rechnungen müssen Sie schon jetzt empfangen können. Wer Mitarbeiter hat, hat weitere Pflichten."
+kurz: "Als Unternehmer müssen Sie Einnahmen und Ausgaben aufschreiben, Belege 8 Jahre aufbewahren, Steuern pünktlich zahlen, korrekte Rechnungen schreiben und E-Rechnungen schon jetzt empfangen können. Wer Mitarbeiter hat, hat weitere Pflichten."
 quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten und offiziellen Seiten"
 ---
 

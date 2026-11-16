@@ -23,7 +23,7 @@ stichwoerter:
   - Gesellschaftsvertrag
   - Gewinnverteilung
   - Gesellschafter
-kurz: "Wer allein ein Gewerbe startet und keine Kapitalgesellschaft wählt, hat automatisch ein Einzelunternehmen. Wer mit anderen gründet, hat oft eine GbR. In diesen Rechtsformen haften Sie mit Ihrem ganzen Privatvermögen. Ein schriftlicher Gesellschaftsvertrag regelt, wer wie viel Gewinn bekommt."
+kurz: "Wer allein ein Gewerbe startet und keine Kapitalgesellschaft wählt, hat automatisch ein Einzelunternehmen; mit anderen oft eine GbR – in beiden Fällen haften Sie mit dem Privatvermögen. Ein schriftlicher Gesellschaftsvertrag regelt, wer wie viel Gewinn bekommt."
 quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten und offiziellen Seiten"
 ---
 

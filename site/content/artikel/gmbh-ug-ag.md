@@ -23,7 +23,7 @@ stichwoerter:
   - Gewinnausschüttung
   - Dividende
   - Körperschaftsteuer
-kurz: "Bei GmbH, UG und AG haftet die Firma mit ihrem eigenen Geld, nicht die Gründer privat. Dafür braucht man Startkapital, einen Notar und den Eintrag ins Handelsregister. Der Gewinn wird nach den Anteilen verteilt."
+kurz: "Bei GmbH, UG und AG haftet die Firma mit ihrem eigenen Geld, nicht die Gründer privat; dafür braucht man Startkapital, einen Notar und den Eintrag ins Handelsregister. Der Gewinn wird nach den Anteilen verteilt."
 quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten und offiziellen Seiten"
 ---
 

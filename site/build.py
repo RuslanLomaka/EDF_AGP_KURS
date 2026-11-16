@@ -58,8 +58,26 @@ esc = html.escape
 
 # ---------------------------------------------------------------- reading and checking content
 
-def fail(path, msg):
-    raise SystemExit(f"ERROR in {path.relative_to(REPO)}: {msg}")
+def fail(path, msg, line=None):
+    """Stop the build. Optional 1-based line number of the mistake in the source file."""
+    where = path.relative_to(REPO) if path.is_absolute() else path
+    if line is not None:
+        raise SystemExit(f"ERROR in {where}:{line}: {msg}")
+    raise SystemExit(f"ERROR in {where}: {msg}")
+
+
+def line_of(text, needle):
+    """1-based line of the first occurrence of needle in text, or None."""
+    if not needle:
+        return None
+    idx = text.find(needle)
+    if idx < 0:
+        return None
+    return text.count("\n", 0, idx) + 1
+
+
+def fail_at(path, text, needle, msg):
+    fail(path, msg, line=line_of(text, needle))
 
 
 def read_source(path):
@@ -162,15 +180,49 @@ UEBUNG_BLOCK = re.compile(r"^```uebung[ \t]*\n(.*?)^```[ \t]*$", re.M | re.S)
 STILLEPOST_BLOCK = re.compile(r"^```stillepost[ \t]*\n(.*?)^```[ \t]*$", re.M | re.S)
 
 
+def uebung_id(path, nr, d, gesehen):
+    """Stable id for progress: optional YAML 'id', else slug from the question. Must be unique in the file."""
+    raw = d.get("id")
+    if raw is None or raw == "":
+        basis = (d["frage"].lower()
+                 .replace("ä", "ae").replace("ö", "oe").replace("ü", "ue").replace("ß", "ss"))
+        basis = re.sub(r"[^a-z0-9]+", "-", basis).strip("-") or f"uebung-{nr}"
+        uid = basis[:48]
+    else:
+        if not isinstance(raw, str) or not SLUG.fullmatch(raw):
+            fail_at(path, path.read_text(encoding="utf-8"), str(raw),
+                    f"exercise {nr}: 'id' may only contain a-z, 0-9 and single hyphens")
+        uid = raw
+    if uid in gesehen:
+        fail(path, f"exercise {nr}: duplicate id '{uid}' (each exercise needs its own id)")
+    gesehen.add(uid)
+    return uid
+
+
+def luecke_ok(antwort):
+    """Decision 4: a gap holds one word, or one number with its unit (e.g. '48 Stunden', '3.000 Euro')."""
+    a = antwort.strip()
+    if not a or "\n" in a:
+        return False
+    teile = a.split()
+    if len(teile) == 1:
+        return True
+    if len(teile) == 2 and re.fullmatch(r"[\d.,]+", teile[0]):
+        return True
+    return False
+
+
 def uebungen(path, body):
     """Exercises are ```uebung blocks (YAML). They become placeholders before pandoc and finished HTML afterwards."""
     fertig = []
+    gesehen = set()
     def ersetze(m):
         try:
             daten = yaml.safe_load(m.group(1))
         except yaml.YAMLError as e:
-            fail(path, f"exercise {len(fertig) + 1}: invalid YAML: {e}")
-        fertig.append(uebung_html(path, len(fertig) + 1, daten))
+            fail(path, f"exercise {len(fertig) + 1}: invalid YAML: {e}",
+                 line=line_of(body, m.group(0)[:40]))
+        fertig.append(uebung_html(path, len(fertig) + 1, daten, gesehen))
         return f"<!--uebung-{len(fertig) - 1}-->"
     def stillepost(m):
         try:
@@ -258,7 +310,7 @@ def uebungen_einsetzen(html_text, fertig):
     return html_text
 
 
-def uebung_html(path, nr, d):
+def uebung_html(path, nr, d, gesehen=None):
     """typ "zuordnen": cards into boxes ("gruppen": {box: [cards]}); "reihenfolge": "schritte" in the right order;
     "luecken": "text" with [[gaps]] plus wrong words in "ablenker"; "markieren": "text" where the [[right parts]]
     must be tapped."""
@@ -270,6 +322,7 @@ def uebung_html(path, nr, d):
     erkl = d.get("erklaerung", "")
     if erkl and not text(erkl):
         fail(path, f"exercise {nr}: 'erklaerung' must be text")
+    uid = uebung_id(path, nr, d, gesehen if gesehen is not None else set())
     if d["typ"] == "zuordnen":
         gruppen = d.get("gruppen")
         if not isinstance(gruppen, dict) or not 2 <= len(gruppen) <= 5 or not all(
@@ -297,6 +350,11 @@ def uebung_html(path, nr, d):
             ablenker = d.get("ablenker") or []
             if not isinstance(ablenker, list) or len(ablenker) > 6 or not all(text(x) for x in ablenker):
                 fail(path, f"exercise {nr}: 'ablenker' must be a list of up to 6 wrong words")
+            for ant in antworten:
+                if not luecke_ok(ant):
+                    # Enforced in tests; live multi-word gaps are fixed in Phase 6 (Decision 4).
+                    if os.environ.get("KURS_STRICT_LUECKEN") == "1":
+                        fail(path, f"exercise {nr}: gap [[{ant}]] must be one word or a number with its unit")
             satz = "".join(esc(x) if i % 2 == 0 else f'<span class="ue-luecke" data-wort="{esc(x)}"></span>'
                            for i, x in enumerate(teile))
             pool = "".join(f'<button type="button" class="ue-karte" data-i="{i}">{esc(x)}</button>'
@@ -346,7 +404,8 @@ def uebung_html(path, nr, d):
         hinweis = "Bringen Sie die Schritte in die richtige Reihenfolge: ziehen oder mit den Pfeilen verschieben."
         loesung_html = "<ol>" + "".join(f"<li>{esc(x)}</li>" for x in schritte) + "</ol>"
     erkl_html = f"<p>{esc(erkl)}</p>" if erkl else ""
-    return (f'<div class="uebung" data-typ="{d["typ"]}" data-loesung="{esc(json.dumps(loesung))}" '
+    return (f'<div class="uebung" data-id="{esc(uid)}" data-typ="{d["typ"]}" '
+            f'data-loesung="{esc(json.dumps(loesung))}" '
             f'data-erklaerung="{esc(erkl)}">'
             f'<p class="ue-kopf"><span class="ue-marke">Übung</span> {esc(d["frage"])}</p>'
             f'<p class="ue-hinweis">{hinweis}</p>{inner}'
@@ -723,6 +782,13 @@ def load_articles(themen, vorleser):
             fail(path, f"thema '{a['thema']}' is not in site/themen.yaml (add it there first)")
         if not isinstance(a["reihenfolge"], int) or isinstance(a["reihenfolge"], bool):
             fail(path, "'reihenfolge' must be a whole number (position of the handout within its class day)")
+        # kurz: at most two sentences (ignore ordinals like "4. Tag")
+        saetze = [s for s in re.split(r"(?<=(?<!\d)[.!?])\s+", a["kurz"].strip()) if s.strip()]
+        if len(saetze) > 2:
+            fail(path, f"'kurz' must be at most 2 sentences (found {len(saetze)})",
+                 line=line_of(path.read_text(encoding="utf-8"), a["kurz"][:40]))
+        if not a["stichwoerter"]:
+            fail(path, "'stichwoerter' needs at least one entry")
         a["pfad"] = path
         a["serie"], a["teil"], a["serie_teile"] = text(path, meta, "serie", required=False), meta.get("teil"), []
         if a["serie"] or a["teil"] is not None:
@@ -740,6 +806,10 @@ def load_articles(themen, vorleser):
         a["body_lehrer"] = pandoc(path, voll, "html5")
         check_body(path, a["body_lehrer"])
         a["body_lehrer"] = uebungen_einsetzen(add_vorlesen(a["body_lehrer"], vorleser), fertig)
+        if not re.search(r'id="woerter"', a["body"]):
+            fail(path, "article needs a 'Wörter' section with {#woerter}")
+        if not re.search(r'id="fragen"', a["body"]):
+            fail(path, "article needs a 'Fragen zum Text' section with {#fragen}")
         plain = pandoc(path, body, "plain")
         a["text"] = " ".join(re.sub(r"[-=+|]{3,}|\|", " ", plain).split())  # drop ASCII table borders
         a["url"] = f"/artikel/{a['slug']}/"
@@ -804,8 +874,10 @@ def load_quiz(path):
                 fail(path, f"question {n}: every answer needs 'text' and 'correct': true/false")
         if sum(a["correct"] for a in answers) != 1:
             fail(path, f"question {n}: exactly one answer must be correct")
-        if not isinstance(q.get("explanation", ""), str):
-            fail(path, f"question {n}: 'explanation' must be text")
+        expl = q.get("explanation")
+        if not isinstance(expl, str) or not expl.strip():
+            fail(path, f"question {n}: 'explanation' must be non-empty text",
+                 line=None)
         for s in q.get("sources") or []:
             if not isinstance(s, dict) or not re.fullmatch(r"https?://[^\s<>\"']+", str(s.get("url", ""))):
                 fail(path, f"question {n}: every source needs an http(s) 'url'")

@@ -31,11 +31,13 @@
   const box = document.querySelector('.fortschritt');
   const inhalt = document.querySelector('.inhalt.lektion');
   if (!box || !inhalt) return;
-  const speicher = 'lektion-v2:' + box.dataset.lektion;
+  const speicher = 'lektion-v3:' + box.dataset.lektion;
+  const altSpeicher = 'lektion-v2:' + box.dataset.lektion;
   const hash = s => { let h = 5381; for (const c of s) h = (h * 33 + c.codePointAt(0)) >>> 0; return h.toString(36); };
   let erledigt = new Set();
   try { erledigt = new Set(JSON.parse(localStorage.getItem(speicher) || '[]')); } catch (e) { /* storage unavailable */ }
   const speichern = () => { try { localStorage.setItem(speicher, JSON.stringify([...erledigt])); } catch (e) { /* ignore */ } };
+  let standCache = '';
 
   // sections: every h2 of the lesson, plus the test below it
   const ohneNr = h => [...h.childNodes].filter(n => !(n.classList && n.classList.contains('nr'))).map(n => n.textContent).join('').trim();
@@ -69,13 +71,22 @@
     a.posten.push({ key, zeige });
   });
 
-  // 2. exercises: solved once = done (they can always be played again)
+  // 2. exercises: stable data-id (build); one-time migrate old position keys ue:section:n
   const zaehler = {};
+  let altErledigt = null;
+  try {
+    if (!localStorage.getItem(speicher) && localStorage.getItem(altSpeicher)) {
+      altErledigt = new Set(JSON.parse(localStorage.getItem(altSpeicher) || '[]'));
+    }
+  } catch (e) { /* ignore */ }
   inhalt.querySelectorAll('.uebung').forEach(ue => {
     const a = abschnittVon(ue);
     if (!zaehlt(a)) return;
     zaehler[a.id] = (zaehler[a.id] || 0) + 1;
-    const key = 'ue:' + a.id + ':' + zaehler[a.id];
+    const uid = ue.dataset.id || ('pos-' + a.id + '-' + zaehler[a.id]);
+    const key = 'ue:' + uid;
+    const altKey = 'ue:' + a.id + ':' + zaehler[a.id];
+    if (altErledigt && altErledigt.has(altKey) && !erledigt.has(key)) erledigt.add(key);
     const marke = document.createElement('span');
     marke.className = 'ue-geloest';
     marke.textContent = 'gelöst ✓';
@@ -84,6 +95,12 @@
     ue.addEventListener('uebung-geloest', () => { erledigt.add(key); speichern(); zeige(); anzeigen(); });
     a.posten.push({ key, zeige });
   });
+  if (altErledigt) {
+    // keep step/fertig/quiz keys from v2
+    altErledigt.forEach(k => { if (!k.startsWith('ue:')) erledigt.add(k); });
+    speichern();
+    try { localStorage.removeItem(altSpeicher); } catch (e) { /* ignore */ }
+  }
 
   // 3. the test: done when it has been evaluated once
   if (quizH2) {
@@ -151,11 +168,15 @@
     fsZahl.textContent = s.n ? s.fertig + ' von ' + s.n + (s.n === 1 ? ' Aufgabe' : ' Aufgaben') + (s.fertig === s.n ? ' ✓' : '') : '';
     balken.style.width = (s.n ? 100 * s.fertig / s.n : 0) + '%';
     gesamtText.textContent = 'Ganze Lektion: ' + fertig + ' von ' + n + ' Aufgaben erledigt' + (n && fertig === n ? ' – alles gesammelt!' : '');
-    // short summary for "Weiter bei Abschnitt n" on the start page and the lesson list
+    // short summary for "Weiter bei Abschnitt n" — write only when it changes (not on every scroll)
     const weiter = abschnitte.find(a => { const x = stand(a); return x.n && x.fertig < x.n; });
+    const payload = fertig
+      ? JSON.stringify({ fertig, n, nr: weiter ? weiter.nr : '', id: weiter ? weiter.id : '' })
+      : '';
+    if (payload === standCache) return;
+    standCache = payload;
     try {
-      if (fertig) localStorage.setItem('lektion-stand:' + box.dataset.lektion,
-        JSON.stringify({ fertig, n, nr: weiter ? weiter.nr : '', id: weiter ? weiter.id : '' }));
+      if (payload) localStorage.setItem('lektion-stand:' + box.dataset.lektion, payload);
       else localStorage.removeItem('lektion-stand:' + box.dataset.lektion);
     } catch (e) { /* storage unavailable */ }
   }

@@ -20,7 +20,7 @@ stichwoerter:
   - Rechtsschutz
   - DGB
   - Koalitionsfreiheit
-kurz: "In einer Gewerkschaft schließen sich Arbeitnehmer zusammen. Gemeinsam verhandeln sie mit den Arbeitgebern über Lohn und Arbeitszeit, im Notfall auch mit einem Streik. Mitglieder bekommen außerdem Beratung und Hilfe."
+kurz: "In einer Gewerkschaft schließen sich Arbeitnehmer zusammen und verhandeln gemeinsam über Lohn und Arbeitszeit, im Notfall auch mit einem Streik. Mitglieder bekommen außerdem Beratung und Hilfe."
 quelle: "Arbeitsblatt aus dem Kurs (Text, 2 Seiten, ohne Fragen)"
 ---
 

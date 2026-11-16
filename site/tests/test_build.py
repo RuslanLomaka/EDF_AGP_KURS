@@ -58,6 +58,15 @@ quelle: "Test"
 ## Abschnitt {{#eins}}
 
 Text ohne Notiz auf der öffentlichen Seite.
+
+## Wörter {{#woerter}}
+
+Demo
+:   Ein Testwort.
+
+## Fragen zum Text {{#fragen}}
+
+<details><summary>Was ist das?</summary>Ein Demo-Artikel.</details>
 """
 
 
@@ -311,6 +320,127 @@ class BuildTests(unittest.TestCase):
         self.site.add_lesson()
         r = self.site.build(False)
         self.assertIn("kurz", (r.stderr or r.stdout).lower())
+
+    def test_23_kurz_three_sentences_fails(self):
+        self.site = SyntheticSite()
+        body = good_article().replace(
+            'kurz: "Ein kurzer Demo-Text für Tests."',
+            'kurz: "Satz eins. Satz zwei. Satz drei."')
+        self.site.add_article(body=body)
+        self.site.add_lesson()
+        r = self.site.build(False)
+        out = r.stderr or r.stdout
+        self.assertIn("kurz", out.lower())
+        self.assertRegex(out, r"ERROR in .+:\d+:")
+
+    def test_24_empty_explanation_fails(self):
+        self.site = SyntheticSite()
+        bad = json.loads(quiz())
+        bad["questions"][0]["explanation"] = "  "
+        self.site.add_article(quiz_text=json.dumps(bad))
+        self.site.add_lesson()
+        r = self.site.build(False)
+        self.assertIn("explanation", (r.stderr or r.stdout).lower())
+
+    def test_25_missing_woerter_fails(self):
+        self.site = SyntheticSite()
+        body = good_article().replace("## Wörter {#woerter}", "## Glossar {#glossar}")
+        self.site.add_article(body=body)
+        self.site.add_lesson()
+        r = self.site.build(False)
+        self.assertIn("woerter", (r.stderr or r.stdout).lower())
+
+    def test_26_missing_fragen_fails(self):
+        self.site = SyntheticSite()
+        body = good_article().replace("## Fragen zum Text {#fragen}", "## Quizfragen {#quizfragen}")
+        self.site.add_article(body=body)
+        self.site.add_lesson()
+        r = self.site.build(False)
+        self.assertIn("fragen", (r.stderr or r.stdout).lower())
+
+    def test_27_duplicate_exercise_id_fails(self):
+        self.site = SyntheticSite()
+        ue = """
+```uebung
+id: gleiche-id
+typ: zuordnen
+frage: "Erste Übung"
+gruppen:
+  "A": ["Eins", "Zwei"]
+  "B": ["Drei"]
+```
+
+```uebung
+id: gleiche-id
+typ: zuordnen
+frage: "Zweite Übung"
+gruppen:
+  "A": ["Eins", "Zwei"]
+  "B": ["Drei"]
+```
+"""
+        self.site.add_article(body=good_article() + ue)
+        self.site.add_lesson()
+        r = self.site.build(False)
+        self.assertIn("duplicate id", (r.stderr or r.stdout).lower())
+
+    def test_28_bad_exercise_id_fails(self):
+        self.site = SyntheticSite()
+        ue = """
+```uebung
+id: Bad_ID!
+typ: zuordnen
+frage: "Übung"
+gruppen:
+  "A": ["Eins", "Zwei"]
+  "B": ["Drei"]
+```
+"""
+        self.site.add_article(body=good_article() + ue)
+        self.site.add_lesson()
+        r = self.site.build(False)
+        out = r.stderr or r.stdout
+        self.assertIn("id", out.lower())
+        self.assertRegex(out, r"ERROR in .+:\d+:")
+
+    def test_29_strict_multiword_gap_fails(self):
+        self.site = SyntheticSite()
+        ue = """
+```uebung
+typ: luecken
+frage: "Lücke"
+text: "Das ist [[zwei woerter]] hier."
+ablenker: ["eins"]
+```
+"""
+        self.site.add_article(body=good_article() + ue)
+        self.site.add_lesson()
+        env = os.environ.copy()
+        env["KURS_SITE"] = str(self.site.site)
+        env["KURS_STRICT_LUECKEN"] = "1"
+        env.pop("PIPER_MODEL", None)
+        r = subprocess.run([sys.executable, str(BUILD)], env=env, cwd=str(REPO),
+                           capture_output=True, text=True)
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("gap", (r.stderr or r.stdout).lower())
+
+    def test_30_exercise_gets_data_id(self):
+        self.site = SyntheticSite()
+        ue = """
+```uebung
+id: demo-karten
+typ: zuordnen
+frage: "Zuordnen"
+gruppen:
+  "A": ["Eins", "Zwei"]
+  "B": ["Drei"]
+```
+"""
+        self.site.add_article(body=good_article() + ue)
+        self.site.add_lesson()
+        self.site.build(True)
+        html = (self.site.site / "dist" / "artikel" / "demo-artikel" / "index.html").read_text()
+        self.assertIn('data-id="demo-karten"', html)
 
 
 if __name__ == "__main__":

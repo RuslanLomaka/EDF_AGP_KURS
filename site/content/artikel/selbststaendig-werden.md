@@ -22,7 +22,7 @@ stichwoerter:
   - Gründungszuschuss
   - Einstiegsgeld
   - Businessplan
-kurz: "Wer selbstständig arbeitet, ist sein eigener Chef und trägt das Risiko selbst. Die erste Frage ist: Gewerbe oder freier Beruf? Danach prüfen Sie, ob Sie eine Erlaubnis brauchen, und holen sich Beratung und Förderung – vor dem Start."
+kurz: "Wer selbstständig arbeitet, ist sein eigener Chef und trägt das Risiko selbst. Die erste Frage ist Gewerbe oder freier Beruf – danach prüfen Sie Erlaubnis, Beratung und Förderung vor dem Start."
 quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten und offiziellen Seiten"
 ---
 

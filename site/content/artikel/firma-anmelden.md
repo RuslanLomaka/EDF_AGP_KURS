@@ -23,7 +23,7 @@ stichwoerter:
   - Rentenversicherung
   - Arbeitslosenversicherung
   - Haftpflichtversicherung
-kurz: "Ein Gewerbe melden Sie beim Gewerbeamt an, und zwar beim Start. Innerhalb eines Monats folgt der Fragebogen fürs Finanzamt über ELSTER. Kranken- und Pflegeversicherung sind Pflicht; die Arbeitslosenversicherung können Sie innerhalb von 3 Monaten beantragen."
+kurz: "Ein Gewerbe melden Sie beim Gewerbeamt an, und zwar beim Start; innerhalb eines Monats folgt der Fragebogen fürs Finanzamt über ELSTER. Kranken- und Pflegeversicherung sind Pflicht; die Arbeitslosenversicherung können Sie innerhalb von 3 Monaten beantragen."
 quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten und offiziellen Seiten"
 ---
 
