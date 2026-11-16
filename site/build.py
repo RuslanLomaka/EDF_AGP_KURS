@@ -817,7 +817,8 @@ def _load_one_article(path, themen, vorleser):
         fail(path, "article needs a 'Wörter' section with {#woerter}")
     if not re.search(r'id="fragen"', a["body"]):
         fail(path, "article needs a 'Fragen zum Text' section with {#fragen}")
-    a["text"] = " ".join(re.sub(r"[-=+|]{3,}|\|", " ", plain).split())
+    # Drop ASCII table borders and lone pipes from the plain search text.
+    a["text"] = " ".join(re.sub(r"[-=+|]+", " ", plain).split())
     a["url"] = f"/artikel/{a['slug']}/"
     a["minuten"] = max(1, math.ceil(len(a["text"].split()) / 100))
     a["quiz"] = load_quiz(path.with_name(f"{a['slug']}.quiz.json"))

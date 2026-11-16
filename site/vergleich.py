@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import hashlib
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -17,10 +18,12 @@ import tempfile
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
+# Only plain git refs (branch / tag / SHA); never pass free-form shell text to subprocess.
+GIT_REF = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._/\-]{0,200}$")
 
 
-def run(cmd, **kw):
-    return subprocess.run(cmd, check=True, text=True, **kw)
+def run(cmd: list[str], *, text: bool = True, **kw):
+    return subprocess.run(cmd, check=True, text=text, shell=False, **kw)
 
 
 def build_repo(root: Path, out: Path) -> None:
@@ -54,6 +57,9 @@ def copy_exe(into_root: Path) -> None:
 
 def main() -> int:
     base = sys.argv[1] if len(sys.argv) > 1 else "main"
+    if not GIT_REF.fullmatch(base):
+        print(f"invalid git ref: {base!r} (use a branch, tag or SHA)", file=sys.stderr)
+        return 2
     with tempfile.TemporaryDirectory(prefix="kurs-vergleich-") as tmp:
         tmp = Path(tmp)
         work = tmp / "work"
@@ -71,8 +77,9 @@ def main() -> int:
                 )
         copy_exe(work)
 
-        run(["git", "archive", base, "--format=tar"], cwd=str(REPO),
-            stdout=open(tmp / "base.tar", "wb"))
+        with open(tmp / "base.tar", "wb") as tar_out:
+            run(["git", "archive", base, "--format=tar"], cwd=str(REPO),
+                stdout=tar_out, text=False)
         run(["tar", "-xf", str(tmp / "base.tar"), "-C", str(other)])
         copy_exe(other)
 
