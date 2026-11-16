@@ -82,11 +82,15 @@
       const k = f.antworten.findIndex(a => a.correct);
       knoepfe.forEach(x => x.setAttribute('aria-disabled', 'true'));
       knoepfe[k].classList.add('ist-richtig');
+      knoepfe[k].setAttribute('aria-label', 'Richtig: ' + knoepfe[k].textContent.trim());
       if (f.wahl === k) {
-        rueck.append(el('p', 'ok', 'Richtig!'));
+        rueck.append(el('p', 'ok', '✓ Richtig!'));
       } else {
-        if (f.wahl >= 0) knoepfe[f.wahl].classList.add('gewaehlt-falsch');
-        rueck.append(el('p', 'falsch', (f.wahl >= 0 ? 'Leider falsch. ' : 'Nicht beantwortet. ')
+        if (f.wahl >= 0) {
+          knoepfe[f.wahl].classList.add('gewaehlt-falsch');
+          knoepfe[f.wahl].setAttribute('aria-label', 'Falsch gewählt: ' + knoepfe[f.wahl].textContent.trim());
+        }
+        rueck.append(el('p', 'falsch', (f.wahl >= 0 ? '✗ Leider falsch. ' : 'Nicht beantwortet. ')
           + 'Richtig ist ' + BUCHSTABEN[k] + ': ' + f.antworten[k].text));
       }
       if (f.frage.explanation) rueck.append(el('p', 'quiz-erklaerung', f.frage.explanation));
@@ -141,7 +145,11 @@
     neu.type = 'button';
     neu.addEventListener('click', () => {
       starte();
-      box.scrollIntoView({ block: 'start' });
+      const scroll = window.kurs && window.kurs.scrollZu;
+      if (scroll) scroll(box, { block: 'start' });
+      else box.scrollIntoView({ block: 'start' });
+      const erste = box.querySelector('.quiz-antwort, .quiz-neu, button');
+      if (erste) erste.focus({ preventScroll: true });
     });
 
     if (!test) {
@@ -160,7 +168,9 @@
         warnung.dataset.gewarnt = 'ja';
         const zahl = fragen.filter(f => f.wahl < 0).length;
         warnung.textContent = 'Noch ' + zahl + (zahl === 1 ? ' Frage' : ' Fragen') + ' ohne Antwort. Beantworten Sie sie – oder klicken Sie noch einmal auf „Auswerten“.';
-        felder[offen].feld.scrollIntoView({ block: 'center' });
+        const scroll = window.kurs && window.kurs.scrollZu;
+        if (scroll) scroll(felder[offen].feld, { block: 'center' });
+        else felder[offen].feld.scrollIntoView({ block: 'center' });
         return;
       }
       warnung.textContent = '';
@@ -168,7 +178,9 @@
       auswerten.remove();
       const ergebnis = auswertung(fragen);
       box.prepend(ergebnis);
-      ergebnis.scrollIntoView({ block: 'start' });
+      const scrollErg = window.kurs && window.kurs.scrollZu;
+      if (scrollErg) scrollErg(ergebnis, { block: 'start' });
+      else ergebnis.scrollIntoView({ block: 'start' });
       ergebnis.focus({ preventScroll: true });
       if (ergebnis.dataset.anteil >= 0.8 && window.kursKonfetti) window.kursKonfetti(ergebnis);
       box.dispatchEvent(new CustomEvent('quiz-fertig', { bubbles: true }));

@@ -59,7 +59,12 @@
         b.className = 'sp-vorschlag';
         b.textContent = anzeige(s);
         b.dataset.satz = sauber(s);
-        b.addEventListener('click', () => { feld.value = sauber(s); pruefe(); knopf.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
+        b.addEventListener('click', () => {
+          feld.value = sauber(s); pruefe();
+          const scroll = window.kurs && window.kurs.scrollZu;
+          if (scroll) scroll(knopf, { block: 'nearest' });
+          else knopf.scrollIntoView({ block: 'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+        });
         vorschlaege.append(b);
       });
       pruefe();
@@ -78,7 +83,10 @@
       if (window.kursKonfetti) window.kursKonfetti(knopf.closest('.sp-schritt'));
       const weiter = $('.sp-start');
       weiter.focus({ preventScroll: true });
-      weiter.closest('.sp-schritt').scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      const ziel = weiter.closest('.sp-schritt');
+      const scroll = window.kurs && window.kurs.scrollZu;
+      if (scroll) scroll(ziel, { block: 'nearest' });
+      else ziel.scrollIntoView({ block: 'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     };
     const altmodisch = () => {  // older browsers: copy through a hidden text field
       const f = document.createElement('textarea');

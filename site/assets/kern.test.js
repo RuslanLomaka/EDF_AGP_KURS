@@ -95,3 +95,17 @@ describe('kurs.norm extras', () => {
     assert.equal(kern.norm(123), '123');
   });
 });
+
+describe('kurs.scrollZu / vorlesen stop', () => {
+  it('scrollZu is a function', () => {
+    assert.equal(typeof kern.scrollZu, 'function');
+    assert.equal(typeof kern.scrollSeite, 'function');
+  });
+  it('stoppeVorlesen runs registered stops', () => {
+    let n = 0;
+    kern.setzeVorlesenStopp(() => { n += 1; });
+    kern.setzeVorlesenStopp(() => { n += 10; });
+    kern.stoppeVorlesen();
+    assert.equal(n, 11);
+  });
+});

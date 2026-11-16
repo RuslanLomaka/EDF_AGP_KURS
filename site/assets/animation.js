@@ -24,10 +24,12 @@
   };
 
   if (ruhig || !('IntersectionObserver' in window)) return;
+  // Fewer targets on long lessons (KI-Spielplatz): skip per-step list items to cut main-thread work.
   const auswahl = 'main .bild, main .card, main .bereich, main .kurz, main .info, main .achtung, main .ergaenzung, ' +
-    'main .uebung, main .prompt, main .profi, main .liste, main table, main .schritte li, main .blaettern a, main dl';
+    'main .uebung, main .prompt, main .profi, main .liste, main table, main .blaettern a, main dl';
   // only what is still below the first screen: nothing visible ever disappears
-  const unten = [...document.querySelectorAll(auswahl)].filter(e => e.getBoundingClientRect().top > window.innerHeight);
+  let unten = [...document.querySelectorAll(auswahl)].filter(e => e.getBoundingClientRect().top > window.innerHeight);
+  if (unten.length > 24) unten = unten.slice(0, 24);
   if (!unten.length) return;
   const io = new IntersectionObserver(eintraege => eintraege.forEach(e => {
     if (!e.isIntersecting) return;

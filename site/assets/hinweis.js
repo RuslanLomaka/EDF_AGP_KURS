@@ -13,7 +13,6 @@
     leiste.close();
     try { localStorage.setItem('hinweis-gesehen', heute); } catch (e) { /* storage blocked */ }
   });
+  // Non-modal bar: do not steal keyboard focus (Decision: stop notice focus).
   leiste.show();
-  // focus the bar itself: no focus ring on "Mehr dazu", and the next Tab still reaches its links
-  leiste.focus({ preventScroll: true });
 })();

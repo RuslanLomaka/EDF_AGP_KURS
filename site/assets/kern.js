@@ -51,11 +51,44 @@
     return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
   }
 
+  /** Smooth scroll only when the visitor has not asked for reduced motion. */
+  function scrollZu(el, opts) {
+    if (!el || !el.scrollIntoView) return;
+    var ruhig = typeof matchMedia === 'function'
+      && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var o = Object.assign({ block: 'start' }, opts || {});
+    if (ruhig || o.behavior === 'auto') o.behavior = 'auto';
+    else if (!o.behavior) o.behavior = 'smooth';
+    el.scrollIntoView(o);
+  }
+
+  function scrollSeite(opts) {
+    var ruhig = typeof matchMedia === 'function'
+      && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var o = Object.assign({}, opts || {});
+    if (ruhig) o.behavior = 'auto';
+    else if (!o.behavior) o.behavior = 'smooth';
+    if (typeof window.scrollTo === 'function') window.scrollTo(o);
+  }
+
+  /** One shared stop for glossary and section read-aloud (many listeners). */
+  var vorlesenStoppFns = [];
+  function setzeVorlesenStopp(fn) {
+    if (typeof fn === 'function') vorlesenStoppFns.push(fn);
+  }
+  function stoppeVorlesen() {
+    vorlesenStoppFns.forEach(function (fn) { try { fn(); } catch (e) { /* ignore */ } });
+  }
+
   return {
     mische: mische,
     norm: norm,
     leseJSON: leseJSON,
     schreibeJSON: schreibeJSON,
-    heuteISO: heuteISO
+    heuteISO: heuteISO,
+    scrollZu: scrollZu,
+    scrollSeite: scrollSeite,
+    setzeVorlesenStopp: setzeVorlesenStopp,
+    stoppeVorlesen: stoppeVorlesen
   };
 });

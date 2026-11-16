@@ -114,7 +114,11 @@
       const an = !erledigt.has(key);
       an ? erledigt.add(key) : erledigt.delete(key);
       speichern(); zeige(); anzeigen();
-      if (an && folgt) setTimeout(() => folgt.h.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }), 350);
+      if (an && folgt) setTimeout(() => {
+        const scroll = window.kurs && window.kurs.scrollZu;
+        if (scroll) scroll(folgt.h, { block: 'start' });
+        else folgt.h.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      }, 350);
     });
     a.posten.push({ key, zeige });
   });
@@ -174,7 +178,8 @@
       const liste = nav.querySelector('ol');
       if (liste.scrollWidth > liste.clientWidth) {  // phone bar: keep the active number in view
         const li = l.parentElement;
-        liste.scrollTo({ left: li.offsetLeft - liste.offsetLeft - (liste.clientWidth - li.offsetWidth) / 2, behavior: 'smooth' });
+        const ruhig = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        liste.scrollTo({ left: li.offsetLeft - liste.offsetLeft - (liste.clientWidth - li.offsetWidth) / 2, behavior: ruhig ? 'auto' : 'smooth' });
       }
     });
     anzeigen();
@@ -221,11 +226,8 @@
     const aktiv = document.querySelector('.schnellnav a[aria-current="true"] .nr');
     return (box && box.dataset.nr) || (aktiv ? aktiv.textContent : '');
   };
-  const ampel = el('div', 'ampel');
-  ampel.setAttribute('role', 'dialog');
-  ampel.setAttribute('aria-modal', 'true');
+  const ampel = el('dialog', 'ampel');
   ampel.setAttribute('aria-label', 'Hilfe-Ampel');
-  ampel.hidden = true;
   const wahl = el('div', 'ampel-wahl');
   const frage = el('p', 'ampel-frage');
   const gruen = el('button', 'ampel-gruen', '✓ Ich bin fertig');
@@ -239,7 +241,7 @@
   document.body.append(ampel);
 
   const schliessen = () => {
-    ampel.hidden = true;
+    if (ampel.open) ampel.close();
     ampel.className = 'ampel';
     document.documentElement.classList.remove('ampel-offen');
     knopf.focus();
@@ -258,14 +260,19 @@
     const nr = nummer();
     frage.textContent = (nr ? 'Abschnitt ' + nr + ': ' : '') + 'Wie geht es Ihnen?';
     ampel.className = 'ampel';
-    ampel.hidden = false;
     document.documentElement.classList.add('ampel-offen');
+    if (typeof ampel.showModal === 'function') ampel.showModal();
+    else { ampel.setAttribute('open', ''); }
     gruen.focus();
   });
   gruen.addEventListener('click', () => zeige('gruen'));
   rot.addEventListener('click', () => zeige('rot'));
   zu.addEventListener('click', schliessen);
   anzeige.addEventListener('click', schliessen);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !ampel.hidden) schliessen(); });
+  ampel.addEventListener('cancel', e => { e.preventDefault(); schliessen(); });
+  ampel.addEventListener('close', () => {
+    ampel.className = 'ampel';
+    document.documentElement.classList.remove('ampel-offen');
+  });
   knopf.hidden = false;
 })();

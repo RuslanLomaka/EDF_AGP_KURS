@@ -136,5 +136,7 @@
   });
   let warte;
   feld.addEventListener('input', () => { clearTimeout(warte); warte = setTimeout(zeige, 150); });
+  const form = feld.closest('form');
+  if (form) form.addEventListener('submit', e => { e.preventDefault(); zeige(); feld.focus(); });
   zeige();
 })();

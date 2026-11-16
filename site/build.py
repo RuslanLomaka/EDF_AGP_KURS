@@ -533,11 +533,12 @@ def layout(title, active, main, description="", scripts=(), noindex=False, farbe
 <link rel="stylesheet" href="{asset('style.css')}">
 </head>
 <body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
 <header class="site-header">
   <a class="brand" href="/">{BRAND}</a>
   <nav aria-label="Hauptmenü">{links}</nav>
 </header>
-<main{f' style="--t:{farbe}"' if farbe else ''}>
+<main id="inhalt"{f' style="--t:{farbe}"' if farbe else ''}>
 {main}
 </main>
 <footer class="site-footer"><a href="/">{BRAND}</a> · <a href="/edv-kurs/">EDV-Kurs</a> · <a href="/artikel/">Artikel</a> · <a href="/hinweis/">Hinweise</a>{RECHT_LINKS if BETREIBER else ""}</footer>
@@ -1017,7 +1018,10 @@ def build_article_index(articles, themen, lessons):
                          ensure_ascii=False).replace("<", "\\u003c")
     main = f"""<header class="kopf"><h1>Artikel</h1>
 <p class="lead">Arbeitsblätter aus dem Kurs – einfach erklärt. {anzahl(len(articles), "Artikel", "Artikel")}.</p></header>
-<div class="suchfeld"><input id="suche" class="search" type="search" placeholder="Suchen: Titel, Stichwort oder Text …" aria-label="Artikel und Lektionen durchsuchen" autocomplete="off"></div>
+<form class="suchfeld" action="/artikel/" method="get" role="search">
+  <input id="suche" class="search" type="search" name="q" placeholder="Suchen: Titel, Stichwort oder Text …" aria-label="Artikel und Lektionen durchsuchen" autocomplete="off">
+  <noscript><button type="submit">Suchen</button></noscript>
+</form>
 <ul id="themen" class="chips themen" aria-label="Themen">{chips}</ul>
 <p id="anzahl" class="count" aria-live="polite"></p>
 <div id="lektionen-treffer"></div>
