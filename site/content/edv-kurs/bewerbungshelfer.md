@@ -44,6 +44,8 @@ dateien:
 3. Alle schauen auf die drei Kästen: Excel plus Programm gleich fertige Briefe.
 4. Dann die Abschnitte 1 bis 5: erst vormachen, dann machen alle selbst.
 5. Ziel für heute: Jede Person hat mindestens einen fertigen Brief als PDF.
+
+**Lotsen:** Wer fertig ist, hilft zuerst beim Entpacken oder bei Excel und macht dann die Profi-Aufgabe.
 :::
 
 <div class="prinzip">

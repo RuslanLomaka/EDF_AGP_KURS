@@ -120,15 +120,15 @@ Ein **Gesetz** mit einer festen Frist, nach der eine Abmahnung gelöscht wird, g
 <p id="fall-frau-k"></p>
 
 ::: fall
-**Der Fall Frau K. – Teil 1 von 4** (erfunden)
+**Der Fall Frau K. – Teil 3 von 4** (erfunden)
 
-Frau K. arbeitet seit 4 Jahren als Verkäuferin in einem Supermarkt mit 25 Beschäftigten. Im März kommt sie dreimal zu spät, weil ihr Bus ausfällt. Sie sagt nicht Bescheid. Im April bekommt sie eine Abmahnung: mit Datum und Uhrzeit jeder Verspätung und dem Satz „Beim nächsten Mal droht die Kündigung“.
+[Teil 2](/artikel/kuendigungsschutz/#fall-frau-k): Die Kündigung auf Papier kann sie anfechten. Warum kam es so weit? Im März war Frau K. dreimal zu spät, weil ihr Bus ausfiel – sie sagte nicht Bescheid. Im April bekam sie eine Abmahnung: mit Datum und Uhrzeit jeder Verspätung und dem Satz „Beim nächsten Mal droht die Kündigung“.
 
-<details><summary>Ist die Abmahnung in Ordnung? Was kann Frau K. tun?</summary>
-Ja: Die Abmahnung beschreibt die Fehler genau und warnt vor der Kündigung. Frau K. kann eine **Gegendarstellung** schreiben (der Bus ist ausgefallen) – sie kommt in ihre Personalakte. Ab jetzt ruft sie bei jeder Verspätung **sofort** an.
+<details><summary>Ist die Abmahnung in Ordnung? Was hätte Frau K. tun können?</summary>
+Ja: Die Abmahnung beschreibt die Fehler genau und warnt vor der Kündigung. Frau K. hätte eine **Gegendarstellung** schreiben können (der Bus ist ausgefallen) – sie kommt in die Personalakte. Und: Bei jeder Verspätung **sofort** anrufen.
 </details>
 
-<a class="weiter" href="/artikel/kuendigungsschutz/#fall-frau-k">Weiter mit Teil 2: die Kündigung per WhatsApp →</a>
+<a class="weiter" href="/edv-kurs/ki-im-alltag/#fall-frau-k">Weiter mit Teil 4: ein Brief von der Agentur für Arbeit →</a>
 :::
 
 ```uebung

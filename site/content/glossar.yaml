@@ -1,0 +1,83 @@
+# Shared glossary terms (Phase 6 draft).
+# Decision: owner confirms wording before the build uses this file as the single source.
+# Until then articles keep their own Wörter sections; duplicates below are the proposed shared text.
+
+finanzamt:
+  lemma: "das Finanzamt, die Finanzämter"
+  erklaerung: "Behörde, die Steuern prüft und einzieht."
+  beispiel: "Das Finanzamt schickt Ihnen einen Fragebogen."
+
+gewerbeamt:
+  lemma: "das Gewerbeamt, die Gewerbeämter"
+  erklaerung: "Stelle bei der Stadt oder Gemeinde, bei der Sie ein Gewerbe anmelden."
+  beispiel: "Beim Gewerbeamt melden Sie Ihren Kiosk an."
+
+handelsregister:
+  lemma: "das Handelsregister"
+  erklaerung: "Öffentliches Verzeichnis wichtiger Firmendaten beim Amtsgericht."
+  beispiel: "Die GmbH steht mit Adresse und Geschäftsführung im Handelsregister."
+
+privatvermoegen:
+  lemma: "das Privatvermögen"
+  erklaerung: "Ihr eigenes Geld und Eigentum – Wohnung, Auto, Erspartes."
+  beispiel: "Als Einzelunternehmer haften Sie mit dem Privatvermögen."
+
+betriebsrat:
+  lemma: "der Betriebsrat, die Betriebsräte"
+  erklaerung: "Gewählte Vertretung der Beschäftigten in der Firma."
+  beispiel: "Der Betriebsrat muss vor manchen Kündigungen gehört werden."
+
+gesellschafter:
+  lemma: "der Gesellschafter, die Gesellschafter / die Gesellschafterin, die Gesellschafterinnen"
+  erklaerung: "Person, die Anteile an einer Firma besitzt."
+  beispiel: "Die Gesellschafterinnen beschließen, wer die Firma führt."
+
+gesellschaftsvertrag:
+  lemma: "der Gesellschaftsvertrag, die Gesellschaftsverträge"
+  erklaerung: "Vertrag zwischen den Gesellschaftern über Rechte, Pflichten und Gewinn."
+  beispiel: "Im Gesellschaftsvertrag steht, wer wie viel Geld bekommt."
+
+kuendigungsschutz:
+  lemma: "der Kündigungsschutz"
+  erklaerung: "Schutz vor einer Kündigung ohne guten Grund, wenn das Gesetz gilt."
+  beispiel: "Mit Kündigungsschutz braucht der Arbeitgeber einen anerkannten Grund."
+
+notar:
+  lemma: "der Notar, die Notare / die Notarin, die Notarinnen"
+  erklaerung: "Person, die wichtige Verträge beglaubigt und beurkundet."
+  beispiel: "Für eine GmbH brauchen Sie einen Notar."
+
+tarifvertrag:
+  lemma: "der Tarifvertrag, die Tarifverträge"
+  erklaerung: "Vertrag zwischen Gewerkschaft und Arbeitgeberseite über Lohn und Arbeitszeit."
+  beispiel: "Der Tarifvertrag regelt, wie viel Pause Sie mindestens haben."
+
+abmahnung:
+  lemma: "die Abmahnung, die Abmahnungen"
+  erklaerung: "Schriftliche Warnung des Arbeitgebers vor einer möglichen Kündigung."
+  beispiel: "Nach der Abmahnung weiß sie genau, was sie ändern muss."
+
+betriebszugehoerigkeit:
+  lemma: "die Betriebszugehörigkeit"
+  erklaerung: "Wie lange Sie schon in derselben Firma arbeiten."
+  beispiel: "Die Kündigungsfrist hängt von der Betriebszugehörigkeit ab."
+
+einkommensteuer:
+  lemma: "die Einkommensteuer"
+  erklaerung: "Steuer auf Ihr Einkommen, die oft schon vom Gehalt abgezogen wird."
+  beispiel: "Vom Brutto geht auch die Einkommensteuer ab."
+
+haftung:
+  lemma: "die Haftung"
+  erklaerung: "Wer für Schulden der Firma mit welchem Vermögen einsteht."
+  beispiel: "Bei der GmbH ist die Haftung auf das Firmenvermögen begrenzt."
+
+rechtsform:
+  lemma: "die Rechtsform, die Rechtsformen"
+  erklaerung: "Die rechtliche Art der Firma, zum Beispiel Einzelunternehmen, GbR oder GmbH."
+  beispiel: "Die Rechtsform entscheidet, wer privat haftet."
+
+sperrzeit:
+  lemma: "die Sperrzeit, die Sperrzeiten"
+  erklaerung: "Zeit ohne Arbeitslosengeld, oft nach eigener Kündigung ohne wichtigen Grund."
+  beispiel: "Nach einer Sperrzeit von 12 Wochen gibt es wieder Geld."

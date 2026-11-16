@@ -19,7 +19,7 @@ stichwoerter:
   - Steuerklasse
   - Brutto-Netto-Rechner
   - Gehaltsabrechnung
-kurz: "Brutto ist das Gehalt aus dem Arbeitsvertrag. Davon gehen Steuern und Sozialversicherung ab. Was übrig bleibt, ist netto – das Geld, das wirklich auf Ihr Konto kommt."
+kurz: "Brutto ist das Gehalt aus dem Arbeitsvertrag; davon gehen Steuern und Sozialversicherung ab. Was übrig bleibt, ist netto – das Geld, das wirklich auf Ihr Konto kommt."
 quelle: "Arbeitsblatt aus dem Kurs (Text und Fragen, 2 Seiten)"
 ---
 

@@ -194,13 +194,13 @@ erklaerung: "Zuerst die Daten entfernen – und am Ende immer mit dem Original v
 ::: fall
 **Der Fall Frau K. – Teil 4 von 4** (erfunden)
 
-[Teil 3](/artikel/kuendigung-einfach-erklaert/#fall-frau-k): Frau K. hat sich arbeitssuchend gemeldet. Jetzt bekommt sie einen langen Brief von der Agentur für Arbeit: eine Einladung zu einem Termin. Sie versteht nicht alles.
+[Teil 3](/artikel/abmahnung/#fall-frau-k): Die Abmahnung war formell in Ordnung. Frau K. hat sich arbeitssuchend gemeldet. Jetzt bekommt sie einen langen Brief von der Agentur für Arbeit: eine Einladung zu einem Termin. Sie versteht nicht alles.
 
 <details><summary>Wie nutzt Frau K. die KI dafür sicher?</summary>
 Sie tippt nur den Text ab – **ohne** Namen, Adresse und Kundennummer. Die KI erklärt den Brief und macht eine Liste: Was muss ich tun, bis wann? Datum und Uhrzeit prüft Frau K. **selbst im Original**. Kann sie nicht kommen, sagt sie **vorher** Bescheid.
 </details>
 
-Zurück zum Anfang: [Teil 1 – die Abmahnung](/artikel/abmahnung/#fall-frau-k)
+Zurück zum Anfang: [Teil 1 – die Kündigung im Briefkasten](/artikel/kuendigung-einfach-erklaert/#fall-frau-k)
 :::
 
 ## Die heikle E-Mail {#email}

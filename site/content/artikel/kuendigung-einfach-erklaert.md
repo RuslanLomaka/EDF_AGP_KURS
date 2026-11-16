@@ -170,15 +170,15 @@ Wenn der **Arbeitgeber** kündigt, gilt: **Je länger Sie in der Firma sind, des
 <p id="fall-frau-k"></p>
 
 ::: fall
-**Der Fall Frau K. – Teil 3 von 4** (erfunden)
+**Der Fall Frau K. – Teil 1 von 4** (erfunden)
 
-[Teil 2](/artikel/kuendigungsschutz/#fall-frau-k): Die Kündigung per WhatsApp war ungültig. Am 20. Juni liegt eine Kündigung auf Papier, mit Unterschrift, in ihrem Briefkasten. Frau K. arbeitet seit 4 Jahren in der Firma.
+Frau K. arbeitet seit 4 Jahren als Verkäuferin in einem Supermarkt mit 25 Beschäftigten. Am 20. Juni liegt eine Kündigung auf Papier, mit Unterschrift, in ihrem Briefkasten. Darin steht: Ihr Arbeitsverhältnis endet. Sie war in den letzten Monaten mehrmals zu spät gekommen.
 
 <details><summary>Wann endet ihr Job? Was muss Frau K. jetzt sofort tun?</summary>
 Nach 4 Jahren gilt, wenn der Arbeitgeber kündigt: **1 Monat zum Monatsende**. Die Kündigung kam am 20. Juni, also endet der Job am **31. Juli**. Innerhalb von **3 Tagen** meldet sie sich bei der Agentur für Arbeit arbeitssuchend. Will sie sich wehren, muss sie innerhalb von **3 Wochen** klagen.
 </details>
 
-<a class="weiter" href="/edv-kurs/ki-im-alltag/#fall-frau-k">Weiter mit Teil 4: ein Brief von der Agentur für Arbeit →</a>
+<a class="weiter" href="/artikel/kuendigungsschutz/#fall-frau-k">Weiter mit Teil 2: gilt der Kündigungsschutz? →</a>
 :::
 
 ```uebung

@@ -31,11 +31,18 @@
   const box = document.querySelector('.fortschritt');
   const inhalt = document.querySelector('.inhalt.lektion');
   if (!box || !inhalt) return;
-  const speicher = 'lektion-v2:' + box.dataset.lektion;
+  const speicher = 'lektion-v3:' + box.dataset.lektion;
+  const altSpeicher = 'lektion-v2:' + box.dataset.lektion;
   const hash = s => { let h = 5381; for (const c of s) h = (h * 33 + c.codePointAt(0)) >>> 0; return h.toString(36); };
-  let erledigt = new Set();
-  try { erledigt = new Set(JSON.parse(localStorage.getItem(speicher) || '[]')); } catch (e) { /* storage unavailable */ }
-  const speichern = () => { try { localStorage.setItem(speicher, JSON.stringify([...erledigt])); } catch (e) { /* ignore */ } };
+  const lese = (window.kurs && window.kurs.leseJSON)
+    ? window.kurs.leseJSON
+    : (k, fb) => { try { const r = localStorage.getItem(k); return r ? JSON.parse(r) : fb; } catch (e) { return fb; } };
+  const schreibe = (window.kurs && window.kurs.schreibeJSON)
+    ? window.kurs.schreibeJSON
+    : (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return false; } };
+  let erledigt = new Set(lese(speicher, []));
+  const speichern = () => { schreibe(speicher, [...erledigt]); };
+  let standCache = '';
 
   // sections: every h2 of the lesson, plus the test below it
   const ohneNr = h => [...h.childNodes].filter(n => !(n.classList && n.classList.contains('nr'))).map(n => n.textContent).join('').trim();
@@ -69,13 +76,22 @@
     a.posten.push({ key, zeige });
   });
 
-  // 2. exercises: solved once = done (they can always be played again)
+  // 2. exercises: stable data-id (build); one-time migrate old position keys ue:section:n
   const zaehler = {};
+  let altErledigt = null;
+  try {
+    if (!localStorage.getItem(speicher) && localStorage.getItem(altSpeicher)) {
+      altErledigt = new Set(JSON.parse(localStorage.getItem(altSpeicher) || '[]'));
+    }
+  } catch (e) { /* ignore */ }
   inhalt.querySelectorAll('.uebung').forEach(ue => {
     const a = abschnittVon(ue);
     if (!zaehlt(a)) return;
     zaehler[a.id] = (zaehler[a.id] || 0) + 1;
-    const key = 'ue:' + a.id + ':' + zaehler[a.id];
+    const uid = ue.dataset.id || ('pos-' + a.id + '-' + zaehler[a.id]);
+    const key = 'ue:' + uid;
+    const altKey = 'ue:' + a.id + ':' + zaehler[a.id];
+    if (altErledigt && altErledigt.has(altKey) && !erledigt.has(key)) erledigt.add(key);
     const marke = document.createElement('span');
     marke.className = 'ue-geloest';
     marke.textContent = 'gelöst ✓';
@@ -84,6 +100,12 @@
     ue.addEventListener('uebung-geloest', () => { erledigt.add(key); speichern(); zeige(); anzeigen(); });
     a.posten.push({ key, zeige });
   });
+  if (altErledigt) {
+    // keep step/fertig/quiz keys from v2
+    altErledigt.forEach(k => { if (!k.startsWith('ue:')) erledigt.add(k); });
+    speichern();
+    try { localStorage.removeItem(altSpeicher); } catch (e) { /* ignore */ }
+  }
 
   // 3. the test: done when it has been evaluated once
   if (quizH2) {
@@ -114,7 +136,11 @@
       const an = !erledigt.has(key);
       an ? erledigt.add(key) : erledigt.delete(key);
       speichern(); zeige(); anzeigen();
-      if (an && folgt) setTimeout(() => folgt.h.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }), 350);
+      if (an && folgt) setTimeout(() => {
+        const scroll = window.kurs && window.kurs.scrollZu;
+        if (scroll) scroll(folgt.h, { block: 'start' });
+        else folgt.h.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      }, 350);
     });
     a.posten.push({ key, zeige });
   });
@@ -147,11 +173,15 @@
     fsZahl.textContent = s.n ? s.fertig + ' von ' + s.n + (s.n === 1 ? ' Aufgabe' : ' Aufgaben') + (s.fertig === s.n ? ' ✓' : '') : '';
     balken.style.width = (s.n ? 100 * s.fertig / s.n : 0) + '%';
     gesamtText.textContent = 'Ganze Lektion: ' + fertig + ' von ' + n + ' Aufgaben erledigt' + (n && fertig === n ? ' – alles gesammelt!' : '');
-    // short summary for "Weiter bei Abschnitt n" on the start page and the lesson list
+    // short summary for "Weiter bei Abschnitt n" — write only when it changes (not on every scroll)
     const weiter = abschnitte.find(a => { const x = stand(a); return x.n && x.fertig < x.n; });
+    const payload = fertig
+      ? JSON.stringify({ fertig, n, nr: weiter ? weiter.nr : '', id: weiter ? weiter.id : '' })
+      : '';
+    if (payload === standCache) return;
+    standCache = payload;
     try {
-      if (fertig) localStorage.setItem('lektion-stand:' + box.dataset.lektion,
-        JSON.stringify({ fertig, n, nr: weiter ? weiter.nr : '', id: weiter ? weiter.id : '' }));
+      if (payload) localStorage.setItem('lektion-stand:' + box.dataset.lektion, payload);
       else localStorage.removeItem('lektion-stand:' + box.dataset.lektion);
     } catch (e) { /* storage unavailable */ }
   }
@@ -174,7 +204,8 @@
       const liste = nav.querySelector('ol');
       if (liste.scrollWidth > liste.clientWidth) {  // phone bar: keep the active number in view
         const li = l.parentElement;
-        liste.scrollTo({ left: li.offsetLeft - liste.offsetLeft - (liste.clientWidth - li.offsetWidth) / 2, behavior: 'smooth' });
+        const ruhig = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        liste.scrollTo({ left: li.offsetLeft - liste.offsetLeft - (liste.clientWidth - li.offsetWidth) / 2, behavior: ruhig ? 'auto' : 'smooth' });
       }
     });
     anzeigen();
@@ -221,11 +252,8 @@
     const aktiv = document.querySelector('.schnellnav a[aria-current="true"] .nr');
     return (box && box.dataset.nr) || (aktiv ? aktiv.textContent : '');
   };
-  const ampel = el('div', 'ampel');
-  ampel.setAttribute('role', 'dialog');
-  ampel.setAttribute('aria-modal', 'true');
+  const ampel = el('dialog', 'ampel');
   ampel.setAttribute('aria-label', 'Hilfe-Ampel');
-  ampel.hidden = true;
   const wahl = el('div', 'ampel-wahl');
   const frage = el('p', 'ampel-frage');
   const gruen = el('button', 'ampel-gruen', '✓ Ich bin fertig');
@@ -239,7 +267,7 @@
   document.body.append(ampel);
 
   const schliessen = () => {
-    ampel.hidden = true;
+    if (ampel.open) ampel.close();
     ampel.className = 'ampel';
     document.documentElement.classList.remove('ampel-offen');
     knopf.focus();
@@ -258,14 +286,19 @@
     const nr = nummer();
     frage.textContent = (nr ? 'Abschnitt ' + nr + ': ' : '') + 'Wie geht es Ihnen?';
     ampel.className = 'ampel';
-    ampel.hidden = false;
     document.documentElement.classList.add('ampel-offen');
+    if (typeof ampel.showModal === 'function') ampel.showModal();
+    else { ampel.setAttribute('open', ''); }
     gruen.focus();
   });
   gruen.addEventListener('click', () => zeige('gruen'));
   rot.addEventListener('click', () => zeige('rot'));
   zu.addEventListener('click', schliessen);
   anzeige.addEventListener('click', schliessen);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !ampel.hidden) schliessen(); });
+  ampel.addEventListener('cancel', e => { e.preventDefault(); schliessen(); });
+  ampel.addEventListener('close', () => {
+    ampel.className = 'ampel';
+    document.documentElement.classList.remove('ampel-offen');
+  });
   knopf.hidden = false;
 })();

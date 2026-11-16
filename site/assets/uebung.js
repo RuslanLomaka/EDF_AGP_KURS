@@ -27,7 +27,7 @@
   const geloest = el => {
     const ergebnis = el.querySelector('.ue-ergebnis');
     ergebnis.textContent = '';
-    ergebnis.append(absatz('ok', 'Alles richtig – super!'));
+    ergebnis.append(absatz('ok', '✓ Alles richtig – super!'));
     if (el.dataset.erklaerung) ergebnis.append(absatz('ue-erklaerung', el.dataset.erklaerung));
     if (window.kursKonfetti) window.kursKonfetti(el);
     el.dispatchEvent(new CustomEvent('uebung-geloest', { bubbles: true }));
@@ -97,6 +97,14 @@
       waehle(null);
       zuruecksetzen();
       const platz = ziel === pool ? null : ziel.closest('.ue-luecke, .ue-ziel');
+      if (luecken) {
+        plaetze.forEach(p => {
+          const karte = p.querySelector('.ue-karte');
+          p.setAttribute('aria-label', karte
+            ? name(p) + ', gefüllt mit „' + karte.textContent.trim() + '“'
+            : name(p) + ', leer');
+        });
+      }
       ansage(el, '„' + k.textContent.trim() + '“ ' + (platz ? 'liegt jetzt in ' + name(platz) : 'liegt wieder im Stapel') + '.');
     };
     const zielUnter = (x, y) => {
@@ -204,10 +212,11 @@
           const richtig = k.textContent.trim() === p.dataset.wort;
           k.classList.toggle('richtig', richtig);
           k.classList.toggle('falsch', !richtig);
+          k.setAttribute('aria-label', (richtig ? 'Richtig: ' : 'Falsch: ') + k.textContent.trim());
           if (richtig) ok++;
         });
         return ok === plaetze.length ? geloest(el)
-          : melden(el, ok + ' von ' + plaetze.length + ' Lücken richtig. Die roten Wörter passen nicht – tauschen und erneut prüfen.');
+          : melden(el, ok + ' von ' + plaetze.length + ' Lücken richtig. ✗ Falsch markierte Wörter tauschen und erneut prüfen.');
       }
       const rest = pool.querySelectorAll('.ue-karte').length;
       if (rest) return melden(el, 'Noch ' + rest + (rest === 1 ? ' Karte' : ' Karten') + ' übrig. Bitte erst alle verteilen.');
@@ -217,10 +226,11 @@
         const richtig = Boolean(z) && Number(z.dataset.g) === loesung[Number(k.dataset.i)];
         k.classList.toggle('richtig', richtig);
         k.classList.toggle('falsch', !richtig);
+        k.setAttribute('aria-label', (richtig ? 'Richtig: ' : 'Falsch: ') + k.textContent.trim());
         if (richtig) ok++;
       });
       return ok === karten.length ? geloest(el)
-        : melden(el, ok + ' von ' + karten.length + ' richtig. Die rot markierten noch einmal verschieben und erneut prüfen.');
+        : melden(el, ok + ' von ' + karten.length + ' richtig. ✗ Falsch markierte Karten noch einmal verschieben und erneut prüfen.');
     });
     const neu = () => {
       waehle(null);
@@ -297,8 +307,13 @@
         s.classList.toggle('falsch', !richtig);
         if (richtig) ok++;
       });
+      [...liste.children].forEach(s => {
+        const richtig = s.classList.contains('richtig');
+        const text = s.querySelector('.ue-text');
+        s.setAttribute('aria-label', (richtig ? 'Richtig: ' : 'Falsch: ') + (text ? text.textContent.trim() : s.textContent.trim()));
+      });
       return ok === schritte.length ? geloest(el)
-        : melden(el, ok + ' von ' + schritte.length + ' an der richtigen Stelle. Die roten noch einmal verschieben und erneut prüfen.');
+        : melden(el, ok + ' von ' + schritte.length + ' an der richtigen Stelle. ✗ Falsch markierte Schritte noch einmal verschieben und erneut prüfen.');
     });
     el.querySelector('.ue-neu').addEventListener('click', neu);
     neu();
@@ -336,7 +351,7 @@
       });
       if (gefunden === gesamt && !zuviel) return geloest(el);
       return melden(el, gefunden + ' von ' + gesamt + ' gefunden' + (zuviel ? ', ' + zuviel + ' zu viel markiert' : '')
-        + '. Gestrichelt: noch nicht gefunden. Rot: passt nicht.');
+        + '. Gestrichelt: noch nicht gefunden. ✗ Durchgestrichen: passt nicht.');
     });
     el.querySelector('.ue-neu').addEventListener('click', () => {
       woerter.forEach(w => w.setAttribute('aria-pressed', 'false'));

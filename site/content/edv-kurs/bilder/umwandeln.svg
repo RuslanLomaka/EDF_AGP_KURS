@@ -25,7 +25,7 @@
 <line x1="316.08" y1="117.28" x2="340.72" y2="117.28" stroke="#2b579a" stroke-width="2.5" stroke-linecap="round"/>
 <line x1="316.08" y1="126.64" x2="351.92" y2="126.64" stroke="#2b579a" stroke-width="2.5" stroke-linecap="round"/>
 <rect x="309.0" y="129.52" width="50" height="18.72" rx="4" fill="#2b579a"/>
-<text x="334" y="143.4" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">DOCX</text>
+<text x="334" y="143.4" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">DOCX</text>
 <text x="334" y="176.0" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">Word</text>
 <path d="M306.0 238.0 H346.32 L362.0 253.68 V310.0 H306.0 Z" fill="#fff" stroke="#c0392b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M346.32 238.0 V253.68 H362.0" fill="none" stroke="#c0392b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
@@ -33,7 +33,7 @@
 <line x1="316.08" y1="273.28000000000003" x2="340.72" y2="273.28000000000003" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round"/>
 <line x1="316.08" y1="282.64" x2="351.92" y2="282.64" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round"/>
 <rect x="309.92" y="285.52" width="48.16" height="18.72" rx="4" fill="#c0392b"/>
-<text x="334" y="299.4" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">PDF</text>
+<text x="334" y="299.4" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">PDF</text>
 <text x="334" y="332.0" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">PDF</text>
 <line x1="94" y1="196" x2="164" y2="196" stroke="#5b6672" stroke-width="4" stroke-linecap="round" marker-end="url(#pfeil1)"/>
 <text x="129" y="184.0" font-size="15" fill="#5b6672" text-anchor="middle">hochladen</text>

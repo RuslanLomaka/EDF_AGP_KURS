@@ -1,12 +1,14 @@
 // Read glossary words aloud. First choice: the MP3 rendered by Piper during the build (served from our own
 // server). Fallback: a German voice that runs locally on the visitor's device; voices that work over the
 // internet are never used, so no text leaves the browser. Buttons stay hidden if neither is available.
+// Glossary and section buttons share one stop via kurs.stoppeVorlesen.
 (function () {
-  const knoepfe = [...document.querySelectorAll('button.vorlesen')];
+  const knoepfe = [...document.querySelectorAll('button.vorlesen:not(.abschnitt-vorlesen)')];
   if (!knoepfe.length) return;
   const synth = 'speechSynthesis' in window ? window.speechSynthesis : null;
   let stimme = null;
   let audio = null;
+  let aktiv = null;
 
   const findeStimme = () => {
     if (!synth) return null;
@@ -16,12 +18,17 @@
     stimme = findeStimme();
     knoepfe.forEach(b => { b.hidden = !(b.dataset.audio || stimme); });
   };
-  const fertig = () => knoepfe.forEach(b => b.classList.remove('spielt'));
+  const fertig = () => {
+    knoepfe.forEach(b => b.classList.remove('spielt'));
+    aktiv = null;
+  };
   const stopp = () => {
     if (audio) { audio.pause(); audio = null; }
     if (synth) synth.cancel();
     fertig();
   };
+  if (window.kurs && window.kurs.setzeVorlesenStopp) window.kurs.setzeVorlesenStopp(stopp);
+
   const browserStimme = b => {
     if (!stimme) { fertig(); return; }
     const u = new SpeechSynthesisUtterance(b.dataset.text);
@@ -31,25 +38,33 @@
     u.onend = fertig;
     u.onerror = fertig;
     b.classList.add('spielt');
+    aktiv = b;
     synth.speak(u);
   };
   const sprich = b => {
-    stopp();
+    if (window.kurs && window.kurs.stoppeVorlesen) window.kurs.stoppeVorlesen();
+    else stopp();
     b.classList.add('spielt');
+    aktiv = b;
     if (!b.dataset.audio) { browserStimme(b); return; }
     audio = new Audio(b.dataset.audio);
     audio.addEventListener('ended', fertig);
-    audio.play().catch(() => browserStimme(b)); // e.g. file missing: try the device's own voice
+    audio.play().catch(() => browserStimme(b));
   };
 
-  knoepfe.forEach(b => b.addEventListener('click', () => sprich(b)));
+  knoepfe.forEach(b => b.addEventListener('click', () => {
+    if (aktiv === b) {
+      if (window.kurs && window.kurs.stoppeVorlesen) window.kurs.stoppeVorlesen();
+      else stopp();
+      return;
+    }
+    sprich(b);
+  }));
   anzeigen();
   if (synth) synth.addEventListener('voiceschanged', anzeigen);
 })();
 
-// Read whole sections aloud (articles and lessons): a speaker button at every section heading. Only a German voice
-// that runs on the visitor's own device is used, so no text leaves the browser; without one, no buttons appear.
-// Teacher notes, exercises and pictures are skipped. Tap again to stop.
+// Read whole sections aloud (articles and lessons). Same shared stop as glossary buttons.
 (function () {
   const inhalt = document.querySelector('article.inhalt');
   const synth = 'speechSynthesis' in window ? window.speechSynthesis : null;
@@ -74,7 +89,6 @@
     }
     return teile.join(' ').replace(/\s+/g, ' ').replace(/(\s\.)+/g, '.').replace(/\.\./g, '.').trim();
   };
-  // short pieces: some browsers stop long utterances after a few hundred characters
   const stuecke = text => {
     const saetze = text.match(/[^.!?…]+[.!?…]*/g) || [text];
     const raus = [];
@@ -91,6 +105,8 @@
     if (aktiv) { aktiv.classList.remove('spielt'); aktiv.setAttribute('aria-pressed', 'false'); }
     aktiv = null;
   };
+  if (window.kurs && window.kurs.setzeVorlesenStopp) window.kurs.setzeVorlesenStopp(stopp);
+
   const knoepfe = ueberschriften.map(h => {
     const b = document.createElement('button');
     b.type = 'button';
@@ -102,7 +118,8 @@
     b.title = 'Abschnitt vorlesen';
     b.addEventListener('click', () => {
       const war = aktiv === b;
-      stopp();
+      if (window.kurs && window.kurs.stoppeVorlesen) window.kurs.stoppeVorlesen();
+      else stopp();
       if (war || !stimme) return;
       aktiv = b;
       b.classList.add('spielt');
@@ -126,5 +143,8 @@
   };
   anzeigen();
   synth.addEventListener('voiceschanged', anzeigen);
-  window.addEventListener('pagehide', stopp);
+  window.addEventListener('pagehide', () => {
+    if (window.kurs && window.kurs.stoppeVorlesen) window.kurs.stoppeVorlesen();
+    else stopp();
+  });
 })();
