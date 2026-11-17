@@ -284,13 +284,15 @@ The owner's Raspberry Pi serves the site behind a Cloudflare Tunnel (route `edv.
   - read-only file system, no capabilities, limits on CPU, memory and processes.
 - Actions logs are public: never print secrets, IP addresses or web server access logs.
 
-**Copy on GitHub Pages:** https://ruslanlomaka.github.io/EDF_AGP_KURS/ (Pages source: `main`, folder `/docs`).
-- `python3 site/pages.py` rebuilds `docs/`: every site address gets the prefix `/EDF_AGP_KURS/`, and
-  `KURS_HOSTING=github-pages` makes the Datenschutzerklärung and `/hinweis/` describe GitHub Pages instead of the Pi.
-- Run it and commit `docs/` together with every content change; otherwise the copy stays old.
-- `--ziel <folder> --basis "" --adresse <domain>` builds a copy served at a domain root instead (keeps `CNAME`);
-  with `PIPER_MODEL` set it includes the recorded glossary words.
-- On this copy GitHub, not the owner, logs visitors' IP addresses; the texts there say so.
+**GitHub Pages:** while the Pi is down, `edv.ruslanlomaka.org` is served by GitHub Pages from this repository
+(Pages source: `main`, folder `/docs`; the custom domain is set in the repository's Pages settings, which keeps
+`docs/CNAME`).
+- `python3 site/pages.py` rebuilds `docs/` for the domain root; `KURS_HOSTING=github-pages` makes the
+  Datenschutzerklärung and `/hinweis/` describe GitHub Pages instead of the Pi. With `PIPER_MODEL` set it includes the
+  recorded glossary words. `.git` and `CNAME` in the target are kept.
+- Run it and commit `docs/` together with every content change; otherwise the live site stays old.
+- `--basis /EDF_AGP_KURS --ziel <folder>` builds a copy served under a sub-path instead.
+- On GitHub Pages, GitHub, not the owner, logs visitors' IP addresses; the texts there say so.
 
 ## Privacy promises (keep them true)
 

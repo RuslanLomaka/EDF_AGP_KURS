@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """Build a copy of the site for GitHub Pages.
 
-    python3 site/pages.py                       # docs/ of this repository: served under /EDF_AGP_KURS/
-    python3 site/pages.py --ziel ../RuslanLomaka.github.io --basis "" --adresse edv.ruslanlomaka.org
-                                                # the user site repository, which serves edv.ruslanlomaka.org at /
+    python3 site/pages.py                       # docs/ of this repository, served at https://edv.ruslanlomaka.org/
+    python3 site/pages.py --basis /EDF_AGP_KURS  # a copy served under ruslanlomaka.github.io/EDF_AGP_KURS/
 
 With a --basis, every site address that starts with "/" gets that prefix. The privacy texts describe GitHub Pages
 instead of the Pi (KURS_HOSTING=github-pages in build.py). In the target, .git and CNAME are kept; everything
@@ -26,11 +25,12 @@ BEHALTEN = {".git", "CNAME"}
 def main():
     a = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     a.add_argument("--ziel", default=str(SITE.parent / "docs"), help="target folder (default: docs/)")
-    a.add_argument("--basis", default="/EDF_AGP_KURS", help='address prefix, "" for a site served at /')
-    a.add_argument("--adresse", default=None, help="web address named in the Datenschutzerklärung")
+    a.add_argument("--basis", default="", help="address prefix, e.g. /EDF_AGP_KURS (default: none, site at /)")
+    a.add_argument("--adresse", default=None, help="web address named in the Datenschutzerklärung "
+                   "(default: edv.ruslanlomaka.org, or ruslanlomaka.github.io + prefix)")
     args = a.parse_args()
     basis, ziel = args.basis.rstrip("/"), Path(args.ziel).resolve()
-    adresse = args.adresse or "ruslanlomaka.github.io" + basis
+    adresse = args.adresse or ("ruslanlomaka.github.io" + basis if basis else "edv.ruslanlomaka.org")
 
     env = dict(os.environ, KURS_HOSTING="github-pages", KURS_ADRESSE=adresse)
     subprocess.run([sys.executable, str(SITE / "build.py")], check=True, env=env)
