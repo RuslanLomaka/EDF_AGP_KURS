@@ -288,6 +288,8 @@ The owner's Raspberry Pi serves the site behind a Cloudflare Tunnel (route `edv.
 - `python3 site/pages.py` rebuilds `docs/`: every site address gets the prefix `/EDF_AGP_KURS/`, and
   `KURS_HOSTING=github-pages` makes the Datenschutzerklärung and `/hinweis/` describe GitHub Pages instead of the Pi.
 - Run it and commit `docs/` together with every content change; otherwise the copy stays old.
+- `--ziel <folder> --basis "" --adresse <domain>` builds a copy served at a domain root instead (keeps `CNAME`);
+  with `PIPER_MODEL` set it includes the recorded glossary words.
 - On this copy GitHub, not the owner, logs visitors' IP addresses; the texts there say so.
 
 ## Privacy promises (keep them true)
