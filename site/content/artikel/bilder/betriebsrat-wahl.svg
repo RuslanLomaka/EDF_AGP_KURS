@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Betriebsrat: Wer wählt wen? Eine Wahl ist möglich, wenn im Betrieb mindestens 5 Beschäftigte arbeiten – Pflicht ist ein Betriebsrat nicht. Wählen dürfen alle im Betrieb ab 16 Jahren. Gewählt werden kann, wer 18 Jahre alt ist und seit 6 Monaten im Betrieb arbeitet. Der Betriebsrat ist 4 Jahre im Amt. Gewählt wird von März bis Mai, zuletzt 2026, dann wieder 2030.</title>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="34" font-size="21" fill="#1f4e79" text-anchor="middle" font-weight="700">Betriebsrat: Wer wählt wen?</text>
+<rect x="16" y="52" width="176" height="156" rx="12" fill="#e8f0f8"/>
+<text x="104" y="78" font-size="16" fill="#5b6672" text-anchor="middle">mindestens</text>
+<circle cx="46" cy="94.0" r="6.0" fill="#1f4e79"/><path d="M37.0 118 V109.6 A9.0 7.800000000000001 0 0 1 55.0 109.6 V118 Z" fill="#1f4e79"/>
+<circle cx="75" cy="94.0" r="6.0" fill="#1f4e79"/><path d="M66.0 118 V109.6 A9.0 7.800000000000001 0 0 1 84.0 109.6 V118 Z" fill="#1f4e79"/>
+<circle cx="104" cy="94.0" r="6.0" fill="#1f4e79"/><path d="M95.0 118 V109.6 A9.0 7.800000000000001 0 0 1 113.0 109.6 V118 Z" fill="#1f4e79"/>
+<circle cx="133" cy="94.0" r="6.0" fill="#1f4e79"/><path d="M124.0 118 V109.6 A9.0 7.800000000000001 0 0 1 142.0 109.6 V118 Z" fill="#1f4e79"/>
+<circle cx="162" cy="94.0" r="6.0" fill="#1f4e79"/><path d="M153.0 118 V109.6 A9.0 7.800000000000001 0 0 1 171.0 109.6 V118 Z" fill="#1f4e79"/>
+<text x="104" y="144" font-size="18" fill="#1d232b" text-anchor="middle" font-weight="700">5 Beschäftigte</text>
+<text x="104" y="170" font-size="16" fill="#1d232b" text-anchor="middle">Wahl möglich –</text>
+<text x="104" y="190" font-size="16" fill="#1d232b" text-anchor="middle">keine Pflicht</text>
+<rect x="208" y="52" width="176" height="156" rx="12" fill="#e8f0f8"/>
+<text x="296" y="78" font-size="16" fill="#5b6672" text-anchor="middle">wählen ab</text>
+<text x="296" y="118" font-size="28" fill="#1f4e79" text-anchor="middle" font-weight="700">16 Jahren</text>
+<text x="296" y="152" font-size="16" fill="#1d232b" text-anchor="middle">alle im Betrieb</text>
+<rect x="16" y="222" width="176" height="156" rx="12" fill="#e8f0f8"/>
+<text x="104" y="248" font-size="16" fill="#5b6672" text-anchor="middle">gewählt werden ab</text>
+<text x="104" y="288" font-size="28" fill="#1f4e79" text-anchor="middle" font-weight="700">18 Jahren</text>
+<text x="104" y="322" font-size="16" fill="#1d232b" text-anchor="middle">und seit 6 Monaten</text>
+<text x="104" y="343" font-size="16" fill="#1d232b" text-anchor="middle">im Betrieb</text>
+<rect x="208" y="222" width="176" height="156" rx="12" fill="#e8f0f8"/>
+<text x="296" y="248" font-size="16" fill="#5b6672" text-anchor="middle">im Amt für</text>
+<text x="296" y="288" font-size="28" fill="#1f4e79" text-anchor="middle" font-weight="700">4 Jahre</text>
+<text x="296" y="322" font-size="16" fill="#1d232b" text-anchor="middle">Wahl: März bis Mai</text>
+<text x="296" y="343" font-size="16" fill="#1d232b" text-anchor="middle">2026, dann 2030</text>
+</svg>

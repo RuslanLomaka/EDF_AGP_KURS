@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Wie groß ist der Betriebsrat? Das hängt von der Zahl der Beschäftigten ab: 5 bis 20 Beschäftigte: 1 Mitglied. 21 bis 50: 3 Mitglieder. 51 bis 100: 5. 101 bis 200: 7. 201 bis 400: 9. 401 bis 700: 11. 701 bis 1000: 13 Mitglieder. Bei mehr Beschäftigten wächst er weiter.</title>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="30" font-size="21" fill="#1f4e79" text-anchor="middle" font-weight="700">Wie groß ist der Betriebsrat?</text>
+<text x="16" y="60" font-size="15" fill="#5b6672" text-anchor="start" font-weight="700">Beschäftigte</text>
+<text x="122" y="60" font-size="15" fill="#5b6672" text-anchor="start" font-weight="700">Mitglieder (1 Punkt = 1 Person)</text>
+<rect x="10" y="72" width="380" height="38" rx="8" fill="#e8f0f8"/>
+<text x="16" y="97" font-size="16" fill="#1d232b" text-anchor="start" font-weight="700">5 – 20</text>
+<circle cx="130" cy="92" r="7" fill="#1f4e79"/>
+<text x="151" y="98" font-size="17" fill="#1f4e79" text-anchor="start" font-weight="700">1</text>
+<text x="16" y="137" font-size="16" fill="#1d232b" text-anchor="start" font-weight="700">21 – 50</text>
+<circle cx="130" cy="132" r="7" fill="#1f4e79"/>
+<circle cx="147" cy="132" r="7" fill="#1f4e79"/>
+<circle cx="164" cy="132" r="7" fill="#1f4e79"/>
+<text x="185" y="138" font-size="17" fill="#1f4e79" text-anchor="start" font-weight="700">3</text>
+<rect x="10" y="152" width="380" height="38" rx="8" fill="#e8f0f8"/>
+<text x="16" y="177" font-size="16" fill="#1d232b" text-anchor="start" font-weight="700">51 – 100</text>
+<circle cx="130" cy="172" r="7" fill="#1f4e79"/>
+<circle cx="147" cy="172" r="7" fill="#1f4e79"/>
+<circle cx="164" cy="172" r="7" fill="#1f4e79"/>
+<circle cx="181" cy="172" r="7" fill="#1f4e79"/>
+<circle cx="198" cy="172" r="7" fill="#1f4e79"/>
+<text x="219" y="178" font-size="17" fill="#1f4e79" text-anchor="start" font-weight="700">5</text>
+<text x="16" y="217" font-size="16" fill="#1d232b" text-anchor="start" font-weight="700">101 – 200</text>
+<circle cx="130" cy="212" r="7" fill="#1f4e79"/>
+<circle cx="147" cy="212" r="7" fill="#1f4e79"/>
+<circle cx="164" cy="212" r="7" fill="#1f4e79"/>
+<circle cx="181" cy="212" r="7" fill="#1f4e79"/>
+<circle cx="198" cy="212" r="7" fill="#1f4e79"/>
+<circle cx="215" cy="212" r="7" fill="#1f4e79"/>
+<circle cx="232" cy="212" r="7" fill="#1f4e79"/>
+<text x="253" y="218" font-size="17" fill="#1f4e79" text-anchor="start" font-weight="700">7</text>
+<rect x="10" y="232" width="380" height="38" rx="8" fill="#e8f0f8"/>
+<text x="16" y="257" font-size="16" fill="#1d232b" text-anchor="start" font-weight="700">201 – 400</text>
+<circle cx="130" cy="252" r="7" fill="#1f4e79"/>
+<circle cx="147" cy="252" r="7" fill="#1f4e79"/>
+<circle cx="164" cy="252" r="7" fill="#1f4e79"/>
+<circle cx="181" cy="252" r="7" fill="#1f4e79"/>
+<circle cx="198" cy="252" r="7" fill="#1f4e79"/>
+<circle cx="215" cy="252" r="7" fill="#1f4e79"/>
+<circle cx="232" cy="252" r="7" fill="#1f4e79"/>
+<circle cx="249" cy="252" r="7" fill="#1f4e79"/>
+<circle cx="266" cy="252" r="7" fill="#1f4e79"/>
+<text x="287" y="258" font-size="17" fill="#1f4e79" text-anchor="start" font-weight="700">9</text>
+<text x="16" y="297" font-size="16" fill="#1d232b" text-anchor="start" font-weight="700">401 – 700</text>
+<circle cx="130" cy="292" r="7" fill="#1f4e79"/>
+<circle cx="147" cy="292" r="7" fill="#1f4e79"/>
+<circle cx="164" cy="292" r="7" fill="#1f4e79"/>
+<circle cx="181" cy="292" r="7" fill="#1f4e79"/>
+<circle cx="198" cy="292" r="7" fill="#1f4e79"/>
+<circle cx="215" cy="292" r="7" fill="#1f4e79"/>
+<circle cx="232" cy="292" r="7" fill="#1f4e79"/>
+<circle cx="249" cy="292" r="7" fill="#1f4e79"/>
+<circle cx="266" cy="292" r="7" fill="#1f4e79"/>
+<circle cx="283" cy="292" r="7" fill="#1f4e79"/>
+<circle cx="300" cy="292" r="7" fill="#1f4e79"/>
+<text x="321" y="298" font-size="17" fill="#1f4e79" text-anchor="start" font-weight="700">11</text>
+<rect x="10" y="312" width="380" height="38" rx="8" fill="#e8f0f8"/>
+<text x="16" y="337" font-size="16" fill="#1d232b" text-anchor="start" font-weight="700">701 – 1000</text>
+<circle cx="130" cy="332" r="7" fill="#1f4e79"/>
+<circle cx="147" cy="332" r="7" fill="#1f4e79"/>
+<circle cx="164" cy="332" r="7" fill="#1f4e79"/>
+<circle cx="181" cy="332" r="7" fill="#1f4e79"/>
+<circle cx="198" cy="332" r="7" fill="#1f4e79"/>
+<circle cx="215" cy="332" r="7" fill="#1f4e79"/>
+<circle cx="232" cy="332" r="7" fill="#1f4e79"/>
+<circle cx="249" cy="332" r="7" fill="#1f4e79"/>
+<circle cx="266" cy="332" r="7" fill="#1f4e79"/>
+<circle cx="283" cy="332" r="7" fill="#1f4e79"/>
+<circle cx="300" cy="332" r="7" fill="#1f4e79"/>
+<circle cx="317" cy="332" r="7" fill="#1f4e79"/>
+<circle cx="334" cy="332" r="7" fill="#1f4e79"/>
+<text x="355" y="338" font-size="17" fill="#1f4e79" text-anchor="start" font-weight="700">13</text>
+<text x="200" y="376" font-size="16" fill="#5b6672" text-anchor="middle">Bei mehr Beschäftigten wächst er weiter.</text>
+</svg>

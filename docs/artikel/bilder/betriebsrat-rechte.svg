@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Die Rechte-Leiter des Betriebsrats mit drei Stufen. Stufe 1, Information: Der Arbeitgeber muss Bescheid sagen. Stufe 2, Mitwirkung: Der Betriebsrat redet mit, der Arbeitgeber entscheidet. Stufe 3, Mitbestimmung: Ohne Ja vom Betriebsrat geht es nicht. Je höher die Stufe, desto stärker das Recht.</title>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="32" font-size="22" fill="#1f4e79" text-anchor="middle" font-weight="700">Die Rechte-Leiter</text>
+<rect x="34" y="62" width="8" height="300" rx="4" fill="#5b6672"/>
+<rect x="92" y="62" width="8" height="300" rx="4" fill="#5b6672"/>
+<rect x="38" y="314" width="58" height="9" rx="4" fill="#5b6672"/>
+<circle cx="67" cy="292" r="15" fill="#1f4e79"/>
+<text x="67" y="298" font-size="17" fill="#ffffff" text-anchor="middle" font-weight="700">1</text>
+<rect x="116" y="256" width="270" height="86" rx="12" fill="#e8f0f8"/>
+<text x="130" y="282" font-size="18" fill="#1d232b" text-anchor="start" font-weight="700">Information</text>
+<text x="130" y="306" font-size="16" fill="#1d232b" text-anchor="start">Der Arbeitgeber muss</text>
+<text x="130" y="328" font-size="16" fill="#1d232b" text-anchor="start">Bescheid sagen.</text>
+<rect x="38" y="214" width="58" height="9" rx="4" fill="#5b6672"/>
+<circle cx="67" cy="192" r="15" fill="#1f4e79"/>
+<text x="67" y="198" font-size="17" fill="#ffffff" text-anchor="middle" font-weight="700">2</text>
+<rect x="116" y="156" width="270" height="86" rx="12" fill="#cfe0f1"/>
+<text x="130" y="182" font-size="18" fill="#1d232b" text-anchor="start" font-weight="700">Mitwirkung</text>
+<text x="130" y="206" font-size="16" fill="#1d232b" text-anchor="start">Der Betriebsrat redet mit.</text>
+<text x="130" y="228" font-size="16" fill="#1d232b" text-anchor="start">Der Arbeitgeber entscheidet.</text>
+<rect x="38" y="114" width="58" height="9" rx="4" fill="#5b6672"/>
+<circle cx="67" cy="92" r="15" fill="#1f4e79"/>
+<text x="67" y="98" font-size="17" fill="#ffffff" text-anchor="middle" font-weight="700">3</text>
+<rect x="116" y="56" width="270" height="86" rx="12" fill="#1f4e79"/>
+<text x="130" y="82" font-size="18" fill="#ffffff" text-anchor="start" font-weight="700">Mitbestimmung</text>
+<text x="130" y="106" font-size="16" fill="#ffffff" text-anchor="start">Ohne Ja vom Betriebsrat</text>
+<text x="130" y="128" font-size="16" fill="#ffffff" text-anchor="start">geht es nicht.</text>
+<text x="200" y="382" font-size="16" fill="#5b6672" text-anchor="middle">Je höher die Stufe, desto stärker das Recht.</text>
+</svg>

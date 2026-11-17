@@ -1,0 +1,125 @@
+{
+  "title": "Was ist ein Betriebsrat?",
+  "questions": [
+    {
+      "question": "Ab wie vielen Beschäftigten darf die Belegschaft einen Betriebsrat wählen?",
+      "answers": [
+        {"text": "Ab 5 Beschäftigten", "correct": true},
+        {"text": "Ab 10 Beschäftigten", "correct": false},
+        {"text": "Ab 50 Beschäftigten", "correct": false}
+      ],
+      "explanation": "Ab 5 ständigen Beschäftigten, die wählen dürfen (3 davon wählbar). Die Zahl 10 kennen Sie vom Kündigungsschutzgesetz – das ist eine andere Regel.",
+      "sources": [{"title": "§ 1 BetrVG", "url": "https://www.gesetze-im-internet.de/betrvg/__1.html"}]
+    },
+    {
+      "question": "Eine Firma hat 600 Beschäftigte. Muss es dort einen Betriebsrat geben?",
+      "answers": [
+        {"text": "Nein, die Belegschaft darf wählen, muss aber nicht", "correct": true},
+        {"text": "Ja, ab 500 Beschäftigten ist er Pflicht", "correct": false},
+        {"text": "Ja, wenn die Gewerkschaft das verlangt", "correct": false}
+      ],
+      "explanation": "Ein Betriebsrat ist nie Pflicht – auch nicht in sehr großen Betrieben.",
+      "sources": [{"title": "§ 1 BetrVG", "url": "https://www.gesetze-im-internet.de/betrvg/__1.html"}]
+    },
+    {
+      "question": "Ab welchem Alter darf man den Betriebsrat wählen?",
+      "answers": [
+        {"text": "Ab 16 Jahren", "correct": true},
+        {"text": "Ab 18 Jahren", "correct": false},
+        {"text": "Ab 21 Jahren", "correct": false}
+      ],
+      "explanation": "Wählen dürfen alle Beschäftigten ab 16. Gewählt werden kann man erst ab 18.",
+      "sources": [{"title": "§ 7 BetrVG", "url": "https://www.gesetze-im-internet.de/betrvg/__7.html"}]
+    },
+    {
+      "question": "Wer kann in den Betriebsrat gewählt werden?",
+      "answers": [
+        {"text": "Wer 18 ist und seit 6 Monaten im Betrieb arbeitet", "correct": true},
+        {"text": "Wer 16 ist und die Probezeit bestanden hat", "correct": false},
+        {"text": "Wer schon mindestens zwei Jahre Gewerkschaftsmitglied ist", "correct": false}
+      ],
+      "explanation": "Wählbar ist, wer mindestens 18 Jahre alt ist und dem Betrieb seit sechs Monaten angehört. Eine Gewerkschaft ist dafür nicht nötig.",
+      "sources": [{"title": "§ 8 BetrVG", "url": "https://www.gesetze-im-internet.de/betrvg/__8.html"}]
+    },
+    {
+      "question": "Wie lange ist ein Betriebsrat normalerweise im Amt?",
+      "answers": [
+        {"text": "4 Jahre", "correct": true},
+        {"text": "2 Jahre", "correct": false},
+        {"text": "5 Jahre", "correct": false}
+      ],
+      "explanation": "Die Amtszeit dauert 4 Jahre. Gewählt wird bundesweit vom 1. März bis 31. Mai – zuletzt 2026, das nächste Mal 2030.",
+      "sources": [{"title": "§ 13 BetrVG", "url": "https://www.gesetze-im-internet.de/betrvg/__13.html"}]
+    },
+    {
+      "question": "Was bedeutet Mitbestimmung?",
+      "answers": [
+        {"text": "Ohne Zustimmung des Betriebsrats darf der Arbeitgeber nicht entscheiden", "correct": true},
+        {"text": "Der Arbeitgeber informiert den Betriebsrat und entscheidet dann allein", "correct": false},
+        {"text": "Der Betriebsrat entscheidet allein, auch ohne den Arbeitgeber", "correct": false}
+      ],
+      "explanation": "Mitbestimmung ist das stärkste Recht: Beide entscheiden gleichberechtigt. Einigen sie sich nicht, entscheidet die Einigungsstelle.",
+      "sources": [{"title": "§ 87 BetrVG", "url": "https://www.gesetze-im-internet.de/betrvg/__87.html"}]
+    },
+    {
+      "question": "Die Produktion soll von zwei auf drei Schichten umstellen. Was gilt?",
+      "answers": [
+        {"text": "Der Betriebsrat muss zustimmen", "correct": true},
+        {"text": "Der Betriebsrat wird nur informiert", "correct": false},
+        {"text": "Das entscheidet die Gewerkschaft im Tarifvertrag", "correct": false}
+      ],
+      "explanation": "Beginn und Ende der Arbeitszeit ändern sich. Dabei hat der Betriebsrat Mitbestimmung.",
+      "sources": [{"title": "§ 87 BetrVG", "url": "https://www.gesetze-im-internet.de/betrvg/__87.html"}]
+    },
+    {
+      "question": "Der Arbeitgeber kündigt jemandem, ohne vorher den Betriebsrat anzuhören. Was gilt?",
+      "answers": [
+        {"text": "Die Kündigung ist unwirksam", "correct": true},
+        {"text": "Die Kündigung gilt, der Arbeitgeber zahlt aber eine Strafe an den Betriebsrat", "correct": false},
+        {"text": "Die Kündigung gilt, wenn der Betriebsrat nicht innerhalb einer Woche klagt", "correct": false}
+      ],
+      "explanation": "Vor jeder Kündigung muss der Betriebsrat angehört werden. Ohne Anhörung ist die Kündigung unwirksam.",
+      "sources": [{"title": "§ 102 BetrVG", "url": "https://www.gesetze-im-internet.de/betrvg/__102.html"}]
+    },
+    {
+      "question": "Der Betriebsrat widerspricht einer ordentlichen Kündigung. Was passiert?",
+      "answers": [
+        {"text": "Die Kündigung ist trotzdem möglich", "correct": true},
+        {"text": "Die Kündigung ist damit sofort ungültig", "correct": false},
+        {"text": "Der Arbeitgeber muss die Kündigung zurücknehmen", "correct": false}
+      ],
+      "explanation": "Ein Widerspruch stoppt die Kündigung nicht automatisch. Er ist aber ein wichtiges Signal, zum Beispiel wenn es eine freie Stelle gibt.",
+      "sources": [{"title": "§ 102 BetrVG", "url": "https://www.gesetze-im-internet.de/betrvg/__102.html"}]
+    },
+    {
+      "question": "Was gilt für ein Mitglied des Betriebsrats?",
+      "answers": [
+        {"text": "Es bekommt kein extra Geld, darf aber nicht benachteiligt werden", "correct": true},
+        {"text": "Es bekommt für das Amt einen festen Zuschlag zum Gehalt", "correct": false},
+        {"text": "Es braucht für jede Sitzung eine Erlaubnis vom Chef", "correct": false}
+      ],
+      "explanation": "Das Amt ist ein Ehrenamt. Für Betriebsratsarbeit meldet man sich nur ab – eine Erlaubnis braucht man nicht.",
+      "sources": [{"title": "§ 37 BetrVG", "url": "https://www.gesetze-im-internet.de/betrvg/__37.html"}]
+    },
+    {
+      "question": "Wie lange nach dem Ende der Amtszeit ist eine ordentliche Kündigung noch ausgeschlossen?",
+      "answers": [
+        {"text": "1 Jahr", "correct": true},
+        {"text": "3 Monate", "correct": false},
+        {"text": "4 Jahre", "correct": false}
+      ],
+      "explanation": "Der besondere Kündigungsschutz gilt während der Amtszeit und grundsätzlich noch 1 Jahr danach.",
+      "sources": [{"title": "§ 15 KSchG", "url": "https://www.gesetze-im-internet.de/kschg/__15.html"}]
+    },
+    {
+      "question": "Was darf der Betriebsrat als Gremium nicht?",
+      "answers": [
+        {"text": "Einen Streik gegen den Arbeitgeber organisieren", "correct": true},
+        {"text": "Vorschläge für bessere Arbeit machen", "correct": false},
+        {"text": "Prüfen, ob der Tarifvertrag eingehalten wird", "correct": false}
+      ],
+      "explanation": "Arbeitskämpfe und Parteipolitik im Betrieb sind dem Betriebsrat verboten. Als Person darf man aber in der Gewerkschaft aktiv sein.",
+      "sources": [{"title": "§ 74 BetrVG", "url": "https://www.gesetze-im-internet.de/betrvg/__74.html"}]
+    }
+  ]
+}
