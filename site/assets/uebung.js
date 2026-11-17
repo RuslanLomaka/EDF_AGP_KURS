@@ -249,20 +249,37 @@
       schritte.forEach(s => s.classList.remove('richtig', 'falsch'));
       ergebnis.textContent = '';
     };
-    const neu = () => {
+    // Steps slide to their new place instead of jumping: remember where each one is on screen, change the order,
+    // then let each moved step glide from its old place to the new one (only transforms; off with "reduce motion").
+    const gleite = (aendern, ausser) => {
+      const ruhig = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (ruhig || typeof liste.animate !== 'function') { aendern(); return; }
+      const vorher = new Map(schritte.map(x => [x, x.getBoundingClientRect().top]));
+      schritte.forEach(x => x.getAnimations && x.getAnimations().forEach(a => { if (a.id === 'gleiten') a.cancel(); }));
+      aendern();
+      schritte.forEach(x => {
+        if (x === ausser) return;
+        const dy = vorher.get(x) - x.getBoundingClientRect().top;
+        if (Math.abs(dy) < 1) return;
+        x.animate([{ transform: `translateY(${dy}px)` }, { transform: 'none' }],
+          { duration: 280, easing: 'cubic-bezier(.2, .8, .3, 1)', id: 'gleiten' });
+      });
+    };
+    const neu = mitAnimation => {
       let folge;
       do { folge = mische(schritte); } while (folge.every((s, i) => Number(s.dataset.i) === i));
-      folge.forEach(s => liste.append(s));
+      const ordnen = () => folge.forEach(s => liste.append(s));
+      if (mitAnimation === true) gleite(ordnen); else ordnen();
       zuruecksetzen();
     };
     schritte.forEach(s => {
       s.querySelector('.ue-hoch').addEventListener('click', e => {
-        if (s.previousElementSibling) liste.insertBefore(s, s.previousElementSibling);
+        if (s.previousElementSibling) gleite(() => liste.insertBefore(s, s.previousElementSibling));
         e.currentTarget.focus();
         zuruecksetzen();
       });
       s.querySelector('.ue-runter').addEventListener('click', e => {
-        if (s.nextElementSibling) liste.insertBefore(s.nextElementSibling, s);
+        if (s.nextElementSibling) gleite(() => liste.insertBefore(s.nextElementSibling, s));
         e.currentTarget.focus();
         zuruecksetzen();
       });
@@ -274,11 +291,18 @@
         s.classList.add('ue-zieht');
         const rand = randScroll();
         let y = e.clientY;
+        // where a step really sits, without the slide it may be in the middle of (otherwise the order would flicker)
+        const mitte = x => {
+          const r = x.getBoundingClientRect();
+          const t = getComputedStyle(x).transform;
+          const dy = t && t !== 'none' && typeof DOMMatrixReadOnly === 'function' ? new DOMMatrixReadOnly(t).m42 : 0;
+          return r.top - dy + r.height / 2;
+        };
         const ordne = () => {
           const andere = [...liste.children].filter(x => x !== s);
-          const vor = andere.find(x => { const r = x.getBoundingClientRect(); return y < r.top + r.height / 2; });
-          if (vor) { if (s.nextElementSibling !== vor) liste.insertBefore(s, vor); }
-          else if (liste.lastElementChild !== s) liste.append(s);
+          const vor = andere.find(x => y < mitte(x));
+          if (vor) { if (s.nextElementSibling !== vor) gleite(() => liste.insertBefore(s, vor), s); }
+          else if (liste.lastElementChild !== s) gleite(() => liste.append(s), s);
         };
         const bewege = ev => {
           ev.preventDefault();
@@ -315,7 +339,7 @@
       return ok === schritte.length ? geloest(el)
         : melden(el, ok + ' von ' + schritte.length + ' an der richtigen Stelle. ✗ Falsch markierte Schritte noch einmal verschieben und erneut prüfen.');
     });
-    el.querySelector('.ue-neu').addEventListener('click', neu);
+    el.querySelector('.ue-neu').addEventListener('click', () => neu(true));
     neu();
   }
 

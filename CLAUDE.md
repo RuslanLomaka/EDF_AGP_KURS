@@ -154,7 +154,8 @@ erklaerung: "Shown when everything is right."
 - Articles have their exercises right before "Wörter". Exercises use only facts from the text.
 - In lessons, put an exercise in the section it practises, so it counts for that section's progress.
 
-**Animations.** Content below the first screen slides in, quiz answers pop or shake, and top results get confetti.
+**Animations.** Content below the first screen slides in, quiz answers pop or shake, steps in order exercises glide to
+their new place (arrows, dragging, "Neu mischen"), and top results get confetti.
 Everything respects "reduce motion" and uses only opacity and transforms.
 
 The live server sends a Content-Security-Policy: no inline scripts and nothing from other domains. JavaScript
