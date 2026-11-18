@@ -141,13 +141,22 @@ def datum_of(path, meta):
     return value
 
 
+# Pronunciation hint after a hard word: [**Fach**·hoch·schul·rei·fe]{.aussprache} (syllables, stressed one bold).
+AUSSPRACHE = re.compile(r"\[[^\[\]\n]*\]\{\.aussprache\}")
+
+
 def pandoc(path, body, to):
+    if to != "html5":
+        body = AUSSPRACHE.sub("", body)  # hints stay out of the plain text (search index)
     # yaml_metadata_block is off: a '---' block inside the text must stay text, not vanish as metadata
     r = subprocess.run(["pandoc", "--from", "markdown-yaml_metadata_block", "--to", to, "--wrap=none",
                         "--fail-if-warnings"], input=body, capture_output=True, text=True)
     if r.returncode != 0:
         fail(path, "pandoc: " + (r.stderr.strip() or f"exit code {r.returncode}"))
-    return bild_version(r.stdout) if to == "html5" else r.stdout
+    if to != "html5":
+        return r.stdout
+    # screen readers already read the word itself; the syllable hint is for the eyes
+    return bild_version(r.stdout).replace('<span class="aussprache">', '<span class="aussprache" aria-hidden="true">')
 
 
 def bild_version(html_text):
@@ -487,6 +496,7 @@ class Vorleser:
 
 def sprechtext(term_html):
     """What is read aloud for a glossary term: the words without grammar notes in brackets."""
+    term_html = re.sub(r'<span class="aussprache"[^>]*>.*?</span>', "", term_html, flags=re.S)
     text = html.unescape(re.sub(r"<[^>]+>", "", term_html))
     text = re.sub(r"\([^)]*\)", "", text).replace("/", ",")
     return " ".join(text.split()).strip(" ,")

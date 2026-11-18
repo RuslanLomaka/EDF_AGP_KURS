@@ -180,7 +180,10 @@ The owner sends photos of a handout (often several per day; several pages can be
    - short sections with `{#ids}`;
    - **anything not in the handout goes into a `::: ergaenzung` box**. Extend only within reason, not a Wikipedia
      article;
-   - a "Wörter" glossary as a definition list (article + plural, simple explanation, example sentence);
+   - a "Wörter" glossary as a definition list (article + plural, simple explanation, example sentence), each term
+     with a pronunciation hint: `**die Fachhochschulreife** [**Fach**·hoch·schul·rei·fe]{.aussprache}` (syllables
+     split by `·`, the stressed one bold). Put the same hint after the first use of a hard word in the text. The build
+     hides it from screen readers, the read-aloud and the search;
    - "Fragen zum Text": the handout's questions as `<details><summary>question</summary>answer</details>`.
    - "Quellen" at the end: links to official or reliable sources (gesetze-im-internet.de, federal ministries,
      Bundesagentur für Arbeit, familienportal.de, Verbraucherzentrale, DGB). Check every URL answers 200 before

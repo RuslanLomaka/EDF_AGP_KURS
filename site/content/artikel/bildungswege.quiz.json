@@ -1,0 +1,293 @@
+{
+  "title": "Der 1. und 2. Bildungsweg",
+  "questions": [
+    {
+      "question": "Was bezeichnet man als 1. Bildungsweg?",
+      "answers": [
+        {
+          "text": "Den normalen Weg durch die Schule, ohne Pause bis zum Abschluss",
+          "correct": true
+        },
+        {
+          "text": "Das Nachholen eines Schulabschlusses als Erwachsener",
+          "correct": false
+        },
+        {
+          "text": "Eine berufliche Weiterbildung neben der Arbeit",
+          "correct": false
+        }
+      ],
+      "explanation": "Der 1. Bildungsweg ist die normale Schulzeit: Einschulung, Grundschule, weiterführende Schule, Schulabschluss.",
+      "sources": [
+        {
+          "title": "KMK: Bildungswege und Abschlüsse",
+          "url": "https://www.kmk.org/themen/allgemeinbildende-schulen/bildungswege-und-abschluesse.html"
+        }
+      ]
+    },
+    {
+      "question": "Für wen ist der 2. Bildungsweg vor allem gedacht?",
+      "answers": [
+        {
+          "text": "Für Erwachsene, die einen Abschluss nachholen möchten",
+          "correct": true
+        },
+        {
+          "text": "Für Kinder nach der Grundschule",
+          "correct": false
+        },
+        {
+          "text": "Nur für Studierende an einer Universität",
+          "correct": false
+        }
+      ],
+      "explanation": "Der 2. Bildungsweg ist eine zweite Chance für Erwachsene – oft abends oder in Teilzeit.",
+      "sources": [
+        {
+          "title": "Bundesagentur für Arbeit: Schulabschluss nachholen",
+          "url": "https://www.arbeitsagentur.de/bildung/schule/schulabschluss-nachholen"
+        }
+      ]
+    },
+    {
+      "question": "Welche Schule gehört zum 2. Bildungsweg?",
+      "answers": [
+        {
+          "text": "Das Abendgymnasium",
+          "correct": true
+        },
+        {
+          "text": "Das Gymnasium",
+          "correct": false
+        },
+        {
+          "text": "Die Gesamtschule",
+          "correct": false
+        }
+      ],
+      "explanation": "Am Abendgymnasium machen Erwachsene abends das Abitur. Gymnasium und Gesamtschule besuchen Kinder und Jugendliche im 1. Bildungsweg.",
+      "sources": [
+        {
+          "title": "§ 2 BAföG",
+          "url": "https://www.gesetze-im-internet.de/baf_g/__2.html"
+        }
+      ]
+    },
+    {
+      "question": "Welche Abschlüsse kann man über den 2. Bildungsweg nachholen?",
+      "answers": [
+        {
+          "text": "Alle Schulabschlüsse, bis zum Abitur",
+          "correct": true
+        },
+        {
+          "text": "Nur den Ersten Schulabschluss",
+          "correct": false
+        },
+        {
+          "text": "Keine – es gibt dort nur Kurse ohne Abschluss",
+          "correct": false
+        }
+      ],
+      "explanation": "Über den 2. Bildungsweg gibt es dieselben Abschlüsse wie im 1. Bildungsweg: vom Ersten Schulabschluss bis zum Abitur.",
+      "sources": [
+        {
+          "title": "KMK: Ländervereinbarung, Art. 29",
+          "url": "https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2020/2020_10_15-Laendervereinbarung.pdf"
+        }
+      ]
+    },
+    {
+      "question": "Welche Klassen umfasst die Grundschule meistens?",
+      "answers": [
+        {
+          "text": "Klasse 1 bis 4",
+          "correct": true
+        },
+        {
+          "text": "Klasse 1 bis 2",
+          "correct": false
+        },
+        {
+          "text": "Klasse 1 bis 8",
+          "correct": false
+        }
+      ],
+      "explanation": "Meistens Klasse 1 bis 4; in einigen Bundesländern bis Klasse 6.",
+      "sources": [
+        {
+          "title": "KMK: Ländervereinbarung, Art. 28",
+          "url": "https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2020/2020_10_15-Laendervereinbarung.pdf"
+        }
+      ]
+    },
+    {
+      "question": "Was ist eine Externenprüfung (Nichtschülerprüfung)?",
+      "answers": [
+        {
+          "text": "Man macht die Abschlussprüfung, ohne diese Schule zu besuchen",
+          "correct": true
+        },
+        {
+          "text": "Eine Prüfung, die man nur im Ausland machen kann",
+          "correct": false
+        },
+        {
+          "text": "Eine Prüfung für Lehrkräfte, die neu an einer Schule sind",
+          "correct": false
+        }
+      ],
+      "explanation": "Man lernt selbst oder in einem Kurs und macht nur die Prüfung an einer Schule.",
+      "sources": [
+        {
+          "title": "KMK: Ländervereinbarung, Art. 29",
+          "url": "https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2020/2020_10_15-Laendervereinbarung.pdf"
+        }
+      ]
+    },
+    {
+      "question": "Was ist der Unterschied zwischen Abendgymnasium und Gymnasium?",
+      "answers": [
+        {
+          "text": "Am Abendgymnasium lernen Erwachsene abends",
+          "correct": true
+        },
+        {
+          "text": "Das Abendgymnasium führt nur zum Ersten Schulabschluss",
+          "correct": false
+        },
+        {
+          "text": "Am Abendgymnasium gibt es keine Prüfungen und keine Noten",
+          "correct": false
+        }
+      ],
+      "explanation": "Beide führen zum Abitur. Am Abendgymnasium lernen Erwachsene, oft neben der Arbeit.",
+      "sources": [
+        {
+          "title": "Bundesagentur für Arbeit: Schulabschluss nachholen",
+          "url": "https://www.arbeitsagentur.de/bildung/schule/schulabschluss-nachholen"
+        }
+      ]
+    },
+    {
+      "question": "Mit welchem Abschluss darf man an allen Hochschulen und Universitäten studieren?",
+      "answers": [
+        {
+          "text": "Mit dem Abitur",
+          "correct": true
+        },
+        {
+          "text": "Mit der Fachhochschulreife",
+          "correct": false
+        },
+        {
+          "text": "Mit dem Mittleren Schulabschluss",
+          "correct": false
+        }
+      ],
+      "explanation": "Das Abitur öffnet alle Hochschulen. Mit der Fachhochschulreife studiert man an einer Fachhochschule.",
+      "sources": [
+        {
+          "title": "KMK: Bildungswege und Abschlüsse",
+          "url": "https://www.kmk.org/themen/allgemeinbildende-schulen/bildungswege-und-abschluesse.html"
+        }
+      ]
+    },
+    {
+      "question": "Wann findet der Unterricht im 2. Bildungsweg oft statt?",
+      "answers": [
+        {
+          "text": "Abends oder in Teilzeit",
+          "correct": true
+        },
+        {
+          "text": "Nur am Wochenende",
+          "correct": false
+        },
+        {
+          "text": "Nur online, ohne Lehrkraft",
+          "correct": false
+        }
+      ],
+      "explanation": "So können Erwachsene weiter arbeiten und für die Familie da sein. Das Kolleg hat Unterricht am Tag.",
+      "sources": [
+        {
+          "title": "Bundesagentur für Arbeit: Schulabschluss nachholen",
+          "url": "https://www.arbeitsagentur.de/bildung/schule/schulabschluss-nachholen"
+        }
+      ]
+    },
+    {
+      "question": "Braucht man für die Arbeit als Dozent in der Erwachsenenbildung immer ein Studium?",
+      "answers": [
+        {
+          "text": "Nein, oft reichen Ausbildung und Berufserfahrung",
+          "correct": true
+        },
+        {
+          "text": "Ja, ohne Studium darf man in Deutschland nie unterrichten",
+          "correct": false
+        },
+        {
+          "text": "Ja, man braucht immer ein Lehramtsstudium und ein Referendariat",
+          "correct": false
+        }
+      ],
+      "explanation": "In der Erwachsenenbildung zählen oft Fachwissen, Berufserfahrung und eine pädagogische Qualifikation.",
+      "sources": [
+        {
+          "title": "§ 1 Ausbilder-Eignungsverordnung",
+          "url": "https://www.gesetze-im-internet.de/ausbeignv_2009/__1.html"
+        }
+      ]
+    },
+    {
+      "question": "Sie möchten Lehrerin an einer staatlichen Schule werden. Was brauchen Sie?",
+      "answers": [
+        {
+          "text": "Das Lehramt",
+          "correct": true
+        },
+        {
+          "text": "Ein normales Zertifikat als Dozentin",
+          "correct": false
+        },
+        {
+          "text": "Nur viel Berufserfahrung im Fach",
+          "correct": false
+        }
+      ],
+      "explanation": "Für staatliche Schulen gelten feste Regeln: Lehramtsstudium und Referendariat. Ein Dozenten-Zertifikat reicht dafür nicht.",
+      "sources": [
+        {
+          "title": "KMK: Bildungswege und Abschlüsse",
+          "url": "https://www.kmk.org/themen/allgemeinbildende-schulen/bildungswege-und-abschluesse.html"
+        }
+      ]
+    },
+    {
+      "question": "Sie haben einen Schulabschluss aus Ihrem Heimatland. Was ist ein guter erster Schritt?",
+      "answers": [
+        {
+          "text": "Den Abschluss in Deutschland anerkennen lassen",
+          "correct": true
+        },
+        {
+          "text": "Sofort alles noch einmal an der Grundschule lernen",
+          "correct": false
+        },
+        {
+          "text": "Nichts – ausländische Abschlüsse zählen in Deutschland nie",
+          "correct": false
+        }
+      ],
+      "explanation": "Vielleicht ist Ihr Abschluss schon so viel wert wie ein deutscher. Infos gibt es bei „Anerkennung in Deutschland“.",
+      "sources": [
+        {
+          "title": "Anerkennung in Deutschland",
+          "url": "https://www.anerkennung-in-deutschland.de/"
+        }
+      ]
+    }
+  ]
+}

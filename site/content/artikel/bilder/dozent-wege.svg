@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Zwei Wege zur Dozentin oder zum Dozenten in der Erwachsenenbildung. Erster Weg mit Studium: Abitur oder Fachhochschulreife, dann Studium, dann ein Kurs in Pädagogik. Zweiter Weg über den Beruf: Ausbildung, dann Berufserfahrung, dann eine Weiterbildung. Für eine staatliche Schule braucht man das Lehramt.</title>
+<defs><marker id="pf" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#5b6672"/></marker></defs>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="30" font-size="22" fill="#1f4e79" text-anchor="middle" font-weight="700">Zwei Wege zur Dozentin</text>
+<text x="103" y="62" font-size="16" fill="#1f4e79" text-anchor="middle" font-weight="700">1. Weg: Studium</text>
+<text x="297" y="62" font-size="16" fill="#2e7d32" text-anchor="middle" font-weight="700">2. Weg: Beruf</text>
+<rect x="16" y="76" width="174" height="44" rx="10" fill="#e8f0f8"/>
+<text x="103" y="104" font-size="16" fill="#1d232b" text-anchor="middle">Abitur oder FHR</text>
+<rect x="210" y="76" width="174" height="44" rx="10" fill="#e6f4ea"/>
+<text x="297" y="104" font-size="16" fill="#1d232b" text-anchor="middle">Ausbildung</text>
+<line x1="103" y1="122" x2="103" y2="136" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pf)"/>
+<line x1="297" y1="122" x2="297" y2="136" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pf)"/>
+<rect x="16" y="140" width="174" height="44" rx="10" fill="#e8f0f8"/>
+<text x="103" y="168" font-size="16" fill="#1d232b" text-anchor="middle">Studium</text>
+<rect x="210" y="140" width="174" height="44" rx="10" fill="#e6f4ea"/>
+<text x="297" y="168" font-size="16" fill="#1d232b" text-anchor="middle">Berufserfahrung</text>
+<line x1="103" y1="186" x2="103" y2="200" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pf)"/>
+<line x1="297" y1="186" x2="297" y2="200" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pf)"/>
+<rect x="16" y="204" width="174" height="44" rx="10" fill="#e8f0f8"/>
+<text x="103" y="232" font-size="16" fill="#1d232b" text-anchor="middle">Pädagogik-Kurs</text>
+<rect x="210" y="204" width="174" height="44" rx="10" fill="#e6f4ea"/>
+<text x="297" y="232" font-size="16" fill="#1d232b" text-anchor="middle">Weiterbildung</text>
+<line x1="103" y1="250" x2="170" y2="278" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pf)"/>
+<line x1="297" y1="250" x2="230" y2="278" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pf)"/>
+<rect x="60" y="282" width="280" height="56" rx="10" fill="#1f4e79"/>
+<text x="200.0" y="304" font-size="17" fill="#ffffff" text-anchor="middle" font-weight="700">Dozentin / Dozent</text>
+<text x="200.0" y="325" font-size="15" fill="#ffffff" text-anchor="middle">in der Erwachsenenbildung</text>
+<text x="200" y="370" font-size="15" fill="#5b6672" text-anchor="middle">Staatliche Schule: nur mit Lehramt.</text>
+</svg>

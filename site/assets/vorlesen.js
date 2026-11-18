@@ -72,7 +72,7 @@
   const AUSLASSEN = ['woerter', 'fragen', 'quellen', 'hilfe'];
   const ueberschriften = [...inhalt.querySelectorAll(':scope > h2[id]')].filter(h => !AUSLASSEN.includes(h.id));
   if (!ueberschriften.length) return;
-  const OHNE = '.notiz, .uebung, .bild, .kopieren, .abschnitt-fertig, .ue-geloest, script, style, button, details > :not(summary)';
+  const OHNE = '.notiz, .uebung, .bild, .aussprache, .kopieren, .abschnitt-fertig, .ue-geloest, script, style, button, details > :not(summary)';
   const ICON = '<svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" '
     + 'd="M3 9v6h4l5 4V5L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 '
     + '0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>';

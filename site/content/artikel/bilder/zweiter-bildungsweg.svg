@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Der 2. Bildungsweg: Erwachsene holen einen Abschluss nach. Angebote sind Abendschule, Volkshochschule, Kolleg, Berufsoberschule, Abendgymnasium und Externenprüfung. So kann man den Ersten Schulabschluss, den Mittleren Schulabschluss, die Fachhochschulreife oder das Abitur nachholen. Oft abends oder in Teilzeit – neben Arbeit und Familie.</title>
+<defs><marker id="pf" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#5b6672"/></marker></defs>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="30" font-size="22" fill="#1f4e79" text-anchor="middle" font-weight="700">Der 2. Bildungsweg</text>
+<text x="200" y="52" font-size="15" fill="#5b6672" text-anchor="middle">Erwachsene holen einen Abschluss nach</text>
+<rect x="16" y="70" width="180" height="42" rx="10" fill="#e8f0f8"/>
+<text x="106" y="97" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">Abendschule</text>
+<rect x="204" y="70" width="180" height="42" rx="10" fill="#e8f0f8"/>
+<text x="294" y="97" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">Volkshochschule</text>
+<rect x="16" y="122" width="180" height="42" rx="10" fill="#e8f0f8"/>
+<text x="106" y="149" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">Kolleg</text>
+<rect x="204" y="122" width="180" height="42" rx="10" fill="#e8f0f8"/>
+<text x="294" y="149" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">Berufsoberschule</text>
+<rect x="16" y="174" width="180" height="42" rx="10" fill="#e8f0f8"/>
+<text x="106" y="201" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">Abendgymnasium</text>
+<rect x="204" y="174" width="180" height="42" rx="10" fill="#e8f0f8"/>
+<text x="294" y="201" font-size="16" fill="#1d232b" text-anchor="middle" font-weight="700">Externenprüfung</text>
+<line x1="200" y1="228" x2="200" y2="252" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pf)"/>
+<rect x="40" y="258" width="320" height="76" rx="10" fill="#2e7d32"/>
+<text x="200.0" y="280" font-size="17" fill="#ffffff" text-anchor="middle" font-weight="700">Abschluss nachholen</text>
+<text x="200.0" y="301" font-size="15" fill="#ffffff" text-anchor="middle">Erster · Mittlerer · Fach-</text>
+<text x="200.0" y="320" font-size="15" fill="#ffffff" text-anchor="middle">hochschulreife · Abitur</text>
+<text x="200" y="366" font-size="15" fill="#5b6672" text-anchor="middle">Oft abends oder in Teilzeit –</text>
+<text x="200" y="386" font-size="15" fill="#5b6672" text-anchor="middle">neben Arbeit und Familie.</text>
+</svg>
