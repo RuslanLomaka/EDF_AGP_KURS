@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Abschluss aus dem Ausland? Wer prüft, was Ihr Papier wert ist? Ein Schulzeugnis prüft die Zeugnisanerkennungsstelle Ihres Bundeslands. Einen Uni-Abschluss bewertet die Zentralstelle ZAB mit einer Zeugnisbewertung. Einen Berufsabschluss prüft zum Beispiel die IHK oder die Handwerkskammer. Kostenlose Beratung gibt es beim IQ Netzwerk.</title>
+<defs><marker id="pf" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#5b6672"/></marker></defs>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="30" font-size="22" fill="#1f4e79" text-anchor="middle" font-weight="700">Abschluss aus dem Ausland?</text>
+<text x="200" y="52" font-size="15" fill="#5b6672" text-anchor="middle">Wer prüft, was Ihr Papier wert ist?</text>
+<rect x="14" y="70" width="134" height="72" rx="10" fill="#e8f0f8"/>
+<text x="81" y="112" font-size="15" fill="#1d232b" text-anchor="middle" font-weight="700">Schulzeugnis</text>
+<line x1="151" y1="106" x2="171" y2="106" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pf)"/>
+<rect x="176" y="70" width="210" height="72" rx="10" fill="#e6f4ea"/>
+<text x="281" y="101" font-size="15" fill="#1d232b" text-anchor="middle">Zeugnisanerkennungs-</text>
+<text x="281" y="122" font-size="15" fill="#1d232b" text-anchor="middle">stelle Ihres Bundeslands</text>
+<rect x="14" y="162" width="134" height="72" rx="10" fill="#e8f0f8"/>
+<text x="81" y="204" font-size="15" fill="#1d232b" text-anchor="middle" font-weight="700">Uni-Abschluss</text>
+<line x1="151" y1="198" x2="171" y2="198" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pf)"/>
+<rect x="176" y="162" width="210" height="72" rx="10" fill="#e6f4ea"/>
+<text x="281" y="193" font-size="15" fill="#1d232b" text-anchor="middle">Zentralstelle ZAB:</text>
+<text x="281" y="214" font-size="15" fill="#1d232b" text-anchor="middle">Zeugnisbewertung</text>
+<rect x="14" y="254" width="134" height="72" rx="10" fill="#e8f0f8"/>
+<text x="81" y="296" font-size="15" fill="#1d232b" text-anchor="middle" font-weight="700">Berufsabschluss</text>
+<line x1="151" y1="290" x2="171" y2="290" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pf)"/>
+<rect x="176" y="254" width="210" height="72" rx="10" fill="#e6f4ea"/>
+<text x="281" y="285" font-size="15" fill="#1d232b" text-anchor="middle">z. B. IHK oder</text>
+<text x="281" y="306" font-size="15" fill="#1d232b" text-anchor="middle">Handwerkskammer</text>
+<rect x="14" y="346" width="372" height="44" rx="10" fill="#1f4e79"/>
+<text x="200" y="374" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="700">Kostenlose Beratung: IQ Netzwerk</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Die duale Ausbildung: zwei Lernorte zur gleichen Zeit. Die meiste Zeit lernen und arbeiten Sie im Betrieb. In der Berufsschule lernen Sie die Theorie, zum Beispiel an 1 bis 2 Tagen pro Woche. Am Ende steht eine Prüfung, danach haben Sie einen Berufsabschluss.</title>
+<defs><marker id="pf" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#5b6672"/></marker></defs>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="30" font-size="22" fill="#1f4e79" text-anchor="middle" font-weight="700">Die duale Ausbildung</text>
+<text x="200" y="52" font-size="15" fill="#5b6672" text-anchor="middle">zwei Lernorte zur gleichen Zeit</text>
+<rect x="20" y="70" width="170" height="150" rx="12" fill="#e8f0f8"/>
+<path d="M70 120 L105 94 L140 120 Z" fill="#1f4e79"/><rect x="78" y="120" width="54" height="34" fill="#1f4e79"/>
+<rect x="99" y="134" width="12" height="20" fill="#ffffff"/>
+<text x="105" y="180" font-size="18" fill="#1d232b" text-anchor="middle" font-weight="700">Betrieb</text>
+<text x="105" y="204" font-size="15" fill="#5b6672" text-anchor="middle">die meiste Zeit</text>
+<rect x="210" y="70" width="170" height="150" rx="12" fill="#e6f4ea"/>
+<rect x="262" y="104" width="66" height="50" fill="#2e7d32"/>
+<rect x="270" y="114" width="12" height="12" fill="#ffffff"/>
+<rect x="289" y="114" width="12" height="12" fill="#ffffff"/>
+<rect x="308" y="114" width="12" height="12" fill="#ffffff"/>
+<rect x="289" y="136" width="12" height="18" fill="#ffffff"/>
+<line x1="295" y1="104" x2="295" y2="86" stroke="#2e7d32" stroke-width="3"/><path d="M295 86 L313 91 L295 96 Z" fill="#2e7d32"/>
+<text x="295" y="180" font-size="18" fill="#1d232b" text-anchor="middle" font-weight="700">Berufsschule</text>
+<text x="295" y="204" font-size="15" fill="#5b6672" text-anchor="middle">Theorie, z. B. 1–2 Tage</text>
+<line x1="105" y1="226" x2="175" y2="254" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pf)"/>
+<line x1="295" y1="226" x2="225" y2="254" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pf)"/>
+<rect x="80" y="260" width="240" height="44" rx="10" fill="#cfe0f1"/>
+<text x="200" y="288" font-size="18" fill="#1d232b" text-anchor="middle" font-weight="700">Prüfung</text>
+<line x1="200" y1="306" x2="200" y2="324" stroke="#5b6672" stroke-width="3" stroke-linecap="round" marker-end="url(#pf)"/>
+<rect x="40" y="330" width="320" height="52" rx="10" fill="#1f4e79"/>
+<text x="200" y="362" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="700">Berufsabschluss</text>
+</svg>

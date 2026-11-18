@@ -288,6 +288,54 @@
           "url": "https://www.anerkennung-in-deutschland.de/"
         }
       ]
+    },
+    {
+      "question": "Welchen Abschluss braucht man meistens für die Fachoberschule?",
+      "answers": [
+        {
+          "text": "Den Mittleren Schulabschluss",
+          "correct": true
+        },
+        {
+          "text": "Den Ersten Schulabschluss",
+          "correct": false
+        },
+        {
+          "text": "Das Abitur mit guten Noten",
+          "correct": false
+        }
+      ],
+      "explanation": "Die Fachoberschule (Klasse 11 und 12) setzt den Mittleren Schulabschluss voraus und führt zur Fachhochschulreife.",
+      "sources": [
+        {
+          "title": "KMK: Rahmenvereinbarung Fachoberschule",
+          "url": "https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2004/2004_12_16-RV-Fachoberschule.pdf"
+        }
+      ]
+    },
+    {
+      "question": "Kann man in Deutschland ohne Abitur studieren?",
+      "answers": [
+        {
+          "text": "Ja, zum Beispiel als Meisterin",
+          "correct": true
+        },
+        {
+          "text": "Nein, ohne Abitur ist ein Studium nie möglich",
+          "correct": false
+        },
+        {
+          "text": "Nur an einer Hochschule im Ausland",
+          "correct": false
+        }
+      ],
+      "explanation": "Mit Meister, Techniker oder Fachwirt darf man jedes Fach studieren; mit Ausbildung und 3 Jahren Berufserfahrung ein passendes Fach.",
+      "sources": [
+        {
+          "title": "KMK: Hochschulzugang über berufliche Bildung",
+          "url": "https://www.kmk.org/themen/berufliche-schulen/hochschulzugang-ueber-berufliche-bildung.html"
+        }
+      ]
     }
   ]
 }

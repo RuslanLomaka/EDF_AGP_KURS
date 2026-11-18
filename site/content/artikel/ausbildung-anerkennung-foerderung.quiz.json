@@ -1,0 +1,245 @@
+{
+  "title": "Ausbildung, Anerkennung und Förderung",
+  "questions": [
+    {
+      "question": "Wo lernt man in der dualen Ausbildung?",
+      "answers": [
+        {
+          "text": "Im Betrieb und in der Berufsschule",
+          "correct": true
+        },
+        {
+          "text": "Nur in der Berufsschule",
+          "correct": false
+        },
+        {
+          "text": "An der Uni und im Praktikum",
+          "correct": false
+        }
+      ],
+      "explanation": "Dual heißt: zwei Lernorte. Die meiste Zeit im Betrieb, die Theorie in der Berufsschule.",
+      "sources": [
+        {
+          "title": "Broschüre Ausbildung & Beruf",
+          "url": "https://www.bmbfsfj.bund.de/resource/blob/267982/82613cfef323e7acaa3c51a4a55cf389/ausbildung-und-beruf-data.pdf"
+        }
+      ]
+    },
+    {
+      "question": "Wie viel Ausbildungsvergütung gibt es 2026 mindestens im ersten Jahr?",
+      "answers": [
+        {
+          "text": "724 Euro im Monat",
+          "correct": true
+        },
+        {
+          "text": "450 Euro im Monat",
+          "correct": false
+        },
+        {
+          "text": "Gar nichts – im ersten Jahr wird nicht bezahlt",
+          "correct": false
+        }
+      ],
+      "explanation": "Für eine Ausbildung, die 2026 beginnt, gilt im ersten Jahr mindestens 724 Euro brutto. Viele Betriebe zahlen mehr.",
+      "sources": [
+        {
+          "title": "BIBB: Mindestvergütung 2026",
+          "url": "https://www.bibb.de/de/pressemitteilung_212952.php"
+        }
+      ]
+    },
+    {
+      "question": "Sie haben keine Ausbildung, aber viele Jahre Erfahrung im Beruf. Wie bekommen Sie einen Abschluss?",
+      "answers": [
+        {
+          "text": "Über die Externenprüfung bei der Kammer",
+          "correct": true
+        },
+        {
+          "text": "Gar nicht – ohne Ausbildung gibt es nie einen Abschluss",
+          "correct": false
+        },
+        {
+          "text": "Der Arbeitgeber schreibt einfach ein Zeugnis",
+          "correct": false
+        }
+      ],
+      "explanation": "Wer das Eineinhalbfache der Ausbildungszeit im Beruf gearbeitet hat, darf zur Abschlussprüfung. Arbeit im Ausland zählt mit.",
+      "sources": [
+        {
+          "title": "§ 45 BBiG",
+          "url": "https://www.gesetze-im-internet.de/bbig_2005/__45.html"
+        }
+      ]
+    },
+    {
+      "question": "Wie alt muss man für das neue Validierungsverfahren mindestens sein?",
+      "answers": [
+        {
+          "text": "25 Jahre",
+          "correct": true
+        },
+        {
+          "text": "18 Jahre",
+          "correct": false
+        },
+        {
+          "text": "30 Jahre",
+          "correct": false
+        }
+      ],
+      "explanation": "Seit 2025 prüft die Kammer, was man im Beruf kann. Voraussetzung: mindestens 25 Jahre alt und genug Berufserfahrung.",
+      "sources": [
+        {
+          "title": "§ 50b BBiG",
+          "url": "https://www.gesetze-im-internet.de/bbig_2005/__50b.html"
+        }
+      ]
+    },
+    {
+      "question": "Wer prüft einen Schulabschluss aus dem Ausland?",
+      "answers": [
+        {
+          "text": "Die Zeugnisanerkennungsstelle des Bundeslands",
+          "correct": true
+        },
+        {
+          "text": "Ihre neue Schule in Deutschland",
+          "correct": false
+        },
+        {
+          "text": "Das Jobcenter in Ihrer Stadt",
+          "correct": false
+        }
+      ],
+      "explanation": "Für Schulabschlüsse sind die Zeugnisanerkennungsstellen der Länder zuständig – nur für ganze Abschlüsse, nicht für einzelne Schuljahre.",
+      "sources": [
+        {
+          "title": "Anerkennung von Schulabschlüssen",
+          "url": "https://www.anerkennung-in-deutschland.de/html/de/anerkennung-schulabschluesse.php"
+        }
+      ]
+    },
+    {
+      "question": "Was kostet die Zeugnisbewertung der ZAB für einen Hochschulabschluss?",
+      "answers": [
+        {
+          "text": "208 Euro",
+          "correct": true
+        },
+        {
+          "text": "Sie ist kostenlos",
+          "correct": false
+        },
+        {
+          "text": "1.000 Euro",
+          "correct": false
+        }
+      ],
+      "explanation": "Die Zeugnisbewertung kostet 208 Euro und dauert meistens etwa 3 Monate. Die Agentur für Arbeit oder das Jobcenter können die Kosten übernehmen.",
+      "sources": [
+        {
+          "title": "ZAB: Gebühren",
+          "url": "https://zab.kmk.org/de/zeugnisbewertung/gebuehren"
+        }
+      ]
+    },
+    {
+      "question": "Sie möchten, dass das Jobcenter die Kosten der Anerkennung bezahlt. Was tun Sie zuerst?",
+      "answers": [
+        {
+          "text": "Erst Förderung beantragen, dann die Anerkennung",
+          "correct": true
+        },
+        {
+          "text": "Erst bezahlen, später die Rechnung zeigen",
+          "correct": false
+        },
+        {
+          "text": "Erst die Anerkennung, dann irgendwann fragen",
+          "correct": false
+        }
+      ],
+      "explanation": "Zuerst der Antrag auf Förderung, dann der Antrag auf Anerkennung. Kosten von vorher werden meistens nicht übernommen.",
+      "sources": [
+        {
+          "title": "Anerkennung: finanzielle Förderung",
+          "url": "https://www.anerkennung-in-deutschland.de/html/de/finanzielle-foerderung.php"
+        }
+      ]
+    },
+    {
+      "question": "Wann bezahlt die Agentur für Arbeit einen Kurs mit einem Bildungsgutschein?",
+      "answers": [
+        {
+          "text": "Wenn Sie vorher beraten wurden und der Kurs zugelassen ist",
+          "correct": true
+        },
+        {
+          "text": "Bei jedem Kurs, den Sie selbst aussuchen und schon begonnen haben",
+          "correct": false
+        },
+        {
+          "text": "Nur bei Kursen an einer Universität",
+          "correct": false
+        }
+      ],
+      "explanation": "Der Kurs muss helfen, (wieder) Arbeit zu finden. Beratung vorher, zugelassener Kurs und Träger – und den Gutschein vor dem Start.",
+      "sources": [
+        {
+          "title": "§ 81 SGB III",
+          "url": "https://www.gesetze-im-internet.de/sgb_3/__81.html"
+        }
+      ]
+    },
+    {
+      "question": "Ana besucht das Abendgymnasium. Zählt für ihr BAföG das Einkommen ihrer Eltern?",
+      "answers": [
+        {
+          "text": "Nein, beim Abendgymnasium zählt es nicht",
+          "correct": true
+        },
+        {
+          "text": "Ja, immer",
+          "correct": false
+        },
+        {
+          "text": "Nur wenn sie bei den Eltern wohnt",
+          "correct": false
+        }
+      ],
+      "explanation": "Beim Abendgymnasium und beim Kolleg bleibt das Einkommen der Eltern außer Betracht. Schüler-BAföG muss man nicht zurückzahlen.",
+      "sources": [
+        {
+          "title": "§ 11 BAföG",
+          "url": "https://www.gesetze-im-internet.de/baf_g/__11.html"
+        }
+      ]
+    },
+    {
+      "question": "Für welche Fortbildung gibt es Aufstiegs-BAföG?",
+      "answers": [
+        {
+          "text": "Zum Beispiel für den Meister",
+          "correct": true
+        },
+        {
+          "text": "Nur für ein Studium an der Universität",
+          "correct": false
+        },
+        {
+          "text": "Für einen Deutschkurs an der Volkshochschule",
+          "correct": false
+        }
+      ],
+      "explanation": "Aufstiegs-BAföG gibt es für mehr als 700 Fortbildungen wie Meister, Fachwirt, Techniker oder Erzieher – ohne Altersgrenze.",
+      "sources": [
+        {
+          "title": "Aufstiegs-BAföG",
+          "url": "https://www.aufstiegs-bafoeg.de/aufstiegsbafoeg/de/die-foerderung/wie-wird-gefoerdert/wie-wird-mit-dem-aufstiegs-bafoeg-gefoerdert.html"
+        }
+      ]
+    }
+  ]
+}

@@ -184,6 +184,8 @@ The owner sends photos of a handout (often several per day; several pages can be
      with a pronunciation hint: `**die Fachhochschulreife** [**Fach**·hoch·schul·rei·fe]{.aussprache}` (syllables
      split by `·`, the stressed one bold). Put the same hint after the first use of a hard word in the text. The build
      hides it from screen readers, the read-aloud and the search;
+   - long glossaries: about 12 key words first, the rest folded in
+     `<details class="weitere-woerter"><summary>Weitere Wörter (n)</summary> … </details>`;
    - "Fragen zum Text": the handout's questions as `<details><summary>question</summary>answer</details>`.
    - "Quellen" at the end: links to official or reliable sources (gesetze-im-internet.de, federal ministries,
      Bundesagentur für Arbeit, familienportal.de, Verbraucherzentrale, DGB). Check every URL answers 200 before
@@ -213,7 +215,8 @@ front matter.
 - The page shows a folded series box under the title, a "Weiter mit Teil n" button after the quiz and previous/next
   within the series. Lists keep the parts together; topic pages show series first.
 - Slugs carry no part numbers: the order may change, URLs may not.
-- Current series: "Rund um die Kündigung" (Arbeitsrecht, 3 parts), "Eine Firma gründen" (Selbstständigkeit, 5 parts).
+- Current series: "Rund um die Kündigung" (Arbeitsrecht, 3 parts), "Eine Firma gründen" (Selbstständigkeit, 5 parts),
+  "Bildung in Deutschland" (Bildung & Beruf, 2 parts: bildungswege → ausbildung-anerkennung-foerderung).
 - **Running case:** `::: fall` boxes tell one invented person's story across pages ("Der Fall Frau K.", 4 parts:
   abmahnung → kuendigungsschutz → kuendigung-einfach-erklaert → lesson ki-im-alltag), each with an anchor
   `<p id="fall-frau-k"></p>`, a question in `<details>` and a link to the next part.
