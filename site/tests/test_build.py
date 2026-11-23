@@ -442,6 +442,34 @@ gruppen:
         html = (self.site.site / "dist" / "artikel" / "demo-artikel" / "index.html").read_text()
         self.assertIn('data-id="demo-karten"', html)
 
+    def _article_with_download(self, online):
+        write(self.site.root / "materials" / "demo" / "blatt.pdf", "%PDF-1.4 test\n")
+        extra = f'    online: "{online}"\n' if online else ""
+        body = good_article().replace(
+            'quelle: "Test"\n',
+            f'quelle: "Test"\ndateien:\n  - datei: materials/demo/blatt.pdf\n{extra}'
+            '    titel: "Arbeitsblatt"\n    text: "Zum Ausfüllen."\n')
+        self.site.add_article(body=body)
+        self.site.add_lesson()
+
+    def test_31_article_printout_with_online_copy(self):
+        self.site = SyntheticSite()
+        self._article_with_download("https://docs.google.com/document/d/abc_DEF-123/copy")
+        self.site.build(True)
+        dist = self.site.site / "dist" / "artikel" / "demo-artikel"
+        html = (dist / "index.html").read_text()
+        self.assertTrue((dist / "dateien" / "blatt.pdf").is_file())
+        self.assertIn('href="/artikel/demo-artikel/dateien/blatt.pdf"', html)
+        self.assertIn('href="https://docs.google.com/document/d/abc_DEF-123/copy"', html)
+        self.assertIn("drucken oder online ausfüllen", html)
+        self.assertIn('href="/artikel/demo-artikel/dateien/blatt.pdf"', (dist / "teacher" / "index.html").read_text())
+
+    def test_32_online_link_must_be_a_copy_link(self):
+        self.site = SyntheticSite()
+        self._article_with_download("https://docs.google.com/document/d/abc/edit")
+        r = self.site.build(False)
+        self.assertIn("online", (r.stderr or r.stdout).lower())
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -57,6 +57,8 @@ LEHRER = "teacher"  # /<page>/teacher/: the same page with the teacher's notes; 
 SLUG = re.compile(r"[a-z0-9]+(-[a-z0-9]+)*")
 DATUM = re.compile(r"\d{4}-\d{2}-\d{2}")
 DATEINAME = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]*")
+# 'online' copy of a printout: a Google Docs/Sheets/Slides "make a copy" link, so learners never edit the master
+ONLINE_KOPIE = re.compile(r"https://docs\.google\.com/(document|spreadsheets|presentation)/d/[A-Za-z0-9_-]+/copy")
 ASSET_VERSION = {}
 
 esc = html.escape
@@ -1067,11 +1069,21 @@ def write_article(a, lehrer, serie, weiter, mehr, nav):
     if m:
         inhalt, quellen = inhalt[:m.start()], f'<section class="quellen inhalt">{inhalt[m.start():]}</section>'
     # printable files (front matter 'dateien'): absolute links, so the teacher page reaches them too
-    ausdrucken = ""
+    ausdrucken, ausdrucken_titel = "", "Zum Ausdrucken"
     if a["dateien"]:
         dateien = file_list(a, a["dateien"], a["url"] + "dateien/")
-        ausdrucken = f'<section class="downloads"><h2 id="ausdrucken">Zum Ausdrucken</h2>{dateien}</section>'
-    extra = ([("ausdrucken", "Zum Ausdrucken")] if ausdrucken else []) + [("quiz", "Quiz")] \
+        hinweis = ""
+        if any(d["online"] for d in a["dateien"]):
+            ausdrucken_titel = "Vorlagen: drucken oder online ausfüllen"
+            hinweis = ('<p>Zwei Wege: Öffnen Sie das <strong>PDF</strong>, drucken Sie es und schreiben Sie mit dem Stift. '
+                       'Oder füllen Sie die Vorlage <strong>online</strong> aus: Google erstellt eine Kopie in Ihrem '
+                       'eigenen Google Drive. Dafür brauchen Sie ein Google-Konto. Ihre Kopie sehen nur Sie, solange '
+                       'Sie sie nicht teilen.'
+                       + (' Wie Google Docs funktioniert, zeigt die <a href="/edv-kurs/google-docs/">Lektion zu '
+                          'Google Docs</a>.' if "/edv-kurs/google-docs/" in SEITEN else "") + '</p>')
+        ausdrucken = (f'<section class="downloads"><h2 id="ausdrucken">{ausdrucken_titel}</h2>{hinweis}{dateien}'
+                      f'</section>')
+    extra = ([("ausdrucken", ausdrucken_titel)] if ausdrucken else []) + [("quiz", "Quiz")] \
         + ([("quellen", "Quellen")] if quellen else [])
     chips = "".join(f'<li><a href="/artikel/?q={quote(k)}">{esc(k)}</a></li>' for k in a["stichwoerter"])
     stand = a["datum"][:4] if a["datum"] else str(date.today().year)
@@ -1202,7 +1214,12 @@ def download_list(path, meta, key):
             fail(path, f"every entry in '{key}' needs 'datei' (path) and 'titel' (text)")
         if not isinstance(item.get("text", ""), str):
             fail(path, f"'text' of '{item['titel']}' in '{key}' must be text")
-        result.append({"src": repo_file(path, item["datei"]), "titel": item["titel"], "text": item.get("text", "")})
+        online = item.get("online", "")
+        if online and not (isinstance(online, str) and ONLINE_KOPIE.fullmatch(online)):
+            fail(path, f"'online' of '{item['titel']}' must be a Google Docs copy link "
+                       "(https://docs.google.com/document/d/<id>/copy)")
+        result.append({"src": repo_file(path, item["datei"]), "titel": item["titel"], "text": item.get("text", ""),
+                       "online": online})
     return result
 
 
@@ -1294,7 +1311,9 @@ def file_list(seite, items, basis="dateien/"):
         rows.append(f'<li><a href="{basis}{src.name}"{dl}>{esc(item["titel"])}</a> '
                     f'<span class="typ">{esc(typ)} · {groesse(src.stat().st_size)}</span>'
                     f'<br><span class="dateiname">{src.name}</span>'
-                    f'<br><span class="hinweis">{esc(item["text"])}</span></li>')
+                    f'<br><span class="hinweis">{esc(item["text"])}</span>'
+                    + (f'<br><a class="online" href="{esc(item["online"])}">Online ausfüllen: Kopie in Google Docs</a>'
+                       if item.get("online") else "") + '</li>')
     return f'<ul class="dateiliste">{"".join(rows)}</ul>'
 
 

@@ -10,6 +10,14 @@ Four A4 PDFs for the article `site/content/artikel/vorstellungsgespraech.md`, wh
 | `arbeitsblatt-pitch.pdf` | 2 | Task A: 60-second pitch (today – before – goal), strengths, one weakness, one STAR story, own questions |
 | `beobachtungsbogen.pdf` | 1 | Task C: observation sheet for the role play (one per round) |
 
+## Online versions (Google Docs)
+
+Each PDF also exists as an editable Google Doc in the owner's Drive folder "Compi Dompi GmbH" ›
+"Vorstellungsgespräch – Vorlagen" (anyone with the link can view; only the owner can edit). The article links to
+each doc's `/copy` address, so learners get their own copy in their Drive instead of editing the master. The docs
+are built for typing (empty table cells, clickable checkboxes) rather than as a copy of the PDF layout. When a text
+changes, change it in both places.
+
 ## Rebuilding
 
 The PDFs are generated, not drawn by hand. Edit the texts in `generator/erstellen.cjs`, then run from the

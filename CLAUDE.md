@@ -231,6 +231,12 @@ front matter.
 - **Printouts and tasks work in articles too:** front matter `dateien` (same format as for lessons, files in
   `materials/<slug>/`) adds a "Zum Ausdrucken" box before the quiz; `::: prompt` and `::: vorlage` get a copy
   button; tasks use `<p class="zeit">` like lessons. Example: `vorstellungsgespraech.md`.
+- **Online versions of printouts:** an entry in `dateien` may add `online:` with a Google Docs "make a copy" link
+  (`https://docs.google.com/document/d/<id>/copy`; the build accepts nothing else). The box then says
+  "drucken oder online ausfüllen" and explains that a Google account is needed. The masters live in the owner's
+  Drive folder "Compi Dompi GmbH" › "Vorstellungsgespräch – Vorlagen": inherited sharing is off (course members are
+  editors of the parent folder), anyone with the link can view, only the owner edits. Change a master there, not
+  by re-creating it, so the links stay the same; keep the PDF in `materials/` in step with it.
 
 **Batches of photos.** The owner sends groups of photos and says when to start. Then:
 - first save one own-words note per handout in `entwuerfe/NN-<slug>.md` and push it (photos in the chat may

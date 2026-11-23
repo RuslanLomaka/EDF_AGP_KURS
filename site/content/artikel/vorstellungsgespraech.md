@@ -30,15 +30,19 @@ stichwoerter:
   - KI
 dateien:
   - datei: materials/vorstellungsgespraech/checkliste.pdf
+    online: "https://docs.google.com/document/d/1n0lEmuviAkRGnQq7CcH2r--yTVmevKvMqcqxnvWaSq8/copy"
     titel: "Checkliste: Vor, am und nach dem Tag"
     text: "Eine Seite zum Abhaken – mit Platz für Uhrzeit, Adresse und Ansprechperson."
   - datei: materials/vorstellungsgespraech/fragenkarten.pdf
+    online: "https://docs.google.com/document/d/1VZBPtKxsqFnjzrDDLXhy1vMxTZsSDO1v600-iLAmWYs/copy"
     titel: "Fragenkarten zum Ausschneiden"
     text: "24 Karten: Fragen der Firma, Joker „Verbotene Frage!“ und Fragen, die Sie selbst stellen können."
   - datei: materials/vorstellungsgespraech/arbeitsblatt-pitch.pdf
+    online: "https://docs.google.com/document/d/13uhd_ARZ9sLuuTKjY1enfmeaueKwvUdhO_IMkLZQsc8/copy"
     titel: "Arbeitsblatt: Mein Pitch und meine Antworten"
     text: "Ihr 60-Sekunden-Pitch, Ihre Stärken, eine Schwäche und eine STAR-Geschichte."
   - datei: materials/vorstellungsgespraech/beobachtungsbogen.pdf
+    online: "https://docs.google.com/document/d/1oP4caaWusJVRcIZR_q_dPYf4imJatSLJcumyNCHikeE/copy"
     titel: "Beobachtungsbogen für das Rollenspiel"
     text: "Für die beobachtende Person – mit Platz für zwei gute Punkte und einen Tipp."
 kurz: "Was im Vorstellungsgespräch passiert, welche Fragen fast immer kommen und wie Sie gut antworten. Mit Ihren Rechten bei verbotenen Fragen, Tipps zu Geld und Probearbeit und Übungen für den Kurs."
@@ -76,6 +80,7 @@ quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten 
 - **Mindestziel für alle:** einen eigenen Pitch (3 Sätze) sagen können und eine verbotene Frage erkennen.
 - **Lotsen:** Wer schnell ist, hilft beim Pitch zuerst den anderen und spielt im Rollenspiel die Personalerin oder den Personaler.
 - **Vorher drucken:** Checkliste (1 pro Person), Arbeitsblatt (1 pro Person), Fragenkarten (1 Satz pro 3 Personen, ausschneiden), Beobachtungsbogen (3 pro Gruppe).
+- **Ohne Drucker:** Jede Vorlage gibt es auch online („Online ausfüllen“ im Kasten unten). Google legt dann eine eigene Kopie im Drive der Person an – dafür braucht man ein Google-Konto. Die Originale im Drive-Ordner kann nur die Kursleitung ändern.
 - **Behutsam:** Manche haben schlechte Erfahrungen mit Diskriminierung. Niemand muss eigene Erlebnisse erzählen. Bei allen Beispielen sind Namen und Firmen **erfunden**.
 :::
 
@@ -118,7 +123,7 @@ Manchmal gibt es zusätzlich einen kleinen **Test**, eine **Arbeitsprobe** oder 
 
 ## Gut vorbereitet {#vorbereitung}
 
-Eine gute Vorbereitung macht ruhiger. Die **Checkliste zum Ausdrucken** finden Sie [unten auf dieser Seite](#ausdrucken).
+Eine gute Vorbereitung macht ruhiger. Die **Checkliste** finden Sie [unten auf dieser Seite](#ausdrucken) – zum Ausdrucken oder zum Ausfüllen am Handy oder PC.
 
 ### Die Firma kennenlernen {#firma}
 
@@ -280,7 +285,7 @@ Viele Fragen beginnen mit „Erzählen Sie von einer Situation, in der …“. D
 
 **Ein Beispiel (erfunden):** „Im Dezember war eine Kollegin krank, und ich war am Nachmittag allein im Laden (**S**). Es kam eine große Lieferung, und gleichzeitig waren viele Kunden da (**T**). Ich habe zuerst die Kasse gemacht und die Kühlware schnell in den Kühlraum gestellt. Den Rest habe ich in ruhigen Minuten eingeräumt. Außerdem habe ich meinen Chef angerufen, und er hat für die letzte Stunde eine Aushilfe geschickt (**A**). Um 18 Uhr war alles fertig, und keine Ware war kaputt. Seitdem hat mir mein Chef oft die Planung für Lieferungen gegeben (**R**).“
 
-Bereiten Sie **2 oder 3 solche Geschichten** vor: eine über Stress, eine über Teamarbeit, eine über einen Fehler, aus dem Sie gelernt haben. Das **Arbeitsblatt** dazu finden Sie [unten](#ausdrucken).
+Bereiten Sie **2 oder 3 solche Geschichten** vor: eine über Stress, eine über Teamarbeit, eine über einen Fehler, aus dem Sie gelernt haben. Das **Arbeitsblatt** dazu finden Sie [unten](#ausdrucken) – als PDF oder zum Ausfüllen in Google Docs.
 
 ## Eigene Fragen stellen {#eigene-fragen}
 
@@ -419,7 +424,7 @@ Olena Koval
 
 Ein **Pitch** ist eine sehr kurze Vorstellung. Sie brauchen ihn für die Frage „Erzählen Sie etwas über sich“ – aber auch auf einer Jobmesse oder am Telefon.
 
-1. Nehmen Sie das **Arbeitsblatt** ([zum Ausdrucken](#ausdrucken)) oder ein Blatt Papier.
+1. Nehmen Sie das **Arbeitsblatt** ([unten: auf Papier oder online](#ausdrucken)) oder ein Blatt Papier.
 2. Schreiben Sie **3 Teile**: **Heute** (Was mache ich gerade?) – **Früher** (Was habe ich gelernt und gearbeitet?) – **Ziel** (Was möchte ich jetzt arbeiten, und warum passe ich?).
 3. Lesen Sie Ihren Text **dreimal laut**. Dann sprechen Sie **ohne Zettel**.
 4. Zu zweit: Eine Person spricht, die andere stoppt **60 Sekunden** und sagt danach: „Gut war …“ und „Mein Tipp: …“.
@@ -482,7 +487,7 @@ Schreiben Sie danach: „Stelle mir jetzt 3 schwierige Fragen zu meinen Schwäch
 - **Frage an die Gruppe:** „Wie haben Sie auf die Joker-Karte reagiert?“ – Gute Antwort: **ruhig bleiben, höflich zurück zur Arbeit lenken.**
 :::
 
-Sie brauchen die **Fragenkarten** und den **Beobachtungsbogen** ([zum Ausdrucken](#ausdrucken)). Es gibt drei Rollen:
+Sie brauchen die **Fragenkarten** und den **Beobachtungsbogen** ([unten: auf Papier oder online](#ausdrucken)). Es gibt drei Rollen:
 
 - **Personalerin oder Personaler:** begrüßt, stellt 5 oder 6 Fragen von den Karten und **einmal eine Joker-Karte** („Verbotene Frage!“). Am Ende: „Haben Sie noch Fragen an uns?“
 - **Bewerberin oder Bewerber:** stellt sich mit dem Pitch vor, antwortet, reagiert auf die verbotene Frage und stellt 2 eigene Fragen.
