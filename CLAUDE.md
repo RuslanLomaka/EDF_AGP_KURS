@@ -231,9 +231,12 @@ front matter.
 - **Printouts and tasks work in articles too:** front matter `dateien` (same format as for lessons, files in
   `materials/<slug>/`) adds a "Zum Ausdrucken" box before the quiz; `::: prompt` and `::: vorlage` get a copy
   button; tasks use `<p class="zeit">` like lessons. Example: `vorstellungsgespraech.md`.
-- **Online versions of printouts:** an entry in `dateien` may add `online:` with a Google Docs "make a copy" link
-  (`https://docs.google.com/document/d/<id>/copy`; the build accepts nothing else). The box then says
-  "drucken oder online ausfüllen" and explains that a Google account is needed. The masters live in the owner's
+- **Forms get an online version, other printouts do not:** a printout people write in (form, checklist,
+  worksheet) adds `online:` to its `dateien` entry, a Google Docs "make a copy" link
+  (`https://docs.google.com/document/d/<id>/copy`; the build accepts nothing else, and only in articles). The box
+  is then called "Vorlagen": each form offers two clearly labelled ways, "Auf Papier" (PDF, print, pen) and
+  "Am Handy oder PC" (own copy in Google Drive, Google account needed), followed by step-by-step instructions.
+  Printouts only for reading or cutting out stay PDF only, under "Nur zum Ausdrucken". The masters live in the owner's
   Drive folder "Compi Dompi GmbH" › "Vorstellungsgespräch – Vorlagen": inherited sharing is off (course members are
   editors of the parent folder), anyone with the link can view, only the owner edits. Change a master there, not
   by re-creating it, so the links stay the same; keep the PDF in `materials/` in step with it.

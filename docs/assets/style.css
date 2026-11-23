@@ -484,7 +484,20 @@ main a.btn { color: #fff; }
 .dateiliste { list-style: none; padding: 0; margin: 0; }
 .dateiliste li { padding: 0.6rem 0; border-top: 1px solid var(--line); }
 .dateiliste a { font-weight: 650; }
-.dateiliste a.online { display: inline-flex; align-items: center; min-height: 2.75rem; margin-top: 0.15rem; }
+.downloads h3 { margin: 1.2rem 0 0.4rem; font-size: 1.05rem; }
+.formulare { list-style: none; padding: 0; margin: 0 0 0.6rem; }
+.formular { padding: 0.8rem 0; border-top: 1px solid var(--line); }
+.formular > strong { display: block; font-size: 1.05rem; }
+.formular > .hinweis { display: block; margin: 0.15rem 0 0.6rem; }
+.zwei-wege { display: grid; gap: 0.6rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+.weg { display: flex; flex-direction: column; gap: 0.15rem; min-height: 2.75rem; padding: 0.7rem 0.9rem; border: 1.5px solid var(--ton-rand);
+  border-radius: 12px; background: var(--ton-soft); color: var(--fg); text-decoration: none; }
+.weg strong { color: var(--ton); font-size: 1.02rem; }
+.weg span { font-size: 0.92rem; line-height: 1.4; }
+.weg .typ { color: var(--muted); font-size: 0.82rem; }
+.weg:hover, .weg:focus-visible { border-color: var(--ton); }
+.so-gehts { margin: 0.3rem 0 0.6rem; padding-left: 1.4rem; }
+.so-gehts li { margin: 0.25rem 0; }
 .typ { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
 .dateiname { font-family: ui-monospace, Consolas, monospace; font-size: 0.85rem; color: var(--muted); overflow-wrap: anywhere; }
 .einzeln { margin: 0.4rem 0 0.2rem; }

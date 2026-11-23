@@ -34,7 +34,6 @@ dateien:
     titel: "Checkliste: Vor, am und nach dem Tag"
     text: "Eine Seite zum Abhaken – mit Platz für Uhrzeit, Adresse und Ansprechperson."
   - datei: materials/vorstellungsgespraech/fragenkarten.pdf
-    online: "https://docs.google.com/document/d/1VZBPtKxsqFnjzrDDLXhy1vMxTZsSDO1v600-iLAmWYs/copy"
     titel: "Fragenkarten zum Ausschneiden"
     text: "24 Karten: Fragen der Firma, Joker „Verbotene Frage!“ und Fragen, die Sie selbst stellen können."
   - datei: materials/vorstellungsgespraech/arbeitsblatt-pitch.pdf
@@ -80,7 +79,7 @@ quelle: "Eigener Artikel auf Wunsch der Kursleitung, geprüft an Gesetzestexten 
 - **Mindestziel für alle:** einen eigenen Pitch (3 Sätze) sagen können und eine verbotene Frage erkennen.
 - **Lotsen:** Wer schnell ist, hilft beim Pitch zuerst den anderen und spielt im Rollenspiel die Personalerin oder den Personaler.
 - **Vorher drucken:** Checkliste (1 pro Person), Arbeitsblatt (1 pro Person), Fragenkarten (1 Satz pro 3 Personen, ausschneiden), Beobachtungsbogen (3 pro Gruppe).
-- **Ohne Drucker:** Jede Vorlage gibt es auch online („Online ausfüllen“ im Kasten unten). Google legt dann eine eigene Kopie im Drive der Person an – dafür braucht man ein Google-Konto. Die Originale im Drive-Ordner kann nur die Kursleitung ändern.
+- **Ohne Drucker:** Die drei Formulare (Checkliste, Arbeitsblatt, Beobachtungsbogen) gibt es auch für Handy und PC („In Google Docs speichern“ im Kasten „Vorlagen“). Google legt dann eine eigene Kopie im Drive der Person an – dafür braucht man ein Google-Konto. Die Originale im Drive-Ordner kann nur die Kursleitung ändern. Die Fragenkarten gibt es nur als PDF zum Ausschneiden.
 - **Behutsam:** Manche haben schlechte Erfahrungen mit Diskriminierung. Niemand muss eigene Erlebnisse erzählen. Bei allen Beispielen sind Namen und Firmen **erfunden**.
 :::
 
@@ -335,8 +334,7 @@ In Deutschland schützt das **Allgemeine Gleichbehandlungsgesetz (AGG)** vor **D
 
 ### Fahrtkosten {#fahrtkosten}
 
-- **Die Firma hat Sie eingeladen?** Dann muss sie Ihre notwendigen Fahrtkosten [**Fahrt**·kos·ten]{.aussprache} in der Regel **erstatten** – auch wenn Sie die Stelle nicht bekommen. **Ausnahme:** Die Firma schreibt **vorher** klar, zum Beispiel in der Einladung, dass sie keine Kosten übernimmt. Fragen Sie im Zweifel nach und heben Sie die **Fahrkarten** auf.
-- **Die Firma zahlt nicht?** Wenn Sie bei der Agentur für Arbeit oder beim Jobcenter gemeldet sind, gibt es oft Geld aus dem **Vermittlungsbudget** [Ver·**mitt**·lungs·bü·dschee]{.aussprache}: für Fahrkarten und, wenn nötig, eine Übernachtung. Einen festen Anspruch darauf gibt es nicht.
+- **Sind Sie bei der Agentur für Arbeit oder beim Jobcenter gemeldet?** Dann gibt es für Ihre Fahrtkosten [**Fahrt**·kos·ten]{.aussprache} oft Geld aus dem **Vermittlungsbudget** [Ver·**mitt**·lungs·bü·dschee]{.aussprache}: für Fahrkarten und, wenn nötig, eine Übernachtung. Einen festen Anspruch darauf gibt es nicht.
 - **Wichtig:** Den Antrag stellen Sie **vor** der Fahrt – für jedes Gespräch neu. Danach ist es zu spät.
 
 ### Gehalt {#gehalt}
@@ -487,7 +485,7 @@ Schreiben Sie danach: „Stelle mir jetzt 3 schwierige Fragen zu meinen Schwäch
 - **Frage an die Gruppe:** „Wie haben Sie auf die Joker-Karte reagiert?“ – Gute Antwort: **ruhig bleiben, höflich zurück zur Arbeit lenken.**
 :::
 
-Sie brauchen die **Fragenkarten** und den **Beobachtungsbogen** ([unten: auf Papier oder online](#ausdrucken)). Es gibt drei Rollen:
+Sie brauchen die **Fragenkarten** und den **Beobachtungsbogen** ([unten bei den Vorlagen](#ausdrucken)). Es gibt drei Rollen:
 
 - **Personalerin oder Personaler:** begrüßt, stellt 5 oder 6 Fragen von den Karten und **einmal eine Joker-Karte** („Verbotene Frage!“). Am Ende: „Haben Sie noch Fragen an uns?“
 - **Bewerberin oder Bewerber:** stellt sich mit dem Pitch vor, antwortet, reagiert auf die verbotene Frage und stellt 2 eigene Fragen.
@@ -626,7 +624,7 @@ Die wichtigsten Wörter zuerst. Mehr Wörter finden Sie darunter.
 :   Die Zeit zwischen Kündigung und letztem Arbeitstag. *Wegen meiner Kündigungsfrist kann ich erst im März anfangen.*
 
 **die Fahrtkosten** (nur Plural) [**Fahrt**·kos·ten]{.aussprache}
-:   Das Geld für die Reise, zum Beispiel für Bus- und Bahnkarten. *Die Firma erstattet meine Fahrtkosten.*
+:   Das Geld für die Reise, zum Beispiel für Bus- und Bahnkarten. *Das Jobcenter übernimmt meine Fahrtkosten.*
 
 **das Vermittlungsbudget** [Ver·**mitt**·lungs·bü·dschee]{.aussprache}
 :   Geld von der Agentur für Arbeit oder vom Jobcenter für die Jobsuche, zum Beispiel für Fahrkarten. *Er beantragt Geld aus dem Vermittlungsbudget – vor der Fahrt.*
@@ -680,7 +678,7 @@ Die Frage ist **verboten**. Sie müssen **nicht antworten** und dürfen sogar **
 <details>
 <summary>Wann beantragen Sie Fahrtkosten bei der Agentur für Arbeit oder beim Jobcenter?</summary>
 
-**Vor** der Fahrt zum Gespräch – und für **jedes** Gespräch neu. Nachträglich wird nichts bezahlt. Hat die Firma Sie eingeladen, muss oft auch sie die Kosten erstatten.
+**Vor** der Fahrt zum Gespräch – und für **jedes** Gespräch neu. Nachträglich wird nichts bezahlt.
 
 </details>
 
@@ -700,7 +698,6 @@ Nicht persönlich nehmen, aus dem Gespräch **lernen** (Notizen) und höflich na
 - [Diskriminierung im Arbeitsleben](https://www.antidiskriminierungsstelle.gov.de/DE/ueber-diskriminierung/lebensbereiche/arbeitsleben/arbeitsleben-node.html) und [Beratungsstellen in Ihrer Nähe finden](https://www.antidiskriminierungsstelle.gov.de/DE/wir-beraten-sie/andere_beratungsstellen_finden_advd/beratungsstellenlandkarte_advd_node.html) (Antidiskriminierungsstelle des Bundes)
 - [§ 15 AGG – Entschädigung, Frist von 2 Monaten](https://www.gesetze-im-internet.de/agg/__15.html) und [§ 22 AGG – Beweislast](https://www.gesetze-im-internet.de/agg/__22.html)
 - [§ 4a AufenthG – Arbeitgeber prüfen die Erlaubnis zur Arbeit](https://www.gesetze-im-internet.de/aufenthg_2004/__4a.html)
-- [Bewerbung: Diese Kosten werden erstattet](https://www.igmetall.de/service/ratgeber/bewerbung-diese-kosten-werden-erstattet) (IG Metall)
 - [Vermittlungsbudget – Fahrtkosten vor dem Gespräch beantragen](https://www.arbeitsagentur.de/vermittlungsbudget) (Bundesagentur für Arbeit) und [§ 44 SGB III](https://www.gesetze-im-internet.de/sgb_3/__44.html)
 - [§ 159 SGB III – Sperrzeit, auch wenn ein Vorstellungsgespräch verhindert wird](https://www.gesetze-im-internet.de/sgb_3/__159.html)
 - [Förderung einer Probearbeit – vorher genehmigen lassen](https://www.arbeitsagentur.de/vor-ort/datei/flyer-foerderung-probearbeit_ba211642.pdf) (Bundesagentur für Arbeit)

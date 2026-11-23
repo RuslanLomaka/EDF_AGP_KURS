@@ -55,7 +55,7 @@ const checkliste = seite('Checkliste Vorstellungsgespräch', `
 <div class="spalten">
 <div>
 <h2>Ein paar Tage vorher</h2>
-${haken(['Stellenanzeige gelesen: Was <b>muss</b> ich können?', 'Website der Firma angesehen', 'Pitch geübt – 60 Sekunden, ohne Zettel', '3 Stärken – jede mit einem Beispiel', '1 kleine Schwäche – und mein Plan dagegen', '2 oder 3 STAR-Geschichten vorbereitet', '3 eigene Fragen an die Firma notiert', 'Gehalt im Entgeltatlas nachgesehen (brutto)', 'Fahrtkosten: Firma gefragt – oder <b>vor</b> der Fahrt bei Agentur für Arbeit / Jobcenter beantragt'])}
+${haken(['Stellenanzeige gelesen: Was <b>muss</b> ich können?', 'Website der Firma angesehen', 'Pitch geübt – 60 Sekunden, ohne Zettel', '3 Stärken – jede mit einem Beispiel', '1 kleine Schwäche – und mein Plan dagegen', '2 oder 3 STAR-Geschichten vorbereitet', '3 eigene Fragen an die Firma notiert', 'Gehalt im Entgeltatlas nachgesehen (brutto)', 'Fahrtkosten <b>vor</b> der Fahrt bei der Agentur für Arbeit oder beim Jobcenter beantragt'])}
 <h2>Am Tag davor</h2>
 ${haken(['Weg geplant – mit 30 Minuten Puffer', 'Mappe: Lebenslauf, Anschreiben, Zeugnisse (Kopien)', 'Übersetzungen und Bescheid über die Anerkennung', 'Ausweis und Aufenthaltstitel', 'Notizzettel und Stift', 'Kleidung bereitgelegt', 'Handy geladen, Wecker gestellt', 'Video: Link, Kamera, Mikrofon getestet'])}
 </div>

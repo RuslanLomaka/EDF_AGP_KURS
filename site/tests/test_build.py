@@ -461,7 +461,8 @@ gruppen:
         self.assertTrue((dist / "dateien" / "blatt.pdf").is_file())
         self.assertIn('href="/artikel/demo-artikel/dateien/blatt.pdf"', html)
         self.assertIn('href="https://docs.google.com/document/d/abc_DEF-123/copy"', html)
-        self.assertIn("drucken oder online ausfüllen", html)
+        self.assertIn("Am Handy oder PC", html)
+        self.assertIn(">Vorlagen</h2>", html)
         self.assertIn('href="/artikel/demo-artikel/dateien/blatt.pdf"', (dist / "teacher" / "index.html").read_text())
 
     def test_32_online_link_must_be_a_copy_link(self):

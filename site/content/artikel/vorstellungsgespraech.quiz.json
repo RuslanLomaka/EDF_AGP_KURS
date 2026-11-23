@@ -194,30 +194,6 @@
       ]
     },
     {
-      "question": "Eine Firma lädt Sie zum Gespräch ein. Muss sie Ihre Fahrtkosten bezahlen?",
-      "answers": [
-        {
-          "text": "Meistens ja – außer, sie hat es vorher ausgeschlossen",
-          "correct": true
-        },
-        {
-          "text": "Nein, die Fahrt zahlen Bewerber selbst",
-          "correct": false
-        },
-        {
-          "text": "Ja, aber erst, wenn Sie den Vertrag unterschreiben",
-          "correct": false
-        }
-      ],
-      "explanation": "Wer einlädt, muss die nötigen Kosten in der Regel erstatten – auch bei einer Absage. Es sei denn, die Firma schreibt vorher, dass sie nicht zahlt.",
-      "sources": [
-        {
-          "title": "IG Metall: Bewerbung – diese Kosten werden erstattet",
-          "url": "https://www.igmetall.de/service/ratgeber/bewerbung-diese-kosten-werden-erstattet"
-        }
-      ]
-    },
-    {
       "question": "Wie hoch ist der gesetzliche Mindestlohn im Jahr 2026?",
       "answers": [
         {

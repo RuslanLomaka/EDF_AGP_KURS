@@ -1069,20 +1069,10 @@ def write_article(a, lehrer, serie, weiter, mehr, nav):
     if m:
         inhalt, quellen = inhalt[:m.start()], f'<section class="quellen inhalt">{inhalt[m.start():]}</section>'
     # printable files (front matter 'dateien'): absolute links, so the teacher page reaches them too
-    ausdrucken, ausdrucken_titel = "", "Zum Ausdrucken"
+    ausdrucken, ausdrucken_titel = "", ""
     if a["dateien"]:
-        dateien = file_list(a, a["dateien"], a["url"] + "dateien/")
-        hinweis = ""
-        if any(d["online"] for d in a["dateien"]):
-            ausdrucken_titel = "Vorlagen: drucken oder online ausfüllen"
-            hinweis = ('<p>Zwei Wege: Öffnen Sie das <strong>PDF</strong>, drucken Sie es und schreiben Sie mit dem Stift. '
-                       'Oder füllen Sie die Vorlage <strong>online</strong> aus: Google erstellt eine Kopie in Ihrem '
-                       'eigenen Google Drive. Dafür brauchen Sie ein Google-Konto. Ihre Kopie sehen nur Sie, solange '
-                       'Sie sie nicht teilen.'
-                       + (' Wie Google Docs funktioniert, zeigt die <a href="/edv-kurs/google-docs/">Lektion zu '
-                          'Google Docs</a>.' if "/edv-kurs/google-docs/" in SEITEN else "") + '</p>')
-        ausdrucken = (f'<section class="downloads"><h2 id="ausdrucken">{ausdrucken_titel}</h2>{hinweis}{dateien}'
-                      f'</section>')
+        ausdrucken_titel, dateien = vorlagen(a)
+        ausdrucken = f'<section class="downloads"><h2 id="ausdrucken">{ausdrucken_titel}</h2>{dateien}</section>'
     extra = ([("ausdrucken", ausdrucken_titel)] if ausdrucken else []) + [("quiz", "Quiz")] \
         + ([("quellen", "Quellen")] if quellen else [])
     chips = "".join(f'<li><a href="/artikel/?q={quote(k)}">{esc(k)}</a></li>' for k in a["stichwoerter"])
@@ -1251,6 +1241,8 @@ def _load_one_lesson(path):
         if not DATEINAME.fullmatch(p["name"]) or not p["name"].endswith(".zip"):
             fail(path, f"paket name '{p['name']}' must be a plain file name ending in .zip")
         l["paket"] = {"name": p["name"], "titel": p["titel"], "dateien": [repo_file(path, f) for f in p["dateien"]]}
+    if any(d["online"] for d in l["dateien"] + l["lehrkraft"]):
+        fail(path, "'online' (Google Docs copy) is only supported for article printouts")
     names = [d["src"].name for d in l["dateien"] + l["lehrkraft"]] + ([l["paket"]["name"]] if l["paket"] else [])
     dupes = sorted({n for n in names if names.count(n) > 1})
     if dupes:
@@ -1311,10 +1303,50 @@ def file_list(seite, items, basis="dateien/"):
         rows.append(f'<li><a href="{basis}{src.name}"{dl}>{esc(item["titel"])}</a> '
                     f'<span class="typ">{esc(typ)} · {groesse(src.stat().st_size)}</span>'
                     f'<br><span class="dateiname">{src.name}</span>'
-                    f'<br><span class="hinweis">{esc(item["text"])}</span>'
-                    + (f'<br><a class="online" href="{esc(item["online"])}">Online ausfüllen: Kopie in Google Docs</a>'
-                       if item.get("online") else "") + '</li>')
+                    f'<br><span class="hinweis">{esc(item["text"])}</span></li>')
     return f'<ul class="dateiliste">{"".join(rows)}</ul>'
+
+
+def vorlagen(a):
+    """An article's printouts. Forms ('online' set) offer two ways: the PDF for paper and pen, or an own copy in
+    Google Docs to fill in on a phone or PC. Everything else is a plain PDF for reading, printing or cutting out."""
+    basis = a["url"] + "dateien/"
+    formulare = [d for d in a["dateien"] if d["online"]]
+    andere = [d for d in a["dateien"] if not d["online"]]
+    if not formulare:
+        return "Zum Ausdrucken", file_list(a, andere, basis)
+    karten = []
+    for d in formulare:
+        src = d["src"]
+        copy_download(a, src)
+        karten.append(
+            f'<li class="formular"><strong>{esc(d["titel"])}</strong><span class="hinweis">{esc(d["text"])}</span>'
+            f'<span class="zwei-wege">'
+            f'<a class="weg" href="{basis}{src.name}"><strong>Auf Papier</strong>'
+            f'<span>PDF öffnen, ausdrucken und mit dem Stift ausfüllen</span>'
+            f'<span class="typ">PDF · {groesse(src.stat().st_size)}</span></a>'
+            f'<a class="weg" href="{esc(d["online"])}"><strong>Am Handy oder PC</strong>'
+            f'<span>In Ihrem Google Drive speichern, dort schreiben und für später aufheben</span>'
+            f'<span class="typ">Google Docs · Google-Konto nötig</span></a></span></li>')
+    lektion = ('<p>Mehr über Google Docs lernen Sie in der <a href="/edv-kurs/google-docs/">Lektion zu Google Docs</a>.</p>'
+               if "/edv-kurs/google-docs/" in SEITEN else "")
+    html_text = (
+        '<h3>Formulare zum Ausfüllen</h3>'
+        '<p>Jedes Formular können Sie auf <strong>zwei Wegen</strong> ausfüllen. Wählen Sie einen:</p>'
+        f'<ul class="formulare">{"".join(karten)}</ul>'
+        '<h3>So geht „Am Handy oder PC“</h3>'
+        '<ol class="so-gehts">'
+        '<li>Tippen Sie beim Formular auf <strong>Am Handy oder PC</strong>.</li>'
+        '<li>Fragt Google nach Ihrem Konto? Melden Sie sich mit Ihrem Google-Konto an.</li>'
+        '<li>Google fragt: „Dokument kopieren?“ Tippen Sie auf <strong>Kopie erstellen</strong>.</li>'
+        '<li>Jetzt gehört das Formular <strong>Ihnen</strong>. Schreiben Sie hinein – Google speichert alles von selbst.</li>'
+        '<li>Später finden Sie es in Google Drive unter <strong>Meine Ablage</strong>. Der Name beginnt mit '
+        '„Kopie von …“.</li></ol>'
+        '<p>Ihre Kopie sehen nur Sie, solange Sie sie nicht teilen. Die Vorlage selbst bleibt unverändert.</p>'
+        + lektion)
+    if andere:
+        html_text += '<h3>Nur zum Ausdrucken</h3>' + file_list(a, andere, basis)
+    return "Vorlagen", html_text
 
 
 def zip_button(lesson):

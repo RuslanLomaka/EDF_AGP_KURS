@@ -12,11 +12,12 @@ Four A4 PDFs for the article `site/content/artikel/vorstellungsgespraech.md`, wh
 
 ## Online versions (Google Docs)
 
-Each PDF also exists as an editable Google Doc in the owner's Drive folder "Compi Dompi GmbH" ›
-"Vorstellungsgespräch – Vorlagen" (anyone with the link can view; only the owner can edit). The article links to
-each doc's `/copy` address, so learners get their own copy in their Drive instead of editing the master. The docs
-are built for typing (empty table cells, clickable checkboxes) rather than as a copy of the PDF layout. When a text
-changes, change it in both places.
+The three forms (checklist, worksheet, observation sheet) also exist as editable Google Docs in the owner's
+Drive folder "Compi Dompi GmbH" › "Vorstellungsgespräch – Vorlagen" (anyone with the link can view; only the owner
+can edit). The article links to each doc's `/copy` address, so learners get their own copy in their Drive instead
+of editing the master. The question cards are for reading and cutting out, so the article offers them as PDF only;
+their Google Doc stays in the folder for the teacher, unlinked. The docs are built for typing (empty table cells,
+clickable checkboxes) rather than as a copy of the PDF layout. When a text changes, change it in both places.
 
 ## Rebuilding
 
