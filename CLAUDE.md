@@ -22,8 +22,8 @@ site/
   content/edv-kurs/*.md       interactive lessons; content/edv-kurs/bilder/ holds their images
   themen.yaml                 allowed article topics, in display order
   content/artikel/*.quiz.json  one quiz per article (Quiz Forger JSON format)
-  assets/                     style.css, suche.js (article list + search), lektion.js (lesson steps, copy buttons,
-                              quick navigation), quiz.js (quizzes and tests), uebung.js (exercises),
+  assets/                     style.css, suche.js (article list + search), lektion.js (lesson steps, quick
+                              navigation), kopieren.js (copy buttons of prompt/vorlage boxes), quiz.js (quizzes and tests), uebung.js (exercises),
                               animation.js (slide-in and confetti), hinweis.js (short privacy notice once a day),
                               vorlesen.js (reading aloud), stand.js ("Weiter bei"), jetzt.js (teacher "Jetzt" bar),
                               stillepost.js (Stille Post start in lesson 4)
@@ -33,6 +33,7 @@ docs/                         generated GitHub Pages copy of the site; never edi
 materials/serienbrief/        files of lesson 1; README.md explains them; generator/build_kit.sh rebuilds them
 materials/bewerbungshelfer/   lesson 2: Go source of the Windows program (programm/), Excel list, Word template;
                               build_exe.sh builds Bewerbungen_erstellen.exe (CI does; needed before a local build)
+materials/vorstellungsgespraech/  printouts of the article on job interviews; generator/erstellen.cjs rebuilds them
 entwuerfe/                    own-words notes on handouts not yet turned into articles (not published)
 deploy/                       compose.yaml + nginx.conf for the web server on the Pi
 .github/workflows/deploy.yml  build on every push, deploy from main
@@ -226,7 +227,10 @@ front matter.
 - There is no handout text to separate from additions, so use no `::: ergaenzung` boxes; use `::: info` for tips
   and `::: achtung` for warnings. Put deadlines and "what to do now" in an `::: achtung` box near the top.
 - Keep each part short for B1 readers: about 10 glossary words, 5 own questions, 10 quiz questions; split a big
-  topic into a series instead of writing one long article.
+  topic into a series instead of writing one long article (unless the owner asks for one article).
+- **Printouts and tasks work in articles too:** front matter `dateien` (same format as for lessons, files in
+  `materials/<slug>/`) adds a "Zum Ausdrucken" box before the quiz; `::: prompt` and `::: vorlage` get a copy
+  button; tasks use `<p class="zeit">` like lessons. Example: `vorstellungsgespraech.md`.
 
 **Batches of photos.** The owner sends groups of photos and says when to start. Then:
 - first save one own-words note per handout in `entwuerfe/NN-<slug>.md` and push it (photos in the chat may

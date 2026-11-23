@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Darf die Firma das fragen? Eine Ampel. Grün, erlaubt: Ausbildung, Erfahrung, Deutsch, Arbeitszeit, Arbeitserlaubnis. Gelb, nur wenn es für die Stelle wichtig ist: Führerschein, Vorstrafen, Gesundheit. Rot, verboten: Schwangerschaft, Kinderwunsch, Heirat, Religion, Herkunft. Verbotene Fragen müssen Sie nicht ehrlich beantworten.</title>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="30" font-size="22" fill="#1f4e79" text-anchor="middle" font-weight="700">Darf die Firma das fragen?</text>
+<rect x="20" y="50" width="76" height="300" rx="20" fill="#1d232b"/>
+<circle cx="58" cy="100" r="32" fill="#2e7d32"/>
+<rect x="110" y="54" width="274" height="92" rx="12" fill="#e6f4ea"/>
+<text x="122" y="76" font-size="18" fill="#2e7d32" text-anchor="start" font-weight="700">Erlaubt</text>
+<text x="122" y="97" font-size="15" fill="#1d232b" text-anchor="start">Ausbildung, Erfahrung</text>
+<text x="122" y="115" font-size="15" fill="#1d232b" text-anchor="start">Deutsch, Arbeitszeit</text>
+<text x="122" y="133" font-size="15" fill="#1d232b" text-anchor="start">Arbeitserlaubnis</text>
+<circle cx="58" cy="200" r="32" fill="#f5c518"/>
+<rect x="110" y="154" width="274" height="92" rx="12" fill="#fff3df"/>
+<text x="122" y="176" font-size="16" fill="#b26a00" text-anchor="start" font-weight="700">Nur wenn wichtig für die Stelle</text>
+<text x="122" y="197" font-size="15" fill="#1d232b" text-anchor="start">Führerschein</text>
+<text x="122" y="215" font-size="15" fill="#1d232b" text-anchor="start">Vorstrafen</text>
+<text x="122" y="233" font-size="15" fill="#1d232b" text-anchor="start">Gesundheit</text>
+<circle cx="58" cy="300" r="32" fill="#c0392b"/>
+<rect x="110" y="254" width="274" height="92" rx="12" fill="#fdecea"/>
+<text x="122" y="276" font-size="18" fill="#c0392b" text-anchor="start" font-weight="700">Verboten</text>
+<text x="122" y="297" font-size="15" fill="#1d232b" text-anchor="start">Schwangerschaft, Heirat,</text>
+<text x="122" y="315" font-size="15" fill="#1d232b" text-anchor="start">Kinderwunsch, Religion,</text>
+<text x="122" y="333" font-size="15" fill="#1d232b" text-anchor="start">Herkunft</text>
+<text x="200" y="376" font-size="15" fill="#c0392b" text-anchor="middle" font-weight="700">Verbotene Fragen müssen Sie</text>
+<text x="200" y="395" font-size="15" fill="#c0392b" text-anchor="middle" font-weight="700">nicht ehrlich beantworten.</text>
+</svg>

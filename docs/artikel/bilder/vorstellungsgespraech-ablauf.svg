@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">So läuft ein Vorstellungsgespräch ab, oft in 30 bis 60 Minuten. 1: Begrüßung und Small Talk, zum Beispiel „Haben Sie gut hergefunden?“. 2: Die Firma stellt sich vor – gut zuhören, Notizen machen. 3: Sie stellen sich vor, 1 bis 2 Minuten: heute, früher, Ziel. 4: Fragen an Sie – Erfahrung, Stärken, Beispiele. 5: Ihre Fragen – so zeigen Sie Interesse. 6: Abschluss – Wie geht es weiter? Danke! Bei 3 und 5 sprechen vor allem Sie.</title>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="30" font-size="22" fill="#1f4e79" text-anchor="middle" font-weight="700">So läuft das Gespräch ab</text>
+<text x="200" y="52" font-size="15" fill="#5b6672" text-anchor="middle">oft 30 bis 60 Minuten</text>
+<line x1="40" y1="84" x2="40" y2="334" stroke="#cfe0f1" stroke-width="4"/>
+<circle cx="40" cy="84" r="17" fill="#ffffff" stroke="#1f4e79" stroke-width="3"/>
+<text x="40" y="90" font-size="17" fill="#1f4e79" text-anchor="middle" font-weight="700">1</text>
+<text x="70" y="82" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">Begrüßung und Small Talk</text>
+<text x="70" y="102" font-size="15" fill="#5b6672" text-anchor="start">„Haben Sie gut hergefunden?“</text>
+<circle cx="40" cy="134" r="17" fill="#ffffff" stroke="#1f4e79" stroke-width="3"/>
+<text x="40" y="140" font-size="17" fill="#1f4e79" text-anchor="middle" font-weight="700">2</text>
+<text x="70" y="132" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">Die Firma stellt sich vor</text>
+<text x="70" y="152" font-size="15" fill="#5b6672" text-anchor="start">Gut zuhören, Notizen machen</text>
+<circle cx="40" cy="184" r="17" fill="#1f4e79" stroke="#1f4e79" stroke-width="3"/>
+<text x="40" y="190" font-size="17" fill="#ffffff" text-anchor="middle" font-weight="700">3</text>
+<text x="70" y="182" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">Sie stellen sich vor</text>
+<text x="70" y="202" font-size="15" fill="#1f4e79" text-anchor="start">1 bis 2 Minuten: heute, früher, Ziel</text>
+<circle cx="40" cy="234" r="17" fill="#ffffff" stroke="#1f4e79" stroke-width="3"/>
+<text x="40" y="240" font-size="17" fill="#1f4e79" text-anchor="middle" font-weight="700">4</text>
+<text x="70" y="232" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">Fragen an Sie</text>
+<text x="70" y="252" font-size="15" fill="#5b6672" text-anchor="start">Erfahrung, Stärken, Beispiele</text>
+<circle cx="40" cy="284" r="17" fill="#1f4e79" stroke="#1f4e79" stroke-width="3"/>
+<text x="40" y="290" font-size="17" fill="#ffffff" text-anchor="middle" font-weight="700">5</text>
+<text x="70" y="282" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">Ihre Fragen</text>
+<text x="70" y="302" font-size="15" fill="#1f4e79" text-anchor="start">So zeigen Sie Interesse</text>
+<circle cx="40" cy="334" r="17" fill="#ffffff" stroke="#1f4e79" stroke-width="3"/>
+<text x="40" y="340" font-size="17" fill="#1f4e79" text-anchor="middle" font-weight="700">6</text>
+<text x="70" y="332" font-size="17" fill="#1d232b" text-anchor="start" font-weight="700">Abschluss</text>
+<text x="70" y="352" font-size="15" fill="#5b6672" text-anchor="start">Wie geht es weiter? Danke!</text>
+<text x="200" y="388" font-size="15" fill="#1f4e79" text-anchor="middle" font-weight="700">Blau: Hier sprechen vor allem Sie.</text>
+</svg>

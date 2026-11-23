@@ -598,6 +598,8 @@ def layout(title, active, main, description="", scripts=(), noindex=False, farbe
         scripts = (*scripts, "uebung.js")
     if 'class="stillepost"' in main:
         scripts = (*scripts, "stillepost.js")
+    if 'class="prompt"' in main or 'class="vorlage"' in main:
+        scripts = (*scripts, "kopieren.js")
     script_tags = "".join(f'<script src="{asset(s)}"></script>'
                           for s in ("kern.js", "hinweis.js", "animation.js", *scripts))
     return f"""<!doctype html>
@@ -810,7 +812,12 @@ def _load_one_article(path, themen, vorleser):
         "datum": datum_of(path, meta),
         "stichwoerter": text_list(path, meta, "stichwoerter"),
         "reihenfolge": meta.get("reihenfolge", 0),
+        "bereich": "artikel",
+        "dateien": download_list(path, meta, "dateien"),
     }
+    namen = [d["src"].name for d in a["dateien"]]
+    if len(set(namen)) < len(namen):
+        fail(path, "two downloads in 'dateien' have the same file name")
     if a["thema"] not in themen:
         fail(path, f"thema '{a['thema']}' is not in site/themen.yaml (add it there first)")
     if not isinstance(a["reihenfolge"], int) or isinstance(a["reihenfolge"], bool):
@@ -1059,7 +1066,13 @@ def write_article(a, lehrer, serie, weiter, mehr, nav):
     m = re.search(r'<h2 id="quellen">', inhalt)
     if m:
         inhalt, quellen = inhalt[:m.start()], f'<section class="quellen inhalt">{inhalt[m.start():]}</section>'
-    extra = [("quiz", "Quiz")] + ([("quellen", "Quellen")] if quellen else [])
+    # printable files (front matter 'dateien'): absolute links, so the teacher page reaches them too
+    ausdrucken = ""
+    if a["dateien"]:
+        dateien = file_list(a, a["dateien"], a["url"] + "dateien/")
+        ausdrucken = f'<section class="downloads"><h2 id="ausdrucken">Zum Ausdrucken</h2>{dateien}</section>'
+    extra = ([("ausdrucken", "Zum Ausdrucken")] if ausdrucken else []) + [("quiz", "Quiz")] \
+        + ([("quellen", "Quellen")] if quellen else [])
     chips = "".join(f'<li><a href="/artikel/?q={quote(k)}">{esc(k)}</a></li>' for k in a["stichwoerter"])
     stand = a["datum"][:4] if a["datum"] else str(date.today().year)
     meta_line = " · ".join(x for x in [esc(a["thema"]), datum_kurz(a["datum"]), f"ca. {a['minuten']} Min. Lesezeit"] if x)
@@ -1071,6 +1084,7 @@ def write_article(a, lehrer, serie, weiter, mehr, nav):
 <article class="inhalt">
 {inhalt}
 </article>
+{ausdrucken}
 {quiz_section(a['quiz'])}
 {quellen}
 {weiter}
@@ -1262,21 +1276,22 @@ def lesson_meta(lesson):
     return " · ".join(esc(x) for x in [f"Lektion {lesson['nummer']}", lesson["dauer"], lesson["niveau"]] if x)
 
 
-def copy_download(lesson, src):
-    dest = DIST / "edv-kurs" / lesson["slug"] / "dateien" / src.name
+def copy_download(seite, src):
+    """seite: a lesson, or an article ('bereich': 'artikel'); files land in <bereich>/<slug>/dateien/."""
+    dest = DIST / seite.get("bereich", "edv-kurs") / seite["slug"] / "dateien" / src.name
     dest.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy(src, dest)
     return dest
 
 
-def file_list(lesson, items):
+def file_list(seite, items, basis="dateien/"):
     rows = []
     for item in items:
         src = item["src"]
-        copy_download(lesson, src)
+        copy_download(seite, src)
         typ = TYP.get(src.suffix.lower(), src.suffix.lstrip(".").upper())
         dl = "" if src.suffix.lower() == ".pdf" else " download"  # PDFs open in the browser
-        rows.append(f'<li><a href="dateien/{src.name}"{dl}>{esc(item["titel"])}</a> '
+        rows.append(f'<li><a href="{basis}{src.name}"{dl}>{esc(item["titel"])}</a> '
                     f'<span class="typ">{esc(typ)} · {groesse(src.stat().st_size)}</span>'
                     f'<br><span class="dateiname">{src.name}</span>'
                     f'<br><span class="hinweis">{esc(item["text"])}</span></li>')

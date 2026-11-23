@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t">
+<title id="t">Die STAR-Methode: So erzählen Sie ein Beispiel. S wie Situation – Was war los? „Eine Kollegin war krank.“ T wie Aufgabe – Was sollten Sie tun? „Ich war allein im Laden.“ A wie Aktion – Was haben Sie gemacht? „Ich habe einen Plan gemacht.“ R wie Resultat – Was war das Ergebnis? „Um 18 Uhr war alles fertig.“</title>
+<rect width="400" height="400" fill="#ffffff"/>
+<text x="200" y="30" font-size="22" fill="#1f4e79" text-anchor="middle" font-weight="700">Die STAR-Methode</text>
+<text x="200" y="52" font-size="15" fill="#5b6672" text-anchor="middle">So erzählen Sie ein Beispiel</text>
+<rect x="16" y="66" width="368" height="72" rx="12" fill="#e8f0f8"/>
+<rect x="26" y="74" width="56" height="56" rx="10" fill="#1f4e79"/>
+<text x="54" y="113" font-size="34" fill="#ffffff" text-anchor="middle" font-weight="700">S</text>
+<text x="96" y="96" font-size="17" fill="#1d232b"><tspan font-weight="700">Situation</tspan> – Was war los?</text>
+<text x="96" y="121" font-size="15" fill="#5b6672" text-anchor="start" font-style="italic">„Eine Kollegin war krank.“</text>
+<rect x="16" y="148" width="368" height="72" rx="12" fill="#e8f0f8"/>
+<rect x="26" y="156" width="56" height="56" rx="10" fill="#1f4e79"/>
+<text x="54" y="195" font-size="34" fill="#ffffff" text-anchor="middle" font-weight="700">T</text>
+<text x="96" y="178" font-size="17" fill="#1d232b"><tspan font-weight="700">Aufgabe</tspan> – Was sollten Sie tun?</text>
+<text x="96" y="203" font-size="15" fill="#5b6672" text-anchor="start" font-style="italic">„Ich war allein im Laden.“</text>
+<rect x="16" y="230" width="368" height="72" rx="12" fill="#e8f0f8"/>
+<rect x="26" y="238" width="56" height="56" rx="10" fill="#1f4e79"/>
+<text x="54" y="277" font-size="34" fill="#ffffff" text-anchor="middle" font-weight="700">A</text>
+<text x="96" y="260" font-size="17" fill="#1d232b"><tspan font-weight="700">Aktion</tspan> – Was haben Sie gemacht?</text>
+<text x="96" y="285" font-size="15" fill="#5b6672" text-anchor="start" font-style="italic">„Ich habe einen Plan gemacht.“</text>
+<rect x="16" y="312" width="368" height="72" rx="12" fill="#e8f0f8"/>
+<rect x="26" y="320" width="56" height="56" rx="10" fill="#1f4e79"/>
+<text x="54" y="359" font-size="34" fill="#ffffff" text-anchor="middle" font-weight="700">R</text>
+<text x="96" y="342" font-size="17" fill="#1d232b"><tspan font-weight="700">Resultat</tspan> – Was war das Ergebnis?</text>
+<text x="96" y="367" font-size="15" fill="#5b6672" text-anchor="start" font-style="italic">„Um 18 Uhr war alles fertig.“</text>
+</svg>

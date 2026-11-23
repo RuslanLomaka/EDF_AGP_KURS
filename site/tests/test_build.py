@@ -101,7 +101,7 @@ class SyntheticSite:
         (self.site / "assets").mkdir(parents=True)
         # minimal assets the layout may reference
         for name in ("style.css", "kern.js", "hinweis.js", "animation.js", "quiz.js", "lektion.js",
-                     "vorlesen.js", "stand.js", "suche.js", "uebung.js"):
+                     "vorlesen.js", "stand.js", "suche.js", "uebung.js", "kopieren.js"):
             write(self.site / "assets" / name, "/* test */\n")
         write(self.site / "themen.yaml", "- Arbeit & Geld\n- Arbeitsrecht\n- Selbstständigkeit\n")
         write(self.site / "betreiber.yaml",

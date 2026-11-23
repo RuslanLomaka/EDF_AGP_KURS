@@ -1,0 +1,293 @@
+{
+  "title": "Das Vorstellungsgespräch – gut vorbereitet",
+  "questions": [
+    {
+      "question": "Wann sollten Sie zu einem Gespräch vor Ort da sein?",
+      "answers": [
+        {
+          "text": "Etwa 10 Minuten vor dem vereinbarten Termin",
+          "correct": true
+        },
+        {
+          "text": "Genau zur Uhrzeit, keine Minute früher",
+          "correct": false
+        },
+        {
+          "text": "Eine Stunde vor dem Termin",
+          "correct": false
+        }
+      ],
+      "explanation": "Etwa 10 Minuten vorher ist gut: Sie kommen in Ruhe an. Planen Sie für den Weg zusätzlich Puffer ein.",
+      "sources": [
+        {
+          "title": "Bundesagentur für Arbeit: Das Vorstellungsgespräch",
+          "url": "https://www.arbeitsagentur.de/bildung/bewerbung/bewerbungsgespraech"
+        }
+      ]
+    },
+    {
+      "question": "Die Firma sagt: „Erzählen Sie etwas über sich.“ Was gehört in die Antwort?",
+      "answers": [
+        {
+          "text": "Was Sie heute machen, früher gemacht haben und beruflich wollen",
+          "correct": true
+        },
+        {
+          "text": "Ihre Familie, Ihre Kinder und Ihre Hobbys",
+          "correct": false
+        },
+        {
+          "text": "Ihr ganzer Lebenslauf, Jahr für Jahr, ab der Schule",
+          "correct": false
+        }
+      ],
+      "explanation": "Ein guter Pitch dauert 1 bis 2 Minuten: heute – früher – Ziel. Familie ist privat.",
+      "sources": [
+        {
+          "title": "Bundesagentur für Arbeit: Das Vorstellungsgespräch",
+          "url": "https://www.arbeitsagentur.de/bildung/bewerbung/bewerbungsgespraech"
+        }
+      ]
+    },
+    {
+      "question": "Was ist eine gute Antwort auf die Frage nach Ihren Schwächen?",
+      "answers": [
+        {
+          "text": "Eine kleine Schwäche und Ihr Plan dagegen",
+          "correct": true
+        },
+        {
+          "text": "„Ich habe wirklich keine einzige Schwäche.“",
+          "correct": false
+        },
+        {
+          "text": "„Ich arbeite zu viel und bin zu perfekt.“",
+          "correct": false
+        }
+      ],
+      "explanation": "Eine ehrliche, kleine Schwäche mit einem Plan wirkt glaubwürdig. „Zu perfekt“ hören Personaler sehr oft.",
+      "sources": [
+        {
+          "title": "Bundesagentur für Arbeit: Das Vorstellungsgespräch",
+          "url": "https://www.arbeitsagentur.de/bildung/bewerbung/bewerbungsgespraech"
+        }
+      ]
+    },
+    {
+      "question": "Wofür steht das A in der STAR-Methode?",
+      "answers": [
+        {
+          "text": "Aktion: Was haben Sie selbst getan?",
+          "correct": true
+        },
+        {
+          "text": "Antwort: Was hat der Chef gesagt?",
+          "correct": false
+        },
+        {
+          "text": "Arbeitsplatz: Wo waren Sie angestellt?",
+          "correct": false
+        }
+      ],
+      "explanation": "S = Situation, T = Aufgabe, A = Aktion, R = Resultat. Bei A erzählen Sie am meisten – mit „ich“, nicht „wir“.",
+      "sources": [
+        {
+          "title": "Bundesagentur für Arbeit: Das Vorstellungsgespräch",
+          "url": "https://www.arbeitsagentur.de/bildung/bewerbung/bewerbungsgespraech"
+        }
+      ]
+    },
+    {
+      "question": "Die Firma fragt: „Dürfen Sie in Deutschland arbeiten?“ Ist das erlaubt?",
+      "answers": [
+        {
+          "text": "Ja, die Firma muss das sogar prüfen",
+          "correct": true
+        },
+        {
+          "text": "Nein, das ist eine Frage nach der Herkunft",
+          "correct": false
+        },
+        {
+          "text": "Nur bei Stellen im öffentlichen Dienst",
+          "correct": false
+        }
+      ],
+      "explanation": "Vor dem Start muss die Firma prüfen, ob der Aufenthaltstitel die Arbeit erlaubt, und eine Kopie aufbewahren.",
+      "sources": [
+        {
+          "title": "§ 4a AufenthG",
+          "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__4a.html"
+        }
+      ]
+    },
+    {
+      "question": "Im Gespräch fragt der Chef: „Sind Sie schwanger?“ Was dürfen Sie tun?",
+      "answers": [
+        {
+          "text": "Schweigen oder sogar die Unwahrheit sagen",
+          "correct": true
+        },
+        {
+          "text": "Sie müssen ehrlich antworten, sonst droht die Kündigung",
+          "correct": false
+        },
+        {
+          "text": "Sie müssen ein ärztliches Attest mitbringen",
+          "correct": false
+        }
+      ],
+      "explanation": "Die Frage ist verboten. Sie müssen nicht antworten und dürfen sogar lügen („Recht zur Lüge“).",
+      "sources": [
+        {
+          "title": "Antidiskriminierungsstelle: Gerechtigkeit bei der Jobsuche (Leichte Sprache)",
+          "url": "https://www.antidiskriminierungsstelle.gov.de/SharedDocs/downloads/DE/publikationen/leichte-sprache/fair_in_den_job_leichte_Sprache.pdf?__blob=publicationFile&v=8"
+        }
+      ]
+    },
+    {
+      "question": "Sie bekommen eine Absage und glauben, es war Diskriminierung. Wie lange haben Sie Zeit, sich schriftlich bei der Firma zu beschweren (Stand 2026)?",
+      "answers": [
+        {
+          "text": "2 Monate",
+          "correct": true
+        },
+        {
+          "text": "2 Wochen",
+          "correct": false
+        },
+        {
+          "text": "1 Jahr",
+          "correct": false
+        }
+      ],
+      "explanation": "Die Frist ist kurz: 2 Monate ab Zugang der Absage. Eine Verlängerung auf 4 Monate ist geplant, aber noch nicht in Kraft.",
+      "sources": [
+        {
+          "title": "§ 15 AGG",
+          "url": "https://www.gesetze-im-internet.de/agg/__15.html"
+        }
+      ]
+    },
+    {
+      "question": "Sie sind beim Jobcenter gemeldet und brauchen Geld für die Fahrt zum Gespräch. Wann stellen Sie den Antrag?",
+      "answers": [
+        {
+          "text": "Vor der Fahrt – für jedes Gespräch neu",
+          "correct": true
+        },
+        {
+          "text": "Nach dem Gespräch, mit der Fahrkarte als Beleg",
+          "correct": false
+        },
+        {
+          "text": "Einmal im Jahr für alle Gespräche zusammen",
+          "correct": false
+        }
+      ],
+      "explanation": "Das Vermittlungsbudget muss man vor dem Gespräch beantragen. Nachträglich wird nichts bezahlt.",
+      "sources": [
+        {
+          "title": "Bundesagentur für Arbeit: Vermittlungsbudget",
+          "url": "https://www.arbeitsagentur.de/vermittlungsbudget"
+        }
+      ]
+    },
+    {
+      "question": "Eine Firma lädt Sie zum Gespräch ein. Muss sie Ihre Fahrtkosten bezahlen?",
+      "answers": [
+        {
+          "text": "Meistens ja – außer, sie hat es vorher ausgeschlossen",
+          "correct": true
+        },
+        {
+          "text": "Nein, die Fahrt zahlen Bewerber selbst",
+          "correct": false
+        },
+        {
+          "text": "Ja, aber erst, wenn Sie den Vertrag unterschreiben",
+          "correct": false
+        }
+      ],
+      "explanation": "Wer einlädt, muss die nötigen Kosten in der Regel erstatten – auch bei einer Absage. Es sei denn, die Firma schreibt vorher, dass sie nicht zahlt.",
+      "sources": [
+        {
+          "title": "IG Metall: Bewerbung – diese Kosten werden erstattet",
+          "url": "https://www.igmetall.de/service/ratgeber/bewerbung-diese-kosten-werden-erstattet"
+        }
+      ]
+    },
+    {
+      "question": "Wie hoch ist der gesetzliche Mindestlohn im Jahr 2026?",
+      "answers": [
+        {
+          "text": "13,90 Euro pro Stunde",
+          "correct": true
+        },
+        {
+          "text": "12,82 Euro pro Stunde",
+          "correct": false
+        },
+        {
+          "text": "14,60 Euro pro Stunde",
+          "correct": false
+        }
+      ],
+      "explanation": "Seit dem 1. Januar 2026 gilt 13,90 Euro brutto. 12,82 Euro galten 2025, 14,60 Euro gelten ab 2027.",
+      "sources": [
+        {
+          "title": "Bundesregierung: Mindestlohn steigt",
+          "url": "https://www.bundesregierung.de/breg-de/aktuelles/mindestlohn-steigt-2391010"
+        }
+      ]
+    },
+    {
+      "question": "Eine Bäckerei lädt Sie zur Probearbeit ein. Sie bekommen Bürgergeld. Was ist wichtig?",
+      "answers": [
+        {
+          "text": "Die Probearbeit vorher beim Jobcenter genehmigen lassen",
+          "correct": true
+        },
+        {
+          "text": "Nichts – Probearbeit muss man nirgends melden",
+          "correct": false
+        },
+        {
+          "text": "Erst danach dem Jobcenter Bescheid sagen",
+          "correct": false
+        }
+      ],
+      "explanation": "Mit Arbeitslosengeld oder Bürgergeld muss die Probearbeit vorher genehmigt werden. Dann sind Sie versichert, und das Geld läuft weiter.",
+      "sources": [
+        {
+          "title": "Bundesagentur für Arbeit: Förderung einer Probearbeit",
+          "url": "https://www.arbeitsagentur.de/vor-ort/datei/flyer-foerderung-probearbeit_ba211642.pdf"
+        }
+      ]
+    },
+    {
+      "question": "„Haben Sie noch Fragen an uns?“ Welche Frage ist eine gute Wahl?",
+      "answers": [
+        {
+          "text": "„Wie werde ich eingearbeitet?“",
+          "correct": true
+        },
+        {
+          "text": "„Was macht Ihre Firma eigentlich?“",
+          "correct": false
+        },
+        {
+          "text": "„Nein, ich habe alles verstanden.“",
+          "correct": false
+        }
+      ],
+      "explanation": "Mit eigenen Fragen zeigen Sie Interesse. Was die Firma macht, sollten Sie schon vorher auf der Website lesen.",
+      "sources": [
+        {
+          "title": "Bundesagentur für Arbeit: Das Vorstellungsgespräch",
+          "url": "https://www.arbeitsagentur.de/bildung/bewerbung/bewerbungsgespraech"
+        }
+      ]
+    }
+  ]
+}
