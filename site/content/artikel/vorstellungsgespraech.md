@@ -4,6 +4,7 @@ slug: vorstellungsgespraech
 datum: "2026-11-23"
 reihenfolge: 1
 thema: "Bildung & Beruf"
+abschnittsnummern: true
 stichwoerter:
   - Vorstellungsgespräch
   - Bewerbungsgespräch

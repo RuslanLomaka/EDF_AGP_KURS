@@ -23,7 +23,8 @@ site/
   themen.yaml                 allowed article topics, in display order
   content/artikel/*.quiz.json  one quiz per article (Quiz Forger JSON format)
   assets/                     style.css, suche.js (article list + search), lektion.js (lesson steps, quick
-                              navigation), kopieren.js (copy buttons of prompt/vorlage boxes), quiz.js (quizzes and tests), uebung.js (exercises),
+                              navigation), kopieren.js (copy buttons of prompt/vorlage boxes), abschnitte.js (room for the number bar;
+                              section shown in numbered articles), quiz.js (quizzes and tests), uebung.js (exercises),
                               animation.js (slide-in and confetti), hinweis.js (short privacy notice once a day),
                               vorlesen.js (reading aloud), stand.js ("Weiter bei"), jetzt.js (teacher "Jetzt" bar),
                               stillepost.js (Stille Post start in lesson 4)
@@ -228,6 +229,11 @@ front matter.
   and `::: achtung` for warnings. Put deadlines and "what to do now" in an `::: achtung` box near the top.
 - Keep each part short for B1 readers: about 10 glossary words, 5 own questions, 10 quiz questions; split a big
   topic into a series instead of writing one long article (unless the owner asks for one article).
+- **Numbered sections in an article:** `abschnittsnummern: true` in the front matter gives the article the
+  numbers and quick navigation of lessons (bar at the bottom on phones, list on the left on wide screens, the
+  section on screen in a slim bar at the top), without progress rings or Hilfe-Ampel. All sections are numbered in
+  reading order: the text (with Wörter and Fragen zum Text), then Vorlagen, Quiz, Quellen. Use it for long articles
+  that are taught in class ("Wir sind bei 6"). Example: `vorstellungsgespraech.md`.
 - **Printouts and tasks work in articles too:** front matter `dateien` (same format as for lessons, files in
   `materials/<slug>/`) adds a "Zum Ausdrucken" box before the quiz; `::: prompt` and `::: vorlage` get a copy
   button; tasks use `<p class="zeit">` like lessons. Example: `vorstellungsgespraech.md`.

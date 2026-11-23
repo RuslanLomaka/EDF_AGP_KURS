@@ -602,6 +602,8 @@ def layout(title, active, main, description="", scripts=(), noindex=False, farbe
         scripts = (*scripts, "stillepost.js")
     if 'class="prompt"' in main or 'class="vorlage"' in main:
         scripts = (*scripts, "kopieren.js")
+    if 'class="schnellnav"' in main:
+        scripts = (*scripts, "abschnitte.js")
     script_tags = "".join(f'<script src="{asset(s)}"></script>'
                           for s in ("kern.js", "hinweis.js", "animation.js", *scripts))
     return f"""<!doctype html>
@@ -816,7 +818,10 @@ def _load_one_article(path, themen, vorleser):
         "reihenfolge": meta.get("reihenfolge", 0),
         "bereich": "artikel",
         "dateien": download_list(path, meta, "dateien"),
+        "nummern": meta.get("abschnittsnummern", False),
     }
+    if not isinstance(a["nummern"], bool):
+        fail(path, "'abschnittsnummern' must be true or false (numbered sections and quick navigation, like lessons)")
     namen = [d["src"].name for d in a["dateien"]]
     if len(set(namen)) < len(namen):
         fail(path, "two downloads in 'dateien' have the same file name")
@@ -952,7 +957,8 @@ def load_quiz(path):
 
 
 def nummeriere(body):
-    """Lessons: every section (h2) gets a number, so the class can say "we are at 5" and everyone taps 5.
+    """Lessons (and articles with 'abschnittsnummern: true'): every section (h2) gets a number, so the class can say
+    "we are at 5" and everyone taps 5.
     Help gets "?". Returns the numbered body, the entries for the quick navigation and the last number."""
     eintraege, n = [], 0
     def h2(m):
@@ -1069,12 +1075,34 @@ def write_article(a, lehrer, serie, weiter, mehr, nav):
     if m:
         inhalt, quellen = inhalt[:m.start()], f'<section class="quellen inhalt">{inhalt[m.start():]}</section>'
     # printable files (front matter 'dateien'): absolute links, so the teacher page reaches them too
-    ausdrucken, ausdrucken_titel = "", ""
+    ausdrucken, ausdrucken_titel, dateien = "", "", ""
     if a["dateien"]:
         ausdrucken_titel, dateien = vorlagen(a)
-        ausdrucken = f'<section class="downloads"><h2 id="ausdrucken">{ausdrucken_titel}</h2>{dateien}</section>'
-    extra = ([("ausdrucken", ausdrucken_titel)] if ausdrucken else []) + [("quiz", "Quiz")] \
-        + ([("quellen", "Quellen")] if quellen else [])
+    # 'abschnittsnummern: true': numbered sections and the quick navigation of lessons (without progress), in reading
+    # order: the text, then printouts, quiz and sources
+    eintraege, n = [], 0
+    if a["nummern"]:
+        inhalt, eintraege, n = nummeriere(inhalt)
+    def nummer(hid, titel):
+        nonlocal n
+        if not a["nummern"]:
+            return "", titel
+        n += 1
+        eintraege.append((str(n), hid, titel))
+        return f'<span class="nr">{n}</span> ', f"{n} {titel}"
+    extra = []
+    if dateien:
+        nr, label = nummer("ausdrucken", ausdrucken_titel)
+        ausdrucken = f'<section class="downloads"><h2 id="ausdrucken">{nr}{ausdrucken_titel}</h2>{dateien}</section>'
+        extra.append(("ausdrucken", label))
+    quiz_nr = n + 1 if a["nummern"] else None
+    extra.append(("quiz", nummer("quiz", "Quiz")[1]))
+    if quellen:
+        nr, label = nummer("quellen", "Quellen")
+        quellen = quellen.replace('<h2 id="quellen">', f'<h2 id="quellen">{nr}', 1)
+        extra.append(("quellen", label))
+    leiste = ('<div class="fortschritt nur-abschnitt" hidden><p class="fs-abschnitt"><span class="fs-nr"></span>'
+              '<span class="fs-titel"></span></p></div>') if a["nummern"] else ""
     chips = "".join(f'<li><a href="/artikel/?q={quote(k)}">{esc(k)}</a></li>' for k in a["stichwoerter"])
     stand = a["datum"][:4] if a["datum"] else str(date.today().year)
     meta_line = " · ".join(x for x in [esc(a["thema"]), datum_kurz(a["datum"]), f"ca. {a['minuten']} Min. Lesezeit"] if x)
@@ -1082,25 +1110,27 @@ def write_article(a, lehrer, serie, weiter, mehr, nav):
 <h1>{esc(a['title'])}</h1>
 <p class="meta">{meta_line}</p>
 {serie}
+{leiste}
 {toc(inhalt, extra)}
+{schnellnav(eintraege) if eintraege else ""}
 <article class="inhalt">
 {inhalt}
 </article>
 {ausdrucken}
-{quiz_section(a['quiz'])}
+{quiz_section(a['quiz'], quiz_nr)}
 {quellen}
 {weiter}
 {f'<h2>Stichwörter</h2><ul class="chips">{chips}</ul>' if chips else ''}
 {mehr}
 {nav}
 <p class="quelle">Grundlage: {esc(a['quelle'])}. Der Inhalt ist in eigenen Worten erklärt. Kästen mit „Ergänzung“ enthalten zusätzliche Informationen (Stand {stand}, ohne Gewähr). Keine Rechtsberatung.</p>"""
+    skripte = ["quiz.js", "vorlesen.js"]
     if lehrer:
         main = lehrer_banner(a["url"], inhalt.count('<div class="notiz">')) + "\n" + lehrer_links(main)
         write(f"artikel/{a['slug']}/{LEHRER}/index.html", layout(f"Lehrkraft: {a['title']}", "artikel", main, a["kurz"],
-                                                           ["quiz.js", "vorlesen.js"], noindex=True,
-                                                           farbe=THEMEN_FARBE.get(a["thema"])))
+                                                           skripte, noindex=True, farbe=THEMEN_FARBE.get(a["thema"])))
     else:
-        write(f"artikel/{a['slug']}/index.html", layout(a["title"], "artikel", main, a["kurz"], ["quiz.js", "vorlesen.js"],
+        write(f"artikel/{a['slug']}/index.html", layout(a["title"], "artikel", main, a["kurz"], skripte,
                                                         farbe=THEMEN_FARBE.get(a["thema"])))
 
 

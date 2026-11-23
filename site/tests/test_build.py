@@ -101,7 +101,7 @@ class SyntheticSite:
         (self.site / "assets").mkdir(parents=True)
         # minimal assets the layout may reference
         for name in ("style.css", "kern.js", "hinweis.js", "animation.js", "quiz.js", "lektion.js",
-                     "vorlesen.js", "stand.js", "suche.js", "uebung.js", "kopieren.js"):
+                     "vorlesen.js", "stand.js", "suche.js", "uebung.js", "kopieren.js", "abschnitte.js"):
             write(self.site / "assets" / name, "/* test */\n")
         write(self.site / "themen.yaml", "- Arbeit & Geld\n- Arbeitsrecht\n- Selbstständigkeit\n")
         write(self.site / "betreiber.yaml",
@@ -470,6 +470,30 @@ gruppen:
         self._article_with_download("https://docs.google.com/document/d/abc/edit")
         r = self.site.build(False)
         self.assertIn("online", (r.stderr or r.stdout).lower())
+
+
+    def test_33_article_with_numbered_sections(self):
+        self.site = SyntheticSite()
+        body = good_article().replace('reihenfolge: 1\n', 'reihenfolge: 1\nabschnittsnummern: true\n')
+        body += "\n## Quellen {#quellen}\n\n- [Gesetz](https://www.gesetze-im-internet.de/arbzg/)\n"
+        self.site.add_article(body=body)
+        self.site.add_lesson()
+        self.site.build(True)
+        html = (self.site.site / "dist" / "artikel" / "demo-artikel" / "index.html").read_text()
+        self.assertIn('<nav class="schnellnav"', html)
+        self.assertIn('<h2 id="eins"><span class="nr">1</span>', html)
+        self.assertIn('<h2 id="quiz"><span class="nr">4</span>', html)  # eins, woerter, fragen, then the quiz
+        self.assertIn('<h2 id="quellen"><span class="nr">5</span>', html)
+        self.assertIn("abschnitte.js", html)
+
+    def test_34_plain_article_has_no_numbers(self):
+        self.site = SyntheticSite()
+        self.site.add_article()
+        self.site.add_lesson()
+        self.site.build(True)
+        html = (self.site.site / "dist" / "artikel" / "demo-artikel" / "index.html").read_text()
+        self.assertNotIn("schnellnav", html)
+        self.assertNotIn('class="nr"', html)
 
 
 if __name__ == "__main__":

@@ -691,9 +691,9 @@ html.ampel-offen { overflow: hidden; }
   .schnellnav .titel { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .schnellnav .nr { min-width: 2.75rem; height: 2.75rem; font-size: 1.05rem; background: var(--ton-soft); color: var(--ton); }
   .schnellnav a[aria-current="true"] .nr { background: var(--ton); color: var(--card); }
-  body:has(.schnellnav) { padding-bottom: 5.5rem; }
-  html:has(.schnellnav) { scroll-padding-bottom: 5.8rem; }
-  body:has(.schnellnav) .hinweis-dialog { bottom: 5.6rem; }
+  body:has(.schnellnav) { padding-bottom: calc(var(--schnellnav-h, 5rem) + 0.5rem); }
+  html:has(.schnellnav) { scroll-padding-bottom: calc(var(--schnellnav-h, 5rem) + 0.8rem); }
+  body:has(.schnellnav) .hinweis-dialog { bottom: calc(var(--schnellnav-h, 5rem) + 0.6rem); }
 }
 @media (min-width: 80rem) {
   .schnellnav { position: fixed; top: 5.5rem; left: max(1rem, calc(50% - 23rem - 15rem)); width: 13.5rem; max-height: calc(100vh - 7rem); overflow-y: auto; }
